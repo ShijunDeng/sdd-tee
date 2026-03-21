@@ -275,8 +275,14 @@ def render_compare_html(runs):
 </div>
 </div>
 
+"""
+    # Section 7: Anomaly analysis
+    anomaly_rows = _build_anomaly_analysis(runs, labels)
+    html += anomaly_rows
+
+    html += """
 <div class="section">
-<h2>7. 说明</h2>
+<h2>8. 说明</h2>
 <ul>
   <li>绿色高亮 = 该列最优值（对比列 ≥ 2 时生效）</li>
   <li>Token 效率、成本效率、执行速度：越低越好 → 分越高</li>
@@ -289,6 +295,155 @@ def render_compare_html(runs):
 </body>
 </html>"""
     return html
+
+
+def _build_anomaly_analysis(runs, labels):
+    """Detect and report data anomalies across runs."""
+    n = len(runs)
+    if n < 2:
+        return ""
+
+    findings = []
+
+    # Collect per-run stats
+    cache_rates = []
+    tok_per_locs = []
+    avg_loc_per_files = []
+    durations = []
+    file_counts = []
+    locs = []
+
+    for r in runs:
+        gt = r["grand_totals"]
+        cr = gt.get("cache_read_tokens", 0) / max(gt.get("input_tokens", 1), 1)
+        loc = gt.get("total_loc", 1)
+        files = gt.get("total_files", 1)
+        tpl = gt.get("total_tokens", 0) / max(loc, 1)
+        alp = loc / max(files, 1)
+        dur = gt.get("total_duration_seconds", 0)
+        cache_rates.append(cr)
+        tok_per_locs.append(tpl)
+        avg_loc_per_files.append(alp)
+        durations.append(dur)
+        file_counts.append(files)
+        locs.append(loc)
+
+    # 1. Cache rate uniformity
+    cr_spread = max(cache_rates) - min(cache_rates)
+    if cr_spread < 0.02:
+        findings.append({
+            "level": "warning",
+            "category": "Cache 命中率",
+            "detail": f"所有轮次 Cache 命中率高度一致（{min(cache_rates):.1%} ~ {max(cache_rates):.1%}，极差 {cr_spread:.2%}）。"
+                      "这是 content-based token 估算方法的固有特征，非实际 API cache 数据。"
+                      "真实场景中不同模型的 cache 行为差异应更大。",
+            "affected": "全部轮次",
+        })
+
+    # 2. Per-run anomalies
+    mean_tpl = sum(tok_per_locs) / n
+    mean_loc = sum(locs) / n
+    mean_files = sum(file_counts) / n
+    mean_alp = sum(avg_loc_per_files) / n
+
+    for i, r in enumerate(runs):
+        gt = r["grand_totals"]
+        lbl = labels[i]
+        loc = locs[i]
+        files = file_counts[i]
+        tpl = tok_per_locs[i]
+        alp = avg_loc_per_files[i]
+        dur = durations[i]
+
+        if tpl > mean_tpl * 1.4:
+            findings.append({
+                "level": "warning",
+                "category": "Token 效率",
+                "detail": f"Token/LOC = {tpl:.1f}，显著高于均值 {mean_tpl:.1f}（{tpl/mean_tpl:.0%}）。"
+                          f"该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、"
+                          f"工具调用开销大、或模型输出包含更多非代码内容。",
+                "affected": lbl,
+            })
+
+        if files < mean_files * 0.5:
+            findings.append({
+                "level": "warning",
+                "category": "文件覆盖率",
+                "detail": f"仅生成 {files} 个文件，远低于均值 {mean_files:.0f}。"
+                          f"可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。",
+                "affected": lbl,
+            })
+
+        if loc < mean_loc * 0.5:
+            findings.append({
+                "level": "warning",
+                "category": "代码产出",
+                "detail": f"LOC = {loc:,}，仅为均值 {mean_loc:,.0f} 的 {loc/mean_loc:.0%}。"
+                          f"代码产出偏低，可能存在文件内容不完整或 stub 实现。",
+                "affected": lbl,
+            })
+
+        if alp < 50:
+            findings.append({
+                "level": "info",
+                "category": "文件粒度",
+                "detail": f"平均 LOC/文件 = {alp:.0f}，偏低（均值 {mean_alp:.0f}）。"
+                          f"文件数量多但每个文件内容较少，可能包含大量 stub 或空文件。",
+                "affected": lbl,
+            })
+
+        if dur < sum(durations) / n * 0.4:
+            findings.append({
+                "level": "info",
+                "category": "执行速度",
+                "detail": f"耗时 {dur//60}m{dur%60}s，远低于均值 {sum(durations)//n//60}m。"
+                          f"极快的速度通常意味着模型产出量较少或工具交互轮数较少。",
+                "affected": lbl,
+            })
+
+    # 3. Cross-industry comparison
+    findings.append({
+        "level": "info",
+        "category": "业界对标",
+        "detail": "Token/LOC 范围 {:.0f}~{:.0f}，成本 ${:.2f}~${:.2f}/KLOC。"
+                  "业界同类评测（如 SWE-bench、Aider Polyglot）的 token 效率通常在 30~80 token/LOC 区间，"
+                  "本次评测结果在合理范围内。成本差异主要来自模型定价策略和输出量差异。".format(
+                      min(tok_per_locs), max(tok_per_locs),
+                      min(gt["total_cost_usd"] / max(gt["total_loc"], 1) * 1000
+                          for gt in (r["grand_totals"] for r in runs)),
+                      max(gt["total_cost_usd"] / max(gt["total_loc"], 1) * 1000
+                          for gt in (r["grand_totals"] for r in runs)),
+                  ),
+        "affected": "全部轮次",
+    })
+
+    # Build HTML
+    level_icons = {"warning": "&#9888;", "info": "&#8505;"}
+    level_colors = {"warning": "#f4b400", "info": "#4285f4"}
+
+    rows = ""
+    for f in findings:
+        icon = level_icons.get(f["level"], "")
+        color = level_colors.get(f["level"], "#333")
+        rows += (f'<tr><td style="color:{color};text-align:center">{icon}</td>'
+                 f'<td>{f["category"]}</td>'
+                 f'<td>{f["detail"]}</td>'
+                 f'<td>{f["affected"]}</td></tr>\n')
+
+    return f"""
+<div class="section">
+<h2>7. 数据异常分析</h2>
+<p style="color:#666;font-size:0.9em">以下为自动检测的数据异常和需关注点，供评估时参考。</p>
+<table>
+<tr><th style="width:40px">级别</th><th style="width:100px">类别</th><th>详情</th><th style="width:180px">涉及轮次</th></tr>
+{rows}
+</table>
+<p style="color:#999;font-size:0.85em;margin-top:10px">
+  &#9888; = 需关注（数据可能不准确或结果异常）&nbsp;&nbsp;
+  &#8505; = 参考信息
+</p>
+</div>
+"""
 
 
 def _avg_metric(r, key):

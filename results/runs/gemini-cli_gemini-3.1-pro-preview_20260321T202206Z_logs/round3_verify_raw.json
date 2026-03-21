@@ -1,0 +1,32 @@
+YOLO mode is enabled. All tool calls will be automatically approved.
+Keychain initialization encountered an error: libsecret-1.so.0: cannot open shared object file: No such file or directory
+Using FileKeychain fallback for secure storage.
+Loaded cached credentials.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Error when talking to Gemini API Full report available at: /tmp/gemini-client-error-Turn.run-sendMessageStream-2026-03-21T20-48-23-785Z.json TerminalQuotaError: You have exhausted your capacity on this model. Your quota will reset after 17h25m39s.
+    at classifyGoogleError (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/googleQuotaErrors.js:252:28)
+    at retryWithBackoff (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/retry.js:153:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:440:32)
+    at async GeminiChat.streamWithRetries (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:266:40)
+    at async Turn.run (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/turn.js:71:30)
+    at async GeminiClient.processTurn (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/client.js:487:26)
+    at async GeminiClient.sendMessageStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/client.js:605:20)
+    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/dist/src/nonInteractiveCli.js:194:34
+    at async main (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/dist/src/gemini.js:544:9) {
+  cause: {
+    code: 429,
+    message: 'You have exhausted your capacity on this model. Your quota will reset after 17h25m39s.',
+    details: [ [Object], [Object] ]
+  },
+  retryDelayMs: 62739228.639378004,
+  reason: 'QUOTA_EXHAUSTED'
+}
+{
+  "session_id": "4504b5b5-2710-47fa-89de-3c1b09b7bafa",
+  "error": {
+    "type": "Error",
+    "message": "[object Object]",
+    "code": 1
+  }
+}

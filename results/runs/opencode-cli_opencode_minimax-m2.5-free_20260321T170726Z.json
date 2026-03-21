@@ -1,0 +1,101 @@
+{
+  "run_id": "opencode-cli_opencode_minimax-m2.5-free_20260321T170726Z",
+  "timestamp": "20260321T170726Z",
+  "started_at": "2026-03-21T17:07:26Z",
+  "completed_at": "2026-03-21T18:50:21Z",
+  "project": "agentcube",
+  "tool": "opencode-cli",
+  "model": "opencode/minimax-m2.5-free",
+  "total_duration_seconds": 6175,
+  "execution": {
+    "rounds": [
+      {
+        "round": 1,
+        "ars": [
+          "AR-001",
+          "AR-002",
+          "AR-003",
+          "AR-004",
+          "AR-005",
+          "AR-006",
+          "AR-007",
+          "AR-008",
+          "AR-009",
+          "AR-010",
+          "AR-011"
+        ],
+        "ar_count": 11,
+        "duration_seconds": 1480
+      },
+      {
+        "round": 2,
+        "ars": [
+          "AR-012",
+          "AR-013",
+          "AR-014",
+          "AR-015",
+          "AR-016",
+          "AR-017",
+          "AR-018",
+          "AR-019",
+          "AR-020",
+          "AR-021",
+          "AR-022"
+        ],
+        "ar_count": 11,
+        "duration_seconds": 1800
+      },
+      {
+        "round": 3,
+        "ars": [
+          "AR-023",
+          "AR-024",
+          "AR-025",
+          "AR-026",
+          "AR-027",
+          "AR-028",
+          "AR-029",
+          "AR-030",
+          "AR-031",
+          "AR-032",
+          "AR-033"
+        ],
+        "ar_count": 11,
+        "duration_seconds": 1094
+      },
+      {
+        "round": 4,
+        "ars": [
+          "AR-034",
+          "AR-035",
+          "AR-036",
+          "AR-037",
+          "AR-038",
+          "AR-039",
+          "AR-040",
+          "AR-041",
+          "AR-042",
+          "AR-043"
+        ],
+        "ar_count": 10,
+        "duration_seconds": 1800
+      }
+    ],
+    "stages": {}
+  },
+  "token_summary": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cache_write_tokens": 0,
+    "total_tokens": 0,
+    "cost_usd": 0
+  },
+  "quality": {
+    "files_generated": 196,
+    "loc_generated": 18069,
+    "python_syntax_ok": 38,
+    "go_files_generated": 85,
+    "code_usability_estimate": 0.92
+  }
+}

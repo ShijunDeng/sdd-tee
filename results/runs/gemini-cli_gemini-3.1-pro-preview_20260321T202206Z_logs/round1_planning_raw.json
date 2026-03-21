@@ -1,0 +1,111 @@
+YOLO mode is enabled. All tool calls will be automatically approved.
+Keychain initialization encountered an error: libsecret-1.so.0: cannot open shared object file: No such file or directory
+Using FileKeychain fallback for secure storage.
+Loaded cached credentials.
+YOLO mode is enabled. All tool calls will be automatically approved.
+{
+  "session_id": "24b24b90-b8a2-47d5-ad2a-f783496a39ba",
+  "response": "I have thoroughly read the project specifications and generated the `PLAN.md` document mapping out all 11 Architectural Requirements (AR-001 through AR-011).\n\nThe `PLAN.md` file has been created at the root of your workspace and precisely outlines:\n- Complete directory structure across the AgentCube platform.\n- The 11 core components mapped to their respective Architectural Requirements (Sandbox Orchestration, Session Routing, Session Store, Code Execution daemon, Idle Cleanup, Python SDK, CLI Toolkit, Integrations, Client-Go Codegen, Deployment Helm/Docker assets, and GitHub CI/CD).\n- Precise lists of all Go packages, Python modules, and YAML manifests.\n- Interfaces to be created per file based on the design documents.\n- Corresponding unit test files (`*_test.go`, `test_*.py`) for all application components. \n\nYou can review `PLAN.md` to begin your implementation of PHASE 2. Let me know if you are ready to start coding!",
+  "stats": {
+    "models": {
+      "gemini-3.1-pro-preview": {
+        "api": {
+          "totalRequests": 16,
+          "totalErrors": 0,
+          "totalLatencyMs": 165997
+        },
+        "tokens": {
+          "input": 132415,
+          "prompt": 343158,
+          "candidates": 4452,
+          "total": 355047,
+          "cached": 210743,
+          "thoughts": 7437,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 16,
+            "totalErrors": 0,
+            "totalLatencyMs": 165997,
+            "tokens": {
+              "input": 132415,
+              "prompt": 343158,
+              "candidates": 4452,
+              "total": 355047,
+              "cached": 210743,
+              "thoughts": 7437,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 33,
+      "totalSuccess": 33,
+      "totalFail": 0,
+      "totalDurationMs": 739,
+      "totalDecisions": {
+        "accept": 33,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "read_file": {
+          "count": 22,
+          "success": 22,
+          "fail": 0,
+          "durationMs": 463,
+          "decisions": {
+            "accept": 22,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "grep_search": {
+          "count": 7,
+          "success": 7,
+          "fail": 0,
+          "durationMs": 158,
+          "decisions": {
+            "accept": 7,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "run_shell_command": {
+          "count": 3,
+          "success": 3,
+          "fail": 0,
+          "durationMs": 104,
+          "decisions": {
+            "accept": 3,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "write_file": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 14,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 236,
+      "totalLinesRemoved": 0
+    }
+  }
+}
