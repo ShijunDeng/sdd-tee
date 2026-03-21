@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentCube 技术解析报告</title>
+<style>
+  :root { --bg: #f8f9fa; --card: #fff; --border: #e0e0e0; --text: #333; --muted: #888; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 1.8em; margin-bottom: 4px; }
+  h2 { font-size: 1.3em; margin: 28px 0 12px; border-bottom: 2px solid #4C78A8; padding-bottom: 6px; }
+  h3 { font-size: 1.1em; margin: 16px 0 8px; }
+  .card { background: var(--card); border-radius: 8px; padding: 20px; margin: 14px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .desc { color: var(--muted); font-size: 0.92em; }
+  .summary-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .summary-item { background: var(--card); border-radius: 8px; padding: 14px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .summary-item .big { font-size: 1.5em; font-weight: 700; color: #4C78A8; }
+  .summary-item .label { font-size: 0.8em; color: var(--muted); margin-top: 2px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88em; margin: 8px 0; }
+  th { background: #f0f2f5; padding: 8px 10px; text-align: left; font-weight: 600; border-bottom: 2px solid var(--border); }
+  td { padding: 7px 10px; border-bottom: 1px solid #eee; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .lang-row { display: flex; align-items: center; margin: 5px 0; font-size: 0.88em; }
+  .lang-name { width: 140px; flex-shrink: 0; }
+  .lang-bar-track { flex: 1; height: 16px; background: #eee; border-radius: 3px; margin: 0 10px; overflow: hidden; }
+  .lang-bar-fill { height: 100%; border-radius: 3px; }
+  .lang-val { width: 160px; text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+  .arch-svg { text-align: center; margin: 16px 0; }
+  .arch-svg svg { max-width: 100%; }
+  code { background: #f0f2f5; padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+  @media (max-width: 768px) { .lang-name { width: 100px; } .lang-val { width: 120px; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>AgentCube 技术解析报告</h1>
+<p class="desc">
+  目标仓库：<a href="https://github.com/ShijunDeng/agentcube">github.com/ShijunDeng/agentcube</a>
+  ｜ 分析时间：2026-03-21 05:27 UTC
+</p>
+
+<h2>一、项目概述</h2>
+<div class="card">
+  <p><b>AgentCube</b> 是 <a href="https://github.com/volcano-sh/volcano">Volcano</a> 社区的子项目，为 Kubernetes 提供 AI Agent 工作负载的原生调度与生命周期管理。解决传统批处理/推理系统无法满足的 Agent 特有需求：间歇性活动、亚秒级响应延迟、跨会话状态持久化。</p>
+  <p style="margin-top:8px;">核心能力：<b>极低延迟调度</b>、<b>有状态生命周期管理</b>（智能休眠/恢复）、<b>高密度资源利用</b>（预热池 + 性能隔离）、<b>命令式 API</b>。</p>
+</div>
+
+<h2>二、规模概览</h2>
+
+<div class="summary-box">
+  <div class="summary-item"><div class="big">275</div><div class="label">总文件数</div></div>
+  <div class="summary-item"><div class="big">64,625</div><div class="label">总代码行数</div></div>
+  <div class="summary-item"><div class="big">64</div><div class="label">Go 源文件</div></div>
+  <div class="summary-item"><div class="big">8,242</div><div class="label">Go 源码行数</div></div>
+  <div class="summary-item"><div class="big">37</div><div class="label">Python 源文件</div></div>
+  <div class="summary-item"><div class="big">6,362</div><div class="label">Python 源码行数</div></div>
+  <div class="summary-item"><div class="big">29</div><div class="label">测试文件</div></div>
+  <div class="summary-item"><div class="big">9,653</div><div class="label">测试代码行数</div></div>
+  <div class="summary-item"><div class="big">22</div><div class="label">Go 包数量</div></div>
+  <div class="summary-item"><div class="big">15</div><div class="label">核心特性数</div></div>
+  <div class="summary-item"><div class="big">14</div><div class="label">HTTP API 端点</div></div>
+  <div class="summary-item"><div class="big">5</div><div class="label">CLI 命令</div></div>
+</div>
+
+<h2>三、语言构成</h2>
+<div class="card">
+  
+        <div class="lang-row">
+          <span class="lang-name"><span class="dot" style="background:#00ADD8;"></span>Go（源码）</span>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:20.3%;background:#00ADD8;"></div></div>
+          <span class="lang-val">8,242 行 (20.3%)</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name"><span class="dot" style="background:#5DC9E2;"></span>Go（测试）</span>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:22.5%;background:#5DC9E2;"></div></div>
+          <span class="lang-val">9,126 行 (22.5%)</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name"><span class="dot" style="background:#3776AB;"></span>Python（源码）</span>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:15.7%;background:#3776AB;"></div></div>
+          <span class="lang-val">6,362 行 (15.7%)</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name"><span class="dot" style="background:#7CB1D9;"></span>Python（测试）</span>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:1.3%;background:#7CB1D9;"></div></div>
+          <span class="lang-val">527 行 (1.3%)</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name"><span class="dot" style="background:#CB171E;"></span>YAML/Helm</span>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:26.5%;background:#CB171E;"></div></div>
+          <span class="lang-val">10,781 行 (26.5%)</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name"><span class="dot" style="background:#083FA1;"></span>Markdown/文档</span>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:13.0%;background:#083FA1;"></div></div>
+          <span class="lang-val">5,273 行 (13.0%)</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name"><span class="dot" style="background:#3178C6;"></span>TypeScript/CSS</span>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:0.8%;background:#3178C6;"></div></div>
+          <span class="lang-val">315 行 (0.8%)</span>
+        </div>
+</div>
+
+<h2>四、系统架构</h2>
+<div class="card">
+<pre style="font-size:0.85em;line-height:1.5;overflow-x:auto;background:#f8f9fa;padding:12px;border-radius:6px;">
+┌──────────────────────────────────────────────────────────────────┐
+│                        客户端 / SDK                              │
+│  (Python SDK: CodeInterpreterClient, AgentRuntimeClient)         │
+│  (CLI: kubectl-agentcube pack/build/publish/invoke/status)       │
+└──────────────┬───────────────────────────────────────────────────┘
+               │ HTTP (x-agentcube-session-id)
+               ▼
+┌──────────────────────────────────┐
+│         Router (Go/Gin)          │  ← 反向代理 + JWT 签发
+│  /v1/namespaces/:ns/             │     并发控制 (信号量)
+│    agent-runtimes/:name/inv/*    │     会话自动创建/复用
+│    code-interpreters/:name/inv/* │
+└──────────┬───────────┬───────────┘
+           │           │ 会话数据
+           │           ▼
+           │    ┌──────────────┐
+           │    │ Redis/Valkey │  ← 会话存储 (ZSET 索引)
+           │    └──────────────┘
+           │ HTTP (Bearer Token)
+           ▼
+┌──────────────────────────────────┐
+│    Workload Manager (Go/Gin)     │  ← 控制面 API
+│  POST /v1/agent-runtime          │     Sandbox 生命周期
+│  POST /v1/code-interpreter       │     GC (15s周期/16批次)
+│  TokenReview 认证                │     WarmPool 管理
+└──────────┬───────────────────────┘
+           │ K8s API
+           ▼
+┌──────────────────────────────────┐
+│     Kubernetes API Server        │
+│  ┌─────────────┐ ┌────────────┐ │
+│  │ AgentRuntime │ │CodeInterp. │ │  ← 自定义 CRD
+│  │     CRD      │ │    CRD     │ │
+│  └─────────────┘ └────────────┘ │
+│  ┌─────────────┐ ┌────────────┐ │
+│  │  Sandbox    │ │SandboxClaim│ │  ← agent-sandbox CRD
+│  │  (Pod)      │ │ (WarmPool) │ │
+│  └──────┬──────┘ └────────────┘ │
+└─────────┼────────────────────────┘
+          │
+          ▼
+┌──────────────────────────────────┐
+│     PicoD (Sandbox 内守护进程)    │
+│  POST /api/execute  (命令执行)    │  ← RSA JWT 认证
+│  POST /api/files    (文件上传)    │     workspace 沙箱隔离
+│  GET  /api/files    (目录列表)    │     60s 执行超时
+│  GET  /api/files/*  (文件下载)    │
+└──────────────────────────────────┘
+
+辅助组件:
+  AgentD — Sandbox 空闲清理控制器 (15min 超时自动删除)
+  Volcano Scheduler — 可选的集群调度器
+</pre>
+</div>
+
+<h2>五、功能模块详情</h2>
+<div class="card" style="overflow-x:auto;">
+  <table>
+    <thead><tr><th>模块路径</th><th>语言</th><th>说明</th><th class="num">文件</th><th class="num">源码行</th><th>规模</th></tr></thead>
+    <tbody>
+        <tr>
+          <td><code>docs</code></td>
+          <td>Markdown/TS</td>
+          <td>文档站 (Docusaurus) + 设计文档 + 开发指南</td>
+          <td class="num">53</td>
+          <td class="num">25,731</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:100.0%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>manifests/charts/base</code></td>
+          <td>YAML</td>
+          <td>Helm Chart — 部署模板、RBAC、CRD</td>
+          <td class="num">9</td>
+          <td class="num">9,583</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:37.2%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>cmd/cli/agentcube</code></td>
+          <td>Python</td>
+          <td>CLI 工具 — pack/build/publish/invoke/status</td>
+          <td class="num">16</td>
+          <td class="num">3,601</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:14.0%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>pkg/workloadmanager</code></td>
+          <td>Go</td>
+          <td>工作负载管理器 — HTTP API、Sandbox 创建/GC、控制器</td>
+          <td class="num">21</td>
+          <td class="num">2,639</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:10.3%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>client-go</code></td>
+          <td>Go</td>
+          <td>生成的 K8s 客户端 — Clientset、Informers、Listers</td>
+          <td class="num">25</td>
+          <td class="num">1,666</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:6.5%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>example/pcap-analyzer</code></td>
+          <td>Python</td>
+          <td>示例：PCAP 分析器 (FastAPI + LangGraph)</td>
+          <td class="num">5</td>
+          <td class="num">1,031</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:4.0%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>sdk-python/agentcube</code></td>
+          <td>Python</td>
+          <td>Python SDK — CodeInterpreterClient、AgentRuntimeClient</td>
+          <td class="num">12</td>
+          <td class="num">1,018</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:4.0%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>pkg/router</code></td>
+          <td>Go</td>
+          <td>路由器 — 反向代理、会话管理、JWT 认证</td>
+          <td class="num">11</td>
+          <td class="num">926</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:3.6%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>pkg/picod</code></td>
+          <td>Go</td>
+          <td>PicoD — Sandbox 内守护进程（执行命令、文件管理）</td>
+          <td class="num">10</td>
+          <td class="num">880</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:3.4%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>integrations/dify-plugin</code></td>
+          <td>Python</td>
+          <td>Dify 插件集成</td>
+          <td class="num">13</td>
+          <td class="num">835</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:3.2%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>pkg/store</code></td>
+          <td>Go</td>
+          <td>会话存储 — Redis/Valkey 双后端</td>
+          <td class="num">9</td>
+          <td class="num">775</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:3.0%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>pkg/apis/runtime/v1alpha1</code></td>
+          <td>Go</td>
+          <td>CRD 类型定义 — AgentRuntime、CodeInterpreter</td>
+          <td class="num">5</td>
+          <td class="num">746</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:2.9%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>.github/workflows</code></td>
+          <td>YAML</td>
+          <td>CI/CD — 12 个 GitHub Actions 工作流</td>
+          <td class="num">12</td>
+          <td class="num">536</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:2.1%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>cmd/cli/examples</code></td>
+          <td>Python</td>
+          <td>示例 Agent (hello-agent、math-agent)</td>
+          <td class="num">4</td>
+          <td class="num">431</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:1.7%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>cmd/workload-manager</code></td>
+          <td>Go</td>
+          <td>WorkloadManager 二进制入口</td>
+          <td class="num">1</td>
+          <td class="num">185</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:0.7%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>docker</code></td>
+          <td>Dockerfile</td>
+          <td>容器镜像 — workloadmanager、router、picod</td>
+          <td class="num">4</td>
+          <td class="num">137</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:0.5%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>pkg/common/types</code></td>
+          <td>Go</td>
+          <td>共享 DTO — 请求/响应类型</td>
+          <td class="num">3</td>
+          <td class="num">98</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:0.4%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>pkg/agentd</code></td>
+          <td>Go</td>
+          <td>AgentD — Sandbox 空闲清理控制器</td>
+          <td class="num">3</td>
+          <td class="num">90</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:0.3%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>cmd/router</code></td>
+          <td>Go</td>
+          <td>Router 二进制入口</td>
+          <td class="num">1</td>
+          <td class="num">90</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:0.3%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>pkg/api</code></td>
+          <td>Go</td>
+          <td>API 错误处理</td>
+          <td class="num">2</td>
+          <td class="num">80</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:0.3%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>cmd/agentd</code></td>
+          <td>Go</td>
+          <td>AgentD 二进制入口</td>
+          <td class="num">1</td>
+          <td class="num">71</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:0.3%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>cmd/picod</code></td>
+          <td>Go</td>
+          <td>PicoD 二进制入口</td>
+          <td class="num">1</td>
+          <td class="num">46</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#4C78A8;height:100%;width:0.2%;border-radius:3px;"></div></div></td>
+        </tr></tbody>
+  </table>
+</div>
+
+<h2>六、核心特性列表</h2>
+<div class="card" style="overflow-x:auto;">
+  <table>
+    <thead><tr><th class="num">#</th><th>特性</th><th>说明</th></tr></thead>
+    <tbody><tr><td class='num'>1</td><td><b>AgentRuntime CRD</b></td><td>自定义 AI Agent 运行时资源，支持 PodTemplate 定义、会话超时、最大会话时长</td></tr><tr><td class='num'>2</td><td><b>CodeInterpreter CRD</b></td><td>代码解释器资源，支持预热池 (WarmPool)、PicoD 认证模式、沙箱模板</td></tr><tr><td class='num'>3</td><td><b>Workload Manager</b></td><td>HTTP API 服务：创建/删除 Sandbox、TokenReview 认证、h2c HTTP/2、垃圾回收</td></tr><tr><td class='num'>4</td><td><b>Router 反向代理</b></td><td>基于会话的反向代理：自动创建会话、JWT 授权、并发控制(信号量)、最后活动时间追踪</td></tr><tr><td class='num'>5</td><td><b>Redis/Valkey 会话存储</b></td><td>双后端支持：Redis（默认）和 Valkey，ZSET 过期/活动索引，JSON 序列化</td></tr><tr><td class='num'>6</td><td><b>PicoD 沙箱守护进程</b></td><td>Sandbox 内执行引擎：命令执行(60s超时)、文件上传/下载/列表、RSA JWT 认证</td></tr><tr><td class='num'>7</td><td><b>AgentD 空闲清理</b></td><td>基于 controller-runtime 的 Sandbox 空闲检测与自动清理（15分钟超时）</td></tr><tr><td class='num'>8</td><td><b>Python CLI (kubectl-agentcube)</b></td><td>5 个子命令：pack(打包)、build(构建)、publish(发布)、invoke(调用)、status(状态)</td></tr><tr><td class='num'>9</td><td><b>Python SDK</b></td><td>CodeInterpreterClient + AgentRuntimeClient，支持上下文管理器，连接池</td></tr><tr><td class='num'>10</td><td><b>Helm Chart 部署</b></td><td>一键部署：Router + WorkloadManager + 可选 Volcano Scheduler，完整 RBAC</td></tr><tr><td class='num'>11</td><td><b>Dify 插件集成</b></td><td>Dify 平台代码解释器工具插件，支持会话复用</td></tr><tr><td class='num'>12</td><td><b>CI/CD 管线</b></td><td>12 个 GitHub Actions：构建、发布(ghcr.io)、E2E、lint、测试覆盖、代码生成校验等</td></tr><tr><td class='num'>13</td><td><b>SandboxWarmPool 预热</b></td><td>CodeInterpreter 预创建 Sandbox 池，通过 SandboxClaim 快速分配</td></tr><tr><td class='num'>14</td><td><b>JWT 身份认证</b></td><td>Router ↔ PicoD 之间的 RSA-2048 密钥对管理，自动创建 K8s Secret</td></tr><tr><td class='num'>15</td><td><b>多架构镜像构建</b></td><td>Dockerfile 支持 CGO_ENABLED=0 + TARGETARCH/TARGETOS 多平台构建</td></tr></tbody>
+  </table>
+</div>
+
+<h2>七、HTTP API 端点</h2>
+<div class="card" style="overflow-x:auto;">
+  <table>
+    <thead><tr><th>组件</th><th>方法</th><th>路径</th><th>说明</th></tr></thead>
+    <tbody>
+        <tr><td>Router</td><td>GET</td><td><code>/health/live</code></td><td>存活探针</td></tr>
+        <tr><td>Router</td><td>GET</td><td><code>/health/ready</code></td><td>就绪探针</td></tr>
+        <tr><td>Router</td><td>GET/POST</td><td><code>/v1/namespaces/:ns/agent-runtimes/:name/invocations/*path</code></td><td>Agent 调用</td></tr>
+        <tr><td>Router</td><td>GET/POST</td><td><code>/v1/namespaces/:ns/code-interpreters/:name/invocations/*path</code></td><td>代码解释器调用</td></tr>
+        <tr><td>WorkloadMgr</td><td>GET</td><td><code>/health</code></td><td>健康检查</td></tr>
+        <tr><td>WorkloadMgr</td><td>POST</td><td><code>/v1/agent-runtime</code></td><td>创建 AgentRuntime Sandbox</td></tr>
+        <tr><td>WorkloadMgr</td><td>DELETE</td><td><code>/v1/agent-runtime/sessions/:sessionId</code></td><td>删除 Sandbox</td></tr>
+        <tr><td>WorkloadMgr</td><td>POST</td><td><code>/v1/code-interpreter</code></td><td>创建 CodeInterpreter Sandbox</td></tr>
+        <tr><td>WorkloadMgr</td><td>DELETE</td><td><code>/v1/code-interpreter/sessions/:sessionId</code></td><td>删除 Sandbox</td></tr>
+        <tr><td>PicoD</td><td>POST</td><td><code>/api/execute</code></td><td>执行命令</td></tr>
+        <tr><td>PicoD</td><td>POST</td><td><code>/api/files</code></td><td>上传文件</td></tr>
+        <tr><td>PicoD</td><td>GET</td><td><code>/api/files</code></td><td>列出目录</td></tr>
+        <tr><td>PicoD</td><td>GET</td><td><code>/api/files/*path</code></td><td>下载文件</td></tr>
+        <tr><td>PicoD</td><td>GET</td><td><code>/health</code></td><td>健康检查</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>八、CLI 命令</h2>
+<div class="card" style="overflow-x:auto;">
+  <table>
+    <thead><tr><th>命令</th><th>说明</th><th>主要参数</th></tr></thead>
+    <tbody>
+        <tr><td><code>pack</code></td><td>打包 Agent 工作空间：生成 Dockerfile、元数据文件</td><td>--workspace, --agent-name, --language, --entrypoint, --port</td></tr>
+        <tr><td><code>build</code></td><td>构建 Docker 镜像：自动版本递增</td><td>--workspace, --proxy, --cloud-provider</td></tr>
+        <tr><td><code>publish</code></td><td>发布到集群：AgentRuntime CR 或 K8s Deployment</td><td>--provider (agentcube|k8s), --image-url, --namespace, --node-port</td></tr>
+        <tr><td><code>invoke</code></td><td>调用 Agent：HTTP POST + 会话管理</td><td>--payload, --header, --provider</td></tr>
+        <tr><td><code>status</code></td><td>查询 Agent 部署状态</td><td>--provider</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>九、技术栈</h2>
+<div class="card">
+  <h3>Go (后端核心)</h3>
+  <table>
+    <tr><td>语言版本</td><td>Go 1.24.4 (toolchain 1.24.9)</td></tr>
+    <tr><td>Web 框架</td><td>Gin + h2c HTTP/2</td></tr>
+    <tr><td>Kubernetes</td><td>k8s.io/client-go v0.34.1, controller-runtime v0.22.2, agent-sandbox v0.1.1</td></tr>
+    <tr><td>认证</td><td>golang-jwt/jwt v5 (RSA-2048 RS256)</td></tr>
+    <tr><td>存储</td><td>go-redis v9, valkey-go v1.0.69</td></tr>
+    <tr><td>日志</td><td>klog/v2</td></tr>
+    <tr><td>测试</td><td>testify, miniredis, gomonkey</td></tr>
+    <tr><td>构建</td><td>CGO_ENABLED=0, 多架构 (linux/amd64, linux/arm64)</td></tr>
+  </table>
+
+  <h3 style="margin-top:16px;">Python (CLI + SDK)</h3>
+  <table>
+    <tr><td>语言版本</td><td>Python ≥ 3.10</td></tr>
+    <tr><td>CLI 框架</td><td>Typer + Rich</td></tr>
+    <tr><td>数据校验</td><td>Pydantic ≥ 2.0</td></tr>
+    <tr><td>HTTP 客户端</td><td>httpx (CLI), requests (SDK)</td></tr>
+    <tr><td>容器</td><td>docker SDK ≥ 6.0</td></tr>
+    <tr><td>K8s</td><td>kubernetes ≥ 28.0 (可选)</td></tr>
+    <tr><td>JWT</td><td>PyJWT ≥ 2.0 + cryptography</td></tr>
+  </table>
+
+  <h3 style="margin-top:16px;">基础设施</h3>
+  <table>
+    <tr><td>容器运行时</td><td>Docker / Containerd</td></tr>
+    <tr><td>编排</td><td>Kubernetes ≥ 1.24</td></tr>
+    <tr><td>部署</td><td>Helm 3</td></tr>
+    <tr><td>镜像仓库</td><td>ghcr.io/volcano-sh/*</td></tr>
+    <tr><td>CI/CD</td><td>GitHub Actions (12 工作流)</td></tr>
+    <tr><td>文档</td><td>Docusaurus 3 (TypeScript)</td></tr>
+    <tr><td>代码生成</td><td>controller-gen v0.17.2, k8s.io/code-generator v0.34.1</td></tr>
+  </table>
+</div>
+
+<h2>十、目录结构</h2>
+<div class="card" style="overflow-x:auto;">
+  <table>
+    <thead><tr><th>目录</th><th class="num">文件数</th><th class="num">代码行</th><th>规模</th></tr></thead>
+    <tbody>
+        <tr>
+          <td><code>docs/</code></td>
+          <td class="num">53</td>
+          <td class="num">25,800</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:100.0%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>pkg/</code></td>
+          <td class="num">66</td>
+          <td class="num">13,861</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:53.7%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>manifests/</code></td>
+          <td class="num">10</td>
+          <td class="num">9,591</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:37.2%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>cmd/</code></td>
+          <td class="num">28</td>
+          <td class="num">4,811</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:18.6%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>test/</code></td>
+          <td class="num">9</td>
+          <td class="num">2,512</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:9.7%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>sdk-python/</code></td>
+          <td class="num">23</td>
+          <td class="num">2,015</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:7.8%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>client-go/</code></td>
+          <td class="num">25</td>
+          <td class="num">1,666</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:6.5%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>(root)/</code></td>
+          <td class="num">14</td>
+          <td class="num">1,410</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:5.5%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>example/</code></td>
+          <td class="num">8</td>
+          <td class="num">1,088</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:4.2%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>integrations/</code></td>
+          <td class="num">13</td>
+          <td class="num">835</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:3.2%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>.github/</code></td>
+          <td class="num">18</td>
+          <td class="num">751</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:2.9%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>hack/</code></td>
+          <td class="num">4</td>
+          <td class="num">148</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:0.6%;border-radius:3px;"></div></div></td>
+        </tr>
+        <tr>
+          <td><code>docker/</code></td>
+          <td class="num">4</td>
+          <td class="num">137</td>
+          <td style="width:180px"><div style="background:#eee;border-radius:3px;height:16px;width:100%;"><div style="background:#54A24B;height:100%;width:0.5%;border-radius:3px;"></div></div></td>
+        </tr></tbody>
+  </table>
+</div>
+
+<h2>十一、文件类型分布</h2>
+<div class="card" style="overflow-x:auto;">
+  <table>
+    <thead><tr><th>扩展名</th><th class="num">文件数</th><th class="num">代码行</th></tr></thead>
+    <tbody><tr><td><code>.json</code></td><td class='num'>9</td><td class='num'>19,455</td></tr><tr><td><code>.go</code></td><td class='num'>89</td><td class='num'>17,368</td></tr><tr><td><code>.yaml</code></td><td class='num'>18</td><td class='num'>10,065</td></tr><tr><td><code>.py</code></td><td class='num'>41</td><td class='num'>6,889</td></tr><tr><td><code>.md</code></td><td class='num'>41</td><td class='num'>5,273</td></tr><tr><td><code>(无扩展名)</code></td><td class='num'>25</td><td class='num'>1,235</td></tr><tr><td><code>.jpeg</code></td><td class='num'>1</td><td class='num'>834</td></tr><tr><td><code>.yml</code></td><td class='num'>15</td><td class='num'>716</td></tr><tr><td><code>.sh</code></td><td class='num'>3</td><td class='num'>590</td></tr><tr><td><code>.svg</code></td><td class='num'>6</td><td class='num'>559</td></tr><tr><td><code>.jpg</code></td><td class='num'>1</td><td class='num'>441</td></tr><tr><td><code>.sum</code></td><td class='num'>1</td><td class='num'>323</td></tr><tr><td><code>.ts</code></td><td class='num'>2</td><td class='num'>200</td></tr><tr><td><code>.toml</code></td><td class='num'>3</td><td class='num'>125</td></tr><tr><td><code>.mod</code></td><td class='num'>1</td><td class='num'>120</td></tr><tr><td><code>.tsx</code></td><td class='num'>2</td><td class='num'>115</td></tr><tr><td><code>.css</code></td><td class='num'>3</td><td class='num'>82</td></tr><tr><td><code>.png</code></td><td class='num'>3</td><td class='num'>74</td></tr><tr><td><code>.txt</code></td><td class='num'>7</td><td class='num'>71</td></tr><tr><td><code>.router</code></td><td class='num'>1</td><td class='num'>46</td></tr></tbody>
+  </table>
+</div>
+
+<div class="card" style="margin-top:24px;text-align:center;color:var(--muted);font-size:0.85em;">
+  分析来源：<a href="https://github.com/ShijunDeng/agentcube">github.com/ShijunDeng/agentcube</a> ｜
+  生成时间：2026-03-21 05:27 UTC ｜
+  <a href="https://github.com/ShijunDeng/sdd-benchmark">SDD Benchmark Framework</a>
+</div>
+
+</div>
+</body>
+</html>
