@@ -1,4 +1,4 @@
-# SDD Benchmark: Token Efficiency Baseline Proposal
+# SDD-TEE: Token Efficiency Evaluation Proposal
 
 ## 1. 目标项目分析
 
@@ -22,20 +22,24 @@ AgentCube 是 Volcano 社区的子项目，为 Kubernetes 上的 AI Agent 工作
 ## 2. 方案总体架构
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    SDD Benchmark Pipeline                        │
-├──────────┬──────────┬──────────┬──────────┬────────────────────┤
-│  Stage 0 │  Stage 1 │  Stage 2 │  Stage 3 │     Stage 4        │
-│  项目分析 │  规范逆向 │  SDD开发  │  质量验证 │   数据汇总与对比    │
-└──────────┴──────────┴──────────┴──────────┴────────────────────┘
+┌──────────────────────────────────────────────────────────┐
+│              SDD-TEE Evaluation Pipeline                  │
+│                                                          │
+│  前置（一次性）:  项目技术解析 + 规范逆向生成              │
+│                                                          │
+├──────────────┬──────────────┬────────────────────────────┤
+│   Stage 0    │   Stage 1    │        Stage 2             │
+│   SDD开发    │   质量验证    │    数据汇总与报告生成       │
+└──────────────┴──────────────┴────────────────────────────┘
 ```
 
-### Stage 0: 项目分析 (无 token 消耗)
+### 前置工作 A: 项目技术解析 (一次性，不计入 benchmark)
 - 克隆目标仓库
 - 统计代码量、语言分布、模块结构
-- 输出项目概况文件
+- 输出项目技术解析报告 (HTML)
+- **产出可复用**，后续评测无需重新生成
 
-### Stage 1: 规范逆向生成 (token 消耗追踪)
+### 前置工作 B: 规范逆向生成 (一次性，不计入 benchmark)
 - **工具**: `spec-gen` + DeepWiki + LLM
 - **步骤**:
   1. `spec-gen analyze` — 静态分析代码库，构建依赖图（无 token 消耗）
@@ -44,7 +48,7 @@ AgentCube 是 Volcano 社区的子项目，为 Kubernetes 上的 AI Agent 工作
   4. 人工审核和完善规范文档
 - **输出**: 完整的 OpenSpec 规范集（PRD、API specs、数据模型、架构设计）
 
-### Stage 2: SDD 端到端开发 (核心 token 消耗追踪)
+### Stage 0: SDD 端到端开发 (核心 token 消耗追踪)
 - **工具**: OpenSpec + 各种 AI Coding Assistant
 - **对每个 AI 工具 × 模型组合**:
   1. 创建干净的工作空间
@@ -53,13 +57,13 @@ AgentCube 是 Volcano 社区的子项目，为 Kubernetes 上的 AI Agent 工作
   4. 记录每个阶段的 token 使用量
 - **输出**: 各工具生成的代码 + token 消耗数据
 
-### Stage 3: 质量验证 (可选 token 消耗)
+### Stage 1: 质量验证 (可选 token 消耗)
 - 代码结构对比 (文件数、LOC、目录结构)
 - 功能点覆盖率检查
 - 编译/lint 通过率
 - 测试通过率（如有）
 
-### Stage 4: 数据汇总与可视化
+### Stage 2: 数据汇总与可视化
 - 汇总 JSON/CSV 数据
 - 生成对比图表 (Python matplotlib/plotly)
 

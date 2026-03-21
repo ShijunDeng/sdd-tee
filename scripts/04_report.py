@@ -101,7 +101,7 @@ def generate_comparison_report(runs, validations):
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
     with open(output, "w") as f:
-        f.write("# SDD Benchmark Comparison Report\n\n")
+        f.write("# SDD-TEE Comparison Report\n\n")
         f.write(f"Generated: {timestamp}\n\n")
         f.write(f"Target Project: [agentcube](https://github.com/ShijunDeng/agentcube)\n\n")
 

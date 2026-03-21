@@ -1,15 +1,24 @@
-# SDD Benchmark — Token Efficiency Baseline
+# SDD-TEE — SDD Token Efficiency Evaluation
 
-基于 **Specification-Driven Development (SDD)** 的 Token 消耗与开发效率基线测评框架。
+基于 **Specification-Driven Development (SDD)** 的 Token 效率评估框架。
 
-通过逆向解析真实开源项目 [agentcube](https://github.com/ShijunDeng/agentcube) 的源码生成 OpenSpec 规范，再用不同 AI Coding 工具端到端完成 SDD 开发，量化各阶段的 **token 消耗、耗时、代码质量**，为后续 Token 提效提供评估基线。
+通过逆向解析真实开源项目 [agentcube](https://github.com/ShijunDeng/agentcube) 的源码生成 OpenSpec 规范，再用不同 AI Coding 工具端到端完成 SDD 开发，量化各阶段的 **token 消耗、耗时、代码质量**，为 Token 提效提供评估基线。
 
-## 流水线架构
+## 前置工作（一次性）
+
+以下两项为一次性的前置准备，成果可在后续所有评测中复用，其耗时和 token 消耗不计入 benchmark：
+
+| 前置项 | 说明 | 产出 |
+|--------|------|------|
+| 项目技术解析 | 分析目标项目的代码量、技术栈、模块结构 | `results/reports/project_analysis_report.html` |
+| 规范逆向生成 | 从源码逆向生成 OpenSpec 规范文档 | `specs/` 目录 |
+
+## 评测流水线
 
 ```
-Stage 0        Stage 1          Stage 2         Stage 3        Stage 4
-项目分析  →  规范逆向生成  →  SDD 端到端开发  →  质量验证  →  数据汇总与对比
-(全自动)    (spec-gen+LLM)   (OpenSpec+AI)    (全自动)      (CSV/图表)
+Stage 0           Stage 1            Stage 2          Stage 3
+SDD 端到端开发  →  质量验证        →  数据汇总      →  报告生成
+(OpenSpec+AI)     (全自动对比)      (CSV/JSON)       (HTML/图表)
 ```
 
 ## 快速开始
@@ -50,19 +59,24 @@ make report
 ## 目录结构
 
 ```
-benchmark/
+sdd-tee/
 ├── Makefile                    # 顶层编排
 ├── config.yaml                 # 测评配置（工具、模型、阶段）
 ├── PROPOSAL.md                 # 方案设计文档
 ├── scripts/
-│   ├── 00_analyze_project.sh   # Stage 0: 项目分析
-│   ├── 01_generate_specs.sh    # Stage 1: 规范逆向生成
-│   ├── 02_sdd_develop.sh       # Stage 2: SDD 开发 + Token 追踪
-│   ├── 03_validate.sh          # Stage 3: 质量验证
-│   └── 04_report.py            # Stage 4: 汇总报告 + 图表
-├── specs/                      # 逆向生成的 OpenSpec 规范
+│   ├── 00_analyze_project.sh   # 前置: 项目分析（一次性）
+│   ├── 01_generate_specs.sh    # 前置: 规范逆向生成（一次性）
+│   ├── 02_sdd_develop.sh       # 评测: SDD 开发 + Token 追踪
+│   ├── 03_validate.py          # 评测: 质量验证
+│   ├── 04_report.py            # 评测: 汇总报告 + 图表
+│   ├── 05_generate_html_report.py  # 评测: 详细 HTML 报告
+│   └── 06_project_analysis_report.py  # 前置: 项目技术解析（一次性）
+├── specs/                      # 逆向生成的 OpenSpec 规范（一次性产出，可复用）
 ├── workspaces/                 # 各工具的开发工作空间（运行时生成）
 └── results/                    # 测评结果（运行时生成）
+    ├── project_analysis/       # 项目分析数据（一次性）
+    ├── runs/                   # 每次评测的 JSON 数据
+    └── reports/                # 汇总报告与图表
 ```
 
 ## Token 追踪

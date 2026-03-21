@@ -1,4 +1,4 @@
-# SDD Benchmark: Token Efficiency Baseline
+# SDD-TEE: SDD Token Efficiency Evaluation
 # ==========================================
 # Usage:
 #   make all                          # Run full pipeline (analyze → specs → develop → validate → report)

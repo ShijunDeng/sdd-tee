@@ -1,4 +1,4 @@
-# SDD Benchmark Configuration
+# SDD-TEE (SDD Token Efficiency Evaluation) Configuration
 project:
   name: agentcube
   repo_url: https://github.com/ShijunDeng/agentcube.git

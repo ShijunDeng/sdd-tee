@@ -472,7 +472,7 @@ def render_html(data, source_dir):
 <div class="card" style="margin-top:24px;text-align:center;color:var(--muted);font-size:0.85em;">
   分析来源：<a href="https://github.com/ShijunDeng/agentcube">github.com/ShijunDeng/agentcube</a> ｜
   生成时间：{datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')} ｜
-  <a href="https://github.com/ShijunDeng/sdd-benchmark">SDD Benchmark Framework</a>
+  <a href="https://github.com/ShijunDeng/sdd-tee">SDD-TEE Framework</a>
 </div>
 
 </div>

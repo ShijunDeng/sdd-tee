@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-生成 SDD Benchmark HTML 详细报告。
+生成 SDD-TEE HTML 详细报告。
 支持真实数据和模拟数据两种模式。
 
 Usage:
@@ -428,7 +428,7 @@ def render_html(data):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SDD Benchmark 测评报告 — {project['name']}</title>
+<title>SDD-TEE 测评报告 — {project['name']}</title>
 <style>
   :root {{ --bg: #f8f9fa; --card: #fff; --border: #e0e0e0; --text: #333; --muted: #888; }}
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
@@ -481,7 +481,7 @@ def render_html(data):
 
 {mock_banner}
 
-<h1>SDD Benchmark 测评报告</h1>
+<h1>SDD-TEE 测评报告</h1>
 <p class="desc">基于规范驱动开发 (Specification-Driven Development) 的 Token 效率基线测评</p>
 
 <div class="card">
@@ -577,8 +577,8 @@ def render_html(data):
 
 <div class="card" style="margin-top:24px;text-align:center;color:var(--muted);font-size:0.85em;">
   生成时间：{datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')} ｜
-  工具：SDD Benchmark Framework ｜
-  <a href="https://github.com/ShijunDeng/sdd-benchmark">GitHub</a>
+  工具：SDD-TEE Framework ｜
+  <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
 </div>
 
 </div>
@@ -588,7 +588,7 @@ def render_html(data):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="SDD Benchmark HTML Report Generator")
+    parser = argparse.ArgumentParser(description="SDD-TEE HTML Report Generator")
     parser.add_argument("--mock", action="store_true", help="使用模拟数据生成预览报告")
     parser.add_argument("--data", type=str, help="使用真实数据 JSON 文件")
     parser.add_argument("--output", type=str, default=None, help="输出 HTML 文件路径")
