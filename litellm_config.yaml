@@ -1,0 +1,39 @@
+# LiteLLM Proxy — SDD-TEE Token Tracking Configuration
+# Start: litellm --config litellm_config.yaml --port 4000
+# Docs: https://docs.litellm.ai/docs/proxy/configs
+
+model_list:
+  - model_name: claude-4.6-opus-high-thinking
+    litellm_params:
+      model: anthropic/claude-4.6-opus-high-thinking
+      api_key: os.environ/ANTHROPIC_API_KEY
+      max_tokens: 16384
+
+  - model_name: claude-sonnet-4
+    litellm_params:
+      model: anthropic/claude-sonnet-4-20250514
+      api_key: os.environ/ANTHROPIC_API_KEY
+      max_tokens: 16384
+
+  - model_name: claude-opus-4
+    litellm_params:
+      model: anthropic/claude-opus-4-20250514
+      api_key: os.environ/ANTHROPIC_API_KEY
+      max_tokens: 16384
+
+  - model_name: gpt-4.1
+    litellm_params:
+      model: openai/gpt-4.1
+      api_key: os.environ/OPENAI_API_KEY
+
+litellm_settings:
+  cache: true
+  success_callback: ["langfuse"]
+  store_prompts_in_spend_logs: true
+  num_retries: 2
+  request_timeout: 300
+
+general_settings:
+  master_key: sdd-tee-proxy-key
+  database_url: sqlite:///results/litellm_usage.db
+  store_model_in_db: true

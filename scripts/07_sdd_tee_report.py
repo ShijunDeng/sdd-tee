@@ -601,7 +601,8 @@ def render_html(data):
 <p class="sub">
   SDD Token Efficiency Evaluation &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
   模型: {meta['model']} &nbsp;|&nbsp; 工具: {meta['tool']} &nbsp;|&nbsp;
-  <span style="color:var(--orange)">MOCK DATA</span> &nbsp;|&nbsp; {meta['generated_at'][:19]}Z
+  {'<span style="color:var(--orange)">MOCK DATA</span>' if meta.get('is_mock') else '<span style="color:var(--green)">ACTUAL RUN</span>'} &nbsp;|&nbsp;
+  {meta.get('run_id', '')} &nbsp;|&nbsp; {meta['generated_at'][:19]}Z
 </p>
 
 <div class="toc">
@@ -616,6 +617,21 @@ def render_html(data):
   <a href="#warnings">9. 预警分析</a>
   <a href="#reference">10. 引用与说明</a>
 </div>
+
+{"" if meta.get('is_mock') else f'''
+<div class="card" style="border-left:4px solid var(--primary)">
+  <h3>运行信息</h3>
+  <table>
+    <tr><th style="width:120px">Run ID</th><td><code>{meta.get("run_id","")}</code></td></tr>
+    <tr><th>工具</th><td>{meta["tool"]}</td></tr>
+    <tr><th>模型</th><td>{meta["model"]}</td></tr>
+    <tr><th>开始时间</th><td>{meta.get("started_at","")}</td></tr>
+    <tr><th>结束时间</th><td>{meta.get("completed_at","")}</td></tr>
+    <tr><th>Token 追踪</th><td>{meta.get("token_tracking","")}</td></tr>
+    <tr><th>预制规范</th><td>{meta.get("spec_tokens_total",0):,} tokens (22 OpenSpec 文件)</td></tr>
+  </table>
+</div>
+'''}
 
 <!-- ===================== 1. OVERVIEW ===================== -->
 <h2 id="overview">1. 评测概览</h2>
@@ -828,7 +844,7 @@ def render_html(data):
     <tr><th style="width:150px">方法论</th><td>CodeSpec 7 阶段工作流 (ST-0 ~ ST-7) + OpenSpec OPSX 工具链</td></tr>
     <tr><th>AR 分解粒度</th><td>capability / feature 级别，共 {gt['ar_count']} 个 AR</td></tr>
     <tr><th>指标体系</th><td>5 维：阶段 (ST)、角色 (RT)、效率 (ET)、质量 (QT)、分布 (PT)</td></tr>
-    <tr><th>Token 追踪</th><td>LiteLLM Proxy (统一) + 工具原生 (交叉验证)</td></tr>
+    <tr><th>Token 追踪</th><td>{meta.get('token_tracking', 'LiteLLM Proxy (统一) + 工具原生 (交叉验证)')}</td></tr>
     <tr><th>预制规范处理</th><td>计入 input tokens，标注为"预制规范"单独统计，不计入 RT-HUMAN</td></tr>
     <tr><th>参考基准</th><td>Claude Code ~78K tokens/request, 84% cache, 166:1 I/O ratio (BSWEN 2026)</td></tr>
   </table>
