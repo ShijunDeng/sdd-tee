@@ -20,7 +20,8 @@ WORKSPACE_BASE="$PROJECT_ROOT/workspaces"
 PROXY_PORT="${PROXY_PORT:-4000}"
 
 TIMESTAMP=$(date -u +%Y%m%dT%H%M%SZ)
-RUN_ID="${TOOL}_${MODEL}_${TIMESTAMP}"
+MODEL_SAFE="${MODEL//\//_}"
+RUN_ID="${TOOL}_${MODEL_SAFE}_${TIMESTAMP}"
 WORKSPACE="$WORKSPACE_BASE/$RUN_ID"
 RESULT_FILE="$RESULTS_DIR/${RUN_ID}.json"
 LOG_DIR="$RESULTS_DIR/${RUN_ID}_logs"
@@ -204,38 +205,46 @@ except Exception as e:
 run_with_opencode_cli() {
     local stage="$1"
     local prompt="$2"
+    local raw_file="$LOG_DIR/${stage}_raw.json"
     local log_file="$LOG_DIR/${stage}.log"
     local stage_start stage_end
 
     stage_start=$(date +%s)
-    echo "  [$stage] opencode run ..."
+    echo "  [$stage] opencode run --model $MODEL ..."
 
-    cd "$WORKSPACE"
-    opencode run "$prompt" > "$log_file" 2>&1 || true
-    cd - > /dev/null
+    timeout 600 opencode run --model "$MODEL" --format json --dir "$WORKSPACE" "$prompt" \
+        < /dev/null > "$raw_file" 2>"$log_file" || true
 
     stage_end=$(date +%s)
     local dur=$((stage_end - stage_start))
     echo "  [$stage] ${dur}s"
 
-    # Try to get token stats from opencode
-    local stats_json
-    stats_json=$(cd "$WORKSPACE" && opencode stats --json 2>/dev/null || echo "{}")
-
     python3 -c "
-import json
-stats = {}
+import json, sys
+total_in, total_out = 0, 0
+cost = 0
 try:
-    stats = json.loads('''$stats_json''')
-except:
+    with open('$raw_file') as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                obj = json.loads(line)
+                u = obj.get('usage', {})
+                if u:
+                    total_in += u.get('input_tokens', u.get('prompt_tokens', 0))
+                    total_out += u.get('output_tokens', u.get('completion_tokens', 0))
+                    cost += u.get('cost', 0)
+            except (json.JSONDecodeError, AttributeError):
+                pass
+except Exception:
     pass
 print(json.dumps({
     'stage': '$stage', 'duration_seconds': $dur, 'tool': 'opencode-cli',
-    'input_tokens': stats.get('input_tokens', 0),
-    'output_tokens': stats.get('output_tokens', 0),
-    'cache_read_tokens': stats.get('cache_read_tokens', 0),
-    'cache_write_tokens': stats.get('cache_write_tokens', 0),
-    'cost_usd': stats.get('cost', 0)
+    'input_tokens': total_in, 'output_tokens': total_out,
+    'cache_read_tokens': 0, 'cache_write_tokens': 0,
+    'cost_usd': cost
 }))
 "
 }
@@ -302,8 +311,9 @@ PHASE 1 - Planning & Design:
 2. Create PLAN.md documenting: directory structure, file list per AR, dependencies
 3. For each AR, define the precise files to create and their interfaces
 4. List all Go packages, Python modules, YAML manifests needed
+5. For each package/module, plan corresponding unit test files (*_test.go, test_*.py)
 
-Be thorough. Every file that needs creating must be listed."
+Be thorough. Every file that needs creating must be listed, including test files."
 
     PLAN_RESULT=$($RUNNER "round${ROUND_NUM}_planning" "$PLANNING_PROMPT" 2>/dev/null || echo '{}')
     echo "$PLAN_RESULT" > "$LOG_DIR/round${ROUND_NUM}_planning.json"
@@ -315,10 +325,17 @@ Implement these ARs: ${AR_LIST}
 
 Create all necessary source files with production-quality code:
 - Go: CRD types, controllers, router, workload manager, scheduler, picod, agentd, client-go
-- Python: CLI commands (Click-based), SDK clients, tests
+- Python: CLI commands (Click-based), SDK clients
 - YAML: Kubernetes CRDs, Helm charts, CI workflows
 - Docker: Multi-stage Dockerfiles
 - Build: Makefile, go.mod, pyproject.toml
+
+IMPORTANT - Unit Tests (UT):
+For every package/module implemented, create corresponding unit test files:
+- Go: *_test.go files with table-driven tests using testing package
+- Python: test_*.py files using pytest, with fixtures and parametrize
+- Cover core logic, edge cases, and error paths
+- Target >= 70% code coverage for critical paths
 
 Follow the specs precisely. Include proper error handling, logging, and comments."
 
@@ -334,6 +351,8 @@ Verify and fix:
 3. Kubernetes YAML is valid
 4. Consistency between modules (types match across packages)
 5. Missing files referenced in go.mod or imports
+6. Unit tests exist for all major packages — add any missing tests
+7. Run 'go vet ./...' and 'python3 -m py_compile' on generated files where possible
 
 List any remaining issues and fix them."
 

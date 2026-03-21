@@ -1,1 +1,1 @@
-当前处于cursor的cli环境，已经通过认证了，请先进行cursor的测试
+使用环境上的opencode进行下一轮测试，当前opencode配置的是GLM-5模型;注意UT也要包含在内
