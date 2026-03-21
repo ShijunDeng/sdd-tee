@@ -1,0 +1,63 @@
+# SDD Benchmark Configuration
+project:
+  name: agentcube
+  repo_url: https://github.com/ShijunDeng/agentcube.git
+  deepwiki_url: https://deepwiki.com/ShijunDeng/agentcube
+
+tools:
+  - name: claude-code
+    type: cli
+    command: claude
+    automatable: true
+    token_tracking: native  # OpenTelemetry + SDK
+  - name: aider
+    type: cli
+    command: aider
+    automatable: true
+    token_tracking: native  # .aider.chat.history.md
+  # - name: cursor
+  #   type: ide
+  #   automatable: false
+  #   token_tracking: manual
+
+models:
+  - id: claude-sonnet-4-20250514
+    provider: anthropic
+    name: Claude Sonnet 4
+  - id: claude-opus-4-20250514
+    provider: anthropic
+    name: Claude Opus 4
+  - id: gpt-4.1
+    provider: openai
+    name: GPT-4.1
+  # - id: gemini-2.5-pro
+  #   provider: google
+  #   name: Gemini 2.5 Pro
+  # - id: deepseek-r1
+  #   provider: deepseek
+  #   name: DeepSeek R1
+
+stages:
+  - id: spec_generation
+    name: 规范逆向生成
+    description: 从源码逆向生成 OpenSpec 规范文档
+  - id: planning
+    name: 开发规划
+    description: 基于规范生成开发计划和任务分解
+  - id: implementation
+    name: 代码实现
+    description: 基于规范和计划生成代码
+  - id: validation
+    name: 质量验证
+    description: 验证生成代码的质量和一致性
+
+litellm_proxy:
+  enabled: true
+  port: 4000
+  log_format: json
+  db_path: ./results/litellm_usage.db
+
+output:
+  runs_dir: ./results/runs
+  reports_dir: ./results/reports
+  format: json
