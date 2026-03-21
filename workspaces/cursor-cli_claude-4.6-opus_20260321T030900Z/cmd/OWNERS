@@ -1,0 +1,7 @@
+# See https://github.com/kubernetes/community/blob/master/contributors/guide/owners.md
+
+approvers:
+  - agentcube-maintainers
+
+reviewers:
+  - agentcube-reviewers

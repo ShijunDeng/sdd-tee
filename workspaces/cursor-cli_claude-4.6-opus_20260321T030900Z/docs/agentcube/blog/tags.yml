@@ -1,0 +1,24 @@
+release:
+  label: Release
+  permalink: /release/
+  description: AgentCube and chart releases
+
+announcement:
+  label: Announcement
+  permalink: /announcement/
+  description: Project news and milestones
+
+kubernetes:
+  label: Kubernetes
+  permalink: /kubernetes/
+  description: Kubernetes scheduling, CRDs, and operations
+
+security:
+  label: Security
+  permalink: /security/
+  description: Authentication, isolation, and hardening
+
+sdk:
+  label: SDK
+  permalink: /sdk/
+  description: Python SDK and developer tooling

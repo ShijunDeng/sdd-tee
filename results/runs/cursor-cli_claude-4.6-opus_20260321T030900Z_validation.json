@@ -1,6 +1,6 @@
 {
   "run_id": "cursor-cli_claude-4.6-opus_20260321T030900Z",
-  "timestamp": "2026-03-21T03:31:28Z",
+  "timestamp": "2026-03-21T03:46:02Z",
   "original": {
     "files": 275,
     "loc": 64625,
@@ -31,84 +31,88 @@
     }
   },
   "generated": {
-    "files": 110,
-    "loc": 8199,
+    "files": 362,
+    "loc": 36918,
     "extensions": {
-      ".no_ext": 6,
+      ".json": 45,
+      ".no_ext": 19,
       ".toml": 3,
-      ".json": 1,
       ".sum": 1,
-      ".md": 4,
-      ".yml": 10,
+      ".md": 37,
+      ".yml": 15,
       ".mod": 1,
-      ".yaml": 9,
+      ".yaml": 12,
       ".tpl": 1,
-      ".go": 34,
-      ".py": 31,
-      ".txt": 5,
+      ".go": 75,
+      ".py": 43,
+      ".txt": 8,
       ".picod": 1,
       ".router": 1,
-      ".sh": 2
+      ".ts": 2,
+      ".js": 52,
+      ".mjs": 1,
+      ".css": 6,
+      ".tsx": 2,
+      ".svg": 4,
+      ".html": 25,
+      ".xml": 3,
+      ".xsl": 2,
+      ".sh": 3
     }
   },
   "comparison": {
-    "file_count_ratio": 0.4,
-    "loc_ratio": 0.1269,
-    "directory_similarity": 0.5645,
-    "common_directories": 35,
+    "file_count_ratio": 1.3164,
+    "loc_ratio": 0.5713,
+    "directory_similarity": 0.9194,
+    "common_directories": 57,
     "total_original_directories": 62,
-    "file_overlap_ratio": 0.3273,
-    "common_files": 90,
+    "file_overlap_ratio": 0.7127,
+    "common_files": 196,
     "total_original_files": 275,
     "extension_comparison": {
       ".go": {
         "original": 89,
-        "generated": 34,
-        "ratio": 0.38
+        "generated": 75,
+        "ratio": 0.84
       },
       ".py": {
         "original": 41,
-        "generated": 31,
-        "ratio": 0.76
+        "generated": 43,
+        "ratio": 1.05
       },
       ".md": {
         "original": 41,
-        "generated": 4,
-        "ratio": 0.1
+        "generated": 37,
+        "ratio": 0.9
       },
       ".no_ext": {
         "original": 25,
-        "generated": 6,
-        "ratio": 0.24
+        "generated": 19,
+        "ratio": 0.76
       },
       ".yaml": {
         "original": 18,
-        "generated": 9,
-        "ratio": 0.5
+        "generated": 12,
+        "ratio": 0.67
       },
       ".yml": {
         "original": 15,
-        "generated": 10,
-        "ratio": 0.67
+        "generated": 15,
+        "ratio": 1.0
       },
       ".json": {
         "original": 9,
-        "generated": 1,
-        "ratio": 0.11
+        "generated": 45,
+        "ratio": 5.0
       },
       ".txt": {
         "original": 7,
-        "generated": 5,
-        "ratio": 0.71
+        "generated": 8,
+        "ratio": 1.14
       },
       ".svg": {
         "original": 6,
-        "generated": 0,
-        "ratio": 0.0
-      },
-      ".sh": {
-        "original": 3,
-        "generated": 2,
+        "generated": 4,
         "ratio": 0.67
       },
       ".toml": {
@@ -116,47 +120,37 @@
         "generated": 3,
         "ratio": 1.0
       },
+      ".sh": {
+        "original": 3,
+        "generated": 3,
+        "ratio": 1.0
+      },
       ".css": {
         "original": 3,
-        "generated": 0,
-        "ratio": 0.0
+        "generated": 6,
+        "ratio": 2.0
       },
       ".png": {
         "original": 3,
         "generated": 0,
         "ratio": 0.0
       },
-      ".tsx": {
-        "original": 2,
-        "generated": 0,
-        "ratio": 0.0
-      },
       ".ts": {
         "original": 2,
-        "generated": 0,
-        "ratio": 0.0
+        "generated": 2,
+        "ratio": 1.0
       },
-      ".jpg": {
-        "original": 1,
-        "generated": 0,
-        "ratio": 0.0
+      ".tsx": {
+        "original": 2,
+        "generated": 2,
+        "ratio": 1.0
       },
       ".sum": {
         "original": 1,
         "generated": 1,
         "ratio": 1.0
       },
-      ".mod": {
-        "original": 1,
-        "generated": 1,
-        "ratio": 1.0
-      },
-      ".router": {
-        "original": 1,
-        "generated": 1,
-        "ratio": 1.0
-      },
-      ".jpeg": {
+      ".in": {
         "original": 1,
         "generated": 0,
         "ratio": 0.0
@@ -166,13 +160,53 @@
         "generated": 0,
         "ratio": 0.0
       },
-      ".in": {
+      ".router": {
+        "original": 1,
+        "generated": 1,
+        "ratio": 1.0
+      },
+      ".picod": {
+        "original": 1,
+        "generated": 1,
+        "ratio": 1.0
+      },
+      ".jpg": {
         "original": 1,
         "generated": 0,
         "ratio": 0.0
       },
-      ".picod": {
+      ".jpeg": {
         "original": 1,
+        "generated": 0,
+        "ratio": 0.0
+      },
+      ".mod": {
+        "original": 1,
+        "generated": 1,
+        "ratio": 1.0
+      },
+      ".xsl": {
+        "original": 0,
+        "generated": 2,
+        "ratio": 2.0
+      },
+      ".html": {
+        "original": 0,
+        "generated": 25,
+        "ratio": 25.0
+      },
+      ".js": {
+        "original": 0,
+        "generated": 52,
+        "ratio": 52.0
+      },
+      ".xml": {
+        "original": 0,
+        "generated": 3,
+        "ratio": 3.0
+      },
+      ".mjs": {
+        "original": 0,
         "generated": 1,
         "ratio": 1.0
       },
@@ -184,35 +218,15 @@
     }
   },
   "checks": {
-    "python_syntax_ok": 31,
+    "python_syntax_ok": 43,
     "python_syntax_fail": 0,
     "python_syntax_rate": 1.0,
     "python_syntax_errors": [],
-    "yaml_syntax_ok": 14,
-    "yaml_syntax_fail": 5,
-    "yaml_syntax_rate": 0.7368,
-    "yaml_syntax_errors": [
-      {
-        "file": "manifests/charts/base/templates/workloadmanager.yaml",
-        "error": "while scanning a simple key\n  in \"/home/dsj/benchmark/workspaces/cursor-cli_claude-4.6-opus_20260321T030900Z/manifests/charts/base/templates/workloadmanager.yaml\", line 9, column 5\ncould not find expe"
-      },
-      {
-        "file": "manifests/charts/base/templates/volcano-agent-scheduler-development.yaml",
-        "error": "while parsing a flow node\nexpected the node content, but found '-'\n  in \"/home/dsj/benchmark/workspaces/cursor-cli_claude-4.6-opus_20260321T030900Z/manifests/charts/base/templates/volcano-agent-schedu"
-      },
-      {
-        "file": "manifests/charts/base/templates/rbac-router.yaml",
-        "error": "while parsing a flow node\nexpected the node content, but found '-'\n  in \"/home/dsj/benchmark/workspaces/cursor-cli_claude-4.6-opus_20260321T030900Z/manifests/charts/base/templates/rbac-router.yaml\", l"
-      },
-      {
-        "file": "manifests/charts/base/templates/agentcube-router.yaml",
-        "error": "while scanning a simple key\n  in \"/home/dsj/benchmark/workspaces/cursor-cli_claude-4.6-opus_20260321T030900Z/manifests/charts/base/templates/agentcube-router.yaml\", line 9, column 5\ncould not find exp"
-      },
-      {
-        "file": "manifests/charts/base/templates/rbac/workloadmanager.yaml",
-        "error": "while constructing a mapping\n  in \"/home/dsj/benchmark/workspaces/cursor-cli_claude-4.6-opus_20260321T030900Z/manifests/charts/base/templates/rbac/workloadmanager.yaml\", line 4, column 9\nfound unhasha"
-      }
-    ],
+    "yaml_syntax_ok": 22,
+    "yaml_syntax_fail": 0,
+    "yaml_syntax_rate": 1.0,
+    "yaml_helm_templates_skipped": 5,
+    "yaml_syntax_errors": [],
     "key_files_total": 25,
     "key_files_present": 25,
     "key_files_rate": 1.0,

@@ -1,0 +1,31 @@
+author: volcano-sh
+created_at: "2026-03-21T00:00:00Z"
+description:
+  en_US: AgentCube remote code interpreter integration for Dify workflows.
+icon: icon.svg
+label:
+  en_US: AgentCube Code Interpreter
+meta:
+  arch:
+    - amd64
+    - arm64
+  runner:
+    entrypoint: main
+    language: python
+    version: "3.12"
+  version: 0.1.0
+  minimum_dify_version: 1.0.0
+name: agentcube-code-interpreter
+plugins:
+  tools:
+    - provider/agentcube.yaml
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+tags:
+  - utilities
+  - agentcube
+type: plugin
+version: 0.1.0

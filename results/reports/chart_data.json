@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-03-21T03:34:07.849754+00:00",
+  "generated_at": "2026-03-21T03:46:38.982551+00:00",
   "runs": [
     {
       "label": "cursor-cli+claude-4.6-opus",
       "tool": "cursor-cli",
       "model": "claude-4.6-opus",
-      "total_duration_s": 1579,
-      "files_generated": 110,
-      "loc_generated": 8199,
-      "file_count_ratio": 0.4,
-      "loc_ratio": 0.1269,
-      "directory_similarity": 0.5645,
-      "file_overlap_ratio": 0.3273,
+      "total_duration_s": 2400,
+      "files_generated": 362,
+      "loc_generated": 36918,
+      "file_count_ratio": 1.3164,
+      "loc_ratio": 0.5713,
+      "directory_similarity": 0.9194,
+      "file_overlap_ratio": 0.7127,
       "key_files_rate": 1.0,
       "python_syntax_rate": 1.0,
-      "yaml_syntax_rate": 0.7368,
+      "yaml_syntax_rate": 1.0,
       "stages": {
         "project_analysis": {
           "duration_seconds": 7
@@ -23,7 +23,7 @@
           "duration_seconds": 194
         },
         "sdd_development": {
-          "duration_seconds": 913
+          "duration_seconds": 1412
         },
         "validation": {
           "duration_seconds": 451

@@ -91,21 +91,29 @@ def check_yaml_syntax(directory):
     try:
         import yaml
     except ImportError:
-        return -1, 0, []
+        return -1, 0, [], 0
 
     ok = 0
     fail = 0
+    skipped_helm = 0
     errors = []
     for fpath in walk_files(directory):
         if fpath.endswith(('.yaml', '.yml')):
+            rel = os.path.relpath(fpath, directory)
+            # Helm templates contain Go template syntax ({{ }}) which is not valid YAML
+            is_helm_template = '/templates/' in rel
             try:
                 with open(fpath) as f:
-                    list(yaml.safe_load_all(f))
+                    content = f.read()
+                if is_helm_template and '{{' in content:
+                    skipped_helm += 1
+                    continue
+                list(yaml.safe_load_all(content))
                 ok += 1
             except Exception as e:
                 fail += 1
-                errors.append({'file': os.path.relpath(fpath, directory), 'error': str(e)[:200]})
-    return ok, fail, errors
+                errors.append({'file': rel, 'error': str(e)[:200]})
+    return ok, fail, errors, skipped_helm
 
 
 def main():
@@ -161,12 +169,13 @@ def main():
 
     # YAML syntax check
     print("Checking YAML syntax...")
-    yaml_ok, yaml_fail, yaml_errors = check_yaml_syntax(workspace)
+    yaml_ok, yaml_fail, yaml_errors, yaml_helm_skipped = check_yaml_syntax(workspace)
     if yaml_ok >= 0:
         yaml_rate = round(yaml_ok / max(yaml_ok + yaml_fail, 1), 4)
-        print(f"  YAML: {yaml_ok} OK, {yaml_fail} FAIL ({yaml_rate*100:.1f}%)")
+        print(f"  YAML: {yaml_ok} OK, {yaml_fail} FAIL, {yaml_helm_skipped} Helm templates skipped ({yaml_rate*100:.1f}%)")
     else:
         yaml_rate = -1
+        yaml_helm_skipped = 0
         print("  YAML: skipped (pyyaml not installed)")
 
     # Key file presence check
@@ -231,6 +240,7 @@ def main():
             "yaml_syntax_ok": yaml_ok,
             "yaml_syntax_fail": yaml_fail,
             "yaml_syntax_rate": yaml_rate,
+            "yaml_helm_templates_skipped": yaml_helm_skipped,
             "yaml_syntax_errors": yaml_errors[:10],
             "key_files_total": len(key_files),
             "key_files_present": key_files_present,

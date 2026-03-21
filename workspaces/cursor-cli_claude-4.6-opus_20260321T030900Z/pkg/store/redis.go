@@ -161,6 +161,14 @@ func (s *redisStore) Close() error {
 	return s.rdb.Close()
 }
 
+// NewRedisStoreFromClient wraps an existing go-redis client as a Store (tests, custom wiring).
+func NewRedisStoreFromClient(c *redis.Client) Store {
+	if c == nil {
+		return nil
+	}
+	return &redisStore{rdb: c}
+}
+
 func parseBoolEnv(s string, def bool) bool {
 	if strings.TrimSpace(s) == "" {
 		return def

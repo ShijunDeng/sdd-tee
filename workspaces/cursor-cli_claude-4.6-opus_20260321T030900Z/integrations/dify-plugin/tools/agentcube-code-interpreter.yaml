@@ -1,0 +1,71 @@
+description:
+  human:
+    en_US: Run Python (or other language) code and/or shell commands in an AgentCube code interpreter.
+  llm: Executes code or shell commands remotely using AgentCube CodeInterpreter sessions.
+extra:
+  python:
+    source: tools/agentcube-code-interpreter.py
+identity:
+  author: volcano-sh
+  icon: icon.svg
+  label:
+    en_US: AgentCube Code Interpreter
+  name: agentcube_code_interpreter
+parameters:
+  - name: language
+    type: string
+    required: false
+    default: python
+    label:
+      en_US: Language
+    human_description:
+      en_US: Interpreter language passed to the run-code API (e.g. python, javascript).
+    llm_description: Language for the code cell when using run-code.
+    form: llm
+  - name: code
+    type: string
+    required: false
+    label:
+      en_US: Code
+    human_description:
+      en_US: Source code executed via the interpreter run-code API.
+    llm_description: Optional code snippet to execute remotely.
+    form: llm
+  - name: command
+    type: string
+    required: false
+    label:
+      en_US: Shell command
+    human_description:
+      en_US: Shell command executed in the sandbox (e.g. tshark, ls).
+    llm_description: Optional shell command to run in the sandbox workspace.
+    form: llm
+  - name: cwd
+    type: string
+    required: false
+    label:
+      en_US: Working directory
+    human_description:
+      en_US: Remote working directory for execute-command.
+    llm_description: Optional cwd for the shell command.
+    form: llm
+  - name: session_reuse
+    type: boolean
+    required: false
+    default: false
+    label:
+      en_US: Keep interpreter session
+    human_description:
+      en_US: When true and interpreter_id is set, skips delete_session after the call so you can chain commands.
+    llm_description: >-
+      If true together with interpreter_id, the remote session is not torn down after this invocation.
+    form: llm
+  - name: interpreter_id
+    type: string
+    required: false
+    label:
+      en_US: Existing interpreter id
+    human_description:
+      en_US: Attach to an existing interpreter instead of creating a new session.
+    llm_description: Optional interpreter id from a previous tool response for reuse.
+    form: llm

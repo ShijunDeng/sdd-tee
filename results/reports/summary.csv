@@ -1,2 +1,2 @@
 run_id,tool,model,timestamp,total_duration_s,stage0_analysis_s,stage1_spec_gen_s,stage2_sdd_dev_s,stage3_validate_s,files_generated,loc_generated,original_files,original_loc,file_count_ratio,loc_ratio,directory_similarity,file_overlap_ratio,key_files_rate,python_syntax_rate,yaml_syntax_rate
-cursor-cli_claude-4.6-opus_20260321T030900Z,cursor-cli,claude-4.6-opus,2026-03-21T03:05:14Z,1579,7,194,913,451,110,8199,275,64625,0.4,0.1269,0.5645,0.3273,1.0,1.0,0.7368
+cursor-cli_claude-4.6-opus_20260321T030900Z,cursor-cli,claude-4.6-opus,2026-03-21T03:05:14Z,2400,7,194,1412,451,362,36918,275,64625,1.3164,0.5713,0.9194,0.7127,1.0,1.0,1.0
