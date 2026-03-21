@@ -38,7 +38,7 @@ ST-7  /opsx:archive → 归档 + spec 合并   (合并归档)
 | 前置项 | 产出 |
 |--------|------|
 | 项目技术解析 | [`results/reports/project_analysis_report.html`](results/reports/project_analysis_report.html) |
-| 规范逆向生成 | `specs/` 目录（3 份结构化规范） |
+| 规范逆向生成 | `specs/` 目录（10 个 capability，22 份 OpenSpec 规范） |
 
 ## 快速开始
 
@@ -74,7 +74,10 @@ sdd-tee/
 │   ├── 05_aggregate.py         # 评测：CSV/Markdown 汇总
 │   ├── 06_project_report.py    # 前置：项目技术解析 HTML 报告
 │   └── 07_sdd_tee_report.py    # 评测：综合 HTML 报告（5 维指标）
-├── specs/                      # 逆向生成的 OpenSpec 规范（一次性产出）
+├── specs/                      # 逆向生成的 OpenSpec 规范（capability-based，一次性产出）
+│   ├── project.md              # 项目上下文（技术栈、架构、约定）
+│   ├── {capability}/spec.md    # 需求规范（SHALL/MUST + GIVEN/WHEN/THEN 场景）
+│   └── {capability}/design.md  # 技术设计（类型定义、接口、常量、路由）
 ├── workspaces/                 # 各评测轮次的生成代码
 └── results/
     ├── project_analysis/       # 项目分析原始数据

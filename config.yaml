@@ -47,6 +47,22 @@ models:
   - {id: gpt-4.1, provider: openai, name: GPT-4.1}
 
 spec_context:
+  format: OpenSpec (capability-based)
+  directory: specs/
+  capabilities:
+    - sandbox-orchestration
+    - session-routing
+    - code-execution
+    - session-store
+    - idle-cleanup
+    - cli-toolkit
+    - python-sdk
+    - deployment
+    - ci-cd
+    - integrations
+  files_per_capability: [spec.md, design.md]
+  total_requirements: 117
+  total_scenarios: 172
   treatment: "计入 input tokens，标注为'预制规范'，单独统计"
   not_counted_as: RT-HUMAN
 
