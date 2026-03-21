@@ -1,81 +1,45 @@
 # SDD-TEE: SDD Token Efficiency Evaluation
-# ==========================================
-# Usage:
-#   make all                          # Run full pipeline (analyze → specs → develop → validate → report)
-#   make run TOOL=claude-code MODEL=claude-sonnet-4-20250514
-#   make run TOOL=aider MODEL=claude-sonnet-4-20250514
-#   make report                       # Regenerate comparison reports
-#   make matrix                       # Run all tool×model combinations
+# CodeSpec 7-Stage × OpenSpec OPSX
 
-SHELL := /bin/bash
+TOOL     ?= claude-code
+MODEL    ?= claude-sonnet-4-20250514
+SPECS    := specs
+RESULTS  := results
+RUNS     := $(RESULTS)/runs
+REPORTS  := $(RESULTS)/reports
 
-TOOL ?= claude-code
-MODEL ?= claude-sonnet-4-20250514
-SPECS_DIR ?= ./specs
-SOURCE_DIR ?= /tmp/agentcube-benchmark-source
+.PHONY: all prerequisites run report mock clean help
 
-.PHONY: all analyze specs develop validate report clean matrix setup
+all: prerequisites run report  ## Full pipeline: prerequisites → evaluate → report
 
-# ---- Setup ----
-setup:
-	@echo "=== Installing dependencies ==="
-	command -v node >/dev/null || (echo "ERROR: Node.js 20+ required"; exit 1)
-	command -v python3 >/dev/null || (echo "ERROR: Python 3.10+ required"; exit 1)
-	npm install -g @fission-ai/openspec@latest 2>/dev/null || true
-	pip install matplotlib 2>/dev/null || true
-	@echo "Setup complete."
+# --- Prerequisites (one-time) ---
+prerequisites: $(RESULTS)/project_analysis/analysis.json $(SPECS)/01_go_specification.md
 
-# ---- Full Pipeline ----
-all: analyze specs develop validate report
+$(RESULTS)/project_analysis/analysis.json:
+	bash scripts/01_analyze_project.sh
 
-# ---- Stage 0: Analyze ----
-analyze:
-	@bash scripts/00_analyze_project.sh "$(SOURCE_DIR)" ./results/project_analysis
+$(SPECS)/01_go_specification.md:
+	bash scripts/02_generate_specs.sh
 
-# ---- Stage 1: Generate Specs ----
-specs:
-	@bash scripts/01_generate_specs.sh "$(SOURCE_DIR)" "$(SPECS_DIR)"
+# --- Evaluation ---
+run:  ## Run SDD evaluation (TOOL=xxx MODEL=xxx)
+	bash scripts/03_sdd_develop.sh $(TOOL) $(MODEL)
+	python3 scripts/04_validate.py
+	python3 scripts/05_aggregate.py
 
-# ---- Stage 2: SDD Development ----
-develop:
-	@bash scripts/02_sdd_develop.sh "$(TOOL)" "$(MODEL)" "$(SPECS_DIR)"
+# --- Reporting ---
+report:  ## Generate HTML reports
+	python3 scripts/07_sdd_tee_report.py --data $(RUNS)/*.json --output $(REPORTS)/sdd_tee_report.html
 
-# ---- Stage 3: Validate ----
-validate:
-	@echo "Validating latest workspace for $(TOOL) + $(MODEL)..."
-	@LATEST=$$(ls -td workspaces/$(TOOL)_$(MODEL)_* 2>/dev/null | head -1); \
-	if [ -n "$$LATEST" ]; then \
-		bash scripts/03_validate.sh "$$LATEST" "$(SOURCE_DIR)"; \
-	else \
-		echo "No workspace found for $(TOOL)_$(MODEL)_*"; \
-	fi
+mock:  ## Generate mock data report (preview)
+	python3 scripts/07_sdd_tee_report.py --mock
 
-# ---- Stage 4: Report ----
-report:
-	@python3 scripts/04_report.py ./results
+project-report:  ## Generate project analysis HTML report
+	python3 scripts/06_project_report.py
 
-# ---- Run a single tool×model combination ----
-run: develop validate report
+# --- Maintenance ---
+clean:  ## Remove generated results (keeps specs)
+	rm -rf $(RUNS)/*.json $(REPORTS)/*.html $(REPORTS)/*.json workspaces/
 
-# ---- Run all configured combinations ----
-TOOLS := claude-code aider
-MODELS := claude-sonnet-4-20250514
-
-matrix:
-	@for tool in $(TOOLS); do \
-		for model in $(MODELS); do \
-			echo ""; \
-			echo "========================================"; \
-			echo "Running: $$tool + $$model"; \
-			echo "========================================"; \
-			$(MAKE) run TOOL=$$tool MODEL=$$model || true; \
-		done; \
-	done
-	@$(MAKE) report
-
-# ---- Utilities ----
-clean:
-	rm -rf workspaces/* results/runs/* results/reports/*
-
-clean-all: clean
-	rm -rf specs/* results/*
+help:  ## Show this help
+	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-18s\033[0m %s\n", $$1, $$2}'

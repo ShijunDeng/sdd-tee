@@ -1,55 +1,60 @@
-# SDD-TEE (SDD Token Efficiency Evaluation) Configuration
+# SDD-TEE (SDD Token Efficiency Evaluation) Configuration v2
+# CodeSpec 7-Stage × OpenSpec OPSX
+
 project:
   name: agentcube
   repo_url: https://github.com/ShijunDeng/agentcube.git
   deepwiki_url: https://deepwiki.com/ShijunDeng/agentcube
 
+methodology:
+  framework: CodeSpec 7-Stage Workflow
+  toolchain: OpenSpec OPSX
+  ar_granularity: capability/feature level
+  stages:
+    - {id: ST-0, name: AR 输入, opsx: "/opsx:new", artifact: "变更目录"}
+    - {id: ST-1, name: 需求澄清, opsx: "/opsx:ff → proposal", artifact: "proposal.md"}
+    - {id: ST-2, name: Spec 增量设计, opsx: "/opsx:ff → specs", artifact: "delta-spec.md"}
+    - {id: ST-3, name: Design 增量设计, opsx: "/opsx:ff → design", artifact: "design.md"}
+    - {id: ST-4, name: 任务拆解, opsx: "/opsx:ff → tasks", artifact: "tasks.md"}
+    - {id: ST-5, name: 开发实现, opsx: "/opsx:apply", artifact: "代码文件"}
+    - {id: ST-6, name: 合并归档, opsx: "/opsx:archive", artifact: "归档 + spec 合并"}
+    - {id: ST-7, name: 一致性验证, opsx: "/opsx:verify", artifact: "验证报告"}
+
+metrics:
+  stage: [ST-0, ST-1, ST-2, ST-3, ST-4, ST-5, ST-6, ST-7]
+  role: [RT-AI, RT-HUMAN, RT-RATIO, RT-ITER]
+  efficiency: [ET-LOC, ET-FILE, ET-TASK, ET-AR, ET-TIME]
+  quality: [QT-COV, QT-CONSIST, QT-AVAIL, QT-BUG]
+  distribution: [PT-DESIGN, PT-DEV, PT-VERIFY, PT-PEAK]
+
 tools:
   - name: claude-code
     type: cli
     command: claude
-    automatable: true
-    token_tracking: native  # OpenTelemetry + SDK
+    token_tracking: native  # OpenTelemetry
   - name: aider
     type: cli
     command: aider
-    automatable: true
     token_tracking: native  # .aider.chat.history.md
-  # - name: cursor
-  #   type: ide
-  #   automatable: false
-  #   token_tracking: manual
+  - name: cursor-cli
+    type: ide
+    command: cursor
+    token_tracking: limited
 
 models:
-  - id: claude-sonnet-4-20250514
-    provider: anthropic
-    name: Claude Sonnet 4
-  - id: claude-opus-4-20250514
-    provider: anthropic
-    name: Claude Opus 4
-  - id: gpt-4.1
-    provider: openai
-    name: GPT-4.1
-  # - id: gemini-2.5-pro
-  #   provider: google
-  #   name: Gemini 2.5 Pro
-  # - id: deepseek-r1
-  #   provider: deepseek
-  #   name: DeepSeek R1
+  - {id: claude-sonnet-4-20250514, provider: anthropic, name: Claude Sonnet 4}
+  - {id: claude-opus-4-20250514, provider: anthropic, name: Claude Opus 4}
+  - {id: gpt-4.1, provider: openai, name: GPT-4.1}
 
-stages:
-  - id: spec_generation
-    name: 规范逆向生成
-    description: 从源码逆向生成 OpenSpec 规范文档
-  - id: planning
-    name: 开发规划
-    description: 基于规范生成开发计划和任务分解
-  - id: implementation
-    name: 代码实现
-    description: 基于规范和计划生成代码
-  - id: validation
-    name: 质量验证
-    description: 验证生成代码的质量和一致性
+spec_context:
+  treatment: "计入 input tokens，标注为'预制规范'，单独统计"
+  not_counted_as: RT-HUMAN
+
+warnings:
+  stage_budget_yellow: 1.5   # 单阶段 Token > 基线 150%
+  total_budget_red: 1.2      # 总 Token > 预算 120%
+  et_loc_anomaly: 2.0        # Token/LOC > 基线 200%
+  usability_floor: 0.75      # 代码可用率 < 75%
 
 litellm_proxy:
   enabled: true
@@ -60,4 +65,3 @@ litellm_proxy:
 output:
   runs_dir: ./results/runs
   reports_dir: ./results/reports
-  format: json

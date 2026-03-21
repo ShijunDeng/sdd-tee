@@ -1,9 +1,8 @@
-# Task file (private)
+# Private
 task.md
 
-# Workspaces are large and generated at runtime
-# To keep a specific run, commit it explicitly
-# workspaces/
+# Runtime workspaces (large, regenerated per run)
+workspaces/
 
 # OS
 .DS_Store
@@ -24,3 +23,6 @@ node_modules/
 .vscode/
 *.swp
 *.swo
+
+# LiteLLM
+results/litellm_usage.db

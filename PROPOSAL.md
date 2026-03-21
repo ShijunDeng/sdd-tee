@@ -1,261 +1,162 @@
-# SDD-TEE: Token Efficiency Evaluation Proposal
+# SDD-TEE v2: 评测体系设计文档
 
-## 1. 目标项目分析
+## 1. 目标
 
-**目标仓库**: https://github.com/ShijunDeng/agentcube.git
+建立基于 **CodeSpec 7 阶段工作流 × OpenSpec OPSX 工具链** 的 Token 效率评估基线，
+以真实开源项目 [agentcube](https://github.com/ShijunDeng/agentcube) 为评测对象，
+量化不同 AI Coding 工具 × 模型组合在 SDD 全流程中的 Token 消耗、成本和代码质量。
 
-AgentCube 是 Volcano 社区的子项目，为 Kubernetes 上的 AI Agent 工作负载提供调度和生命周期管理。
+### 1.1 目标项目概况
 
 | 指标 | 数值 |
 |------|------|
 | 总文件数 | 275 |
-| Go 代码行数 | ~17,368 |
-| Python 代码行数 | ~6,889 |
-| TypeScript 代码行数 | ~315 |
-| YAML 配置行数 | ~10,061 |
-| 主要模块 | pkg(66), docs(53), cmd(28), client-go(25), sdk-python(23) |
+| Go 代码 | 89 files / 17,368 LOC |
+| Python 代码 | 41 files / 6,889 LOC |
+| YAML 配置 | 33 files / 10,781 LOC |
+| 核心模块 | WorkloadManager, Router, Store, PicoD, CLI, SDK, Helm |
 
-**核心组件**: Kubernetes CRD (AgentRuntime, CodeInterpreter), Router, WorkloadManager, CLI, Python SDK, Helm Charts
+## 2. 方法论
 
----
+### 2.1 CodeSpec 7 阶段工作流
 
-## 2. 方案总体架构
-
-```
-┌──────────────────────────────────────────────────────────┐
-│              SDD-TEE Evaluation Pipeline                  │
-│                                                          │
-│  前置（一次性）:  项目技术解析 + 规范逆向生成              │
-│                                                          │
-├──────────────┬──────────────┬────────────────────────────┤
-│   Stage 0    │   Stage 1    │        Stage 2             │
-│   SDD开发    │   质量验证    │    数据汇总与报告生成       │
-└──────────────┴──────────────┴────────────────────────────┘
-```
-
-### 前置工作 A: 项目技术解析 (一次性，不计入 benchmark)
-- 克隆目标仓库
-- 统计代码量、语言分布、模块结构
-- 输出项目技术解析报告 (HTML)
-- **产出可复用**，后续评测无需重新生成
-
-### 前置工作 B: 规范逆向生成 (一次性，不计入 benchmark)
-- **工具**: `spec-gen` + DeepWiki + LLM
-- **步骤**:
-  1. `spec-gen analyze` — 静态分析代码库，构建依赖图（无 token 消耗）
-  2. `spec-gen generate` — LLM 驱动生成 OpenSpec 规范文档（消耗 token）
-  3. DeepWiki 抓取架构文档作为补充参考
-  4. 人工审核和完善规范文档
-- **输出**: 完整的 OpenSpec 规范集（PRD、API specs、数据模型、架构设计）
-
-### Stage 0: SDD 端到端开发 (核心 token 消耗追踪)
-- **工具**: OpenSpec + 各种 AI Coding Assistant
-- **对每个 AI 工具 × 模型组合**:
-  1. 创建干净的工作空间
-  2. 导入 Stage 1 生成的规范
-  3. 运行 OpenSpec 工作流: `opsx:new` → `opsx:ff` → `opsx:apply`
-  4. 记录每个阶段的 token 使用量
-- **输出**: 各工具生成的代码 + token 消耗数据
-
-### Stage 1: 质量验证 (可选 token 消耗)
-- 代码结构对比 (文件数、LOC、目录结构)
-- 功能点覆盖率检查
-- 编译/lint 通过率
-- 测试通过率（如有）
-
-### Stage 2: 数据汇总与可视化
-- 汇总 JSON/CSV 数据
-- 生成对比图表 (Python matplotlib/plotly)
-
----
-
-## 3. Token 追踪方案
-
-### 3.1 通用方案: LiteLLM Proxy (推荐)
-
-使用 LiteLLM 作为统一代理层，拦截所有 AI 工具的 API 调用：
+以 AR（分配需求）为基本单位，每个 AR 走完整的 7 阶段流程：
 
 ```
-AI Coding Tool → LiteLLM Proxy → Real API (OpenAI/Anthropic/etc.)
-                     │
-                     ▼
-              Token Usage Log (SQLite/JSON)
+ST-0 AR 输入         /opsx:new         → changes/{AR-ID}/
+ST-1 需求澄清        /opsx:ff          → proposal.md
+ST-2 Spec 增量设计    /opsx:ff          → delta-spec.md
+ST-3 Design 增量设计  /opsx:ff          → design.md
+ST-4 任务拆解         /opsx:ff          → tasks.md
+ST-5 开发实现         /opsx:apply       → 代码文件
+ST-6 合并归档         /opsx:archive     → 归档 + spec 合并
+ST-7 一致性验证       /opsx:verify      → 验证报告
 ```
 
-**优势**:
-- 工具无关，统一度量
-- 精确记录 input/output/cache tokens
-- 按 session/stage 分组统计
+### 2.2 AR 分解策略
 
-### 3.2 工具原生追踪
+采用 capability/feature 粒度，将 agentcube 拆解为 **43 个 AR**：
 
-| 工具 | 原生追踪方式 | 精度 |
-|------|------------|------|
-| Claude Code | OpenTelemetry export / SDK `total_cost_usd` | 高 |
-| Aider | `.aider.chat.history.md` 中的 session cost | 中 |
-| Cursor | 有限的内置统计 | 低 |
-| OpenCode | tokenscope 插件 | 高 |
+| 领域 | AR 数 | 示例 |
+|------|-------|------|
+| Go 核心 (CRD/API) | 19 | CRD 类型定义、Sandbox 创建/GC、Router JWT/Session、Store Redis/Valkey |
+| Python CLI/SDK | 10 | pack/build/publish 命令、DockerService、CodeInterpreterClient |
+| 基础设施 | 5 | Helm Chart、RBAC、Dockerfile、Makefile、CI/CD |
+| 集成/测试/文档 | 9 | client-go、Dify 插件、Go/Python 测试、E2E 测试、文档站 |
 
-### 3.3 推荐策略: 双轨追踪
+按规模分层：S（<500 LOC）、M（500-2000 LOC）、L（>2000 LOC）
 
-同时使用 LiteLLM Proxy（统一口径）+ 工具原生追踪（交叉验证）
+### 2.3 OpenSpec OPSX 工具链集成
 
----
+实际安装并使用 `openspec` CLI 驱动 AI 工具，自动化模拟人机交互：
 
-## 4. 测评矩阵
-
-### 4.1 AI Coding 工具
-
-| 工具 | 类型 | 自动化友好度 | 备注 |
-|------|------|------------|------|
-| Claude Code | CLI (headless) | ★★★★★ | 支持 SDK，最易自动化 |
-| Aider | CLI | ★★★★★ | 纯 CLI，易脚本化 |
-| OpenCode | CLI | ★★★★☆ | CLI 工具，可自动化 |
-| Cursor | IDE | ★★☆☆☆ | 需要 GUI，难自动化 |
-
-### 4.2 模型
-
-| 模型 | 提供商 |
-|------|--------|
-| Claude Sonnet 4 | Anthropic |
-| Claude Opus 4 | Anthropic |
-| GPT-4.1 | OpenAI |
-| Gemini 2.5 Pro | Google |
-| DeepSeek R1 / V3 | DeepSeek |
-
-### 4.3 输出数据格式
-
-每次运行产出一个 JSON 文件:
-
-```json
-{
-  "run_id": "uuid",
-  "timestamp": "2026-03-21T10:00:00Z",
-  "project": "agentcube",
-  "tool": "claude-code",
-  "model": "claude-sonnet-4-20250514",
-  "stages": {
-    "spec_generation": {
-      "duration_seconds": 120,
-      "input_tokens": 50000,
-      "output_tokens": 15000,
-      "cache_read_tokens": 0,
-      "cost_usd": 0.25
-    },
-    "planning": {
-      "duration_seconds": 60,
-      "input_tokens": 30000,
-      "output_tokens": 8000,
-      "cache_read_tokens": 10000,
-      "cost_usd": 0.12
-    },
-    "implementation": {
-      "duration_seconds": 600,
-      "input_tokens": 200000,
-      "output_tokens": 80000,
-      "cache_read_tokens": 50000,
-      "cost_usd": 1.50
-    },
-    "validation": {
-      "duration_seconds": 30,
-      "input_tokens": 10000,
-      "output_tokens": 3000,
-      "cache_read_tokens": 5000,
-      "cost_usd": 0.05
-    }
-  },
-  "totals": {
-    "duration_seconds": 810,
-    "input_tokens": 290000,
-    "output_tokens": 106000,
-    "cost_usd": 1.92
-  },
-  "quality": {
-    "files_generated": 150,
-    "loc_generated": 15000,
-    "compile_pass": true,
-    "lint_pass": true,
-    "test_pass_rate": 0.85,
-    "structure_similarity": 0.78
-  }
-}
+```bash
+npm install -g @fission-ai/openspec@latest
+cd workspace && openspec init
 ```
 
----
+每个 AR 通过 OPSX 命令序列驱动：
+1. `/opsx:new {AR-ID}-{feature-name}` — 创建变更脚手架
+2. `/opsx:ff` — 自动生成 proposal.md → specs/ → design.md → tasks.md
+3. `/opsx:apply` — AI 根据 tasks.md 逐项实现代码
+4. `/opsx:verify` — 验证实现与 spec 一致性
+5. `/opsx:archive` — 归档，delta-spec 合并到全量 spec
 
-## 5. 自动化方案
+## 3. 指标体系（5 维）
 
-### 5.1 整体自动化程度评估
+### 3.1 阶段维度 (ST)
 
-| 阶段 | 自动化可行性 | 说明 |
-|------|------------|------|
-| Stage 0: 项目分析 | ★★★★★ 全自动 | 纯脚本 |
-| Stage 1: 规范逆向 | ★★★★☆ 半自动 | spec-gen 自动生成，人工审核 |
-| Stage 2: SDD 开发 | ★★★★☆ 高度自动 | CLI 工具可脚本化，需处理异常 |
-| Stage 3: 质量验证 | ★★★★★ 全自动 | 纯脚本对比 |
-| Stage 4: 数据汇总 | ★★★★★ 全自动 | Python 脚本 |
+| 编码 | 名称 | 计算公式 |
+|------|------|----------|
+| ST-0 ~ ST-7 | 各阶段 Token 消耗 | Input_Token + Output_Token |
 
-### 5.2 自动化编排
+每阶段追踪：input_tokens、output_tokens、cache_read、cache_write、iterations、duration_seconds、api_calls
 
-使用 Python 脚本 + Makefile 编排:
+### 3.2 角色维度 (RT)
+
+| 编码 | 名称 | 说明 |
+|------|------|------|
+| RT-AI | AI Token 总量 | 所有 AI 调用的 Token |
+| RT-HUMAN | 人工输入 Token | 人工 prompt 的 Token |
+| RT-RATIO | 人机 Token 比 | RT-HUMAN / RT-AI |
+| RT-ITER | 平均迭代次数 | ∑(迭代) / AR 数 |
+
+**预制规范处理**：Spec 文档计入 input tokens，标注为"预制规范"单独统计，不计入 RT-HUMAN。
+
+### 3.3 效率维度 (ET)
+
+| 编码 | 名称 | 计算公式 |
+|------|------|----------|
+| ET-LOC | Token/代码行 | ST-5 / 代码行数 |
+| ET-FILE | Token/文件 | ST-5 / 文件数 |
+| ET-TASK | Token/任务 | ST-5 / Task 数 |
+| ET-AR | Token/需求 | ∑(ST-0~7) / AR 数 |
+| ET-TIME | Token/小时 | 总 Token / 总耗时 |
+
+### 3.4 质量维度 (QT)
+
+| 编码 | 名称 | 计算公式 |
+|------|------|----------|
+| QT-COV | Token/测试覆盖率 | ST-5 / 覆盖率% |
+| QT-CONSIST | Token/一致性 | ST-7 / Spec-Code 一致性% |
+| QT-AVAIL | Token/可用率 | ST-5 / 代码可用率% |
+| QT-BUG | Token/Bug | ST-5 / Bug 数 (反向) |
+
+### 3.5 阶段分布维度 (PT)
+
+| 编码 | 名称 | 计算公式 |
+|------|------|----------|
+| PT-DESIGN | 设计占比 | (ST-1+ST-2+ST-3) / 总 Token |
+| PT-DEV | 开发占比 | ST-5 / 总 Token |
+| PT-VERIFY | 验证占比 | (ST-6+ST-7) / 总 Token |
+| PT-PEAK | 峰值阶段 | max(ST-0~ST-7) |
+
+## 4. Token 追踪方案
+
+### 双轨追踪
+
+| 方式 | 说明 | 精度 |
+|------|------|------|
+| LiteLLM Proxy | 统一代理层拦截所有 API 调用 | 高（per-request） |
+| 工具原生 | Claude Code OTel / Aider session cost | 中-高 |
+
+### 预警规则
+
+| 规则 | 阈值 | 级别 |
+|------|------|------|
+| 单阶段 Token > 基线 150% | ×1.5 | 黄色 |
+| 总 Token > 预算 120% | ×1.2 | 红色 |
+| Token/LOC > 基线 200% | ×2.0 | 异常 |
+| 代码可用率 < 75% | 0.75 | 质量 |
+
+## 5. 基线建立
+
+### 5.1 按规模分层
+
+| 规模 | LOC 范围 | 基线计算 |
+|------|----------|----------|
+| S | <500 | 同规模 AR 平均值 |
+| M | 500-2000 | 同规模 AR 平均值 |
+| L | >2000 | 同规模 AR 平均值 |
+
+### 5.2 成本预测
 
 ```
-benchmark/
-├── Makefile                    # 顶层编排
-├── config.yaml                 # 测评配置（工具、模型、参数）
-├── scripts/
-│   ├── 00_analyze_project.sh   # Stage 0
-│   ├── 01_generate_specs.sh    # Stage 1
-│   ├── 02_sdd_develop.sh       # Stage 2
-│   ├── 03_validate.sh          # Stage 3
-│   └── 04_report.py            # Stage 4
-├── specs/                      # 逆向生成的规范文档
-├── workspaces/                 # 各工具的开发工作空间
-│   ├── claude-code-sonnet4/
-│   ├── aider-sonnet4/
-│   └── ...
-├── results/                    # 测评结果数据
-│   ├── runs/                   # 单次运行 JSON
-│   └── reports/                # 汇总报告与图表
-└── PROPOSAL.md                 # 本文档
+新需求 Token 预估 = 基线 × 规模系数 × 复杂度系数
+项目 Token 预算 = ∑(各 AR Token 预估)
 ```
 
-### 5.3 关键限制与注意事项
+## 6. 参考基准
 
-1. **Cursor 难以自动化**: Cursor 是 IDE，无 headless 模式，建议以手动方式进行，单独记录
-2. **规范质量影响结果**: Stage 1 生成的规范质量直接影响 Stage 2，建议首轮人工审核
-3. **API Rate Limits**: 并行运行多个工具时注意 API 限制
-4. **成本控制**: 建议先在小模块上试运行，估算全量成本后再决定
-5. **可复现性**: 每次运行记录完整的环境信息（工具版本、模型版本、时间戳）
+| 来源 | 数据 |
+|------|------|
+| BSWEN 2026 (100M tokens) | Claude Code ~78K tokens/request, 84% cache hit, 166:1 I/O |
+| Iterathon 2026 | Claude Sonnet $0.08/task, GPT Codex $0.24/task |
+| SWE-AGI 2026 | GPT-5.3 86.4%, Claude Opus 4.6 68.2% on spec-driven construction |
 
----
+## 7. 前置工作（一次性，不计入评测）
 
-## 6. 推荐执行步骤
-
-### Phase 1: 基础设施搭建 (1-2 小时)
-1. 搭建 LiteLLM Proxy 用于 token 追踪
-2. 安装 OpenSpec、spec-gen、各 AI Coding 工具
-3. 创建 benchmark 框架骨架
-
-### Phase 2: 规范生成 (2-4 小时)
-1. 运行 spec-gen 分析 agentcube
-2. 通过 DeepWiki 获取补充文档
-3. 审核和完善规范
-
-### Phase 3: 基线测评 (每个工具×模型 1-3 小时)
-1. 选定 2-3 个主力工具 + 2-3 个模型
-2. 运行 SDD 全流程
-3. 收集 token 数据
-
-### Phase 4: 分析与报告 (1-2 小时)
-1. 汇总数据
-2. 生成对比图表
-3. 撰写结论
-
----
-
-## 7. 结论
-
-**推荐方案**: 以 **Claude Code + Aider** 为主力测评工具（自动化程度最高），以 **LiteLLM Proxy** 做统一 token 追踪，使用 **spec-gen** 逆向生成 OpenSpec 规范，通过 **Python 脚本** 编排整个流程。
-
-整个流程预计 80%+ 可自动化，仅规范审核和异常处理需要人工介入。
+| 前置项 | 耗时 | Token | 产出 |
+|--------|------|-------|------|
+| 项目技术解析 | 7s | 0 (纯脚本) | analysis.json + HTML 报告 |
+| 规范逆向生成 | 194s | ~97K (估算) | 3 份 spec (298 行, 11.6KB) |

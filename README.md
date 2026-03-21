@@ -1,104 +1,102 @@
 # SDD-TEE — SDD Token Efficiency Evaluation
 
-基于 **Specification-Driven Development (SDD)** 的 Token 效率评估框架。
+基于 **CodeSpec 7 阶段工作流** 与 **OpenSpec OPSX 工具链**的 AI Coding Assistant Token 效率评估框架。
 
-通过逆向解析真实开源项目 [agentcube](https://github.com/ShijunDeng/agentcube) 的源码生成 OpenSpec 规范，再用不同 AI Coding 工具端到端完成 SDD 开发，量化各阶段的 **token 消耗、耗时、代码质量**，为 Token 提效提供评估基线。
+通过将真实开源项目 [agentcube](https://github.com/ShijunDeng/agentcube) 拆解为 **43 个细粒度 AR（分配需求）**，
+每个 AR 走完整的 SDD 流程（`/opsx:new` → `/opsx:ff` → `/opsx:apply` → `/opsx:verify` → `/opsx:archive`），
+**量化 8 个阶段（ST-0~ST-7）× 5 个维度的 Token 消耗**，为 Token 提效研究提供评估基线。
+
+## 评测体系
+
+### 5 维指标体系
+
+| 维度 | 编码 | 指标示例 |
+|------|------|----------|
+| 阶段维度 | ST-0 ~ ST-7 | 各阶段 Input/Output/Cache Tokens、迭代数、耗时 |
+| 角色维度 | RT-AI / RT-HUMAN | AI Token、人工输入 Token、人机比、预制规范（单独标注） |
+| 效率维度 | ET-LOC / ET-FILE / ET-TASK | Token/LOC、Token/File、Token/Task、Token/AR、Token/h |
+| 质量维度 | QT-COV / QT-CONSIST | Token/覆盖率、Token/一致性、Token/可用率、Token/Bug |
+| 分布维度 | PT-DESIGN / PT-DEV | 设计/开发/验证阶段占比、峰值阶段 |
+
+### CodeSpec 7 阶段 × OpenSpec OPSX 对齐
+
+```
+ST-0  /opsx:new     → 变更目录脚手架
+ST-1  /opsx:ff      → proposal.md       (需求澄清)
+ST-2  /opsx:ff      → delta-spec.md     (Spec 增量设计)
+ST-3  /opsx:ff      → design.md         (Design 增量设计)
+ST-4  /opsx:ff      → tasks.md          (任务拆解)
+ST-5  /opsx:apply   → 代码文件           (开发实现)
+ST-6  /opsx:archive → 归档 + spec 合并   (合并归档)
+ST-7  /opsx:verify  → 验证报告           (一致性验证)
+```
 
 ## 前置工作（一次性）
 
-以下两项为一次性的前置准备，成果可在后续所有评测中复用，其耗时和 token 消耗不计入 benchmark。
-详细的 Token 消耗、耗时及框架技术细节见 **[项目介绍与前置工作报告](results/reports/introduction.html)**。
+以下为一次性前置准备，成果可在所有评测中复用，Token/耗时不计入评测基线。
 
-| 前置项 | 说明 | 产出 |
-|--------|------|------|
-| 项目技术解析 | 分析目标项目的代码量、技术栈、模块结构 | [`project_analysis_report.html`](results/reports/project_analysis_report.html) |
-| 规范逆向生成 | 从源码逆向生成 OpenSpec 规范文档 | `specs/` 目录 |
-| **综合介绍** | **前置工作详情 + 框架技术架构 + 规范概览** | [`introduction.html`](results/reports/introduction.html) |
-
-## 评测流水线
-
-```
-Stage 0           Stage 1            Stage 2          Stage 3
-SDD 端到端开发  →  质量验证        →  数据汇总      →  报告生成
-(OpenSpec+AI)     (全自动对比)      (CSV/JSON)       (HTML/图表)
-```
+| 前置项 | 产出 |
+|--------|------|
+| 项目技术解析 | [`results/reports/project_analysis_report.html`](results/reports/project_analysis_report.html) |
+| 规范逆向生成 | `specs/` 目录（3 份结构化规范） |
 
 ## 快速开始
 
-### 前置依赖
-
-- Node.js ≥ 20.19.0
-- Python ≥ 3.10
-- Go ≥ 1.21（用于验证阶段）
-- AI Coding 工具：`claude`（Claude Code CLI）或 `aider`
-
-### 安装
-
 ```bash
-make setup
-```
+# 安装 OpenSpec CLI
+npm install -g @fission-ai/openspec@latest
 
-### 运行
+# 初始化项目
+cd your-workspace && openspec init
 
-```bash
-# 单次运行（指定工具 + 模型）
-make all TOOL=claude-code MODEL=claude-sonnet-4-20250514
+# 生成 mock 报告（预览）
+python3 scripts/07_sdd_tee_report.py --mock
 
-# 矩阵运行（所有工具×模型组合）
-make matrix
+# 运行评测（单个工具 × 模型）
+make run TOOL=claude-code MODEL=claude-sonnet-4-20250514
 
-# 仅生成报告
+# 生成综合报告
 make report
 ```
-
-### 输出
-
-- `results/runs/` — 每次运行的 JSON 数据（token、耗时、成本）
-- `results/reports/summary.csv` — 汇总 CSV
-- `results/reports/comparison_report.md` — Markdown 对比报告
-- `results/reports/comparison_charts.png` — 可视化对比图表
 
 ## 目录结构
 
 ```
 sdd-tee/
-├── Makefile                    # 顶层编排
-├── config.yaml                 # 测评配置（工具、模型、阶段）
-├── PROPOSAL.md                 # 方案设计文档
+├── config.yaml                 # 评测配置（工具、模型、AR 列表）
+├── Makefile                    # 评测编排
+├── PROPOSAL.md                 # v2 评测体系设计文档
 ├── scripts/
-│   ├── 00_analyze_project.sh   # 前置: 项目分析（一次性）
-│   ├── 01_generate_specs.sh    # 前置: 规范逆向生成（一次性）
-│   ├── 02_sdd_develop.sh       # 评测: SDD 开发 + Token 追踪
-│   ├── 03_validate.py          # 评测: 质量验证
-│   ├── 04_report.py            # 评测: 汇总报告 + 图表
-│   ├── 05_generate_html_report.py  # 评测: 详细 HTML 报告
-│   ├── 06_project_analysis_report.py  # 前置: 项目技术解析（一次性）
-│   └── 07_introduction_report.py  # 文档: 介绍章节生成
-├── specs/                      # 逆向生成的 OpenSpec 规范（一次性产出，可复用）
-├── workspaces/                 # 各工具的开发工作空间（运行时生成）
-└── results/                    # 测评结果（运行时生成）
-    ├── project_analysis/       # 项目分析数据（一次性）
-    ├── runs/                   # 每次评测的 JSON 数据
-    └── reports/                # 汇总报告与图表
+│   ├── 01_analyze_project.sh   # 前置：项目结构分析
+│   ├── 02_generate_specs.sh    # 前置：规范逆向生成
+│   ├── 03_sdd_develop.sh       # 评测：SDD 开发驱动（OpenSpec OPSX）
+│   ├── 04_validate.py          # 评测：代码质量验证
+│   ├── 05_aggregate.py         # 评测：CSV/Markdown 汇总
+│   ├── 06_project_report.py    # 前置：项目技术解析 HTML 报告
+│   └── 07_sdd_tee_report.py    # 评测：综合 HTML 报告（5 维指标）
+├── specs/                      # 逆向生成的 OpenSpec 规范（一次性产出）
+├── workspaces/                 # 各评测轮次的生成代码
+└── results/
+    ├── project_analysis/       # 项目分析原始数据
+    ├── runs/                   # 每次评测的 JSON 原始数据
+    └── reports/                # HTML 报告与图表
 ```
 
 ## Token 追踪
 
-支持双轨追踪：
-
 | 方式 | 说明 |
 |------|------|
-| LiteLLM Proxy | 统一代理层拦截所有 API 调用，工具无关 |
-| 工具原生 | Claude Code OpenTelemetry / Aider session cost |
+| LiteLLM Proxy | 统一代理层拦截所有 API 调用，精确 per-request 记录 |
+| 工具原生 | Claude Code (OpenTelemetry) / Aider (session cost) |
+| 预制规范 | Spec 文档计入 input tokens，标注为"预制规范"单独统计 |
 
-## 测评维度
+## 参考基准
 
-| 维度 | 指标 |
+| 来源 | 数据 |
 |------|------|
-| Token 消耗 | input / output / cache tokens（按阶段细分） |
-| 成本 | USD（按阶段、按工具×模型） |
-| 耗时 | 秒（端到端 & 按阶段） |
-| 代码质量 | 文件数比、LOC 比、目录相似度、编译通过率、语法通过率 |
+| BSWEN 2026 (100M tokens tracked) | Claude Code ~78K tokens/request, 84% cache, 166:1 I/O |
+| Iterathon 2026 | Claude Sonnet $0.08/task, Gemini $0.15/task |
+| SWE-AGI 2026 | Frontier models 68-86% on spec-driven construction |
 
 ## License
 
