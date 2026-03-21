@@ -1,0 +1,30 @@
+The `PLAN.md` has been written with comprehensive documentation for AR-023 through AR-033. Here's a summary:
+
+## Round 3 Overview: AR-023 through AR-033
+
+**40 new files** across 11 architectural requirements, organized into 4 domains:
+
+### Dify Plugin Integration (AR-023, AR-024)
+- **AR-023**: Plugin entry point (`main.py`), `manifest.yaml`, `requirements.txt`, `.difyignore` — 4 files
+- **AR-024**: Provider YAML/Python, tool YAML/Python, documentation (GUIDE/README/PRIVACY) — 7 files
+
+### PCAP Analyzer Example (AR-025, AR-026)
+- **AR-025**: FastAPI app with LangChain agents + SandboxRunner, requirements — 2 files
+- **AR-026**: Dockerfile (uv-based), K8s deployment manifest, README — 3 files
+
+### E2E Test Infrastructure (AR-027, AR-028, AR-029, AR-030)
+- **AR-027**: `run_e2e.sh` setup script, OWNERS, README, `__init__.py` — 4 files
+- **AR-028**: 3 YAML fixtures (echo agent, code interpreter, warm pool)
+- **AR-029**: `e2e_test.go` with 8 test functions — 1 file
+- **AR-030**: Python E2E tests + missing SDK `__init__.py` files — 4 files
+
+### GitHub Actions CI/CD (AR-031, AR-032, AR-033)
+- **AR-031**: Build & lint workflows (main, lint, python-lint, codegen-check, copyright-check, codespell) — 6 files
+- **AR-032**: Test workflows (test-coverage, python-sdk-tests, e2e) — 3 files
+- **AR-033**: Release workflows (build-push-release, dify-plugin-publish, workflows-approve) — 3 files
+
+### Recommended build order
+1. AR-023 → AR-024 (Dify plugin)
+2. AR-025 → AR-026 (PCAP analyzer)
+3. AR-030 → AR-028 → AR-027 → AR-029 (E2E tests)
+4. AR-031 → AR-032 → AR-033 (CI/CD workflows)

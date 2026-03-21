@@ -1,0 +1,21 @@
+All 22 ARs are documented in PLAN.md. Here's a summary of the plan:
+
+## Summary
+
+The PLAN.md has been updated with comprehensive documentation for **AR-012 through AR-022**, covering **~104 new files** across the remaining unimplemented components:
+
+| AR | Domain | Files | Language |
+|---|---|---|---|
+| **AR-012** | Workload Manager Core (Server, K8sClient, Informers) | 3 | Go |
+| **AR-013** | WM Handlers & Auth (HTTP handlers, TokenReview, token cache) | 3 | Go |
+| **AR-014** | WM Sandbox Lifecycle (Reconciler, GC, Builder, ClientCache, main) | 5 | Go |
+| **AR-015** | Session Router (proxy, JWT, session manager, concurrency) | 8 | Go |
+| **AR-016** | Idle Cleanup agentd (Sandbox expiry reconciler) | 2 | Go |
+| **AR-017** | CLI Toolkit (pack, build, publish, invoke, status) | 20 | Python |
+| **AR-018** | Generated client-go (clientset, informers, listers, fakes) | 26 | Go |
+| **AR-019** | Dify Plugin Integration (manifest, provider, tools) | 11 | Python/YAML |
+| **AR-020** | PCAP Analyzer Example (FastAPI + LangChain) | 5 | Python/Docker |
+| **AR-021** | E2E Test Infrastructure (Kind, fixtures, Go/Python tests) | 9 | Shell/Go/Python |
+| **AR-022** | GitHub Actions CI/CD (12 workflow files) | 12 | YAML |
+
+Each AR section includes: file list with purpose, Go/Python package identifiers, all dependencies, exported interfaces with exact struct/function signatures, key constants, HTTP routes, environment variables, and CLI flags. The dependency graph and recommended build order are documented at the end.

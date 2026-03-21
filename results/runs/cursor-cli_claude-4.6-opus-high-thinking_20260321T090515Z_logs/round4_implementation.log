@@ -1,0 +1,20 @@
+All 21 files for Round 4 are in place. Here's a summary of what was implemented:
+
+## AR-034 through AR-043 — Round 4 Complete
+
+| AR | Description | Files |
+|-----|-------------|-------|
+| **AR-034** | Missing Python `__init__.py` package markers | 3 files: `test/e2e/__init__.py`, `sdk-python/tests/__init__.py`, `sdk-python/agentcube/utils/__init__.py` |
+| **AR-035** | CLI example `requirements.txt` files | 2 files: `hello-agent/requirements.txt`, `math-agent/requirements.txt` |
+| **AR-036** | SDK unit tests for exceptions & utils | 2 files: `test_exceptions.py`, `test_utils.py` |
+| **AR-037** | SDK unit tests for clients | 3 files: `test_control_plane.py`, `test_code_interpreter.py`, `test_agent_runtime.py` |
+| **AR-038** | SDK unit tests for data plane clients | 2 files: `test_code_interpreter_data_plane.py`, `test_agent_runtime_data_plane.py` |
+| **AR-039** | CLI unit tests for models & metadata | 3 files: `tests/__init__.py`, `test_pack_models.py`, `test_metadata_service.py` |
+| **AR-040** | CLI unit tests for runtime operations | 2 files: `test_pack_runtime.py`, `test_build_runtime.py` |
+| **AR-041** | CLI unit tests for Typer commands | 1 file: `test_cli_main.py` |
+| **AR-042** | CLI unit tests for services (Docker, K8s, AgentCube) | 2 files: `test_docker_service.py`, `test_k8s_provider.py` |
+| **AR-043** | PLAN.md Round 4 documentation | Updated `PLAN.md` with full Round 4 section |
+
+**Total: 21 new files** bringing the project grand total to ~287 files across AR-001 through AR-043.
+
+All tests use pytest with `unittest.mock`, include Apache 2.0 license headers, cover both success and failure paths, and follow the spec precisely (e.g., `CommandExecutionError` attributes, session cleanup on data plane failure, `sessionTimeout=15m` / `maxSessionDuration=8h` for AgentRuntime CRs).

@@ -1,0 +1,68 @@
+All files are verified. Let me do a final count to confirm all 40 files from the plan are accounted for.
+
+Here's a summary of all 40 files created across AR-023 to AR-033:
+
+**AR-023: Dify Plugin Entry & Manifest (4 files)**
+- `integrations/dify-plugin/main.py` — Plugin entry point
+- `integrations/dify-plugin/manifest.yaml` — Dify plugin manifest
+- `integrations/dify-plugin/requirements.txt` — Python dependencies
+- `integrations/dify-plugin/.difyignore` — Package ignore patterns
+
+**AR-024: Dify Plugin Provider & Tool (7 files)**
+- `integrations/dify-plugin/provider/agentcube.yaml` — Tool provider descriptor
+- `integrations/dify-plugin/provider/agentcube.py` — Provider implementation with credential validation
+- `integrations/dify-plugin/tools/agentcube-code-interpreter.yaml` — Tool parameter schema (8 params)
+- `integrations/dify-plugin/tools/agentcube-code-interpreter.py` — Tool implementation with `execute()`
+- `integrations/dify-plugin/GUIDE.md`, `README.md`, `PRIVACY.md` — Documentation
+
+**AR-025: PCAP Analyzer Application (2 files)**
+- `example/pcap-analyzer/pcap_analyzer.py` — FastAPI app with `SandboxRunner`, LangChain agents, `POST /analyze`
+- `example/pcap-analyzer/requirements.txt` — Pinned LangChain/FastAPI deps
+
+**AR-026: PCAP Analyzer Deployment (3 files)**
+- `example/pcap-analyzer/Dockerfile` — `uv`-based build with vendored SDK
+- `example/pcap-analyzer/deployment.yaml` — K8s Deployment with env vars from Secret
+- `example/pcap-analyzer/README.md` — Documentation
+
+**AR-027: E2E Test Infrastructure (4 files)**
+- `test/OWNERS` — Approvers/reviewers
+- `test/e2e/__init__.py` — Package marker
+- `test/e2e/README.md` — E2E documentation
+- `test/e2e/run_e2e.sh` — Full E2E setup: Kind cluster, CRDs, Redis, Helm, port-forward, Go+Python tests
+
+**AR-028: E2E Test Fixtures (3 files)**
+- `test/e2e/echo_agent.yaml` — AgentRuntime echo server fixture
+- `test/e2e/e2e_code_interpreter.yaml` — CodeInterpreter fixture in `agentcube` namespace
+- `test/e2e/e2e_code_interpreter_warmpool.yaml` — CodeInterpreter with `warmPoolSize: 2` in `default`
+
+**AR-029: E2E Go Tests (1 file)**
+- `test/e2e/e2e_test.go` — 8 test functions: health, CRUD, invoke, TTL, warm pool
+
+**AR-030: E2E Python Tests & SDK Init (4 files)**
+- `test/e2e/test_codeinterpreter.py` — 5 unittest tests: command, code, file write, upload/download, list
+- `sdk-python/tests/__init__.py` — Package marker
+- `sdk-python/agentcube/utils/__init__.py` — Package marker
+
+**AR-031: CI Build & Lint Workflows (6 files)**
+- `.github/workflows/main.yml` — Docker build verification
+- `.github/workflows/lint.yml` — Go lint with path filter
+- `.github/workflows/python-lint.yml` — Ruff lint with path filter
+- `.github/workflows/codegen-check.yml` — `make gen-check` with path filter
+- `.github/workflows/copyright-check.yml` — Copyright header check
+- `.github/workflows/codespell.yml` — Spelling check
+
+**AR-032: CI Test & Coverage Workflows (3 files)**
+- `.github/workflows/test-coverage.yml` — Go test coverage + Codecov
+- `.github/workflows/python-sdk-tests.yml` — Python SDK pytest
+- `.github/workflows/e2e.yml` — Kind-based E2E tests
+
+**AR-033: CI Release & Automation Workflows (3 files)**
+- `.github/workflows/build-push-release.yml` — Multi-arch image push to ghcr.io
+- `.github/workflows/dify-plugin-publish.yml` — Dify plugin marketplace publish
+- `.github/workflows/workflows-approve.yml` — Auto-approve for repeat contributors
+
+Additionally, the `Makefile` was updated with:
+- `E2E_CLUSTER_NAME` variable
+- `docker-buildx-push`, `docker-buildx-push-router`, `docker-buildx-push-picod` targets
+- Updated `e2e` target to use `run_e2e.sh`
+- Updated `e2e-clean` to use `E2E_CLUSTER_NAME` and clean `/tmp/agent-sandbox`

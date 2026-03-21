@@ -1,0 +1,23 @@
+## Review Summary
+
+I reviewed all code generated in round 2 (AR-012 through AR-022): 65 Go files, 30 Python files, and 9 YAML/Helm files. Here are the issues found and their resolution status:
+
+### Fixed (6 issues)
+
+| # | Severity | File(s) | Issue | Fix |
+|---|----------|---------|-------|-----|
+| 1 | **CRITICAL** | `pkg/agentd/reconciler.go` | Import `sigs.k8s.io/agent-sandbox/apis/agents/v1alpha1` doesn't exist in v0.1.1 | Changed to `api/v1alpha1` |
+| 2 | **CRITICAL** | `cmd/agentd/main.go` | Same wrong import path | Changed to `api/v1alpha1` |
+| 3 | **CRITICAL** | `client-go/listers/.../agentruntime.go` | Singular resource `"agentruntime"` in `Resource()` | Changed to `"agentruntimes"` |
+| 4 | **CRITICAL** | `client-go/listers/.../codeinterpreter.go` | Singular resource `"codeinterpreter"` | Changed to `"codeinterpreters"` |
+| 5 | **HIGH** | `sdk-python/agentcube/utils/__init__.py` | Missing file — breaks `from agentcube.utils.* import` | Created empty `__init__.py` |
+| 6 | **HIGH** | `cmd/cli/pyproject.toml` | Invalid build-backend `setuptools.backends._legacy:_Backend` | Changed to `setuptools.build_meta` |
+| 7 | **MEDIUM** | `cmd/cli/agentcube/__init__.py` | `StatusRuntime` missing from imports and `__all__` | Added import and export |
+
+### Remaining known issues (not fixed — require design decisions)
+
+| # | Severity | File(s) | Issue |
+|---|----------|---------|-------|
+| A | **MEDIUM** | `pkg/router/server.go` vs `pkg/workloadmanager/k8s_client.go` | `LastActivityAnnotationKey` inconsistency: router defines `"agentcube.volcano.sh/last-activity"` while workloadmanager uses `"last-activity-time"`. The router's constant appears unused in its own package, but could confuse future integrations. Needs a design decision on which value is canonical. |
+| B | **LOW** | `go.sum` missing | No `go.sum` file exists; `go mod tidy` must be run before compilation. Cannot generate without Go toolchain access in this environment. |
+| C | **LOW** | `pkg/router/proxy.go` | JWT auth header is only set for `SandboxKind`/`SandboxClaimsKind` but never for `AgentRuntimeKind`/`CodeInterpreterKind`. This may be intentional (PicoD auth only applies to sandbox-hosted workloads) or a logic gap. |

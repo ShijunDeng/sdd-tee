@@ -14,8 +14,9 @@ set -euo pipefail
 TOOL="${1:?Usage: $0 <tool> <model> [specs_dir]}"
 MODEL="${2:?Usage: $0 <tool> <model> [specs_dir]}"
 SPECS_DIR="${3:-./specs}"
-RESULTS_DIR="./results/runs"
-WORKSPACE_BASE="./workspaces"
+PROJECT_ROOT="$(pwd)"
+RESULTS_DIR="$PROJECT_ROOT/results/runs"
+WORKSPACE_BASE="$PROJECT_ROOT/workspaces"
 PROXY_PORT="${PROXY_PORT:-4000}"
 
 TIMESTAMP=$(date -u +%Y%m%dT%H%M%SZ)
@@ -77,7 +78,7 @@ run_with_cursor_cli() {
     echo "  [$stage] cursor agent ..."
 
     cd "$WORKSPACE"
-    timeout 600 cursor agent "$prompt" > "$log_file" 2>&1 || true
+    timeout 600 cursor agent --trust "$prompt" > "$log_file" 2>&1 || true
     cd - > /dev/null
 
     stage_end=$(date +%s)
@@ -255,8 +256,8 @@ cd "$WORKSPACE"
 if [ ! -d ".git" ]; then
     git init --quiet
 fi
-cp -r "../../$SPECS_DIR" ./specs 2>/dev/null || true
-cd - > /dev/null
+cp -r "$PROJECT_ROOT/$SPECS_DIR" ./specs 2>/dev/null || true
+cd "$PROJECT_ROOT"
 
 TOTAL_START=$(date +%s)
 
@@ -371,6 +372,7 @@ export __TIMESTAMP="$TIMESTAMP"
 export __STARTED_AT="$STARTED_AT"
 export __COMPLETED_AT="$COMPLETED_AT"
 export __ROUND_DATA="$ROUND_JSON"
+export __RESULTS_DIR="$RESULTS_DIR"
 
 python3 << 'PYEOF'
 import json, glob, os
@@ -475,8 +477,7 @@ result = {
     },
 }
 
-out_dir = os.path.dirname(os.path.dirname(results_dir))
-out_path = os.path.join(out_dir, "results", "runs", f"{run_id}.json")
+out_path = os.path.join(os.environ.get("__RESULTS_DIR", "results/runs"), f"{run_id}.json")
 os.makedirs(os.path.dirname(out_path), exist_ok=True)
 with open(out_path, "w") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
