@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDD Benchmark 测评报告 — agentcube</title>
+<style>
+  :root { --bg: #f8f9fa; --card: #fff; --border: #e0e0e0; --text: #333; --muted: #888; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 1.8em; margin-bottom: 8px; }
+  h2 { font-size: 1.3em; margin: 24px 0 12px; border-bottom: 2px solid #4C78A8; padding-bottom: 6px; }
+  h3 { font-size: 1.15em; margin: 16px 0 8px; }
+  h4 { font-size: 1em; margin: 14px 0 8px; color: #555; }
+  .card { background: var(--card); border-radius: 8px; padding: 20px; margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .desc { color: var(--muted); font-size: 0.9em; margin-bottom: 12px; }
+  .mock-banner { background: #FFF3CD; border: 1px solid #FFEEBA; color: #856404; padding: 12px 20px; border-radius: 6px; margin-bottom: 16px; font-weight: 600; text-align: center; font-size: 1.05em; }
+  .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 12px 0; }
+  .meta-item { font-size: 0.9em; }
+  .meta-item .label { color: var(--muted); }
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 12px 0; }
+  .metric-box { background: #f4f6f8; border-radius: 6px; padding: 12px; text-align: center; }
+  .metric-label { font-size: 0.78em; color: var(--muted); margin-bottom: 4px; }
+  .metric-value { font-size: 1.2em; font-weight: 700; color: #333; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88em; margin: 8px 0; }
+  th { background: #f0f2f5; padding: 8px 10px; text-align: left; font-weight: 600; border-bottom: 2px solid var(--border); }
+  td { padding: 7px 10px; border-bottom: 1px solid #eee; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .total-row { background: #f9f9f9; font-weight: 600; }
+  .badge-ok { background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 10px; font-size: 0.82em; }
+  .stacked-bar { display: flex; height: 24px; border-radius: 4px; overflow: hidden; margin: 8px 0; }
+  .stacked-bar > div { height: 100%; }
+  .bar-legend { display: flex; gap: 16px; font-size: 0.82em; color: #555; flex-wrap: wrap; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+  .cost-bar-row { display: flex; align-items: center; margin: 6px 0; font-size: 0.88em; }
+  .cost-bar-label { width: 160px; flex-shrink: 0; }
+  .cost-bar-track { flex: 1; height: 18px; background: #eee; border-radius: 3px; margin: 0 10px; overflow: hidden; }
+  .cost-bar-fill { height: 100%; border-radius: 3px; transition: width 0.3s; }
+  .cost-bar-value { width: 160px; text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .summary-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .summary-item { background: var(--card); border-radius: 8px; padding: 16px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .summary-item .big { font-size: 1.6em; font-weight: 700; color: #4C78A8; }
+  .summary-item .label { font-size: 0.82em; color: var(--muted); margin-top: 4px; }
+  details { margin: 10px 0; }
+  summary { cursor: pointer; color: #4C78A8; font-weight: 600; padding: 4px 0; }
+  details[open] summary { margin-bottom: 8px; }
+  @media (max-width: 768px) {
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .cost-bar-label, .cost-bar-value { width: 100px; font-size: 0.8em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="mock-banner">⚠ 本报告使用模拟数据生成，仅用于确认报表格式和内容</div>
+
+<h1>SDD Benchmark 测评报告</h1>
+<p class="desc">基于规范驱动开发 (Specification-Driven Development) 的 Token 效率基线测评</p>
+
+<div class="card">
+  <div class="meta-grid">
+    <div class="meta-item"><span class="label">目标项目：</span><a href="https://github.com/ShijunDeng/agentcube.git">agentcube</a></div>
+    <div class="meta-item"><span class="label">原始规模：</span>275 文件 / 64,625 行代码</div>
+    <div class="meta-item"><span class="label">CLI 工具：</span>Cursor CLI (Agent 模式)</div>
+    <div class="meta-item"><span class="label">模型：</span>Claude Sonnet 4 (Anthropic)</div>
+    <div class="meta-item"><span class="label">测评时间：</span>2026-03-21T05:22:51Z</div>
+    <div class="meta-item"><span class="label">运行ID：</span><code style="font-size:0.85em">mock_cursor-cli_claude-sonnet-4_20260321T120000Z</code></div>
+  </div>
+</div>
+
+<h2>一、总体概览</h2>
+
+<div class="summary-box">
+  <div class="summary-item"><div class="big">17分7秒</div><div class="label">总耗时</div></div>
+  <div class="summary-item"><div class="big">753.0K</div><div class="label">总Token消耗</div></div>
+  <div class="summary-item"><div class="big">$5.6735</div><div class="label">总费用 (≈¥41.13)</div></div>
+  <div class="summary-item"><div class="big">64</div><div class="label">API调用次数</div></div>
+  <div class="summary-item"><div class="big">109</div><div class="label">生成文件数</div></div>
+  <div class="summary-item"><div class="big">12,104</div><div class="label">生成代码行数</div></div>
+</div>
+
+<h2>二、各阶段概览</h2>
+
+<div class="card" style="overflow-x:auto;">
+<table>
+  <thead>
+    <tr>
+      <th>阶段</th><th class="num">耗时</th>
+      <th class="num">输入Token</th><th class="num">输出Token</th><th class="num">缓存读取</th><th class="num">总Token</th>
+      <th class="num">费用($)</th>
+      <th class="num">文件</th><th class="num">代码行</th><th class="num">有效率</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+        <tr>
+          <td><span style="display:inline-block;width:12px;height:12px;background:#4C78A8;border-radius:2px;margin-right:6px;vertical-align:middle;"></span>规划阶段</td>
+          <td class="num">58秒</td>
+          <td class="num">38.6K</td>
+          <td class="num">18.7K</td>
+          <td class="num">5.2K</td>
+          <td class="num">57.3K</td>
+          <td class="num">$0.4057</td>
+          <td class="num">3</td>
+          <td class="num">289</td>
+          <td class="num">50.1%</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:12px;height:12px;background:#F58518;border-radius:2px;margin-right:6px;vertical-align:middle;"></span>Go核心类型实现</td>
+          <td class="num">2分42秒</td>
+          <td class="num">77.0K</td>
+          <td class="num">40.7K</td>
+          <td class="num">33.5K</td>
+          <td class="num">117.7K</td>
+          <td class="num">$0.8800</td>
+          <td class="num">8</td>
+          <td class="num">1,764</td>
+          <td class="num">59.9%</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:12px;height:12px;background:#E45756;border-radius:2px;margin-right:6px;vertical-align:middle;"></span>Go业务逻辑实现</td>
+          <td class="num">5分54秒</td>
+          <td class="num">101.3K</td>
+          <td class="num">74.3K</td>
+          <td class="num">60.4K</td>
+          <td class="num">175.6K</td>
+          <td class="num">$1.4803</td>
+          <td class="num">20</td>
+          <td class="num">4,223</td>
+          <td class="num">54.0%</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:12px;height:12px;background:#72B7B2;border-radius:2px;margin-right:6px;vertical-align:middle;"></span>Python CLI实现</td>
+          <td class="num">1分16秒</td>
+          <td class="num">69.9K</td>
+          <td class="num">38.1K</td>
+          <td class="num">29.4K</td>
+          <td class="num">108.0K</td>
+          <td class="num">$0.8236</td>
+          <td class="num">19</td>
+          <td class="num">1,767</td>
+          <td class="num">52.3%</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:12px;height:12px;background:#54A24B;border-radius:2px;margin-right:6px;vertical-align:middle;"></span>Python SDK实现</td>
+          <td class="num">59秒</td>
+          <td class="num">46.9K</td>
+          <td class="num">27.3K</td>
+          <td class="num">19.1K</td>
+          <td class="num">74.2K</td>
+          <td class="num">$0.5828</td>
+          <td class="num">11</td>
+          <td class="num">1,035</td>
+          <td class="num">57.3%</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:12px;height:12px;background:#EECA3B;border-radius:2px;margin-right:6px;vertical-align:middle;"></span>Kubernetes配置实现</td>
+          <td class="num">41秒</td>
+          <td class="num">23.7K</td>
+          <td class="num">16.8K</td>
+          <td class="num">8.6K</td>
+          <td class="num">40.5K</td>
+          <td class="num">$0.3381</td>
+          <td class="num">10</td>
+          <td class="num">918</td>
+          <td class="num">46.1%</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:12px;height:12px;background:#B279A2;border-radius:2px;margin-right:6px;vertical-align:middle;"></span>CI/CD与文档</td>
+          <td class="num">34秒</td>
+          <td class="num">12.6K</td>
+          <td class="num">14.0K</td>
+          <td class="num">3.1K</td>
+          <td class="num">26.6K</td>
+          <td class="num">$0.2543</td>
+          <td class="num">25</td>
+          <td class="num">427</td>
+          <td class="num">68.9%</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:12px;height:12px;background:#FF9DA6;border-radius:2px;margin-right:6px;vertical-align:middle;"></span>测试代码生成</td>
+          <td class="num">2分54秒</td>
+          <td class="num">77.3K</td>
+          <td class="num">23.8K</td>
+          <td class="num">31.8K</td>
+          <td class="num">101.1K</td>
+          <td class="num">$0.6421</td>
+          <td class="num">12</td>
+          <td class="num">1,227</td>
+          <td class="num">69.1%</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:12px;height:12px;background:#9D755D;border-radius:2px;margin-right:6px;vertical-align:middle;"></span>代码审查与修复</td>
+          <td class="num">1分9秒</td>
+          <td class="num">45.5K</td>
+          <td class="num">6.6K</td>
+          <td class="num">27.1K</td>
+          <td class="num">52.1K</td>
+          <td class="num">$0.2666</td>
+          <td class="num">1</td>
+          <td class="num">454</td>
+          <td class="num">51.9%</td>
+        </tr>
+    <tr class="total-row">
+      <td><b>合计</b></td>
+      <td class="num"><b>17分7秒</b></td>
+      <td class="num"><b>492.7K</b></td>
+      <td class="num"><b>260.3K</b></td>
+      <td class="num"><b>218.1K</b></td>
+      <td class="num"><b>753.0K</b></td>
+      <td class="num"><b>$5.6735</b></td>
+      <td class="num"><b>109</b></td>
+      <td class="num"><b>12,104</b></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>三、费用分布</h2>
+
+<div class="card">
+  <h4>按阶段费用排名</h4>
+  
+        <div class="cost-bar-row">
+          <span class="cost-bar-label">Go业务逻辑实现</span>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:26.1%;background:#E45756;"></div>
+          </div>
+          <span class="cost-bar-value">$1.4803 (26.1%)</span>
+        </div>
+        <div class="cost-bar-row">
+          <span class="cost-bar-label">Go核心类型实现</span>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:15.5%;background:#F58518;"></div>
+          </div>
+          <span class="cost-bar-value">$0.8800 (15.5%)</span>
+        </div>
+        <div class="cost-bar-row">
+          <span class="cost-bar-label">Python CLI实现</span>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:14.5%;background:#72B7B2;"></div>
+          </div>
+          <span class="cost-bar-value">$0.8236 (14.5%)</span>
+        </div>
+        <div class="cost-bar-row">
+          <span class="cost-bar-label">测试代码生成</span>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:11.3%;background:#FF9DA6;"></div>
+          </div>
+          <span class="cost-bar-value">$0.6421 (11.3%)</span>
+        </div>
+        <div class="cost-bar-row">
+          <span class="cost-bar-label">Python SDK实现</span>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:10.3%;background:#54A24B;"></div>
+          </div>
+          <span class="cost-bar-value">$0.5828 (10.3%)</span>
+        </div>
+        <div class="cost-bar-row">
+          <span class="cost-bar-label">规划阶段</span>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:7.2%;background:#4C78A8;"></div>
+          </div>
+          <span class="cost-bar-value">$0.4057 (7.2%)</span>
+        </div>
+        <div class="cost-bar-row">
+          <span class="cost-bar-label">Kubernetes配置实现</span>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:6.0%;background:#EECA3B;"></div>
+          </div>
+          <span class="cost-bar-value">$0.3381 (6.0%)</span>
+        </div>
+        <div class="cost-bar-row">
+          <span class="cost-bar-label">代码审查与修复</span>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:4.7%;background:#9D755D;"></div>
+          </div>
+          <span class="cost-bar-value">$0.2666 (4.7%)</span>
+        </div>
+        <div class="cost-bar-row">
+          <span class="cost-bar-label">CI/CD与文档</span>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill" style="width:4.5%;background:#B279A2;"></div>
+          </div>
+          <span class="cost-bar-value">$0.2543 (4.5%)</span>
+        </div>
+</div>
+
+<h2>四、各阶段详细分析</h2>
+
+
+    <div class="card" id="stage-0">
+      <h3 style="border-left:4px solid #4C78A8;padding-left:12px;">规划阶段</h3>
+      <p class="desc">基于规范文档生成实现计划和任务分解</p>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">耗时</div>
+          <div class="metric-value">58秒</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">API调用次数</div>
+          <div class="metric-value">6</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输入Token</div>
+          <div class="metric-value">38,605</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输出Token</div>
+          <div class="metric-value">18,651</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">缓存读取Token</div>
+          <div class="metric-value">5,239</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">总Token</div>
+          <div class="metric-value">57,256</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">费用</div>
+          <div class="metric-value">$0.4057</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成文件数</div>
+          <div class="metric-value">3</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成代码行数</div>
+          <div class="metric-value">289</div>
+        </div>
+      </div>
+
+      <h4>费用明细</h4>
+      <table class="detail-table">
+        <tr><th>类别</th><th>Token数</th><th>单价($/MToken)</th><th>费用($)</th><th>占比</th></tr>
+        <tr><td>输入Token</td><td class="num">38,605</td><td class="num">3.0</td><td class="num">$0.1158</td><td class="num">28.5%</td></tr>
+        <tr><td>输出Token</td><td class="num">18,651</td><td class="num">15.0</td><td class="num">$0.2798</td><td class="num">69.0%</td></tr>
+        <tr><td>缓存读取</td><td class="num">5,239</td><td class="num">0.3</td><td class="num">$0.0016</td><td class="num">0.4%</td></tr>
+        <tr><td>缓存写入</td><td class="num">2,263</td><td class="num">3.75</td><td class="num">$0.0085</td><td class="num">2.1%</td></tr>
+        <tr class="total-row"><td><b>合计</b></td><td class="num"><b>57,256</b></td><td></td><td class="num"><b>$0.4057</b></td><td class="num"><b>100%</b></td></tr>
+      </table>
+
+      <h4>输出内容构成分析</h4>
+      <div class="stacked-bar">
+        <div style="width:50.1%;background:#54A24B;" title="有效代码: 50.1%"></div>
+        <div style="width:9.0%;background:#4C78A8;" title="注释: 9.0%"></div>
+        <div style="width:16.7%;background:#EECA3B;" title="模板/样板代码: 16.7%"></div>
+        <div style="width:24.2%;background:#E45756;" title="推理/思考: 24.2%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="dot" style="background:#54A24B;"></span>有效代码 50.1%</span>
+        <span><span class="dot" style="background:#4C78A8;"></span>注释 9.0%</span>
+        <span><span class="dot" style="background:#EECA3B;"></span>模板/样板 16.7%</span>
+        <span><span class="dot" style="background:#E45756;"></span>推理/思考 24.2%</span>
+      </div>
+
+      <h4>Token效率指标</h4>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">每行代码消耗Token</div>
+          <div class="metric-value">198.1</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每文件消耗Token</div>
+          <div class="metric-value">19,085</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">有效输出率</div>
+          <div class="metric-value">50.1%</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每秒生成Token</div>
+          <div class="metric-value">321.6</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>API 调用明细（共 6 次）</summary>
+        <table class="detail-table">
+          <tr><th>序号</th><th>输入Token</th><th>输出Token</th><th>缓存读取</th><th>耗时</th><th>工具调用</th><th>状态</th></tr>
+          
+            <tr>
+              <td class="num">#1</td>
+              <td class="num">29,956</td>
+              <td class="num">4,322</td>
+              <td class="num">1,021</td>
+              <td class="num">1,339ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#2</td>
+              <td class="num">3,287</td>
+              <td class="num">4,242</td>
+              <td class="num">89</td>
+              <td class="num">14,081ms</td>
+              <td class="num">1</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#3</td>
+              <td class="num">5,362</td>
+              <td class="num">720</td>
+              <td class="num">416</td>
+              <td class="num">7,143ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#4</td>
+              <td class="num">0</td>
+              <td class="num">1,713</td>
+              <td class="num">0</td>
+              <td class="num">13,523ms</td>
+              <td class="num">1</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#5</td>
+              <td class="num">0</td>
+              <td class="num">5,297</td>
+              <td class="num">0</td>
+              <td class="num">14,256ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#6</td>
+              <td class="num">0</td>
+              <td class="num">2,357</td>
+              <td class="num">0</td>
+              <td class="num">6,556ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+        </table>
+      </details>
+    </div>
+    <div class="card" id="stage-1">
+      <h3 style="border-left:4px solid #F58518;padding-left:12px;">Go核心类型实现</h3>
+      <p class="desc">CRD 类型定义、API 注册、DeepCopy 生成</p>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">耗时</div>
+          <div class="metric-value">2分42秒</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">API调用次数</div>
+          <div class="metric-value">7</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输入Token</div>
+          <div class="metric-value">77,043</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输出Token</div>
+          <div class="metric-value">40,660</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">缓存读取Token</div>
+          <div class="metric-value">33,455</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">总Token</div>
+          <div class="metric-value">117,703</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">费用</div>
+          <div class="metric-value">$0.8800</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成文件数</div>
+          <div class="metric-value">8</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成代码行数</div>
+          <div class="metric-value">1,764</div>
+        </div>
+      </div>
+
+      <h4>费用明细</h4>
+      <table class="detail-table">
+        <tr><th>类别</th><th>Token数</th><th>单价($/MToken)</th><th>费用($)</th><th>占比</th></tr>
+        <tr><td>输入Token</td><td class="num">77,043</td><td class="num">3.0</td><td class="num">$0.2311</td><td class="num">26.3%</td></tr>
+        <tr><td>输出Token</td><td class="num">40,660</td><td class="num">15.0</td><td class="num">$0.6099</td><td class="num">69.3%</td></tr>
+        <tr><td>缓存读取</td><td class="num">33,455</td><td class="num">0.3</td><td class="num">$0.0100</td><td class="num">1.1%</td></tr>
+        <tr><td>缓存写入</td><td class="num">7,723</td><td class="num">3.75</td><td class="num">$0.0290</td><td class="num">3.3%</td></tr>
+        <tr class="total-row"><td><b>合计</b></td><td class="num"><b>117,703</b></td><td></td><td class="num"><b>$0.8800</b></td><td class="num"><b>100%</b></td></tr>
+      </table>
+
+      <h4>输出内容构成分析</h4>
+      <div class="stacked-bar">
+        <div style="width:59.9%;background:#54A24B;" title="有效代码: 59.9%"></div>
+        <div style="width:5.8%;background:#4C78A8;" title="注释: 5.8%"></div>
+        <div style="width:12.8%;background:#EECA3B;" title="模板/样板代码: 12.8%"></div>
+        <div style="width:21.5%;background:#E45756;" title="推理/思考: 21.5%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="dot" style="background:#54A24B;"></span>有效代码 59.9%</span>
+        <span><span class="dot" style="background:#4C78A8;"></span>注释 5.8%</span>
+        <span><span class="dot" style="background:#EECA3B;"></span>模板/样板 12.8%</span>
+        <span><span class="dot" style="background:#E45756;"></span>推理/思考 21.5%</span>
+      </div>
+
+      <h4>Token效率指标</h4>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">每行代码消耗Token</div>
+          <div class="metric-value">66.7</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每文件消耗Token</div>
+          <div class="metric-value">14,713</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">有效输出率</div>
+          <div class="metric-value">59.9%</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每秒生成Token</div>
+          <div class="metric-value">251.0</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>API 调用明细（共 7 次）</summary>
+        <table class="detail-table">
+          <tr><th>序号</th><th>输入Token</th><th>输出Token</th><th>缓存读取</th><th>耗时</th><th>工具调用</th><th>状态</th></tr>
+          
+            <tr>
+              <td class="num">#1</td>
+              <td class="num">7,438</td>
+              <td class="num">4,733</td>
+              <td class="num">2,348</td>
+              <td class="num">12,447ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#2</td>
+              <td class="num">27,590</td>
+              <td class="num">7,357</td>
+              <td class="num">7,436</td>
+              <td class="num">5,239ms</td>
+              <td class="num">5</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#3</td>
+              <td class="num">25,178</td>
+              <td class="num">7,016</td>
+              <td class="num">3,819</td>
+              <td class="num">5,847ms</td>
+              <td class="num">2</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#4</td>
+              <td class="num">15,845</td>
+              <td class="num">7,209</td>
+              <td class="num">741</td>
+              <td class="num">4,918ms</td>
+              <td class="num">2</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#5</td>
+              <td class="num">992</td>
+              <td class="num">2,240</td>
+              <td class="num">374</td>
+              <td class="num">11,629ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#6</td>
+              <td class="num">0</td>
+              <td class="num">7,786</td>
+              <td class="num">0</td>
+              <td class="num">12,690ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#7</td>
+              <td class="num">0</td>
+              <td class="num">4,319</td>
+              <td class="num">0</td>
+              <td class="num">1,520ms</td>
+              <td class="num">2</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+        </table>
+      </details>
+    </div>
+    <div class="card" id="stage-2">
+      <h3 style="border-left:4px solid #E45756;padding-left:12px;">Go业务逻辑实现</h3>
+      <p class="desc">控制器、路由器、会话存储、工作负载管理器</p>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">耗时</div>
+          <div class="metric-value">5分54秒</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">API调用次数</div>
+          <div class="metric-value">19</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输入Token</div>
+          <div class="metric-value">101,261</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输出Token</div>
+          <div class="metric-value">74,293</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">缓存读取Token</div>
+          <div class="metric-value">60,389</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">总Token</div>
+          <div class="metric-value">175,554</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">费用</div>
+          <div class="metric-value">$1.4803</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成文件数</div>
+          <div class="metric-value">20</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成代码行数</div>
+          <div class="metric-value">4,223</div>
+        </div>
+      </div>
+
+      <h4>费用明细</h4>
+      <table class="detail-table">
+        <tr><th>类别</th><th>Token数</th><th>单价($/MToken)</th><th>费用($)</th><th>占比</th></tr>
+        <tr><td>输入Token</td><td class="num">101,261</td><td class="num">3.0</td><td class="num">$0.3038</td><td class="num">20.5%</td></tr>
+        <tr><td>输出Token</td><td class="num">74,293</td><td class="num">15.0</td><td class="num">$1.1144</td><td class="num">75.3%</td></tr>
+        <tr><td>缓存读取</td><td class="num">60,389</td><td class="num">0.3</td><td class="num">$0.0181</td><td class="num">1.2%</td></tr>
+        <tr><td>缓存写入</td><td class="num">11,741</td><td class="num">3.75</td><td class="num">$0.0440</td><td class="num">3.0%</td></tr>
+        <tr class="total-row"><td><b>合计</b></td><td class="num"><b>175,554</b></td><td></td><td class="num"><b>$1.4803</b></td><td class="num"><b>100%</b></td></tr>
+      </table>
+
+      <h4>输出内容构成分析</h4>
+      <div class="stacked-bar">
+        <div style="width:54.0%;background:#54A24B;" title="有效代码: 54.0%"></div>
+        <div style="width:12.6%;background:#4C78A8;" title="注释: 12.6%"></div>
+        <div style="width:18.5%;background:#EECA3B;" title="模板/样板代码: 18.5%"></div>
+        <div style="width:14.8%;background:#E45756;" title="推理/思考: 14.8%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="dot" style="background:#54A24B;"></span>有效代码 54.0%</span>
+        <span><span class="dot" style="background:#4C78A8;"></span>注释 12.6%</span>
+        <span><span class="dot" style="background:#EECA3B;"></span>模板/样板 18.5%</span>
+        <span><span class="dot" style="background:#E45756;"></span>推理/思考 14.8%</span>
+      </div>
+
+      <h4>Token效率指标</h4>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">每行代码消耗Token</div>
+          <div class="metric-value">41.6</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每文件消耗Token</div>
+          <div class="metric-value">8,778</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">有效输出率</div>
+          <div class="metric-value">54.0%</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每秒生成Token</div>
+          <div class="metric-value">209.9</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>API 调用明细（共 19 次）</summary>
+        <table class="detail-table">
+          <tr><th>序号</th><th>输入Token</th><th>输出Token</th><th>缓存读取</th><th>耗时</th><th>工具调用</th><th>状态</th></tr>
+          
+            <tr>
+              <td class="num">#1</td>
+              <td class="num">6,951</td>
+              <td class="num">5,706</td>
+              <td class="num">1,825</td>
+              <td class="num">1,913ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#2</td>
+              <td class="num">18,230</td>
+              <td class="num">6,046</td>
+              <td class="num">1,637</td>
+              <td class="num">1,571ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#3</td>
+              <td class="num">8,954</td>
+              <td class="num">5,536</td>
+              <td class="num">4,389</td>
+              <td class="num">12,445ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#4</td>
+              <td class="num">20,864</td>
+              <td class="num">1,155</td>
+              <td class="num">10,891</td>
+              <td class="num">11,024ms</td>
+              <td class="num">1</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#5</td>
+              <td class="num">16,014</td>
+              <td class="num">4,393</td>
+              <td class="num">12,251</td>
+              <td class="num">9,277ms</td>
+              <td class="num">5</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#6</td>
+              <td class="num">4,056</td>
+              <td class="num">4,078</td>
+              <td class="num">739</td>
+              <td class="num">5,131ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#7</td>
+              <td class="num">9,991</td>
+              <td class="num">6,308</td>
+              <td class="num">7,011</td>
+              <td class="num">8,242ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#8</td>
+              <td class="num">16,201</td>
+              <td class="num">4,377</td>
+              <td class="num">8,231</td>
+              <td class="num">14,804ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#9</td>
+              <td class="num">0</td>
+              <td class="num">3,738</td>
+              <td class="num">0</td>
+              <td class="num">6,115ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#10</td>
+              <td class="num">0</td>
+              <td class="num">2,844</td>
+              <td class="num">0</td>
+              <td class="num">11,007ms</td>
+              <td class="num">5</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#11</td>
+              <td class="num">0</td>
+              <td class="num">1,678</td>
+              <td class="num">0</td>
+              <td class="num">1,357ms</td>
+              <td class="num">1</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#12</td>
+              <td class="num">0</td>
+              <td class="num">6,641</td>
+              <td class="num">0</td>
+              <td class="num">10,213ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#13</td>
+              <td class="num">0</td>
+              <td class="num">2,520</td>
+              <td class="num">0</td>
+              <td class="num">12,076ms</td>
+              <td class="num">2</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#14</td>
+              <td class="num">0</td>
+              <td class="num">4,289</td>
+              <td class="num">0</td>
+              <td class="num">12,552ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#15</td>
+              <td class="num">0</td>
+              <td class="num">2,718</td>
+              <td class="num">0</td>
+              <td class="num">8,011ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr><tr><td colspan="7" style="text-align:center;color:#888;">...还有 4 条调用记录</td></tr>
+        </table>
+      </details>
+    </div>
+    <div class="card" id="stage-3">
+      <h3 style="border-left:4px solid #72B7B2;padding-left:12px;">Python CLI实现</h3>
+      <p class="desc">Typer CLI 工具、运行时管理、服务层</p>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">耗时</div>
+          <div class="metric-value">1分16秒</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">API调用次数</div>
+          <div class="metric-value">7</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输入Token</div>
+          <div class="metric-value">69,903</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输出Token</div>
+          <div class="metric-value">38,087</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">缓存读取Token</div>
+          <div class="metric-value">29,367</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">总Token</div>
+          <div class="metric-value">107,990</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">费用</div>
+          <div class="metric-value">$0.8236</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成文件数</div>
+          <div class="metric-value">19</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成代码行数</div>
+          <div class="metric-value">1,767</div>
+        </div>
+      </div>
+
+      <h4>费用明细</h4>
+      <table class="detail-table">
+        <tr><th>类别</th><th>Token数</th><th>单价($/MToken)</th><th>费用($)</th><th>占比</th></tr>
+        <tr><td>输入Token</td><td class="num">69,903</td><td class="num">3.0</td><td class="num">$0.2097</td><td class="num">25.5%</td></tr>
+        <tr><td>输出Token</td><td class="num">38,087</td><td class="num">15.0</td><td class="num">$0.5713</td><td class="num">69.4%</td></tr>
+        <tr><td>缓存读取</td><td class="num">29,367</td><td class="num">0.3</td><td class="num">$0.0088</td><td class="num">1.1%</td></tr>
+        <tr><td>缓存写入</td><td class="num">9,014</td><td class="num">3.75</td><td class="num">$0.0338</td><td class="num">4.1%</td></tr>
+        <tr class="total-row"><td><b>合计</b></td><td class="num"><b>107,990</b></td><td></td><td class="num"><b>$0.8236</b></td><td class="num"><b>100%</b></td></tr>
+      </table>
+
+      <h4>输出内容构成分析</h4>
+      <div class="stacked-bar">
+        <div style="width:52.3%;background:#54A24B;" title="有效代码: 52.3%"></div>
+        <div style="width:6.7%;background:#4C78A8;" title="注释: 6.7%"></div>
+        <div style="width:18.5%;background:#EECA3B;" title="模板/样板代码: 18.5%"></div>
+        <div style="width:22.5%;background:#E45756;" title="推理/思考: 22.5%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="dot" style="background:#54A24B;"></span>有效代码 52.3%</span>
+        <span><span class="dot" style="background:#4C78A8;"></span>注释 6.7%</span>
+        <span><span class="dot" style="background:#EECA3B;"></span>模板/样板 18.5%</span>
+        <span><span class="dot" style="background:#E45756;"></span>推理/思考 22.5%</span>
+      </div>
+
+      <h4>Token效率指标</h4>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">每行代码消耗Token</div>
+          <div class="metric-value">61.1</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每文件消耗Token</div>
+          <div class="metric-value">5,684</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">有效输出率</div>
+          <div class="metric-value">52.3%</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每秒生成Token</div>
+          <div class="metric-value">501.1</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>API 调用明细（共 7 次）</summary>
+        <table class="detail-table">
+          <tr><th>序号</th><th>输入Token</th><th>输出Token</th><th>缓存读取</th><th>耗时</th><th>工具调用</th><th>状态</th></tr>
+          
+            <tr>
+              <td class="num">#1</td>
+              <td class="num">20,325</td>
+              <td class="num">4,509</td>
+              <td class="num">8,077</td>
+              <td class="num">14,362ms</td>
+              <td class="num">1</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#2</td>
+              <td class="num">12,766</td>
+              <td class="num">6,243</td>
+              <td class="num">550</td>
+              <td class="num">11,714ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#3</td>
+              <td class="num">26,058</td>
+              <td class="num">2,691</td>
+              <td class="num">3,441</td>
+              <td class="num">8,081ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#4</td>
+              <td class="num">10,754</td>
+              <td class="num">7,900</td>
+              <td class="num">5,078</td>
+              <td class="num">8,352ms</td>
+              <td class="num">2</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#5</td>
+              <td class="num">0</td>
+              <td class="num">7,215</td>
+              <td class="num">0</td>
+              <td class="num">12,604ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#6</td>
+              <td class="num">0</td>
+              <td class="num">5,096</td>
+              <td class="num">0</td>
+              <td class="num">5,727ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#7</td>
+              <td class="num">0</td>
+              <td class="num">4,433</td>
+              <td class="num">0</td>
+              <td class="num">6,734ms</td>
+              <td class="num">2</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+        </table>
+      </details>
+    </div>
+    <div class="card" id="stage-4">
+      <h3 style="border-left:4px solid #54A24B;padding-left:12px;">Python SDK实现</h3>
+      <p class="desc">CodeInterpreter/AgentRuntime 客户端 SDK</p>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">耗时</div>
+          <div class="metric-value">59秒</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">API调用次数</div>
+          <div class="metric-value">6</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输入Token</div>
+          <div class="metric-value">46,865</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输出Token</div>
+          <div class="metric-value">27,347</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">缓存读取Token</div>
+          <div class="metric-value">19,119</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">总Token</div>
+          <div class="metric-value">74,212</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">费用</div>
+          <div class="metric-value">$0.5828</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成文件数</div>
+          <div class="metric-value">11</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成代码行数</div>
+          <div class="metric-value">1,035</div>
+        </div>
+      </div>
+
+      <h4>费用明细</h4>
+      <table class="detail-table">
+        <tr><th>类别</th><th>Token数</th><th>单价($/MToken)</th><th>费用($)</th><th>占比</th></tr>
+        <tr><td>输入Token</td><td class="num">46,865</td><td class="num">3.0</td><td class="num">$0.1406</td><td class="num">24.1%</td></tr>
+        <tr><td>输出Token</td><td class="num">27,347</td><td class="num">15.0</td><td class="num">$0.4102</td><td class="num">70.4%</td></tr>
+        <tr><td>缓存读取</td><td class="num">19,119</td><td class="num">0.3</td><td class="num">$0.0057</td><td class="num">1.0%</td></tr>
+        <tr><td>缓存写入</td><td class="num">7,003</td><td class="num">3.75</td><td class="num">$0.0263</td><td class="num">4.5%</td></tr>
+        <tr class="total-row"><td><b>合计</b></td><td class="num"><b>74,212</b></td><td></td><td class="num"><b>$0.5828</b></td><td class="num"><b>100%</b></td></tr>
+      </table>
+
+      <h4>输出内容构成分析</h4>
+      <div class="stacked-bar">
+        <div style="width:57.3%;background:#54A24B;" title="有效代码: 57.3%"></div>
+        <div style="width:12.6%;background:#4C78A8;" title="注释: 12.6%"></div>
+        <div style="width:19.0%;background:#EECA3B;" title="模板/样板代码: 19.0%"></div>
+        <div style="width:11.1%;background:#E45756;" title="推理/思考: 11.1%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="dot" style="background:#54A24B;"></span>有效代码 57.3%</span>
+        <span><span class="dot" style="background:#4C78A8;"></span>注释 12.6%</span>
+        <span><span class="dot" style="background:#EECA3B;"></span>模板/样板 19.0%</span>
+        <span><span class="dot" style="background:#E45756;"></span>推理/思考 11.1%</span>
+      </div>
+
+      <h4>Token效率指标</h4>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">每行代码消耗Token</div>
+          <div class="metric-value">71.7</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每文件消耗Token</div>
+          <div class="metric-value">6,747</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">有效输出率</div>
+          <div class="metric-value">57.3%</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每秒生成Token</div>
+          <div class="metric-value">463.5</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>API 调用明细（共 6 次）</summary>
+        <table class="detail-table">
+          <tr><th>序号</th><th>输入Token</th><th>输出Token</th><th>缓存读取</th><th>耗时</th><th>工具调用</th><th>状态</th></tr>
+          
+            <tr>
+              <td class="num">#1</td>
+              <td class="num">8,642</td>
+              <td class="num">2,023</td>
+              <td class="num">3,273</td>
+              <td class="num">5,108ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#2</td>
+              <td class="num">2,759</td>
+              <td class="num">7,342</td>
+              <td class="num">1,383</td>
+              <td class="num">6,906ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#3</td>
+              <td class="num">20,801</td>
+              <td class="num">4,726</td>
+              <td class="num">12,558</td>
+              <td class="num">14,860ms</td>
+              <td class="num">5</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#4</td>
+              <td class="num">14,663</td>
+              <td class="num">4,538</td>
+              <td class="num">3,756</td>
+              <td class="num">11,766ms</td>
+              <td class="num">1</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#5</td>
+              <td class="num">0</td>
+              <td class="num">4,662</td>
+              <td class="num">0</td>
+              <td class="num">2,308ms</td>
+              <td class="num">1</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#6</td>
+              <td class="num">0</td>
+              <td class="num">4,056</td>
+              <td class="num">0</td>
+              <td class="num">5,506ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+        </table>
+      </details>
+    </div>
+    <div class="card" id="stage-5">
+      <h3 style="border-left:4px solid #EECA3B;padding-left:12px;">Kubernetes配置实现</h3>
+      <p class="desc">Helm Charts、CRD YAML、RBAC、Dockerfile</p>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">耗时</div>
+          <div class="metric-value">41秒</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">API调用次数</div>
+          <div class="metric-value">6</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输入Token</div>
+          <div class="metric-value">23,702</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输出Token</div>
+          <div class="metric-value">16,806</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">缓存读取Token</div>
+          <div class="metric-value">8,596</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">总Token</div>
+          <div class="metric-value">40,508</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">费用</div>
+          <div class="metric-value">$0.3381</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成文件数</div>
+          <div class="metric-value">10</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成代码行数</div>
+          <div class="metric-value">918</div>
+        </div>
+      </div>
+
+      <h4>费用明细</h4>
+      <table class="detail-table">
+        <tr><th>类别</th><th>Token数</th><th>单价($/MToken)</th><th>费用($)</th><th>占比</th></tr>
+        <tr><td>输入Token</td><td class="num">23,702</td><td class="num">3.0</td><td class="num">$0.0711</td><td class="num">21.0%</td></tr>
+        <tr><td>输出Token</td><td class="num">16,806</td><td class="num">15.0</td><td class="num">$0.2521</td><td class="num">74.6%</td></tr>
+        <tr><td>缓存读取</td><td class="num">8,596</td><td class="num">0.3</td><td class="num">$0.0026</td><td class="num">0.8%</td></tr>
+        <tr><td>缓存写入</td><td class="num">3,273</td><td class="num">3.75</td><td class="num">$0.0123</td><td class="num">3.6%</td></tr>
+        <tr class="total-row"><td><b>合计</b></td><td class="num"><b>40,508</b></td><td></td><td class="num"><b>$0.3381</b></td><td class="num"><b>100%</b></td></tr>
+      </table>
+
+      <h4>输出内容构成分析</h4>
+      <div class="stacked-bar">
+        <div style="width:46.1%;background:#54A24B;" title="有效代码: 46.1%"></div>
+        <div style="width:12.2%;background:#4C78A8;" title="注释: 12.2%"></div>
+        <div style="width:14.8%;background:#EECA3B;" title="模板/样板代码: 14.8%"></div>
+        <div style="width:26.8%;background:#E45756;" title="推理/思考: 26.8%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="dot" style="background:#54A24B;"></span>有效代码 46.1%</span>
+        <span><span class="dot" style="background:#4C78A8;"></span>注释 12.2%</span>
+        <span><span class="dot" style="background:#EECA3B;"></span>模板/样板 14.8%</span>
+        <span><span class="dot" style="background:#E45756;"></span>推理/思考 26.8%</span>
+      </div>
+
+      <h4>Token效率指标</h4>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">每行代码消耗Token</div>
+          <div class="metric-value">44.1</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每文件消耗Token</div>
+          <div class="metric-value">4,051</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">有效输出率</div>
+          <div class="metric-value">46.1%</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每秒生成Token</div>
+          <div class="metric-value">409.9</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>API 调用明细（共 6 次）</summary>
+        <table class="detail-table">
+          <tr><th>序号</th><th>输入Token</th><th>输出Token</th><th>缓存读取</th><th>耗时</th><th>工具调用</th><th>状态</th></tr>
+          
+            <tr>
+              <td class="num">#1</td>
+              <td class="num">19,595</td>
+              <td class="num">6,916</td>
+              <td class="num">6,316</td>
+              <td class="num">2,444ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#2</td>
+              <td class="num">4,107</td>
+              <td class="num">1,733</td>
+              <td class="num">397</td>
+              <td class="num">7,816ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#3</td>
+              <td class="num">0</td>
+              <td class="num">1,703</td>
+              <td class="num">0</td>
+              <td class="num">2,034ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#4</td>
+              <td class="num">0</td>
+              <td class="num">1,895</td>
+              <td class="num">0</td>
+              <td class="num">9,659ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#5</td>
+              <td class="num">0</td>
+              <td class="num">4,392</td>
+              <td class="num">0</td>
+              <td class="num">4,049ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#6</td>
+              <td class="num">0</td>
+              <td class="num">167</td>
+              <td class="num">0</td>
+              <td class="num">10,845ms</td>
+              <td class="num">5</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+        </table>
+      </details>
+    </div>
+    <div class="card" id="stage-6">
+      <h3 style="border-left:4px solid #B279A2;padding-left:12px;">CI/CD与文档</h3>
+      <p class="desc">GitHub Actions、README、设计文档</p>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">耗时</div>
+          <div class="metric-value">34秒</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">API调用次数</div>
+          <div class="metric-value">4</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输入Token</div>
+          <div class="metric-value">12,640</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输出Token</div>
+          <div class="metric-value">14,003</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">缓存读取Token</div>
+          <div class="metric-value">3,081</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">总Token</div>
+          <div class="metric-value">26,643</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">费用</div>
+          <div class="metric-value">$0.2543</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成文件数</div>
+          <div class="metric-value">25</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成代码行数</div>
+          <div class="metric-value">427</div>
+        </div>
+      </div>
+
+      <h4>费用明细</h4>
+      <table class="detail-table">
+        <tr><th>类别</th><th>Token数</th><th>单价($/MToken)</th><th>费用($)</th><th>占比</th></tr>
+        <tr><td>输入Token</td><td class="num">12,640</td><td class="num">3.0</td><td class="num">$0.0379</td><td class="num">14.9%</td></tr>
+        <tr><td>输出Token</td><td class="num">14,003</td><td class="num">15.0</td><td class="num">$0.2100</td><td class="num">82.6%</td></tr>
+        <tr><td>缓存读取</td><td class="num">3,081</td><td class="num">0.3</td><td class="num">$0.0009</td><td class="num">0.4%</td></tr>
+        <tr><td>缓存写入</td><td class="num">1,463</td><td class="num">3.75</td><td class="num">$0.0055</td><td class="num">2.2%</td></tr>
+        <tr class="total-row"><td><b>合计</b></td><td class="num"><b>26,643</b></td><td></td><td class="num"><b>$0.2543</b></td><td class="num"><b>100%</b></td></tr>
+      </table>
+
+      <h4>输出内容构成分析</h4>
+      <div class="stacked-bar">
+        <div style="width:68.9%;background:#54A24B;" title="有效代码: 68.9%"></div>
+        <div style="width:8.5%;background:#4C78A8;" title="注释: 8.5%"></div>
+        <div style="width:14.7%;background:#EECA3B;" title="模板/样板代码: 14.7%"></div>
+        <div style="width:7.9%;background:#E45756;" title="推理/思考: 7.9%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="dot" style="background:#54A24B;"></span>有效代码 68.9%</span>
+        <span><span class="dot" style="background:#4C78A8;"></span>注释 8.5%</span>
+        <span><span class="dot" style="background:#EECA3B;"></span>模板/样板 14.7%</span>
+        <span><span class="dot" style="background:#E45756;"></span>推理/思考 7.9%</span>
+      </div>
+
+      <h4>Token效率指标</h4>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">每行代码消耗Token</div>
+          <div class="metric-value">62.4</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每文件消耗Token</div>
+          <div class="metric-value">1,066</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">有效输出率</div>
+          <div class="metric-value">68.9%</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每秒生成Token</div>
+          <div class="metric-value">411.9</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>API 调用明细（共 4 次）</summary>
+        <table class="detail-table">
+          <tr><th>序号</th><th>输入Token</th><th>输出Token</th><th>缓存读取</th><th>耗时</th><th>工具调用</th><th>状态</th></tr>
+          
+            <tr>
+              <td class="num">#1</td>
+              <td class="num">12,640</td>
+              <td class="num">4,072</td>
+              <td class="num">3,301</td>
+              <td class="num">6,626ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#2</td>
+              <td class="num">0</td>
+              <td class="num">2,889</td>
+              <td class="num">0</td>
+              <td class="num">9,970ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#3</td>
+              <td class="num">0</td>
+              <td class="num">3,611</td>
+              <td class="num">0</td>
+              <td class="num">4,066ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#4</td>
+              <td class="num">0</td>
+              <td class="num">3,431</td>
+              <td class="num">0</td>
+              <td class="num">9,081ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+        </table>
+      </details>
+    </div>
+    <div class="card" id="stage-7">
+      <h3 style="border-left:4px solid #FF9DA6;padding-left:12px;">测试代码生成</h3>
+      <p class="desc">Go 单元测试、Python pytest、E2E 测试</p>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">耗时</div>
+          <div class="metric-value">2分54秒</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">API调用次数</div>
+          <div class="metric-value">6</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输入Token</div>
+          <div class="metric-value">77,254</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输出Token</div>
+          <div class="metric-value">23,833</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">缓存读取Token</div>
+          <div class="metric-value">31,765</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">总Token</div>
+          <div class="metric-value">101,087</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">费用</div>
+          <div class="metric-value">$0.6421</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成文件数</div>
+          <div class="metric-value">12</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成代码行数</div>
+          <div class="metric-value">1,227</div>
+        </div>
+      </div>
+
+      <h4>费用明细</h4>
+      <table class="detail-table">
+        <tr><th>类别</th><th>Token数</th><th>单价($/MToken)</th><th>费用($)</th><th>占比</th></tr>
+        <tr><td>输入Token</td><td class="num">77,254</td><td class="num">3.0</td><td class="num">$0.2318</td><td class="num">36.1%</td></tr>
+        <tr><td>输出Token</td><td class="num">23,833</td><td class="num">15.0</td><td class="num">$0.3575</td><td class="num">55.7%</td></tr>
+        <tr><td>缓存读取</td><td class="num">31,765</td><td class="num">0.3</td><td class="num">$0.0095</td><td class="num">1.5%</td></tr>
+        <tr><td>缓存写入</td><td class="num">11,554</td><td class="num">3.75</td><td class="num">$0.0433</td><td class="num">6.7%</td></tr>
+        <tr class="total-row"><td><b>合计</b></td><td class="num"><b>101,087</b></td><td></td><td class="num"><b>$0.6421</b></td><td class="num"><b>100%</b></td></tr>
+      </table>
+
+      <h4>输出内容构成分析</h4>
+      <div class="stacked-bar">
+        <div style="width:69.1%;background:#54A24B;" title="有效代码: 69.1%"></div>
+        <div style="width:5.7%;background:#4C78A8;" title="注释: 5.7%"></div>
+        <div style="width:19.9%;background:#EECA3B;" title="模板/样板代码: 19.9%"></div>
+        <div style="width:5.3%;background:#E45756;" title="推理/思考: 5.3%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="dot" style="background:#54A24B;"></span>有效代码 69.1%</span>
+        <span><span class="dot" style="background:#4C78A8;"></span>注释 5.7%</span>
+        <span><span class="dot" style="background:#EECA3B;"></span>模板/样板 19.9%</span>
+        <span><span class="dot" style="background:#E45756;"></span>推理/思考 5.3%</span>
+      </div>
+
+      <h4>Token效率指标</h4>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">每行代码消耗Token</div>
+          <div class="metric-value">82.4</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每文件消耗Token</div>
+          <div class="metric-value">8,424</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">有效输出率</div>
+          <div class="metric-value">69.1%</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每秒生成Token</div>
+          <div class="metric-value">137.0</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>API 调用明细（共 6 次）</summary>
+        <table class="detail-table">
+          <tr><th>序号</th><th>输入Token</th><th>输出Token</th><th>缓存读取</th><th>耗时</th><th>工具调用</th><th>状态</th></tr>
+          
+            <tr>
+              <td class="num">#1</td>
+              <td class="num">26,067</td>
+              <td class="num">3,068</td>
+              <td class="num">6,312</td>
+              <td class="num">10,699ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#2</td>
+              <td class="num">29,961</td>
+              <td class="num">4,402</td>
+              <td class="num">21,227</td>
+              <td class="num">14,128ms</td>
+              <td class="num">5</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#3</td>
+              <td class="num">21,226</td>
+              <td class="num">5,801</td>
+              <td class="num">11,703</td>
+              <td class="num">12,163ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#4</td>
+              <td class="num">0</td>
+              <td class="num">1,377</td>
+              <td class="num">0</td>
+              <td class="num">3,753ms</td>
+              <td class="num">3</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#5</td>
+              <td class="num">0</td>
+              <td class="num">6,853</td>
+              <td class="num">0</td>
+              <td class="num">2,882ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#6</td>
+              <td class="num">0</td>
+              <td class="num">2,332</td>
+              <td class="num">0</td>
+              <td class="num">14,125ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+        </table>
+      </details>
+    </div>
+    <div class="card" id="stage-8">
+      <h3 style="border-left:4px solid #9D755D;padding-left:12px;">代码审查与修复</h3>
+      <p class="desc">编译检查、语法检查、修复问题</p>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">耗时</div>
+          <div class="metric-value">1分9秒</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">API调用次数</div>
+          <div class="metric-value">3</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输入Token</div>
+          <div class="metric-value">45,451</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">输出Token</div>
+          <div class="metric-value">6,625</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">缓存读取Token</div>
+          <div class="metric-value">27,120</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">总Token</div>
+          <div class="metric-value">52,076</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">费用</div>
+          <div class="metric-value">$0.2666</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成文件数</div>
+          <div class="metric-value">1</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">生成代码行数</div>
+          <div class="metric-value">454</div>
+        </div>
+      </div>
+
+      <h4>费用明细</h4>
+      <table class="detail-table">
+        <tr><th>类别</th><th>Token数</th><th>单价($/MToken)</th><th>费用($)</th><th>占比</th></tr>
+        <tr><td>输入Token</td><td class="num">45,451</td><td class="num">3.0</td><td class="num">$0.1364</td><td class="num">51.2%</td></tr>
+        <tr><td>输出Token</td><td class="num">6,625</td><td class="num">15.0</td><td class="num">$0.0994</td><td class="num">37.3%</td></tr>
+        <tr><td>缓存读取</td><td class="num">27,120</td><td class="num">0.3</td><td class="num">$0.0081</td><td class="num">3.0%</td></tr>
+        <tr><td>缓存写入</td><td class="num">6,065</td><td class="num">3.75</td><td class="num">$0.0227</td><td class="num">8.5%</td></tr>
+        <tr class="total-row"><td><b>合计</b></td><td class="num"><b>52,076</b></td><td></td><td class="num"><b>$0.2666</b></td><td class="num"><b>100%</b></td></tr>
+      </table>
+
+      <h4>输出内容构成分析</h4>
+      <div class="stacked-bar">
+        <div style="width:51.9%;background:#54A24B;" title="有效代码: 51.9%"></div>
+        <div style="width:5.1%;background:#4C78A8;" title="注释: 5.1%"></div>
+        <div style="width:11.8%;background:#EECA3B;" title="模板/样板代码: 11.8%"></div>
+        <div style="width:31.3%;background:#E45756;" title="推理/思考: 31.3%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="dot" style="background:#54A24B;"></span>有效代码 51.9%</span>
+        <span><span class="dot" style="background:#4C78A8;"></span>注释 5.1%</span>
+        <span><span class="dot" style="background:#EECA3B;"></span>模板/样板 11.8%</span>
+        <span><span class="dot" style="background:#E45756;"></span>推理/思考 31.3%</span>
+      </div>
+
+      <h4>Token效率指标</h4>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <div class="metric-label">每行代码消耗Token</div>
+          <div class="metric-value">114.7</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每文件消耗Token</div>
+          <div class="metric-value">52,076</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">有效输出率</div>
+          <div class="metric-value">51.9%</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">每秒生成Token</div>
+          <div class="metric-value">96.0</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>API 调用明细（共 3 次）</summary>
+        <table class="detail-table">
+          <tr><th>序号</th><th>输入Token</th><th>输出Token</th><th>缓存读取</th><th>耗时</th><th>工具调用</th><th>状态</th></tr>
+          
+            <tr>
+              <td class="num">#1</td>
+              <td class="num">8,411</td>
+              <td class="num">780</td>
+              <td class="num">5,392</td>
+              <td class="num">6,539ms</td>
+              <td class="num">5</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#2</td>
+              <td class="num">12,780</td>
+              <td class="num">5,845</td>
+              <td class="num">10,196</td>
+              <td class="num">8,535ms</td>
+              <td class="num">4</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+            <tr>
+              <td class="num">#3</td>
+              <td class="num">24,260</td>
+              <td class="num">0</td>
+              <td class="num">13,263</td>
+              <td class="num">9,676ms</td>
+              <td class="num">0</td>
+              <td><span class="badge-ok">success</span></td>
+            </tr>
+        </table>
+      </details>
+    </div>
+
+<h2>五、质量评估</h2>
+
+<div class="card">
+  <div class="metrics-grid">
+    <div class="metric-box"><div class="metric-label">文件覆盖率</div><div class="metric-value">39.6%</div></div>
+    <div class="metric-box"><div class="metric-label">代码行覆盖率</div><div class="metric-value">18.7%</div></div>
+    <div class="metric-box"><div class="metric-label">目录相似度</div><div class="metric-value">91.3%</div></div>
+    <div class="metric-box"><div class="metric-label">文件重叠率</div><div class="metric-value">72.6%</div></div>
+    <div class="metric-box"><div class="metric-label">关键文件覆盖</div><div class="metric-value">100.0%</div></div>
+    <div class="metric-box"><div class="metric-label">Python语法通过</div><div class="metric-value">100.0%</div></div>
+    <div class="metric-box"><div class="metric-label">YAML语法通过</div><div class="metric-value">100.0%</div></div>
+    <div class="metric-box"><div class="metric-label">Go编译通过</div><div class="metric-value">❌ 否</div></div>
+  </div>
+</div>
+
+<h2>六、Token 效率总结</h2>
+
+<div class="card">
+  <div class="metrics-grid">
+    <div class="metric-box"><div class="metric-label">每行代码消耗Token</div><div class="metric-value">62.2</div></div>
+    <div class="metric-box"><div class="metric-label">每文件消耗Token</div><div class="metric-value">6,909</div></div>
+    <div class="metric-box"><div class="metric-label">每分钟生成代码行</div><div class="metric-value">707.1</div></div>
+    <div class="metric-box"><div class="metric-label">每美元生成代码行</div><div class="metric-value">2133</div></div>
+    <div class="metric-box"><div class="metric-label">输入输出Token比</div><div class="metric-value">1.89:1</div></div>
+    <div class="metric-box"><div class="metric-label">缓存命中率</div><div class="metric-value">44.3%</div></div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:24px;text-align:center;color:var(--muted);font-size:0.85em;">
+  生成时间：2026-03-21 05:22:51 UTC ｜
+  工具：SDD Benchmark Framework ｜
+  <a href="https://github.com/ShijunDeng/sdd-benchmark">GitHub</a>
+</div>
+
+</div>
+</body>
+</html>
