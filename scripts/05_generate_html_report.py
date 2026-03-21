@@ -578,6 +578,8 @@ def render_html(data):
 <div class="card" style="margin-top:24px;text-align:center;color:var(--muted);font-size:0.85em;">
   生成时间：{datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')} ｜
   工具：SDD-TEE Framework ｜
+  <a href="introduction.html">项目介绍</a> ｜
+  <a href="project_analysis_report.html">目标工程解析</a> ｜
   <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
 </div>
 

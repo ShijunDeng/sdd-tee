@@ -6,12 +6,14 @@
 
 ## 前置工作（一次性）
 
-以下两项为一次性的前置准备，成果可在后续所有评测中复用，其耗时和 token 消耗不计入 benchmark：
+以下两项为一次性的前置准备，成果可在后续所有评测中复用，其耗时和 token 消耗不计入 benchmark。
+详细的 Token 消耗、耗时及框架技术细节见 **[项目介绍与前置工作报告](results/reports/introduction.html)**。
 
 | 前置项 | 说明 | 产出 |
 |--------|------|------|
-| 项目技术解析 | 分析目标项目的代码量、技术栈、模块结构 | `results/reports/project_analysis_report.html` |
+| 项目技术解析 | 分析目标项目的代码量、技术栈、模块结构 | [`project_analysis_report.html`](results/reports/project_analysis_report.html) |
 | 规范逆向生成 | 从源码逆向生成 OpenSpec 规范文档 | `specs/` 目录 |
+| **综合介绍** | **前置工作详情 + 框架技术架构 + 规范概览** | [`introduction.html`](results/reports/introduction.html) |
 
 ## 评测流水线
 
@@ -70,7 +72,8 @@ sdd-tee/
 │   ├── 03_validate.py          # 评测: 质量验证
 │   ├── 04_report.py            # 评测: 汇总报告 + 图表
 │   ├── 05_generate_html_report.py  # 评测: 详细 HTML 报告
-│   └── 06_project_analysis_report.py  # 前置: 项目技术解析（一次性）
+│   ├── 06_project_analysis_report.py  # 前置: 项目技术解析（一次性）
+│   └── 07_introduction_report.py  # 文档: 介绍章节生成
 ├── specs/                      # 逆向生成的 OpenSpec 规范（一次性产出，可复用）
 ├── workspaces/                 # 各工具的开发工作空间（运行时生成）
 └── results/                    # 测评结果（运行时生成）

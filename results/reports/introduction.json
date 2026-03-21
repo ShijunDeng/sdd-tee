@@ -1,0 +1,605 @@
+{
+  "generated_at": "2026-03-21T05:40:16.599029+00:00",
+  "framework": {
+    "name": "SDD-TEE",
+    "full_name": "SDD Token Efficiency Evaluation",
+    "description": "基于规范驱动开发 (Specification-Driven Development) 的 AI Coding Assistant Token 效率评估框架",
+    "repo_url": "https://github.com/ShijunDeng/sdd-tee"
+  },
+  "target_project": {
+    "name": "agentcube",
+    "repo_url": "https://github.com/ShijunDeng/agentcube.git",
+    "total_files": 275,
+    "total_loc": 64625,
+    "ext_stats": {
+      ".json": {
+        "count": 9,
+        "loc": 19455
+      },
+      ".go": {
+        "count": 89,
+        "loc": 17368
+      },
+      ".yaml": {
+        "count": 18,
+        "loc": 10065
+      },
+      ".py": {
+        "count": 41,
+        "loc": 6889
+      },
+      ".md": {
+        "count": 41,
+        "loc": 5273
+      },
+      "(无扩展名)": {
+        "count": 25,
+        "loc": 1235
+      },
+      ".jpeg": {
+        "count": 1,
+        "loc": 834
+      },
+      ".yml": {
+        "count": 15,
+        "loc": 716
+      },
+      ".sh": {
+        "count": 3,
+        "loc": 590
+      },
+      ".svg": {
+        "count": 6,
+        "loc": 559
+      },
+      ".jpg": {
+        "count": 1,
+        "loc": 441
+      },
+      ".sum": {
+        "count": 1,
+        "loc": 323
+      },
+      ".ts": {
+        "count": 2,
+        "loc": 200
+      },
+      ".toml": {
+        "count": 3,
+        "loc": 125
+      },
+      ".mod": {
+        "count": 1,
+        "loc": 120
+      },
+      ".tsx": {
+        "count": 2,
+        "loc": 115
+      },
+      ".css": {
+        "count": 3,
+        "loc": 82
+      },
+      ".png": {
+        "count": 3,
+        "loc": 74
+      },
+      ".txt": {
+        "count": 7,
+        "loc": 71
+      },
+      ".router": {
+        "count": 1,
+        "loc": 46
+      },
+      ".picod": {
+        "count": 1,
+        "loc": 37
+      },
+      ".in": {
+        "count": 1,
+        "loc": 4
+      },
+      ".ico": {
+        "count": 1,
+        "loc": 3
+      }
+    },
+    "top_dirs": {
+      "docs": {
+        "count": 53,
+        "loc": 25800
+      },
+      "pkg": {
+        "count": 66,
+        "loc": 13861
+      },
+      "manifests": {
+        "count": 10,
+        "loc": 9591
+      },
+      "cmd": {
+        "count": 28,
+        "loc": 4811
+      },
+      "test": {
+        "count": 9,
+        "loc": 2512
+      },
+      "sdk-python": {
+        "count": 23,
+        "loc": 2015
+      },
+      "client-go": {
+        "count": 25,
+        "loc": 1666
+      },
+      "(root)": {
+        "count": 14,
+        "loc": 1410
+      },
+      "example": {
+        "count": 8,
+        "loc": 1088
+      },
+      "integrations": {
+        "count": 13,
+        "loc": 835
+      },
+      ".github": {
+        "count": 18,
+        "loc": 751
+      },
+      "hack": {
+        "count": 4,
+        "loc": 148
+      },
+      "docker": {
+        "count": 4,
+        "loc": 137
+      }
+    },
+    "modules": {
+      "pkg/workloadmanager": {
+        "lang": "Go",
+        "desc": "工作负载管理器 — HTTP API、Sandbox 创建/GC、控制器",
+        "files": 21,
+        "loc": 4800,
+        "src_loc": 2639
+      },
+      "pkg/router": {
+        "lang": "Go",
+        "desc": "路由器 — 反向代理、会话管理、JWT 认证",
+        "files": 11,
+        "loc": 2836,
+        "src_loc": 926
+      },
+      "pkg/store": {
+        "lang": "Go",
+        "desc": "会话存储 — Redis/Valkey 双后端",
+        "files": 9,
+        "loc": 1563,
+        "src_loc": 775
+      },
+      "pkg/picod": {
+        "lang": "Go",
+        "desc": "PicoD — Sandbox 内守护进程（执行命令、文件管理）",
+        "files": 10,
+        "loc": 2751,
+        "src_loc": 880
+      },
+      "pkg/apis/runtime/v1alpha1": {
+        "lang": "Go",
+        "desc": "CRD 类型定义 — AgentRuntime、CodeInterpreter",
+        "files": 5,
+        "loc": 746,
+        "src_loc": 746
+      },
+      "pkg/agentd": {
+        "lang": "Go",
+        "desc": "AgentD — Sandbox 空闲清理控制器",
+        "files": 3,
+        "loc": 519,
+        "src_loc": 90
+      },
+      "pkg/common/types": {
+        "lang": "Go",
+        "desc": "共享 DTO — 请求/响应类型",
+        "files": 3,
+        "loc": 271,
+        "src_loc": 98
+      },
+      "pkg/api": {
+        "lang": "Go",
+        "desc": "API 错误处理",
+        "files": 2,
+        "loc": 355,
+        "src_loc": 80
+      },
+      "client-go": {
+        "lang": "Go",
+        "desc": "生成的 K8s 客户端 — Clientset、Informers、Listers",
+        "files": 25,
+        "loc": 1666,
+        "src_loc": 1666
+      },
+      "cmd/router": {
+        "lang": "Go",
+        "desc": "Router 二进制入口",
+        "files": 1,
+        "loc": 90,
+        "src_loc": 90
+      },
+      "cmd/workload-manager": {
+        "lang": "Go",
+        "desc": "WorkloadManager 二进制入口",
+        "files": 1,
+        "loc": 185,
+        "src_loc": 185
+      },
+      "cmd/agentd": {
+        "lang": "Go",
+        "desc": "AgentD 二进制入口",
+        "files": 1,
+        "loc": 71,
+        "src_loc": 71
+      },
+      "cmd/picod": {
+        "lang": "Go",
+        "desc": "PicoD 二进制入口",
+        "files": 1,
+        "loc": 46,
+        "src_loc": 46
+      },
+      "cmd/cli/agentcube": {
+        "lang": "Python",
+        "desc": "CLI 工具 — pack/build/publish/invoke/status",
+        "files": 16,
+        "loc": 3601,
+        "src_loc": 3601
+      },
+      "sdk-python/agentcube": {
+        "lang": "Python",
+        "desc": "Python SDK — CodeInterpreterClient、AgentRuntimeClient",
+        "files": 12,
+        "loc": 1018,
+        "src_loc": 1018
+      },
+      "integrations/dify-plugin": {
+        "lang": "Python",
+        "desc": "Dify 插件集成",
+        "files": 13,
+        "loc": 835,
+        "src_loc": 835
+      },
+      "example/pcap-analyzer": {
+        "lang": "Python",
+        "desc": "示例：PCAP 分析器 (FastAPI + LangGraph)",
+        "files": 5,
+        "loc": 1031,
+        "src_loc": 1031
+      },
+      "cmd/cli/examples": {
+        "lang": "Python",
+        "desc": "示例 Agent (hello-agent、math-agent)",
+        "files": 4,
+        "loc": 431,
+        "src_loc": 431
+      },
+      "manifests/charts/base": {
+        "lang": "YAML",
+        "desc": "Helm Chart — 部署模板、RBAC、CRD",
+        "files": 9,
+        "loc": 9583,
+        "src_loc": 9583
+      },
+      "docs": {
+        "lang": "Markdown/TS",
+        "desc": "文档站 (Docusaurus) + 设计文档 + 开发指南",
+        "files": 53,
+        "loc": 25800,
+        "src_loc": 25731
+      },
+      ".github/workflows": {
+        "lang": "YAML",
+        "desc": "CI/CD — 12 个 GitHub Actions 工作流",
+        "files": 12,
+        "loc": 617,
+        "src_loc": 536
+      },
+      "docker": {
+        "lang": "Dockerfile",
+        "desc": "容器镜像 — workloadmanager、router、picod",
+        "files": 4,
+        "loc": 137,
+        "src_loc": 137
+      }
+    },
+    "languages": {
+      "Go": {
+        "files": 89,
+        "loc": 17368
+      },
+      "Python": {
+        "files": 41,
+        "loc": 6889
+      },
+      "YAML": {
+        "files": 33,
+        "loc": 10781
+      },
+      "TypeScript": {
+        "files": 4,
+        "loc": 315
+      }
+    }
+  },
+  "prerequisites": {
+    "project_analysis": {
+      "duration_seconds": 7,
+      "description": "Clone and analyze target project structure",
+      "notes": "Pure script, no LLM tokens",
+      "llm_tokens_used": false,
+      "outputs": [
+        {
+          "file": "results/project_analysis/analysis.json",
+          "desc": "项目结构分析数据 (JSON)"
+        },
+        {
+          "file": "results/project_analysis/file_tree.txt",
+          "desc": "完整文件树"
+        },
+        {
+          "file": "results/project_analysis/language_distribution.txt",
+          "desc": "语言分布统计"
+        },
+        {
+          "file": "results/reports/project_analysis_report.html",
+          "desc": "项目技术解析 HTML 报告 (535 行)"
+        }
+      ],
+      "tool": "Shell script (00_analyze_project.sh)"
+    },
+    "spec_generation": {
+      "duration_seconds": 194,
+      "description": "Reverse-engineer OpenSpec specifications from source code",
+      "notes": "3 parallel subagents: Go (types+controllers+router+store), Python (CLI+SDK+examples), Infrastructure (Helm+Docker+CI)",
+      "llm_tokens_used": true,
+      "tool": "cursor-cli",
+      "model": "claude-4.6-opus",
+      "process": {
+        "method": "3 个并行 subagent 分别处理不同领域",
+        "subagents": [
+          {
+            "name": "Go Spec Agent",
+            "scope": "CRD 类型定义、控制器、路由器、会话存储、HTTP API",
+            "input": "Go 源码 (89 files, 17,368 LOC)",
+            "output": "01_go_specification.md"
+          },
+          {
+            "name": "Python Spec Agent",
+            "scope": "CLI 命令树、运行时类、SDK 公共 API、数据模型",
+            "input": "Python 源码 (41 files, 6,889 LOC)",
+            "output": "02_python_specification.md"
+          },
+          {
+            "name": "Infrastructure Spec Agent",
+            "scope": "Helm Chart、RBAC、Dockerfile、Makefile、CI/CD",
+            "input": "YAML/Docker/CI 配置 (50+ files)",
+            "output": "03_infrastructure_specification.md"
+          }
+        ]
+      },
+      "token_estimation": {
+        "note": "Cursor CLI 不直接暴露 per-request token 计数；以下为基于模型定价和输出规模的估算",
+        "estimated_input_tokens": 85000,
+        "estimated_output_tokens": 12000,
+        "estimated_total_tokens": 97000,
+        "estimation_basis": "3 subagent 各需读取约 20-30K tokens 的源码上下文，产出约 4K tokens 的规范文档"
+      },
+      "outputs": [
+        {
+          "file": "specs/01_go_specification.md",
+          "desc": "规范文档 (118 行, 4557 字符)"
+        },
+        {
+          "file": "specs/02_python_specification.md",
+          "desc": "规范文档 (86 行, 3716 字符)"
+        },
+        {
+          "file": "specs/03_infrastructure_specification.md",
+          "desc": "规范文档 (94 行, 3274 字符)"
+        }
+      ]
+    }
+  },
+  "specs": [
+    {
+      "filename": "01_go_specification.md",
+      "path": "specs/01_go_specification.md",
+      "lines": 118,
+      "chars": 4557,
+      "words": 543,
+      "sections": [
+        "1. Module and Layout",
+        "2. CRDs (`runtime.agentcube.volcano.sh/v1alpha1`)",
+        "3. Workload Manager HTTP API",
+        "4. Router HTTP API",
+        "5. Store Interface",
+        "6. PicoD (In-Sandbox Daemon)",
+        "7. Agentd",
+        "8. CLI Binaries (Flags)"
+      ],
+      "content_preview": "# AgentCube Go Source Specification\n\n> Reverse-engineered from https://github.com/ShijunDeng/agentcube.git\n> Generated at: 2026-03-21T03:09:00Z (Stage 1 of SDD Benchmark)\n\n---\n\n## 1. Module and Layout\n\nModule: `github.com/volcano-sh/agentcube`, Go 1.24.x\n\n| Area | Role |\n|------|------|\n| `cmd/` | Binaries: `workload-manager`, `router`, `agentd`, `picod` |\n| `pkg/apis/runtime/v1alpha1` | CRD Go types (`AgentRuntime`, `CodeInterpreter`) |\n| `pkg/workloadmanager` | HTTP API + Sandbox/CodeInterpret..."
+    },
+    {
+      "filename": "02_python_specification.md",
+      "path": "specs/02_python_specification.md",
+      "lines": 86,
+      "chars": 3716,
+      "words": 393,
+      "sections": [
+        "1. Repository Layout (Python)",
+        "2. CLI Command Tree (Typer)",
+        "3. CLI Runtime Classes",
+        "4. CLI Services",
+        "5. Data Models",
+        "6. SDK Public API",
+        "7. Dependencies"
+      ],
+      "content_preview": "# AgentCube Python Source Specification\n\n> Reverse-engineered from https://github.com/ShijunDeng/agentcube.git\n> Generated at: 2026-03-21T03:09:00Z (Stage 1 of SDD Benchmark)\n\n---\n\n## 1. Repository Layout (Python)\n\n| Area | Package Name | Path |\n|------|-------------|------|\n| CLI | agentcube-cli | cmd/cli/ |\n| SDK | agentcube-sdk | sdk-python/ |\n| Dify Plugin | (plugin) | integrations/dify-plugin/ |\n| Example | pcap-analyzer | example/pcap-analyzer/ |\n\n## 2. CLI Command Tree (Typer)\n\n**App:** `..."
+    },
+    {
+      "filename": "03_infrastructure_specification.md",
+      "path": "specs/03_infrastructure_specification.md",
+      "lines": 94,
+      "chars": 3274,
+      "words": 453,
+      "sections": [
+        "1. Helm Chart (manifests/charts/base/)",
+        "2. RBAC",
+        "3. Dockerfiles",
+        "4. Makefile Targets",
+        "5. CI/CD Workflows",
+        "6. Deployment Architecture"
+      ],
+      "content_preview": "# AgentCube Infrastructure Specification\n\n> Reverse-engineered from https://github.com/ShijunDeng/agentcube.git\n> Generated at: 2026-03-21T03:09:00Z (Stage 1 of SDD Benchmark)\n\n---\n\n## 1. Helm Chart (manifests/charts/base/)\n\n### Values\n\n| Path | Default | Description |\n|------|---------|-------------|\n| redis.addr | \"\" | Redis address (required) |\n| redis.password | \"\" | Redis password |\n| router.replicas | 1 | Router replicas |\n| router.image.repository | ghcr.io/volcano-sh/agentcube-router | |..."
+    }
+  ],
+  "framework_architecture": {
+    "prerequisites": [
+      {
+        "id": "P-A",
+        "name": "项目技术解析",
+        "automated": true,
+        "llm_required": true,
+        "desc": "分析目标项目的代码量、技术栈、模块结构、API 端点等，生成 HTML 技术报告"
+      },
+      {
+        "id": "P-B",
+        "name": "规范逆向生成",
+        "automated": true,
+        "llm_required": true,
+        "desc": "从源码逆向工程，生成结构化 OpenSpec 规范文档 (Markdown)"
+      }
+    ],
+    "benchmark_stages": [
+      {
+        "id": "S-0",
+        "name": "SDD 端到端开发",
+        "desc": "基于规范驱动 AI 工具生成完整项目代码",
+        "tracks_tokens": true
+      },
+      {
+        "id": "S-1",
+        "name": "质量验证",
+        "desc": "对比生成代码与原始项目的结构/规模/语法一致性",
+        "tracks_tokens": false
+      },
+      {
+        "id": "S-2",
+        "name": "数据汇总",
+        "desc": "聚合 token、耗时、质量指标到 JSON/CSV",
+        "tracks_tokens": false
+      },
+      {
+        "id": "S-3",
+        "name": "报告生成",
+        "desc": "生成详细 HTML 评测报告（中文）含 token 分阶段明细",
+        "tracks_tokens": false
+      }
+    ],
+    "evaluation_dimensions": [
+      {
+        "dim": "Token 消耗",
+        "metrics": "input / output / cache_read / cache_write tokens（按阶段细分）"
+      },
+      {
+        "dim": "成本",
+        "metrics": "USD / CNY（按阶段、按工具×模型组合）"
+      },
+      {
+        "dim": "耗时",
+        "metrics": "Wall-clock 秒（端到端 & 按阶段）"
+      },
+      {
+        "dim": "代码质量",
+        "metrics": "文件数比、LOC 比、目录相似度、文件重叠率、关键文件覆盖、语法通过率"
+      },
+      {
+        "dim": "内容效率",
+        "metrics": "有效代码比例、注释比例、样板代码比例、推理/思考 tokens 比例"
+      }
+    ],
+    "token_tracking": {
+      "methods": [
+        {
+          "name": "LiteLLM Proxy",
+          "desc": "统一代理层拦截所有 API 调用，工具无关，精确 per-request 记录"
+        },
+        {
+          "name": "工具原生",
+          "desc": "Claude Code (OpenTelemetry) / Aider (session cost) / Cursor (有限)"
+        }
+      ],
+      "recommended": "双轨追踪：LiteLLM Proxy (统一口径) + 工具原生 (交叉验证)"
+    },
+    "scripts": [
+      {
+        "file": "00_analyze_project.sh",
+        "stage": "前置",
+        "desc": "克隆目标仓库，统计文件/LOC/语言分布"
+      },
+      {
+        "file": "01_generate_specs.sh",
+        "stage": "前置",
+        "desc": "逆向生成 OpenSpec 规范文档"
+      },
+      {
+        "file": "02_sdd_develop.sh",
+        "stage": "评测 S-0",
+        "desc": "驱动 AI 工具执行 SDD 开发流程"
+      },
+      {
+        "file": "03_validate.py",
+        "stage": "评测 S-1",
+        "desc": "验证生成代码质量（结构对比、语法检查）"
+      },
+      {
+        "file": "04_report.py",
+        "stage": "评测 S-2",
+        "desc": "聚合 CSV/Markdown 汇总报告"
+      },
+      {
+        "file": "05_generate_html_report.py",
+        "stage": "评测 S-3",
+        "desc": "生成详细 HTML 评测报告"
+      },
+      {
+        "file": "06_project_analysis_report.py",
+        "stage": "前置",
+        "desc": "生成目标项目技术解析 HTML 报告"
+      },
+      {
+        "file": "07_introduction_report.py",
+        "stage": "文档",
+        "desc": "生成本介绍章节"
+      }
+    ],
+    "directory_layout": {
+      "sdd-tee/": {
+        "Makefile": "顶层编排",
+        "config.yaml": "测评配置（工具、模型、阶段）",
+        "PROPOSAL.md": "方案设计文档",
+        "scripts/": "自动化脚本（前置 + 评测 + 报告）",
+        "specs/": "逆向生成的 OpenSpec 规范（一次性产出）",
+        "workspaces/": "各评测轮次的生成代码（运行时产生）",
+        "results/": {
+          "project_analysis/": "项目分析数据（一次性）",
+          "runs/": "每次评测的 JSON 原始数据",
+          "reports/": "汇总报告、图表、HTML 报告"
+        }
+      }
+    }
+  }
+}
