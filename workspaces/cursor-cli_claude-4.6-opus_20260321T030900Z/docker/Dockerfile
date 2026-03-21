@@ -1,0 +1,23 @@
+# syntax=docker/dockerfile:1
+# Workload manager — static Go binary on minimal Alpine.
+FROM golang:1.24.9-alpine AS builder
+WORKDIR /workspace
+RUN apk add --no-cache git ca-certificates
+COPY go.mod go.sum* ./
+RUN --mount=type=cache,target=/go/pkg/mod \
+    go mod download || true
+COPY . .
+ENV CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=amd64
+RUN --mount=type=cache,target=/go/pkg/mod \
+    --mount=type=cache,target=/root/.cache/go-build \
+    go build -trimpath -ldflags="-s -w" -o /out/workloadmanager ./cmd/workload-manager
+
+FROM alpine:3.19
+RUN apk add --no-cache ca-certificates tzdata \
+    && adduser -D -H -u 1000 apiserver
+USER 1000:1000
+COPY --from=builder /out/workloadmanager /usr/local/bin/workloadmanager
+EXPOSE 8080
+ENTRYPOINT ["/usr/local/bin/workloadmanager"]

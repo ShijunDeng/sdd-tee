@@ -1,0 +1,27 @@
+{
+  "repo_url": "https://github.com/ShijunDeng/agentcube.git",
+  "analyzed_at": "2026-03-21T03:05:26Z",
+  "stats": {
+    "total_files": 275,
+    "go_files": 89,
+    "go_loc": 17368,
+    "python_files": 41,
+    "python_loc": 6889,
+    "yaml_files": 18,
+    "yaml_loc": 10061,
+    "ts_files": 4,
+    "ts_loc": 315
+  },
+  "top_directories": [
+    {"name": "pkg", "file_count": 66},
+    {"name": "docs", "file_count": 53},
+    {"name": "cmd", "file_count": 28},
+    {"name": "client-go", "file_count": 25},
+    {"name": "sdk-python", "file_count": 23},
+    {"name": ".github", "file_count": 18},
+    {"name": "integrations", "file_count": 13},
+    {"name": "manifests", "file_count": 10},
+    {"name": "test", "file_count": 9},
+    {"name": "example", "file_count": 8}
+  ]
+}

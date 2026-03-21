@@ -1,0 +1,36 @@
+name: Codegen check
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Install controller-gen
+        run: go install sigs.k8s.io/controller-tools/cmd/controller-gen@latest
+
+      # Deepcopy only — CRD YAML filenames/layout may differ from controller-gen defaults.
+      - name: Regenerate deepcopy
+        run: |
+          "$(go env GOPATH)/bin/controller-gen" object paths="./pkg/apis/..."
+
+      - name: Verify working tree
+        run: |
+          git diff --exit-code pkg/apis || {
+            echo "::error::Run controller-gen object and commit pkg/apis changes"
+            exit 1
+          }

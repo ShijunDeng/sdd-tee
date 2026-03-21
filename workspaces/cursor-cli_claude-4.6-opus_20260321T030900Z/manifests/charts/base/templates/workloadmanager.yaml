@@ -1,0 +1,91 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "agentcube.workloadmanager.name" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "agentcube.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: workloadmanager
+    {{- with .Chart.AppVersion }}
+    app.kubernetes.io/version: {{ quote . }}
+    {{- end }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: {{ .Values.workloadmanager.service.type }}
+  ports:
+    - name: http
+      port: {{ .Values.workloadmanager.service.port }}
+      targetPort: http
+      protocol: TCP
+  selector:
+    app.kubernetes.io/name: {{ include "agentcube.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: workloadmanager
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "agentcube.workloadmanager.name" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "agentcube.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: workloadmanager
+    {{- with .Chart.AppVersion }}
+    app.kubernetes.io/version: {{ quote . }}
+    {{- end }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.workloadmanager.replicas }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "agentcube.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/component: workloadmanager
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "agentcube.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/component: workloadmanager
+    spec:
+      {{- include "agentcube.imagePullSecrets" . | nindent 6 }}
+      serviceAccountName: {{ include "agentcube.workloadmanager.serviceAccountName" . }}
+      containers:
+        - name: workloadmanager
+          image: {{ .Values.workloadmanager.image | quote }}
+          imagePullPolicy: {{ .Values.workloadmanager.imagePullPolicy }}
+          args:
+            - --port={{ .Values.workloadmanager.port | toString }}
+            - --runtime-class-name={{ .Values.workloadmanager.runtimeClassName | quote }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.workloadmanager.port }}
+              protocol: TCP
+          env:
+            - name: AGENTCUBE_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: REDIS_ADDR
+              value: {{ .Values.redis.addr | quote }}
+            - name: REDIS_PASSWORD
+              value: {{ .Values.redis.password | quote }}
+            {{- with .Values.workloadmanager.extraEnv }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
+          {{- with .Values.workloadmanager.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 5

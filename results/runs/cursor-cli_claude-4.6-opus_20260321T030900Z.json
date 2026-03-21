@@ -1,0 +1,60 @@
+{
+  "run_id": "cursor-cli_claude-4.6-opus_20260321T030900Z",
+  "timestamp": "2026-03-21T03:05:14Z",
+  "project": "agentcube",
+  "tool": "cursor-cli",
+  "model": "claude-4.6-opus",
+  "environment": {
+    "os": "linux 5.14.0-587.el9.x86_64",
+    "tool_version": "Cursor CLI",
+    "notes": "Token usage not directly exposed by Cursor CLI; timing is wall-clock."
+  },
+  "stages": {
+    "project_analysis": {
+      "stage": "project_analysis",
+      "duration_seconds": 7,
+      "description": "Clone and analyze target project structure",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0,
+      "notes": "Pure script, no LLM tokens"
+    },
+    "spec_generation": {
+      "stage": "spec_generation",
+      "duration_seconds": 194,
+      "description": "Reverse-engineer OpenSpec specifications from source code (3 parallel subagents)"
+    },
+    "sdd_development": {
+      "stage": "sdd_development",
+      "duration_seconds": 913,
+      "description": "SDD end-to-end code generation (4 parallel subagents: Go types, Go packages, Python, Infrastructure)"
+    },
+    "validation": {
+      "stage": "validation",
+      "duration_seconds": 451,
+      "description": "Validate generated code against original project",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0,
+      "notes": "Pure script, no LLM tokens"
+    }
+  },
+  "totals": {
+    "duration_seconds": 1579,
+    "notes": "Cursor CLI does not expose per-request token counts. Wall-clock time only."
+  },
+  "quality": {
+    "files_generated": 110,
+    "loc_generated": 8199,
+    "original_files": 275,
+    "original_loc": 64625,
+    "file_count_ratio": 0.4,
+    "loc_ratio": 0.1269,
+    "directory_similarity": 0.5645,
+    "file_overlap_ratio": 0.3273,
+    "key_files_rate": 1.0,
+    "python_syntax_rate": 1.0,
+    "yaml_syntax_rate": 0.7368,
+    "key_files_missing": []
+  }
+}

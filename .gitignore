@@ -1,10 +1,9 @@
 # Task file (private)
 task.md
 
-# Results and workspaces (generated at runtime)
-results/runs/
-results/reports/
-workspaces/
+# Workspaces are large and generated at runtime
+# To keep a specific run, commit it explicitly
+# workspaces/
 
 # OS
 .DS_Store

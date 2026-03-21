@@ -1,0 +1,105 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ include "agentcube.workloadmanager.serviceAccountName" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "agentcube.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: workloadmanager
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "agentcube.workloadmanager.serviceAccountName" . }}-{{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: {{ include "agentcube.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: workloadmanager
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+rules:
+  # agents.x-k8s.io — Sandboxes (full verb set)
+  - apiGroups:
+      - agents.x-k8s.io
+    resources:
+      - sandboxes
+      - sandboxes/status
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+      - deletecollection
+  # extensions.agents.x-k8s.io — SandboxClaim, Template, Warmpool
+  - apiGroups:
+      - extensions.agents.x-k8s.io
+    resources:
+      - sandboxclaims
+      - sandboxclaims/status
+      - templates
+      - templates/status
+      - warmpools
+      - warmpools/status
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+  # runtime.agentcube.volcano.sh — AgentCube runtime CRDs
+  - apiGroups:
+      - runtime.agentcube.volcano.sh
+    resources:
+      - "*"
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+      - pods/status
+      - pods/log
+      - secrets
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+  - apiGroups:
+      - authentication.k8s.io
+    resources:
+      - tokenreviews
+    verbs:
+      - create
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "agentcube.workloadmanager.serviceAccountName" . }}-{{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: {{ include "agentcube.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: workloadmanager
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ include "agentcube.workloadmanager.serviceAccountName" . }}-{{ .Release.Namespace }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "agentcube.workloadmanager.serviceAccountName" . }}
+    namespace: {{ .Release.Namespace }}
