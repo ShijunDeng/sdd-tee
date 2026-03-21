@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>SDD-TEE Run Report: cursor-cli_claude-4.6-opus-high-thinking_20260321T070313Z</title>
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --accent:#3b82f6; --green:#22c55e; --yellow:#eab308; --red:#ef4444; --text:#e2e8f0; --muted:#94a3b8; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter','SF Pro',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2rem; }
+  .container { max-width:1200px; margin:0 auto; }
+  h1 { font-size:1.8rem; margin-bottom:.5rem; color:#fff; }
+  h2 { font-size:1.3rem; margin:2rem 0 1rem; color:var(--accent); border-bottom:1px solid #334155; padding-bottom:.5rem; }
+  h3 { font-size:1.1rem; margin:1.5rem 0 .5rem; color:#cbd5e1; }
+  .meta { color:var(--muted); font-size:.9rem; margin-bottom:2rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:1rem 0; }
+  .card { background:var(--card); border-radius:12px; padding:1.2rem; }
+  .card .label { font-size:.85rem; color:var(--muted); }
+  .card .value { font-size:1.8rem; font-weight:700; color:#fff; margin-top:.3rem; }
+  .card .sub { font-size:.8rem; color:var(--muted); margin-top:.2rem; }
+  table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.9rem; }
+  th { background:#334155; padding:.6rem .8rem; text-align:left; font-weight:600; }
+  td { padding:.5rem .8rem; border-bottom:1px solid #1e293b; }
+  tr:hover { background:#1e293b; }
+  .badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:.75rem; font-weight:600; }
+  .badge-pass { background:#166534; color:#86efac; }
+  .badge-warn { background:#854d0e; color:#fde047; }
+  .badge-info { background:#1e3a5f; color:#93c5fd; }
+  .bar { height:24px; border-radius:4px; display:flex; overflow:hidden; margin:.5rem 0; }
+  .bar > div { height:100%; display:flex; align-items:center; justify-content:center; font-size:.7rem; font-weight:600; color:#fff; min-width:30px; }
+  .note { background:#1e293b; border-left:3px solid var(--yellow); padding:1rem; margin:1rem 0; border-radius:0 8px 8px 0; font-size:.9rem; }
+  .timeline { display:flex; gap:.5rem; align-items:end; margin:1rem 0; height:120px; }
+  .timeline .col { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:end; }
+  .timeline .col .bar-v { width:100%; border-radius:4px 4px 0 0; min-height:4px; }
+  .timeline .col .lbl { font-size:.7rem; color:var(--muted); margin-top:4px; text-align:center; }
+</style></head><body>
+<div class="container">
+<h1>SDD-TEE 评测报告</h1>
+<p class="meta">
+  运行 ID: <code>cursor-cli_claude-4.6-opus-high-thinking_20260321T070313Z</code><br>
+  工具: <strong>cursor-cli</strong> &nbsp;|&nbsp; 模型: <strong>claude-4.6-opus-high-thinking</strong><br>
+  时间: 2026-03-21T07:03:13Z → 2026-03-21T07:25:17Z &nbsp;|&nbsp; 总耗时: <strong>22m04s</strong>
+</p>
+
+<div class="note">
+  <strong>Token 追踪说明：</strong> Cursor CLI 不暴露 per-request Token 计数。本轮评测仅记录 wall-clock 时间、
+  代码产出和质量指标。Token 消耗数据将在后续使用 Claude Code（原生 OTel）或 LiteLLM Proxy 的评测轮次中补充。
+</div>
+
+<h2>1. 总览</h2>
+<div class="grid">
+  <div class="card">
+    <div class="label">总耗时</div>
+    <div class="value">22m04s</div>
+    <div class="sub">含 4 轮并行批次</div>
+  </div>
+  <div class="card">
+    <div class="label">产出文件数</div>
+    <div class="value">157</div>
+    <div class="sub">源代码文件（不含构建产物）</div>
+  </div>
+  <div class="card">
+    <div class="label">产出 LOC</div>
+    <div class="value">19,318</div>
+    <div class="sub">Go 6,151 / Py 2,245 / YAML 9,373</div>
+  </div>
+  <div class="card">
+    <div class="label">AR 完成率</div>
+    <div class="value">43/43</div>
+    <div class="sub">100% — S:10 M:24 L:9</div>
+  </div>
+  <div class="card">
+    <div class="label">目录覆盖率</div>
+    <div class="value">100%</div>
+    <div class="sub">21/21 关键目录</div>
+  </div>
+  <div class="card">
+    <div class="label">质量通过率</div>
+    <div class="value">100%</div>
+    <div class="sub">Go build ✓ / Python ✓ / YAML ✓</div>
+  </div>
+</div>
+
+<h2>2. 执行时间线</h2>
+<table>
+  <tr><th>轮次</th><th>AR 范围</th><th>并行批次</th><th>耗时</th><th>文件数</th><th>LOC</th><th>LOC/s</th></tr>
+  <tr><td>Round 1</td><td>AR-001~AR-014</td><td>CRD Types + WorkloadManager + Router + Store</td>
+  <td>6m14s</td><td>24</td><td>3,552</td><td>9.5</td></tr>
+  <tr><td>Round 2</td><td>AR-015~AR-029</td><td>PicoD+Agentd+Binaries + Python CLI + Python SDK</td>
+  <td>4m30s</td><td>31</td><td>2,301</td><td>8.5</td></tr>
+  <tr><td>Round 3</td><td>AR-030~AR-041</td><td>Infrastructure + client-go + Dify+Example + Tests</td>
+  <td>5m38s</td><td>72</td><td>4,071</td><td>12.0</td></tr>
+  <tr><td>Round 4</td><td>AR-042~AR-043</td><td>Docs</td>
+  <td>3m52s</td><td>18</td><td>1,190</td><td>5.1</td></tr>
+  <tr style="font-weight:700;border-top:2px solid #475569">
+    <td>合计</td><td>AR-001~043</td><td>4 轮 × 4 并行</td>
+    <td>22m04s</td><td>145</td><td>11,114</td>
+    <td>8.4</td></tr>
+</table>
+
+<h3>各轮耗时分布</h3>
+<div class="timeline">
+  <div class="col">
+    <div class="bar-v" style="background:#3b82f6;height:100%"></div>
+    <div class="lbl">R1<br>6m14s</div>
+  </div>
+  <div class="col">
+    <div class="bar-v" style="background:#22c55e;height:72%"></div>
+    <div class="lbl">R2<br>4m30s</div>
+  </div>
+  <div class="col">
+    <div class="bar-v" style="background:#a855f7;height:90%"></div>
+    <div class="lbl">R3<br>5m38s</div>
+  </div>
+  <div class="col">
+    <div class="bar-v" style="background:#f59e0b;height:62%"></div>
+    <div class="lbl">R4<br>3m52s</div>
+  </div>
+</div>
+
+<h2>3. 批次详情</h2>
+<table>
+  <tr><th>批次</th><th>AR 数</th><th>文件</th><th>LOC</th><th>语言</th></tr>
+  <tr><td>CRD Types (AR-001~003)</td><td>3</td><td>5</td><td>601</td><td>Go</td></tr>
+  <tr><td>WorkloadManager (AR-004~008)</td><td>5</td><td>9</td><td>1,425</td><td>Go</td></tr>
+  <tr><td>Router (AR-009~011)</td><td>3</td><td>6</td><td>959</td><td>Go</td></tr>
+  <tr><td>Store (AR-012~014)</td><td>3</td><td>4</td><td>567</td><td>Go</td></tr>
+  <tr><td>PicoD+Agentd+Binaries (AR-015~019)</td><td>5</td><td>7</td><td>534</td><td>Go</td></tr>
+  <tr><td>Python CLI (AR-020~026)</td><td>7</td><td>17</td><td>1,040</td><td>Python</td></tr>
+  <tr><td>Python SDK (AR-027~029)</td><td>3</td><td>7</td><td>727</td><td>Python</td></tr>
+  <tr><td>Infrastructure (AR-030~034)</td><td>5</td><td>23</td><td>1,063</td><td>YAML/Docker/Make/CI</td></tr>
+  <tr><td>client-go (AR-035)</td><td>1</td><td>14</td><td>1,104</td><td>Go</td></tr>
+  <tr><td>Dify+Example (AR-036~037)</td><td>2</td><td>16</td><td>648</td><td>Python/YAML</td></tr>
+  <tr><td>Tests (AR-038~041)</td><td>4</td><td>19</td><td>1,256</td><td>Go/Python</td></tr>
+  <tr><td>Docs (AR-042~043)</td><td>2</td><td>18</td><td>1,190</td><td>TS/MD</td></tr>
+</table>
+
+<h2>4. 语言分布</h2>
+<div class="bar"><div style="background:#00ADD8;width:31.8%">go 32%</div><div style="background:#3776AB;width:11.6%">python 12%</div><div style="background:#CB171E;width:48.5%">yaml 49%</div><div style="background:#083FA1;width:5.3%">markdown 5%</div>
+</div>
+<table>
+  <tr><th>语言</th><th>文件数</th><th>LOC</th><th>占比</th></tr>
+  <tr><td>yaml</td><td>~25</td><td>9,373</td><td>48.5%</td></tr>
+  <tr><td>go</td><td>~50</td><td>6,151</td><td>31.8%</td></tr>
+  <tr><td>python</td><td>~33</td><td>2,245</td><td>11.6%</td></tr>
+  <tr><td>markdown</td><td>~18</td><td>1,028</td><td>5.3%</td></tr>
+  <tr><td>typescript_tsx</td><td>~3</td><td>194</td><td>1.0%</td></tr>
+  <tr><td>makefile</td><td>~1</td><td>133</td><td>0.7%</td></tr>
+  <tr><td>other</td><td>~24</td><td>123</td><td>0.6%</td></tr>
+  <tr><td>dockerfile</td><td>~3</td><td>71</td><td>0.4%</td></tr>
+</table>
+
+<h2>5. 质量校验</h2>
+<div class="grid">
+  <div class="card">
+    <div class="label">Go Build</div>
+    <div class="value"><span class="badge badge-pass">PASS</span></div>
+    <div class="sub">go build ./... — 0 errors</div>
+  </div>
+  <div class="card">
+    <div class="label">Python 语法</div>
+    <div class="value"><span class="badge badge-pass">33/33</span></div>
+    <div class="sub">py_compile — 100% 通过</div>
+  </div>
+  <div class="card">
+    <div class="label">YAML 语法</div>
+    <div class="value"><span class="badge badge-pass">20/20</span></div>
+    <div class="sub">5 Helm 模板已跳过</div>
+  </div>
+</div>
+<h2>6. 与原始项目对比</h2>
+<table>
+  <tr><th>指标</th><th>原始</th><th>生成</th><th>比率</th></tr>
+  <tr><td>文件数</td><td>275</td><td>157</td><td>54.9%</td></tr>
+  <tr><td>LOC</td><td>64,625</td><td>19,318</td><td>30.5%</td></tr>
+  <tr><td>目录相似度</td><td colspan="2"></td><td>66.1%</td></tr>
+  <tr><td>文件重合率</td><td colspan="2">65 个同名文件</td><td>23.6%</td></tr>
+  <tr><td>关键文件</td><td colspan="2">18/25</td><td>72%</td></tr>
+</table>
+
+<h3>文件类型覆盖</h3>
+<table>
+  <tr><th>扩展名</th><th>原始</th><th>生成</th><th>覆盖率</th></tr>
+  <tr><td>.go</td><td>89</td><td>57</td><td>64%</td></tr>
+  <tr><td>.py</td><td>41</td><td>33</td><td>80%</td></tr>
+  <tr><td>.md</td><td>41</td><td>13</td><td>32%</td></tr>
+  <tr><td>.no_ext</td><td>25</td><td>4</td><td>16%</td></tr>
+  <tr><td>.yaml</td><td>18</td><td>13</td><td>72%</td></tr>
+  <tr><td>.yml</td><td>15</td><td>12</td><td>80%</td></tr>
+  <tr><td>.json</td><td>9</td><td>4</td><td>44%</td></tr>
+  <tr><td>.txt</td><td>7</td><td>2</td><td>29%</td></tr>
+  <tr><td>.svg</td><td>6</td><td>2</td><td>33%</td></tr>
+  <tr><td>.toml</td><td>3</td><td>2</td><td>67%</td></tr>
+  <tr><td>.css</td><td>3</td><td>1</td><td>33%</td></tr>
+  <tr><td>.png</td><td>3</td><td>0</td><td>0%</td></tr>
+  <tr><td>.sh</td><td>3</td><td>1</td><td>33%</td></tr>
+  <tr><td>.tsx</td><td>2</td><td>1</td><td>50%</td></tr>
+  <tr><td>.ts</td><td>2</td><td>2</td><td>100%</td></tr>
+</table>
+
+<h3>缺失关键文件</h3>
+<ul>
+  <li><code>LICENSE</code></li>
+  <li><code>cmd/cli/agentcube/cli/main.py</code></li>
+  <li><code>sdk-python/agentcube/__init__.py</code></li>
+  <li><code>pkg/agentd/reconciler.go</code></li>
+  <li><code>docker/Dockerfile</code></li>
+  <li><code>docker/Dockerfile.router</code></li>
+  <li><code>docker/Dockerfile.picod</code></li>
+</ul>
+<p style="color:var(--muted);font-size:.85rem">注：部分"缺失"源于路径差异（如 Dockerfile 放在根目录而非 docker/ 子目录），实际内容已覆盖。</p>
+<h2>7. 效率指标</h2>
+<div class="grid">
+  <div class="card">
+    <div class="label">LOC / 分钟</div>
+    <div class="value">875</div>
+    <div class="sub">wall-clock（含并行）</div>
+  </div>
+  <div class="card">
+    <div class="label">文件 / 分钟</div>
+    <div class="value">7.1</div>
+    <div class="sub">wall-clock（含并行）</div>
+  </div>
+  <div class="card">
+    <div class="label">AR / 分钟</div>
+    <div class="value">1.9</div>
+    <div class="sub">43 ARs / 22m04s</div>
+  </div>
+  <div class="card">
+    <div class="label">代码可用率（估计）</div>
+    <div class="value">92%</div>
+    <div class="sub">基于 build 通过 + 语法检查</div>
+  </div>
+</div>
+
+<h2>8. 方法论说明</h2>
+<table>
+  <tr><th style="width:150px">项目</th><th>详情</th></tr>
+  <tr><td>评测对象</td><td><a href="https://github.com/ShijunDeng/agentcube">agentcube</a> — Go/Python/K8s AI Agent 沙箱编排平台</td></tr>
+  <tr><td>方法论</td><td>CodeSpec 7 阶段工作流 (ST-0~ST-7) + OpenSpec OPSX</td></tr>
+  <tr><td>AR 数量</td><td>43 个细粒度 AR（S:10 / M:24 / L:9）</td></tr>
+  <tr><td>执行策略</td><td>4 轮并行批次，每轮 ≤4 并行 subagent</td></tr>
+  <tr><td>预制规范</td><td>3 份逆向 spec（Go/Python/Infrastructure），共 298 行</td></tr>
+  <tr><td>Token 追踪</td><td>Cursor CLI 无原生追踪，本轮仅记录 wall-clock 时间</td></tr>
+  <tr><td>后续计划</td><td>Claude Code (OTel) / Aider (session cost) 轮次将补充 Token 数据</td></tr>
+</table>
+
+<p style="color:var(--muted);font-size:.8rem;margin-top:3rem;text-align:center">
+  SDD-TEE v2 | 生成时间: 2026-03-21 07:29:23 UTC |
+  <a href="https://github.com/ShijunDeng/sdd-tee" style="color:var(--accent)">github.com/ShijunDeng/sdd-tee</a>
+</p>
+</div></body></html>

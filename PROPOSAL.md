@@ -29,8 +29,8 @@ ST-2 Spec 增量设计    /opsx:ff          → delta-spec.md
 ST-3 Design 增量设计  /opsx:ff          → design.md
 ST-4 任务拆解         /opsx:ff          → tasks.md
 ST-5 开发实现         /opsx:apply       → 代码文件
-ST-6 合并归档         /opsx:archive     → 归档 + spec 合并
-ST-7 一致性验证       /opsx:verify      → 验证报告
+ST-6 一致性验证       /opsx:verify      → 验证报告
+ST-7 合并归档         /opsx:archive     → 归档 + spec 合并
 ```
 
 ### 2.2 AR 分解策略
@@ -60,7 +60,7 @@ cd workspace && openspec init
 2. `/opsx:ff` — 自动生成 proposal.md → specs/ → design.md → tasks.md
 3. `/opsx:apply` — AI 根据 tasks.md 逐项实现代码
 4. `/opsx:verify` — 验证实现与 spec 一致性
-5. `/opsx:archive` — 归档，delta-spec 合并到全量 spec
+5. `/opsx:archive` — 归档，delta 合并到全量 spec/design
 
 ## 3. 指标体系（5 维）
 
@@ -98,7 +98,7 @@ cd workspace && openspec init
 | 编码 | 名称 | 计算公式 |
 |------|------|----------|
 | QT-COV | Token/测试覆盖率 | ST-5 / 覆盖率% |
-| QT-CONSIST | Token/一致性 | ST-7 / Spec-Code 一致性% |
+| QT-CONSIST | Token/一致性 | ST-6 / Spec-Code 一致性% |
 | QT-AVAIL | Token/可用率 | ST-5 / 代码可用率% |
 | QT-BUG | Token/Bug | ST-5 / Bug 数 (反向) |
 

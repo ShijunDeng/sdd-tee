@@ -27,8 +27,8 @@ ST-2  /opsx:ff      → delta-spec.md     (Spec 增量设计)
 ST-3  /opsx:ff      → design.md         (Design 增量设计)
 ST-4  /opsx:ff      → tasks.md          (任务拆解)
 ST-5  /opsx:apply   → 代码文件           (开发实现)
-ST-6  /opsx:archive → 归档 + spec 合并   (合并归档)
-ST-7  /opsx:verify  → 验证报告           (一致性验证)
+ST-6  /opsx:verify  → 验证报告           (一致性验证)
+ST-7  /opsx:archive → 归档 + spec 合并   (合并归档)
 ```
 
 ## 前置工作（一次性）

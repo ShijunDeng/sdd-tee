@@ -150,8 +150,8 @@ STAGE_NAMES = {
     "ST-3": "Design 增量设计",
     "ST-4": "任务拆解 (Tasks)",
     "ST-5": "开发实现 (Apply)",
-    "ST-6": "合并归档 (Archive)",
-    "ST-7": "一致性验证 (Verify)",
+    "ST-6": "一致性验证 (Verify)",
+    "ST-7": "合并归档 (Archive)",
 }
 
 OPSX_COMMANDS = {
@@ -161,8 +161,8 @@ OPSX_COMMANDS = {
     "ST-3": "/opsx:ff → design.md",
     "ST-4": "/opsx:ff → tasks.md",
     "ST-5": "/opsx:apply",
-    "ST-6": "/opsx:archive",
-    "ST-7": "/opsx:verify",
+    "ST-6": "/opsx:verify",
+    "ST-7": "/opsx:archive",
 }
 
 SIZE_MULTIPLIERS = {"S": 0.6, "M": 1.0, "L": 1.8}
@@ -202,10 +202,10 @@ def generate_stage_tokens(ar, stage_id):
                  "human_input": 300, "cache_ratio": 0.8},
         "ST-5": {"input": 120000, "output": 35000, "iters": (3, 8), "dur_s": (120, 600),
                  "human_input": 2000, "cache_ratio": 0.84},
-        "ST-6": {"input": 8000, "output": 2500, "iters": (1, 1), "dur_s": (10, 30),
-                 "human_input": 200, "cache_ratio": 0.85},
-        "ST-7": {"input": 40000, "output": 6000, "iters": (1, 3), "dur_s": (30, 120),
+        "ST-6": {"input": 40000, "output": 6000, "iters": (1, 3), "dur_s": (30, 120),
                  "human_input": 400, "cache_ratio": 0.8},
+        "ST-7": {"input": 8000, "output": 2500, "iters": (1, 1), "dur_s": (10, 30),
+                 "human_input": 200, "cache_ratio": 0.85},
     }
 
     p = profiles[stage_id]
@@ -219,7 +219,7 @@ def generate_stage_tokens(ar, stage_id):
 
     # Spec document tokens as "预制规范" (pre-built spec context)
     spec_ctx_tokens = 0
-    if stage_id in ("ST-3", "ST-4", "ST-5", "ST-7"):
+    if stage_id in ("ST-3", "ST-4", "ST-5", "ST-6"):
         spec_ctx_tokens = _jitter(int(4000 * base))
 
     return {
@@ -310,7 +310,7 @@ def generate_ar_data(ar):
             "RT_RATIO": round(total_human / max(total_input + total_output - total_human, 1), 4),
             "RT_ITER": total_iters,
             "QT_COV": round(stages["ST-5"]["total_tokens"] / max(test_coverage * 100, 1), 1),
-            "QT_CONSIST": round(stages["ST-7"]["total_tokens"] / max(consistency_score * 100, 1), 1),
+            "QT_CONSIST": round(stages["ST-6"]["total_tokens"] / max(consistency_score * 100, 1), 1),
             "QT_AVAIL": round(stages["ST-5"]["total_tokens"] / max(code_usability * 100, 1), 1),
             "QT_BUG": round(stages["ST-5"]["total_tokens"] / max(bugs_found, 1), 0),
             "PT_DESIGN": round(sum(stages[s]["total_tokens"] for s in ("ST-1", "ST-2", "ST-3")) / max(total_input + total_output, 1), 4),
@@ -689,7 +689,7 @@ def render_html(data):
     <h3>预制规范 Token（单独统计）</h3>
     <div class="stat" style="margin:12px 0"><div class="v">{_fmt(gt['spec_context_tokens'])}</div><div class="l">Spec Context Tokens (标注: 预制规范)</div></div>
     <p style="font-size:12px;color:var(--muted)">
-      预制规范指前置工作逆向生成的 OpenSpec 规范文档内容，在 ST-3/ST-4/ST-5/ST-7 阶段作为 input context 注入，
+      预制规范指前置工作逆向生成的 OpenSpec 规范文档内容，在 ST-3/ST-4/ST-5/ST-6 阶段作为 input context 注入，
       计入 input tokens 但单独标注，不计入人工输入 (RT-HUMAN)。
     </p>
   </div>
@@ -733,7 +733,7 @@ def render_html(data):
     <thead><tr><th>指标</th><th>说明</th><th style="text-align:right">全局值</th></tr></thead>
     <tbody>
       <tr><td>QT-COV</td><td>Token / 测试覆盖率%</td><td style="text-align:right">{sa['ST-5']['total_tokens'] / max(sum(r['quality']['test_coverage'] for r in ars) / len(ars) * 100, 1):,.0f}</td></tr>
-      <tr><td>QT-CONSIST</td><td>Token / 一致性得分%</td><td style="text-align:right">{sa['ST-7']['total_tokens'] / max(sum(r['quality']['consistency_score'] for r in ars) / len(ars) * 100, 1):,.0f}</td></tr>
+      <tr><td>QT-CONSIST</td><td>Token / 一致性得分%</td><td style="text-align:right">{sa['ST-6']['total_tokens'] / max(sum(r['quality']['consistency_score'] for r in ars) / len(ars) * 100, 1):,.0f}</td></tr>
       <tr><td>QT-AVAIL</td><td>Token / 代码可用率%</td><td style="text-align:right">{sa['ST-5']['total_tokens'] / max(sum(r['quality']['code_usability'] for r in ars) / len(ars) * 100, 1):,.0f}</td></tr>
       <tr><td>QT-BUG</td><td>Token / Bug 数 (反向)</td><td style="text-align:right">{sa['ST-5']['total_tokens'] / max(sum(r['quality']['bugs_found'] for r in ars), 1):,.0f}</td></tr>
     </tbody>

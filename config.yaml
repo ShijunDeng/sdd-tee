@@ -17,8 +17,8 @@ methodology:
     - {id: ST-3, name: Design 增量设计, opsx: "/opsx:ff → design", artifact: "design.md"}
     - {id: ST-4, name: 任务拆解, opsx: "/opsx:ff → tasks", artifact: "tasks.md"}
     - {id: ST-5, name: 开发实现, opsx: "/opsx:apply", artifact: "代码文件"}
-    - {id: ST-6, name: 合并归档, opsx: "/opsx:archive", artifact: "归档 + spec 合并"}
-    - {id: ST-7, name: 一致性验证, opsx: "/opsx:verify", artifact: "验证报告"}
+    - {id: ST-6, name: 一致性验证, opsx: "/opsx:verify", artifact: "验证报告"}
+    - {id: ST-7, name: 合并归档, opsx: "/opsx:archive", artifact: "归档 + spec 合并"}
 
 metrics:
   stage: [ST-0, ST-1, ST-2, ST-3, ST-4, ST-5, ST-6, ST-7]
