@@ -1,0 +1,10 @@
+# SDD-TEE Python Dependencies
+# Install: pip install -r requirements.txt
+
+# Core (required)
+pyyaml>=6.0
+litellm>=1.50.0
+
+# Optional (for enhanced reports and validation)
+matplotlib>=3.7.0
+rich>=13.0.0

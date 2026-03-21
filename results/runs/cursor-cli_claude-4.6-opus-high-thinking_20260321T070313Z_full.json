@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-03-21T08:09:20.086684+00:00",
+    "generated_at": "2026-03-21T08:25:09.222600+00:00",
     "is_mock": false,
     "framework": "SDD-TEE v2",
     "methodology": "CodeSpec 7-Stage + OpenSpec OPSX",
@@ -678,6 +678,7 @@
         "ET_TASK": 532.0,
         "ET_AR": 3522,
         "ET_TIME": 352200.0,
+        "ET_COST_LOC": 1.2096,
         "RT_RATIO": 0.0377,
         "RT_ITER": 10,
         "QT_COV": 26.9,
@@ -685,6 +686,7 @@
         "QT_AVAIL": 17.3,
         "QT_BUG": 1595.0,
         "PT_DESIGN": 0.243,
+        "PT_PLAN": 0.1198,
         "PT_DEV": 0.4529,
         "PT_VERIFY": 0.1843
       }
@@ -848,6 +850,7 @@
         "ET_TASK": 294.0,
         "ET_AR": 2651,
         "ET_TIME": 265100.0,
+        "ET_COST_LOC": 2.0986,
         "RT_RATIO": 0.0478,
         "RT_ITER": 12,
         "QT_COV": 18.9,
@@ -855,6 +858,7 @@
         "QT_AVAIL": 12.8,
         "QT_BUG": 1175.0,
         "PT_DESIGN": 0.2444,
+        "PT_PLAN": 0.1237,
         "PT_DEV": 0.4432,
         "PT_VERIFY": 0.1886
       }
@@ -1018,6 +1022,7 @@
         "ET_TASK": 5562.0,
         "ET_AR": 23375,
         "ET_TIME": 2337500.0,
+        "ET_COST_LOC": 0.971,
         "RT_RATIO": 0.0274,
         "RT_ITER": 11,
         "QT_COV": 194.2,
@@ -1025,6 +1030,7 @@
         "QT_AVAIL": 120.9,
         "QT_BUG": 11124.0,
         "PT_DESIGN": 0.2398,
+        "PT_PLAN": 0.1109,
         "PT_DEV": 0.4759,
         "PT_VERIFY": 0.1734
       }
@@ -1188,6 +1194,7 @@
         "ET_TASK": 4375.0,
         "ET_AR": 45913,
         "ET_TIME": 4591300.0,
+        "ET_COST_LOC": 0.9015,
         "RT_RATIO": 0.043,
         "RT_ITER": 15,
         "QT_COV": 388.0,
@@ -1195,6 +1202,7 @@
         "QT_AVAIL": 237.8,
         "QT_BUG": 10938.0,
         "PT_DESIGN": 0.2398,
+        "PT_PLAN": 0.1107,
         "PT_DEV": 0.4765,
         "PT_VERIFY": 0.1731
       }
@@ -1358,6 +1366,7 @@
         "ET_TASK": 301.0,
         "ET_AR": 4102,
         "ET_TIME": 410200.0,
+        "ET_COST_LOC": 2.7689,
         "RT_RATIO": 0.024,
         "RT_ITER": 15,
         "QT_COV": 29.4,
@@ -1365,6 +1374,7 @@
         "QT_AVAIL": 19.6,
         "QT_BUG": 1806.0,
         "PT_DESIGN": 0.2448,
+        "PT_PLAN": 0.1251,
         "PT_DEV": 0.4403,
         "PT_VERIFY": 0.1899
       }
@@ -1528,6 +1538,7 @@
         "ET_TASK": 452.0,
         "ET_AR": 4102,
         "ET_TIME": 410200.0,
+        "ET_COST_LOC": 2.8105,
         "RT_RATIO": 0.0242,
         "RT_ITER": 9,
         "QT_COV": 36.5,
@@ -1535,6 +1546,7 @@
         "QT_AVAIL": 19.6,
         "QT_BUG": 1806.0,
         "PT_DESIGN": 0.2448,
+        "PT_PLAN": 0.1251,
         "PT_DEV": 0.4403,
         "PT_VERIFY": 0.1899
       }
@@ -1698,6 +1710,7 @@
         "ET_TASK": 768.0,
         "ET_AR": 13409,
         "ET_TIME": 1340900.0,
+        "ET_COST_LOC": 1.2843,
         "RT_RATIO": 0.0456,
         "RT_ITER": 12,
         "QT_COV": 112.2,
@@ -1705,6 +1718,7 @@
         "QT_AVAIL": 66.8,
         "QT_BUG": 6144.0,
         "PT_DESIGN": 0.2424,
+        "PT_PLAN": 0.1178,
         "PT_DEV": 0.4582,
         "PT_VERIFY": 0.1816
       }
@@ -1868,6 +1882,7 @@
         "ET_TASK": 1714.0,
         "ET_AR": 10911,
         "ET_TIME": 1091100.0,
+        "ET_COST_LOC": 0.9295,
         "RT_RATIO": 0.0389,
         "RT_ITER": 9,
         "QT_COV": 90.7,
@@ -1875,6 +1890,7 @@
         "QT_AVAIL": 55.9,
         "QT_BUG": 5142.0,
         "PT_DESIGN": 0.2405,
+        "PT_PLAN": 0.1127,
         "PT_DEV": 0.4713,
         "PT_VERIFY": 0.1755
       }
@@ -2038,6 +2054,7 @@
         "ET_TASK": 1634.0,
         "ET_AR": 17359,
         "ET_TIME": 1735900.0,
+        "ET_COST_LOC": 0.9251,
         "RT_RATIO": 0.0479,
         "RT_ITER": 13,
         "QT_COV": 237.0,
@@ -2045,6 +2062,7 @@
         "QT_AVAIL": 88.8,
         "QT_BUG": 8171.0,
         "PT_DESIGN": 0.2406,
+        "PT_PLAN": 0.1129,
         "PT_DEV": 0.4707,
         "PT_VERIFY": 0.1758
       }
@@ -2208,6 +2226,7 @@
         "ET_TASK": 2021.0,
         "ET_AR": 17177,
         "ET_TIME": 1717700.0,
+        "ET_COST_LOC": 0.9122,
         "RT_RATIO": 0.0359,
         "RT_ITER": 12,
         "QT_COV": 125.6,
@@ -2215,6 +2234,7 @@
         "QT_AVAIL": 87.9,
         "QT_BUG": 8084.0,
         "PT_DESIGN": 0.2406,
+        "PT_PLAN": 0.113,
         "PT_DEV": 0.4706,
         "PT_VERIFY": 0.1758
       }
@@ -2378,6 +2398,7 @@
         "ET_TASK": 1340.0,
         "ET_AR": 11498,
         "ET_TIME": 1149800.0,
+        "ET_COST_LOC": 1.0142,
         "RT_RATIO": 0.025,
         "RT_ITER": 14,
         "QT_COV": 133.3,
@@ -2385,6 +2406,7 @@
         "QT_AVAIL": 58.2,
         "QT_BUG": 5358.0,
         "PT_DESIGN": 0.2413,
+        "PT_PLAN": 0.1148,
         "PT_DEV": 0.466,
         "PT_VERIFY": 0.1779
       }
@@ -2548,6 +2570,7 @@
         "ET_TASK": 936.0,
         "ET_AR": 6050,
         "ET_TIME": 605000.0,
+        "ET_COST_LOC": 1.0026,
         "RT_RATIO": 0.019,
         "RT_ITER": 12,
         "QT_COV": 49.8,
@@ -2555,6 +2578,7 @@
         "QT_AVAIL": 30.5,
         "QT_BUG": 2808.0,
         "PT_DESIGN": 0.2413,
+        "PT_PLAN": 0.1155,
         "PT_DEV": 0.4641,
         "PT_VERIFY": 0.179
       }
@@ -2718,6 +2742,7 @@
         "ET_TASK": 1548.0,
         "ET_AR": 16459,
         "ET_TIME": 1645900.0,
+        "ET_COST_LOC": 1.0604,
         "RT_RATIO": 0.0352,
         "RT_ITER": 13,
         "QT_COV": 142.0,
@@ -2725,6 +2750,7 @@
         "QT_AVAIL": 84.1,
         "QT_BUG": 7739.0,
         "PT_DESIGN": 0.2406,
+        "PT_PLAN": 0.1131,
         "PT_DEV": 0.4702,
         "PT_VERIFY": 0.1761
       }
@@ -2888,6 +2914,7 @@
         "ET_TASK": 1671.0,
         "ET_AR": 10641,
         "ET_TIME": 1064100.0,
+        "ET_COST_LOC": 1.0691,
         "RT_RATIO": 0.0447,
         "RT_ITER": 11,
         "QT_COV": 102.1,
@@ -2895,6 +2922,7 @@
         "QT_AVAIL": 54.5,
         "QT_BUG": 5012.0,
         "PT_DESIGN": 0.2406,
+        "PT_PLAN": 0.1129,
         "PT_DEV": 0.471,
         "PT_VERIFY": 0.1755
       }
@@ -3058,6 +3086,7 @@
         "ET_TASK": 1176.0,
         "ET_AR": 10135,
         "ET_TIME": 1013500.0,
+        "ET_COST_LOC": 0.9471,
         "RT_RATIO": 0.0281,
         "RT_ITER": 16,
         "QT_COV": 78.3,
@@ -3065,6 +3094,7 @@
         "QT_AVAIL": 51.1,
         "QT_BUG": 4703.0,
         "PT_DESIGN": 0.2415,
+        "PT_PLAN": 0.1155,
         "PT_DEV": 0.464,
         "PT_VERIFY": 0.1789
       }
@@ -3228,6 +3258,7 @@
         "ET_TASK": 992.0,
         "ET_AR": 10666,
         "ET_TIME": 1066600.0,
+        "ET_COST_LOC": 1.0251,
         "RT_RATIO": 0.0268,
         "RT_ITER": 9,
         "QT_COV": 73.3,
@@ -3235,6 +3266,7 @@
         "QT_AVAIL": 53.9,
         "QT_BUG": 4959.0,
         "PT_DESIGN": 0.2413,
+        "PT_PLAN": 0.1152,
         "PT_DEV": 0.4649,
         "PT_VERIFY": 0.1785
       }
@@ -3398,6 +3430,7 @@
         "ET_TASK": 1946.0,
         "ET_AR": 8311,
         "ET_TIME": 831100.0,
+        "ET_COST_LOC": 1.0868,
         "RT_RATIO": 0.0215,
         "RT_ITER": 12,
         "QT_COV": 60.8,
@@ -3405,6 +3438,7 @@
         "QT_AVAIL": 42.3,
         "QT_BUG": 3893.0,
         "PT_DESIGN": 0.2408,
+        "PT_PLAN": 0.1139,
         "PT_DEV": 0.4684,
         "PT_VERIFY": 0.1769
       }
@@ -3568,6 +3602,7 @@
         "ET_TASK": 771.0,
         "ET_AR": 5019,
         "ET_TIME": 501900.0,
+        "ET_COST_LOC": 1.0715,
         "RT_RATIO": 0.0274,
         "RT_ITER": 12,
         "QT_COV": 40.9,
@@ -3575,6 +3610,7 @@
         "QT_AVAIL": 25.2,
         "QT_BUG": 2314.0,
         "PT_DESIGN": 0.2419,
+        "PT_PLAN": 0.1166,
         "PT_DEV": 0.461,
         "PT_VERIFY": 0.1805
       }
@@ -3738,6 +3774,7 @@
         "ET_TASK": 1870.0,
         "ET_AR": 15923,
         "ET_TIME": 1592300.0,
+        "ET_COST_LOC": 0.9595,
         "RT_RATIO": 0.0337,
         "RT_ITER": 16,
         "QT_COV": 141.3,
@@ -3745,6 +3782,7 @@
         "QT_AVAIL": 81.3,
         "QT_BUG": 7482.0,
         "PT_DESIGN": 0.2407,
+        "PT_PLAN": 0.1132,
         "PT_DEV": 0.4699,
         "PT_VERIFY": 0.1762
       }
@@ -3908,6 +3946,7 @@
         "ET_TASK": 978.0,
         "ET_AR": 10519,
         "ET_TIME": 1051900.0,
+        "ET_COST_LOC": 0.8579,
         "RT_RATIO": 0.0337,
         "RT_ITER": 14,
         "QT_COV": 123.5,
@@ -3915,6 +3954,7 @@
         "QT_AVAIL": 53.1,
         "QT_BUG": 4888.0,
         "PT_DESIGN": 0.2415,
+        "PT_PLAN": 0.1152,
         "PT_DEV": 0.4647,
         "PT_VERIFY": 0.1786
       }
@@ -4078,6 +4118,7 @@
         "ET_TASK": 612.0,
         "ET_AR": 6716,
         "ET_TIME": 671600.0,
+        "ET_COST_LOC": 1.1086,
         "RT_RATIO": 0.0235,
         "RT_ITER": 18,
         "QT_COV": 92.2,
@@ -4085,6 +4126,7 @@
         "QT_AVAIL": 33.3,
         "QT_BUG": 3062.0,
         "PT_DESIGN": 0.2427,
+        "PT_PLAN": 0.1188,
         "PT_DEV": 0.4559,
         "PT_VERIFY": 0.1825
       }
@@ -4248,6 +4290,7 @@
         "ET_TASK": 792.0,
         "ET_AR": 12167,
         "ET_TIME": 1216700.0,
+        "ET_COST_LOC": 1.1357,
         "RT_RATIO": 0.0467,
         "RT_ITER": 13,
         "QT_COV": 165.5,
@@ -4255,6 +4298,7 @@
         "QT_AVAIL": 60.3,
         "QT_BUG": 5547.0,
         "PT_DESIGN": 0.2426,
+        "PT_PLAN": 0.1188,
         "PT_DEV": 0.4559,
         "PT_VERIFY": 0.1827
       }
@@ -4418,6 +4462,7 @@
         "ET_TASK": 1084.0,
         "ET_AR": 9372,
         "ET_TIME": 937200.0,
+        "ET_COST_LOC": 0.8691,
         "RT_RATIO": 0.0289,
         "RT_ITER": 14,
         "QT_COV": 64.5,
@@ -4425,6 +4470,7 @@
         "QT_AVAIL": 47.2,
         "QT_BUG": 4338.0,
         "PT_DESIGN": 0.2416,
+        "PT_PLAN": 0.116,
         "PT_DEV": 0.4629,
         "PT_VERIFY": 0.1796
       }
@@ -4588,6 +4634,7 @@
         "ET_TASK": 743.0,
         "ET_AR": 6527,
         "ET_TIME": 652700.0,
+        "ET_COST_LOC": 1.0199,
         "RT_RATIO": 0.0344,
         "RT_ITER": 12,
         "QT_COV": 69.6,
@@ -4595,6 +4642,7 @@
         "QT_AVAIL": 32.3,
         "QT_BUG": 2972.0,
         "PT_DESIGN": 0.2428,
+        "PT_PLAN": 0.119,
         "PT_DEV": 0.4553,
         "PT_VERIFY": 0.1828
       }
@@ -4758,6 +4806,7 @@
         "ET_TASK": 755.0,
         "ET_AR": 8203,
         "ET_TIME": 820300.0,
+        "ET_COST_LOC": 0.9804,
         "RT_RATIO": 0.0405,
         "RT_ITER": 14,
         "QT_COV": 69.0,
@@ -4765,6 +4814,7 @@
         "QT_AVAIL": 41.0,
         "QT_BUG": 3776.0,
         "PT_DESIGN": 0.2421,
+        "PT_PLAN": 0.117,
         "PT_DEV": 0.4603,
         "PT_VERIFY": 0.1805
       }
@@ -4928,6 +4978,7 @@
         "ET_TASK": 1077.0,
         "ET_AR": 11555,
         "ET_TIME": 1155500.0,
+        "ET_COST_LOC": 0.953,
         "RT_RATIO": 0.0387,
         "RT_ITER": 13,
         "QT_COV": 81.5,
@@ -4935,6 +4986,7 @@
         "QT_AVAIL": 58.5,
         "QT_BUG": 5384.0,
         "PT_DESIGN": 0.2413,
+        "PT_PLAN": 0.1148,
         "PT_DEV": 0.4659,
         "PT_VERIFY": 0.178
       }
@@ -5098,6 +5150,7 @@
         "ET_TASK": 361.0,
         "ET_AR": 4102,
         "ET_TIME": 410200.0,
+        "ET_COST_LOC": 3.0613,
         "RT_RATIO": 0.0207,
         "RT_ITER": 11,
         "QT_COV": 32.8,
@@ -5105,6 +5158,7 @@
         "QT_AVAIL": 19.6,
         "QT_BUG": 1806.0,
         "PT_DESIGN": 0.2448,
+        "PT_PLAN": 0.1251,
         "PT_DEV": 0.4403,
         "PT_VERIFY": 0.1899
       }
@@ -5268,6 +5322,7 @@
         "ET_TASK": 452.0,
         "ET_AR": 4102,
         "ET_TIME": 410200.0,
+        "ET_COST_LOC": 2.4891,
         "RT_RATIO": 0.0283,
         "RT_ITER": 14,
         "QT_COV": 40.4,
@@ -5275,6 +5330,7 @@
         "QT_AVAIL": 19.6,
         "QT_BUG": 1806.0,
         "PT_DESIGN": 0.2448,
+        "PT_PLAN": 0.1251,
         "PT_DEV": 0.4403,
         "PT_VERIFY": 0.1899
       }
@@ -5438,6 +5494,7 @@
         "ET_TASK": 3648.0,
         "ET_AR": 30736,
         "ET_TIME": 3073600.0,
+        "ET_COST_LOC": 0.8258,
         "RT_RATIO": 0.0373,
         "RT_ITER": 15,
         "QT_COV": 216.0,
@@ -5445,6 +5502,7 @@
         "QT_AVAIL": 158.6,
         "QT_BUG": 14592.0,
         "PT_DESIGN": 0.24,
+        "PT_PLAN": 0.1114,
         "PT_DEV": 0.4748,
         "PT_VERIFY": 0.1739
       }
@@ -5608,6 +5666,7 @@
         "ET_TASK": 16139.0,
         "ET_AR": 269593,
         "ET_TIME": 26959300.0,
+        "ET_COST_LOC": 0.797,
         "RT_RATIO": 0.0205,
         "RT_ITER": 13,
         "QT_COV": 2084.5,
@@ -5615,6 +5674,7 @@
         "QT_AVAIL": 1403.4,
         "QT_BUG": 43038.0,
         "PT_DESIGN": 0.2394,
+        "PT_PLAN": 0.1097,
         "PT_DEV": 0.4789,
         "PT_VERIFY": 0.1719
       }
@@ -5778,6 +5838,7 @@
         "ET_TASK": 452.0,
         "ET_AR": 4102,
         "ET_TIME": 410200.0,
+        "ET_COST_LOC": 2.8837,
         "RT_RATIO": 0.0387,
         "RT_ITER": 10,
         "QT_COV": 33.2,
@@ -5785,6 +5846,7 @@
         "QT_AVAIL": 19.6,
         "QT_BUG": 1806.0,
         "PT_DESIGN": 0.2448,
+        "PT_PLAN": 0.1251,
         "PT_DEV": 0.4403,
         "PT_VERIFY": 0.1899
       }
@@ -5948,6 +6010,7 @@
         "ET_TASK": 361.0,
         "ET_AR": 2460,
         "ET_TIME": 246000.0,
+        "ET_COST_LOC": 1.7503,
         "RT_RATIO": 0.0207,
         "RT_ITER": 10,
         "QT_COV": 20.3,
@@ -5955,6 +6018,7 @@
         "QT_AVAIL": 11.8,
         "QT_BUG": 1083.0,
         "PT_DESIGN": 0.2451,
+        "PT_PLAN": 0.1248,
         "PT_DEV": 0.4402,
         "PT_VERIFY": 0.1898
       }
@@ -6118,6 +6182,7 @@
         "ET_TASK": 361.0,
         "ET_AR": 4102,
         "ET_TIME": 410200.0,
+        "ET_COST_LOC": 2.7697,
         "RT_RATIO": 0.039,
         "RT_ITER": 18,
         "QT_COV": 41.0,
@@ -6125,6 +6190,7 @@
         "QT_AVAIL": 19.6,
         "QT_BUG": 1806.0,
         "PT_DESIGN": 0.2448,
+        "PT_PLAN": 0.1251,
         "PT_DEV": 0.4403,
         "PT_VERIFY": 0.1899
       }
@@ -6288,6 +6354,7 @@
         "ET_TASK": 271.0,
         "ET_AR": 7387,
         "ET_TIME": 738700.0,
+        "ET_COST_LOC": 5.2645,
         "RT_RATIO": 0.0459,
         "RT_ITER": 14,
         "QT_COV": 102.2,
@@ -6295,6 +6362,7 @@
         "QT_AVAIL": 35.3,
         "QT_BUG": 3252.0,
         "PT_DESIGN": 0.245,
+        "PT_PLAN": 0.1248,
         "PT_DEV": 0.4402,
         "PT_VERIFY": 0.1899
       }
@@ -6458,6 +6526,7 @@
         "ET_TASK": 3798.0,
         "ET_AR": 48085,
         "ET_TIME": 4808500.0,
+        "ET_COST_LOC": 1.0367,
         "RT_RATIO": 0.0498,
         "RT_ITER": 14,
         "QT_COV": 367.2,
@@ -6465,6 +6534,7 @@
         "QT_AVAIL": 247.7,
         "QT_BUG": 11394.0,
         "PT_DESIGN": 0.2402,
+        "PT_PLAN": 0.1117,
         "PT_DEV": 0.4739,
         "PT_VERIFY": 0.1743
       }
@@ -6628,6 +6698,7 @@
         "ET_TASK": 1428.0,
         "ET_AR": 15209,
         "ET_TIME": 1520900.0,
+        "ET_COST_LOC": 0.9405,
         "RT_RATIO": 0.0332,
         "RT_ITER": 12,
         "QT_COV": 147.0,
@@ -6635,6 +6706,7 @@
         "QT_AVAIL": 77.6,
         "QT_BUG": 7139.0,
         "PT_DESIGN": 0.2408,
+        "PT_PLAN": 0.1134,
         "PT_DEV": 0.4694,
         "PT_VERIFY": 0.1764
       }
@@ -6798,6 +6870,7 @@
         "ET_TASK": 1228.0,
         "ET_AR": 13128,
         "ET_TIME": 1312800.0,
+        "ET_COST_LOC": 0.8817,
         "RT_RATIO": 0.04,
         "RT_ITER": 11,
         "QT_COV": 179.8,
@@ -6805,6 +6878,7 @@
         "QT_AVAIL": 66.7,
         "QT_BUG": 6140.0,
         "PT_DESIGN": 0.241,
+        "PT_PLAN": 0.114,
         "PT_DEV": 0.4677,
         "PT_VERIFY": 0.1773
       }
@@ -6968,6 +7042,7 @@
         "ET_TASK": 1068.0,
         "ET_AR": 18405,
         "ET_TIME": 1840500.0,
+        "ET_COST_LOC": 1.2282,
         "RT_RATIO": 0.0496,
         "RT_ITER": 16,
         "QT_COV": 112.6,
@@ -6975,6 +7050,7 @@
         "QT_AVAIL": 92.8,
         "QT_BUG": 8541.0,
         "PT_DESIGN": 0.2416,
+        "PT_PLAN": 0.1156,
         "PT_DEV": 0.4641,
         "PT_VERIFY": 0.1788
       }
@@ -7138,6 +7214,7 @@
         "ET_TASK": 325.0,
         "ET_AR": 7387,
         "ET_TIME": 738700.0,
+        "ET_COST_LOC": 4.9624,
         "RT_RATIO": 0.028,
         "RT_ITER": 14,
         "QT_COV": 36.6,
@@ -7145,6 +7222,7 @@
         "QT_AVAIL": 35.3,
         "QT_BUG": 3252.0,
         "PT_DESIGN": 0.245,
+        "PT_PLAN": 0.1248,
         "PT_DEV": 0.4402,
         "PT_VERIFY": 0.1899
       }
@@ -7308,6 +7386,7 @@
         "ET_TASK": 364.0,
         "ET_AR": 4127,
         "ET_TIME": 412700.0,
+        "ET_COST_LOC": 2.9326,
         "RT_RATIO": 0.0416,
         "RT_ITER": 14,
         "QT_COV": 21.6,
@@ -7315,6 +7394,7 @@
         "QT_AVAIL": 19.8,
         "QT_BUG": 1819.0,
         "PT_DESIGN": 0.2447,
+        "PT_PLAN": 0.1248,
         "PT_DEV": 0.4408,
         "PT_VERIFY": 0.1897
       }
@@ -7478,6 +7558,7 @@
         "ET_TASK": 686.0,
         "ET_AR": 9188,
         "ET_TIME": 918800.0,
+        "ET_COST_LOC": 1.7079,
         "RT_RATIO": 0.0484,
         "RT_ITER": 15,
         "QT_COV": 50.1,
@@ -7485,6 +7566,7 @@
         "QT_AVAIL": 44.8,
         "QT_BUG": 4118.0,
         "PT_DESIGN": 0.2438,
+        "PT_PLAN": 0.1218,
         "PT_DEV": 0.4482,
         "PT_VERIFY": 0.1862
       }
@@ -7648,6 +7730,7 @@
         "ET_TASK": 1371.0,
         "ET_AR": 11763,
         "ET_TIME": 381503.0,
+        "ET_COST_LOC": 0.7835,
         "RT_RATIO": 0.0283,
         "RT_ITER": 14,
         "QT_COV": 155.2,
@@ -7655,6 +7738,7 @@
         "QT_AVAIL": 59.6,
         "QT_BUG": 5485.0,
         "PT_DESIGN": 0.2412,
+        "PT_PLAN": 0.1146,
         "PT_DEV": 0.4663,
         "PT_VERIFY": 0.1779
       }
@@ -7818,6 +7902,7 @@
         "ET_TASK": 2811.0,
         "ET_AR": 29616,
         "ET_TIME": 960519.0,
+        "ET_COST_LOC": 0.874,
         "RT_RATIO": 0.036,
         "RT_ITER": 13,
         "QT_COV": 243.6,
@@ -7825,6 +7910,7 @@
         "QT_AVAIL": 152.8,
         "QT_BUG": 14054.0,
         "PT_DESIGN": 0.24,
+        "PT_PLAN": 0.1115,
         "PT_DEV": 0.4745,
         "PT_VERIFY": 0.174
       }

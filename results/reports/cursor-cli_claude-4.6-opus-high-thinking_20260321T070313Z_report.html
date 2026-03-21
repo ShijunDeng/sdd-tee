@@ -52,7 +52,7 @@
   SDD Token Efficiency Evaluation &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
   模型: claude-4.6-opus-high-thinking &nbsp;|&nbsp; 工具: cursor-cli &nbsp;|&nbsp;
   <span style="color:var(--green)">ACTUAL RUN</span> &nbsp;|&nbsp;
-  cursor-cli_claude-4.6-opus-high-thinking_20260321T070313Z &nbsp;|&nbsp; 2026-03-21T08:09:20Z
+  cursor-cli_claude-4.6-opus-high-thinking_20260321T070313Z &nbsp;|&nbsp; 2026-03-21T08:25:09Z
 </p>
 
 <div class="toc">
@@ -244,6 +244,7 @@
   <div class="stat"><div class="v">3,724</div><div class="l">ET-TASK (Token/Task)</div></div>
   <div class="stat"><div class="v">18,274</div><div class="l">ET-AR (Token/AR)</div></div>
   <div class="stat"><div class="v">2,676,241</div><div class="l">ET-TIME (Token/h)</div></div>
+  <div class="stat"><div class="v">$0.90</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
 </div>
 
 <div class="card">
@@ -375,10 +376,12 @@ LOC: 810, Tokens: 29,616</title></circle>
 <!-- ===================== 6. DISTRIBUTION ===================== -->
 <h2 id="distribution">6. 阶段间 Token 分布</h2>
 <div class="stats">
-  <div class="stat"><div class="v">24.1%</div><div class="l">PT-DESIGN 设计阶段</div></div>
-  <div class="stat"><div class="v">47.1%</div><div class="l">PT-DEV 开发阶段</div></div>
-  <div class="stat"><div class="v">17.6%</div><div class="l">PT-VERIFY 验证阶段</div></div>
+  <div class="stat"><div class="v">24.1%</div><div class="l">PT-DESIGN 设计阶段 (15-30%)</div></div>
+  <div class="stat"><div class="v">11.3%</div><div class="l">PT-PLAN 规划阶段 (5-15%)</div></div>
+  <div class="stat"><div class="v">47.1%</div><div class="l">PT-DEV 开发阶段 (45-65%)</div></div>
+  <div class="stat"><div class="v">17.6%</div><div class="l">PT-VERIFY 验证阶段 (8-18%)</div></div>
   <div class="stat warn"><div class="v">ST-5</div><div class="l">PT-PEAK 峰值阶段</div></div>
+  <div class="stat good"><div class="v">72%</div><div class="l">PT-CACHE 命中率 (&gt;70%)</div></div>
 </div>
 
 <div class="card">
@@ -953,8 +956,8 @@ LOC: 810, Tokens: 29,616</title></circle>
 <div class="card">
   <table>
     <thead><tr><th>预警规则</th><th>阈值</th><th>触发数量</th><th>相关 AR</th></tr></thead>
-    <tbody><tr style="background:#FFCDD2"><td>Token/LOC > 基线 200%</td><td>red</td><td>10</td><td>AR-005、AR-006、AR-027、AR-028、AR-031...</td></tr>
-<tr style="background:#FFF9C4"><td>总 Token > 基线 150%</td><td>yellow</td><td>5</td><td>AR-003、AR-004、AR-029、AR-030、AR-043</td></tr>
+    <tbody><tr style="background:#FFCDD2"><td>W-ET-LOC: Token/LOC > 基线 200%</td><td>red</td><td>10</td><td>AR-005、AR-006、AR-027、AR-028、AR-031...</td></tr>
+<tr style="background:#FFF9C4"><td>W-STAGE-BUDGET: 总Token > 基线 150%</td><td>yellow</td><td>5</td><td>AR-003、AR-004、AR-029、AR-030、AR-043</td></tr>
 </tbody>
   </table>
 </div>
@@ -990,7 +993,7 @@ LOC: 810, Tokens: 29,616</title></circle>
 </div><!-- .container -->
 <div class="footer">
   SDD-TEE v2 (SDD Token Efficiency Evaluation) &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
-  2026-03-21T08:09:20Z &nbsp;|&nbsp; <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
+  2026-03-21T08:25:09Z &nbsp;|&nbsp; <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
 </div>
 </body>
 </html>

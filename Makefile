@@ -1,5 +1,7 @@
 # SDD-TEE: SDD Token Efficiency Evaluation
 # CodeSpec 7-Stage × OpenSpec OPSX
+#
+# Reentrant design: clone → make setup → make preflight → make run → make report → make selftest
 
 TOOL     ?= cursor-cli
 MODEL    ?= claude-4.6-opus-high-thinking
@@ -9,9 +11,17 @@ RUNS     := $(RESULTS)/runs
 REPORTS  := $(RESULTS)/reports
 PROXY_PORT ?= 4000
 
-.PHONY: all prerequisites run collect report mock proxy proxy-run clean help
+.PHONY: all setup preflight run collect report mock proxy proxy-run selftest clean help
 
-all: prerequisites run collect report  ## Full pipeline
+all: setup preflight run collect report selftest  ## Full pipeline (environment → evaluate → report → validate)
+
+# --- Environment Setup (run once per new environment) ---
+setup:  ## Install Python dependencies
+	pip install -r requirements.txt
+	@echo "Setup complete. Run 'make preflight' to verify environment."
+
+preflight:  ## Verify environment can run evaluations
+	python3 scripts/preflight.py --tool $(TOOL) --model $(MODEL)
 
 # --- Prerequisites (one-time) ---
 prerequisites: $(RESULTS)/project_analysis/analysis.json $(SPECS)/project.md
@@ -48,7 +58,7 @@ collect:  ## Collect run data with precise token counts from workspace
 	fi
 
 # --- Reporting ---
-report:  ## Generate 10-section 5-dimension HTML report
+report:  ## Generate 10-section 5-dimension HTML report (with schema validation)
 	@FULL_JSON=$$(ls -t $(RUNS)/*_full.json 2>/dev/null | head -1); \
 	if [ -n "$$FULL_JSON" ]; then \
 		RUN_ID=$$(python3 -c "import json; d=json.load(open('$$FULL_JSON')); print(d['meta']['run_id'])"); \
@@ -60,8 +70,22 @@ report:  ## Generate 10-section 5-dimension HTML report
 		echo "No full data JSON found. Run 'make collect' first."; \
 	fi
 
-mock:  ## Generate mock data report (preview)
+mock:  ## Generate mock data report (preview & schema test)
 	python3 scripts/07_sdd_tee_report.py --mock
+
+# --- Self-test (validates report against metrics design doc) ---
+selftest:  ## Validate data + HTML against SDD-TEE schema contract
+	@echo "=== SDD-TEE Self-Test ==="
+	@FULL_JSON=$$(ls -t $(RUNS)/*_full.json 2>/dev/null | head -1); \
+	REPORT_HTML=$$(ls -t $(REPORTS)/*_report.html 2>/dev/null | head -1); \
+	if [ -n "$$FULL_JSON" ] && [ -n "$$REPORT_HTML" ]; then \
+		python3 scripts/schema.py "$$FULL_JSON" "$$REPORT_HTML"; \
+	elif [ -n "$$FULL_JSON" ]; then \
+		python3 scripts/schema.py "$$FULL_JSON"; \
+	else \
+		echo "No data found. Run 'make mock' to test with mock data, then:"; \
+		echo "  python3 scripts/schema.py results/reports/sdd_tee_report.json results/reports/sdd_tee_report.html"; \
+	fi
 
 project-report:  ## Generate project analysis HTML report
 	python3 scripts/06_project_report.py

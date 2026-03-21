@@ -307,6 +307,7 @@ def generate_ar_data(ar):
             "ET_TASK": round(stages["ST-5"]["total_tokens"] / max(tasks_count, 1), 0),
             "ET_AR": total_input + total_output,
             "ET_TIME": round((total_input + total_output) / max(total_dur / 3600, 0.01), 0),
+            "ET_COST_LOC": round(total_cost / max(actual_loc / 1000, 0.01), 4),
             "RT_RATIO": round(total_human / max(total_input + total_output - total_human, 1), 4),
             "RT_ITER": total_iters,
             "QT_COV": round(stages["ST-5"]["total_tokens"] / max(test_coverage * 100, 1), 1),
@@ -314,6 +315,7 @@ def generate_ar_data(ar):
             "QT_AVAIL": round(stages["ST-5"]["total_tokens"] / max(code_usability * 100, 1), 1),
             "QT_BUG": round(stages["ST-5"]["total_tokens"] / max(bugs_found, 1), 0),
             "PT_DESIGN": round(sum(stages[s]["total_tokens"] for s in ("ST-1", "ST-2", "ST-3")) / max(total_input + total_output, 1), 4),
+            "PT_PLAN": round(sum(stages[s]["total_tokens"] for s in ("ST-0", "ST-4")) / max(total_input + total_output, 1), 4),
             "PT_DEV": round(stages["ST-5"]["total_tokens"] / max(total_input + total_output, 1), 4),
             "PT_VERIFY": round(sum(stages[s]["total_tokens"] for s in ("ST-6", "ST-7")) / max(total_input + total_output, 1), 4),
         },
@@ -526,9 +528,11 @@ def render_html(data):
 
     # --- Distribution metrics ---
     design_tok = sum(sa[s]["total_tokens"] for s in ("ST-1", "ST-2", "ST-3"))
+    plan_tok = sum(sa[s]["total_tokens"] for s in ("ST-0", "ST-4"))
     dev_tok = sa["ST-5"]["total_tokens"]
     verify_tok = sum(sa[s]["total_tokens"] for s in ("ST-6", "ST-7"))
     peak_stage = max(STAGE_NAMES, key=lambda s: sa[s]["total_tokens"])
+    cache_rate = gt["cache_read_tokens"] / max(gt["input_tokens"], 1)
 
     # --- Efficiency scatter data (Token vs LOC for each AR) ---
     scatter_points = ""
@@ -719,6 +723,7 @@ def render_html(data):
   <div class="stat"><div class="v">{gt['total_tokens'] / max(gt['total_tasks'], 1):,.0f}</div><div class="l">ET-TASK (Token/Task)</div></div>
   <div class="stat"><div class="v">{gt['total_tokens'] / max(gt['ar_count'], 1):,.0f}</div><div class="l">ET-AR (Token/AR)</div></div>
   <div class="stat"><div class="v">{gt['total_tokens'] / max(gt['total_duration_seconds'] / 3600, 0.01):,.0f}</div><div class="l">ET-TIME (Token/h)</div></div>
+  <div class="stat"><div class="v">${gt['total_cost_usd'] / max(gt['total_loc'] / 1000, 0.01):.2f}</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
 </div>
 
 <div class="card">
@@ -759,10 +764,12 @@ def render_html(data):
 <!-- ===================== 6. DISTRIBUTION ===================== -->
 <h2 id="distribution">6. 阶段间 Token 分布</h2>
 <div class="stats">
-  <div class="stat"><div class="v">{_pct(design_tok, total_tok)}</div><div class="l">PT-DESIGN 设计阶段</div></div>
-  <div class="stat"><div class="v">{_pct(dev_tok, total_tok)}</div><div class="l">PT-DEV 开发阶段</div></div>
-  <div class="stat"><div class="v">{_pct(verify_tok, total_tok)}</div><div class="l">PT-VERIFY 验证阶段</div></div>
+  <div class="stat"><div class="v">{_pct(design_tok, total_tok)}</div><div class="l">PT-DESIGN 设计阶段 (15-30%)</div></div>
+  <div class="stat"><div class="v">{_pct(plan_tok, total_tok)}</div><div class="l">PT-PLAN 规划阶段 (5-15%)</div></div>
+  <div class="stat"><div class="v">{_pct(dev_tok, total_tok)}</div><div class="l">PT-DEV 开发阶段 (45-65%)</div></div>
+  <div class="stat"><div class="v">{_pct(verify_tok, total_tok)}</div><div class="l">PT-VERIFY 验证阶段 (8-18%)</div></div>
   <div class="stat warn"><div class="v">{peak_stage}</div><div class="l">PT-PEAK 峰值阶段</div></div>
+  <div class="stat {'good' if cache_rate > 0.7 else 'warn' if cache_rate > 0.5 else 'danger'}"><div class="v">{cache_rate:.0%}</div><div class="l">PT-CACHE 命中率 (&gt;70%)</div></div>
 </div>
 
 <div class="card">
@@ -807,18 +814,36 @@ def render_html(data):
     <thead><tr><th>预警规则</th><th>阈值</th><th>触发数量</th><th>相关 AR</th></tr></thead>
     <tbody>"""
 
-    # Warning calculations
+    # Warning calculations — all 6 rules from 指标体系 §5
     warnings = []
     for r in ars:
         sz_bl = bl.get(r["size"], {})
+        # W-STAGE-BUDGET: 单阶段 Token > 基线 150%
         avg_tok = sz_bl.get("avg_tokens", r["totals"]["total_tokens"])
         if r["totals"]["total_tokens"] > avg_tok * 1.5:
-            warnings.append(("yellow", "总 Token > 基线 150%", r["ar_id"]))
+            warnings.append(("yellow", "W-STAGE-BUDGET: 总Token > 基线 150%", r["ar_id"]))
+        # W-ET-LOC: Token/LOC > 基线 200%
         avg_et = sz_bl.get("avg_et_loc", r["metrics"]["ET_LOC"])
         if r["metrics"]["ET_LOC"] > avg_et * 2:
-            warnings.append(("red", "Token/LOC > 基线 200%", r["ar_id"]))
+            warnings.append(("red", "W-ET-LOC: Token/LOC > 基线 200%", r["ar_id"]))
+        # W-USABILITY: 代码可用率 < 75%
         if r["quality"]["code_usability"] < 0.75:
-            warnings.append(("orange", "代码可用率 < 75%", r["ar_id"]))
+            warnings.append(("orange", "W-USABILITY: 代码可用率 < 75%", r["ar_id"]))
+        # W-DEV-SKEW: 开发占比 > 80%
+        pt_dev = r["metrics"].get("PT_DEV", 0)
+        if pt_dev > 0.80:
+            warnings.append(("orange", "W-DEV-SKEW: 开发占比 > 80%", r["ar_id"]))
+
+    # Global warnings
+    # W-TOTAL-BUDGET: overall budget check
+    if bl:
+        expected_total = sum(bl.get(sz, {}).get("avg_tokens", 0) * bl.get(sz, {}).get("count", 0)
+                             for sz in ("S", "M", "L"))
+        if expected_total > 0 and gt["total_tokens"] > expected_total * 1.2:
+            warnings.append(("red", "W-TOTAL-BUDGET: 总Token > 预算 120%", "全局"))
+    # W-CACHE-LOW: Cache 命中率 < 50%
+    if cache_rate < 0.50:
+        warnings.append(("orange", "W-CACHE-LOW: Cache命中率 < 50%", "全局"))
 
     warn_groups = {}
     for level, rule, ar_id in warnings:
@@ -826,11 +851,11 @@ def render_html(data):
         warn_groups.setdefault(key, []).append(ar_id)
 
     for (level, rule), ar_ids in sorted(warn_groups.items()):
-        color = {"yellow": "#FFF9C4", "red": "#FFCDD2", "orange": "#FFE0B2"}[level]
+        color = {"yellow": "#FFF9C4", "red": "#FFCDD2", "orange": "#FFE0B2"}.get(level, "#FFF9C4")
         html += f'<tr style="background:{color}"><td>{rule}</td><td>{level}</td><td>{len(ar_ids)}</td><td>{"、".join(ar_ids[:5])}{"..." if len(ar_ids) > 5 else ""}</td></tr>\n'
 
     if not warn_groups:
-        html += '<tr><td colspan="4" style="text-align:center;color:var(--green)">无预警触发</td></tr>'
+        html += '<tr><td colspan="4" style="text-align:center;color:var(--green)">无预警触发 (6 条规则全部通过)</td></tr>'
 
     html += f"""</tbody>
   </table>
@@ -898,6 +923,20 @@ def main():
         print("Usage: --mock for mock data, or --data <file> for real data")
         return
 
+    # Schema validation — ensures ALL metrics from design doc are present
+    try:
+        from schema import validate_report_data, validate_html_report, SchemaError
+        print("[07] Validating data against SDD-TEE schema...")
+        schema_warnings = validate_report_data(data)
+        print(f"[07] Schema: PASS ({len(data.get('ar_results',[]))} ARs)")
+        for sw in schema_warnings:
+            print(f"[07] WARN: {sw}")
+    except SchemaError as e:
+        print(f"[07] Schema: FAIL — report may be incomplete!")
+        print(str(e))
+    except ImportError:
+        print("[07] schema.py not found, skipping validation")
+
     os.makedirs(os.path.dirname(os.path.join(base, args.output)), exist_ok=True)
 
     json_path = os.path.join(base, args.data_output)
@@ -910,6 +949,17 @@ def main():
     with open(html_path, 'w') as f:
         f.write(html)
     print(f"[07] HTML → {html_path}")
+
+    # Validate rendered HTML contains all required sections
+    try:
+        validate_html_report(html)
+        print(f"[07] HTML validation: PASS (10 sections, all keywords)")
+    except SchemaError as e:
+        print(f"[07] HTML validation: FAIL")
+        print(str(e))
+    except NameError:
+        pass
+
     print(f"[07] Total: {data['grand_totals']['ar_count']} ARs, "
           f"{_fmt(data['grand_totals']['total_tokens'])} tokens, "
           f"${data['grand_totals']['total_cost_usd']:.2f}")

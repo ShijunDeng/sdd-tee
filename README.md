@@ -43,20 +43,38 @@ ST-7  /opsx:archive → 归档 + spec 合并   (合并归档)
 ## 快速开始
 
 ```bash
-# 安装 OpenSpec CLI
-npm install -g @fission-ai/openspec@latest
+# 1. 环境初始化（安装依赖）
+make setup
 
-# 初始化项目
-cd your-workspace && openspec init
+# 2. 环境预检（验证工具链、config、specs 完整性）
+make preflight
 
-# 生成 mock 报告（预览）
-python3 scripts/07_sdd_tee_report.py --mock
+# 3. Mock 报告（预览报告格式 + schema 自检）
+make mock
 
-# 运行评测（单个工具 × 模型）
-make run TOOL=claude-code MODEL=claude-sonnet-4-20250514
+# 4. 运行评测（Cursor CLI / Claude Code / Aider × 任意模型）
+make run TOOL=cursor-cli MODEL=claude-4.6-opus-high-thinking
 
-# 生成综合报告
+# 5. 采集 Token 数据
+make collect
+
+# 6. 生成 10 节 5 维报告（自动 schema 校验）
 make report
+
+# 7. 自检：验证报告覆盖 design doc 全部指标
+make selftest
+
+# 完整管线（一键）
+make all TOOL=cursor-cli MODEL=claude-4.6-opus-high-thinking
+```
+
+### LiteLLM Proxy（精确 per-request Token 追踪）
+
+```bash
+export ANTHROPIC_API_KEY=sk-...
+make proxy &          # 启动代理 (localhost:4000)
+make proxy-run MODEL=anthropic/claude-sonnet-4-20250514
+make report && make selftest
 ```
 
 ## 目录结构
@@ -67,13 +85,12 @@ sdd-tee/
 ├── Makefile                    # 评测编排
 ├── PROPOSAL.md                 # v2 评测体系设计文档
 ├── scripts/
-│   ├── 01_analyze_project.sh   # 前置：项目结构分析
-│   ├── 02_generate_specs.sh    # 前置：规范逆向生成
-│   ├── 03_sdd_develop.sh       # 评测：SDD 开发驱动（OpenSpec OPSX）
-│   ├── 04_validate.py          # 评测：代码质量验证
-│   ├── 05_aggregate.py         # 评测：CSV/Markdown 汇总
-│   ├── 06_project_report.py    # 前置：项目技术解析 HTML 报告
-│   └── 07_sdd_tee_report.py    # 评测：综合 HTML 报告（5 维指标）
+│   ├── schema.py               # 数据合约（Single Source of Truth，关联指标体系 doc）
+│   ├── preflight.py            # 环境预检（7 维：依赖/工具链/config/specs/脚本/工具/代理）
+│   ├── 04_validate.py          # 代码质量验证（Go build/py_compile/YAML syntax）
+│   ├── 07_sdd_tee_report.py    # 报告生成（10 节 5 维，内置 schema 校验）
+│   ├── 09_collect_run_data.py  # Token 采集（litellm.token_counter 精确计数）
+│   └── 10_litellm_runner.py    # LiteLLM 评测执行器（per-request Token 追踪）
 ├── specs/                      # 逆向生成的 OpenSpec 规范（capability-based，一次性产出）
 │   ├── project.md              # 项目上下文（技术栈、架构、约定）
 │   ├── {capability}/spec.md    # 需求规范（SHALL/MUST + GIVEN/WHEN/THEN 场景）
@@ -84,6 +101,18 @@ sdd-tee/
     ├── runs/                   # 每次评测的 JSON 原始数据
     └── reports/                # HTML 报告与图表
 ```
+
+## 可重入性保障
+
+| 保障层 | 机制 | 验证命令 |
+|--------|------|----------|
+| **数据合约** | `schema.py` 定义全部 8 阶段 × 9 字段 × 16 指标，report 生成前自动校验 | `make selftest` |
+| **环境预检** | `preflight.py` 检查 7 维：依赖/工具链/config/specs/脚本/编码工具/代理 | `make preflight` |
+| **指标完整性** | 所有指标 ID 与 `docs/SDD开发Token消耗度量指标体系设计方案.md` 一一对应 | `python3 scripts/schema.py <data.json>` |
+| **报告完整性** | HTML 渲染后验证 10 节标题 + 17 个必需关键词 | `python3 scripts/schema.py <data.json> <report.html>` |
+| **预警完整性** | 6 条预警规则全部实现（STAGE-BUDGET/TOTAL-BUDGET/ET-LOC/USABILITY/DEV-SKEW/CACHE-LOW） | 报告第 9 节 |
+| **依赖声明** | `requirements.txt` 锁定 Python 依赖 | `make setup` |
+| **工具无关** | 同一管线支持 cursor-cli / claude-code / aider，只需 `TOOL=xxx MODEL=xxx` | `make run TOOL=...` |
 
 ## Token 追踪
 

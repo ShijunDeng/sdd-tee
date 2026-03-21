@@ -359,6 +359,7 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
                 "ET_TASK": round(st5_tok / max(ar["est_tasks"], 1), 0),
                 "ET_AR": total_input + total_output,
                 "ET_TIME": round((total_input + total_output) / max(ar_total_dur / 3600, 0.01), 0),
+                "ET_COST_LOC": round(total_cost / max(out_loc / 1000, 0.01), 4),
                 "RT_RATIO": round(total_human / max(total_input + total_output - total_human, 1), 4),
                 "RT_ITER": total_iters,
                 "QT_COV": round(st5_tok / max(test_coverage * 100, 1), 1),
@@ -367,6 +368,8 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
                 "QT_BUG": round(st5_tok / max(bugs_found, 1), 0),
                 "PT_DESIGN": round(sum(stages[s]["total_tokens"] for s in ("ST-1", "ST-2", "ST-3"))
                                    / max(total_input + total_output, 1), 4),
+                "PT_PLAN": round(sum(stages[s]["total_tokens"] for s in ("ST-0", "ST-4"))
+                                 / max(total_input + total_output, 1), 4),
                 "PT_DEV": round(st5_tok / max(total_input + total_output, 1), 4),
                 "PT_VERIFY": round(sum(stages[s]["total_tokens"] for s in ("ST-6", "ST-7"))
                                    / max(total_input + total_output, 1), 4),

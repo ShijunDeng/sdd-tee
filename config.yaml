@@ -22,10 +22,10 @@ methodology:
 
 metrics:
   stage: [ST-0, ST-1, ST-2, ST-3, ST-4, ST-5, ST-6, ST-7]
-  role: [RT-AI, RT-HUMAN, RT-RATIO, RT-ITER]
-  efficiency: [ET-LOC, ET-FILE, ET-TASK, ET-AR, ET-TIME]
+  role: [RT-AI, RT-HUMAN, RT-SPEC, RT-RATIO, RT-ITER]
+  efficiency: [ET-LOC, ET-FILE, ET-TASK, ET-AR, ET-TIME, ET-COST-LOC]
   quality: [QT-COV, QT-CONSIST, QT-AVAIL, QT-BUG]
-  distribution: [PT-DESIGN, PT-DEV, PT-VERIFY, PT-PEAK]
+  distribution: [PT-DESIGN, PT-PLAN, PT-DEV, PT-VERIFY, PT-PEAK, PT-CACHE]
 
 tools:
   - name: claude-code
