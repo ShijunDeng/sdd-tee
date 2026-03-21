@@ -131,13 +131,22 @@ def check_config(r):
         r.fail(f"Expected 8 stages, found {len(stages)}")
 
     metrics = cfg.get("metrics", {})
-    expected_dims = {"stage": 8, "role": 4, "efficiency": 5, "quality": 4, "distribution": 4}
+    expected_dims = {"stage": 8, "role": 5, "efficiency": 6, "quality": 4, "distribution": 6}
     for dim, count in expected_dims.items():
         actual = len(metrics.get(dim, []))
         if actual >= count:
             r.ok(f"metrics.{dim}: {actual} IDs")
         else:
             r.warn(f"metrics.{dim}: {actual} IDs (expected >= {count})")
+
+    tools = cfg.get("tools", [])
+    tool_names = [t["name"] for t in tools]
+    required_tools = ["cursor-cli", "claude-code", "gemini-cli", "opencode-cli"]
+    for rt in required_tools:
+        if rt in tool_names:
+            r.ok(f"config.tools includes {rt}")
+        else:
+            r.warn(f"config.tools missing {rt}")
 
     return cfg
 
@@ -211,13 +220,46 @@ def check_tool(r, tool_name):
     tool_cmds = {
         "cursor-cli": "cursor",
         "claude-code": "claude",
+        "gemini-cli": "gemini",
+        "opencode-cli": "opencode",
         "aider": "aider",
     }
     cmd = tool_cmds.get(tool_name, tool_name)
     if shutil.which(cmd):
         r.ok(f"{tool_name} ({cmd}) available")
+        # Verify tool-specific readiness
+        if tool_name == "claude-code":
+            try:
+                out = subprocess.check_output(["claude", "--version"], stderr=subprocess.STDOUT, timeout=5).decode().strip()
+                r.ok(f"  Claude Code version: {out}")
+            except Exception:
+                r.warn(f"  Could not determine Claude Code version")
+        elif tool_name == "gemini-cli":
+            try:
+                out = subprocess.check_output(["gemini", "--version"], stderr=subprocess.STDOUT, timeout=5).decode().strip()
+                r.ok(f"  Gemini CLI version: {out}")
+            except Exception:
+                r.warn(f"  Could not determine Gemini CLI version")
+        elif tool_name == "opencode-cli":
+            try:
+                out = subprocess.check_output(["opencode", "models"], stderr=subprocess.STDOUT, timeout=10).decode().strip()
+                model_count = len([l for l in out.splitlines() if l.strip() and not l.startswith("[")])
+                r.ok(f"  OpenCode models available: {model_count}")
+            except Exception:
+                r.warn(f"  Could not list OpenCode models")
     else:
         r.warn(f"{tool_name} ({cmd}) not found in PATH")
+
+    # Also check all 4 target CLI tools availability
+    print(f"\n  All target CLI tools:")
+    all_tools = {"cursor-cli": "cursor", "claude-code": "claude",
+                 "gemini-cli": "gemini", "opencode-cli": "opencode"}
+    for tname, tcmd in all_tools.items():
+        path = shutil.which(tcmd)
+        if path:
+            r.ok(f"  {tname}: {path}")
+        else:
+            r.warn(f"  {tname}: NOT FOUND")
 
 
 def check_litellm_proxy(r, cfg):

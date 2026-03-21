@@ -28,22 +28,52 @@ metrics:
   distribution: [PT-DESIGN, PT-PLAN, PT-DEV, PT-VERIFY, PT-PEAK, PT-CACHE]
 
 tools:
+  - name: cursor-cli
+    type: cli
+    command: "cursor agent"
+    non_interactive_flag: null  # Cursor agent accepts prompt as positional arg
+    auto_accept_flag: null
+    output_format: text
+    token_tracking: limited
+    proxy_env: {}  # Cursor uses its own backend, no proxy routing possible
+    notes: "Uses 'cursor agent \"prompt\"'. No native token reporting."
+
   - name: claude-code
     type: cli
     command: claude
-    token_tracking: native  # OpenTelemetry
-  - name: aider
+    non_interactive_flag: "--print"
+    auto_accept_flag: "--dangerously-skip-permissions"
+    output_format: "--output-format json"
+    token_tracking: native  # Returns usage JSON with input/output/cache tokens
+    proxy_env:
+      ANTHROPIC_BASE_URL: "http://localhost:${PROXY_PORT}/v1"
+    notes: "Full token telemetry via --output-format json. Proxy via ANTHROPIC_BASE_URL."
+
+  - name: gemini-cli
     type: cli
-    command: aider
-    token_tracking: native  # .aider.chat.history.md
-  - name: cursor-cli
-    type: ide
-    command: cursor
-    token_tracking: limited
+    command: gemini
+    non_interactive_flag: "--prompt"
+    auto_accept_flag: "--yolo"
+    output_format: "--output-format json"
+    token_tracking: native
+    proxy_env: {}  # Gemini CLI uses Google OAuth, not standard API key routing
+    notes: "Uses 'gemini -p \"prompt\" -y -o json'. Token data from JSON output."
+
+  - name: opencode-cli
+    type: cli
+    command: opencode
+    non_interactive_flag: "run"
+    auto_accept_flag: null
+    output_format: null
+    token_tracking: native  # opencode stats provides token/cost data
+    proxy_env: {}  # OpenCode has its own provider system
+    notes: "Uses 'opencode run \"prompt\"'. Token data via 'opencode stats'."
 
 models:
+  - {id: claude-4.6-opus-high-thinking, provider: anthropic, name: Claude 4.6 Opus (High Thinking)}
   - {id: claude-sonnet-4-20250514, provider: anthropic, name: Claude Sonnet 4}
   - {id: claude-opus-4-20250514, provider: anthropic, name: Claude Opus 4}
+  - {id: gemini-2.5-pro, provider: google, name: Gemini 2.5 Pro}
   - {id: gpt-4.1, provider: openai, name: GPT-4.1}
 
 spec_context:

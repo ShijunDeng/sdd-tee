@@ -52,8 +52,11 @@ make preflight
 # 3. Mock 报告（预览报告格式 + schema 自检）
 make mock
 
-# 4. 运行评测（Cursor CLI / Claude Code / Aider × 任意模型）
-make run TOOL=cursor-cli MODEL=claude-4.6-opus-high-thinking
+# 4. 运行评测（4 种 CLI 工具 × 任意模型）
+make run TOOL=cursor-cli  MODEL=claude-4.6-opus-high-thinking
+make run TOOL=claude-code MODEL=claude-sonnet-4-20250514
+make run TOOL=gemini-cli  MODEL=gemini-2.5-pro
+make run TOOL=opencode-cli MODEL=opencode/big-pickle
 
 # 5. 采集 Token 数据
 make collect
@@ -64,8 +67,14 @@ make report
 # 7. 自检：验证报告覆盖 design doc 全部指标
 make selftest
 
+# 8. 跨轮次对比报告
+make compare
+
 # 完整管线（一键）
 make all TOOL=cursor-cli MODEL=claude-4.6-opus-high-thinking
+
+# 全部 4 种工具顺序评测 + 对比
+make eval-all
 ```
 
 ### LiteLLM Proxy（精确 per-request Token 追踪）
@@ -90,7 +99,8 @@ sdd-tee/
 │   ├── 04_validate.py          # 代码质量验证（Go build/py_compile/YAML syntax）
 │   ├── 07_sdd_tee_report.py    # 报告生成（10 节 5 维，内置 schema 校验）
 │   ├── 09_collect_run_data.py  # Token 采集（litellm.token_counter 精确计数）
-│   └── 10_litellm_runner.py    # LiteLLM 评测执行器（per-request Token 追踪）
+│   ├── 10_litellm_runner.py    # LiteLLM 评测执行器（per-request Token 追踪）
+│   └── 11_compare_runs.py      # 跨轮次对比报告（Tool × Model 横向比较）
 ├── specs/                      # 逆向生成的 OpenSpec 规范（capability-based，一次性产出）
 │   ├── project.md              # 项目上下文（技术栈、架构、约定）
 │   ├── {capability}/spec.md    # 需求规范（SHALL/MUST + GIVEN/WHEN/THEN 场景）
@@ -112,14 +122,15 @@ sdd-tee/
 | **报告完整性** | HTML 渲染后验证 10 节标题 + 17 个必需关键词 | `python3 scripts/schema.py <data.json> <report.html>` |
 | **预警完整性** | 6 条预警规则全部实现（STAGE-BUDGET/TOTAL-BUDGET/ET-LOC/USABILITY/DEV-SKEW/CACHE-LOW） | 报告第 9 节 |
 | **依赖声明** | `requirements.txt` 锁定 Python 依赖 | `make setup` |
-| **工具无关** | 同一管线支持 cursor-cli / claude-code / aider，只需 `TOOL=xxx MODEL=xxx` | `make run TOOL=...` |
+| **工具无关** | 同一管线支持 cursor-cli / claude-code / gemini-cli / opencode-cli，只需 `TOOL=xxx MODEL=xxx` | `make run TOOL=...` |
+| **跨轮对比** | `11_compare_runs.py` 自动扫描全部 *_full.json，生成横向对比报告 | `make compare` |
 
 ## Token 追踪
 
 | 方式 | 说明 |
 |------|------|
 | LiteLLM Proxy | 统一代理层拦截所有 API 调用，精确 per-request 记录 |
-| 工具原生 | Claude Code (OpenTelemetry) / Aider (session cost) |
+| 工具原生 | Claude Code (JSON usage) / Gemini CLI (JSON output) / OpenCode (stats) / Cursor CLI (content-based estimation) |
 | 预制规范 | Spec 文档计入 input tokens，标注为"预制规范"单独统计 |
 
 ## 参考基准
