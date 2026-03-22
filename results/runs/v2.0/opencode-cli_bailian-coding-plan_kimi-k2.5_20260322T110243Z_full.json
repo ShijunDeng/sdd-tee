@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-03-22T15:05:22.883903+00:00",
+    "generated_at": "2026-03-22T15:06:09.884244+00:00",
     "is_mock": false,
     "framework": "SDD-TEE v2",
     "methodology": "CodeSpec 7-Stage + OpenSpec OPSX",
@@ -15,7 +15,7 @@
     },
     "run_id": "opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T110243Z",
     "started_at": "2026-03-22T11:02:43Z",
-    "completed_at": "2026-03-22T21:06:37.510846Z",
+    "completed_at": "2026-03-22T13:06:37.510846Z",
     "token_tracking": "content-based precise counting (litellm.token_counter) + SDD stage distribution model",
     "spec_files_tokens": {
       "ci-cd/design.md": 4018,
@@ -539,7 +539,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -554,7 +554,7 @@
           "human_input_tokens": 26,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -569,7 +569,7 @@
           "human_input_tokens": 11,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -584,7 +584,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 615,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-4": {
@@ -599,7 +599,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -614,7 +614,7 @@
           "human_input_tokens": 44,
           "spec_context_tokens": 738,
           "iterations": 3,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 3
         },
         "ST-6": {
@@ -629,7 +629,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 492,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -644,7 +644,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -657,7 +657,7 @@
         "human_input_tokens": 137,
         "spec_context_tokens": 2460,
         "iterations": 11,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 16,
         "cost_usd": 0.033
       },
@@ -677,7 +677,7 @@
         "ET_FILE": 1395.0,
         "ET_TASK": 465.0,
         "ET_AR": 3106,
-        "ET_TIME": 13327.0,
+        "ET_TIME": 66163.0,
         "ET_COST_LOC": 1.3739,
         "RT_RATIO": 0.0461,
         "RT_ITER": 11,
@@ -711,7 +711,7 @@
           "human_input_tokens": 31,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -726,7 +726,7 @@
           "human_input_tokens": 47,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -741,7 +741,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -756,7 +756,7 @@
           "human_input_tokens": 31,
           "spec_context_tokens": 615,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -771,7 +771,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -786,7 +786,7 @@
           "human_input_tokens": 79,
           "spec_context_tokens": 738,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -801,7 +801,7 @@
           "human_input_tokens": 15,
           "spec_context_tokens": 492,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -816,7 +816,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -829,7 +829,7 @@
         "human_input_tokens": 250,
         "spec_context_tokens": 2460,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 13,
         "cost_usd": 0.113
       },
@@ -849,7 +849,7 @@
         "ET_FILE": 1436.0,
         "ET_TASK": 718.0,
         "ET_AR": 6184,
-        "ET_TIME": 26534.0,
+        "ET_TIME": 131730.0,
         "ET_COST_LOC": 1.0371,
         "RT_RATIO": 0.0421,
         "RT_ITER": 12,
@@ -883,7 +883,7 @@
           "human_input_tokens": 94,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -898,7 +898,7 @@
           "human_input_tokens": 141,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -913,7 +913,7 @@
           "human_input_tokens": 63,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -928,7 +928,7 @@
           "human_input_tokens": 94,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -943,7 +943,7 @@
           "human_input_tokens": 39,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -958,7 +958,7 @@
           "human_input_tokens": 236,
           "spec_context_tokens": 738,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -973,7 +973,7 @@
           "human_input_tokens": 47,
           "spec_context_tokens": 492,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -988,7 +988,7 @@
           "human_input_tokens": 39,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -1001,7 +1001,7 @@
         "human_input_tokens": 753,
         "spec_context_tokens": 2460,
         "iterations": 11,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 16,
         "cost_usd": 0.3674
       },
@@ -1021,7 +1021,7 @@
         "ET_FILE": 3737.0,
         "ET_TASK": 3737.0,
         "ET_AR": 15771,
-        "ET_TIME": 67671.0,
+        "ET_TIME": 335950.0,
         "ET_COST_LOC": 0.8939,
         "RT_RATIO": 0.0501,
         "RT_ITER": 11,
@@ -1055,7 +1055,7 @@
           "human_input_tokens": 1288,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -1070,7 +1070,7 @@
           "human_input_tokens": 1932,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 3
         },
         "ST-2": {
@@ -1085,7 +1085,7 @@
           "human_input_tokens": 859,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -1100,7 +1100,7 @@
           "human_input_tokens": 1288,
           "spec_context_tokens": 1026,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -1115,7 +1115,7 @@
           "human_input_tokens": 536,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -1130,7 +1130,7 @@
           "human_input_tokens": 3221,
           "spec_context_tokens": 1231,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -1145,7 +1145,7 @@
           "human_input_tokens": 644,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -1160,7 +1160,7 @@
           "human_input_tokens": 536,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -1173,7 +1173,7 @@
         "human_input_tokens": 10304,
         "spec_context_tokens": 4104,
         "iterations": 14,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 19,
         "cost_usd": 6.8455
       },
@@ -1193,7 +1193,7 @@
         "ET_FILE": 4473.0,
         "ET_TASK": 25050.0,
         "ET_AR": 261276,
-        "ET_TIME": 1121089.0,
+        "ET_TIME": 5565643.0,
         "ET_COST_LOC": 1.1261,
         "RT_RATIO": 0.0411,
         "RT_ITER": 14,
@@ -1227,7 +1227,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -1242,7 +1242,7 @@
           "human_input_tokens": 26,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -1257,7 +1257,7 @@
           "human_input_tokens": 11,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -1272,7 +1272,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-4": {
@@ -1287,7 +1287,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -1302,7 +1302,7 @@
           "human_input_tokens": 44,
           "spec_context_tokens": 1231,
           "iterations": 2,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 3
         },
         "ST-6": {
@@ -1317,7 +1317,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -1332,7 +1332,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -1345,7 +1345,7 @@
         "human_input_tokens": 137,
         "spec_context_tokens": 4104,
         "iterations": 10,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 14,
         "cost_usd": 0.0279
       },
@@ -1365,7 +1365,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 301.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.7917,
         "RT_RATIO": 0.0346,
         "RT_ITER": 10,
@@ -1399,7 +1399,7 @@
           "human_input_tokens": 20,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -1414,7 +1414,7 @@
           "human_input_tokens": 30,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 3
         },
         "ST-2": {
@@ -1429,7 +1429,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -1444,7 +1444,7 @@
           "human_input_tokens": 20,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-4": {
@@ -1459,7 +1459,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -1474,7 +1474,7 @@
           "human_input_tokens": 51,
           "spec_context_tokens": 1231,
           "iterations": 3,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -1489,7 +1489,7 @@
           "human_input_tokens": 10,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -1504,7 +1504,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -1517,7 +1517,7 @@
         "human_input_tokens": 160,
         "spec_context_tokens": 4104,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 17,
         "cost_usd": 0.0287
       },
@@ -1537,7 +1537,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 452.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.8708,
         "RT_RATIO": 0.0406,
         "RT_ITER": 12,
@@ -1571,7 +1571,7 @@
           "human_input_tokens": 28,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -1586,7 +1586,7 @@
           "human_input_tokens": 42,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -1601,7 +1601,7 @@
           "human_input_tokens": 18,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -1616,7 +1616,7 @@
           "human_input_tokens": 28,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-4": {
@@ -1631,7 +1631,7 @@
           "human_input_tokens": 11,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -1646,7 +1646,7 @@
           "human_input_tokens": 71,
           "spec_context_tokens": 2217,
           "iterations": 6,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 7
         },
         "ST-6": {
@@ -1661,7 +1661,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 1478,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -1676,7 +1676,7 @@
           "human_input_tokens": 11,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -1689,7 +1689,7 @@
         "human_input_tokens": 223,
         "spec_context_tokens": 7389,
         "iterations": 13,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 18,
         "cost_usd": 0.0495
       },
@@ -1709,7 +1709,7 @@
         "ET_FILE": 3252.0,
         "ET_TASK": 406.0,
         "ET_AR": 7387,
-        "ET_TIME": 31696.0,
+        "ET_TIME": 157356.0,
         "ET_COST_LOC": 4.9508,
         "RT_RATIO": 0.0311,
         "RT_ITER": 13,
@@ -1743,7 +1743,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -1758,7 +1758,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -1773,7 +1773,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -1788,7 +1788,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 615,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -1803,7 +1803,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -1818,7 +1818,7 @@
           "human_input_tokens": 35,
           "spec_context_tokens": 738,
           "iterations": 2,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 3
         },
         "ST-6": {
@@ -1833,7 +1833,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 492,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -1848,7 +1848,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -1861,7 +1861,7 @@
         "human_input_tokens": 110,
         "spec_context_tokens": 2460,
         "iterations": 10,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 13,
         "cost_usd": 0.0171
       },
@@ -1881,7 +1881,7 @@
         "ET_FILE": 1083.0,
         "ET_TASK": 361.0,
         "ET_AR": 2460,
-        "ET_TIME": 10555.0,
+        "ET_TIME": 52402.0,
         "ET_COST_LOC": 1.7107,
         "RT_RATIO": 0.0468,
         "RT_ITER": 10,
@@ -1915,7 +1915,7 @@
           "human_input_tokens": 32,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -1930,7 +1930,7 @@
           "human_input_tokens": 48,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 3
         },
         "ST-2": {
@@ -1945,7 +1945,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -1960,7 +1960,7 @@
           "human_input_tokens": 32,
           "spec_context_tokens": 1026,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -1975,7 +1975,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -1990,7 +1990,7 @@
           "human_input_tokens": 81,
           "spec_context_tokens": 1231,
           "iterations": 6,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 7
         },
         "ST-6": {
@@ -2005,7 +2005,7 @@
           "human_input_tokens": 16,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -2020,7 +2020,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -2033,7 +2033,7 @@
         "human_input_tokens": 256,
         "spec_context_tokens": 4104,
         "iterations": 15,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 21,
         "cost_usd": 0.0919
       },
@@ -2053,7 +2053,7 @@
         "ET_FILE": 2928.0,
         "ET_TASK": 586.0,
         "ET_AR": 6436,
-        "ET_TIME": 27616.0,
+        "ET_TIME": 137098.0,
         "ET_COST_LOC": 1.0692,
         "RT_RATIO": 0.0414,
         "RT_ITER": 15,
@@ -2087,7 +2087,7 @@
           "human_input_tokens": 40,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -2102,7 +2102,7 @@
           "human_input_tokens": 61,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -2117,7 +2117,7 @@
           "human_input_tokens": 27,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -2132,7 +2132,7 @@
           "human_input_tokens": 40,
           "spec_context_tokens": 1026,
           "iterations": 3,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 4
         },
         "ST-4": {
@@ -2147,7 +2147,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -2162,7 +2162,7 @@
           "human_input_tokens": 102,
           "spec_context_tokens": 1231,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -2177,7 +2177,7 @@
           "human_input_tokens": 20,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -2192,7 +2192,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -2205,7 +2205,7 @@
         "human_input_tokens": 324,
         "spec_context_tokens": 4104,
         "iterations": 14,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 17,
         "cost_usd": 0.1314
       },
@@ -2225,7 +2225,7 @@
         "ET_FILE": 3661.0,
         "ET_TASK": 915.0,
         "ET_AR": 7962,
-        "ET_TIME": 34164.0,
+        "ET_TIME": 169605.0,
         "ET_COST_LOC": 1.0106,
         "RT_RATIO": 0.0424,
         "RT_ITER": 14,
@@ -2259,7 +2259,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -2274,7 +2274,7 @@
           "human_input_tokens": 31,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -2289,7 +2289,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -2304,7 +2304,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 1026,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-4": {
@@ -2319,7 +2319,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -2334,7 +2334,7 @@
           "human_input_tokens": 53,
           "spec_context_tokens": 1231,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -2349,7 +2349,7 @@
           "human_input_tokens": 10,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-7": {
@@ -2364,7 +2364,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -2377,7 +2377,7 @@
         "human_input_tokens": 166,
         "spec_context_tokens": 4104,
         "iterations": 14,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 18,
         "cost_usd": 0.1278
       },
@@ -2397,7 +2397,7 @@
         "ET_FILE": 3666.0,
         "ET_TASK": 916.0,
         "ET_AR": 7972,
-        "ET_TIME": 34206.0,
+        "ET_TIME": 169818.0,
         "ET_COST_LOC": 1.0308,
         "RT_RATIO": 0.0213,
         "RT_ITER": 14,
@@ -2431,7 +2431,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -2446,7 +2446,7 @@
           "human_input_tokens": 26,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -2461,7 +2461,7 @@
           "human_input_tokens": 11,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -2476,7 +2476,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 615,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-4": {
@@ -2491,7 +2491,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -2506,7 +2506,7 @@
           "human_input_tokens": 44,
           "spec_context_tokens": 738,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -2521,7 +2521,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 492,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -2536,7 +2536,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -2549,7 +2549,7 @@
         "human_input_tokens": 137,
         "spec_context_tokens": 2460,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 17,
         "cost_usd": 0.0393
       },
@@ -2569,7 +2569,7 @@
         "ET_FILE": 1515.0,
         "ET_TASK": 505.0,
         "ET_AR": 3355,
-        "ET_TIME": 14396.0,
+        "ET_TIME": 71467.0,
         "ET_COST_LOC": 1.7101,
         "RT_RATIO": 0.0426,
         "RT_ITER": 12,
@@ -2603,7 +2603,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -2618,7 +2618,7 @@
           "human_input_tokens": 31,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 3
         },
         "ST-2": {
@@ -2633,7 +2633,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 3
         },
         "ST-3": {
@@ -2648,7 +2648,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 1026,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -2663,7 +2663,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -2678,7 +2678,7 @@
           "human_input_tokens": 52,
           "spec_context_tokens": 1231,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -2693,7 +2693,7 @@
           "human_input_tokens": 10,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -2708,7 +2708,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -2721,7 +2721,7 @@
         "human_input_tokens": 165,
         "spec_context_tokens": 4104,
         "iterations": 15,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 19,
         "cost_usd": 0.0272
       },
@@ -2741,7 +2741,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 361.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.7153,
         "RT_RATIO": 0.0419,
         "RT_ITER": 15,
@@ -2775,7 +2775,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -2790,7 +2790,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -2805,7 +2805,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -2820,7 +2820,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -2835,7 +2835,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -2850,7 +2850,7 @@
           "human_input_tokens": 36,
           "spec_context_tokens": 738,
           "iterations": 3,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 3
         },
         "ST-6": {
@@ -2865,7 +2865,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 492,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -2880,7 +2880,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -2893,7 +2893,7 @@
         "human_input_tokens": 113,
         "spec_context_tokens": 2460,
         "iterations": 10,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 15,
         "cost_usd": 0.016
       },
@@ -2913,7 +2913,7 @@
         "ET_FILE": 1083.0,
         "ET_TASK": 361.0,
         "ET_AR": 2460,
-        "ET_TIME": 10555.0,
+        "ET_TIME": 52402.0,
         "ET_COST_LOC": 1.5964,
         "RT_RATIO": 0.0481,
         "RT_ITER": 10,
@@ -2947,7 +2947,7 @@
           "human_input_tokens": 12,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -2962,7 +2962,7 @@
           "human_input_tokens": 19,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -2977,7 +2977,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -2992,7 +2992,7 @@
           "human_input_tokens": 12,
           "spec_context_tokens": 1026,
           "iterations": 3,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 4
         },
         "ST-4": {
@@ -3007,7 +3007,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -3022,7 +3022,7 @@
           "human_input_tokens": 32,
           "spec_context_tokens": 1231,
           "iterations": 3,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -3037,7 +3037,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -3052,7 +3052,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -3065,7 +3065,7 @@
         "human_input_tokens": 99,
         "spec_context_tokens": 4104,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 15,
         "cost_usd": 0.0289
       },
@@ -3085,7 +3085,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 452.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.8897,
         "RT_RATIO": 0.0247,
         "RT_ITER": 12,
@@ -3119,7 +3119,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -3134,7 +3134,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -3149,7 +3149,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -3164,7 +3164,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -3179,7 +3179,7 @@
           "human_input_tokens": 4,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -3194,7 +3194,7 @@
           "human_input_tokens": 24,
           "spec_context_tokens": 1231,
           "iterations": 2,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 3
         },
         "ST-6": {
@@ -3209,7 +3209,7 @@
           "human_input_tokens": 4,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-7": {
@@ -3224,7 +3224,7 @@
           "human_input_tokens": 4,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -3237,7 +3237,7 @@
         "human_input_tokens": 74,
         "spec_context_tokens": 4104,
         "iterations": 11,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 15,
         "cost_usd": 0.0266
       },
@@ -3257,7 +3257,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 361.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.6579,
         "RT_RATIO": 0.0184,
         "RT_ITER": 11,
@@ -3291,7 +3291,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -3306,7 +3306,7 @@
           "human_input_tokens": 22,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -3321,7 +3321,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -3336,7 +3336,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-4": {
@@ -3351,7 +3351,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -3366,7 +3366,7 @@
           "human_input_tokens": 36,
           "spec_context_tokens": 738,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -3381,7 +3381,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 492,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -3396,7 +3396,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -3409,7 +3409,7 @@
         "human_input_tokens": 114,
         "spec_context_tokens": 2460,
         "iterations": 11,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 16,
         "cost_usd": 0.0162
       },
@@ -3429,7 +3429,7 @@
         "ET_FILE": 1083.0,
         "ET_TASK": 542.0,
         "ET_AR": 2460,
-        "ET_TIME": 10555.0,
+        "ET_TIME": 52402.0,
         "ET_COST_LOC": 1.6239,
         "RT_RATIO": 0.0486,
         "RT_ITER": 11,
@@ -3463,7 +3463,7 @@
           "human_input_tokens": 12,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -3478,7 +3478,7 @@
           "human_input_tokens": 19,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -3493,7 +3493,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -3508,7 +3508,7 @@
           "human_input_tokens": 12,
           "spec_context_tokens": 615,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-4": {
@@ -3523,7 +3523,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -3538,7 +3538,7 @@
           "human_input_tokens": 31,
           "spec_context_tokens": 738,
           "iterations": 2,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 3
         },
         "ST-6": {
@@ -3553,7 +3553,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 492,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -3568,7 +3568,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -3581,7 +3581,7 @@
         "human_input_tokens": 98,
         "spec_context_tokens": 2460,
         "iterations": 10,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 14,
         "cost_usd": 0.0158
       },
@@ -3601,7 +3601,7 @@
         "ET_FILE": 1083.0,
         "ET_TASK": 361.0,
         "ET_AR": 2460,
-        "ET_TIME": 10555.0,
+        "ET_TIME": 52402.0,
         "ET_COST_LOC": 1.5844,
         "RT_RATIO": 0.0415,
         "RT_ITER": 10,
@@ -3635,7 +3635,7 @@
           "human_input_tokens": 19,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -3650,7 +3650,7 @@
           "human_input_tokens": 29,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -3665,7 +3665,7 @@
           "human_input_tokens": 12,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 3
         },
         "ST-3": {
@@ -3680,7 +3680,7 @@
           "human_input_tokens": 19,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-4": {
@@ -3695,7 +3695,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -3710,7 +3710,7 @@
           "human_input_tokens": 48,
           "spec_context_tokens": 1231,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -3725,7 +3725,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -3740,7 +3740,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -3753,7 +3753,7 @@
         "human_input_tokens": 152,
         "spec_context_tokens": 4104,
         "iterations": 14,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 18,
         "cost_usd": 0.0568
       },
@@ -3773,7 +3773,7 @@
         "ET_FILE": 2357.0,
         "ET_TASK": 589.0,
         "ET_AR": 5248,
-        "ET_TIME": 22518.0,
+        "ET_TIME": 111792.0,
         "ET_COST_LOC": 1.5343,
         "RT_RATIO": 0.0298,
         "RT_ITER": 14,
@@ -3807,7 +3807,7 @@
           "human_input_tokens": 212,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -3822,7 +3822,7 @@
           "human_input_tokens": 319,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 3
         },
         "ST-2": {
@@ -3837,7 +3837,7 @@
           "human_input_tokens": 141,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -3852,7 +3852,7 @@
           "human_input_tokens": 212,
           "spec_context_tokens": 1026,
           "iterations": 3,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 4
         },
         "ST-4": {
@@ -3867,7 +3867,7 @@
           "human_input_tokens": 88,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -3882,7 +3882,7 @@
           "human_input_tokens": 531,
           "spec_context_tokens": 1231,
           "iterations": 6,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 6
         },
         "ST-6": {
@@ -3897,7 +3897,7 @@
           "human_input_tokens": 106,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -3912,7 +3912,7 @@
           "human_input_tokens": 88,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -3925,7 +3925,7 @@
         "human_input_tokens": 1697,
         "spec_context_tokens": 4104,
         "iterations": 16,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 21,
         "cost_usd": 0.9222
       },
@@ -3945,7 +3945,7 @@
         "ET_FILE": 1112.0,
         "ET_TASK": 3559.0,
         "ET_AR": 37411,
-        "ET_TIME": 160524.0,
+        "ET_TIME": 796921.0,
         "ET_COST_LOC": 0.8742,
         "RT_RATIO": 0.0475,
         "RT_ITER": 16,
@@ -3979,7 +3979,7 @@
           "human_input_tokens": 68,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -3994,7 +3994,7 @@
           "human_input_tokens": 102,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -4009,7 +4009,7 @@
           "human_input_tokens": 45,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -4024,7 +4024,7 @@
           "human_input_tokens": 68,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -4039,7 +4039,7 @@
           "human_input_tokens": 28,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -4054,7 +4054,7 @@
           "human_input_tokens": 170,
           "spec_context_tokens": 1231,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 6
         },
         "ST-6": {
@@ -4069,7 +4069,7 @@
           "human_input_tokens": 34,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -4084,7 +4084,7 @@
           "human_input_tokens": 28,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -4097,7 +4097,7 @@
         "human_input_tokens": 543,
         "spec_context_tokens": 4104,
         "iterations": 14,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 18,
         "cost_usd": 0.2233
       },
@@ -4117,7 +4117,7 @@
         "ET_FILE": 1808.0,
         "ET_TASK": 1085.0,
         "ET_AR": 11639,
-        "ET_TIME": 49941.0,
+        "ET_TIME": 247931.0,
         "ET_COST_LOC": 0.8826,
         "RT_RATIO": 0.0489,
         "RT_ITER": 14,
@@ -4151,7 +4151,7 @@
           "human_input_tokens": 102,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -4166,7 +4166,7 @@
           "human_input_tokens": 153,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -4181,7 +4181,7 @@
           "human_input_tokens": 68,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -4196,7 +4196,7 @@
           "human_input_tokens": 102,
           "spec_context_tokens": 1847,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -4211,7 +4211,7 @@
           "human_input_tokens": 42,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -4226,7 +4226,7 @@
           "human_input_tokens": 255,
           "spec_context_tokens": 2217,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -4241,7 +4241,7 @@
           "human_input_tokens": 51,
           "spec_context_tokens": 1478,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -4256,7 +4256,7 @@
           "human_input_tokens": 42,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -4269,7 +4269,7 @@
         "human_input_tokens": 815,
         "spec_context_tokens": 7389,
         "iterations": 14,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 15,
         "cost_usd": 0.3921
       },
@@ -4289,7 +4289,7 @@
         "ET_FILE": 3132.0,
         "ET_TASK": 1342.0,
         "ET_AR": 20182,
-        "ET_TIME": 86597.0,
+        "ET_TIME": 429912.0,
         "ET_COST_LOC": 1.0512,
         "RT_RATIO": 0.0421,
         "RT_ITER": 14,
@@ -4323,7 +4323,7 @@
           "human_input_tokens": 116,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -4338,7 +4338,7 @@
           "human_input_tokens": 174,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 3
         },
         "ST-2": {
@@ -4353,7 +4353,7 @@
           "human_input_tokens": 77,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 3
         },
         "ST-3": {
@@ -4368,7 +4368,7 @@
           "human_input_tokens": 116,
           "spec_context_tokens": 1026,
           "iterations": 3,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 4
         },
         "ST-4": {
@@ -4383,7 +4383,7 @@
           "human_input_tokens": 48,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -4398,7 +4398,7 @@
           "human_input_tokens": 290,
           "spec_context_tokens": 1231,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -4413,7 +4413,7 @@
           "human_input_tokens": 58,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-7": {
@@ -4428,7 +4428,7 @@
           "human_input_tokens": 48,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -4441,7 +4441,7 @@
         "human_input_tokens": 927,
         "spec_context_tokens": 4104,
         "iterations": 17,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 23,
         "cost_usd": 0.4425
       },
@@ -4461,7 +4461,7 @@
         "ET_FILE": 1547.0,
         "ET_TASK": 2320.0,
         "ET_AR": 19675,
-        "ET_TIME": 84422.0,
+        "ET_TIME": 419112.0,
         "ET_COST_LOC": 0.9375,
         "RT_RATIO": 0.0494,
         "RT_ITER": 17,
@@ -4495,7 +4495,7 @@
           "human_input_tokens": 26,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -4510,7 +4510,7 @@
           "human_input_tokens": 39,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -4525,7 +4525,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -4540,7 +4540,7 @@
           "human_input_tokens": 26,
           "spec_context_tokens": 1026,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -4555,7 +4555,7 @@
           "human_input_tokens": 10,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -4570,7 +4570,7 @@
           "human_input_tokens": 65,
           "spec_context_tokens": 1231,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -4585,7 +4585,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -4600,7 +4600,7 @@
           "human_input_tokens": 10,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -4613,7 +4613,7 @@
         "human_input_tokens": 206,
         "spec_context_tokens": 4104,
         "iterations": 14,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 17,
         "cost_usd": 0.1232
       },
@@ -4633,7 +4633,7 @@
         "ET_FILE": 3574.0,
         "ET_TASK": 894.0,
         "ET_AR": 7782,
-        "ET_TIME": 33391.0,
+        "ET_TIME": 165770.0,
         "ET_COST_LOC": 0.8384,
         "RT_RATIO": 0.0272,
         "RT_ITER": 14,
@@ -4667,7 +4667,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -4682,7 +4682,7 @@
           "human_input_tokens": 26,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -4697,7 +4697,7 @@
           "human_input_tokens": 11,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 3
         },
         "ST-3": {
@@ -4712,7 +4712,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 1026,
           "iterations": 3,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-4": {
@@ -4727,7 +4727,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -4742,7 +4742,7 @@
           "human_input_tokens": 43,
           "spec_context_tokens": 1231,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 6
         },
         "ST-6": {
@@ -4757,7 +4757,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -4772,7 +4772,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -4785,7 +4785,7 @@
         "human_input_tokens": 136,
         "spec_context_tokens": 4104,
         "iterations": 15,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 21,
         "cost_usd": 0.1028
       },
@@ -4805,7 +4805,7 @@
         "ET_FILE": 1054.0,
         "ET_TASK": 633.0,
         "ET_AR": 6927,
-        "ET_TIME": 29723.0,
+        "ET_TIME": 147557.0,
         "ET_COST_LOC": 1.0388,
         "RT_RATIO": 0.02,
         "RT_ITER": 15,
@@ -4839,7 +4839,7 @@
           "human_input_tokens": 70,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -4854,7 +4854,7 @@
           "human_input_tokens": 105,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -4869,7 +4869,7 @@
           "human_input_tokens": 46,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 3
         },
         "ST-3": {
@@ -4884,7 +4884,7 @@
           "human_input_tokens": 70,
           "spec_context_tokens": 1026,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-4": {
@@ -4899,7 +4899,7 @@
           "human_input_tokens": 29,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -4914,7 +4914,7 @@
           "human_input_tokens": 175,
           "spec_context_tokens": 1231,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -4929,7 +4929,7 @@
           "human_input_tokens": 35,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -4944,7 +4944,7 @@
           "human_input_tokens": 29,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -4957,7 +4957,7 @@
         "human_input_tokens": 559,
         "spec_context_tokens": 4104,
         "iterations": 15,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 19,
         "cost_usd": 0.242
       },
@@ -4977,7 +4977,7 @@
         "ET_FILE": 1900.0,
         "ET_TASK": 1140.0,
         "ET_AR": 12211,
-        "ET_TIME": 52395.0,
+        "ET_TIME": 260116.0,
         "ET_COST_LOC": 0.7781,
         "RT_RATIO": 0.048,
         "RT_ITER": 15,
@@ -5011,7 +5011,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -5026,7 +5026,7 @@
           "human_input_tokens": 20,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -5041,7 +5041,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -5056,7 +5056,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 1026,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -5071,7 +5071,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -5086,7 +5086,7 @@
           "human_input_tokens": 33,
           "spec_context_tokens": 1231,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -5101,7 +5101,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -5116,7 +5116,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -5129,7 +5129,7 @@
         "human_input_tokens": 103,
         "spec_context_tokens": 4104,
         "iterations": 14,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 16,
         "cost_usd": 0.0284
       },
@@ -5149,7 +5149,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 361.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.8357,
         "RT_RATIO": 0.0258,
         "RT_ITER": 14,
@@ -5183,7 +5183,7 @@
           "human_input_tokens": 10,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -5198,7 +5198,7 @@
           "human_input_tokens": 15,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -5213,7 +5213,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -5228,7 +5228,7 @@
           "human_input_tokens": 10,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-4": {
@@ -5243,7 +5243,7 @@
           "human_input_tokens": 4,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -5258,7 +5258,7 @@
           "human_input_tokens": 26,
           "spec_context_tokens": 1231,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -5273,7 +5273,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -5288,7 +5288,7 @@
           "human_input_tokens": 4,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -5301,7 +5301,7 @@
         "human_input_tokens": 81,
         "spec_context_tokens": 4104,
         "iterations": 11,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 16,
         "cost_usd": 0.0283
       },
@@ -5321,7 +5321,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 452.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.8264,
         "RT_RATIO": 0.0201,
         "RT_ITER": 11,
@@ -5355,7 +5355,7 @@
           "human_input_tokens": 36,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -5370,7 +5370,7 @@
           "human_input_tokens": 54,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -5385,7 +5385,7 @@
           "human_input_tokens": 24,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -5400,7 +5400,7 @@
           "human_input_tokens": 36,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-4": {
@@ -5415,7 +5415,7 @@
           "human_input_tokens": 15,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -5430,7 +5430,7 @@
           "human_input_tokens": 91,
           "spec_context_tokens": 1231,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -5445,7 +5445,7 @@
           "human_input_tokens": 18,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -5460,7 +5460,7 @@
           "human_input_tokens": 15,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -5473,7 +5473,7 @@
         "human_input_tokens": 289,
         "spec_context_tokens": 4104,
         "iterations": 14,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 16,
         "cost_usd": 0.1459
       },
@@ -5493,7 +5493,7 @@
         "ET_FILE": 568.0,
         "ET_TASK": 994.0,
         "ET_AR": 8616,
-        "ET_TIME": 36970.0,
+        "ET_TIME": 183536.0,
         "ET_COST_LOC": 0.7636,
         "RT_RATIO": 0.0347,
         "RT_ITER": 14,
@@ -5527,7 +5527,7 @@
           "human_input_tokens": 131,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -5542,7 +5542,7 @@
           "human_input_tokens": 197,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -5557,7 +5557,7 @@
           "human_input_tokens": 87,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -5572,7 +5572,7 @@
           "human_input_tokens": 131,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -5587,7 +5587,7 @@
           "human_input_tokens": 54,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -5602,7 +5602,7 @@
           "human_input_tokens": 328,
           "spec_context_tokens": 2217,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -5617,7 +5617,7 @@
           "human_input_tokens": 65,
           "spec_context_tokens": 1478,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -5632,7 +5632,7 @@
           "human_input_tokens": 54,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -5645,7 +5645,7 @@
         "human_input_tokens": 1047,
         "spec_context_tokens": 7389,
         "iterations": 11,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 14,
         "cost_usd": 0.4791
       },
@@ -5665,7 +5665,7 @@
         "ET_FILE": 1208.0,
         "ET_TASK": 1359.0,
         "ET_AR": 23265,
-        "ET_TIME": 99826.0,
+        "ET_TIME": 495586.0,
         "ET_COST_LOC": 0.7498,
         "RT_RATIO": 0.0471,
         "RT_ITER": 11,
@@ -5699,7 +5699,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -5714,7 +5714,7 @@
           "human_input_tokens": 22,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -5729,7 +5729,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -5744,7 +5744,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 1026,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -5759,7 +5759,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -5774,7 +5774,7 @@
           "human_input_tokens": 36,
           "spec_context_tokens": 1231,
           "iterations": 3,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 3
         },
         "ST-6": {
@@ -5789,7 +5789,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -5804,7 +5804,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -5817,7 +5817,7 @@
         "human_input_tokens": 114,
         "spec_context_tokens": 4104,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 13,
         "cost_usd": 0.0277
       },
@@ -5837,7 +5837,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 452.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.773,
         "RT_RATIO": 0.0286,
         "RT_ITER": 12,
@@ -5871,7 +5871,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -5886,7 +5886,7 @@
           "human_input_tokens": 20,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -5901,7 +5901,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -5916,7 +5916,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 615,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -5931,7 +5931,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 615,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -5946,7 +5946,7 @@
           "human_input_tokens": 34,
           "spec_context_tokens": 738,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -5961,7 +5961,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 492,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -5976,7 +5976,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -5989,7 +5989,7 @@
         "human_input_tokens": 105,
         "spec_context_tokens": 2460,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 13,
         "cost_usd": 0.0784
       },
@@ -6009,7 +6009,7 @@
         "ET_FILE": 736.0,
         "ET_TASK": 736.0,
         "ET_AR": 4799,
-        "ET_TIME": 20592.0,
+        "ET_TIME": 102227.0,
         "ET_COST_LOC": 0.6877,
         "RT_RATIO": 0.0224,
         "RT_ITER": 12,
@@ -6043,7 +6043,7 @@
           "human_input_tokens": 11,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -6058,7 +6058,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -6073,7 +6073,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -6088,7 +6088,7 @@
           "human_input_tokens": 11,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-4": {
@@ -6103,7 +6103,7 @@
           "human_input_tokens": 4,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -6118,7 +6118,7 @@
           "human_input_tokens": 29,
           "spec_context_tokens": 1231,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 6
         },
         "ST-6": {
@@ -6133,7 +6133,7 @@
           "human_input_tokens": 5,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -6148,7 +6148,7 @@
           "human_input_tokens": 4,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -6161,7 +6161,7 @@
         "human_input_tokens": 88,
         "spec_context_tokens": 4104,
         "iterations": 13,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 16,
         "cost_usd": 0.0292
       },
@@ -6181,7 +6181,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 361.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.9217,
         "RT_RATIO": 0.0219,
         "RT_ITER": 13,
@@ -6215,7 +6215,7 @@
           "human_input_tokens": 39,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -6230,7 +6230,7 @@
           "human_input_tokens": 59,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -6245,7 +6245,7 @@
           "human_input_tokens": 26,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 3
         },
         "ST-3": {
@@ -6260,7 +6260,7 @@
           "human_input_tokens": 39,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -6275,7 +6275,7 @@
           "human_input_tokens": 16,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -6290,7 +6290,7 @@
           "human_input_tokens": 99,
           "spec_context_tokens": 2217,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -6305,7 +6305,7 @@
           "human_input_tokens": 19,
           "spec_context_tokens": 1478,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -6320,7 +6320,7 @@
           "human_input_tokens": 16,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -6333,7 +6333,7 @@
         "human_input_tokens": 313,
         "spec_context_tokens": 7389,
         "iterations": 15,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 18,
         "cost_usd": 0.054
       },
@@ -6353,7 +6353,7 @@
         "ET_FILE": 3252.0,
         "ET_TASK": 271.0,
         "ET_AR": 7387,
-        "ET_TIME": 31696.0,
+        "ET_TIME": 157356.0,
         "ET_COST_LOC": 5.398,
         "RT_RATIO": 0.0442,
         "RT_ITER": 15,
@@ -6387,7 +6387,7 @@
           "human_input_tokens": 18,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -6402,7 +6402,7 @@
           "human_input_tokens": 28,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -6417,7 +6417,7 @@
           "human_input_tokens": 12,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -6432,7 +6432,7 @@
           "human_input_tokens": 18,
           "spec_context_tokens": 1847,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-4": {
@@ -6447,7 +6447,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -6462,7 +6462,7 @@
           "human_input_tokens": 46,
           "spec_context_tokens": 2217,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -6477,7 +6477,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 1478,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -6492,7 +6492,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -6505,7 +6505,7 @@
         "human_input_tokens": 145,
         "spec_context_tokens": 7389,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 17,
         "cost_usd": 0.0528
       },
@@ -6525,7 +6525,7 @@
         "ET_FILE": 3252.0,
         "ET_TASK": 542.0,
         "ET_AR": 7387,
-        "ET_TIME": 31696.0,
+        "ET_TIME": 157356.0,
         "ET_COST_LOC": 5.2755,
         "RT_RATIO": 0.02,
         "RT_ITER": 12,
@@ -6559,7 +6559,7 @@
           "human_input_tokens": 127,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -6574,7 +6574,7 @@
           "human_input_tokens": 191,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -6589,7 +6589,7 @@
           "human_input_tokens": 85,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -6604,7 +6604,7 @@
           "human_input_tokens": 127,
           "spec_context_tokens": 1026,
           "iterations": 3,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-4": {
@@ -6619,7 +6619,7 @@
           "human_input_tokens": 53,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -6634,7 +6634,7 @@
           "human_input_tokens": 319,
           "spec_context_tokens": 1231,
           "iterations": 2,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 2
         },
         "ST-6": {
@@ -6649,7 +6649,7 @@
           "human_input_tokens": 63,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 3
         },
         "ST-7": {
@@ -6664,7 +6664,7 @@
           "human_input_tokens": 53,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -6677,7 +6677,7 @@
         "human_input_tokens": 1018,
         "spec_context_tokens": 4104,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 16,
         "cost_usd": 0.6204
       },
@@ -6697,7 +6697,7 @@
         "ET_FILE": 2479.0,
         "ET_TASK": 2479.0,
         "ET_AR": 26163,
-        "ET_TIME": 112261.0,
+        "ET_TIME": 557318.0,
         "ET_COST_LOC": 1.1118,
         "RT_RATIO": 0.0405,
         "RT_ITER": 12,
@@ -6731,7 +6731,7 @@
           "human_input_tokens": 15,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -6746,7 +6746,7 @@
           "human_input_tokens": 23,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -6761,7 +6761,7 @@
           "human_input_tokens": 10,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -6776,7 +6776,7 @@
           "human_input_tokens": 15,
           "spec_context_tokens": 1026,
           "iterations": 3,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 4
         },
         "ST-4": {
@@ -6791,7 +6791,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -6806,7 +6806,7 @@
           "human_input_tokens": 39,
           "spec_context_tokens": 1231,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 5
         },
         "ST-6": {
@@ -6821,7 +6821,7 @@
           "human_input_tokens": 7,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -6836,7 +6836,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -6849,7 +6849,7 @@
         "human_input_tokens": 121,
         "spec_context_tokens": 4104,
         "iterations": 15,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 19,
         "cost_usd": 0.0286
       },
@@ -6869,7 +6869,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 361.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.8564,
         "RT_RATIO": 0.0304,
         "RT_ITER": 15,
@@ -6903,7 +6903,7 @@
           "human_input_tokens": 37,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -6918,7 +6918,7 @@
           "human_input_tokens": 55,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 1
         },
         "ST-2": {
@@ -6933,7 +6933,7 @@
           "human_input_tokens": 24,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -6948,7 +6948,7 @@
           "human_input_tokens": 37,
           "spec_context_tokens": 1847,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -6963,7 +6963,7 @@
           "human_input_tokens": 15,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -6978,7 +6978,7 @@
           "human_input_tokens": 92,
           "spec_context_tokens": 2217,
           "iterations": 4,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 4
         },
         "ST-6": {
@@ -6993,7 +6993,7 @@
           "human_input_tokens": 18,
           "spec_context_tokens": 1478,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -7008,7 +7008,7 @@
           "human_input_tokens": 15,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -7021,7 +7021,7 @@
         "human_input_tokens": 293,
         "spec_context_tokens": 7389,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 14,
         "cost_usd": 0.0497
       },
@@ -7041,7 +7041,7 @@
         "ET_FILE": 3252.0,
         "ET_TASK": 406.0,
         "ET_AR": 7387,
-        "ET_TIME": 31696.0,
+        "ET_TIME": 157356.0,
         "ET_COST_LOC": 4.9691,
         "RT_RATIO": 0.0413,
         "RT_ITER": 12,
@@ -7075,7 +7075,7 @@
           "human_input_tokens": 31,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -7090,7 +7090,7 @@
           "human_input_tokens": 47,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 3
         },
         "ST-2": {
@@ -7105,7 +7105,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 3
         },
         "ST-3": {
@@ -7120,7 +7120,7 @@
           "human_input_tokens": 31,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-4": {
@@ -7135,7 +7135,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -7150,7 +7150,7 @@
           "human_input_tokens": 78,
           "spec_context_tokens": 2217,
           "iterations": 6,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 7
         },
         "ST-6": {
@@ -7165,7 +7165,7 @@
           "human_input_tokens": 15,
           "spec_context_tokens": 1478,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -7180,7 +7180,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -7193,7 +7193,7 @@
         "human_input_tokens": 249,
         "spec_context_tokens": 7389,
         "iterations": 15,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 19,
         "cost_usd": 0.0483
       },
@@ -7213,7 +7213,7 @@
         "ET_FILE": 3252.0,
         "ET_TASK": 325.0,
         "ET_AR": 7387,
-        "ET_TIME": 31696.0,
+        "ET_TIME": 157356.0,
         "ET_COST_LOC": 4.8274,
         "RT_RATIO": 0.0349,
         "RT_ITER": 15,
@@ -7247,7 +7247,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -7262,7 +7262,7 @@
           "human_input_tokens": 32,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -7277,7 +7277,7 @@
           "human_input_tokens": 14,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 2
         },
         "ST-3": {
@@ -7292,7 +7292,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 1026,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -7307,7 +7307,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -7322,7 +7322,7 @@
           "human_input_tokens": 54,
           "spec_context_tokens": 1231,
           "iterations": 2,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 2
         },
         "ST-6": {
@@ -7337,7 +7337,7 @@
           "human_input_tokens": 10,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -7352,7 +7352,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -7365,7 +7365,7 @@
         "human_input_tokens": 170,
         "spec_context_tokens": 4104,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 14,
         "cost_usd": 0.0263
       },
@@ -7385,7 +7385,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 361.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.63,
         "RT_RATIO": 0.0432,
         "RT_ITER": 12,
@@ -7419,7 +7419,7 @@
           "human_input_tokens": 42,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -7434,7 +7434,7 @@
           "human_input_tokens": 64,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 3
         },
         "ST-2": {
@@ -7449,7 +7449,7 @@
           "human_input_tokens": 28,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 3
         },
         "ST-3": {
@@ -7464,7 +7464,7 @@
           "human_input_tokens": 42,
           "spec_context_tokens": 1847,
           "iterations": 3,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 4
         },
         "ST-4": {
@@ -7479,7 +7479,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 1847,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -7494,7 +7494,7 @@
           "human_input_tokens": 106,
           "spec_context_tokens": 2217,
           "iterations": 2,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 2
         },
         "ST-6": {
@@ -7509,7 +7509,7 @@
           "human_input_tokens": 21,
           "spec_context_tokens": 1478,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-7": {
@@ -7524,7 +7524,7 @@
           "human_input_tokens": 17,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -7537,7 +7537,7 @@
         "human_input_tokens": 337,
         "spec_context_tokens": 7389,
         "iterations": 13,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 18,
         "cost_usd": 0.0534
       },
@@ -7557,7 +7557,7 @@
         "ET_FILE": 3252.0,
         "ET_TASK": 542.0,
         "ET_AR": 7387,
-        "ET_TIME": 31696.0,
+        "ET_TIME": 157356.0,
         "ET_COST_LOC": 5.3442,
         "RT_RATIO": 0.0478,
         "RT_ITER": 13,
@@ -7591,7 +7591,7 @@
           "human_input_tokens": 19,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 1
         },
         "ST-1": {
@@ -7606,7 +7606,7 @@
           "human_input_tokens": 29,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -7621,7 +7621,7 @@
           "human_input_tokens": 13,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 3
         },
         "ST-3": {
@@ -7636,7 +7636,7 @@
           "human_input_tokens": 19,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-4": {
@@ -7651,7 +7651,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         },
         "ST-5": {
@@ -7666,7 +7666,7 @@
           "human_input_tokens": 49,
           "spec_context_tokens": 1231,
           "iterations": 2,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 3
         },
         "ST-6": {
@@ -7681,7 +7681,7 @@
           "human_input_tokens": 9,
           "spec_context_tokens": 821,
           "iterations": 2,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -7696,7 +7696,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 2
         }
       },
@@ -7709,7 +7709,7 @@
         "human_input_tokens": 154,
         "spec_context_tokens": 4104,
         "iterations": 12,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 17,
         "cost_usd": 0.0286
       },
@@ -7729,7 +7729,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 452.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.8584,
         "RT_RATIO": 0.039,
         "RT_ITER": 12,
@@ -7763,7 +7763,7 @@
           "human_input_tokens": 16,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 16,
+          "duration_seconds": 3,
           "api_calls": 2
         },
         "ST-1": {
@@ -7778,7 +7778,7 @@
           "human_input_tokens": 24,
           "spec_context_tokens": 0,
           "iterations": 2,
-          "duration_seconds": 67,
+          "duration_seconds": 13,
           "api_calls": 2
         },
         "ST-2": {
@@ -7793,7 +7793,7 @@
           "human_input_tokens": 11,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 84,
+          "duration_seconds": 17,
           "api_calls": 1
         },
         "ST-3": {
@@ -7808,7 +7808,7 @@
           "human_input_tokens": 16,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 1
         },
         "ST-4": {
@@ -7823,7 +7823,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 1026,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         },
         "ST-5": {
@@ -7838,7 +7838,7 @@
           "human_input_tokens": 41,
           "spec_context_tokens": 1231,
           "iterations": 5,
-          "duration_seconds": 370,
+          "duration_seconds": 76,
           "api_calls": 6
         },
         "ST-6": {
@@ -7853,7 +7853,7 @@
           "human_input_tokens": 8,
           "spec_context_tokens": 821,
           "iterations": 1,
-          "duration_seconds": 101,
+          "duration_seconds": 20,
           "api_calls": 2
         },
         "ST-7": {
@@ -7868,7 +7868,7 @@
           "human_input_tokens": 6,
           "spec_context_tokens": 0,
           "iterations": 1,
-          "duration_seconds": 50,
+          "duration_seconds": 10,
           "api_calls": 1
         }
       },
@@ -7881,7 +7881,7 @@
         "human_input_tokens": 128,
         "spec_context_tokens": 4104,
         "iterations": 13,
-        "duration_seconds": 839,
+        "duration_seconds": 169,
         "api_calls": 16,
         "cost_usd": 0.0288
       },
@@ -7901,7 +7901,7 @@
         "ET_FILE": 1806.0,
         "ET_TASK": 361.0,
         "ET_AR": 4102,
-        "ET_TIME": 17601.0,
+        "ET_TIME": 87380.0,
         "ET_COST_LOC": 2.8787,
         "RT_RATIO": 0.0322,
         "RT_ITER": 13,
@@ -7925,7 +7925,7 @@
     "total_tokens": 603468,
     "human_input_tokens": 23410,
     "spec_context_tokens": 187956,
-    "total_duration_seconds": 36077,
+    "total_duration_seconds": 7267,
     "total_cost_usd": 12.32,
     "total_cost_cny": 89.29,
     "total_loc": 11235,
@@ -7944,7 +7944,7 @@
       "cache_write_tokens": 360,
       "human_input_tokens": 2924,
       "spec_context_tokens": 0,
-      "duration_seconds": 688,
+      "duration_seconds": 129,
       "iterations": 43,
       "api_calls": 66
     },
@@ -7957,7 +7957,7 @@
       "cache_write_tokens": 2707,
       "human_input_tokens": 4401,
       "spec_context_tokens": 0,
-      "duration_seconds": 2881,
+      "duration_seconds": 559,
       "iterations": 59,
       "api_calls": 79
     },
@@ -7970,7 +7970,7 @@
       "cache_write_tokens": 3444,
       "human_input_tokens": 1944,
       "spec_context_tokens": 0,
-      "duration_seconds": 3612,
+      "duration_seconds": 731,
       "iterations": 61,
       "api_calls": 83
     },
@@ -7983,7 +7983,7 @@
       "cache_write_tokens": 3978,
       "human_input_tokens": 2924,
       "spec_context_tokens": 46987,
-      "duration_seconds": 4343,
+      "duration_seconds": 860,
       "iterations": 77,
       "api_calls": 96
     },
@@ -7996,7 +7996,7 @@
       "cache_write_tokens": 5689,
       "human_input_tokens": 1208,
       "spec_context_tokens": 46987,
-      "duration_seconds": 2150,
+      "duration_seconds": 430,
       "iterations": 43,
       "api_calls": 64
     },
@@ -8009,7 +8009,7 @@
       "cache_write_tokens": 18979,
       "human_input_tokens": 7349,
       "spec_context_tokens": 56384,
-      "duration_seconds": 15910,
+      "duration_seconds": 3268,
       "iterations": 171,
       "api_calls": 189
     },
@@ -8022,7 +8022,7 @@
       "cache_write_tokens": 6195,
       "human_input_tokens": 1452,
       "spec_context_tokens": 37598,
-      "duration_seconds": 4343,
+      "duration_seconds": 860,
       "iterations": 57,
       "api_calls": 73
     },
@@ -8035,7 +8035,7 @@
       "cache_write_tokens": 2093,
       "human_input_tokens": 1208,
       "spec_context_tokens": 0,
-      "duration_seconds": 2150,
+      "duration_seconds": 430,
       "iterations": 43,
       "api_calls": 67
     }
@@ -8047,7 +8047,7 @@
       "avg_loc": 75,
       "avg_cost": 0.0774,
       "avg_et_loc": 502.2,
-      "avg_duration": 839
+      "avg_duration": 169
     },
     "M": {
       "count": 26,
@@ -8055,7 +8055,7 @@
       "avg_loc": 367,
       "avg_cost": 0.4016,
       "avg_et_loc": 916.5,
-      "avg_duration": 839
+      "avg_duration": 169
     },
     "L": {
       "count": 8,
@@ -8063,7 +8063,7 @@
       "avg_loc": 126,
       "avg_cost": 0.1474,
       "avg_et_loc": 2444.3,
-      "avg_duration": 839
+      "avg_duration": 169
     }
   }
 }
