@@ -590,12 +590,12 @@ def render_html(data):
   .toc a:hover {{ text-decoration: underline; }}
   
 
-  .metric-guide { margin-top: 12px; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e2e5e9; }
-  .metric-guide h4 { font-size: 13px; color: #1a73e8; margin-bottom: 8px; border: none; }
-  .guide-grid { display: grid; grid-template-columns: 120px 1fr; gap: 8px; font-size: 12px; }
-  .guide-item-name { font-weight: bold; color: #374151; }
-  .guide-item-desc { color: #6b7280; }
-  .best-tag { color: #34a853; font-weight: bold; }
+  .metric-guide {{ margin-top: 12px; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e2e5e9; }}
+  .metric-guide h4 {{ font-size: 13px; color: #1a73e8; margin-bottom: 8px; border: none; }}
+  .guide-grid {{ display: grid; grid-template-columns: 120px 1fr; gap: 8px; font-size: 12px; }}
+  .guide-item-name {{ font-weight: bold; color: #374151; }}
+  .guide-item-desc {{ color: #6b7280; }}
+  .best-tag {{ color: #34a853; font-weight: bold; }}
 
 
   .note {{ background: #fffde7; border-left: 4px solid var(--orange); padding: 10px 14px; margin: 10px 0; border-radius: 0 8px 8px 0; font-size: 13px; }}
