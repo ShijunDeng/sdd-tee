@@ -14,12 +14,20 @@ while ps -p $PID > /dev/null; do sleep 60; done
 echo "Evaluation Engine completed."
 
 # 1. 精确聚合数据 (涵盖所有正常流与 Penalty Retry 的惩罚代单)
-python3 << PYEOF
+export __RUN_ID="$RUN_ID"
+export __LOG_DIR="$LOG_DIR"
+export __WORKSPACE="$WORKSPACE"
+export __MODEL="$MODEL"
+export __TOOL="$TOOL"
+
+python3 << 'PYEOF'
 import json, glob, os, datetime
 
-run_id = "$RUN_ID"
-log_dir = "$LOG_DIR"
-workspace = "$WORKSPACE"
+run_id = os.environ.get('__RUN_ID')
+log_dir = os.environ.get('__LOG_DIR')
+workspace = os.environ.get('__WORKSPACE')
+model = os.environ.get('__MODEL')
+tool = os.environ.get('__TOOL')
 
 total_in, total_out = 0, 0
 cost_usd = 0
