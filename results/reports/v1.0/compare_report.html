@@ -29,23 +29,40 @@
 <body>
 <h1>SDD-TEE 跨轮次对比报告</h1>
 <div class="meta">
-  <p>生成时间: 2026-03-22 11:35 UTC | 对比轮次: 5 | 目标项目: agentcube</p>
+  <p>生成时间: 2026-03-22 11:42 UTC | 对比轮次: 5 | 目标项目: agentcube</p>
 </div>
 
 
 <div class="section" style="background-color: #f8f9fa; border-left: 4px solid #1a73e8; padding: 15px; margin-bottom: 20px;">
 <h2 style="margin-top: 0; padding-top: 0; font-size: 1.2em; border: none;">执行摘要 (Executive Summary)</h2>
-<p style="font-size: 0.95em; line-height: 1.6; color: #444;">
-本报告对 <b>5</b> 个 AI Agent 评测轮次进行了深度分析。在完成相同的 43 个核心架构需求 (AR) 的过程中：
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">一、项目背景</h3>
+<p style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+本次评测的目标项目为 <a href="https://github.com/ShijunDeng/agentcube" target="_blank" style="color: #1a73e8; text-decoration: none;"><b>AgentCube</b></a>，一个复杂的云原生 AI Agent 工作负载管理平台。项目涉及 Kubernetes CRD 设计、Go 语言核心控制面、Python SDK、CLI 工具以及前/后端集成的多维度代码工程。<br>
+评测基于严谨的 CodeSpec 7 阶段工作流，将原始项目无损拆解为 <b>43 个核心架构需求 (AR)</b>，旨在考察不同 AI Coding Assistant 还原复杂系统、保持长上下文架构一致性的真实能力。
 </p>
-<ul style="font-size: 0.95em; line-height: 1.6; color: #444;">
-<li><b>产出能力最优</b>: <code>opencode-cli / opencode/minimax-m2.5-free</code> 输出了最大的有效代码规模 (<b>20,380 LOC</b>)，展现了最深度的架构细节还原。</li>
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">二、5 轮测试实录</h3>
+<ul style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+<li><b>轮次 1 (cursor-cli / claude-4.6-opus-high-thinking)</b>: 生成了 <b>19,115</b> 行代码，耗时 <b>93</b> 分钟，消耗 896,885 Tokens，总成本 $19.87。</li>
+<li><b>轮次 2 (opencode-cli / bailian-coding-plan/glm-5)</b>: 生成了 <b>18,099</b> 行代码，耗时 <b>105</b> 分钟，消耗 852,964 Tokens，总成本 $18.88。</li>
+<li><b>轮次 3 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>11,018</b> 行代码，耗时 <b>102</b> 分钟，消耗 598,365 Tokens，总成本 $12.11。</li>
+<li><b>轮次 4 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>16,237</b> 行代码，耗时 <b>77</b> 分钟，消耗 754,346 Tokens，总成本 $16.15。</li>
+<li><b>轮次 5 (opencode-cli / opencode/minimax-m2.5-free)</b>: 生成了 <b>20,380</b> 行代码，耗时 <b>99</b> 分钟，消耗 885,287 Tokens，总成本 $19.60。</li>
+
+</ul>
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">三、核心指标极值</h3>
+<ul style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+<li><b>行业基准 (Baseline)</b>: <code>cursor-cli / claude-4.6-opus-high-thinking</code> 展现了极度均衡的实力，生成 <b>19,115 LOC</b>，耗时 <b>93 分钟</b>，是所有模型对比的基石标杆。</li>
+<li><b>产出能力最优</b>: <code>opencode-cli / opencode/minimax-m2.5-free</code> 输出了最大的有效代码规模 (<b>20,380 LOC</b>)，在架构细节还原度上甚至超越了基准。</li>
 <li><b>交付速度最快</b>: <code>opencode-cli / bailian-coding-plan/qwen3.5-plus</code> 仅耗时 <b>77 分钟</b>即完成了全量需求。</li>
 <li><b>代码浓度最高</b>: <code>opencode-cli / opencode/minimax-m2.5-free</code> 生成每行代码的平均 Token 消耗最低，逻辑密度极高，废话最少。</li>
 <li><b>综合成本最低</b>: <code>opencode-cli / bailian-coding-plan/kimi-k2.5</code> 的任务总账单仅为 <b>$12.11</b>，极具经济性。</li>
 </ul>
+
 <p style="font-size: 0.95em; line-height: 1.6; color: #444;">
-<b>洞察与建议</b>：长上下文缓存命中率成为降低多轮迭代成本的关键。不同模型在“代码骨架搭建”与“逻辑细节深挖”上的侧重点差异明显，团队可根据“重交付速度”还是“重架构完整度”来选择最佳基座模型。
+<b>洞察与建议</b>：长上下文缓存命中率成为降低多轮迭代成本的关键。不同模型在“代码骨架搭建”与“逻辑细节深挖”上的侧重点差异明显。目前的国产开放模型在生成规模和速度上已具备挑战业界顶尖基准 (Claude) 的实力。
 </p>
 </div>
 

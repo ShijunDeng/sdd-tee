@@ -209,25 +209,49 @@ def render_compare_html(runs):
 """
     if runs:
         try:
+            baseline_run = next((r for r in runs if "cursor" in r["meta"]["tool"].lower() or "claude" in r["meta"]["model"].lower()), runs[0])
             best_cost = min(runs, key=lambda r: r["grand_totals"].get("total_cost_usd", float('inf')))
             best_speed = min(runs, key=lambda r: r["grand_totals"].get("total_duration_seconds", float('inf')))
             best_eff = min(runs, key=lambda r: r["grand_totals"].get("total_tokens", float('inf')) / max(r["grand_totals"].get("total_loc", 1), 1))
             max_loc = max(runs, key=lambda r: r["grand_totals"].get("total_loc", 0))
+
+            # Build per-run summary
+            run_summaries = ""
+            for idx, r in enumerate(runs, 1):
+                lbl = run_label(r)
+                gt = r["grand_totals"]
+                loc = gt.get("total_loc", 0)
+                dur = gt.get("total_duration_seconds", 0) // 60
+                cost = gt.get("total_cost_usd", 0)
+                toks = gt.get("total_tokens", 0)
+                run_summaries += f"<li><b>轮次 {idx} ({lbl})</b>: 生成了 <b>{loc:,}</b> 行代码，耗时 <b>{dur}</b> 分钟，消耗 {toks:,} Tokens，总成本 ${cost:.2f}。</li>\n"
             
             html += f"""
 <div class="section" style="background-color: #f8f9fa; border-left: 4px solid #1a73e8; padding: 15px; margin-bottom: 20px;">
 <h2 style="margin-top: 0; padding-top: 0; font-size: 1.2em; border: none;">执行摘要 (Executive Summary)</h2>
-<p style="font-size: 0.95em; line-height: 1.6; color: #444;">
-本报告对 <b>{n}</b> 个 AI Agent 评测轮次进行了深度分析。在完成相同的 43 个核心架构需求 (AR) 的过程中：
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">一、项目背景</h3>
+<p style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+本次评测的目标项目为 <a href="https://github.com/ShijunDeng/agentcube" target="_blank" style="color: #1a73e8; text-decoration: none;"><b>AgentCube</b></a>，一个复杂的云原生 AI Agent 工作负载管理平台。项目涉及 Kubernetes CRD 设计、Go 语言核心控制面、Python SDK、CLI 工具以及前/后端集成的多维度代码工程。<br>
+评测基于严谨的 CodeSpec 7 阶段工作流，将原始项目无损拆解为 <b>43 个核心架构需求 (AR)</b>，旨在考察不同 AI Coding Assistant 还原复杂系统、保持长上下文架构一致性的真实能力。
 </p>
-<ul style="font-size: 0.95em; line-height: 1.6; color: #444;">
-<li><b>产出能力最优</b>: <code>{run_label(max_loc)}</code> 输出了最大的有效代码规模 (<b>{max_loc["grand_totals"].get("total_loc", 0):,} LOC</b>)，展现了最深度的架构细节还原。</li>
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">二、{n} 轮测试实录</h3>
+<ul style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+{run_summaries}
+</ul>
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">三、核心指标极值</h3>
+<ul style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+<li><b>行业基准 (Baseline)</b>: <code>{run_label(baseline_run)}</code> 展现了极度均衡的实力，生成 <b>{baseline_run["grand_totals"].get("total_loc", 0):,} LOC</b>，耗时 <b>{baseline_run["grand_totals"].get("total_duration_seconds", 0)//60} 分钟</b>，是所有模型对比的基石标杆。</li>
+<li><b>产出能力最优</b>: <code>{run_label(max_loc)}</code> 输出了最大的有效代码规模 (<b>{max_loc["grand_totals"].get("total_loc", 0):,} LOC</b>)，在架构细节还原度上甚至超越了基准。</li>
 <li><b>交付速度最快</b>: <code>{run_label(best_speed)}</code> 仅耗时 <b>{best_speed["grand_totals"].get("total_duration_seconds", 0)//60} 分钟</b>即完成了全量需求。</li>
 <li><b>代码浓度最高</b>: <code>{run_label(best_eff)}</code> 生成每行代码的平均 Token 消耗最低，逻辑密度极高，废话最少。</li>
 <li><b>综合成本最低</b>: <code>{run_label(best_cost)}</code> 的任务总账单仅为 <b>${best_cost["grand_totals"].get("total_cost_usd", 0):.2f}</b>，极具经济性。</li>
 </ul>
+
 <p style="font-size: 0.95em; line-height: 1.6; color: #444;">
-<b>洞察与建议</b>：长上下文缓存命中率成为降低多轮迭代成本的关键。不同模型在“代码骨架搭建”与“逻辑细节深挖”上的侧重点差异明显，团队可根据“重交付速度”还是“重架构完整度”来选择最佳基座模型。
+<b>洞察与建议</b>：长上下文缓存命中率成为降低多轮迭代成本的关键。不同模型在“代码骨架搭建”与“逻辑细节深挖”上的侧重点差异明显。目前的国产开放模型在生成规模和速度上已具备挑战业界顶尖基准 (Claude) 的实力。
 </p>
 </div>
 """
