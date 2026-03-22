@@ -6,7 +6,7 @@ RUN_ID=$2
 WORKSPACE=$3
 TOOL=$4
 MODEL=$5
-RESULTS_DIR="results/runs"
+RESULTS_DIR="results/runs/v2.0"
 LOG_DIR="${RESULTS_DIR}/${RUN_ID}_logs"
 
 echo "Waiting for Evaluation Engine (PID: $PID) to complete..."
@@ -78,13 +78,13 @@ res = {
         "python_syntax_ok": 0, "go_files_generated": 0, "code_usability_estimate": 0.85
     }
 }
-with open(f"results/runs/{run_id}.json", "w") as f: json.dump(res, f)
+with open(f"results/runs/v2.0/{run_id}.json", "w") as f: json.dump(res, f)
 PYEOF
 
 # 2. 生成报告
-make collect TOOL=$TOOL MODEL=$MODEL || true
-make report || true
-make compare || true
+python3 scripts/09_collect_run_data.py "results/runs/v2.0/${run_id}.json" "$WORKSPACE" --specs-dir specs || true
+python3 scripts/07_sdd_tee_report.py --data "results/runs/v2.0/${run_id}_full.json" --output "results/reports/v2.0/${run_id}_report.html" || true
+python3 scripts/11_compare_runs.py --runs results/runs/v2.0/*_full.json --output results/reports/v2.0/compare_report.html || true
 
 # 3. 自动同步 CONTEXT.md
 export __TOOL="$TOOL"
@@ -97,7 +97,7 @@ run_id = os.environ.get('__RUN_ID')
 tool = os.environ.get('__TOOL')
 model = os.environ.get('__MODEL')
 
-with open(f'results/runs/{run_id}.json') as f: d = json.load(f)
+with open(f'results/runs/v2.0/{run_id}.json') as f: d = json.load(f)
 tok = d['token_summary']['total_tokens']
 loc = d['quality']['loc_generated']
 files = d['quality']['files_generated']

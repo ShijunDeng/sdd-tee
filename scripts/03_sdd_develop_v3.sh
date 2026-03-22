@@ -11,8 +11,8 @@ TOOL="${1:?Usage: $0 <tool> <model> [specs_dir]}"
 MODEL="${2:?Usage: $0 <tool> <model> [specs_dir]}"
 SPECS_DIR="${3:-./specs}"
 PROJECT_ROOT="$(pwd)"
-RESULTS_DIR="$PROJECT_ROOT/results/runs"
-WORKSPACE_BASE="$PROJECT_ROOT/workspaces"
+RESULTS_DIR="$PROJECT_ROOT/results/runs/v2.0"
+WORKSPACE_BASE="$PROJECT_ROOT/workspaces/v2.0"
 
 TIMESTAMP=$(date -u +%Y%m%dT%H%M%SZ)
 MODEL_SAFE="${MODEL//\//_}"
