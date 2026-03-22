@@ -62,7 +62,7 @@
   SDD Token Efficiency Evaluation &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
   模型: bailian-coding-plan/qwen3.5-plus &nbsp;|&nbsp; 工具: opencode-cli &nbsp;|&nbsp;
   <span style="color:var(--green)">ACTUAL RUN</span> &nbsp;|&nbsp;
-  opencode-cli_bailian-coding-plan_qwen3.5-plus_20260322T113313Z &nbsp;|&nbsp; 2026-03-22T13:15:25Z
+  opencode-cli_bailian-coding-plan_qwen3.5-plus_20260322T113313Z &nbsp;|&nbsp; 2026-03-22T15:05:26Z
 </p>
 
 <div class="toc">
@@ -85,8 +85,8 @@
     <tr><th style="width:120px">Run ID</th><td><code>opencode-cli_bailian-coding-plan_qwen3.5-plus_20260322T113313Z</code></td></tr>
     <tr><th>工具</th><td>opencode-cli</td></tr>
     <tr><th>模型</th><td>bailian-coding-plan/qwen3.5-plus</td></tr>
-    <tr><th>开始时间</th><td>2026-03-22T13:15:22.944811Z</td></tr>
-    <tr><th>结束时间</th><td>2026-03-22T13:15:22.944826Z</td></tr>
+    <tr><th>开始时间</th><td>2026-03-22T11:33:13Z</td></tr>
+    <tr><th>结束时间</th><td>2026-03-22T21:14:30.525153Z</td></tr>
     <tr><th>Token 追踪</th><td>content-based precise counting (litellm.token_counter) + SDD stage distribution model</td></tr>
     <tr><th>预制规范</th><td>58,859 tokens (22 OpenSpec 文件)</td></tr>
   </table>
@@ -98,28 +98,28 @@
 <div class="stats">
   <div class="stat"><div class="v">43</div><div class="l">AR 需求数</div></div>
   <div class="stat"><div class="v">805,130</div><div class="l">Total Tokens</div></div>
-  <div class="stat"><div class="v">$17.59</div><div class="l">总成本 (USD)</div></div>
-  <div class="stat"><div class="v">¥128</div><div class="l">总成本 (CNY)</div></div>
+  <div class="stat"><div class="v">$17.53</div><div class="l">总成本 (USD)</div></div>
+  <div class="stat"><div class="v">¥127</div><div class="l">总成本 (CNY)</div></div>
   <div class="stat"><div class="v">16,992</div><div class="l">生成代码行数</div></div>
   <div class="stat"><div class="v">119</div><div class="l">生成文件数</div></div>
   <div class="stat"><div class="v">211</div><div class="l">Task 总数</div></div>
-  <div class="stat"><div class="v">546</div><div class="l">交互总轮数</div></div>
-  <div class="stat"><div class="v">727</div><div class="l">API 调用次数</div></div>
-  <div class="stat"><div class="v">1h13m</div><div class="l">总耗时</div></div>
+  <div class="stat"><div class="v">557</div><div class="l">交互总轮数</div></div>
+  <div class="stat"><div class="v">711</div><div class="l">API 调用次数</div></div>
+  <div class="stat"><div class="v">9h38m</div><div class="l">总耗时</div></div>
 </div>
 
 <div class="card" style="margin-top:12px">
   <h3>Token 类型分布</h3>
-  <svg width="900" height="30" style="display:block"><rect x="0.0" y="0" width="176.0" height="30" fill="#42A5F5" rx="3"/><text x="88.0" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Input</text><rect x="176.0" y="0" width="477.7" height="30" fill="#90CAF9" rx="3"/><text x="414.8" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Cache Read</text><rect x="653.6" y="0" width="183.2" height="30" fill="#EF5350" rx="3"/><text x="745.2" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Output</text><rect x="836.9" y="0" width="63.1" height="30" fill="#FFAB91" rx="3"/><text x="868.4" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Cache Write</text></svg>
+  <svg width="900" height="30" style="display:block"><rect x="0.0" y="0" width="173.7" height="30" fill="#42A5F5" rx="3"/><text x="86.9" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Input</text><rect x="173.7" y="0" width="480.8" height="30" fill="#90CAF9" rx="3"/><text x="414.2" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Cache Read</text><rect x="654.6" y="0" width="183.5" height="30" fill="#EF5350" rx="3"/><text x="746.3" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Output</text><rect x="838.1" y="0" width="61.9" height="30" fill="#FFAB91" rx="3"/><text x="869.0" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Cache Write</text></svg>
   <div class="legend" style="margin-top:8px">
-    <span><i style="background:#42A5F5"></i> Input (非缓存) 169,291</span>
-    <span><i style="background:#90CAF9"></i> Cache Read 459,547</span>
+    <span><i style="background:#42A5F5"></i> Input (非缓存) 166,919</span>
+    <span><i style="background:#90CAF9"></i> Cache Read 461,919</span>
     <span><i style="background:#EF5350"></i> Output 176,292</span>
-    <span><i style="background:#FFAB91"></i> Cache Write 60,738</span>
+    <span><i style="background:#FFAB91"></i> Cache Write 59,496</span>
     <span><i style="background:#fff;border:1px solid #ccc"></i> 预制规范 187,956</span>
   </div>
   <p style="font-size:12px;color:var(--muted);margin-top:4px">
-    Cache 命中率: 73.1% &nbsp;|&nbsp;
+    Cache 命中率: 73.5% &nbsp;|&nbsp;
     Input/Output 比: 3.6:1 &nbsp;|&nbsp;
     预制规范占 Input: 29.9%
   </p>
@@ -147,7 +147,7 @@
             <td style="text-align:right;font-weight:600">8,905</td>
             <td style="text-align:right">1.1%</td>
             <td style="text-align:right">43</td>
-            <td style="text-align:right">1m26s</td>
+            <td style="text-align:right">11m28s</td>
         </tr><tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:#42A5F5;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-1</td>
             <td>需求澄清 (Proposal)</td>
@@ -156,8 +156,8 @@
             <td style="text-align:right">11,456</td>
             <td style="text-align:right;font-weight:600">52,320</td>
             <td style="text-align:right">6.5%</td>
-            <td style="text-align:right">58</td>
-            <td style="text-align:right">5m44s</td>
+            <td style="text-align:right">61</td>
+            <td style="text-align:right">45m52s</td>
         </tr><tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:#26C6DA;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-2</td>
             <td>Spec 增量设计</td>
@@ -166,8 +166,8 @@
             <td style="text-align:right">8,809</td>
             <td style="text-align:right;font-weight:600">59,108</td>
             <td style="text-align:right">7.3%</td>
-            <td style="text-align:right">63</td>
-            <td style="text-align:right">7m10s</td>
+            <td style="text-align:right">60</td>
+            <td style="text-align:right">58m3s</td>
         </tr><tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:#66BB6A;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-3</td>
             <td>Design 增量设计</td>
@@ -176,8 +176,8 @@
             <td style="text-align:right">19,389</td>
             <td style="text-align:right;font-weight:600">82,270</td>
             <td style="text-align:right">10.2%</td>
-            <td style="text-align:right">85</td>
-            <td style="text-align:right">8m36s</td>
+            <td style="text-align:right">76</td>
+            <td style="text-align:right">69m31s</td>
         </tr><tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:#FFA726;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-4</td>
             <td>任务拆解 (Tasks)</td>
@@ -187,7 +187,7 @@
             <td style="text-align:right;font-weight:600">82,004</td>
             <td style="text-align:right">10.2%</td>
             <td style="text-align:right">43</td>
-            <td style="text-align:right">4m18s</td>
+            <td style="text-align:right">34m24s</td>
         </tr><tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:#EF5350;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-5</td>
             <td>开发实现 (Apply)</td>
@@ -196,8 +196,8 @@
             <td style="text-align:right">102,293</td>
             <td style="text-align:right;font-weight:600">379,036</td>
             <td style="text-align:right">47.1%</td>
-            <td style="text-align:right">152</td>
-            <td style="text-align:right">32m58s</td>
+            <td style="text-align:right">170</td>
+            <td style="text-align:right">255m8s</td>
         </tr><tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:#AB47BC;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-6</td>
             <td>一致性验证 (Verify)</td>
@@ -206,8 +206,8 @@
             <td style="text-align:right">14,979</td>
             <td style="text-align:right;font-weight:600">106,165</td>
             <td style="text-align:right">13.2%</td>
-            <td style="text-align:right">59</td>
-            <td style="text-align:right">8m36s</td>
+            <td style="text-align:right">61</td>
+            <td style="text-align:right">69m31s</td>
         </tr><tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:#8D6E63;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-7</td>
             <td>合并归档 (Archive)</td>
@@ -217,7 +217,7 @@
             <td style="text-align:right;font-weight:600">35,322</td>
             <td style="text-align:right">4.4%</td>
             <td style="text-align:right">43</td>
-            <td style="text-align:right">4m18s</td>
+            <td style="text-align:right">34m24s</td>
         </tr></tbody>
   </table>
 </div>
@@ -227,13 +227,13 @@
 <div class="two-col">
   <div class="card">
     <h3>角色 Token 分布</h3>
-    <svg width="400" height="28" style="display:block"><rect x="0.0" y="0" width="386.2" height="28" fill="#42A5F5" rx="3"/><text x="193.1" y="18.0" text-anchor="middle" fill="#fff" font-size="11">AI</text><rect x="386.2" y="0" width="13.8" height="28" fill="#66BB6A" rx="3"/></svg>
+    <svg width="400" height="28" style="display:block"><rect x="0.0" y="0" width="384.1" height="28" fill="#42A5F5" rx="3"/><text x="192.1" y="18.0" text-anchor="middle" fill="#fff" font-size="11">AI</text><rect x="384.1" y="0" width="15.9" height="28" fill="#66BB6A" rx="3"/></svg>
     <table style="margin-top:12px">
       <tr><th>指标编码</th><th>指标</th><th style="text-align:right">值</th></tr>
-      <tr><td>RT-AI</td><td>AI 消耗 Token 总量</td><td style="text-align:right">777,262</td></tr>
-      <tr><td>RT-HUMAN</td><td>人类输入 Token 总量</td><td style="text-align:right">27,868</td></tr>
-      <tr><td>RT-RATIO</td><td>人机 Token 比</td><td style="text-align:right">0.0359</td></tr>
-      <tr><td>RT-ITER</td><td>平均迭代次数 / AR</td><td style="text-align:right">12.7</td></tr>
+      <tr><td>RT-AI</td><td>AI 消耗 Token 总量</td><td style="text-align:right">773,144</td></tr>
+      <tr><td>RT-HUMAN</td><td>人类输入 Token 总量</td><td style="text-align:right">31,986</td></tr>
+      <tr><td>RT-RATIO</td><td>人机 Token 比</td><td style="text-align:right">0.0414</td></tr>
+      <tr><td>RT-ITER</td><td>平均迭代次数 / AR</td><td style="text-align:right">13.0</td></tr>
     </table>
   </div>
   <div class="card">
@@ -260,8 +260,8 @@
   <div class="stat"><div class="v">6,766</div><div class="l">ET-FILE (Token/File)</div></div>
   <div class="stat"><div class="v">3,816</div><div class="l">ET-TASK (Token/Task)</div></div>
   <div class="stat"><div class="v">18,724</div><div class="l">ET-AR (Token/AR)</div></div>
-  <div class="stat"><div class="v">660,845</div><div class="l">ET-TIME (Token/h)</div></div>
-  <div class="stat"><div class="v">$1.04</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
+  <div class="stat"><div class="v">83,527</div><div class="l">ET-TIME (Token/h)</div></div>
+  <div class="stat"><div class="v">$1.03</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
 </div>
 <div class="metric-guide">
   <h4>效率指标指南:</h4>
@@ -380,8 +380,8 @@ LOC: 0, Tokens: 4,102</title></circle>
 <h2 id="quality">5. 质量维度</h2>
 <div class="stats">
   <div class="stat good"><div class="v">80.7%</div><div class="l">平均 Spec-Code 一致性</div></div>
-  <div class="stat good"><div class="v">85.0%</div><div class="l">平均代码可用率</div></div>
-  <div class="stat"><div class="v">51.9%</div><div class="l">平均测试覆盖率</div></div>
+  <div class="stat good"><div class="v">86.7%</div><div class="l">平均代码可用率</div></div>
+  <div class="stat"><div class="v">51.6%</div><div class="l">平均测试覆盖率</div></div>
   <div class="stat warn"><div class="v">10</div><div class="l">发现 Bug 总数</div></div>
 </div>
 
@@ -389,9 +389,9 @@ LOC: 0, Tokens: 4,102</title></circle>
   <table>
     <thead><tr><th>指标</th><th>说明</th><th style="text-align:right">全局值</th></tr></thead>
     <tbody>
-      <tr><td>QT-COV</td><td>Token / 测试覆盖率%</td><td style="text-align:right">7,300</td></tr>
+      <tr><td>QT-COV</td><td>Token / 测试覆盖率%</td><td style="text-align:right">7,343</td></tr>
       <tr><td>QT-CONSIST</td><td>Token / 一致性得分%</td><td style="text-align:right">1,315</td></tr>
-      <tr><td>QT-AVAIL</td><td>Token / 代码可用率%</td><td style="text-align:right">4,459</td></tr>
+      <tr><td>QT-AVAIL</td><td>Token / 代码可用率%</td><td style="text-align:right">4,371</td></tr>
       <tr><td>QT-BUG</td><td>Token / Bug 数 (反向)</td><td style="text-align:right">37,904</td></tr>
     </tbody>
   </table>
@@ -436,21 +436,21 @@ LOC: 0, Tokens: 4,102</title></circle>
                 <td style="text-align:right">71</td>
                 <td style="text-align:right">263.2</td>
                 <td style="text-align:right">$0.072</td>
-                <td style="text-align:right">1m42s</td>
+                <td style="text-align:right">13m27s</td>
             </tr><tr>
                 <td>中型 (500-2000)</td><td>26</td>
                 <td style="text-align:right">26,581</td>
                 <td style="text-align:right">601</td>
                 <td style="text-align:right">733.9</td>
-                <td style="text-align:right">$0.621</td>
-                <td style="text-align:right">1m42s</td>
+                <td style="text-align:right">$0.620</td>
+                <td style="text-align:right">13m27s</td>
             </tr><tr>
                 <td>大型 (>2000)</td><td>8</td>
                 <td style="text-align:right">9,106</td>
                 <td style="text-align:right">90</td>
                 <td style="text-align:right">2455.7</td>
-                <td style="text-align:right">$0.098</td>
-                <td style="text-align:right">1m42s</td>
+                <td style="text-align:right">$0.097</td>
+                <td style="text-align:right">13m27s</td>
             </tr></tbody>
   </table>
   <p style="font-size:12px;color:var(--muted);margin-top:8px">基线用于成本预测和异常预警。新需求 Token 预估 = 基线 × 规模系数 × 复杂度系数。</p>
@@ -470,9 +470,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">479,648</td>
             <td style="text-align:right">11,963</td>
             <td style="text-align:right">19.2</td>
-            <td style="text-align:right">$12.580</td>
+            <td style="text-align:right">$12.544</td>
             <td style="text-align:right">98%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">90%</td>
         </tr><tr>
             <td><code>AR-036</code></td>
             <td>Dify 插件集成</td>
@@ -482,9 +482,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">31,298</td>
             <td style="text-align:right">794</td>
             <td style="text-align:right">18.7</td>
-            <td style="text-align:right">$0.753</td>
+            <td style="text-align:right">$0.750</td>
             <td style="text-align:right">98%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">88%</td>
         </tr><tr>
             <td><code>AR-030</code></td>
             <td>Helm Chart 模板与 Values</td>
@@ -494,9 +494,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">20,424</td>
             <td style="text-align:right">691</td>
             <td style="text-align:right">13.8</td>
-            <td style="text-align:right">$0.400</td>
+            <td style="text-align:right">$0.401</td>
             <td style="text-align:right">88%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">89%</td>
         </tr><tr>
             <td><code>AR-009</code></td>
             <td>Router HTTP 反向代理核心</td>
@@ -506,9 +506,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">14,886</td>
             <td style="text-align:right">340</td>
             <td style="text-align:right">20.5</td>
-            <td style="text-align:right">$0.304</td>
+            <td style="text-align:right">$0.311</td>
             <td style="text-align:right">88%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">92%</td>
         </tr><tr>
             <td><code>AR-020</code></td>
             <td>CLI pack 命令</td>
@@ -518,7 +518,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">13,908</td>
             <td style="text-align:right">341</td>
             <td style="text-align:right">19.1</td>
-            <td style="text-align:right">$0.280</td>
+            <td style="text-align:right">$0.282</td>
             <td style="text-align:right">86%</td>
             <td style="text-align:right">85%</td>
         </tr><tr>
@@ -530,9 +530,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">13,216</td>
             <td style="text-align:right">315</td>
             <td style="text-align:right">19.6</td>
-            <td style="text-align:right">$0.269</td>
+            <td style="text-align:right">$0.268</td>
             <td style="text-align:right">87%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">81%</td>
         </tr><tr>
             <td><code>AR-016</code></td>
             <td>PicoD 文件管理 API</td>
@@ -542,7 +542,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">12,374</td>
             <td style="text-align:right">253</td>
             <td style="text-align:right">22.8</td>
-            <td style="text-align:right">$0.250</td>
+            <td style="text-align:right">$0.245</td>
             <td style="text-align:right">86%</td>
             <td style="text-align:right">85%</td>
         </tr><tr>
@@ -554,9 +554,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">11,324</td>
             <td style="text-align:right">273</td>
             <td style="text-align:right">19.3</td>
-            <td style="text-align:right">$0.219</td>
+            <td style="text-align:right">$0.215</td>
             <td style="text-align:right">88%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">81%</td>
         </tr><tr>
             <td><code>AR-011</code></td>
             <td>Router JWT 认证与签发</td>
@@ -566,9 +566,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">11,183</td>
             <td style="text-align:right">240</td>
             <td style="text-align:right">21.7</td>
-            <td style="text-align:right">$0.216</td>
+            <td style="text-align:right">$0.218</td>
             <td style="text-align:right">89%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">90%</td>
         </tr><tr>
             <td><code>AR-027</code></td>
             <td>SDK CodeInterpreterClient</td>
@@ -578,9 +578,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">11,108</td>
             <td style="text-align:right">251</td>
             <td style="text-align:right">20.6</td>
-            <td style="text-align:right">$0.214</td>
+            <td style="text-align:right">$0.212</td>
             <td style="text-align:right">86%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">91%</td>
         </tr><tr>
             <td><code>AR-037</code></td>
             <td>PCAP 分析器示例应用</td>
@@ -590,9 +590,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">10,345</td>
             <td style="text-align:right">246</td>
             <td style="text-align:right">19.5</td>
-            <td style="text-align:right">$0.196</td>
+            <td style="text-align:right">$0.194</td>
             <td style="text-align:right">82%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">82%</td>
         </tr><tr>
             <td><code>AR-010</code></td>
             <td>Router 会话管理</td>
@@ -602,9 +602,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">9,930</td>
             <td style="text-align:right">185</td>
             <td style="text-align:right">24.9</td>
-            <td style="text-align:right">$0.185</td>
+            <td style="text-align:right">$0.177</td>
             <td style="text-align:right">84%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">90%</td>
         </tr><tr>
             <td><code>AR-029</code></td>
             <td>SDK HTTP 底层客户端</td>
@@ -616,7 +616,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">19.8</td>
             <td style="text-align:right">$0.176</td>
             <td style="text-align:right">86%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">87%</td>
         </tr><tr>
             <td><code>AR-022</code></td>
             <td>CLI publish 命令</td>
@@ -626,9 +626,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">8,108</td>
             <td style="text-align:right">30</td>
             <td style="text-align:right">120.0</td>
-            <td style="text-align:right">$0.068</td>
+            <td style="text-align:right">$0.072</td>
             <td style="text-align:right">76%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">83%</td>
         </tr><tr>
             <td><code>AR-028</code></td>
             <td>SDK AgentRuntimeClient</td>
@@ -638,9 +638,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">7,624</td>
             <td style="text-align:right">136</td>
             <td style="text-align:right">25.7</td>
-            <td style="text-align:right">$0.118</td>
+            <td style="text-align:right">$0.120</td>
             <td style="text-align:right">83%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">86%</td>
         </tr><tr>
             <td><code>AR-007</code></td>
             <td>K8s Reconciler 控制器</td>
@@ -652,7 +652,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">3252.0</td>
             <td style="text-align:right">$0.050</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">84%</td>
         </tr><tr>
             <td><code>AR-034</code></td>
             <td>CI/CD GitHub Actions (12 workflows)</td>
@@ -662,9 +662,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">7,387</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">3252.0</td>
-            <td style="text-align:right">$0.054</td>
+            <td style="text-align:right">$0.052</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">83%</td>
         </tr><tr>
             <td><code>AR-035</code></td>
             <td>client-go 类型客户端生成</td>
@@ -674,9 +674,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">7,387</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">3252.0</td>
-            <td style="text-align:right">$0.055</td>
+            <td style="text-align:right">$0.049</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">90%</td>
         </tr><tr>
             <td><code>AR-038</code></td>
             <td>Go 单元测试 (workloadmanager)</td>
@@ -686,9 +686,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">7,387</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">3252.0</td>
-            <td style="text-align:right">$0.055</td>
+            <td style="text-align:right">$0.052</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">91%</td>
         </tr><tr>
             <td><code>AR-039</code></td>
             <td>Go 单元测试 (router/store/picod)</td>
@@ -698,9 +698,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">7,387</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">3252.0</td>
-            <td style="text-align:right">$0.052</td>
+            <td style="text-align:right">$0.053</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">81%</td>
         </tr><tr>
             <td><code>AR-041</code></td>
             <td>E2E 集成测试</td>
@@ -710,9 +710,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">7,387</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">3252.0</td>
-            <td style="text-align:right">$0.051</td>
+            <td style="text-align:right">$0.046</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">90%</td>
         </tr><tr>
             <td><code>AR-003</code></td>
             <td>CRD 共享类型与常量</td>
@@ -722,9 +722,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">6,550</td>
             <td style="text-align:right">154</td>
             <td style="text-align:right">19.8</td>
-            <td style="text-align:right">$0.127</td>
+            <td style="text-align:right">$0.125</td>
             <td style="text-align:right">94%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">84%</td>
         </tr><tr>
             <td><code>AR-018</code></td>
             <td>Agentd 空闲清理控制器</td>
@@ -736,7 +736,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">25.6</td>
             <td style="text-align:right">$0.109</td>
             <td style="text-align:right">84%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">83%</td>
         </tr><tr>
             <td><code>AR-017</code></td>
             <td>PicoD JWT 中间件</td>
@@ -758,9 +758,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">5,684</td>
             <td style="text-align:right">88</td>
             <td style="text-align:right">29.9</td>
-            <td style="text-align:right">$0.101</td>
+            <td style="text-align:right">$0.100</td>
             <td style="text-align:right">81%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">92%</td>
         </tr><tr>
             <td><code>AR-023</code></td>
             <td>CLI invoke/status 命令</td>
@@ -770,9 +770,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,908</td>
             <td style="text-align:right">43</td>
             <td style="text-align:right">51.0</td>
-            <td style="text-align:right">$0.048</td>
+            <td style="text-align:right">$0.052</td>
             <td style="text-align:right">77%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">86%</td>
         </tr><tr>
             <td><code>AR-021</code></td>
             <td>CLI build 命令</td>
@@ -782,9 +782,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,542</td>
             <td style="text-align:right">22</td>
             <td style="text-align:right">91.8</td>
-            <td style="text-align:right">$0.039</td>
+            <td style="text-align:right">$0.037</td>
             <td style="text-align:right">76%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">84%</td>
         </tr><tr>
             <td><code>AR-001</code></td>
             <td>CRD AgentRuntime 类型定义</td>
@@ -796,7 +796,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">31.4</td>
             <td style="text-align:right">$0.064</td>
             <td style="text-align:right">80%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">86%</td>
         </tr><tr>
             <td><code>AR-025</code></td>
             <td>MetadataService 与数据模型</td>
@@ -808,7 +808,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">607.0</td>
             <td style="text-align:right">$0.029</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">88%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-005</code></td>
             <td>Sandbox 创建处理器</td>
@@ -818,9 +818,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,102</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">1806.0</td>
-            <td style="text-align:right">$0.027</td>
+            <td style="text-align:right">$0.026</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">89%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-006</code></td>
             <td>Sandbox 删除与生命周期管理</td>
@@ -830,9 +830,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,102</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">1806.0</td>
-            <td style="text-align:right">$0.026</td>
+            <td style="text-align:right">$0.028</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">81%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-013</code></td>
             <td>Redis 存储实现</td>
@@ -842,9 +842,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,102</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">1806.0</td>
-            <td style="text-align:right">$0.028</td>
+            <td style="text-align:right">$0.029</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">80%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-024</code></td>
             <td>DockerService 封装</td>
@@ -854,9 +854,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,102</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">1806.0</td>
-            <td style="text-align:right">$0.029</td>
+            <td style="text-align:right">$0.028</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">92%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-026</code></td>
             <td>K8s/AgentCube Provider</td>
@@ -866,9 +866,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,102</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">1806.0</td>
-            <td style="text-align:right">$0.027</td>
+            <td style="text-align:right">$0.029</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">89%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-031</code></td>
             <td>RBAC 配置 (SA/Role/Binding)</td>
@@ -878,9 +878,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,102</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">1806.0</td>
-            <td style="text-align:right">$0.029</td>
+            <td style="text-align:right">$0.028</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">90%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-033</code></td>
             <td>Makefile 构建目标体系</td>
@@ -892,7 +892,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">1806.0</td>
             <td style="text-align:right">$0.028</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">81%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-040</code></td>
             <td>Python SDK/CLI 测试</td>
@@ -902,9 +902,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,102</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">1806.0</td>
-            <td style="text-align:right">$0.029</td>
+            <td style="text-align:right">$0.028</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">84%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-042</code></td>
             <td>Docusaurus 文档站框架</td>
@@ -914,9 +914,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,102</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">1806.0</td>
-            <td style="text-align:right">$0.031</td>
+            <td style="text-align:right">$0.027</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">86%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-043</code></td>
             <td>架构设计文档与 API 文档</td>
@@ -926,9 +926,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">4,102</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">1806.0</td>
-            <td style="text-align:right">$0.027</td>
+            <td style="text-align:right">$0.028</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">93%</td>
         </tr><tr>
             <td><code>AR-032</code></td>
             <td>Dockerfile 多阶段构建 (3 images)</td>
@@ -940,7 +940,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">29.8</td>
             <td style="text-align:right">$0.055</td>
             <td style="text-align:right">81%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">82%</td>
         </tr><tr>
             <td><code>AR-012</code></td>
             <td>会话存储接口定义</td>
@@ -952,7 +952,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">44.5</td>
             <td style="text-align:right">$0.051</td>
             <td style="text-align:right">79%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">88%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-008</code></td>
             <td>Sandbox GC 定时清理机制</td>
@@ -964,7 +964,7 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">1083.0</td>
             <td style="text-align:right">$0.018</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">91%</td>
         </tr><tr style="background:#fff3e0">
             <td><code>AR-014</code></td>
             <td>Valkey 存储实现</td>
@@ -974,9 +974,9 @@ LOC: 0, Tokens: 4,102</title></circle>
             <td style="text-align:right">2,460</td>
             <td style="text-align:right">0</td>
             <td style="text-align:right">1083.0</td>
-            <td style="text-align:right">$0.017</td>
+            <td style="text-align:right">$0.018</td>
             <td style="text-align:right">75%</td>
-            <td style="text-align:right">85%</td>
+            <td style="text-align:right">93%</td>
         </tr></tbody>
   </table>
   <p style="font-size:12px;color:var(--muted);margin-top:4px">橙色背景行: Token/LOC 超过同规模基线 200%（异常标记）</p>
@@ -1024,7 +1024,7 @@ LOC: 0, Tokens: 4,102</title></circle>
 </div><!-- .container -->
 <div class="footer">
   SDD-TEE v2 (SDD Token Efficiency Evaluation) &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
-  2026-03-22T13:15:25Z &nbsp;|&nbsp; <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
+  2026-03-22T15:05:26Z &nbsp;|&nbsp; <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
 </div>
 </body>
 </html>
