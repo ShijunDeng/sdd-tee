@@ -42,6 +42,7 @@ SDD-TEE (SDD Token Efficiency Evaluation) — 基于 **CodeSpec 7 阶段工作�
 | 3 | opencode-cli | bailian-coding-plan/kimi-k2.5 | `..._AVERAGED` | 598,365 | 59 | 11,018 | 102m47s | $12.11 |
 | 4 | opencode-cli | opencode/minimax-m2.5-free | `..._20260321T170726Z` | 885,287 | 185 | 20,380 | 102m55s | $19.66 |
 | 5 | opencode-cli | bailian-coding-plan/qwen3.5-plus | `..._20260321T190016Z` | 754,346 | 108 | 16,237 | 79m41s | $16.21 |
+| 6 | opencode-cli | opencode/minimax-m2.5-free | `..._20260322T113259Z` | 0 | 33 | 3,297 | ~75m | $0.00 |
 | 6 | gemini-cli | gemini-3.1-pro-preview | `..._20260322T113247Z` | 0 | 164 | 25,186 | ~75m | $0.00 |
 | 6 | gemini-cli | gemini-3.1-pro-preview |  | 0 | 0 | 0 | ~60m |  |
 
