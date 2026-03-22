@@ -1,0 +1,42 @@
+Waiting for process 634354 to complete...
+Process 634354 completed.
+Collecting: results/runs/opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T084625Z.json + workspaces/gemini-cli_gemini-3.1-pro-preview_20260322T104623Z
+[09] Collecting run data...
+  Run JSON: results/runs/opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T084625Z.json
+  Workspace: workspaces/gemini-cli_gemini-3.1-pro-preview_20260322T104623Z
+  Specs: /home/dsj/benchmark/specs
+  Token counter: litellm
+  Spec files: 22, total tokens: 58,859
+  Generated files: 22, LOC: 4,250, output tokens: 58,859
+
+[09] Results saved → /home/dsj/benchmark/results/runs/opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T084625Z_full.json
+  ARs: 43
+  Total tokens: 393,886 (in: 335,035, out: 58,851)
+  Cache read: 245,276 (73%)
+  Spec context: 187,956
+  Cost: $6.72 (¥49)
+  LOC: 4,250, Files: 22
+  Duration: 1h43m
+[07] Validating data against SDD-TEE schema...
+[07] Schema: PASS (43 ARs)
+[07] Data → /home/dsj/benchmark/results/runs/opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T084625Z_full.json
+Traceback (most recent call last):
+  File "/home/dsj/benchmark/scripts/07_sdd_tee_report.py", line 1000, in <module>
+    main()
+  File "/home/dsj/benchmark/scripts/07_sdd_tee_report.py", line 978, in main
+    html = render_html(data)
+  File "/home/dsj/benchmark/scripts/07_sdd_tee_report.py", line 593, in render_html
+    .metric-guide { margin-top: 12px; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e2e5e9; }
+NameError: name 'margin' is not defined
+Report generated: results/reports/opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T084625Z_report.html
+python3 scripts/11_compare_runs.py --output results/reports/compare_report.html
+[11] Loading 6 run(s)...
+  • cursor-cli / claude-4.6-opus-high-thinking (cursor-cli_claude-4.6-opus-high-thinking_20260321T090515Z_full.json)
+  • opencode-cli / bailian-coding-plan/glm-5 (opencode-cli_bailian-coding-plan_glm-5_20260321T114208Z_full.json)
+  • opencode-cli / bailian-coding-plan/kimi-k2.5 (opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T084625Z_full.json)
+  • opencode-cli / bailian-coding-plan/kimi-k2.5 (opencode-cli_bailian-coding-plan_kimi-k2.5_AVERAGED_full.json)
+  • opencode-cli / bailian-coding-plan/qwen3.5-plus (opencode-cli_bailian-coding-plan_qwen3.5-plus_20260321T190016Z_full.json)
+  • opencode-cli / opencode/minimax-m2.5-free (opencode-cli_opencode_minimax-m2.5-free_20260321T170726Z_full.json)
+
+[11] Comparison report → results/reports/compare_report.html
+supervise_gemini.sh: line 94: ..._{ts}: command not found
