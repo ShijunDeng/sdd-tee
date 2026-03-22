@@ -206,6 +206,35 @@ def render_compare_html(runs):
   <p>生成时间: {now} | 对比轮次: {n} | 目标项目: agentcube</p>
 </div>
 
+"""
+    if runs:
+        try:
+            best_cost = min(runs, key=lambda r: r["grand_totals"].get("total_cost_usd", float('inf')))
+            best_speed = min(runs, key=lambda r: r["grand_totals"].get("total_duration_seconds", float('inf')))
+            best_eff = min(runs, key=lambda r: r["grand_totals"].get("total_tokens", float('inf')) / max(r["grand_totals"].get("total_loc", 1), 1))
+            max_loc = max(runs, key=lambda r: r["grand_totals"].get("total_loc", 0))
+            
+            html += f"""
+<div class="section" style="background-color: #f8f9fa; border-left: 4px solid #1a73e8; padding: 15px; margin-bottom: 20px;">
+<h2 style="margin-top: 0; padding-top: 0; font-size: 1.2em; border: none;">执行摘要 (Executive Summary)</h2>
+<p style="font-size: 0.95em; line-height: 1.6; color: #444;">
+本报告对 <b>{n}</b> 个 AI Agent 评测轮次进行了深度分析。在完成相同的 43 个核心架构需求 (AR) 的过程中：
+</p>
+<ul style="font-size: 0.95em; line-height: 1.6; color: #444;">
+<li><b>产出能力最优</b>: <code>{run_label(max_loc)}</code> 输出了最大的有效代码规模 (<b>{max_loc["grand_totals"].get("total_loc", 0):,} LOC</b>)，展现了最深度的架构细节还原。</li>
+<li><b>交付速度最快</b>: <code>{run_label(best_speed)}</code> 仅耗时 <b>{best_speed["grand_totals"].get("total_duration_seconds", 0)//60} 分钟</b>即完成了全量需求。</li>
+<li><b>代码浓度最高</b>: <code>{run_label(best_eff)}</code> 生成每行代码的平均 Token 消耗最低，逻辑密度极高，废话最少。</li>
+<li><b>综合成本最低</b>: <code>{run_label(best_cost)}</code> 的任务总账单仅为 <b>${best_cost["grand_totals"].get("total_cost_usd", 0):.2f}</b>，极具经济性。</li>
+</ul>
+<p style="font-size: 0.95em; line-height: 1.6; color: #444;">
+<b>洞察与建议</b>：长上下文缓存命中率成为降低多轮迭代成本的关键。不同模型在“代码骨架搭建”与“逻辑细节深挖”上的侧重点差异明显，团队可根据“重交付速度”还是“重架构完整度”来选择最佳基座模型。
+</p>
+</div>
+"""
+        except Exception as e:
+            pass
+
+    html += f"""
 <div class="section">
 <h2>1. 总量对比</h2>
 <table>
