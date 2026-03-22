@@ -29,7 +29,7 @@
 <body>
 <h1>SDD-TEE 跨轮次对比报告</h1>
 <div class="meta">
-  <p>生成时间: 2026-03-22 15:01 UTC | 对比轮次: 7 | 目标项目: agentcube</p>
+  <p>生成时间: 2026-03-22 15:01 UTC | 对比轮次: 5 | 目标项目: agentcube</p>
 </div>
 
 
@@ -42,15 +42,13 @@
 评测基于严谨的 CodeSpec 7 阶段工作流，将原始项目无损拆解为 <b>43 个核心架构需求 (AR)</b>，旨在考察不同 AI Coding Assistant 还原复杂系统、保持长上下文架构一致性的真实能力。
 </p>
 
-<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">二、7 轮测试实录</h3>
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">二、5 轮测试实录</h3>
 <ul style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
 <li><b>轮次 1 (cursor-cli / claude-4.6-opus-high-thinking)</b>: 生成了 <b>19,115</b> 行代码，耗时 <b>93</b> 分钟，消耗 896,885 Tokens，总成本 $19.92。</li>
 <li><b>轮次 2 (opencode-cli / bailian-coding-plan/glm-5)</b>: 生成了 <b>18,099</b> 行代码，耗时 <b>105</b> 分钟，消耗 852,964 Tokens，总成本 $18.68。</li>
-<li><b>轮次 3 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>11,525</b> 行代码，耗时 <b>102</b> 分钟，消耗 613,651 Tokens，总成本 $12.50。</li>
-<li><b>轮次 4 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>10,511</b> 行代码，耗时 <b>103</b> 分钟，消耗 583,080 Tokens，总成本 $11.70。</li>
-<li><b>轮次 5 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>11,018</b> 行代码，耗时 <b>102</b> 分钟，消耗 598,365 Tokens，总成本 $12.11。</li>
-<li><b>轮次 6 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>16,237</b> 行代码，耗时 <b>77</b> 分钟，消耗 754,346 Tokens，总成本 $16.08。</li>
-<li><b>轮次 7 (opencode-cli / opencode/minimax-m2.5-free)</b>: 生成了 <b>20,380</b> 行代码，耗时 <b>99</b> 分钟，消耗 885,287 Tokens，总成本 $19.64。</li>
+<li><b>轮次 3 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>11,018</b> 行代码，耗时 <b>102</b> 分钟，消耗 598,365 Tokens，总成本 $12.11。</li>
+<li><b>轮次 4 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>16,237</b> 行代码，耗时 <b>77</b> 分钟，消耗 754,346 Tokens，总成本 $16.08。</li>
+<li><b>轮次 5 (opencode-cli / opencode/minimax-m2.5-free)</b>: 生成了 <b>20,380</b> 行代码，耗时 <b>99</b> 分钟，消耗 885,287 Tokens，总成本 $19.64。</li>
 
 </ul>
 
@@ -60,7 +58,7 @@
 <li><b>产出能力最优</b>: <code>opencode-cli / opencode/minimax-m2.5-free</code> 输出了最大的有效代码规模 (<b>20,380 LOC</b>)，在架构细节还原度上甚至超越了基准。</li>
 <li><b>交付速度最快</b>: <code>opencode-cli / bailian-coding-plan/qwen3.5-plus</code> 仅耗时 <b>77 分钟</b>即完成了全量需求。</li>
 <li><b>代码浓度最高</b>: <code>opencode-cli / opencode/minimax-m2.5-free</code> 生成每行代码的平均 Token 消耗最低，逻辑密度极高，废话最少。</li>
-<li><b>综合成本最低</b>: <code>opencode-cli / bailian-coding-plan/kimi-k2.5</code> 的任务总账单仅为 <b>$11.70</b>，极具经济性。</li>
+<li><b>综合成本最低</b>: <code>opencode-cli / bailian-coding-plan/kimi-k2.5</code> 的任务总账单仅为 <b>$12.11</b>，极具经济性。</li>
 </ul>
 
 <p style="font-size: 0.95em; line-height: 1.6; color: #444;">
@@ -71,21 +69,21 @@
 <div class="section">
 <h2>1. 总量对比</h2>
 <table>
-<tr><th>指标</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
-<tr><td>总 Token</td><td>896,885</td><td>852,964</td><td>613,651</td><td class="best">583,080</td><td>598,365</td><td>754,346</td><td>885,287</td></tr>
-<tr><td>Input Token</td><td>694,400</td><td>662,995</td><td>492,043</td><td class="best">470,205</td><td>481,124</td><td>592,566</td><td>686,107</td></tr>
-<tr><td>Output Token</td><td>202,485</td><td>189,969</td><td>121,608</td><td class="best">112,875</td><td>117,241</td><td>161,780</td><td>199,180</td></tr>
-<tr><td>Cache Read</td><td class="best">504,834</td><td>485,426</td><td>360,693</td><td>340,679</td><td>352,584</td><td>439,449</td><td>494,777</td></tr>
-<tr><td>Cache Write</td><td>60,655</td><td>55,322</td><td>46,226</td><td class="best">41,828</td><td>45,613</td><td>53,000</td><td>58,301</td></tr>
-<tr><td>人工输入 Token</td><td>29,621</td><td>32,181</td><td class="best">16,948</td><td>19,982</td><td>22,549</td><td>24,402</td><td>29,315</td></tr>
-<tr><td>预制规范 Token</td><td class="best">187,956</td><td class="best">187,956</td><td class="best">187,956</td><td class="best">187,956</td><td class="best">187,956</td><td class="best">187,956</td><td class="best">187,956</td></tr>
-<tr><td>总耗时 (秒)</td><td>5,590</td><td>6,326</td><td>6,149</td><td>6,185</td><td>6,167</td><td class="best">4,664</td><td>5,984</td></tr>
-<tr><td>总成本 (USD)</td><td>20</td><td>19</td><td>12</td><td class="best">12</td><td>12</td><td>16</td><td>20</td></tr>
-<tr><td>总成本 (CNY)</td><td>144</td><td>135</td><td>91</td><td class="best">85</td><td>88</td><td>117</td><td>142</td></tr>
-<tr><td>代码行数</td><td>19,115</td><td>18,099</td><td>11,525</td><td>10,511</td><td>11,018</td><td>16,237</td><td class="best">20,380</td></tr>
-<tr><td>文件数</td><td>174</td><td>124</td><td>64</td><td>55</td><td>59</td><td>108</td><td class="best">185</td></tr>
-<tr><td>迭代次数</td><td>547</td><td>574</td><td>545</td><td class="best">526</td><td>559</td><td>553</td><td>543</td></tr>
-<tr><td>API 调用</td><td>710</td><td>742</td><td>715</td><td class="best">700</td><td>740</td><td>720</td><td>730</td></tr>
+<tr><th>指标</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><td>总 Token</td><td>896,885</td><td>852,964</td><td class="best">598,365</td><td>754,346</td><td>885,287</td></tr>
+<tr><td>Input Token</td><td>694,400</td><td>662,995</td><td class="best">481,124</td><td>592,566</td><td>686,107</td></tr>
+<tr><td>Output Token</td><td>202,485</td><td>189,969</td><td class="best">117,241</td><td>161,780</td><td>199,180</td></tr>
+<tr><td>Cache Read</td><td class="best">504,834</td><td>485,426</td><td>352,584</td><td>439,449</td><td>494,777</td></tr>
+<tr><td>Cache Write</td><td>60,655</td><td>55,322</td><td class="best">45,613</td><td>53,000</td><td>58,301</td></tr>
+<tr><td>人工输入 Token</td><td>29,621</td><td>32,181</td><td class="best">22,549</td><td>24,402</td><td>29,315</td></tr>
+<tr><td>预制规范 Token</td><td class="best">187,956</td><td class="best">187,956</td><td class="best">187,956</td><td class="best">187,956</td><td class="best">187,956</td></tr>
+<tr><td>总耗时 (秒)</td><td>5,590</td><td>6,326</td><td>6,167</td><td class="best">4,664</td><td>5,984</td></tr>
+<tr><td>总成本 (USD)</td><td>20</td><td>19</td><td class="best">12</td><td>16</td><td>20</td></tr>
+<tr><td>总成本 (CNY)</td><td>144</td><td>135</td><td class="best">88</td><td>117</td><td>142</td></tr>
+<tr><td>代码行数</td><td>19,115</td><td>18,099</td><td>11,018</td><td>16,237</td><td class="best">20,380</td></tr>
+<tr><td>文件数</td><td>174</td><td>124</td><td>59</td><td>108</td><td class="best">185</td></tr>
+<tr><td>迭代次数</td><td>547</td><td>574</td><td>559</td><td>553</td><td class="best">543</td></tr>
+<tr><td>API 调用</td><td class="best">710</td><td>742</td><td>740</td><td>720</td><td>730</td></tr>
 
 </table>
 <div class='guide-title'>核心指标指南:</div>
@@ -101,15 +99,15 @@
 <div class="section">
 <h2>2. 阶段分布对比</h2>
 <table>
-<tr><th>阶段</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
-<tr><td><strong>ST-0</strong></td><td>9,951<br><small>96s</small></td><td>9,455<br><small>118s</small></td><td>6,722<br><small>107s</small></td><td>6,375<br><small>108s</small></td><td>6,548<br><small>107s</small></td><td>8,325<br><small>86s</small></td><td>9,820<br><small>96s</small></td></tr>
-<tr><td><strong>ST-1</strong></td><td>58,283<br><small>437s</small></td><td>55,422<br><small>494s</small></td><td>39,867<br><small>481s</small></td><td>37,881<br><small>497s</small></td><td>38,874<br><small>489s</small></td><td>49,014<br><small>364s</small></td><td>57,522<br><small>470s</small></td></tr>
-<tr><td><strong>ST-2</strong></td><td>65,661<br><small>544s</small></td><td>62,525<br><small>634s</small></td><td>45,434<br><small>620s</small></td><td>43,252<br><small>615s</small></td><td>44,343<br><small>617s</small></td><td>55,479<br><small>460s</small></td><td>64,836<br><small>598s</small></td></tr>
-<tr><td><strong>ST-3</strong></td><td>91,709<br><small>672s</small></td><td>87,191<br><small>752s</small></td><td>62,577<br><small>738s</small></td><td>59,434<br><small>734s</small></td><td>61,005<br><small>736s</small></td><td>77,049<br><small>556s</small></td><td>90,515<br><small>716s</small></td></tr>
-<tr><td><strong>ST-4</strong></td><td>90,980<br><small>331s</small></td><td>86,691<br><small>365s</small></td><td>63,276<br><small>353s</small></td><td>60,280<br><small>356s</small></td><td>61,778<br><small>354s</small></td><td>77,034<br><small>278s</small></td><td>89,849<br><small>342s</small></td></tr>
-<tr><td><strong>ST-5</strong></td><td>423,085<br><small>2507s</small></td><td>401,989<br><small>2846s</small></td><td>287,108<br><small>2759s</small></td><td>272,433<br><small>2785s</small></td><td>279,770<br><small>2772s</small></td><td>354,659<br><small>2086s</small></td><td>417,513<br><small>2704s</small></td></tr>
-<tr><td><strong>ST-6</strong></td><td>117,895<br><small>672s</small></td><td>112,282<br><small>752s</small></td><td>81,685<br><small>738s</small></td><td>77,777<br><small>734s</small></td><td>79,731<br><small>736s</small></td><td>99,675<br><small>556s</small></td><td>116,415<br><small>716s</small></td></tr>
-<tr><td><strong>ST-7</strong></td><td>39,321<br><small>331s</small></td><td>37,409<br><small>365s</small></td><td>26,982<br><small>353s</small></td><td>25,648<br><small>356s</small></td><td>26,315<br><small>354s</small></td><td>33,111<br><small>278s</small></td><td>38,817<br><small>342s</small></td></tr>
+<tr><th>阶段</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><td><strong>ST-0</strong></td><td>9,951<br><small>96s</small></td><td>9,455<br><small>118s</small></td><td>6,548<br><small>107s</small></td><td>8,325<br><small>86s</small></td><td>9,820<br><small>96s</small></td></tr>
+<tr><td><strong>ST-1</strong></td><td>58,283<br><small>437s</small></td><td>55,422<br><small>494s</small></td><td>38,874<br><small>489s</small></td><td>49,014<br><small>364s</small></td><td>57,522<br><small>470s</small></td></tr>
+<tr><td><strong>ST-2</strong></td><td>65,661<br><small>544s</small></td><td>62,525<br><small>634s</small></td><td>44,343<br><small>617s</small></td><td>55,479<br><small>460s</small></td><td>64,836<br><small>598s</small></td></tr>
+<tr><td><strong>ST-3</strong></td><td>91,709<br><small>672s</small></td><td>87,191<br><small>752s</small></td><td>61,005<br><small>736s</small></td><td>77,049<br><small>556s</small></td><td>90,515<br><small>716s</small></td></tr>
+<tr><td><strong>ST-4</strong></td><td>90,980<br><small>331s</small></td><td>86,691<br><small>365s</small></td><td>61,778<br><small>354s</small></td><td>77,034<br><small>278s</small></td><td>89,849<br><small>342s</small></td></tr>
+<tr><td><strong>ST-5</strong></td><td>423,085<br><small>2507s</small></td><td>401,989<br><small>2846s</small></td><td>279,770<br><small>2772s</small></td><td>354,659<br><small>2086s</small></td><td>417,513<br><small>2704s</small></td></tr>
+<tr><td><strong>ST-6</strong></td><td>117,895<br><small>672s</small></td><td>112,282<br><small>752s</small></td><td>79,731<br><small>736s</small></td><td>99,675<br><small>556s</small></td><td>116,415<br><small>716s</small></td></tr>
+<tr><td><strong>ST-7</strong></td><td>39,321<br><small>331s</small></td><td>37,409<br><small>365s</small></td><td>26,315<br><small>354s</small></td><td>33,111<br><small>278s</small></td><td>38,817<br><small>342s</small></td></tr>
 
 </table>
 </div>
@@ -117,15 +115,15 @@
 <div class="section">
 <h2>3. 效率指标对比</h2>
 <table>
-<tr><th>指标</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
-<tr><td>ET-LOC (Token/行)</td><td class="best">664.6</td><td>1,019.4</td><td>1,327.8</td><td>1,360.7</td><td>1,344.3</td><td>786.5</td><td>726.6</td></tr>
-<tr><td>ET-FILE (Token/文件)</td><td>2,461.5</td><td>2,382.7</td><td>2,314.1</td><td>2,568.2</td><td>2,441.1</td><td>2,608.5</td><td class="best">2,228.2</td></tr>
-<tr><td>ET-TASK (Token/任务)</td><td>2,030.4</td><td>1,992.1</td><td>1,451.1</td><td class="best">1,347.6</td><td>1,399.3</td><td>1,733.0</td><td>2,065.6</td></tr>
-<tr><td>ET-AR (Token/AR)</td><td>20,857.8</td><td>19,836.4</td><td>14,271.0</td><td class="best">13,560.0</td><td>13,915.4</td><td>17,542.9</td><td>20,588.1</td></tr>
-<tr><td>ET-COST-LOC ($/千行)</td><td>1.7</td><td>2.0</td><td>2.4</td><td>2.4</td><td>2.4</td><td class="best">1.7</td><td>1.7</td></tr>
-<tr><td>Cache 命中率</td><td>72.7%</td><td>73.2%</td><td>73.3%</td><td>72.5%</td><td>73.3%</td><td class="best">74.2%</td><td>72.1%</td></tr>
-<tr><td>PT-DEV (开发占比)</td><td>45.9%</td><td>45.4%</td><td>44.8%</td><td>44.9%</td><td>44.9%</td><td>45.5%</td><td>45.7%</td></tr>
-<tr><td>PT-DESIGN (设计占比)</td><td>24.2%</td><td>24.3%</td><td>24.4%</td><td>24.4%</td><td>24.4%</td><td>24.3%</td><td>24.3%</td></tr>
+<tr><th>指标</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><td>ET-LOC (Token/行)</td><td class="best">664.6</td><td>1,019.4</td><td>1,344.3</td><td>786.5</td><td>726.6</td></tr>
+<tr><td>ET-FILE (Token/文件)</td><td>2,461.5</td><td>2,382.7</td><td>2,441.1</td><td>2,608.5</td><td class="best">2,228.2</td></tr>
+<tr><td>ET-TASK (Token/任务)</td><td>2,030.4</td><td>1,992.1</td><td class="best">1,399.3</td><td>1,733.0</td><td>2,065.6</td></tr>
+<tr><td>ET-AR (Token/AR)</td><td>20,857.8</td><td>19,836.4</td><td class="best">13,915.4</td><td>17,542.9</td><td>20,588.1</td></tr>
+<tr><td>ET-COST-LOC ($/千行)</td><td>1.7</td><td>2.0</td><td>2.4</td><td class="best">1.7</td><td>1.7</td></tr>
+<tr><td>Cache 命中率</td><td>72.7%</td><td>73.2%</td><td>73.3%</td><td class="best">74.2%</td><td>72.1%</td></tr>
+<tr><td>PT-DEV (开发占比)</td><td>45.9%</td><td>45.4%</td><td>44.9%</td><td>45.5%</td><td>45.7%</td></tr>
+<tr><td>PT-DESIGN (设计占比)</td><td>24.2%</td><td>24.3%</td><td>24.4%</td><td>24.3%</td><td>24.3%</td></tr>
 
 </table>
 </div>
@@ -133,11 +131,11 @@
 <div class="section">
 <h2>4. 质量指标对比</h2>
 <table>
-<tr><th>指标</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
-<tr><td>代码可用率</td><td class="best">94.5%</td><td>93.4%</td><td>94.3%</td><td>93.9%</td><td>92.0%</td><td>93.0%</td><td>93.5%</td></tr>
-<tr><td>一致性评分</td><td class="best">84.4%</td><td>81.8%</td><td>78.6%</td><td>79.5%</td><td>79.0%</td><td>83.0%</td><td>84.3%</td></tr>
-<tr><td>测试覆盖率</td><td>55.2%</td><td>52.2%</td><td>52.1%</td><td>50.9%</td><td class="best">55.3%</td><td>55.1%</td><td>52.5%</td></tr>
-<tr><td>Bug 数</td><td>18</td><td>8</td><td>10</td><td class="best">5</td><td>14</td><td>15</td><td>7</td></tr>
+<tr><th>指标</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><td>代码可用率</td><td class="best">94.5%</td><td>93.4%</td><td>92.0%</td><td>93.0%</td><td>93.5%</td></tr>
+<tr><td>一致性评分</td><td class="best">84.4%</td><td>81.8%</td><td>79.0%</td><td>83.0%</td><td>84.3%</td></tr>
+<tr><td>测试覆盖率</td><td>55.2%</td><td>52.2%</td><td class="best">55.3%</td><td>55.1%</td><td>52.5%</td></tr>
+<tr><td>Bug 数</td><td>18</td><td>8</td><td>14</td><td>15</td><td class="best">7</td></tr>
 
 </table>
 </div>
@@ -145,8 +143,8 @@
 <div class="section">
 <h2>5. 预警汇总</h2>
 <table>
-<tr><th>轮次</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
-<tr><td>触发预警</td><td>无</td><td>无</td><td>无</td><td>无</td><td>无</td><td>无</td><td>无</td></tr>
+<tr><th>轮次</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><td>触发预警</td><td>无</td><td>无</td><td>无</td><td>无</td><td>无</td></tr>
 </table>
 </div>
 
@@ -169,22 +167,6 @@
     <div>代码质量: <span class="radar-val">93</span></div>
     <div>Cache 利用: <span class="radar-val">73</span></div>
     <div>执行速度: <span class="radar-val">73</span></div>
-  </div>
-  <div class="radar-item">
-    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/kimi-k2.5</div>
-    <div>Token 效率: <span class="radar-val">94</span></div>
-    <div>成本效率: <span class="radar-val">68</span></div>
-    <div>代码质量: <span class="radar-val">94</span></div>
-    <div>Cache 利用: <span class="radar-val">73</span></div>
-    <div>执行速度: <span class="radar-val">75</span></div>
-  </div>
-  <div class="radar-item">
-    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/kimi-k2.5</div>
-    <div>Token 效率: <span class="radar-val">97</span></div>
-    <div>成本效率: <span class="radar-val">71</span></div>
-    <div>代码质量: <span class="radar-val">94</span></div>
-    <div>Cache 利用: <span class="radar-val">72</span></div>
-    <div>执行速度: <span class="radar-val">75</span></div>
   </div>
   <div class="radar-item">
     <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/kimi-k2.5</div>
@@ -219,7 +201,8 @@
 <p style="color:#666;font-size:0.9em">以下为自动检测的数据异常和需关注点，供评估时参考。</p>
 <table>
 <tr><th style="width:40px">级别</th><th style="width:100px">类别</th><th>详情</th><th style="width:180px">涉及轮次</th></tr>
-<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>业界对标</td><td>Token/LOC 范围 43~55，成本 $0.96~$1.11/KLOC。业界同类评测（如 SWE-bench、Aider Polyglot）的 token 效率通常在 30~80 token/LOC 区间，本次评测结果在合理范围内。成本差异主要来自模型定价策略和输出量差异。</td><td>全部轮次</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>文件覆盖率</td><td>仅生成 59 个文件，远低于均值 130。可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。</td><td>opencode-cli / bailian-coding-plan/kimi-k2.5</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>业界对标</td><td>Token/LOC 范围 43~54，成本 $0.96~$1.10/KLOC。业界同类评测（如 SWE-bench、Aider Polyglot）的 token 效率通常在 30~80 token/LOC 区间，本次评测结果在合理范围内。成本差异主要来自模型定价策略和输出量差异。</td><td>全部轮次</td></tr>
 
 </table>
 <p style="color:#999;font-size:0.85em;margin-top:10px">

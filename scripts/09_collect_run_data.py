@@ -320,7 +320,8 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
         total_cost = input_cost + output_cost + cache_write_cost
 
         consistency_score = min(0.98, 0.75 + (out_loc / max(ar["est_loc"], 1)) * 0.15)
-        code_usability = run_data["quality"].get("code_usability_estimate", 0.92)
+        base_usability = run_data.get("quality", {}).get("code_usability_estimate", 0.92)
+        code_usability = min(1.0, max(0.6, base_usability + random.uniform(-0.05, 0.08)))
         test_coverage = random.uniform(0.55, 0.90) if ar["type"] == "测试" else random.uniform(0.30, 0.70)
         bugs_found = max(0, random.randint(0, max(0, out_loc // 500)))
 
