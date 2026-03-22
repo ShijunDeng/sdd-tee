@@ -110,5 +110,6 @@ sed -i 's/× 5 轮次/× 6 轮次/g' CONTEXT.md || true
 # 4. 提交保存
 git add .
 git commit -m "Auto-complete reinforced evaluation (V3 Guarded) for $MODEL" || true
+git pull --rebase origin main || true
 git push origin main || true
 echo "Supervisor pipeline fully completed."
