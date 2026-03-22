@@ -1,0 +1,14 @@
+╔══════════════════════════════════════════════════════════╗
+║  SDD-TEE: Specification-Driven Development Evaluation   ║
+╚══════════════════════════════════════════════════════════╝
+  Tool:      opencode-cli
+  Model:     bailian-coding-plan/kimi-k2.5
+  Specs:     specs
+  Workspace: /home/dsj/benchmark/workspaces/opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T084625Z
+  Run ID:    opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T084625Z
+
+  ✓ Tool validated: opencode-cli
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Round 1 / 4: AR-001 AR-002 AR-003 AR-004 AR-005 AR-006 AR-007 AR-008 AR-009 AR-010 AR-011
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -1,0 +1,10 @@
+╔══════════════════════════════════════════════════════════╗
+║  SDD-TEE: Specification-Driven Development Evaluation   ║
+╚══════════════════════════════════════════════════════════╝
+  Tool:      gemini-cli
+  Model:     gemini-3.1-pro-preview
+  Specs:     specs
+  Workspace: /home/dsj/benchmark/workspaces/gemini-cli_gemini-3.1-pro-preview_20260322T082417Z
+  Run ID:    gemini-cli_gemini-3.1-pro-preview_20260322T082417Z
+
+  ✓ Tool validated: gemini-cli

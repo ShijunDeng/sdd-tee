@@ -1,0 +1,111 @@
+YOLO mode is enabled. All tool calls will be automatically approved.
+Keychain initialization encountered an error: libsecret-1.so.0: cannot open shared object file: No such file or directory
+Using FileKeychain fallback for secure storage.
+Loaded cached credentials.
+YOLO mode is enabled. All tool calls will be automatically approved.
+{
+  "session_id": "0a4b8535-a36b-43cf-94cd-bfd400564f39",
+  "response": "I have read the relevant project specs and formulated the implementation plan. I've successfully created `PLAN.md` containing all the details for Phase 1, specifically addressing Architectural Requirements AR-001 through AR-011.\n\nThe plan covers:\n- The projected **directory structure**.\n- A comprehensive list of required **dependencies**.\n- **File list per AR** alongside the specific **interfaces** they must export.\n- A breakdown of the **Go packages** (no Python modules or YAML manifests are required for these specific ARs).\n- A planned list of **unit test files** (`*_test.go`) corresponding to each package to ensure all structs, endpoints, and behaviors are covered.\n\nLet me know if you are ready to proceed to the next phase or if you need any adjustments to the plan!",
+  "stats": {
+    "models": {
+      "gemini-3.1-pro-preview": {
+        "api": {
+          "totalRequests": 7,
+          "totalErrors": 0,
+          "totalLatencyMs": 117156
+        },
+        "tokens": {
+          "input": 47035,
+          "prompt": 91954,
+          "candidates": 2030,
+          "total": 100220,
+          "cached": 44919,
+          "thoughts": 6236,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 7,
+            "totalErrors": 0,
+            "totalLatencyMs": 117156,
+            "tokens": {
+              "input": 47035,
+              "prompt": 91954,
+              "candidates": 2030,
+              "total": 100220,
+              "cached": 44919,
+              "thoughts": 6236,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 12,
+      "totalSuccess": 12,
+      "totalFail": 0,
+      "totalDurationMs": 252,
+      "totalDecisions": {
+        "accept": 12,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "read_file": {
+          "count": 3,
+          "success": 3,
+          "fail": 0,
+          "durationMs": 51,
+          "decisions": {
+            "accept": 3,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "grep_search": {
+          "count": 7,
+          "success": 7,
+          "fail": 0,
+          "durationMs": 141,
+          "decisions": {
+            "accept": 7,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "run_shell_command": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 50,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "write_file": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 10,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 113,
+      "totalLinesRemoved": 0
+    }
+  }
+}
