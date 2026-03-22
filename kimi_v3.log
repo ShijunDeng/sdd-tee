@@ -57,3 +57,14 @@
   [Gate] LOC Delta after Implementation: 126 lines.
   [Gate] Verification Passed: Output is realistic.
   [round4_verify] Executing opencode-cli ...
+  [round4_verify] Completed in 600s.
+
+╔══════════════════════════════════════════════════════════╗
+║  V3 REALISM-GUARD EVALUATION COMPLETE                    ║
+╚══════════════════════════════════════════════════════════╝
+  Tool:     opencode-cli
+  Model:    bailian-coding-plan/kimi-k2.5
+  Duration: 7434s
+  Final LOC: 4480
+  Logs:     /home/dsj/benchmark/results/runs/opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T110243Z_logs
+  Note: Use scripts/03_sdd_develop.sh for default execution, or manually collect data.
