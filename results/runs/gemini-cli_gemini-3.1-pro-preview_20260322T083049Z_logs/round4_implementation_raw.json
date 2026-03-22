@@ -1,0 +1,176 @@
+YOLO mode is enabled. All tool calls will be automatically approved.
+Keychain initialization encountered an error: libsecret-1.so.0: cannot open shared object file: No such file or directory
+Using FileKeychain fallback for secure storage.
+Loaded cached credentials.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Bash command parsing error detected for command: << 'EOF' > run_debug.py
+from typer.testing import CliRunner
+from agentcube.cli.main import app
+runner = CliRunner()
+result = runner.invoke(app, ["pack", "--workspace", "myws", "--language", "python", "--agent-name", "test-agent"])
+print(result.stdout)
+if result.exception:
+    print(result.exception)
+EOF Syntax Errors: [
+  `Error node: "<< 'EOF' > run_debug.py\n` +
+    'from typer.testing import CliRunner\n' +
+    'from agentcube.cli.main import app\n' +
+    'runner = CliRunner()\n' +
+    'result = runner.invoke(app, ["pack", "--workspace", "myws", "--language", "python", "--agent-name", "test-agent"])\n' +
+    'print(result.stdout)\n' +
+    'if result.exception:\n' +
+    '    print(result.exception)\n' +
+    'EOF" at 0:0',
+  'Error node: "()" at 3:18',
+  'Missing node: "" at 4:22'
+]
+{
+  "session_id": "6b7db8e9-71ed-4cd6-9d82-0b08e24e1ad6",
+  "response": "I have implemented and fully verified the requested Architectural Requirements (AR-034 to AR-043). \n\nHere is a summary of the completed work:\n* **AR-034 (CLI Metadata)**: Developed the `AgentMetadata` pydantic model and `MetadataService` for managing `agent_metadata.yaml` serialization.\n* **AR-035 (Docker Service)**: Created `DockerService` using local subprocess automation to handle Docker build and push commands.\n* **AR-036 (K8s Provider)**: Created `KubernetesProvider` for creating Deployments and checking replica readiness against a standard Kubernetes cluster.\n* **AR-037 (AgentCube Provider)**: Designed `AgentCubeProvider` using `CustomObjectsApi` for provisioning custom `AgentRuntime` resources.\n* **AR-038 (Status Operations)**: Built `StatusRuntime` utilizing table formatting to resolve status endpoints and deployment phases dynamically based on the configured provider.\n* **AR-039 (Controller)**: Implemented `CodeInterpreterController` to orchestrate sandbox workloads during reconciliation loops.\n* **AR-040 (Warm Pool)**: Integrated `WarmPoolManager` handling synchronous sizing and scaling functionality for the controller. \n* **AR-041 (RBAC/ServiceAccounts)**: Scaffolding Kubernetes Helm templates with required clustered RBAC permissions for `volcano.sh` and `runtime.agentcube.io` API groups.\n* **AR-042 (Volcano Integration)**: Set up standard volcano.sh Queue/Job scheduling abstractions configurable through Helm values.\n* **AR-043 (E2E Tests)**: Provided e2e yaml configurations to spawn mocked CodeInterpreter setups to exercise scaling thresholds.\n\nAll Python and Go test suites have been verified with robust mocking, passing with `pytest cmd/cli/tests` and `go test ./pkg/workloadmanager/...` respectively.",
+  "stats": {
+    "models": {
+      "gemini-3.1-pro-preview": {
+        "api": {
+          "totalRequests": 38,
+          "totalErrors": 0,
+          "totalLatencyMs": 367776
+        },
+        "tokens": {
+          "input": 283960,
+          "prompt": 1389640,
+          "candidates": 14366,
+          "total": 1416271,
+          "cached": 1105680,
+          "thoughts": 12265,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 38,
+            "totalErrors": 0,
+            "totalLatencyMs": 367776,
+            "tokens": {
+              "input": 283960,
+              "prompt": 1389640,
+              "candidates": 14366,
+              "total": 1416271,
+              "cached": 1105680,
+              "thoughts": 12265,
+              "tool": 0
+            }
+          }
+        }
+      },
+      "gemini-3-flash-preview": {
+        "api": {
+          "totalRequests": 1,
+          "totalErrors": 0,
+          "totalLatencyMs": 6979
+        },
+        "tokens": {
+          "input": 15485,
+          "prompt": 15485,
+          "candidates": 155,
+          "total": 16263,
+          "cached": 0,
+          "thoughts": 623,
+          "tool": 0
+        },
+        "roles": {
+          "utility_loop_detector": {
+            "totalRequests": 1,
+            "totalErrors": 0,
+            "totalLatencyMs": 6979,
+            "tokens": {
+              "input": 15485,
+              "prompt": 15485,
+              "candidates": 155,
+              "total": 16263,
+              "cached": 0,
+              "thoughts": 623,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 64,
+      "totalSuccess": 64,
+      "totalFail": 0,
+      "totalDurationMs": 19002,
+      "totalDecisions": {
+        "accept": 64,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "grep_search": {
+          "count": 10,
+          "success": 10,
+          "fail": 0,
+          "durationMs": 247,
+          "decisions": {
+            "accept": 10,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "read_file": {
+          "count": 2,
+          "success": 2,
+          "fail": 0,
+          "durationMs": 10,
+          "decisions": {
+            "accept": 2,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "run_shell_command": {
+          "count": 13,
+          "success": 13,
+          "fail": 0,
+          "durationMs": 18131,
+          "decisions": {
+            "accept": 13,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "write_file": {
+          "count": 32,
+          "success": 32,
+          "fail": 0,
+          "durationMs": 524,
+          "decisions": {
+            "accept": 32,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "replace": {
+          "count": 7,
+          "success": 7,
+          "fail": 0,
+          "durationMs": 90,
+          "decisions": {
+            "accept": 7,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 791,
+      "totalLinesRemoved": 257
+    }
+  }
+}

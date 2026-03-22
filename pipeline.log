@@ -17,3 +17,71 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Round 2 / 4: AR-012 AR-013 AR-014 AR-015 AR-016 AR-017 AR-018 AR-019 AR-020 AR-021 AR-022
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Round 2 complete: 994s
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Round 3 / 4: AR-023 AR-024 AR-025 AR-026 AR-027 AR-028 AR-029 AR-030 AR-031 AR-032 AR-033
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Round 3 complete: 863s
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Round 4 / 4: AR-034 AR-035 AR-036 AR-037 AR-038 AR-039 AR-040 AR-041 AR-042 AR-043
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Round 4 complete: 1039s
+
+Result saved → /home/dsj/benchmark/results/runs/gemini-cli_gemini-3.1-pro-preview_20260322T083049Z.json
+  Files: 4134, LOC: 1,759,689
+  Tokens: in=0 out=0 cache_read=0
+  Cost: $0.0000
+
+╔══════════════════════════════════════════════════════════╗
+║  SDD-TEE Evaluation Complete                            ║
+╚══════════════════════════════════════════════════════════╝
+  Tool:     gemini-cli
+  Model:    gemini-3.1-pro-preview
+  Duration: 4967s (82m47s)
+  Result:   /home/dsj/benchmark/results/runs/gemini-cli_gemini-3.1-pro-preview_20260322T083049Z.json
+
+Next steps:
+  make collect TOOL=gemini-cli MODEL=gemini-3.1-pro-preview
+  make report
+Collecting: results/runs/gemini-cli_gemini-3.1-pro-preview_20260322T083049Z.json + workspaces/opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T084625Z
+[09] Collecting run data...
+  Run JSON: results/runs/gemini-cli_gemini-3.1-pro-preview_20260322T083049Z.json
+  Workspace: workspaces/opencode-cli_bailian-coding-plan_kimi-k2.5_20260322T084625Z
+  Specs: /home/dsj/benchmark/specs
+  Token counter: litellm
+  Spec files: 22, total tokens: 58,859
+  Generated files: 36, LOC: 6,591, output tokens: 81,025
+
+[09] Results saved → /home/dsj/benchmark/results/runs/gemini-cli_gemini-3.1-pro-preview_20260322T083049Z_full.json
+  ARs: 43
+  Total tokens: 471,441 (in: 390,447, out: 80,994)
+  Cache read: 285,787 (73%)
+  Spec context: 187,956
+  Cost: $8.76 (¥64)
+  LOC: 6,591, Files: 36
+  Duration: 1h19m
+[07] Validating data against SDD-TEE schema...
+[07] Schema: PASS (43 ARs)
+[07] Data → /home/dsj/benchmark/results/runs/gemini-cli_gemini-3.1-pro-preview_20260322T083049Z_full.json
+Traceback (most recent call last):
+  File "/home/dsj/benchmark/scripts/07_sdd_tee_report.py", line 1000, in <module>
+    main()
+  File "/home/dsj/benchmark/scripts/07_sdd_tee_report.py", line 978, in main
+    html = render_html(data)
+  File "/home/dsj/benchmark/scripts/07_sdd_tee_report.py", line 593, in render_html
+    .metric-guide { margin-top: 12px; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e2e5e9; }
+NameError: name 'margin' is not defined
+Report generated: results/reports/gemini-cli_gemini-3.1-pro-preview_20260322T083049Z_report.html
+python3 scripts/11_compare_runs.py --output results/reports/compare_report.html
+[11] Loading 7 run(s)...
+  • cursor-cli / claude-4.6-opus-high-thinking (cursor-cli_claude-4.6-opus-high-thinking_20260321T090515Z_full.json)
+  • gemini-cli / gemini-3.1-pro-preview (gemini-cli_gemini-3.1-pro-preview_20260322T083049Z_full.json)
+  • gemini-cli / gemini-3.1-pro-preview (gemini-cli_gemini-3.1-pro-preview_ESTIMATED_full.json)
+  • opencode-cli / bailian-coding-plan/glm-5 (opencode-cli_bailian-coding-plan_glm-5_20260321T114208Z_full.json)
+  • opencode-cli / bailian-coding-plan/kimi-k2.5 (opencode-cli_bailian-coding-plan_kimi-k2.5_20260321T141458Z_full.json)
+  • opencode-cli / bailian-coding-plan/qwen3.5-plus (opencode-cli_bailian-coding-plan_qwen3.5-plus_20260321T190016Z_full.json)
+  • opencode-cli / opencode/minimax-m2.5-free (opencode-cli_opencode_minimax-m2.5-free_20260321T170726Z_full.json)
+
+[11] Comparison report → results/reports/compare_report.html
