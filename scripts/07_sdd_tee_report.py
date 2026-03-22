@@ -588,6 +588,16 @@ def render_html(data):
   .toc {{ background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 20px; margin-bottom: 20px; columns: 2; }}
   .toc a {{ color: var(--primary); text-decoration: none; display: block; padding: 2px 0; font-size: 13px; }}
   .toc a:hover {{ text-decoration: underline; }}
+  
+
+  .metric-guide { margin-top: 12px; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e2e5e9; }
+  .metric-guide h4 { font-size: 13px; color: #1a73e8; margin-bottom: 8px; border: none; }
+  .guide-grid { display: grid; grid-template-columns: 120px 1fr; gap: 8px; font-size: 12px; }
+  .guide-item-name { font-weight: bold; color: #374151; }
+  .guide-item-desc { color: #6b7280; }
+  .best-tag { color: #34a853; font-weight: bold; }
+
+
   .note {{ background: #fffde7; border-left: 4px solid var(--orange); padding: 10px 14px; margin: 10px 0; border-radius: 0 8px 8px 0; font-size: 13px; }}
   .legend {{ display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; margin: 8px 0; }}
   .legend span {{ display: flex; align-items: center; gap: 4px; }}
@@ -712,6 +722,13 @@ def render_html(data):
       预制规范指前置工作逆向生成的 OpenSpec 规范文档内容，在 ST-3/ST-4/ST-5/ST-6 阶段作为 input context 注入，
       计入 input tokens 但单独标注，不计入人工输入 (RT-HUMAN)。
     </p>
+<div class="metric-guide">
+  <h4>角色指标指南:</h4>
+  <div class="guide-grid">
+    <div class="guide-item-name">RT-RATIO</div><div class="guide-item-desc">人机 Token 比（人工输入 / AI 生成）。<span class="best-tag">越低越好</span>，代表 AI 独立完成度高。</div>
+    <div class="guide-item-name">RT-ITER</div><div class="guide-item-desc">平均交互轮数。越低代表模型单次意图理解越准确。</div>
+  </div>
+</div>
   </div>
 </div>
 
@@ -724,6 +741,13 @@ def render_html(data):
   <div class="stat"><div class="v">{gt['total_tokens'] / max(gt['ar_count'], 1):,.0f}</div><div class="l">ET-AR (Token/AR)</div></div>
   <div class="stat"><div class="v">{gt['total_tokens'] / max(gt['total_duration_seconds'] / 3600, 0.01):,.0f}</div><div class="l">ET-TIME (Token/h)</div></div>
   <div class="stat"><div class="v">${gt['total_cost_usd'] / max(gt['total_loc'] / 1000, 0.01):.2f}</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
+</div>
+<div class="metric-guide">
+  <h4>效率指标指南:</h4>
+  <div class="guide-grid">
+    <div class="guide-item-name">ET-LOC</div><div class="guide-item-desc">生成每行代码所需的 Token。 <span class="best-tag">越低越好</span>，反映代码逻辑的浓缩度与生成效率。</div>
+    <div class="guide-item-name">ET-COST-LOC</div><div class="guide-item-desc">每千行代码的实际金钱成本。受模型定价与缓存命中率共同影响。</div>
+  </div>
 </div>
 
 <div class="card">
@@ -759,6 +783,13 @@ def render_html(data):
       <tr><td>QT-BUG</td><td>Token / Bug 数 (反向)</td><td style="text-align:right">{sa['ST-5']['total_tokens'] / max(sum(r['quality']['bugs_found'] for r in ars), 1):,.0f}</td></tr>
     </tbody>
   </table>
+</div>
+<div class="metric-guide">
+  <h4>质量指标指南:</h4>
+  <div class="guide-grid">
+    <div class="guide-item-name">一致性得分</div><div class="guide-item-desc"><span class="best-tag">越高越好</span>。基于跨模块接口调用的准确性评估，反映对复杂架构的把控。</div>
+    <div class="guide-item-name">代码可用率</div><div class="guide-item-desc"><span class="best-tag">越高越好</span>。通过编译或静态语法检查的代码占比。</div>
+  </div>
 </div>
 
 <!-- ===================== 6. DISTRIBUTION ===================== -->

@@ -212,6 +212,14 @@ def render_compare_html(runs):
 <tr><th>指标</th>{headers}</tr>
 {gt_rows}
 </table>
+<div class='guide-title'>核心指标指南:</div>
+<table class='guide-table'>
+  <tr><td width='120'><b>ET-LOC</b></td><td>总 Token / 生成代码行数 (LOC)。<b>越低越好</b>，代表模型生成代码的逻辑密度高，废话少。</td></tr>
+  <tr><td><b>RT-RATIO</b></td><td>人工输入 Token / AI 生成 Token。<b>越低越好</b>，代表高度自动化，AI 在无人工干预下完成任务的能力强。</td></tr>
+  <tr><td><b>Cache 命中率</b></td><td>缓存命中 Token / 总输入 Token。<b>越高越好</b>，代表对长上下文的利用极其高效，大幅降低重复输入成本。</td></tr>
+  <tr><td><b>一致性评分</b></td><td>跨模块/文件接口调用的一致性。<b>越高越好</b>，代表模型对复杂工程架构的整体把控能力。</td></tr>
+  <tr><td><b>代码可用率</b></td><td>通过编译/静态检查的代码占比。<b>越高越好</b>，代表生成的代码具有实际生产价值。</td></tr>
+</table>
 </div>
 
 <div class="section">
