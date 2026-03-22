@@ -1,0 +1,5 @@
+`PLAN.md` is updated for this planning round. It now remaps the spec bundles to the requested `AR-012` through `AR-022`, documents the end-state directory structure, lists the precise Go packages, Python modules, YAML manifests, dependencies, and enumerates the file-by-file implementation surface and corresponding test files for each AR.
+
+I also added a short workspace snapshot so the plan is explicit about the current repo being only partially scaffolded. The main planning assumption is noted in the file: the specs do not define `AR-012` to `AR-022` directly, so the 11 bundles in `specs/` are mapped sequentially to those AR IDs. Only `PLAN.md` was changed in this phase.
+
+If you want, I can start Phase 2 next and implement the foundation in `AR-012` and `AR-013` first.

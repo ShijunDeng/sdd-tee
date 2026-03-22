@@ -1,0 +1,5 @@
+`PLAN.md` has been created at the repo root and now captures the Phase 1 design for `AR-001` through `AR-011`. It includes the target directory structure, the per-AR file inventory, planned interfaces, external dependencies, the full Go/Python/YAML manifest list, and the matching `*_test.go` / `test_*.py` files for each package or module area.
+
+One important note is recorded in the plan: the specs don’t explicitly label the AR IDs, so I mapped `AR-001` to `AR-011` to the 11 spec bundles in `specs/` and documented that assumption in `PLAN.md`. I did not run builds or tests, since this round was planning-only.
+
+If you want, I can move directly into Phase 2 and start scaffolding the shared root files plus `AR-001` implementation from this plan.
