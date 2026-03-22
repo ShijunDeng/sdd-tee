@@ -1,0 +1,123 @@
+YOLO mode is enabled. All tool calls will be automatically approved.
+Keychain initialization encountered an error: libsecret-1.so.0: cannot open shared object file: No such file or directory
+Using FileKeychain fallback for secure storage.
+Loaded cached credentials.
+YOLO mode is enabled. All tool calls will be automatically approved.
+{
+  "session_id": "ed95829f-021e-40f7-958b-52cf5af72172",
+  "response": "I have successfully implemented the requested Architectural Requirements (AR-034 to AR-043) by creating and updating the necessary files with production-ready code.\n\nHere is a summary of the implemented changes based on the specifications:\n\n- **AR-034 (`pkg/api/doc.go`)**: Added package-level documentation describing the API structs and endpoints.\n- **AR-035 (`pkg/common/types/constants.go`)**: Defined standard version strings and namespace constants used across types.\n- **AR-036 (`pkg/workloadmanager/constants.go`)**: Declared default component names and configuration values (like port and sync period) for the workload manager.\n- **AR-037 (`cmd/cli/agentcube/models/__init__.py`)**: Initialized the Python models package and exposed the `MetadataOptions` model directly.\n- **AR-038 (`pkg/api/constants.go`)**: Defined API-level constants for versioning, default paths, and the routing prefix.\n- **AR-039 (`pkg/router/constants.go`)**: Declared the default component name and default port (`8081`) for the router.\n- **AR-040 (`pkg/picod/constants.go`)**: Defined constants for the picod daemon, including the default daemon port (`8082`) and its internal component ID.\n- **AR-041 (`pkg/agentd/constants.go`)**: Set default cleanup timeouts and component identifiers for the `agentd` cleanup utility.\n- **AR-042 (`pkg/store/constants.go`)**: Defined default component names for both the general store and its backend (`store` and `store-backend`).\n- **AR-043 (`pkg/cli/doc.go`)**: Detailed package-level documentation for the Go-based CLI operations and command structures.\n\nAll files are written physically to disk, complete, formatted, and validated to ensure no build or syntax errors were introduced.",
+  "stats": {
+    "models": {
+      "gemini-3.1-pro-preview": {
+        "api": {
+          "totalRequests": 12,
+          "totalErrors": 0,
+          "totalLatencyMs": 268114
+        },
+        "tokens": {
+          "input": 55683,
+          "prompt": 151599,
+          "candidates": 3080,
+          "total": 160139,
+          "cached": 95916,
+          "thoughts": 5460,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 12,
+            "totalErrors": 0,
+            "totalLatencyMs": 268114,
+            "tokens": {
+              "input": 55683,
+              "prompt": 151599,
+              "candidates": 3080,
+              "total": 160139,
+              "cached": 95916,
+              "thoughts": 5460,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 20,
+      "totalSuccess": 20,
+      "totalFail": 0,
+      "totalDurationMs": 11128,
+      "totalDecisions": {
+        "accept": 20,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "run_shell_command": {
+          "count": 7,
+          "success": 7,
+          "fail": 0,
+          "durationMs": 10725,
+          "decisions": {
+            "accept": 7,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "grep_search": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 72,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "list_directory": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 6,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "read_file": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 6,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "write_file": {
+          "count": 10,
+          "success": 10,
+          "fail": 0,
+          "durationMs": 319,
+          "decisions": {
+            "accept": 10,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 62,
+      "totalLinesRemoved": 26
+    }
+  }
+}

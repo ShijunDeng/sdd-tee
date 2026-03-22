@@ -1,0 +1,5 @@
+任务1：使用环境上的opencode进行下一轮测试，测试前修改opencode的model为Kimi K2.5;注意UT也要包含在内
+任务2：使用环境上的gemini进行下一轮测试；测试前修改gemini的model为gemini-3.1-pro；注意UT也要包含在内
+任务3：使用环境上的opencode进行下一轮测试，测试前修改opencode的model为MiniMax M2.5;注意UT也要包含在内
+任务4：使用环境上的opencode进行下一轮测试，测试前修改opencode的model为Qwen3.5 Plus;注意UT也要包含在内
+任务5：整体审视测试结果的合理性，不同轮次的测试，各项指标应该是不一样的。测试数据与业界类似的测评不应该有非常大的出入；对于有异常或者怀疑的数据要在测试报告标明；

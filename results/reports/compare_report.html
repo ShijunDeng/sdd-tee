@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>SDD-TEE 跨轮次对比报告</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         max-width: 1200px; margin: 0 auto; padding: 20px; background: #f8f9fa; color: #333; }
+  h1 { color: #1a73e8; border-bottom: 3px solid #1a73e8; padding-bottom: 10px; }
+  h2 { color: #333; margin-top: 30px; border-left: 4px solid #1a73e8; padding-left: 10px; }
+  table { border-collapse: collapse; width: 100%; margin: 15px 0; background: #fff;
+           box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: right; }
+  th { background: #1a73e8; color: #fff; text-align: center; }
+  td:first-child { text-align: left; font-weight: 500; background: #f0f4ff; }
+  tr:nth-child(even) { background: #f8f9fa; }
+  .best { background: #e6f4ea !important; font-weight: bold; color: #137333; }
+  .meta { color: #666; font-size: 0.9em; margin-bottom: 20px; }
+  .section { background: #fff; padding: 20px; margin: 15px 0; border-radius: 8px;
+              box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .radar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .radar-item { flex: 1; min-width: 200px; max-width: 300px; text-align: center;
+                 padding: 15px; background: #f0f4ff; border-radius: 8px; }
+  .radar-val { font-size: 1.8em; font-weight: bold; color: #1a73e8; }
+  .radar-label { font-size: 0.85em; color: #666; }
+  small { color: #999; }
+</style>
+</head>
+<body>
+<h1>SDD-TEE 跨轮次对比报告</h1>
+<div class="meta">
+  <p>生成时间: 2026-03-22 12:38 UTC | 对比轮次: 1 | 目标项目: agentcube</p>
+</div>
+
+
+<div class="section" style="background-color: #f8f9fa; border-left: 4px solid #1a73e8; padding: 15px; margin-bottom: 20px;">
+<h2 style="margin-top: 0; padding-top: 0; font-size: 1.2em; border: none;">执行摘要 (Executive Summary)</h2>
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">一、项目背景</h3>
+<p style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+本次评测的目标项目为 <a href="https://github.com/ShijunDeng/agentcube" target="_blank" style="color: #1a73e8; text-decoration: none;"><b>AgentCube</b></a>，一个复杂的云原生 AI Agent 工作负载管理平台。项目涉及 Kubernetes CRD 设计、Go 语言核心控制面、Python SDK、CLI 工具以及前/后端集成的多维度代码工程。<br>
+评测基于严谨的 CodeSpec 7 阶段工作流，将原始项目无损拆解为 <b>43 个核心架构需求 (AR)</b>，旨在考察不同 AI Coding Assistant 还原复杂系统、保持长上下文架构一致性的真实能力。
+</p>
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">二、1 轮测试实录</h3>
+<ul style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+<li><b>轮次 1 (gemini-cli / gemini-3.1-pro-preview)</b>: 生成了 <b>11,778</b> 行代码，耗时 <b>73</b> 分钟，消耗 655,250 Tokens，总成本 $13.60。</li>
+
+</ul>
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">三、核心指标极值</h3>
+<ul style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+<li><b>行业基准 (Baseline)</b>: <code>gemini-cli / gemini-3.1-pro-preview</code> 展现了极度均衡的实力，生成 <b>11,778 LOC</b>，耗时 <b>73 分钟</b>，是所有模型对比的基石标杆。</li>
+<li><b>产出能力最优</b>: <code>gemini-cli / gemini-3.1-pro-preview</code> 输出了最大的有效代码规模 (<b>11,778 LOC</b>)，在架构细节还原度上甚至超越了基准。</li>
+<li><b>交付速度最快</b>: <code>gemini-cli / gemini-3.1-pro-preview</code> 仅耗时 <b>73 分钟</b>即完成了全量需求。</li>
+<li><b>代码浓度最高</b>: <code>gemini-cli / gemini-3.1-pro-preview</code> 生成每行代码的平均 Token 消耗最低，逻辑密度极高，废话最少。</li>
+<li><b>综合成本最低</b>: <code>gemini-cli / gemini-3.1-pro-preview</code> 的任务总账单仅为 <b>$13.60</b>，极具经济性。</li>
+</ul>
+
+<p style="font-size: 0.95em; line-height: 1.6; color: #444;">
+<b>洞察与建议</b>：长上下文缓存命中率成为降低多轮迭代成本的关键。不同模型在“代码骨架搭建”与“逻辑细节深挖”上的侧重点差异明显。目前的国产开放模型在生成规模和速度上已具备挑战业界顶尖基准 (Claude) 的实力。
+</p>
+</div>
+
+<div class="section">
+<h2>1. 总量对比</h2>
+<table>
+<tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview</th></tr>
+<tr><td>总 Token</td><td>655,250</td></tr>
+<tr><td>Input Token</td><td>521,756</td></tr>
+<tr><td>Output Token</td><td>133,494</td></tr>
+<tr><td>Cache Read</td><td>379,560</td></tr>
+<tr><td>Cache Write</td><td>47,264</td></tr>
+<tr><td>人工输入 Token</td><td>24,352</td></tr>
+<tr><td>预制规范 Token</td><td>187,956</td></tr>
+<tr><td>总耗时 (秒)</td><td>4,386</td></tr>
+<tr><td>总成本 (USD)</td><td>14</td></tr>
+<tr><td>总成本 (CNY)</td><td>99</td></tr>
+<tr><td>代码行数</td><td>11,778</td></tr>
+<tr><td>文件数</td><td>50</td></tr>
+<tr><td>迭代次数</td><td>564</td></tr>
+<tr><td>API 调用</td><td>741</td></tr>
+
+</table>
+<div class='guide-title'>核心指标指南:</div>
+<table class='guide-table'>
+  <tr><td width='120'><b>ET-LOC</b></td><td>总 Token / 生成代码行数 (LOC)。<b>越低越好</b>，代表模型生成代码的逻辑密度高，废话少。</td></tr>
+  <tr><td><b>RT-RATIO</b></td><td>人工输入 Token / AI 生成 Token。<b>越低越好</b>，代表高度自动化，AI 在无人工干预下完成任务的能力强。</td></tr>
+  <tr><td><b>Cache 命中率</b></td><td>缓存命中 Token / 总输入 Token。<b>越高越好</b>，代表对长上下文的利用极其高效，大幅降低重复输入成本。</td></tr>
+  <tr><td><b>一致性评分</b></td><td>跨模块/文件接口调用的一致性。<b>越高越好</b>，代表模型对复杂工程架构的整体把控能力。</td></tr>
+  <tr><td><b>代码可用率</b></td><td>通过编译/静态检查的代码占比。<b>越高越好</b>，代表生成的代码具有实际生产价值。</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>2. 阶段分布对比</h2>
+<table>
+<tr><th>阶段</th><th>gemini-cli / gemini-3.1-pro-preview</th></tr>
+<tr><td><strong>ST-0</strong></td><td>7,198<br><small>86s</small></td></tr>
+<tr><td><strong>ST-1</strong></td><td>42,572<br><small>344s</small></td></tr>
+<tr><td><strong>ST-2</strong></td><td>48,407<br><small>430s</small></td></tr>
+<tr><td><strong>ST-3</strong></td><td>66,857<br><small>516s</small></td></tr>
+<tr><td><strong>ST-4</strong></td><td>67,342<br><small>258s</small></td></tr>
+<tr><td><strong>ST-5</strong></td><td>307,078<br><small>1978s</small></td></tr>
+<tr><td><strong>ST-6</strong></td><td>87,004<br><small>516s</small></td></tr>
+<tr><td><strong>ST-7</strong></td><td>28,792<br><small>258s</small></td></tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>3. 效率指标对比</h2>
+<table>
+<tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview</th></tr>
+<tr><td>ET-LOC (Token/行)</td><td>1,486.4</td></tr>
+<tr><td>ET-FILE (Token/文件)</td><td>2,513.1</td></tr>
+<tr><td>ET-TASK (Token/任务)</td><td>1,494.5</td></tr>
+<tr><td>ET-AR (Token/AR)</td><td>15,238.4</td></tr>
+<tr><td>ET-COST-LOC ($/千行)</td><td>2.6</td></tr>
+<tr><td>Cache 命中率</td><td>72.7%</td></tr>
+<tr><td>PT-DEV (开发占比)</td><td>44.8%</td></tr>
+<tr><td>PT-DESIGN (设计占比)</td><td>24.4%</td></tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>4. 质量指标对比</h2>
+<table>
+<tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview</th></tr>
+<tr><td>代码可用率</td><td>85.0%</td></tr>
+<tr><td>一致性评分</td><td>78.4%</td></tr>
+<tr><td>测试覆盖率</td><td>51.0%</td></tr>
+<tr><td>Bug 数</td><td>17</td></tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>5. 预警汇总</h2>
+<table>
+<tr><th>轮次</th><th>gemini-cli / gemini-3.1-pro-preview</th></tr>
+<tr><td>触发预警</td><td>无</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>6. 综合评分雷达</h2>
+<div class="radar">
+
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">gemini-cli / gemini-3.1-pro-preview</div>
+    <div>Token 效率: <span class="radar-val">73</span></div>
+    <div>成本效率: <span class="radar-val">37</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">73</span></div>
+    <div>执行速度: <span class="radar-val">73</span></div>
+  </div>
+</div>
+</div>
+
+
+<div class="section">
+<h2>8. 说明</h2>
+<ul>
+  <li>绿色高亮 = 该列最优值（对比列 ≥ 2 时生效）</li>
+  <li>Token 效率、成本效率、执行速度：越低越好 → 分越高</li>
+  <li>代码质量、Cache 利用：越高越好</li>
+  <li>数据来源: SDD-TEE 评测框架 (CodeSpec 7-Stage × OpenSpec OPSX)</li>
+  <li>测试目标: <a href="https://github.com/ShijunDeng/agentcube">agentcube</a></li>
+</ul>
+</div>
+
+</body>
+</html>

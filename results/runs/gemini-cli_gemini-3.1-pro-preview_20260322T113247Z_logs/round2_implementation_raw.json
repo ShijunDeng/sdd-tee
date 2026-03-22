@@ -1,0 +1,99 @@
+YOLO mode is enabled. All tool calls will be automatically approved.
+Keychain initialization encountered an error: libsecret-1.so.0: cannot open shared object file: No such file or directory
+Using FileKeychain fallback for secure storage.
+Loaded cached credentials.
+YOLO mode is enabled. All tool calls will be automatically approved.
+{
+  "session_id": "fca1d688-a272-4b3b-94d1-8905c390e25a",
+  "response": "I have successfully implemented all the requested Architectural Requirements (AR-012 through AR-022) based on `PLAN.md`.\n\nHere is a summary of the files created:\n*   **AR-012**: `pkg/workloadmanager/health_utils.go` containing `GetUptime()` utility.\n*   **AR-013**: `pkg/router/health_utils.go` containing `HealthTracker` to track request counts.\n*   **AR-014**: `pkg/picod/health_utils.go` containing `GetPicodUptime()` utility.\n*   **AR-015**: `cmd/cli/agentcube/operations/status_cmd.py` with a simple `status_command()` printing dictionary statuses.\n*   **AR-016**: `pkg/agentd/options.go` with the `ManagerOptions` struct.\n*   **AR-017**: `pkg/store/expiry.go` defining the `ExpiryIndex` struct for handling session expirations.\n*   **AR-018**: `sdk-python/agentcube/timeout.py` defining the standard `TIMEOUT_DEFAULT = 300` constant.\n*   **AR-019**: `hack/verify-codegen.sh` shell script returning \"codegen ok\" (made executable).\n*   **AR-020**: `docker/builder/Dockerfile` using `FROM golang:1.24-alpine`.\n*   **AR-021**: `example/pcap-analyzer/config.py` defining the `PCAPConfig` class.\n*   **AR-022**: `pkg/common/types/health.go` defining the `HealthResponse` JSON struct.",
+  "stats": {
+    "models": {
+      "gemini-3.1-pro-preview": {
+        "api": {
+          "totalRequests": 4,
+          "totalErrors": 0,
+          "totalLatencyMs": 65936
+        },
+        "tokens": {
+          "input": 33769,
+          "prompt": 45743,
+          "candidates": 1116,
+          "total": 48885,
+          "cached": 11974,
+          "thoughts": 2026,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 4,
+            "totalErrors": 0,
+            "totalLatencyMs": 65936,
+            "tokens": {
+              "input": 33769,
+              "prompt": 45743,
+              "candidates": 1116,
+              "total": 48885,
+              "cached": 11974,
+              "thoughts": 2026,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 13,
+      "totalSuccess": 13,
+      "totalFail": 0,
+      "totalDurationMs": 357,
+      "totalDecisions": {
+        "accept": 13,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "read_file": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 8,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "write_file": {
+          "count": 11,
+          "success": 11,
+          "fail": 0,
+          "durationMs": 317,
+          "decisions": {
+            "accept": 11,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "run_shell_command": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 32,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 31,
+      "totalLinesRemoved": 121
+    }
+  }
+}

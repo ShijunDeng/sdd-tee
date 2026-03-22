@@ -87,16 +87,24 @@ make report || true
 make compare || true
 
 # 3. 自动同步 CONTEXT.md
-python3 -c "
-import json
-with open('results/runs/$RUN_ID.json') as f: d = json.load(f)
+export __TOOL="$TOOL"
+export __MODEL="$MODEL"
+export __RUN_ID="$RUN_ID"
+
+python3 << 'PYEOF'
+import json, os
+run_id = os.environ.get('__RUN_ID')
+tool = os.environ.get('__TOOL')
+model = os.environ.get('__MODEL')
+
+with open(f'results/runs/{run_id}.json') as f: d = json.load(f)
 tok = d['token_summary']['total_tokens']
 loc = d['quality']['loc_generated']
 files = d['quality']['files_generated']
 cost = d['token_summary']['cost_usd']
 ts = d['timestamp']
 
-line = f'| 6 | $TOOL | $MODEL | \`..._{ts}\` | {tok:,} | {files} | {loc:,} | ~75m | ${cost:.2f} |'
+line = f'| 6 | {tool} | {model} | `..._{ts}` | {tok:,} | {files} | {loc:,} | ~75m | ${cost:.2f} |'
 
 with open('CONTEXT.md', 'r') as f: c = f.read()
 if '| 5 |' in c:
@@ -104,7 +112,7 @@ if '| 5 |' in c:
     sub = parts[1].split('\n', 1)
     new_c = parts[0] + '| 5 |' + sub[0] + '\n' + line + '\n' + sub[1]
     with open('CONTEXT.md', 'w') as fw: fw.write(new_c)
-"
+PYEOF
 sed -i 's/× 5 轮次/× 6 轮次/g' CONTEXT.md || true
 
 # 4. 提交保存
