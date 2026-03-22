@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "generated_at": "2026-03-22T08:56:16Z",
+    "is_mock": true,
+    "framework": "SDD-TEE v2",
+    "tool": "gemini-cli",
+    "model": "gemini-3.1-pro-preview",
+    "run_id": "gemini-cli_gemini-3.1-pro-preview_ESTIMATED",
+    "notes": "Industry-based estimation pending real completion"
+  },
+  "grand_totals": {
+    "ar_count": 43,
+    "input_tokens": 1150000,
+    "output_tokens": 185000,
+    "cache_read_tokens": 980000,
+    "cache_write_tokens": 45000,
+    "total_tokens": 1335000,
+    "human_input_tokens": 35000,
+    "total_duration_seconds": 1920,
+    "total_cost_usd": 11.20,
+    "total_loc": 18500,
+    "total_files": 172,
+    "total_tasks": 215,
+    "total_iterations": 580,
+    "total_api_calls": 720
+  },
+  "stage_aggregates": {
+    "ST-5": { "name": "开发实现", "total_tokens": 650000, "duration_seconds": 1100 },
+    "ST-6": { "name": "一致性验证", "total_tokens": 120000, "duration_seconds": 350 }
+  }
+}
