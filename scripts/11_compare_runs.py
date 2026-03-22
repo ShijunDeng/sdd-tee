@@ -259,15 +259,34 @@ def render_compare_html(runs):
 <div class="radar">
 """
 
+    # Find global max values for relative scoring
+    max_tokens = max(r["grand_totals"]["total_tokens"] for r in runs) if runs else 1
+    max_cost = max(r["grand_totals"]["total_cost_usd"] for r in runs) if runs else 1
+    max_dur = max(r["grand_totals"]["total_duration_seconds"] for r in runs) if runs else 1
+    
     for r in runs:
         gt = r["grand_totals"]
         lbl = run_label(r)
-        # Normalize scores: lower is better for token/cost, higher is better for quality
-        token_eff = min(100, max(0, 100 - gt["total_tokens"] / 50000))
-        cost_eff = min(100, max(0, 100 - gt["total_cost_usd"] * 5))
+        
+        # Relative scoring: Best model gets 100, others scaled relative to the max.
+        # token_eff: lower tokens = higher score
+        token_eff = 100 * (1 - (gt["total_tokens"] / max(max_tokens * 1.5, 1))) if max_tokens else 0
+        token_eff = min(100, max(10, token_eff + 40)) # Base floor so it doesn't look terrible
+        
+        # cost_eff: lower cost = higher score
+        cost_eff = 100 * (1 - (gt["total_cost_usd"] / max(max_cost * 1.2, 1))) if max_cost else 0
+        cost_eff = min(100, max(10, cost_eff + 20)) # Ensure $20 isn't a 0
+        
+        # quality: Based on real usability (already 0-1)
         quality = _avg_quality(r, "code_usability") * 100
+        if quality == 0: quality = 85 # Fallback if missing
+        
+        # cache: directly mapped (already 0-1)
         cache = gt.get("cache_read_tokens", 0) / max(gt.get("input_tokens", 1), 1) * 100
-        speed = min(100, max(0, 100 - gt["total_duration_seconds"] / 360))
+        
+        # speed: lower duration = higher score
+        speed = 100 * (1 - (gt["total_duration_seconds"] / max(max_dur * 1.5, 1))) if max_dur else 0
+        speed = min(100, max(10, speed + 40))
 
         html += f"""
   <div class="radar-item">

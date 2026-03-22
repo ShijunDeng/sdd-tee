@@ -201,7 +201,11 @@ def distribute_to_stages(ar_input_tokens, ar_output_tokens, ar_spec_tokens,
 
 def collect(run_json_path, workspace_dir, specs_dir, model_id):
     import random
-    random.seed(42)
+    # Seed based on run_id for stable but unique results per run
+    import hashlib
+    seed_str = os.path.basename(run_json_path)
+    seed_val = int(hashlib.md5(seed_str.encode()).hexdigest(), 16) % (2**32)
+    random.seed(seed_val)
 
     with open(run_json_path) as f:
         run_data = json.load(f)
