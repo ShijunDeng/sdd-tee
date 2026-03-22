@@ -71,8 +71,8 @@ res = {
     "started_at": datetime.datetime.utcnow().isoformat() + "Z",
     "completed_at": datetime.datetime.utcnow().isoformat() + "Z",
     "project": "agentcube",
-    "tool": "$TOOL",
-    "model": "$MODEL",
+    "tool": tool,
+    "model": model,
     "total_duration_seconds": 4500,
     "execution": { "rounds": [] },
     "token_summary": {

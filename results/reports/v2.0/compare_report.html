@@ -29,7 +29,7 @@
 <body>
 <h1>SDD-TEE 跨轮次对比报告</h1>
 <div class="meta">
-  <p>生成时间: 2026-03-22 20:48 UTC | 对比轮次: 6 | 目标项目: agentcube</p>
+  <p>生成时间: 2026-03-22 20:57 UTC | 对比轮次: 6 | 目标项目: agentcube</p>
 </div>
 
 
@@ -45,8 +45,8 @@
 <h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">二、6 轮测试实录</h3>
 <ul style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
 <li><b>轮次 1 (gemini-cli / gemini-3.1-pro-preview)</b>: 生成了 <b>46,754</b> 行代码，耗时 <b>58</b> 分钟，消耗 1,743,157 Tokens，总成本 $42.13。</li>
-<li><b>轮次 2 ($TOOL / $MODEL)</b>: 生成了 <b>10,068</b> 行代码，耗时 <b>114</b> 分钟，消耗 581,911 Tokens，总成本 $11.82。</li>
-<li><b>轮次 3 ($TOOL / $MODEL)</b>: 生成了 <b>10,934</b> 行代码，耗时 <b>131</b> 分钟，消耗 597,019 Tokens，总成本 $11.98。</li>
+<li><b>轮次 2 (opencode-cli / bailian-coding-plan/glm-4.7)</b>: 生成了 <b>10,068</b> 行代码，耗时 <b>114</b> 分钟，消耗 581,911 Tokens，总成本 $11.82。</li>
+<li><b>轮次 3 (opencode-cli / bailian-coding-plan/glm-5)</b>: 生成了 <b>10,934</b> 行代码，耗时 <b>131</b> 分钟，消耗 597,019 Tokens，总成本 $11.98。</li>
 <li><b>轮次 4 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>11,235</b> 行代码，耗时 <b>121</b> 分钟，消耗 603,468 Tokens，总成本 $12.32。</li>
 <li><b>轮次 5 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>16,992</b> 行代码，耗时 <b>98</b> 分钟，消耗 805,130 Tokens，总成本 $17.53。</li>
 <li><b>轮次 6 (opencode-cli / opencode/minimax-m2.5-free)</b>: 生成了 <b>8,080</b> 行代码，耗时 <b>88</b> 分钟，消耗 542,904 Tokens，总成本 $10.51。</li>
@@ -70,7 +70,7 @@
 <div class="section">
 <h2>1. 总量对比</h2>
 <table>
-<tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>$TOOL / $MODEL</th><th>$TOOL / $MODEL</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
 <tr><td>总 Token</td><td>1,743,157</td><td>581,911</td><td>597,019</td><td>603,468</td><td>805,130</td><td class="best">542,904</td></tr>
 <tr><td>Input Token</td><td>1,298,878</td><td>469,362</td><td>480,186</td><td>484,788</td><td>628,838</td><td class="best">441,503</td></tr>
 <tr><td>Output Token</td><td>444,279</td><td>112,549</td><td>116,833</td><td>118,680</td><td>176,292</td><td class="best">101,401</td></tr>
@@ -100,7 +100,7 @@
 <div class="section">
 <h2>2. 阶段分布对比</h2>
 <table>
-<tr><th>阶段</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>$TOOL / $MODEL</th><th>$TOOL / $MODEL</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><th>阶段</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
 <tr><td><strong>ST-0</strong></td><td>19,622<br><small>43s</small></td><td>6,362<br><small>129s</small></td><td>6,523<br><small>129s</small></td><td>6,604<br><small>129s</small></td><td>8,905<br><small>86s</small></td><td>5,914<br><small>86s</small></td></tr>
 <tr><td><strong>ST-1</strong></td><td>113,288<br><small>258s</small></td><td>37,802<br><small>559s</small></td><td>38,788<br><small>602s</small></td><td>39,206<br><small>559s</small></td><td>52,320<br><small>473s</small></td><td>35,269<br><small>430s</small></td></tr>
 <tr><td><strong>ST-2</strong></td><td>126,107<br><small>344s</small></td><td>43,166<br><small>688s</small></td><td>44,246<br><small>774s</small></td><td>44,708<br><small>731s</small></td><td>59,108<br><small>602s</small></td><td>40,384<br><small>516s</small></td></tr>
@@ -116,7 +116,7 @@
 <div class="section">
 <h2>3. 效率指标对比</h2>
 <table>
-<tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>$TOOL / $MODEL</th><th>$TOOL / $MODEL</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
 <tr><td>ET-LOC (Token/行)</td><td class="best">492.7</td><td>1,569.9</td><td>1,012.8</td><td>1,114.0</td><td>955.7</td><td>1,552.4</td></tr>
 <tr><td>ET-FILE (Token/文件)</td><td>3,455.2</td><td>2,361.0</td><td>2,312.3</td><td class="best">2,130.4</td><td>2,316.0</td><td>2,434.6</td></tr>
 <tr><td>ET-TASK (Token/任务)</td><td>3,693.8</td><td>1,342.5</td><td>1,362.9</td><td>1,377.4</td><td>1,828.5</td><td class="best">1,231.9</td></tr>
@@ -132,7 +132,7 @@
 <div class="section">
 <h2>4. 质量指标对比</h2>
 <table>
-<tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>$TOOL / $MODEL</th><th>$TOOL / $MODEL</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
 <tr><td>代码可用率</td><td>86.6%</td><td class="best">87.1%</td><td>86.4%</td><td>86.3%</td><td>86.7%</td><td>85.3%</td></tr>
 <tr><td>一致性评分</td><td class="best">89.6%</td><td>77.8%</td><td>80.5%</td><td>80.1%</td><td>80.7%</td><td>78.3%</td></tr>
 <tr><td>测试覆盖率</td><td>52.7%</td><td>53.2%</td><td>53.1%</td><td>55.7%</td><td>51.6%</td><td class="best">56.0%</td></tr>
@@ -144,7 +144,7 @@
 <div class="section">
 <h2>5. 预警汇总</h2>
 <table>
-<tr><th>轮次</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>$TOOL / $MODEL</th><th>$TOOL / $MODEL</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><th>轮次</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
 <tr><td>触发预警</td><td>无</td><td>无</td><td>无</td><td>无</td><td>无</td><td>无</td></tr>
 </table>
 </div>
@@ -162,7 +162,7 @@
     <div>执行速度: <span class="radar-val">100</span></div>
   </div>
   <div class="radar-item">
-    <div style="font-weight: bold; margin-bottom: 10px;">$TOOL / $MODEL</div>
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/glm-4.7</div>
     <div>Token 效率: <span class="radar-val">100</span></div>
     <div>成本效率: <span class="radar-val">97</span></div>
     <div>代码质量: <span class="radar-val">87</span></div>
@@ -170,7 +170,7 @@
     <div>执行速度: <span class="radar-val">82</span></div>
   </div>
   <div class="radar-item">
-    <div style="font-weight: bold; margin-bottom: 10px;">$TOOL / $MODEL</div>
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/glm-5</div>
     <div>Token 效率: <span class="radar-val">100</span></div>
     <div>成本效率: <span class="radar-val">96</span></div>
     <div>代码质量: <span class="radar-val">86</span></div>
@@ -210,7 +210,7 @@
 <p style="color:#666;font-size:0.9em">以下为自动检测的数据异常和需关注点，供评估时参考。</p>
 <table>
 <tr><th style="width:40px">级别</th><th style="width:100px">类别</th><th>详情</th><th style="width:180px">涉及轮次</th></tr>
-<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>文件覆盖率</td><td>仅生成 44 个文件，远低于均值 113。可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。</td><td>$TOOL / $MODEL</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>文件覆盖率</td><td>仅生成 44 个文件，远低于均值 113。可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。</td><td>opencode-cli / bailian-coding-plan/glm-4.7</td></tr>
 <tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>文件覆盖率</td><td>仅生成 56 个文件，远低于均值 113。可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。</td><td>opencode-cli / opencode/minimax-m2.5-free</td></tr>
 <tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>代码产出</td><td>LOC = 8,080，仅为均值 17,344 的 47%。代码产出偏低，可能存在文件内容不完整或 stub 实现。</td><td>opencode-cli / opencode/minimax-m2.5-free</td></tr>
 <tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>业界对标</td><td>Token/LOC 范围 37~67，成本 $0.90~$1.30/KLOC。业界同类评测（如 SWE-bench、Aider Polyglot）的 token 效率通常在 30~80 token/LOC 区间，本次评测结果在合理范围内。成本差异主要来自模型定价策略和输出量差异。</td><td>全部轮次</td></tr>

@@ -5,8 +5,8 @@
     "framework": "SDD-TEE v2",
     "methodology": "CodeSpec 7-Stage + OpenSpec OPSX",
     "target_project": "agentcube",
-    "tool": "$TOOL",
-    "model": "$MODEL",
+    "tool": "opencode-cli",
+    "model": "bailian-coding-plan/glm-4.7",
     "model_pricing": {
       "input": 15.0,
       "output": 75.0,
