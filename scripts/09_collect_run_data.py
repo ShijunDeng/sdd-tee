@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 """
-SDD-TEE Run Data Collector v3 (Billing by Telemetry)
-
-Key improvements:
-  1. Audit-First: Prioritizes real API usage from *_raw.json logs.
-  2. Fallback Mitigation: Uses file-diff only if logs are missing, with a 5x penalty.
-  3. Context Awareness: Correctly accounts for long-session context ballooning.
+SDD-TEE Run Data Collector v3 (High-Fidelity)
 """
 
 import argparse
@@ -24,16 +19,30 @@ STAGE_NAMES = _mod.STAGE_NAMES
 OPSX_COMMANDS = _mod.OPSX_COMMANDS
 
 def audit_logs(log_dir):
-    """Parses raw logs to find real API usage, mapped to tool stages."""
+    """Parses raw logs and stage json files to find real API usage and duration."""
     stage_breakdown = {}
     if not os.path.exists(log_dir): return None
     
     found_any = False
+    # 1. Parse .json files for duration
+    for f in os.listdir(log_dir):
+        if f.endswith(".json") and not f.endswith("_raw.json"):
+            stage_key = f.replace(".json", "")
+            path = os.path.join(log_dir, f)
+            try:
+                with open(path, "r") as jsrc:
+                    jdata = json.load(jsrc)
+                    if stage_key not in stage_breakdown:
+                        stage_breakdown[stage_key] = {"input": 0, "output": 0, "cache_read": 0, "cache_write": 0, "total": 0, "api_calls": 0, "duration_seconds": 0}
+                    stage_breakdown[stage_key]["duration_seconds"] = jdata.get("duration_seconds", 0)
+            except: continue
+
+    # 2. Parse _raw.json for tokens
     for f in sorted(os.listdir(log_dir)):
         if not f.endswith("_raw.json"): continue
         stage_key = f.replace("_raw.json", "")
         if stage_key not in stage_breakdown:
-            stage_breakdown[stage_key] = {"input": 0, "output": 0, "cache_read": 0, "cache_write": 0, "total": 0, "api_calls": 0}
+            stage_breakdown[stage_key] = {"input": 0, "output": 0, "cache_read": 0, "cache_write": 0, "total": 0, "api_calls": 0, "duration_seconds": 0}
         
         path = os.path.join(log_dir, f)
         try:
@@ -92,8 +101,7 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
     tracking_method = "telemetry-audit" if telemetry else "estimation-fallback"
     
     ws = Path(workspace_dir)
-    total_loc = 0
-    total_files = 0
+    total_loc = 0; total_files = 0
     for fpath in ws.rglob("*"):
         if fpath.is_file() and fpath.suffix.lower() in {".go", ".py", ".yaml", ".yml", ".md", ".json", ".sh"} and ".git" not in str(fpath):
             total_files += 1
@@ -103,7 +111,7 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
     sdd_stages = {s: {"name": STAGE_NAMES[s], "input_tokens": 0, "output_tokens": 0, "cache_read_tokens": 0, "cache_write_tokens": 0, "total_tokens": 0, "duration_seconds": 0, "api_calls": 0, "iterations": 0} for s in STAGE_NAMES}
     
     if telemetry:
-        grand_total_tokens = grand_input = grand_output = grand_cache_read = grand_cache_write = grand_api_calls = 0
+        grand_total_tokens = grand_input = grand_output = grand_cache_read = grand_cache_write = grand_api_calls = grand_duration = 0
         for tool_stage, t in telemetry.items():
             target_sids = map_tool_stage_to_sdd(tool_stage)
             share_s = 1.0 / len(target_sids)
@@ -115,11 +123,14 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
                 sdd_stages[sid]["total_tokens"] += int(t["total"] * share_s)
                 sdd_stages[sid]["api_calls"] += max(1, int(t["api_calls"] * share_s))
                 sdd_stages[sid]["iterations"] += max(1, int(t["api_calls"] * share_s))
+                sdd_stages[sid]["duration_seconds"] += int(t.get("duration_seconds", 0) * share_s)
+            
             grand_total_tokens += t["total"]; grand_input += t["input"]; grand_output += t["output"]
-            grand_cache_read += t["cache_read"]; grand_cache_write += t["cache_write"]; grand_api_calls += t["api_calls"]
+            grand_cache_read += t["cache_read"]; grand_cache_write += t["cache_write"]
+            grand_api_calls += t["api_calls"]; grand_duration += t.get("duration_seconds", 0)
     else:
         grand_output = total_loc * 30; grand_input = grand_output * 4; grand_cache_read = int(grand_input * 0.5)
-        grand_cache_write = 0; grand_total_tokens = grand_input + grand_output; grand_api_calls = total_files * 2
+        grand_cache_write = 0; grand_total_tokens = grand_input + grand_output; grand_api_calls = total_files * 2; grand_duration = 7200
         sdd_stages["ST-2"]["total_tokens"] = int(grand_total_tokens * 0.2)
         sdd_stages["ST-4"]["total_tokens"] = int(grand_total_tokens * 0.6)
         sdd_stages["ST-6"]["total_tokens"] = int(grand_total_tokens * 0.2)
@@ -130,7 +141,8 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
             sdd_stages[sid]["input_tokens"] = int(grand_input * 0.02)
             sdd_stages[sid]["output_tokens"] = int(grand_output * 0.02)
             sdd_stages[sid]["total_tokens"] = sdd_stages[sid]["input_tokens"] + sdd_stages[sid]["output_tokens"]
-            sdd_stages[sid]["api_calls"] = 1; sdd_stages[sid]["iterations"] = 1; sdd_stages[sid]["duration_seconds"] = 60
+            sdd_stages[sid]["api_calls"] = 1; sdd_stages[sid]["iterations"] = 1; 
+            if sdd_stages[sid]["duration_seconds"] == 0: sdd_stages[sid]["duration_seconds"] = 60
 
     pricing = {"input": 15.0, "output": 75.0, "cache_read": 1.50, "cache_write": 18.75}
     cost = (grand_input * pricing["input"] / 1e6 + grand_cache_read * pricing["cache_read"] / 1e6 + 
@@ -153,13 +165,15 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
             "totals": {
                 "total_tokens": ar_total_tokens, "input_tokens": int(grand_input * share), "output_tokens": int(grand_output * share),
                 "cache_read_tokens": int(grand_cache_read * share), "cache_write_tokens": int(grand_cache_write * share),
-                "human_input_tokens": 100, "spec_context_tokens": int(total_spec_context * share), "iterations": 10, "duration_seconds": 180, "api_calls": 20, "cost_usd": ar_cost
+                "human_input_tokens": 100, "spec_context_tokens": int(total_spec_context * share), 
+                "iterations": max(1, int(grand_api_calls * share)), "duration_seconds": int(grand_duration * share) or 120, 
+                "api_calls": max(1, int(grand_api_calls * share)), "cost_usd": ar_cost
             },
             "output": {"actual_loc": ar_loc, "actual_files": 1, "tasks_count": 5},
             "quality": {"consistency_score": 0.9, "code_usability": 0.9, "test_coverage": 0.8, "bugs_found": 0},
             "metrics": {
                 "ET_LOC": round(ar_total_tokens / max(ar_loc, 1), 2), "QT_COV": 0.8, "ET_FILE": ar_total_tokens, "ET_TASK": round(ar_total_tokens / 5, 2),
-                "ET_AR": ar_total_tokens, "ET_TIME": round(ar_total_tokens / 160, 2), "ET_COST_LOC": round(ar_cost / max(ar_loc, 1), 4),
+                "ET_AR": ar_total_tokens, "ET_TIME": round(ar_total_tokens / (max(grand_duration, 1)/3600), 2), "ET_COST_LOC": round(ar_cost / max(ar_loc, 1), 4),
                 "RT_RATIO": round(grand_input / max(grand_output, 1), 2), "RT_ITER": 5, "QT_CONSIST": 0.9, "QT_AVAIL": 0.9, "QT_BUG": 0,
                 "PT_DESIGN": 0.2, "PT_PLAN": 0.2, "PT_DEV": 0.4, "PT_VERIFY": 0.2
             },
@@ -171,7 +185,7 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
                  "methodology": "Spec-Driven Development (SDD) 7-Stage Pipeline", "token_tracking": tracking_method, "agentic_overhead_factor": round(grand_total_tokens / (total_loc * 30 + 1), 2)},
         "grand_totals": {"ar_count": len(AR_CATALOG), "input_tokens": grand_input, "output_tokens": grand_output, "cache_read_tokens": grand_cache_read, "cache_write_tokens": grand_cache_write,
                          "total_tokens": grand_total_tokens, "total_cost_usd": round(cost, 2), "total_cost_cny": round(cost * 7.25, 2), "total_loc": total_loc, "total_files": total_files,
-                         "human_input_tokens": 5000, "spec_context_tokens": total_spec_context, "total_duration_seconds": run_data.get("total_duration_seconds", 7200),
+                         "human_input_tokens": 5000, "spec_context_tokens": total_spec_context, "total_duration_seconds": grand_duration or 7200,
                          "total_tasks": total_files * 4, "total_iterations": grand_api_calls, "total_api_calls": grand_api_calls},
         "ar_results": ar_results, "stage_aggregates": sdd_stages, "baselines": {}
     }

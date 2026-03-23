@@ -41,6 +41,7 @@ Reference specs are in ./specs/."
 
     echo "  [$stage] Executing $TOOL (COLD START) ..."
 
+    local start_time=$(date +%s)
     cd "$WORKSPACE"
     case "$TOOL" in
         cursor-cli)
@@ -57,8 +58,10 @@ Reference specs are in ./specs/."
             ;;
     esac
     cd - > /dev/null
+    local end_time=$(date +%s)
+    local dur=$((end_time - start_time))
 
-    echo "{\"stage\": \"$stage\", \"duration_seconds\": 0, \"mode\": \"CSI\"}" > "$LOG_DIR/${stage}.json"
+    echo "{\"stage\": \"$stage\", \"duration_seconds\": $dur, \"mode\": \"CSI\"}" > "$LOG_DIR/${stage}.json"
 }
 
 # =====================================================================
