@@ -1,0 +1,886 @@
+{
+  "meta": {
+    "generated_at": "2026-03-23T13:34:42.154714+00:00",
+    "run_id": "opencode-cli_bailian-coding-plan_kimi-k2.5_CSI_20260323T111513Z",
+    "tool": "opencode-cli",
+    "model": "bailian-coding-plan/kimi-k2.5",
+    "token_tracking": "telemetry-audit",
+    "agentic_overhead_factor": 52.42
+  },
+  "grand_totals": {
+    "ar_count": 43,
+    "input_tokens": 612318,
+    "output_tokens": 117148,
+    "cache_read_tokens": 14438717,
+    "cache_write_tokens": 838839,
+    "total_tokens": 16007022,
+    "total_cost_usd": 55.36,
+    "total_cost_cny": 401.34,
+    "total_loc": 10178,
+    "total_files": 54
+  },
+  "ar_results": [
+    {
+      "ar_id": "AR-001",
+      "ar_name": "CRD AgentRuntime 类型定义",
+      "size": "S",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-002",
+      "ar_name": "CRD CodeInterpreter 类型定义",
+      "size": "S",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-003",
+      "ar_name": "CRD 共享类型与常量",
+      "size": "S",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-004",
+      "ar_name": "WorkloadManager HTTP 服务框架",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-005",
+      "ar_name": "Sandbox 创建处理器",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-006",
+      "ar_name": "Sandbox 删除与生命周期管理",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-007",
+      "ar_name": "K8s Reconciler 控制器",
+      "size": "L",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-008",
+      "ar_name": "Sandbox GC 定时清理机制",
+      "size": "S",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-009",
+      "ar_name": "Router HTTP 反向代理核心",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-010",
+      "ar_name": "Router 会话管理",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-011",
+      "ar_name": "Router JWT 认证与签发",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-012",
+      "ar_name": "会话存储接口定义",
+      "size": "S",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-013",
+      "ar_name": "Redis 存储实现",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-014",
+      "ar_name": "Valkey 存储实现",
+      "size": "S",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-015",
+      "ar_name": "PicoD 命令执行 API",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-016",
+      "ar_name": "PicoD 文件管理 API",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-017",
+      "ar_name": "PicoD JWT 中间件",
+      "size": "S",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-018",
+      "ar_name": "Agentd 空闲清理控制器",
+      "size": "S",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-019",
+      "ar_name": "CLI 二进制入口 (4 binaries)",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-020",
+      "ar_name": "CLI pack 命令",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-021",
+      "ar_name": "CLI build 命令",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-022",
+      "ar_name": "CLI publish 命令",
+      "size": "L",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-023",
+      "ar_name": "CLI invoke/status 命令",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-024",
+      "ar_name": "DockerService 封装",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-025",
+      "ar_name": "MetadataService 与数据模型",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-026",
+      "ar_name": "K8s/AgentCube Provider",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-027",
+      "ar_name": "SDK CodeInterpreterClient",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-028",
+      "ar_name": "SDK AgentRuntimeClient",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-029",
+      "ar_name": "SDK HTTP 底层客户端",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-030",
+      "ar_name": "Helm Chart 模板与 Values",
+      "size": "L",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-031",
+      "ar_name": "RBAC 配置 (SA/Role/Binding)",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-032",
+      "ar_name": "Dockerfile 多阶段构建 (3 images)",
+      "size": "S",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-033",
+      "ar_name": "Makefile 构建目标体系",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-034",
+      "ar_name": "CI/CD GitHub Actions (12 workflows)",
+      "size": "L",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-035",
+      "ar_name": "client-go 类型客户端生成",
+      "size": "L",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-036",
+      "ar_name": "Dify 插件集成",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-037",
+      "ar_name": "PCAP 分析器示例应用",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-038",
+      "ar_name": "Go 单元测试 (workloadmanager)",
+      "size": "L",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-039",
+      "ar_name": "Go 单元测试 (router/store/picod)",
+      "size": "L",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-040",
+      "ar_name": "Python SDK/CLI 测试",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-041",
+      "ar_name": "E2E 集成测试",
+      "size": "L",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-042",
+      "ar_name": "Docusaurus 文档站框架",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    },
+    {
+      "ar_id": "AR-043",
+      "ar_name": "架构设计文档与 API 文档",
+      "size": "M",
+      "totals": {
+        "total_tokens": 372256,
+        "input_tokens": 14239,
+        "output_tokens": 2724,
+        "cost_usd": 1.2874
+      },
+      "output": {
+        "actual_loc": 236,
+        "actual_files": 1
+      },
+      "metrics": {
+        "ET_LOC": 0,
+        "QT_COV": 0.8
+      },
+      "stages": {}
+    }
+  ],
+  "stage_aggregates": {},
+  "baselines": {}
+}

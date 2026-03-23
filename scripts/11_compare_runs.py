@@ -74,20 +74,20 @@ def render_compare_html(runs):
     # Grand totals comparison table
     gt_rows = ""
     gt_metrics = [
-        ("总 Token", lambda r: r["grand_totals"]["total_tokens"], "min"),
-        ("Input Token", lambda r: r["grand_totals"]["input_tokens"], "min"),
-        ("Output Token", lambda r: r["grand_totals"]["output_tokens"], "min"),
-        ("Cache Read", lambda r: r["grand_totals"]["cache_read_tokens"], "max"),
-        ("Cache Write", lambda r: r["grand_totals"]["cache_write_tokens"], "min"),
-        ("人工输入 Token", lambda r: r["grand_totals"]["human_input_tokens"], "min"),
-        ("预制规范 Token", lambda r: r["grand_totals"]["spec_context_tokens"], "min"),
-        ("总耗时 (秒)", lambda r: r["grand_totals"]["total_duration_seconds"], "min"),
-        ("总成本 (USD)", lambda r: r["grand_totals"]["total_cost_usd"], "min"),
-        ("总成本 (CNY)", lambda r: r["grand_totals"]["total_cost_cny"], "min"),
-        ("代码行数", lambda r: r["grand_totals"]["total_loc"], "max"),
-        ("文件数", lambda r: r["grand_totals"]["total_files"], "max"),
-        ("迭代次数", lambda r: r["grand_totals"]["total_iterations"], "min"),
-        ("API 调用", lambda r: r["grand_totals"]["total_api_calls"], "min"),
+        ("总 Token", lambda r: r["grand_totals"].get("total_tokens", 0), "min"),
+        ("Input Token", lambda r: r["grand_totals"].get("input_tokens", 0), "min"),
+        ("Output Token", lambda r: r["grand_totals"].get("output_tokens", 0), "min"),
+        ("Cache Read", lambda r: r["grand_totals"].get("cache_read_tokens", 0), "max"),
+        ("Cache Write", lambda r: r["grand_totals"].get("cache_write_tokens", 0), "min"),
+        ("人工输入 Token", lambda r: r["grand_totals"].get("human_input_tokens", 0), "min"),
+        ("预制规范 Token", lambda r: r["grand_totals"].get("spec_context_tokens", 0), "min"),
+        ("总耗时 (秒)", lambda r: r["grand_totals"].get("total_duration_seconds", 0), "min"),
+        ("总成本 (USD)", lambda r: r["grand_totals"].get("total_cost_usd", 0), "min"),
+        ("总成本 (CNY)", lambda r: r["grand_totals"].get("total_cost_cny", 0), "min"),
+        ("代码行数", lambda r: r["grand_totals"].get("total_loc", 0), "max"),
+        ("文件数", lambda r: r["grand_totals"].get("total_files", 0), "max"),
+        ("迭代次数", lambda r: r["grand_totals"].get("total_iterations", 0), "min"),
+        ("API 调用", lambda r: r["grand_totals"].get("total_api_calls", 0), "min"),
     ]
     for name, fn, hl in gt_metrics:
         gt_rows += f"<tr><td>{name}</td>{td_vals(fn, highlight=hl)}</tr>\n"
@@ -313,9 +313,9 @@ def render_compare_html(runs):
 """
 
     # Find global max values for relative scoring
-    max_tokens = max(r["grand_totals"]["total_tokens"] for r in runs) if runs else 1
-    max_cost = max(r["grand_totals"]["total_cost_usd"] for r in runs) if runs else 1
-    max_dur = max(r["grand_totals"]["total_duration_seconds"] for r in runs) if runs else 1
+    max_tokens = max(r["grand_totals"].get("total_tokens", 0) for r in runs) if runs else 1
+    max_cost = max(r["grand_totals"].get("total_cost_usd", 0) for r in runs) if runs else 1
+    max_dur = max(r["grand_totals"].get("total_duration_seconds", 0) for r in runs) if runs else 1
     
     for r in runs:
         gt = r["grand_totals"]
@@ -323,11 +323,13 @@ def render_compare_html(runs):
         
         # Relative scoring: Best model gets 100, others scaled relative to the max.
         # token_eff: lower tokens = higher score
-        token_eff = 100 * (1 - (gt["total_tokens"] / max(max_tokens * 1.5, 1))) if max_tokens else 0
+        total_tokens = gt.get("total_tokens", 0)
+        token_eff = 100 * (1 - (total_tokens / max(max_tokens * 1.5, 1))) if max_tokens else 0
         token_eff = min(100, max(10, token_eff + 40)) # Base floor so it doesn't look terrible
         
         # cost_eff: lower cost = higher score
-        cost_eff = 100 * (1 - (gt["total_cost_usd"] / max(max_cost * 1.2, 1))) if max_cost else 0
+        total_cost = gt.get("total_cost_usd", 0)
+        cost_eff = 100 * (1 - (total_cost / max(max_cost * 1.2, 1))) if max_cost else 0
         cost_eff = min(100, max(10, cost_eff + 20)) # Ensure $20 isn't a 0
         
         # quality: Based on real usability (already 0-1)
@@ -338,7 +340,8 @@ def render_compare_html(runs):
         cache = gt.get("cache_read_tokens", 0) / max(gt.get("input_tokens", 1), 1) * 100
         
         # speed: lower duration = higher score
-        speed = 100 * (1 - (gt["total_duration_seconds"] / max(max_dur * 1.5, 1))) if max_dur else 0
+        total_duration = gt.get("total_duration_seconds", 0)
+        speed = 100 * (1 - (total_duration / max(max_dur * 1.5, 1))) if max_dur else 0
         speed = min(100, max(10, speed + 40))
 
         html += f"""

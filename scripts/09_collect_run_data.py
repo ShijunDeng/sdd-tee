@@ -144,8 +144,9 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
         grand_total_tokens = grand_input + grand_output
 
     pricing = {"input": 15.0, "output": 75.0, "cache_read": 1.50, "cache_write": 18.75}
-    cost = ((grand_input - grand_cache_read) * pricing["input"] / 1e6 
+    cost = (grand_input * pricing["input"] / 1e6 
             + grand_cache_read * pricing["cache_read"] / 1e6
+            + grand_cache_write * pricing["cache_write"] / 1e6
             + grand_output * pricing["output"] / 1e6)
 
     # Simplified mock for AR distribution (v3 focuses on totals)
