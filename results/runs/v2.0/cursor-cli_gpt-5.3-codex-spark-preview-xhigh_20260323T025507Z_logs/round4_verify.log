@@ -1,0 +1,42 @@
+Implemented targeted fixes for AR-034 through AR-043 after reviewing the implemented SDK and API types.
+
+### Findings and fixes
+
+1. **AR-034 / control-plane contract bug**
+   - **Bug:** `create_session(...)` did not always include `metadata` in the request payload.
+   - **Fix:** `metadata` is now always sent (defaults to `{}`) so the request body consistently includes `metadata` alongside `name`, `namespace`, and `ttl` as required.
+   - **Updated file:** `sdk-python/agentcube/clients/control_plane.py`
+
+2. **AR-042 / deepcopy correctness**
+   - **Bug risk:** Deep-copy helpers were aliasing status condition slices, which can cause shared mutation across copies.
+   - **Fix:** Added deep-copy handling for `Status.Conditions` on both `AgentRuntime` and `CodeInterpreter` objects in:
+     - `pkg/apis/runtime/v1alpha1/zz_generated.deepcopy.go`
+   - **Updated file:** `pkg/apis/runtime/v1alpha1/zz_generated.deepcopy.go`
+
+### Verification outcome (AR-034 to AR-043)
+
+- **AR-034 (Python control-plane client):**
+  - `HTTPAdapter` + dual-scheme mount pattern verified (`agentcube/utils/http.py` + use in control-plane client).
+  - Env/constructor URL resolution and token fallback/read logic are present.
+  - `create_session` / `delete_session` behavior is implemented with required defaults and status handling.
+- **AR-035 (Code interpreter data-plane):**
+  - URL construction and `/api/execute` + `/api/files` paths are present.
+  - `x-agentcube-session-id` is injected through the request path.
+  - Timeout handling (`timeout+2` read timeout) and JSON validation behavior are present.
+  - `CommandExecutionError` on non-zero exit code is implemented.
+- **AR-036 (Agent runtime data-plane):**
+  - Session header + content-type handling, timeout tuple behavior, invalid JSON raising, and error wrapping via `AgentRuntimeDataPlaneClientError` are present.
+- **AR-037 (Session header management):**
+  - Canonical session header constant matches exactly and is applied in both clients and tests.
+- **AR-038 (Exception hierarchy):**
+  - `AgentCubeError`, `CommandExecutionError`, `SessionError`, `DataPlaneError` exist with required export and `__str__` fields.
+- **AR-039 (Timeout behavior):**
+  - Default read/connect timeout constants are standardized to `120` and `5.0` in relevant clients.
+- **AR-040 / AR-041 / AR-043 (API/type registration + CRDs):**
+  - Group/version/resource constants, registration, list kinds, print columns, and status markers are present.
+  - `podTemplate`, `sessionTimeout`, `maxSessionDuration`, auth defaults/constraints, and template/conditions structures are in place.
+
+### Note
+I did not run tests or build commands in this pass.
+
+If you want, I can do a follow-up pass to add/adjust focused unit tests for the two fixes above (metadata default payload and status deep-copy immutability) so regressions are explicitly guarded.

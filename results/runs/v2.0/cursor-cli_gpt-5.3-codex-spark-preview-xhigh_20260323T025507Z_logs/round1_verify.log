@@ -1,0 +1,61 @@
+Implemented. I inspected and patched the implemented parts of AR-001 and AR-008 across the existing source, fixed import/syntax issues, and corrected runtime logic gaps.
+
+### What I fixed
+
+1. `pkg/router/server.go`
+   - Removed compile-breaking unused imports and local dead variable.
+   - Added default store fallback: when `storeClient` is `nil`, `NewServer` now uses `store.Storage()`.
+   - Kept `MaxConcurrentRequests <= 0` normalization and h2c/readiness behavior intact.
+
+2. `pkg/router/semaphore.go`
+   - Replaced invalid `select` usage on a function call with a proper non-blocking channel acquire/release semaphore.
+   - Ensured acquired slots are always released via `defer`.
+
+3. `pkg/router/proxy.go`
+   - Fixed request proxy director wiring with explicit auth-token propagation and signature failure handling.
+   - Added JWT signing failure path returning:
+     - `500` with `{"error":"failed to sign request","code":"JWT_SIGNING_FAILED"}`
+   - Ensured `x-agentcube-session-id` is always set on proxied responses and proxy error responses.
+   - Added safe handling for optional session presence in director header injection.
+   - Refactored token injection into a dedicated builder function for clearer error handling.
+
+4. `pkg/router/session_manager.go`
+   - Removed unused import.
+   - Added store-client guard before sandbox resolution to avoid nil client dereference.
+   - Mapped created sessions to sandbox kinds (`Sandbox` / `SandboxClaim`) so JWT policy matches AR-001 routing expectations.
+   - Kept create/load resolution and workload-manager endpoint behavior.
+
+5. `pkg/router/forward.go`
+   - Removed dead/unused helper and dead imports.
+   - Normalized path for entrypoint matching before prefix comparison, fixing non-slashed path cases.
+   - Preserved outbound path building semantics and proxy error mapping.
+
+6. `pkg/router/jwt_manager.go`
+   - Removed unused import.
+   - Tightened `TryStoreOrLoadJWTKeySecret` behavior:
+     - missing existing key now surfaces an error instead of silently continuing.
+     - create conflict (`AlreadyExists`) now attempts to load and parse the existing secret instead of swallowing all create failures.
+
+7. `pkg/api/errors.go`
+   - Aligned sandbox template not-found resource mapping with typed kind constant usage.
+
+8. `pkg/store/store_redis.go`
+   - Applied `sanitizeTimeForRedis` result back to `ExpiresAt` before persistence (timezone normalization and zero-time validation remain enforced).
+
+9. `pkg/store/store_valkey.go`
+   - Hardened `VALKEY_ADDR` parsing for comma-separated input (trim/first-element selection).
+   - Applied `sanitizeTimeForRedis` result back to `ExpiresAt` before persistence.
+   - Kept options/env parsing structure and updated no-op placeholders.
+
+10. `pkg/store/singleton.go`
+    - Added explicit store-type constants for redis/valkey and switched switch cases to use them.
+
+### Scope note on AR-002..AR-011
+- The repository currently contains implemented Go code only for router + session store plus related spec files.
+- There are currently no source files for AR-002, AR-003, AR-004, AR-005, AR-006, AR-007, AR-009, AR-010, or AR-011 implementations in-tree, and no workflow/SDK/CLI/docker/agent-d code paths are present to verify/fix yet.
+- So full AR-002..AR-011 verification is currently blocked by missing implementation files.
+
+### What remains
+- If you want, I can continue with the next tranche and start implementing the remaining ARs in order (or the missing ones you care about most first), then re-run full verification on a complete implementation set.
+
+

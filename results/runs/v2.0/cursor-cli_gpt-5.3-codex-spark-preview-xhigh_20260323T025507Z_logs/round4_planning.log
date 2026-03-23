@@ -1,0 +1,24 @@
+Completed. I updated `PLAN.md` to include the requested architectural requirement coverage for `AR-034` through `AR-043`.
+
+- Updated the document header to `AR-023 to AR-043`.
+- Added full sections for:
+  - `AR-034 -- Python SDK: HTTP client contracts — control plane`
+  - `AR-035 -- Python SDK: HTTP client contracts — data plane (Code Interpreter)`
+  - `AR-036 -- Python SDK: HTTP client contracts — data plane (Agent Runtime)`
+  - `AR-037 -- Python SDK: Session header management`
+  - `AR-038 -- Python SDK: Exception hierarchy`
+  - `AR-039 -- Python SDK: Timeout behavior`
+  - `AR-040 -- Sandbox Orchestration: AgentRuntime CRD schema and API registration`
+  - `AR-041 -- Sandbox Orchestration: AgentRuntime spec fields and kubebuilder rules`
+  - `AR-042 -- Sandbox Orchestration: AgentRuntime status`
+  - `AR-043 -- Sandbox Orchestration: CodeInterpreter CRD schema`
+- Each AR section includes:
+  - explicit file list (`Files to create`)
+  - implementation steps (`Precise implementation logic`)
+  - concrete test surface additions
+- Extended `Delivery sequence (recommended)` with `AR-034` through `AR-043` steps `12` to `21`.
+
+Edited file:
+- `PLAN.md`
+
+If you want, I can now also generate a compact change matrix version (AR → exact spec clause mapping → impacted file list) to make this directly traceable to acceptance tests.

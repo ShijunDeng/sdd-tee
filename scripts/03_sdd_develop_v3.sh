@@ -87,7 +87,7 @@ run_tool() {
             gemini --model "$MODEL" --prompt "$final_prompt" --yolo --output-format json > "$raw_file" 2>&1 || true
             ;;
         cursor-cli)
-            timeout 600 cursor agent --trust "$final_prompt" > "$log_file" 2>&1 || true
+            timeout 600 agent --trust "$final_prompt" > "$log_file" 2>&1 || true
             ;;
         claude-code)
             CLAUDE_CODE_DISABLE_NONESSENTIAL=1 \

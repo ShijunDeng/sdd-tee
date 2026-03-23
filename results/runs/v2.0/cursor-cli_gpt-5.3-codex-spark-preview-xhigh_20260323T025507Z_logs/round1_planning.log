@@ -1,0 +1,23 @@
+Created `PLAN.md` at repo root with a full implementation plan for all requested ARs:
+
+- `PLAN.md` now contains:
+  - Explicit AR-to-scope mapping for AR-001 through AR-011.
+  - A file-by-file creation list for each AR (including all Go, Python, Helm, workflow, and integration artifacts).
+  - Precise behavior logic mapped to every requirement from the specs (endpoints, validation, auth, state transitions, error contracts, retries, defaults, shutdown, etc.).
+  - An execution order for implementation.
+
+The plan is organized as:
+
+- AR-001 — Router session routing
+- AR-002 — CI/CD automation
+- AR-003 — Idle cleanup controller (`agentd`)
+- AR-004 — Python SDK
+- AR-005 — Workload Manager / sandbox orchestration
+- AR-006 — PicoD API
+- AR-007 — Deployment/packaging + Helm charts
+- AR-008 — Session store (Redis/Valkey)
+- AR-009 — Integrations (Dify plugin + PCAP analyzer)
+- AR-010 — CLI toolkit
+- AR-011 — Generated Kubernetes `client-go` package
+
+Note: The AR labels are not embedded in the spec text, so I mapped them deterministically in the order and responsibility boundaries above. If you want, I can realign these AR labels to a different convention before implementation starts.
