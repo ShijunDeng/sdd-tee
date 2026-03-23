@@ -34,13 +34,19 @@ except ImportError:
 # ============================================================================
 
 def audit_logs(log_dir):
-    """Parses raw logs to find real API usage."""
-    totals = {"input": 0, "output": 0, "cache_read": 0, "cache_write": 0, "total": 0}
+    """Parses raw logs to find real API usage, mapped to tool stages."""
+    # Mapping: stage_name -> totals
+    stage_breakdown = {}
+    
     if not os.path.exists(log_dir): return None
     
     found_any = False
     for f in sorted(os.listdir(log_dir)):
         if not f.endswith("_raw.json"): continue
+        stage_key = f.replace("_raw.json", "")
+        if stage_key not in stage_breakdown:
+            stage_breakdown[stage_key] = {"input": 0, "output": 0, "cache_read": 0, "cache_write": 0, "total": 0, "api_calls": 0}
+        
         path = os.path.join(log_dir, f)
         try:
             with open(path, "r") as src:
@@ -53,11 +59,12 @@ def audit_logs(log_dir):
                             if d.get("type") == "step_finish":
                                 t = d.get("part", {}).get("tokens", {})
                                 if t:
-                                    totals["input"] += t.get("input", 0)
-                                    totals["output"] += t.get("output", 0)
-                                    totals["cache_read"] += t.get("cache", {}).get("read", 0)
-                                    totals["cache_write"] += t.get("cache", {}).get("write", 0)
-                                    totals["total"] += t.get("total", 0)
+                                    stage_breakdown[stage_key]["input"] += t.get("input", 0)
+                                    stage_breakdown[stage_key]["output"] += t.get("output", 0)
+                                    stage_breakdown[stage_key]["cache_read"] += t.get("cache", {}).get("read", 0)
+                                    stage_breakdown[stage_key]["cache_write"] += t.get("cache", {}).get("write", 0)
+                                    stage_breakdown[stage_key]["total"] += t.get("total", 0)
+                                    stage_breakdown[stage_key]["api_calls"] += 1
                                     found_any = True
                         except: continue
                 # Gemini stats format
@@ -69,14 +76,23 @@ def audit_logs(log_dir):
                         for m in models.values():
                             t = m.get("tokens", {})
                             if t:
-                                totals["input"] += t.get("prompt", 0)
-                                totals["output"] += t.get("candidates", 0)
-                                totals["total"] += t.get("total", 0)
-                                totals["cache_read"] += t.get("cached", 0)
+                                stage_breakdown[stage_key]["input"] += t.get("prompt", 0)
+                                stage_breakdown[stage_key]["output"] += t.get("candidates", 0)
+                                stage_breakdown[stage_key]["total"] += t.get("total", 0)
+                                stage_breakdown[stage_key]["cache_read"] += t.get("cached", 0)
+                                stage_breakdown[stage_key]["api_calls"] += m.get("api", {}).get("totalRequests", 1)
                                 found_any = True
         except: continue
     
-    return totals if found_any else None
+    return stage_breakdown if found_any else None
+
+def map_tool_stage_to_sdd(tool_stage):
+    """Maps roundX_stage to ST-X."""
+    if "planning" in tool_stage: return "ST-2"
+    if "implementation" in tool_stage: return "ST-4"
+    if "verify" in tool_stage: return "ST-6"
+    if "friction" in tool_stage: return "ST-5"
+    return "ST-4" # Default to implementation
 
 # ============================================================================
 # File Classification & Distribution (Legacy but needed for AR mapping)
@@ -127,13 +143,33 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
             try: total_loc += len(fpath.read_text().splitlines())
             except: pass
 
-    # 2. Token Allocation
+    # 2. Token Allocation and Stage Aggregation
+    sdd_stages = {s: {"name": STAGE_NAMES[s], "input_tokens": 0, "output_tokens": 0, "cache_read_tokens": 0, "cache_write_tokens": 0, "total_tokens": 0, "duration_seconds": 0, "api_calls": 0, "iterations": 0} for s in STAGE_NAMES}
+    
     if telemetry:
-        grand_total_tokens = telemetry["total"]
-        grand_input = telemetry["input"]
-        grand_output = telemetry["output"]
-        grand_cache_read = telemetry["cache_read"]
-        grand_cache_write = telemetry["cache_write"]
+        grand_total_tokens = 0
+        grand_input = 0
+        grand_output = 0
+        grand_cache_read = 0
+        grand_cache_write = 0
+        grand_api_calls = 0
+        
+        for tool_stage, t in telemetry.items():
+            sid = map_tool_stage_to_sdd(tool_stage)
+            sdd_stages[sid]["input_tokens"] += t["input"]
+            sdd_stages[sid]["output_tokens"] += t["output"]
+            sdd_stages[sid]["cache_read_tokens"] += t["cache_read"]
+            sdd_stages[sid]["cache_write_tokens"] += t["cache_write"]
+            sdd_stages[sid]["total_tokens"] += t["total"]
+            sdd_stages[sid]["api_calls"] += t["api_calls"]
+            sdd_stages[sid]["iterations"] += t["api_calls"]
+            
+            grand_total_tokens += t["total"]
+            grand_input += t["input"]
+            grand_output += t["output"]
+            grand_cache_read += t["cache_read"]
+            grand_cache_write += t["cache_write"]
+            grand_api_calls += t["api_calls"]
     else:
         # Fallback with penalty (5x to account for agentic overhead)
         print(f"  [WARN] No telemetry found. Using penalized estimation.")
@@ -142,6 +178,13 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
         grand_cache_read = int(grand_input * 0.5)
         grand_cache_write = 0
         grand_total_tokens = grand_input + grand_output
+        grand_api_calls = total_files * 2
+        
+        # Simple distribution for fallback
+        sdd_stages["ST-2"]["total_tokens"] = int(grand_total_tokens * 0.2)
+        sdd_stages["ST-4"]["total_tokens"] = int(grand_total_tokens * 0.6)
+        sdd_stages["ST-6"]["total_tokens"] = int(grand_total_tokens * 0.2)
+
 
     pricing = {"input": 15.0, "output": 75.0, "cache_read": 1.50, "cache_write": 18.75}
     cost = (grand_input * pricing["input"] / 1e6 
@@ -153,6 +196,22 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
     ar_results = []
     for ar in AR_CATALOG:
         share = 1.0 / len(AR_CATALOG)
+        
+        ar_stages = {}
+        for sid, sdata in sdd_stages.items():
+            ar_stages[sid] = {
+                "input_tokens": int(sdata["input_tokens"] * share),
+                "output_tokens": int(sdata["output_tokens"] * share),
+                "cache_read_tokens": int(sdata["cache_read_tokens"] * share),
+                "cache_write_tokens": int(sdata["cache_write_tokens"] * share),
+                "spec_context_tokens": int(187956 * share / len(STAGE_NAMES)),
+                "human_input_tokens": 0,
+                "total_tokens": int(sdata["total_tokens"] * share),
+                "iterations": max(1, int(sdata["iterations"] * share)),
+                "duration_seconds": int(sdata["duration_seconds"] * share),
+                "api_calls": max(1, int(sdata["api_calls"] * share))
+            }
+
         ar_results.append({
             "ar_id": ar["id"],
             "ar_name": ar["name"],
@@ -168,9 +227,9 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
                 "cache_write_tokens": int(grand_cache_write * share),
                 "human_input_tokens": 0,
                 "spec_context_tokens": int(187956 * share),
-                "iterations": 10,
-                "duration_seconds": 180,
-                "api_calls": 20,
+                "iterations": max(1, int(grand_api_calls * share)),
+                "duration_seconds": int(7200 * share),
+                "api_calls": max(1, int(grand_api_calls * share)),
                 "cost_usd": round(cost * share, 4)
             },
             "output": {"actual_loc": int(total_loc * share), "actual_files": 1, "tasks_count": 5},
@@ -181,23 +240,13 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
                 "bugs_found": 0
             },
             "metrics": {
-                "ET_LOC": 0, "QT_COV": 0.8,
+                "ET_LOC": round(grand_total_tokens / max(total_loc, 1), 2), 
+                "QT_COV": 0.8,
                 "ET_FILE": 0, "ET_TASK": 0, "ET_AR": 0, "ET_TIME": 0, "ET_COST_LOC": 0,
                 "RT_RATIO": 0, "RT_ITER": 0, "QT_CONSIST": 0, "QT_AVAIL": 0, "QT_BUG": 0,
                 "PT_DESIGN": 0, "PT_PLAN": 0, "PT_DEV": 0, "PT_VERIFY": 0
             },
-            "stages": {s: {
-                "input_tokens": 0,
-                "output_tokens": 0,
-                "cache_read_tokens": 0,
-                "cache_write_tokens": 0,
-                "spec_context_tokens": 0,
-                "human_input_tokens": 0,
-                "total_tokens": 0,
-                "iterations": 0,
-                "duration_seconds": 0,
-                "api_calls": 0
-            } for s in STAGE_NAMES}
+            "stages": ar_stages
         })
 
     return {
@@ -224,22 +273,12 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
             "human_input_tokens": 0,
             "spec_context_tokens": 187956,
             "total_duration_seconds": run_data.get("total_duration_seconds", 7200),
-            "total_tasks": total_files * 2,
-            "total_iterations": total_files * 3,
-            "total_api_calls": 500,
+            "total_tasks": grand_api_calls,
+            "total_iterations": grand_api_calls,
+            "total_api_calls": grand_api_calls,
         },
         "ar_results": ar_results,
-        "stage_aggregates": {s: {
-            "name": STAGE_NAMES[s],
-            "input_tokens": 0,
-            "output_tokens": 0,
-            "cache_read_tokens": 0,
-            "cache_write_tokens": 0,
-            "total_tokens": 0,
-            "iterations": 0,
-            "duration_seconds": 0,
-            "api_calls": 0
-        } for s in STAGE_NAMES},
+        "stage_aggregates": sdd_stages,
         "baselines": {}
     }
 

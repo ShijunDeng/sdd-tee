@@ -62,7 +62,7 @@
   SDD Token Efficiency Evaluation &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
   模型: bailian-coding-plan/kimi-k2.5 &nbsp;|&nbsp; 工具: opencode-cli &nbsp;|&nbsp;
   <span style="color:var(--green)">ACTUAL RUN</span> &nbsp;|&nbsp;
-  opencode-cli_bailian-coding-plan_kimi-k2.5_CSI_20260323T111513Z &nbsp;|&nbsp; 2026-03-23T14:15:43Z
+  opencode-cli_bailian-coding-plan_kimi-k2.5_CSI_20260323T111513Z &nbsp;|&nbsp; 2026-03-23T14:33:56Z
 </p>
 
 <div class="toc">
@@ -102,9 +102,9 @@
   <div class="stat"><div class="v">¥401</div><div class="l">总成本 (CNY)</div></div>
   <div class="stat"><div class="v">10,178</div><div class="l">生成代码行数</div></div>
   <div class="stat"><div class="v">54</div><div class="l">生成文件数</div></div>
-  <div class="stat"><div class="v">108</div><div class="l">Task 总数</div></div>
-  <div class="stat"><div class="v">162</div><div class="l">交互总轮数</div></div>
-  <div class="stat"><div class="v">500</div><div class="l">API 调用次数</div></div>
+  <div class="stat"><div class="v">286</div><div class="l">Task 总数</div></div>
+  <div class="stat"><div class="v">286</div><div class="l">交互总轮数</div></div>
+  <div class="stat"><div class="v">286</div><div class="l">API 调用次数</div></div>
   <div class="stat"><div class="v">2h0m</div><div class="l">总耗时</div></div>
 </div>
 
@@ -129,9 +129,9 @@
 <h2 id="stage">2. 阶段维度 (ST-0 ~ ST-7)</h2>
 <div class="card">
   <h3>各阶段 Token 消耗占比</h3>
-  
+  <svg width="800" height="32" style="display:block"><rect x="0.0" y="0" width="287.8" height="32" fill="#26C6DA" rx="3"/><text x="143.9" y="20.0" text-anchor="middle" fill="#fff" font-size="11">Spec 增量设计</text><rect x="287.8" y="0" width="258.0" height="32" fill="#FFA726" rx="3"/><text x="416.8" y="20.0" text-anchor="middle" fill="#fff" font-size="11">任务拆解</text><rect x="545.8" y="0" width="254.2" height="32" fill="#AB47BC" rx="3"/><text x="672.9" y="20.0" text-anchor="middle" fill="#fff" font-size="11">一致性验证</text></svg>
   <div class="legend" style="margin-top:8px">
-    <span><i style="background:#78909C"></i> AR 输入 0.0%</span><span><i style="background:#42A5F5"></i> 需求澄清 0.0%</span><span><i style="background:#26C6DA"></i> Spec 增量设计 0.0%</span><span><i style="background:#66BB6A"></i> Design 增量设计 0.0%</span><span><i style="background:#FFA726"></i> 任务拆解 0.0%</span><span><i style="background:#EF5350"></i> 开发实现 0.0%</span><span><i style="background:#AB47BC"></i> 一致性验证 0.0%</span><span><i style="background:#8D6E63"></i> 合并归档 0.0%</span>
+    <span><i style="background:#78909C"></i> AR 输入 0.0%</span><span><i style="background:#42A5F5"></i> 需求澄清 0.0%</span><span><i style="background:#26C6DA"></i> Spec 增量设计 36.0%</span><span><i style="background:#66BB6A"></i> Design 增量设计 0.0%</span><span><i style="background:#FFA726"></i> 任务拆解 32.3%</span><span><i style="background:#EF5350"></i> 开发实现 0.0%</span><span><i style="background:#AB47BC"></i> 一致性验证 31.8%</span><span><i style="background:#8D6E63"></i> 合并归档 0.0%</span>
   </div>
 </div>
 
@@ -162,11 +162,11 @@
             <td><span style="display:inline-block;width:12px;height:12px;background:#26C6DA;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-2</td>
             <td>Spec 增量设计</td>
             <td>/opsx:ff → specs/</td>
-            <td style="text-align:right">0</td>
-            <td style="text-align:right">0</td>
-            <td style="text-align:right;font-weight:600">0</td>
-            <td style="text-align:right">0.0%</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">216,271</td>
+            <td style="text-align:right">46,458</td>
+            <td style="text-align:right;font-weight:600">5,758,009</td>
+            <td style="text-align:right">36.0%</td>
+            <td style="text-align:right">94</td>
             <td style="text-align:right">0m0s</td>
         </tr><tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:#66BB6A;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-3</td>
@@ -182,11 +182,11 @@
             <td><span style="display:inline-block;width:12px;height:12px;background:#FFA726;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-4</td>
             <td>任务拆解 (Tasks)</td>
             <td>/opsx:ff → tasks.md</td>
-            <td style="text-align:right">0</td>
-            <td style="text-align:right">0</td>
-            <td style="text-align:right;font-weight:600">0</td>
-            <td style="text-align:right">0.0%</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">271,422</td>
+            <td style="text-align:right">34,756</td>
+            <td style="text-align:right;font-weight:600">5,162,375</td>
+            <td style="text-align:right">32.3%</td>
+            <td style="text-align:right">93</td>
             <td style="text-align:right">0m0s</td>
         </tr><tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:#EF5350;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-5</td>
@@ -202,11 +202,11 @@
             <td><span style="display:inline-block;width:12px;height:12px;background:#AB47BC;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-6</td>
             <td>一致性验证 (Verify)</td>
             <td>/opsx:verify</td>
-            <td style="text-align:right">0</td>
-            <td style="text-align:right">0</td>
-            <td style="text-align:right;font-weight:600">0</td>
-            <td style="text-align:right">0.0%</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">124,625</td>
+            <td style="text-align:right">35,934</td>
+            <td style="text-align:right;font-weight:600">5,086,638</td>
+            <td style="text-align:right">31.8%</td>
+            <td style="text-align:right">99</td>
             <td style="text-align:right">0m0s</td>
         </tr><tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:#8D6E63;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-7</td>
@@ -233,7 +233,7 @@
       <tr><td>RT-AI</td><td>AI 消耗 Token 总量</td><td style="text-align:right">16,007,022</td></tr>
       <tr><td>RT-HUMAN</td><td>人类输入 Token 总量</td><td style="text-align:right">0</td></tr>
       <tr><td>RT-RATIO</td><td>人机 Token 比</td><td style="text-align:right">0.0000</td></tr>
-      <tr><td>RT-ITER</td><td>平均迭代次数 / AR</td><td style="text-align:right">3.8</td></tr>
+      <tr><td>RT-ITER</td><td>平均迭代次数 / AR</td><td style="text-align:right">6.7</td></tr>
     </table>
   </div>
   <div class="card">
@@ -258,7 +258,7 @@
 <div class="stats">
   <div class="stat"><div class="v">1573</div><div class="l">ET-LOC (Token/LOC)</div></div>
   <div class="stat"><div class="v">296,426</div><div class="l">ET-FILE (Token/File)</div></div>
-  <div class="stat"><div class="v">148,213</div><div class="l">ET-TASK (Token/Task)</div></div>
+  <div class="stat"><div class="v">55,969</div><div class="l">ET-TASK (Token/Task)</div></div>
   <div class="stat"><div class="v">372,256</div><div class="l">ET-AR (Token/AR)</div></div>
   <div class="stat"><div class="v">8,003,511</div><div class="l">ET-TIME (Token/h)</div></div>
   <div class="stat"><div class="v">$5.44</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
@@ -390,7 +390,7 @@ LOC: 236, Tokens: 372,256</title></circle>
     <thead><tr><th>指标</th><th>说明</th><th style="text-align:right">全局值</th></tr></thead>
     <tbody>
       <tr><td>QT-COV</td><td>Token / 测试覆盖率%</td><td style="text-align:right">0</td></tr>
-      <tr><td>QT-CONSIST</td><td>Token / 一致性得分%</td><td style="text-align:right">0</td></tr>
+      <tr><td>QT-CONSIST</td><td>Token / 一致性得分%</td><td style="text-align:right">56,518</td></tr>
       <tr><td>QT-AVAIL</td><td>Token / 代码可用率%</td><td style="text-align:right">0</td></tr>
       <tr><td>QT-BUG</td><td>Token / Bug 数 (反向)</td><td style="text-align:right">0</td></tr>
     </tbody>
@@ -407,21 +407,21 @@ LOC: 236, Tokens: 372,256</title></circle>
 <!-- ===================== 6. DISTRIBUTION ===================== -->
 <h2 id="distribution">6. 阶段间 Token 分布</h2>
 <div class="stats">
-  <div class="stat"><div class="v">0.0%</div><div class="l">PT-DESIGN 设计阶段 (15-30%)</div></div>
-  <div class="stat"><div class="v">0.0%</div><div class="l">PT-PLAN 规划阶段 (5-15%)</div></div>
+  <div class="stat"><div class="v">36.0%</div><div class="l">PT-DESIGN 设计阶段 (15-30%)</div></div>
+  <div class="stat"><div class="v">32.3%</div><div class="l">PT-PLAN 规划阶段 (5-15%)</div></div>
   <div class="stat"><div class="v">0.0%</div><div class="l">PT-DEV 开发阶段 (45-65%)</div></div>
-  <div class="stat"><div class="v">0.0%</div><div class="l">PT-VERIFY 验证阶段 (8-18%)</div></div>
-  <div class="stat warn"><div class="v">ST-0</div><div class="l">PT-PEAK 峰值阶段</div></div>
+  <div class="stat"><div class="v">31.8%</div><div class="l">PT-VERIFY 验证阶段 (8-18%)</div></div>
+  <div class="stat warn"><div class="v">ST-2</div><div class="l">PT-PEAK 峰值阶段</div></div>
   <div class="stat good"><div class="v">2358%</div><div class="l">PT-CACHE 命中率 (&gt;70%)</div></div>
 </div>
 
 <div class="card">
   <h3>设计 / 开发 / 验证 Token 分布</h3>
-  
+  <svg width="900" height="30" style="display:block"><rect x="0.0" y="0" width="323.7" height="30" fill="#42A5F5" rx="3"/><text x="161.9" y="19.0" text-anchor="middle" fill="#fff" font-size="11">设计 (ST-1~3)</text><rect x="323.7" y="0" width="290.3" height="30" fill="#FFA726" rx="3"/><text x="468.9" y="19.0" text-anchor="middle" fill="#fff" font-size="11">规划 (ST-0,4)</text><rect x="614.0" y="0" width="286.0" height="30" fill="#AB47BC" rx="3"/><text x="757.0" y="19.0" text-anchor="middle" fill="#fff" font-size="11">验证归档 (ST-6,7)</text></svg>
   <div class="note" style="margin-top:8px">
     <strong>分布分析：</strong>开发实现阶段 (ST-5) 占 0.0% 为 Token 消耗主体，
-    设计阶段 (ST-1~3) 占 0.0% 表明 SDD 在设计前移上有合理投入，
-    验证阶段 (ST-6,7) 占 0.0% 为质量保障成本。
+    设计阶段 (ST-1~3) 占 36.0% 表明 SDD 在设计前移上有合理投入，
+    验证阶段 (ST-6,7) 占 31.8% 为质量保障成本。
   </div>
 </div>
 
@@ -448,7 +448,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>S</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -460,7 +460,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>S</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -472,7 +472,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>S</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -484,7 +484,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -496,7 +496,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -508,7 +508,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -520,7 +520,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>L</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -532,7 +532,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>S</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -544,7 +544,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -556,7 +556,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -568,7 +568,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -580,7 +580,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>S</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -592,7 +592,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -604,7 +604,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>S</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -616,7 +616,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -628,7 +628,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -640,7 +640,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>S</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -652,7 +652,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>S</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -664,7 +664,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -676,7 +676,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -688,7 +688,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -700,7 +700,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>L</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -712,7 +712,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -724,7 +724,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -736,7 +736,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -748,7 +748,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -760,7 +760,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -772,7 +772,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -784,7 +784,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -796,7 +796,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>L</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -808,7 +808,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -820,7 +820,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>S</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -832,7 +832,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -844,7 +844,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>L</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -856,7 +856,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>L</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -868,7 +868,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -880,7 +880,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -892,7 +892,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>L</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -904,7 +904,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>L</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -916,7 +916,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -928,7 +928,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>L</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -940,7 +940,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -952,7 +952,7 @@ LOC: 236, Tokens: 372,256</title></circle>
             <td>M</td>
             <td style="text-align:right">372,256</td>
             <td style="text-align:right">236</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:right">1572.71</td>
             <td style="text-align:right">$1.287</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -1001,7 +1001,7 @@ LOC: 236, Tokens: 372,256</title></circle>
 </div><!-- .container -->
 <div class="footer">
   SDD-TEE v2 (SDD Token Efficiency Evaluation) &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
-  2026-03-23T14:15:43Z &nbsp;|&nbsp; <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
+  2026-03-23T14:33:56Z &nbsp;|&nbsp; <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
 </div>
 </body>
 </html>
