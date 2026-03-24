@@ -46,7 +46,7 @@ Reference specs are in ./specs/."
     case "$TOOL" in
         cursor-cli)
             # NO --continue flag, forcing a new session every stage
-            timeout 900 agent --trust "$csi_prompt" > "$log_file" 2>&1 || true
+            timeout 900 agent --model "$MODEL" --trust "$csi_prompt" > "$log_file" 2>&1 || true
             ;;
         opencode-cli)
             # New run command without session persistence

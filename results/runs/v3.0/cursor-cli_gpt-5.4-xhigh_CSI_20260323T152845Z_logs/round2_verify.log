@@ -1,0 +1,7 @@
+I mapped `AR-012` through `AR-022` to the deployment requirements in `specs/deployment/spec.md` plus the generated client surface described in `specs/deployment/client-go.md`, then audited the existing Helm/Docker/Makefile/CRD assets against those specs.
+
+The deployment assets already matched the spec closely, so the main missing piece was the generated `client-go` contract. I added that under `client-go/`: the versioned clientset in `client-go/clientset/versioned/clientset.go`, typed runtime clients in `client-go/clientset/versioned/typed/runtime/v1alpha1/`, fake clients in `client-go/clientset/versioned/fake/` and `.../typed/runtime/v1alpha1/fake/`, informer factory/routing in `client-go/informers/externalversions/`, and namespace listers in `client-go/listers/runtime/v1alpha1/`. I also added `k8s.io/client-go` to `go.mod`.
+
+For verification, I added `client_go_test.go` to cover the new surface: scheme registration, fake typed client listing, and informer routing for `agentruntimes` and `codeinterpreters`. The existing tests already cover the shipped CRDs and deployment assets, so I left those files unchanged.
+
+I could not run `go test ./...` here because every shell command was rejected by the tool layer in this session, so execution is still unverified. The natural next step is to run `go test ./...` once shell execution is available.

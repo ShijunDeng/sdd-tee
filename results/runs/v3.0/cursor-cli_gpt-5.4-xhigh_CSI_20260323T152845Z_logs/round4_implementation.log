@@ -1,0 +1,15 @@
+Using the only traceability available on disk, I mapped `AR-034` through `AR-043` from the ordered requirement headings in `./specs`, then reviewed the matching implementation areas across the chart, CRDs, Docker assets, Make targets, and idle-cleanup controller.
+
+I made one concrete fix: when Router RBAC is enabled, `manifests/charts/base/templates/agentcube-router.yaml` now defaults the pod `serviceAccountName` to `agentcube-router`, so the Deployment actually uses the service account the chart creates by default. I also added a regression test in `deployment_assets_test.go` to lock that behavior in.
+
+From source inspection, the rest of the scoped requirements already matched the specs on disk:
+- Deployment/chart behavior in `manifests/charts/base/templates/workloadmanager.yaml`, `manifests/charts/base/templates/rbac/workloadmanager.yaml`, `manifests/charts/base/templates/rbac-router.yaml`, `manifests/charts/base/templates/volcano-agent-scheduler-development.yaml`, `manifests/charts/base/crds/*`, `docker/*`, and `Makefile`
+- Idle-cleanup trigger/input behavior in `pkg/agentd/reconciler.go` and `cmd/agentd/main.go`
+
+I could not run `go test` here because this environment rejects shell execution for `go` commands entirely, so the verification I completed was static code/spec review plus the added regression test. If you want, the next best check is to run:
+
+```bash
+go test ./pkg/agentd ./pkg/workloadmanager ./pkg/apis/runtime/v1alpha1 ./pkg/common/types .
+```
+
+

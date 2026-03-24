@@ -1,0 +1,10 @@
+Using only the files on disk, I mapped `AR-034..043` by counting `### Requirement:` entries across `specs/*/spec.md` in alphabetical spec-directory order, because the AR IDs themselves are not embedded in the repo. Under that mapping, `AR-034..041` are the deployment requirements and `AR-042..043` are the first two idle-cleanup requirements.
+
+`AR-034..041` already matched the existing repo, so I verified them in place rather than changing them. The current coverage is in `deployment_assets_test.go`, `pkg/apis/runtime/v1alpha1/types_test.go`, `manifests/charts/base/...`, `docker/...`, and `Makefile`. The missing part was the idle-cleanup controller slice, so I implemented that by:
+- adding `IdleTimeoutAnnotationKey` and `LastActivityAnnotationKey` in `pkg/workloadmanager/server.go`
+- adding a controller-runtime `Sandbox` reconciler in `pkg/agentd/reconciler.go`
+- replacing the old `cmd/agentd/main.go` HTTP stub with controller-runtime manager wiring and the required scheme/options
+- adding tests in `pkg/agentd/reconciler_test.go`, `cmd/agentd/main_test.go`, and `pkg/workloadmanager/constants_test.go`
+- adding the required module deps in `go.mod` for `sigs.k8s.io/agent-sandbox` and `sigs.k8s.io/controller-runtime`
+
+I could not run `go test` in this session because command execution was blocked here, so the verification is from source inspection plus the new test coverage, not an executed test run. The first real test run will also likely populate `go.sum`, which is currently empty. Natural next steps are `go test ./...` and, if you have an external AR traceability list, confirming it matches the spec-order mapping I used.
