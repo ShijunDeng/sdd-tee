@@ -40,7 +40,8 @@
   </p>
 
   <h3>二、核心评测实录 (15 轮次)</h3>
-  <ul><li><b>轮次 1 (opencode-cli / bailian-coding-plan/MiniMax-M2.5  <span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span>)</b>: <span style='color:#666'>任务由于 API 限制或环境错误未产出有效代码。</span></li>
+  <ul><li><b>轮次 1 (gemini-cli / gemini-3.1-pro-preview  <span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span>)</b>: <span style='color:#666'>任务由于 API 限制或环境错误未产出有效代码。</span></li>
+<li><b>轮次 2 (opencode-cli / bailian-coding-plan/MiniMax-M2.5  <span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span>)</b>: <span style='color:#666'>任务由于 API 限制或环境错误未产出有效代码。</span></li>
 </ul>
 
   <h3>三、模型梯队与关键极值</h3>
@@ -49,7 +50,7 @@
       <div class="card-label">产出规模最优</div>
       <div class="card-val">0 LOC</div>
       <div class="card-meta">
-        <strong>opencode-cli / bailian-coding-plan/MiniMax-M2.5  <span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></strong><br>
+        <strong>gemini-cli / gemini-3.1-pro-preview  <span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></strong><br>
         在 CSI 极端环境下展现了极强的长文件生成持久力。
       </div>
     </div>
@@ -57,7 +58,7 @@
       <div class="card-label">经济性最优 (维护税最低)</div>
       <div class="card-val">$0.00</div>
       <div class="card-meta">
-        <strong>opencode-cli / bailian-coding-plan/MiniMax-M2.5  <span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></strong><br>
+        <strong>gemini-cli / gemini-3.1-pro-preview  <span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></strong><br>
         凭借极高的 <b>Cache 命中率</b> 大幅削减了维护场景下的重复输入成本。
       </div>
     </div>
@@ -65,7 +66,7 @@
       <div class="card-label">执行速度最快</div>
       <div class="card-val">-</div>
       <div class="card-meta">
-        <strong>opencode-cli / bailian-coding-plan/MiniMax-M2.5  <span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></strong><br>
+        <strong>gemini-cli / gemini-3.1-pro-preview  <span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></strong><br>
         从阅读代码到产出方案的端到端时延最短。
       </div>
     </div>
@@ -84,38 +85,38 @@
 <div class="section">
   <h2>1. 核心总量对比 (Grand Totals)</h2>
   <p style="color:#666; font-size:0.85em;">横向对比 15 轮运行的总消耗。绿色高亮代表该指标在<b>成功运行</b>的任务中表现最优。</p>
-  <table><tr><th>指标</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5 <br><span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></th></tr><tr><td>总 Token</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>Input Token</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>Output Token</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>Cache Read</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>总耗时</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>总成本 (USD)</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>代码行数 (LOC)</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>文件数</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>API 调用</td><td><span style='color:#ccc'>-</span></td></tr>
+  <table><tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview <br><span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5 <br><span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></th></tr><tr><td>总 Token</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>Input Token</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>Output Token</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>Cache Read</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>总耗时</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>总成本 (USD)</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>代码行数 (LOC)</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>文件数</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>API 调用</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
 </table>
 </div>
 
 <div class="section">
   <h2>2. 7 阶段流量分布 (Token 消耗与耗时)</h2>
   <p style="color:#666; font-size:0.85em;">分析 AI 在 SDD 标准工作流各阶段的时间与 Token 投入。上行为 Token 消耗，下行为耗时。</p>
-  <table><tr><th>阶段</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5 <br><span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></th></tr><tr><td><strong>ST-0</strong><br><small>需求探索与环境初始化</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
-<tr><td><strong>ST-1</strong><br><small>架构设计与约束对齐</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
-<tr><td><strong>ST-2</strong><br><small>实施方案与依赖图谱</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
-<tr><td><strong>ST-3</strong><br><small>核心逻辑代码编写</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
-<tr><td><strong>ST-4</strong><br><small>辅助模块与胶水代码</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
-<tr><td><strong>ST-5</strong><br><small>单元测试与本地自检</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
-<tr><td><strong>ST-6</strong><br><small>集成校验与Spec比对</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
-<tr><td><strong>ST-7</strong><br><small>文档同步与最终产出</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
+  <table><tr><th>阶段</th><th>gemini-cli / gemini-3.1-pro-preview <br><span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5 <br><span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></th></tr><tr><td><strong>ST-0</strong><br><small>需求探索与环境初始化</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
+<tr><td><strong>ST-1</strong><br><small>架构设计与约束对齐</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
+<tr><td><strong>ST-2</strong><br><small>实施方案与依赖图谱</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
+<tr><td><strong>ST-3</strong><br><small>核心逻辑代码编写</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
+<tr><td><strong>ST-4</strong><br><small>辅助模块与胶水代码</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
+<tr><td><strong>ST-5</strong><br><small>单元测试与本地自检</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
+<tr><td><strong>ST-6</strong><br><small>集成校验与Spec比对</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
+<tr><td><strong>ST-7</strong><br><small>文档同步与最终产出</small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td><td><span style='color:#ccc'>-</span><br><small><span style='color:#ccc'>-</span></small></td></tr>
 </table>
 </div>
 
 <div class="section">
   <h2>3. 效率与质量深度审计 (Efficiency & Quality)</h2>
-  <table><tr><th>指标</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5 <br><span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></th></tr><tr><td>ET-LOC (Token/行)</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>Cache 命中率</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>代码可用率</td><td><span style='color:#ccc'>-</span></td></tr>
-<tr><td>一致性评分</td><td><span style='color:#ccc'>-</span></td></tr>
+  <table><tr><th>指标</th><th>gemini-cli / gemini-3.1-pro-preview <br><span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5 <br><span style='color:#d93025;font-size:0.8em;font-weight:bold'>[FAILED]</span></th></tr><tr><td>ET-LOC (Token/行)</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>Cache 命中率</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>代码可用率</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
+<tr><td>一致性评分</td><td><span style='color:#ccc'>-</span></td><td><span style='color:#ccc'>-</span></td></tr>
 </table>
 </div>
 

@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated_at": "2026-03-24T14:13:04.382299+00:00",
-    "run_id": "opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T140749Z",
-    "tool": "opencode-cli",
-    "model": "bailian-coding-plan/MiniMax-M2.5",
+    "generated_at": "2026-03-24T14:25:49.470999+00:00",
+    "run_id": "gemini-cli_gemini-3.1-pro-preview_20260324T140734Z",
+    "tool": "gemini-cli",
+    "model": "gemini-3.1-pro-preview",
     "methodology": "Spec-Driven Development (SDD) 7-Stage Pipeline",
     "token_tracking": "estimation-fallback",
     "status": "FAILED",
