@@ -1,9 +1,0 @@
-{
-  "run_id": "opencode-cli_bailian-coding-plan_kimi-k2.5_CSI_20260323T111513Z",
-  "timestamp": "20260323T111513Z",
-  "started_at": "2026-03-23T11:15:13Z",
-  "project": "agentcube",
-  "tool": "opencode-cli",
-  "model": "bailian-coding-plan/kimi-k2.5",
-  "total_duration_seconds": 7200
-}

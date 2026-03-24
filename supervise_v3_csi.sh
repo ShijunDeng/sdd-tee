@@ -100,7 +100,7 @@ export __MODEL="$MODEL"
 export __RUN_ID="$RUN_ID"
 
 python3 << 'PYEOF'
-import json, os, re
+import json, os
 run_id = os.environ.get('__RUN_ID')
 tool = os.environ.get('__TOOL')
 model = os.environ.get('__MODEL')
@@ -112,22 +112,16 @@ files = d['quality']['files_generated']
 cost = d['token_summary']['cost_usd']
 ts = d['timestamp']
 
-with open('CONTEXT.md', 'r') as f: c = f.read()
+line = f'| 6 | {tool} | {model} | `..._{ts}` | {tok:,} | {files} | {loc:,} | ~75m | ${cost:.2f} |'
 
-# Find the v3.0 table
-v3_section = re.search(r'### 已完成的评测轮次 \(v3.0 Reinforced Evaluation\)\s+\| # \| .* \|\n\|---| .* \|\n((?:\| \d+ \| .* \|\n)*)', c)
-if v3_section:
-    existing_entries = v3_section.group(1).strip().split('\n')
-    # Filter out placeholder if any
-    entries = [e for e in existing_entries if '| 0 | - |' not in e and e.strip()]
-    idx = len(entries) + 1
-    line = f'| {idx} | {tool} | {model} | `..._{ts}` | {tok:,} | {files} | {loc:,} | ~75m | ${cost:.2f} |'
-    
-    new_v3_content = '\n'.join(entries + [line]) + '\n'
-    new_c = c.replace(v3_section.group(1), new_v3_content)
+with open('CONTEXT.md', 'r') as f: c = f.read()
+if '| 5 |' in c:
+    parts = c.split('| 5 |')
+    sub = parts[1].split('\n', 1)
+    new_c = parts[0] + '| 5 |' + sub[0] + '\n' + line + '\n' + sub[1]
     with open('CONTEXT.md', 'w') as fw: fw.write(new_c)
 PYEOF
-sed -i 's/× 6 轮次/× 7 轮次/g' CONTEXT.md || true
+sed -i 's/× 5 轮次/× 6 轮次/g' CONTEXT.md || true
 
 # 4. 提交保存
 git add .

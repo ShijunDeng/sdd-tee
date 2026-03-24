@@ -1,7 +1,0 @@
-I mapped `AR-001` through `AR-011` to the first eleven requirement blocks in `specs/sandbox-orchestration/spec.md`, because that spec is the one that matches the current repo surface: CRDs in `manifests/charts/base/crds`, API types in `pkg/apis/runtime/v1alpha1`, shared request/response types in `pkg/common/types`, and the HTTP server in `pkg/workloadmanager`.
-
-I made one behavioral fix and then tightened verification. The fix is in `pkg/workloadmanager/server.go`: create handlers still enforce the route-selected kind, but they now reject an explicitly invalid client-supplied `kind` instead of silently accepting it. I also made `NewServer` consistently default `Config.Port` to `8080` when the caller passes an empty config.
-
-Verification was expanded in three places. `pkg/common/types/types_test.go` now covers kind validation, whitespace handling, and nil request validation. `pkg/workloadmanager/server_test.go` now covers the corrected kind behavior, invalid JSON, and default port behavior while preserving the middleware-order and route-surface checks. `pkg/apis/runtime/v1alpha1/types_test.go` now also checks the shipped CRD YAML files so the on-disk manifests stay aligned with the API/type expectations for AR-001 through AR-007.
-
-I wasn’t able to run `go test ./...` here because shell execution is being rejected in this environment, so the verification in this session is static plus the added tests. If you want, I can continue with the next requirements after AR-011, or remap the AR IDs if you intended a different spec file.

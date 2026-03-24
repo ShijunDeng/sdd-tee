@@ -1,103 +1,4586 @@
-# SDD-TEE 项目上下文快照
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+项| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+目| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+上| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+下| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+文| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+快| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+照| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-> 生成时间: 2026-03-22T10:00:00Z
-> 最新 commit: `5882b35 Fix Gemini 3.1 Pro estimated data structure and update report`
-> 分支: main | 远端: github.com:ShijunDeng/sdd-tee.git
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
----
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+>| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+生| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+时| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+间| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-## 1. 项目定位
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+>| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+最| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+新| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+F| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+x| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+G| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+P| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-SDD-TEE (SDD Token Efficiency Evaluation) — 基于 **CodeSpec 7 阶段工作流 × OpenSpec OPSX** 的 AI Coding Assistant Token 效率评估框架。
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+>| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+分| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+支| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+远| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+端| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+j| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-目标：将真实项目 [agentcube](https://github.com/ShijunDeng/agentcube.git) 拆解为 43 个 AR，用 4 种 CLI 工具分别走完 SDD 全流程，量化 Token 消耗，建立基线。
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-## 2. 核心任务文件
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-- **`task.md`** — 原始需求（不提交到 git）
-- **`docs/SDD开发Token消耗度量指标体系设计方案.md`** — 5 维指标体系设计方案
-- **`config.yaml`** — 评测配置（工具、模型、AR 列表、预警阈值）
-- **`PROPOSAL.md`** — v2 评测体系设计文档
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-## 3. 当前工程状态
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+项| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+目| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+定| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+位| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-### 已完成
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-| 项目 | 状态 | 说明 |
-|------|------|------|
-| 项目技术解析 | ✅ | `scripts/01_analyze_project.sh` + `scripts/06_project_report.py` |
-| 规范逆向生成 | ✅ | `specs/` 目录，10 capabilities × (spec.md + design.md) |
-| 评测体系设计 | ✅ | 8 阶段 × 5 维 × 16 指标 |
-| 数据合约层 | ✅ | `scripts/schema.py` — Single Source of Truth |
-| 环境预检 | ✅ | `scripts/preflight.py` — 7 维检查，43 项通过 |
-| 4 工具适配 | ✅ | cursor-cli / claude-code / gemini-cli / opencode-cli 全部适配 |
-| 可重入性保障 | ✅ | preflight + schema + selftest + requirements.txt |
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+(| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+y| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+)| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+—| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+基| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+于| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+阶| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+段| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+工| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+作| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+流| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+×| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+P| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+X| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+A| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+I| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+A| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+效| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+率| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+估| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+框| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+架| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+。| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-### 已完成的评测轮次 (v1.0 基础探索)
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-| # | 工具 | 模型 | Run ID | Tokens | 文件 | LOC | 耗时 | 成本 |
-|---|------|------|--------|--------|------|-----|------|------|
-| 1 | cursor-cli | claude-4.6-opus-high-thinking | `..._20260321T090515Z` | 896,885 | 174 | 19,115 | 93m | $19.92 |
-| 2 | opencode-cli | bailian-coding-plan/glm-5 | `..._20260321T114208Z` | 852,964 | 124 | 18,099 | 105m | $18.68 |
-| 3 | opencode-cli | bailian-coding-plan/kimi-k2.5 | `..._AVERAGED` | 598,365 | 59 | 11,018 | 102m | $12.11 |
-| 4 | opencode-cli | bailian-coding-plan/qwen3.5-plus | `..._20260321T190016Z` | 754,346 | 108 | 16,237 | 77m | $16.08 |
-| 5 | opencode-cli | opencode/minimax-m2.5-free | `..._20260321T170726Z` | 885,287 | 185 | 20,380 | 99m | $19.64 |
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+目| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+标| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+：| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+将| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+真| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+实| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+项| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+目| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+[| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+]| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+(| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+j| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+)| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+拆| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+解| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+为| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+个| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+A| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+R| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+用| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+种| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+I| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+工| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+具| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+分| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+别| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+走| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+完| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+全| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+流| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+程| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+量| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+化| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+消| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+耗| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+建| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+立| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+基| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+线| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+。| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-### 已完成的评测轮次 (v2.0 Realism Guard 真实性防偷懒)
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-| # | 工具 | 模型 | Run ID | Tokens | 文件 | LOC | 耗时 | 成本 |
-|---|------|------|--------|--------|------|-----|------|------|
-| 1 | gemini-cli | gemini-3.1-pro-preview | `..._20260322T113247Z` | 1,743,157 | 272 | 46,754 | 58m | $42.13 |
-| 2 | opencode-cli | bailian-coding-plan/glm-4.7 | `..._20260322T151855Z` | 581,911 | 44 | 10,068 | 114m | $11.82 |
-| 3 | opencode-cli | bailian-coding-plan/glm-5 | `..._20260322T151911Z` | 597,019 | 89 | 10,934 | 131m | $11.98 |
-| 4 | opencode-cli | bailian-coding-plan/kimi-k2.5 | `..._20260322T110243Z` | 603,468 | 97 | 11,235 | 121m | $12.32 |
-| 5 | opencode-cli | bailian-coding-plan/qwen3.5-plus | `..._20260322T113313Z` | 805,130 | 119 | 16,992 | 98m | $17.53 |
-| 6 | opencode-cli | opencode/minimax-m2.5-free | `..._20260322T113259Z` | 542,904 | 56 | 8,080 | 88m | $10.51 |
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+核| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+心| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+任| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+务| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+文| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+件| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-> **注意**: 
-> 1. v1.0 数据已归档，作为工具自然发挥的基线参考（Cursor-Claude 4.6 被明确定义为行业 Baseline）。
-> 2. v2.0 启用了严格的 LOC 增量门禁与强制重试惩罚机制，排除了多时区换算 Bug，呈现了最真实的脱水数据。
-> 3. v2.0 的 `compare_report.html` 已将 v1.0 的 Cursor 数据合并注入，形成 7 款模型的终极对比雷达图。
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-### 进行中的任务
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+—| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+原| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+始| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+需| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+求| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+（| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+不| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+提| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+交| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+到| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+）| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-| 项目 | 命令 | 状态 |
-|------|------|------|
-| Claude Code 评测 | `make run TOOL=claude-code MODEL=claude-sonnet-4-20250514` | 待开始 |
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+开| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+发| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+消| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+耗| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+度| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+量| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+指| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+标| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+体| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+系| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+设| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+计| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+方| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+案| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+—| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+维| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+指| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+标| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+体| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+系| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+设| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+计| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+方| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+案| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-## 4. 文件结构 (v1.0 & v2.0 归档升级)
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+y| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+—| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+配| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+置| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+（| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+工| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+具| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+、| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+模| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+型| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+、| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+A| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+R| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+列| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+表| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+、| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+预| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+警| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+阈| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+值| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+）| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-```
-/home/dsj/benchmark/
-├── config.yaml                     # 评测配置
-├── Makefile                        # 评测编排
-├── CONTEXT.md                      # 上下文快照
-├── scripts/                        # 评测脚本集 (包含最新的 V3 真实性看护脚本)
-├── specs/                          # 10 capability OpenSpec 规范
-├── workspaces/                     # 运行空间
-│   ├── v1.0/                       # v1.0 无看护生成的代码归档
-│   └── v2.0/                       # v2.0 (Realism Guard) 生成的代码归档
-└── results/
-    ├── runs/                       # 评测原始数据与日志
-    │   ├── v1.0/                   # 归档的 v1.0 评测数据
-    │   └── v2.0/                   # 归档的 v2.0 评测数据
-    └── reports/                    # 生成的 HTML 数据报告
-        ├── v1.0/                   # v1.0 的对比报告与单轮报告
-        └── v2.0/                   # v2.0 的对比报告与单轮报告
-```
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+P| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+R| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+P| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+A| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+—| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+体| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+系| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+设| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+计| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+文| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+档| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-## 5. 关键修复与变更 (本会话)
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-1. **V3 真实性看护架构**: 引入了 `03_sdd_develop_v3.sh`，强制执行 Session 隔离、LOC Delta 门禁检测及自动重试惩罚机制，确保生成代码的真实性，防止模型偷懒（Stub 敷衍）。
-2. **数据全面归档**: 之前的无门禁约束的数据（如 Cursor, Qwen, Kimi v1.0）现已全部移至 `v1.0/` 目录下。
-3. **版本切换**: 后续产生的所有经过严格看护测试的数据，将被标记为 `v2.0` 测试数据集。
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+当| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+前| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+工| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+程| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+状| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+态| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-## 6. 恢复步骤
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
 
-```bash
-# 执行 Claude Code 评测
-make run TOOL=claude-code MODEL=claude-sonnet-4-20250514
-make collect
-make report
-make compare
-```
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+已| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+完| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+项| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+目| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+状| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+态| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+说| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+明| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+项| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+目| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+技| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+术| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+解| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+析| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+✅| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+y| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+j| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
++| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+j| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+y| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+规| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+范| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+逆| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+向| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+生| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+✅| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+目| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+录| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+×| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+(| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
++| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+)| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+体| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+系| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+设| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+计| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+✅| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+阶| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+段| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+×| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+维| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+×| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+指| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+标| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+合| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+约| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+层| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+✅| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+y| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+—| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+环| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+境| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+预| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+检| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+✅| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+y| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+—| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+维| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+检| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+查| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+项| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+通| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+过| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+工| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+具| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+适| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+配| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+✅| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+全| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+部| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+适| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+配| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+可| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+重| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+入| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+性| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+保| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+障| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+✅| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
++| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
++| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
++| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+q| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+x| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+已| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+完| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+轮| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+次| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+(| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+基| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+础| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+探| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+索| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+)| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+工| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+具| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+模| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+型| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+R| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+I| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+文| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+件| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+耗| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+时| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+本| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+A| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+V| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+R| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+A| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+G| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+q| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+w| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+x| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+已| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+完| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+轮| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+次| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+(| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+R| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+G| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+真| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+实| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+性| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+防| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+偷| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+懒| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+)| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+工| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+具| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+模| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+型| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+R| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+I| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+文| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+件| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+耗| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+时| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+本| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+w| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+q| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+w| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+x| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Z| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+9| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+8| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+$| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+已| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+完| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+轮| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+次| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+(| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+R| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+)| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+工| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+具| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+模| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+型| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+R| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+I| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+文| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+件| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+耗| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+时| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+本| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+>| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+注| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+意| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+>| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+已| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+归| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+档| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+作| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+为| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+工| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+具| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+自| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+然| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+发| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+挥| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+基| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+线| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+参| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+考| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+（| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+被| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+明| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+确| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+定| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+义| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+为| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+行| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+业| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+B| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+）| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+。| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+>| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+启| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+用| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+了| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+严| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+格| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+增| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+量| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+门| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+禁| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+与| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+强| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+制| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+重| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+试| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+惩| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+罚| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+机| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+制| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+排| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+除| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+了| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+多| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+时| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+区| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+换| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+算| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+B| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+呈| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+现| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+了| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+最| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+真| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+实| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+脱| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+水| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+。| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+>| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+已| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+将| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+合| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+并| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+注| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+入| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+形| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+7| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+款| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+模| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+型| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+终| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+极| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+对| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+比| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+雷| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+达| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+图| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+。| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+进| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+行| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+中| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+任| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+务| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+项| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+目| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+命| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+令| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+状| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+态| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+=| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+M| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+=| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+待| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+开| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+始| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+|| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+文| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+件| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+结| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+构| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+(| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+&| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+归| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+档| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+升| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+级| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+)| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+j| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+├| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+g| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+y| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+配| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+置| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+├| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+M| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+f| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+编| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+排| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+├| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+N| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+X| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+上| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+下| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+文| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+快| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+照| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+├| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+脚| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+本| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+集| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+(| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+包| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+含| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+最| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+新| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+V| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+真| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+实| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+性| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+看| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+护| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+脚| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+本| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+)| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+├| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+y| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+规| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+范| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+├| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+w| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+运| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+行| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+空| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+间| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+│| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+├| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+无| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+看| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+护| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+生| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+代| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+码| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+归| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+档| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+│| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+└| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+(| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+R| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+G| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+)| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+生| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+代| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+码| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+归| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+档| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+└| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+├| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+原| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+始| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+与| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+日| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+志| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+│| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+├| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+归| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+档| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+│| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+└| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+归| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+档| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+└| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+生| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+H| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+M| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+报| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+告| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+├| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+对| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+比| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+报| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+告| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+与| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+单| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+轮| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+报| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+告| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+└| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+─| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+对| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+比| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+报| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+告| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+与| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+单| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+轮| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+报| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+告| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+关| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+键| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+修| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+复| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+与| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+变| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+更| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+(| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+本| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+会| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+话| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+)| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+V| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+真| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+实| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+性| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+看| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+护| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+架| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+构| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+引| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+入| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+了| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+_| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+强| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+制| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+执| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+行| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+隔| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+离| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+、| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+门| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+禁| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+检| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+及| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+自| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+动| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+重| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+试| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+惩| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+罚| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+机| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+制| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+确| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+保| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+生| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+成| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+代| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+码| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+真| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+实| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+性| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+防| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+止| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+模| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+型| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+偷| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+懒| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+（| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+S| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+敷| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+衍| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+）| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+。| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+全| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+面| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+归| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+档| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+之| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+前| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+无| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+门| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+禁| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+约| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+束| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+（| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+如| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+Q| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+w| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+,| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+K| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+i| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+）| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+现| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+已| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+全| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+部| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+移| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+至| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+/| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+目| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+录| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+下| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+。| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+3| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+版| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+本| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+切| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+换| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+*| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+:| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+后| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+续| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+产| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+生| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+所| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+有| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+经| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+过| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+严| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+格| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+看| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+护| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+试| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+的| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+，| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+将| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+被| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+标| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+记| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+为| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+v| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+试| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+数| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+据| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+集| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+。| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+6| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+.| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+恢| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+复| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+步| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+骤| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+b| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+h| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+#| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+执| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+行| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+C| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+评| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+测| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+T| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+=| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+M| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+O| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+D| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+E| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+L| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+=| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+u| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+d| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+s| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+n| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+-| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+2| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+0| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+5| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+1| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+4| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+l| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+t| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+k| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+ | 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+c| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+o| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+m| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+p| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+a| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+r| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+e| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+`| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
+
+| 1 | opencode-cli | bailian-coding-plan/MiniMax-M2.5 | `..._20260324T140749Z` | 0 | 0 | 0 | ~75m | $0.00 |
