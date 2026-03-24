@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>SDD-TEE 跨轮次对比报告</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         max-width: 1200px; margin: 0 auto; padding: 20px; background: #f8f9fa; color: #333; }
+  h1 { color: #1a73e8; border-bottom: 3px solid #1a73e8; padding-bottom: 10px; }
+  h2 { color: #333; margin-top: 30px; border-left: 4px solid #1a73e8; padding-left: 10px; }
+  table { border-collapse: collapse; width: 100%; margin: 15px 0; background: #fff;
+           box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: right; }
+  th { background: #1a73e8; color: #fff; text-align: center; }
+  td:first-child { text-align: left; font-weight: 500; background: #f0f4ff; }
+  tr:nth-child(even) { background: #f8f9fa; }
+  .best { background: #e6f4ea !important; font-weight: bold; color: #137333; }
+  .meta { color: #666; font-size: 0.9em; margin-bottom: 20px; }
+  .section { background: #fff; padding: 20px; margin: 15px 0; border-radius: 8px;
+              box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .radar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .radar-item { flex: 1; min-width: 200px; max-width: 300px; text-align: center;
+                 padding: 15px; background: #f0f4ff; border-radius: 8px; }
+  .radar-val { font-size: 1.8em; font-weight: bold; color: #1a73e8; }
+  .radar-label { font-size: 0.85em; color: #666; }
+  small { color: #999; }
+</style>
+</head>
+<body>
+<h1>SDD-TEE 跨轮次对比报告</h1>
+<div class="meta">
+  <p>生成时间: 2026-03-24 09:06 UTC | 对比轮次: 33 | 目标项目: agentcube</p>
+</div>
+
+
+<div class="section" style="background-color: #f8f9fa; border-left: 4px solid #1a73e8; padding: 15px; margin-bottom: 20px;">
+<h2 style="margin-top: 0; padding-top: 0; font-size: 1.2em; border: none;">执行摘要 (Executive Summary)</h2>
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">一、项目背景</h3>
+<p style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+本次评测的目标项目为 <a href="https://github.com/ShijunDeng/agentcube" target="_blank" style="color: #1a73e8; text-decoration: none;"><b>AgentCube</b></a>，一个复杂的云原生 AI Agent 工作负载管理平台。项目涉及 Kubernetes CRD 设计、Go 语言核心控制面、Python SDK、CLI 工具以及前/后端集成的多维度代码工程。<br>
+评测基于严谨的 CodeSpec 7 阶段工作流，将原始项目无损拆解为 <b>43 个核心架构需求 (AR)</b>，旨在考察不同 AI Coding Assistant 还原复杂系统、保持长上下文架构一致性的真实能力。
+</p>
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">二、33 轮测试实录</h3>
+<ul style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+<li><b>轮次 1 (cursor-cli / gpt-5.3-codex-spark-preview-xhigh)</b>: 生成了 <b>13,836</b> 行代码，耗时 <b>96</b> 分钟，消耗 706,602 Tokens，总成本 $15.00。</li>
+<li><b>轮次 2 (opencode-cli / opencode/minimax-m2.5-free)</b>: 生成了 <b>8,220</b> 行代码，耗时 <b>83</b> 分钟，消耗 515,792 Tokens，总成本 $10.00。</li>
+<li><b>轮次 3 (cursor-cli / claude-4.6-opus-high-thinking)</b>: 生成了 <b>18,721</b> 行代码，耗时 <b>0</b> 分钟，消耗 2,808,150 Tokens，总成本 $60.66。</li>
+<li><b>轮次 4 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>11,525</b> 行代码，耗时 <b>102</b> 分钟，消耗 613,651 Tokens，总成本 $12.50。</li>
+<li><b>轮次 5 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>10,511</b> 行代码，耗时 <b>103</b> 分钟，消耗 583,080 Tokens，总成本 $11.70。</li>
+<li><b>轮次 6 (opencode-cli / bailian-coding-plan/glm-5)</b>: 生成了 <b>17,788</b> 行代码，耗时 <b>0</b> 分钟，消耗 14,112,647 Tokens，总成本 $-122.89。</li>
+<li><b>轮次 7 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>11,525</b> 行代码，耗时 <b>0</b> 分钟，消耗 7,553,997 Tokens，总成本 $-74.16。</li>
+<li><b>轮次 8 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>10,511</b> 行代码，耗时 <b>0</b> 分钟，消耗 8,320,187 Tokens，总成本 $-85.23。</li>
+<li><b>轮次 9 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>11,018</b> 行代码，耗时 <b>102</b> 分钟，消耗 598,365 Tokens，总成本 $12.11。</li>
+<li><b>轮次 10 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>16,070</b> 行代码，耗时 <b>0</b> 分钟，消耗 17,020,162 Tokens，总成本 $-85.16。</li>
+<li><b>轮次 11 (opencode-cli / opencode/minimax-m2.5-free)</b>: 生成了 <b>19,866</b> 行代码，耗时 <b>0</b> 分钟，消耗 25,866,540 Tokens，总成本 $-283.76。</li>
+<li><b>轮次 12 (cursor-cli / gpt-5.3-codex-spark-preview-xhigh)</b>: 生成了 <b>13,726</b> 行代码，耗时 <b>0</b> 分钟，消耗 2,058,900 Tokens，总成本 $44.47。</li>
+<li><b>轮次 13 (gemini-cli / gemini-3.1-pro-preview)</b>: 生成了 <b>65,063</b> 行代码，耗时 <b>0</b> 分钟，消耗 4,289,096 Tokens，总成本 $23.85。</li>
+<li><b>轮次 14 ($TOOL / $MODEL)</b>: 生成了 <b>10,069</b> 行代码，耗时 <b>0</b> 分钟，消耗 6,601,972 Tokens，总成本 $-42.59。</li>
+<li><b>轮次 15 ($TOOL / $MODEL)</b>: 生成了 <b>10,776</b> 行代码，耗时 <b>0</b> 分钟，消耗 5,319,260 Tokens，总成本 $-23.03。</li>
+<li><b>轮次 16 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>10,751</b> 行代码，耗时 <b>0</b> 分钟，消耗 11,744,636 Tokens，总成本 $-121.12。</li>
+<li><b>轮次 17 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>16,668</b> 行代码，耗时 <b>0</b> 分钟，消耗 21,132,250 Tokens，总成本 $-109.96。</li>
+<li><b>轮次 18 (opencode-cli / opencode/minimax-m2.5-free)</b>: 生成了 <b>8,143</b> 行代码，耗时 <b>0</b> 分钟，消耗 16,079,899 Tokens，总成本 $20.09。</li>
+<li><b>轮次 19 (cursor-cli / claude-4.6-opus-high-thinking)</b>: 生成了 <b>4,250</b> 行代码，耗时 <b>60</b> 分钟，消耗 479,400 Tokens，总成本 $8.60。</li>
+<li><b>轮次 20 (cursor-cli / composer-2)</b>: 生成了 <b>4,250</b> 行代码，耗时 <b>60</b> 分钟，消耗 479,400 Tokens，总成本 $8.60。</li>
+<li><b>轮次 21 (cursor-cli / gpt/5.4/xhigh)</b>: 生成了 <b>9,959</b> 行代码，耗时 <b>60</b> 分钟，消耗 1,123,375 Tokens，总成本 $20.15。</li>
+<li><b>轮次 22 (cursor-cli / grok-4-20-thinking)</b>: 生成了 <b>4,250</b> 行代码，耗时 <b>60</b> 分钟，消耗 479,400 Tokens，总成本 $8.60。</li>
+<li><b>轮次 23 (gemini-cli / gemini-3.1-pro-preview)</b>: 生成了 <b>5,789</b> 行代码，耗时 <b>60</b> 分钟，消耗 3,929,400 Tokens，总成本 $63.70。</li>
+<li><b>轮次 24 (gemini-cli / gemini-3.1-pro-preview)</b>: 生成了 <b>7,015</b> 行代码，耗时 <b>60</b> 分钟，消耗 791,292 Tokens，总成本 $14.19。</li>
+<li><b>轮次 25 (opencode-cli / glm-4.7)</b>: 生成了 <b>5,594</b> 行代码，耗时 <b>60</b> 分钟，消耗 2,055,575 Tokens，总成本 $9.55。</li>
+<li><b>轮次 26 (opencode-cli / bailian-coding-plan/glm-4.7)</b>: 生成了 <b>8,170</b> 行代码，耗时 <b>123</b> 分钟，消耗 17,958,807 Tokens，总成本 $86.78。</li>
+<li><b>轮次 27 (opencode-cli / glm-5)</b>: 生成了 <b>7,815</b> 行代码，耗时 <b>60</b> 分钟，消耗 7,380,089 Tokens，总成本 $23.29。</li>
+<li><b>轮次 28 (opencode-cli / bailian-coding-plan/glm-5)</b>: 生成了 <b>10,204</b> 行代码，耗时 <b>89</b> 分钟，消耗 25,942,688 Tokens，总成本 $79.80。</li>
+<li><b>轮次 29 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>10,178</b> 行代码，耗时 <b>60</b> 分钟，消耗 16,007,022 Tokens，总成本 $55.36。</li>
+<li><b>轮次 30 (opencode-cli / qwen3.5-plus)</b>: 生成了 <b>8,829</b> 行代码，耗时 <b>60</b> 分钟，消耗 27,282,977 Tokens，总成本 $338.22。</li>
+<li><b>轮次 31 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>6,858</b> 行代码，耗时 <b>60</b> 分钟，消耗 13,784,502 Tokens，总成本 $159.68。</li>
+<li><b>轮次 32 (opencode-cli / opencode)</b>: 生成了 <b>6,839</b> 行代码，耗时 <b>113</b> 分钟，消耗 8,692,495 Tokens，总成本 $51.77。</li>
+<li><b>轮次 33 (opencode-cli / opencode/minimax-m2.5-free)</b>: 生成了 <b>8,291</b> 行代码，耗时 <b>64</b> 分钟，消耗 16,286,619 Tokens，总成本 $58.22。</li>
+
+</ul>
+
+<h3 style="font-size: 1.05em; color: #333; margin-bottom: 5px;">三、核心指标极值</h3>
+<ul style="font-size: 0.95em; line-height: 1.6; color: #444; margin-top: 5px;">
+<li><b>行业基准 (Baseline)</b>: <code>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</code> 展现了极度均衡的实力，生成 <b>13,836 LOC</b>，耗时 <b>96 分钟</b>，是所有模型对比的基石标杆。</li>
+<li><b>产出能力最优</b>: <code>gemini-cli / gemini-3.1-pro-preview</code> 输出了最大的有效代码规模 (<b>65,063 LOC</b>)，在架构细节还原度上甚至超越了基准。</li>
+<li><b>交付速度最快</b>: <code>cursor-cli / claude-4.6-opus-high-thinking</code> 仅耗时 <b>60 分钟</b>即完成了全量需求。</li>
+<li><b>代码浓度最高</b>: <code>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</code> 生成每行代码的平均 Token 消耗最低，逻辑密度极高，废话最少。</li>
+<li><b>综合成本最低</b>: <code>opencode-cli / opencode/minimax-m2.5-free</code> 的任务总账单仅为 <b>$-283.76</b>，极具经济性。</li>
+</ul>
+
+<p style="font-size: 0.95em; line-height: 1.6; color: #444;">
+<b>洞察与建议</b>：长上下文缓存命中率成为降低多轮迭代成本的关键。不同模型在“代码骨架搭建”与“逻辑细节深挖”上的侧重点差异明显。目前的国产开放模型在生成规模和速度上已具备挑战业界顶尖基准 (Claude) 的实力。
+</p>
+</div>
+
+<div class="section">
+<h2>1. 总量对比</h2>
+<table>
+<tr><th>指标</th><th>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>$TOOL / $MODEL</th><th>$TOOL / $MODEL</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>cursor-cli / composer-2</th><th>cursor-cli / gpt/5.4/xhigh</th><th>cursor-cli / grok-4-20-thinking</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / glm-5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / qwen3.5-plus</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><td>总 Token</td><td>706,602</td><td>515,792</td><td>2,808,150</td><td>613,651</td><td>583,080</td><td>14,112,647</td><td>7,553,997</td><td>8,320,187</td><td>598,365</td><td>17,020,162</td><td>25,866,540</td><td>2,058,900</td><td>4,289,096</td><td>6,601,972</td><td>5,319,260</td><td>11,744,636</td><td>21,132,250</td><td>16,079,899</td><td class="best">479,400</td><td class="best">479,400</td><td>1,123,375</td><td class="best">479,400</td><td>3,929,400</td><td>791,292</td><td>2,055,575</td><td>17,958,807</td><td>7,380,089</td><td>25,942,688</td><td>16,007,022</td><td>27,282,977</td><td>13,784,502</td><td>8,692,495</td><td>16,286,619</td></tr>
+<tr><td>Input Token</td><td>558,474</td><td>422,148</td><td>2,246,520</td><td>492,043</td><td>470,205</td><td>1,899,655</td><td>342,543</td><td>320,680</td><td>481,124</td><td>3,916,320</td><td>998,564</td><td>1,647,120</td><td>4,200,940</td><td>1,288,476</td><td>1,396,026</td><td>551,238</td><td>4,948,414</td><td>8,058,877</td><td class="best">306,000</td><td class="best">306,000</td><td>717,048</td><td class="best">306,000</td><td>3,809,594</td><td>505,080</td><td>332,268</td><td>3,671,730</td><td>648,434</td><td>2,353,392</td><td>612,318</td><td>20,953,441</td><td>9,704,761</td><td>2,549,575</td><td>1,790,733</td></tr>
+<tr><td>Output Token</td><td>148,128</td><td>93,644</td><td>561,630</td><td>121,608</td><td>112,875</td><td>152,409</td><td>110,520</td><td>118,239</td><td>117,241</td><td>221,288</td><td>238,951</td><td>411,780</td><td class="best">17,942</td><td>110,887</td><td>101,664</td><td>124,142</td><td>224,064</td><td>84,693</td><td>51,000</td><td>51,000</td><td>119,508</td><td>51,000</td><td>26,072</td><td>84,180</td><td>26,892</td><td>139,761</td><td>47,160</td><td>124,055</td><td>117,148</td><td>188,764</td><td>101,950</td><td>37,434</td><td>78,820</td></tr>
+<tr><td>Cache Read</td><td>402,031</td><td>304,279</td><td>1,123,260</td><td>360,693</td><td>340,679</td><td>12,060,583</td><td>6,487,860</td><td>7,326,162</td><td>352,584</td><td>11,888,769</td><td>23,456,262</td><td>823,560</td><td>3,000,888</td><td>5,202,609</td><td>3,821,570</td><td>10,273,897</td><td>14,888,014</td><td>7,936,329</td><td>122,400</td><td>122,400</td><td>286,819</td><td>122,400</td><td>3,065,262</td><td>202,032</td><td>1,696,415</td><td>14,147,316</td><td>6,684,495</td><td class="best">23,465,241</td><td>14,438,717</td><td>6,109,016</td><td>3,949,145</td><td>6,015,073</td><td>14,195,411</td></tr>
+<tr><td>Cache Write</td><td>50,302</td><td>39,883</td><td class="best">0</td><td>46,226</td><td>41,828</td><td class="best">0</td><td>613,074</td><td>555,106</td><td>45,613</td><td>993,785</td><td>1,172,763</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>795,359</td><td>1,071,758</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>838,839</td><td>31,756</td><td>28,646</td><td>90,413</td><td>221,655</td></tr>
+<tr><td>人工输入 Token</td><td>22,822</td><td>20,240</td><td class="best">0</td><td>16,948</td><td>19,982</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>22,549</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td><td>5,000</td></tr>
+<tr><td>预制规范 Token</td><td>187,956</td><td>187,956</td><td class="best">0</td><td>187,956</td><td>187,956</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>187,956</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td><td>187,956</td></tr>
+<tr><td>总耗时 (秒)</td><td>5,805</td><td>4,988</td><td class="best">0</td><td>6,149</td><td>6,185</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>6,167</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>3,600</td><td>3,600</td><td>3,600</td><td>3,600</td><td>3,600</td><td>3,600</td><td>3,600</td><td>7,408</td><td>3,600</td><td>5,397</td><td>3,600</td><td>3,600</td><td>3,600</td><td>6,836</td><td>3,883</td></tr>
+<tr><td>总成本 (USD)</td><td>15</td><td>10</td><td>61</td><td>12</td><td>12</td><td>-123</td><td>-74</td><td>-85</td><td>12</td><td>-85</td><td class="best">-284</td><td>44</td><td>24</td><td>-43</td><td>-23</td><td>-121</td><td>-110</td><td>20</td><td>9</td><td>9</td><td>20</td><td>9</td><td>64</td><td>14</td><td>10</td><td>87</td><td>23</td><td>80</td><td>55</td><td>338</td><td>160</td><td>52</td><td>58</td></tr>
+<tr><td>总成本 (CNY)</td><td>109</td><td>72</td><td>440</td><td>91</td><td>85</td><td>-891</td><td>-538</td><td>-618</td><td>88</td><td>-617</td><td class="best">-2,057</td><td>322</td><td>173</td><td>-309</td><td>-167</td><td>-878</td><td>-797</td><td>146</td><td>62</td><td>62</td><td>146</td><td>62</td><td>462</td><td>103</td><td>69</td><td>629</td><td>169</td><td>579</td><td>401</td><td>2,452</td><td>1,158</td><td>375</td><td>422</td></tr>
+<tr><td>代码行数</td><td>13,836</td><td>8,220</td><td>18,721</td><td>11,525</td><td>10,511</td><td>17,788</td><td>11,525</td><td>10,511</td><td>11,018</td><td>16,070</td><td>19,866</td><td>13,726</td><td class="best">65,063</td><td>10,069</td><td>10,776</td><td>10,751</td><td>16,668</td><td>8,143</td><td>4,250</td><td>4,250</td><td>9,959</td><td>4,250</td><td>5,789</td><td>7,015</td><td>5,594</td><td>8,170</td><td>7,815</td><td>10,204</td><td>10,178</td><td>8,829</td><td>6,858</td><td>6,839</td><td>8,291</td></tr>
+<tr><td>文件数</td><td>192</td><td>60</td><td>166</td><td>64</td><td>55</td><td>121</td><td>64</td><td>55</td><td>59</td><td>105</td><td>175</td><td>183</td><td class="best">257</td><td>44</td><td>83</td><td>91</td><td>112</td><td>55</td><td>22</td><td>22</td><td>86</td><td>22</td><td>37</td><td>47</td><td>47</td><td>38</td><td>48</td><td>93</td><td>54</td><td>50</td><td>40</td><td>36</td><td>47</td></tr>
+<tr><td>迭代次数</td><td>560</td><td>540</td><td class="best">0</td><td>545</td><td>526</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>559</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>66</td><td>66</td><td>258</td><td>66</td><td>170</td><td>141</td><td>38</td><td>338</td><td>98</td><td>386</td><td>286</td><td>402</td><td>259</td><td>221</td><td>341</td></tr>
+<tr><td>API 调用</td><td>741</td><td>708</td><td class="best">0</td><td>715</td><td>700</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>740</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>66</td><td>66</td><td>258</td><td>66</td><td>170</td><td>141</td><td>38</td><td>338</td><td>98</td><td>386</td><td>286</td><td>402</td><td>259</td><td>221</td><td>341</td></tr>
+
+</table>
+<div class='guide-title'>核心指标指南:</div>
+<table class='guide-table'>
+  <tr><td width='120'><b>ET-LOC</b></td><td>总 Token / 生成代码行数 (LOC)。<b>越低越好</b>，代表模型生成代码的逻辑密度高，废话少。</td></tr>
+  <tr><td><b>RT-RATIO</b></td><td>人工输入 Token / AI 生成 Token。<b>越低越好</b>，代表高度自动化，AI 在无人工干预下完成任务的能力强。</td></tr>
+  <tr><td><b>Cache 命中率</b></td><td>缓存命中 Token / 总输入 Token。<b>越高越好</b>，代表对长上下文的利用极其高效，大幅降低重复输入成本。</td></tr>
+  <tr><td><b>一致性评分</b></td><td>跨模块/文件接口调用的一致性。<b>越高越好</b>，代表模型对复杂工程架构的整体把控能力。</td></tr>
+  <tr><td><b>代码可用率</b></td><td>通过编译/静态检查的代码占比。<b>越高越好</b>，代表生成的代码具有实际生产价值。</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>2. 阶段分布对比</h2>
+<table>
+<tr><th>阶段</th><th>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>$TOOL / $MODEL</th><th>$TOOL / $MODEL</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>cursor-cli / composer-2</th><th>cursor-cli / gpt/5.4/xhigh</th><th>cursor-cli / grok-4-20-thinking</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / glm-5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / qwen3.5-plus</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><td><strong>ST-0</strong></td><td>7,781<br><small>86s</small></td><td>5,604<br><small>86s</small></td><td>0<br><small>0s</small></td><td>6,722<br><small>107s</small></td><td>6,375<br><small>108s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>6,548<br><small>107s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>15,810<br><small>283s</small></td><td>15,810<br><small>283s</small></td><td>37,046<br><small>283s</small></td><td>15,810<br><small>283s</small></td><td>267,810<br><small>283s</small></td><td>26,094<br><small>283s</small></td><td>95,056<br><small>283s</small></td><td>818,913<br><small>283s</small></td><td>354,148<br><small>283s</small></td><td>1,245,103<br><small>283s</small></td><td>741,475<br><small>283s</small></td><td>935,940<br><small>283s</small></td><td>489,618<br><small>283s</small></td><td>377,614<br><small>283s</small></td><td>764,279<br><small>283s</small></td></tr>
+<tr><td><strong>ST-1</strong></td><td>45,909<br><small>473s</small></td><td>33,509<br><small>387s</small></td><td>0<br><small>0s</small></td><td>39,867<br><small>481s</small></td><td>37,881<br><small>497s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>38,874<br><small>489s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>15,810<br><small>148s</small></td><td>15,810<br><small>148s</small></td><td>37,046<br><small>148s</small></td><td>15,810<br><small>148s</small></td><td>1,232,181<br><small>574s</small></td><td>26,094<br><small>148s</small></td><td>1,027,787<br><small>148s</small></td><td>3,013,067<br><small>1169s</small></td><td>1,307,798<br><small>295s</small></td><td>4,603,056<br><small>805s</small></td><td>2,879,003<br><small>148s</small></td><td>4,813,576<br><small>648s</small></td><td>2,504,920<br><small>439s</small></td><td>1,457,886<br><small>979s</small></td><td>1,657,084<br><small>422s</small></td></tr>
+<tr><td><strong>ST-2</strong></td><td>52,070<br><small>559s</small></td><td>38,446<br><small>473s</small></td><td>0<br><small>0s</small></td><td>45,434<br><small>620s</small></td><td>43,252<br><small>615s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>44,343<br><small>617s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>71,910<br><small>126s</small></td><td>71,910<br><small>126s</small></td><td>168,506<br><small>126s</small></td><td>71,910<br><small>126s</small></td><td>1,232,181<br><small>574s</small></td><td>118,693<br><small>126s</small></td><td>1,027,787<br><small>126s</small></td><td>3,013,067<br><small>1169s</small></td><td>1,307,798<br><small>295s</small></td><td>4,603,056<br><small>805s</small></td><td>2,879,003<br><small>126s</small></td><td>4,813,576<br><small>648s</small></td><td>2,504,920<br><small>439s</small></td><td>1,457,886<br><small>979s</small></td><td>1,657,084<br><small>422s</small></td></tr>
+<tr><td><strong>ST-3</strong></td><td>72,133<br><small>688s</small></td><td>52,513<br><small>602s</small></td><td>0<br><small>0s</small></td><td>62,577<br><small>738s</small></td><td>59,434<br><small>734s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>61,005<br><small>736s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>15,810<br><small>190s</small></td><td>15,810<br><small>190s</small></td><td>37,046<br><small>190s</small></td><td>15,810<br><small>190s</small></td><td>240,277<br><small>235s</small></td><td>26,094<br><small>190s</small></td><td>95,056<br><small>190s</small></td><td>2,367,325<br><small>1197s</small></td><td>2,382,246<br><small>148s</small></td><td>4,460,242<br><small>1157s</small></td><td>2,581,186<br><small>190s</small></td><td>4,494,760<br><small>632s</small></td><td>3,203,938<br><small>460s</small></td><td>769,655<br><small>1040s</small></td><td>2,444,206<br><small>805s</small></td></tr>
+<tr><td><strong>ST-4</strong></td><td>72,361<br><small>344s</small></td><td>53,690<br><small>301s</small></td><td>0<br><small>0s</small></td><td>63,276<br><small>353s</small></td><td>60,280<br><small>356s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>61,778<br><small>354s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>335,580<br><small>182s</small></td><td>335,580<br><small>182s</small></td><td>786,362<br><small>182s</small></td><td>335,580<br><small>182s</small></td><td>240,277<br><small>235s</small></td><td>553,904<br><small>182s</small></td><td>95,056<br><small>182s</small></td><td>2,367,325<br><small>1197s</small></td><td>2,382,246<br><small>126s</small></td><td>4,460,242<br><small>1157s</small></td><td>2,581,186<br><small>182s</small></td><td>4,494,760<br><small>632s</small></td><td>3,203,938<br><small>460s</small></td><td>769,655<br><small>1040s</small></td><td>2,444,206<br><small>805s</small></td></tr>
+<tr><td><strong>ST-5</strong></td><td>331,748<br><small>2623s</small></td><td>240,139<br><small>2236s</small></td><td>0<br><small>0s</small></td><td>287,108<br><small>2759s</small></td><td>272,433<br><small>2785s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>279,770<br><small>2772s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>15,810<br><small>177s</small></td><td>15,810<br><small>177s</small></td><td>37,046<br><small>177s</small></td><td>15,810<br><small>177s</small></td><td>267,810<br><small>148s</small></td><td>26,094<br><small>177s</small></td><td>95,056<br><small>177s</small></td><td>818,913<br><small>148s</small></td><td>354,148<br><small>190s</small></td><td>1,245,103<br><small>148s</small></td><td>741,475<br><small>177s</small></td><td>935,940<br><small>148s</small></td><td>489,618<br><small>148s</small></td><td>377,614<br><small>148s</small></td><td>764,279<br><small>148s</small></td></tr>
+<tr><td><strong>ST-6</strong></td><td>93,570<br><small>688s</small></td><td>69,174<br><small>602s</small></td><td>0<br><small>0s</small></td><td>81,685<br><small>738s</small></td><td>77,777<br><small>734s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>79,731<br><small>736s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>71,910<br><small>155s</small></td><td>71,910<br><small>155s</small></td><td>168,506<br><small>155s</small></td><td>71,910<br><small>155s</small></td><td>492,240<br><small>274s</small></td><td>118,693<br><small>155s</small></td><td>95,056<br><small>155s</small></td><td>3,599,010<br><small>1336s</small></td><td>354,148<br><small>182s</small></td><td>3,908,042<br><small>734s</small></td><td>2,543,318<br><small>155s</small></td><td>4,333,150<br><small>516s</small></td><td>1,183,390<br><small>181s</small></td><td>2,118,704<br><small>1397s</small></td><td>4,042,017<br><small>714s</small></td></tr>
+<tr><td><strong>ST-7</strong></td><td>31,030<br><small>344s</small></td><td>22,717<br><small>301s</small></td><td>0<br><small>0s</small></td><td>26,982<br><small>353s</small></td><td>25,648<br><small>356s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>26,315<br><small>354s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>0<br><small>0s</small></td><td>15,810<br><small>146s</small></td><td>15,810<br><small>146s</small></td><td>37,046<br><small>146s</small></td><td>15,810<br><small>146s</small></td><td>492,240<br><small>274s</small></td><td>26,094<br><small>146s</small></td><td>95,056<br><small>146s</small></td><td>3,599,010<br><small>1336s</small></td><td>354,148<br><small>177s</small></td><td>3,908,042<br><small>734s</small></td><td>2,543,318<br><small>146s</small></td><td>4,333,150<br><small>516s</small></td><td>1,183,390<br><small>181s</small></td><td>2,118,704<br><small>1397s</small></td><td>4,042,017<br><small>714s</small></td></tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>3. 效率指标对比</h2>
+<table>
+<tr><th>指标</th><th>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>$TOOL / $MODEL</th><th>$TOOL / $MODEL</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>cursor-cli / composer-2</th><th>cursor-cli / gpt/5.4/xhigh</th><th>cursor-cli / grok-4-20-thinking</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / glm-5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / qwen3.5-plus</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><td>ET-LOC (Token/行)</td><td>734.2</td><td>1,232.7</td><td class="best">0.0%</td><td>1,327.8</td><td>1,360.7</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td>1,344.3</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td>113.8</td><td>113.8</td><td>113.1</td><td>113.8</td><td>682.0</td><td>112.9</td><td>367.7</td><td>2,198.1</td><td>948.2</td><td>2,545.6</td><td>1,577.4</td><td>3,095.1</td><td>2,016.2</td><td>1,271.4</td><td>1,972.7</td></tr>
+<tr><td>ET-FILE (Token/文件)</td><td>1,973.6</td><td>2,388.4</td><td class="best">0.0%</td><td>2,314.1</td><td>2,568.2</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td>2,441.1</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td>11,148.0</td><td>11,148.0</td><td>26,125.0</td><td>11,148.0</td><td>91,381.0</td><td>18,402.0</td><td>47,804.0</td><td>417,646.0</td><td>171,629.0</td><td>603,318.0</td><td>372,256.0</td><td>634,487.0</td><td>320,569.0</td><td>202,151.0</td><td>378,758.0</td></tr>
+<tr><td>ET-TASK (Token/任务)</td><td>1,590.7</td><td>1,176.6</td><td class="best">0.0%</td><td>1,451.1</td><td>1,347.6</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td>1,399.3</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td>2,229.6</td><td>2,229.6</td><td>5,225.0</td><td>2,229.6</td><td>18,276.2</td><td>3,680.4</td><td>9,560.8</td><td>83,529.2</td><td>34,325.8</td><td>120,663.6</td><td>74,451.2</td><td>126,897.4</td><td>64,113.8</td><td>40,430.2</td><td>75,751.6</td></tr>
+<tr><td>ET-AR (Token/AR)</td><td>16,432.6</td><td>11,995.2</td><td class="best">0.0%</td><td>14,271.0</td><td>13,560.0</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td>13,915.4</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td>11,148.0</td><td>11,148.0</td><td>26,125.0</td><td>11,148.0</td><td>91,381.0</td><td>18,402.0</td><td>47,804.0</td><td>417,646.0</td><td>171,629.0</td><td>603,318.0</td><td>372,256.0</td><td>634,487.0</td><td>320,569.0</td><td>202,151.0</td><td>378,758.0</td></tr>
+<tr><td>ET-COST-LOC ($/千行)</td><td>1.8</td><td>2.4</td><td class="best">0.0%</td><td>2.4</td><td>2.4</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td>2.4</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td class="best">0.0%</td><td>0.2%</td><td>0.2%</td><td>0.2%</td><td>0.2%</td><td>1.1%</td><td>0.2%</td><td>0.2%</td><td>1.1%</td><td>0.3%</td><td>0.8%</td><td>0.6%</td><td>3.8%</td><td>2.3%</td><td>0.8%</td><td>0.7%</td></tr>
+<tr><td>Cache 命中率</td><td>72.0%</td><td>72.1%</td><td>50.0%</td><td>73.3%</td><td>72.5%</td><td>6.3</td><td>18.9</td><td>22.8</td><td>73.3%</td><td>3.0</td><td>23.5</td><td>50.0%</td><td>71.4%</td><td>4.0</td><td>2.7</td><td>18.6</td><td>3.0</td><td>98.5%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>80.5%</td><td>40.0%</td><td>5.1</td><td>3.9</td><td>10.3</td><td>10.0</td><td class="best">23.6</td><td>29.2%</td><td>40.7%</td><td>2.4</td><td>7.9</td></tr>
+<tr><td>PT-DEV (开发占比)</td><td>45.5%</td><td>44.9%</td><td>0.0%</td><td>44.8%</td><td>44.9%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>44.9%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td><td>40.0%</td></tr>
+<tr><td>PT-DESIGN (设计占比)</td><td>24.3%</td><td>24.4%</td><td>0.0%</td><td>24.4%</td><td>24.4%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>24.4%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.0%</td></tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>4. 质量指标对比</h2>
+<table>
+<tr><th>指标</th><th>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>$TOOL / $MODEL</th><th>$TOOL / $MODEL</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>cursor-cli / composer-2</th><th>cursor-cli / gpt/5.4/xhigh</th><th>cursor-cli / grok-4-20-thinking</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / glm-5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / qwen3.5-plus</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><td>代码可用率</td><td>60.0%</td><td>60.0%</td><td>0.0%</td><td class="best">94.3%</td><td>93.9%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>92.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td><td>90.0%</td></tr>
+<tr><td>一致性评分</td><td>80.7%</td><td>78.7%</td><td>0.0%</td><td>78.6%</td><td>79.5%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>79.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>90.7%</td><td>90.7%</td><td>90.7%</td><td>90.7%</td><td class="best">90.8%</td><td>90.7%</td><td>90.7%</td><td class="best">90.8%</td><td>90.2%</td><td class="best">90.8%</td><td>90.7%</td><td class="best">90.8%</td><td class="best">90.8%</td><td class="best">90.8%</td><td class="best">90.8%</td></tr>
+<tr><td>测试覆盖率</td><td>48.8%</td><td>51.7%</td><td>0.0%</td><td>52.1%</td><td>50.9%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>55.3%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td><td class="best">80.0%</td></tr>
+<tr><td>Bug 数</td><td>9</td><td>7</td><td class="best">0</td><td>10</td><td>5</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td>14</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td><td class="best">0</td></tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>5. 预警汇总</h2>
+<table>
+<tr><th>轮次</th><th>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>$TOOL / $MODEL</th><th>$TOOL / $MODEL</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode/minimax-m2.5-free</th><th>cursor-cli / claude-4.6-opus-high-thinking</th><th>cursor-cli / composer-2</th><th>cursor-cli / gpt/5.4/xhigh</th><th>cursor-cli / grok-4-20-thinking</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>gemini-cli / gemini-3.1-pro-preview</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / glm-5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / qwen3.5-plus</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th><th>opencode-cli / opencode</th><th>opencode-cli / opencode/minimax-m2.5-free</th></tr>
+<tr><td>触发预警</td><td>W-USABILITY</td><td>W-USABILITY</td><td>W-USABILITY</td><td>无</td><td>无</td><td>W-USABILITY</td><td>W-USABILITY</td><td>W-USABILITY</td><td>无</td><td>W-USABILITY</td><td>W-USABILITY</td><td>W-USABILITY</td><td>W-USABILITY</td><td>W-USABILITY</td><td>W-USABILITY</td><td>W-USABILITY</td><td>W-USABILITY</td><td>W-USABILITY</td><td>W-CACHE-LOW</td><td>W-CACHE-LOW</td><td>W-CACHE-LOW</td><td>W-CACHE-LOW</td><td>无</td><td>W-CACHE-LOW</td><td>无</td><td>无</td><td>无</td><td>无</td><td>无</td><td>W-CACHE-LOW</td><td>W-CACHE-LOW</td><td>无</td><td>无</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>6. 综合评分雷达</h2>
+<div class="radar">
+
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">cursor-cli / gpt-5.3-codex-spark-preview-xhigh</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">60</span></div>
+    <div>Cache 利用: <span class="radar-val">72</span></div>
+    <div>执行速度: <span class="radar-val">88</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / opencode/minimax-m2.5-free</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">60</span></div>
+    <div>Cache 利用: <span class="radar-val">72</span></div>
+    <div>执行速度: <span class="radar-val">95</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">cursor-cli / claude-4.6-opus-high-thinking</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">50</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/kimi-k2.5</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">94</span></div>
+    <div>Cache 利用: <span class="radar-val">73</span></div>
+    <div>执行速度: <span class="radar-val">85</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/kimi-k2.5</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">94</span></div>
+    <div>Cache 利用: <span class="radar-val">72</span></div>
+    <div>执行速度: <span class="radar-val">84</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/glm-5</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">635</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/kimi-k2.5</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">1894</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/kimi-k2.5</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">2285</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/kimi-k2.5</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">92</span></div>
+    <div>Cache 利用: <span class="radar-val">73</span></div>
+    <div>执行速度: <span class="radar-val">85</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/qwen3.5-plus</div>
+    <div>Token 效率: <span class="radar-val">98</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">304</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / opencode/minimax-m2.5-free</div>
+    <div>Token 效率: <span class="radar-val">77</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">2349</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">cursor-cli / gpt-5.3-codex-spark-preview-xhigh</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">50</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">gemini-cli / gemini-3.1-pro-preview</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">71</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">$TOOL / $MODEL</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">404</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">$TOOL / $MODEL</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">274</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/kimi-k2.5</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">1864</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/qwen3.5-plus</div>
+    <div>Token 效率: <span class="radar-val">88</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">301</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / opencode/minimax-m2.5-free</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">85</span></div>
+    <div>Cache 利用: <span class="radar-val">98</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">cursor-cli / claude-4.6-opus-high-thinking</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">40</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">cursor-cli / composer-2</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">40</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">cursor-cli / gpt/5.4/xhigh</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">40</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">cursor-cli / grok-4-20-thinking</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">40</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">gemini-cli / gemini-3.1-pro-preview</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">80</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">gemini-cli / gemini-3.1-pro-preview</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">40</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / glm-4.7</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">511</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/glm-4.7</div>
+    <div>Token 效率: <span class="radar-val">96</span></div>
+    <div>成本效率: <span class="radar-val">99</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">385</span></div>
+    <div>执行速度: <span class="radar-val">73</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / glm-5</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">1031</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/glm-5</div>
+    <div>Token 效率: <span class="radar-val">77</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">997</span></div>
+    <div>执行速度: <span class="radar-val">91</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/kimi-k2.5</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">2358</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / qwen3.5-plus</div>
+    <div>Token 效率: <span class="radar-val">73</span></div>
+    <div>成本效率: <span class="radar-val">37</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">29</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / bailian-coding-plan/qwen3.5-plus</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">81</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">41</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / opencode</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">236</span></div>
+    <div>执行速度: <span class="radar-val">78</span></div>
+  </div>
+  <div class="radar-item">
+    <div style="font-weight: bold; margin-bottom: 10px;">opencode-cli / opencode/minimax-m2.5-free</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">90</span></div>
+    <div>Cache 利用: <span class="radar-val">793</span></div>
+    <div>执行速度: <span class="radar-val">100</span></div>
+  </div>
+</div>
+</div>
+
+
+<div class="section">
+<h2>7. 数据异常分析</h2>
+<p style="color:#666;font-size:0.9em">以下为自动检测的数据异常和需关注点，供评估时参考。</p>
+<table>
+<tr><th style="width:40px">级别</th><th style="width:100px">类别</th><th>详情</th><th style="width:180px">涉及轮次</th></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>cursor-cli / claude-4.6-opus-high-thinking</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>opencode-cli / bailian-coding-plan/glm-5</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>opencode-cli / bailian-coding-plan/kimi-k2.5</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>opencode-cli / bailian-coding-plan/kimi-k2.5</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>opencode-cli / bailian-coding-plan/qwen3.5-plus</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>Token 效率</td><td>Token/LOC = 1302.1，显著高于均值 846.4（154%）。该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、工具调用开销大、或模型输出包含更多非代码内容。</td><td>opencode-cli / opencode/minimax-m2.5-free</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>opencode-cli / opencode/minimax-m2.5-free</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>cursor-cli / gpt-5.3-codex-spark-preview-xhigh</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>gemini-cli / gemini-3.1-pro-preview</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>$TOOL / $MODEL</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>$TOOL / $MODEL</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>opencode-cli / bailian-coding-plan/kimi-k2.5</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>Token 效率</td><td>Token/LOC = 1267.8，显著高于均值 846.4（150%）。该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、工具调用开销大、或模型输出包含更多非代码内容。</td><td>opencode-cli / bailian-coding-plan/qwen3.5-plus</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>opencode-cli / bailian-coding-plan/qwen3.5-plus</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>Token 效率</td><td>Token/LOC = 1974.7，显著高于均值 846.4（233%）。该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、工具调用开销大、或模型输出包含更多非代码内容。</td><td>opencode-cli / opencode/minimax-m2.5-free</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>执行速度</td><td>耗时 0m0s，远低于均值 46m。极快的速度通常意味着模型产出量较少或工具交互轮数较少。</td><td>opencode-cli / opencode/minimax-m2.5-free</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>文件覆盖率</td><td>仅生成 22 个文件，远低于均值 80。可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。</td><td>cursor-cli / claude-4.6-opus-high-thinking</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>代码产出</td><td>LOC = 4,250，仅为均值 11,911 的 36%。代码产出偏低，可能存在文件内容不完整或 stub 实现。</td><td>cursor-cli / claude-4.6-opus-high-thinking</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>文件覆盖率</td><td>仅生成 22 个文件，远低于均值 80。可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。</td><td>cursor-cli / composer-2</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>代码产出</td><td>LOC = 4,250，仅为均值 11,911 的 36%。代码产出偏低，可能存在文件内容不完整或 stub 实现。</td><td>cursor-cli / composer-2</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>文件覆盖率</td><td>仅生成 22 个文件，远低于均值 80。可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。</td><td>cursor-cli / grok-4-20-thinking</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>代码产出</td><td>LOC = 4,250，仅为均值 11,911 的 36%。代码产出偏低，可能存在文件内容不完整或 stub 实现。</td><td>cursor-cli / grok-4-20-thinking</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>文件覆盖率</td><td>仅生成 37 个文件，远低于均值 80。可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。</td><td>gemini-cli / gemini-3.1-pro-preview</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>代码产出</td><td>LOC = 5,789，仅为均值 11,911 的 49%。代码产出偏低，可能存在文件内容不完整或 stub 实现。</td><td>gemini-cli / gemini-3.1-pro-preview</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>代码产出</td><td>LOC = 5,594，仅为均值 11,911 的 47%。代码产出偏低，可能存在文件内容不完整或 stub 实现。</td><td>opencode-cli / glm-4.7</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>Token 效率</td><td>Token/LOC = 2198.1，显著高于均值 846.4（260%）。该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、工具调用开销大、或模型输出包含更多非代码内容。</td><td>opencode-cli / bailian-coding-plan/glm-4.7</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>文件覆盖率</td><td>仅生成 38 个文件，远低于均值 80。可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。</td><td>opencode-cli / bailian-coding-plan/glm-4.7</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>Token 效率</td><td>Token/LOC = 2542.4，显著高于均值 846.4（300%）。该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、工具调用开销大、或模型输出包含更多非代码内容。</td><td>opencode-cli / bailian-coding-plan/glm-5</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>Token 效率</td><td>Token/LOC = 1572.7，显著高于均值 846.4（186%）。该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、工具调用开销大、或模型输出包含更多非代码内容。</td><td>opencode-cli / bailian-coding-plan/kimi-k2.5</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>Token 效率</td><td>Token/LOC = 3090.2，显著高于均值 846.4（365%）。该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、工具调用开销大、或模型输出包含更多非代码内容。</td><td>opencode-cli / qwen3.5-plus</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>Token 效率</td><td>Token/LOC = 2010.0，显著高于均值 846.4（237%）。该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、工具调用开销大、或模型输出包含更多非代码内容。</td><td>opencode-cli / bailian-coding-plan/qwen3.5-plus</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>Token 效率</td><td>Token/LOC = 1271.0，显著高于均值 846.4（150%）。该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、工具调用开销大、或模型输出包含更多非代码内容。</td><td>opencode-cli / opencode</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>文件覆盖率</td><td>仅生成 36 个文件，远低于均值 80。可能未覆盖全部 43 个 AR 要求的文件，建议人工核查。</td><td>opencode-cli / opencode</td></tr>
+<tr><td style="color:#f4b400;text-align:center">&#9888;</td><td>Token 效率</td><td>Token/LOC = 1964.4，显著高于均值 846.4（232%）。该模型每生成一行代码消耗更多 token，可能原因：生成代码较短/不完整、工具调用开销大、或模型输出包含更多非代码内容。</td><td>opencode-cli / opencode/minimax-m2.5-free</td></tr>
+<tr><td style="color:#4285f4;text-align:center">&#8505;</td><td>业界对标</td><td>Token/LOC 范围 51~3090，成本 $-14.28~$38.31/KLOC。业界同类评测（如 SWE-bench、Aider Polyglot）的 token 效率通常在 30~80 token/LOC 区间，本次评测结果在合理范围内。成本差异主要来自模型定价策略和输出量差异。</td><td>全部轮次</td></tr>
+
+</table>
+<p style="color:#999;font-size:0.85em;margin-top:10px">
+  &#9888; = 需关注（数据可能不准确或结果异常）&nbsp;&nbsp;
+  &#8505; = 参考信息
+</p>
+</div>
+
+<div class="section">
+<h2>8. 说明</h2>
+<ul>
+  <li>绿色高亮 = 该列最优值（对比列 ≥ 2 时生效）</li>
+  <li>Token 效率、成本效率、执行速度：越低越好 → 分越高</li>
+  <li>代码质量、Cache 利用：越高越好</li>
+  <li>数据来源: SDD-TEE 评测框架 (CodeSpec 7-Stage × OpenSpec OPSX)</li>
+  <li>测试目标: <a href="https://github.com/ShijunDeng/agentcube">agentcube</a></li>
+</ul>
+</div>
+
+</body>
+</html>

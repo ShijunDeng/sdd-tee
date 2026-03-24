@@ -564,8 +564,8 @@ def main():
     if args.runs:
         paths = args.runs
     else:
-        pattern = str(BASE / "results" / "runs" / "*_full.json")
-        paths = sorted(glob.glob(pattern))
+        pattern = str(BASE / "results" / "runs" / "**" / "*_full.json")
+        paths = sorted(glob.glob(pattern, recursive=True))
 
     if not paths:
         print("No *_full.json files found. Run evaluations first.")

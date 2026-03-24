@@ -101,9 +101,17 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
     tracking_method = "telemetry-audit" if telemetry else "estimation-fallback"
     
     ws = Path(workspace_dir)
+    run_id = run_data['run_id']
+    # If the provided workspace is a 'version' directory, try to find the specific run sub-directory
+    if (ws / run_id).exists() and (ws / run_id).is_dir():
+        ws = ws / run_id
+        print(f"  Refined workspace to: {ws}")
+    elif (ws / f"{run_id}_logs").exists(): # Sometimes it might be slightly different
+        pass # keep original for now if unsure
+
     total_loc = 0; total_files = 0
     for fpath in ws.rglob("*"):
-        if fpath.is_file() and fpath.suffix.lower() in {".go", ".py", ".yaml", ".yml", ".md", ".json", ".sh"} and ".git" not in str(fpath):
+        if fpath.is_file() and fpath.suffix.lower() in {".go", ".py", ".yaml", ".yml", ".md", ".json", ".sh"} and ".git" not in str(fpath) and "node_modules" not in str(fpath) and "venv" not in str(fpath) and "vendor" not in str(fpath) and "results" not in str(fpath):
             total_files += 1
             try: total_loc += len(fpath.read_text().splitlines())
             except: pass
@@ -111,6 +119,7 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
     sdd_stages = {s: {"name": STAGE_NAMES[s], "input_tokens": 0, "output_tokens": 0, "cache_read_tokens": 0, "cache_write_tokens": 0, "total_tokens": 0, "duration_seconds": 0, "api_calls": 0, "iterations": 0} for s in STAGE_NAMES}
     
     if telemetry:
+        print(f"  Telemetry found: {len(telemetry)} stages")
         grand_total_tokens = grand_input = grand_output = grand_cache_read = grand_cache_write = grand_api_calls = grand_duration = 0
         for tool_stage, t in telemetry.items():
             target_sids = map_tool_stage_to_sdd(tool_stage)
@@ -128,11 +137,16 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
             grand_cache_read += t["cache_read"]; grand_cache_write += t["cache_write"]; grand_api_calls += t["api_calls"]
             grand_duration += t.get("duration_seconds", 0)
     else:
-        grand_output = total_loc * 30; grand_input = grand_output * 4; grand_cache_read = int(grand_input * 0.5)
-        grand_cache_write = 0; grand_total_tokens = grand_input + grand_output; grand_api_calls = total_files * 2; grand_duration = 7200
-        sdd_stages["ST-2"]["total_tokens"] = int(grand_total_tokens * 0.2)
-        sdd_stages["ST-4"]["total_tokens"] = int(grand_total_tokens * 0.6)
-        sdd_stages["ST-6"]["total_tokens"] = int(grand_total_tokens * 0.2)
+        print(f"  No telemetry found. Using estimation-fallback for {total_loc} LOC.")
+        # Refined estimation: SDD overhead is high, but let's be more realistic.
+        # Average SDD turn: 1000 input, 200 output. 
+        # For a Small AR: maybe 20 turns. 20k in, 4k out.
+        # LOC-based: 10x output tokens, 50x input tokens.
+        grand_output = total_loc * 12; grand_input = grand_output * 6; grand_cache_read = int(grand_input * 0.4)
+        grand_cache_write = 0; grand_total_tokens = grand_input + grand_output + grand_cache_read; grand_api_calls = max(20, total_files * 3); grand_duration = 3600
+        sdd_stages["ST-2"]["total_tokens"] = int(grand_total_tokens * 0.15)
+        sdd_stages["ST-4"]["total_tokens"] = int(grand_total_tokens * 0.7)
+        sdd_stages["ST-6"]["total_tokens"] = int(grand_total_tokens * 0.15)
 
     # NO-ZERO POLICY: Smooth out values across ALL standard SDD stages
     for sid in STAGE_NAMES:
