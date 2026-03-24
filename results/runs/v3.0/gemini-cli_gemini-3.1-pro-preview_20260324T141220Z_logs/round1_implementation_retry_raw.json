@@ -99,11 +99,11 @@ Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:19:04 GMT',
+      date: 'Tue, 24 Mar 2026 14:27:35 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=6367',
+      'server-timing': 'gfet4t7; dur=5634',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': 'fc5ab1ae4422c2e5',
+      'x-cloudaicompanion-trace-id': '8c502dab2be0ba87',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -214,11 +214,11 @@ Attempt 2 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:19:10 GMT',
+      date: 'Tue, 24 Mar 2026 14:27:40 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=28',
+      'server-timing': 'gfet4t7; dur=142',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '3fd5fe35af9b3073',
+      'x-cloudaicompanion-trace-id': '737fe127486d5d73',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -329,11 +329,11 @@ Attempt 3 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:19:21 GMT',
+      date: 'Tue, 24 Mar 2026 14:27:51 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=1900',
+      'server-timing': 'gfet4t7; dur=67',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': 'd6133fc786fab314',
+      'x-cloudaicompanion-trace-id': '6d7e11985dc0190',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -444,11 +444,11 @@ Attempt 4 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:19:47 GMT',
+      date: 'Tue, 24 Mar 2026 14:28:08 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=76',
+      'server-timing': 'gfet4t7; dur=60',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': 'f7898d6088c976c7',
+      'x-cloudaicompanion-trace-id': '4fcdab42f486727d',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -559,11 +559,11 @@ Attempt 5 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:20:17 GMT',
+      date: 'Tue, 24 Mar 2026 14:28:40 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=30',
+      'server-timing': 'gfet4t7; dur=6918',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '157531c7c800b6d',
+      'x-cloudaicompanion-trace-id': '1b78068a26f11566',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -674,11 +674,11 @@ Attempt 6 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:20:56 GMT',
+      date: 'Tue, 24 Mar 2026 14:29:16 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=98',
+      'server-timing': 'gfet4t7; dur=68',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '22b56a0de959a353',
+      'x-cloudaicompanion-trace-id': '331799ec37864352',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -789,126 +789,11 @@ Attempt 7 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:21:25 GMT',
+      date: 'Tue, 24 Mar 2026 14:29:51 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=37',
+      'server-timing': 'gfet4t7; dur=122',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': 'eebda62b4af2657c',
-      'x-content-type-options': 'nosniff',
-      'x-frame-options': 'SAMEORIGIN',
-      'x-xss-protection': '0'
-    },
-    status: 429,
-    statusText: 'Too Many Requests',
-    request: {
-      responseURL: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse'
-    }
-  },
-  error: undefined,
-  status: 429,
-  [Symbol(gaxios-gaxios-error)]: '6.7.1'
-}
-Attempt 8 failed with status 429. Retrying with backoff... GaxiosError: [{
-  "error": {
-    "code": 429,
-    "message": "No capacity available for model gemini-3.1-pro-preview on the server",
-    "errors": [
-      {
-        "message": "No capacity available for model gemini-3.1-pro-preview on the server",
-        "domain": "global",
-        "reason": "rateLimitExceeded"
-      }
-    ],
-    "status": "RESOURCE_EXHAUSTED",
-    "details": [
-      {
-        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
-        "reason": "MODEL_CAPACITY_EXHAUSTED",
-        "domain": "cloudcode-pa.googleapis.com",
-        "metadata": {
-          "model": "gemini-3.1-pro-preview"
-        }
-      }
-    ]
-  }
-}
-]
-    at Gaxios._request (/root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/gaxios/build/src/gaxios.js:142:23)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async OAuth2Client.requestAsync (/root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/google-auth-library/build/src/auth/oauth2client.js:429:18)
-    at async CodeAssistServer.requestStreamingPost (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/code_assist/server.js:262:21)
-    at async CodeAssistServer.generateContentStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/code_assist/server.js:54:27)
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/loggingContentGenerator.js:285:26
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/telemetry/trace.js:81:20
-    at async retryWithBackoff (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/retry.js:130:28)
-    at async GeminiChat.makeApiCallAndProcessStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:440:32)
-    at async GeminiChat.streamWithRetries (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:266:40) {
-  config: {
-    url: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse',
-    method: 'POST',
-    params: { alt: 'sse' },
-    headers: {
-      'Content-Type': 'application/json',
-      'User-Agent': 'GeminiCLI/0.34.0/gemini-3.1-pro-preview (linux; x64) google-api-nodejs-client/9.15.1',
-      Authorization: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-      'x-goog-api-client': 'gl-node/20.20.1'
-    },
-    responseType: 'stream',
-    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-    signal: AbortSignal { aborted: false },
-    retry: false,
-    paramsSerializer: [Function: paramsSerializer],
-    validateStatus: [Function: validateStatus],
-    errorRedactor: [Function: defaultErrorRedactor]
-  },
-  response: {
-    config: {
-      url: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse',
-      method: 'POST',
-      params: [Object],
-      headers: [Object],
-      responseType: 'stream',
-      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-      signal: [AbortSignal],
-      retry: false,
-      paramsSerializer: [Function: paramsSerializer],
-      validateStatus: [Function: validateStatus],
-      errorRedactor: [Function: defaultErrorRedactor]
-    },
-    data: '[{\n' +
-      '  "error": {\n' +
-      '    "code": 429,\n' +
-      '    "message": "No capacity available for model gemini-3.1-pro-preview on the server",\n' +
-      '    "errors": [\n' +
-      '      {\n' +
-      '        "message": "No capacity available for model gemini-3.1-pro-preview on the server",\n' +
-      '        "domain": "global",\n' +
-      '        "reason": "rateLimitExceeded"\n' +
-      '      }\n' +
-      '    ],\n' +
-      '    "status": "RESOURCE_EXHAUSTED",\n' +
-      '    "details": [\n' +
-      '      {\n' +
-      '        "@type": "type.googleapis.com/google.rpc.ErrorInfo",\n' +
-      '        "reason": "MODEL_CAPACITY_EXHAUSTED",\n' +
-      '        "domain": "cloudcode-pa.googleapis.com",\n' +
-      '        "metadata": {\n' +
-      '          "model": "gemini-3.1-pro-preview"\n' +
-      '        }\n' +
-      '      }\n' +
-      '    ]\n' +
-      '  }\n' +
-      '}\n' +
-      ']',
-    headers: {
-      'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
-      'content-length': '630',
-      'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:22:04 GMT',
-      server: 'ESF',
-      'server-timing': 'gfet4t7; dur=65',
-      vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '736cfc0c6b3f74a4',
+      'x-cloudaicompanion-trace-id': '665ad2ec37a5efb7',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -1019,126 +904,11 @@ Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:22:51 GMT',
+      date: 'Tue, 24 Mar 2026 14:30:35 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=47',
+      'server-timing': 'gfet4t7; dur=6483',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '49ed5f0e8fdd58d8',
-      'x-content-type-options': 'nosniff',
-      'x-frame-options': 'SAMEORIGIN',
-      'x-xss-protection': '0'
-    },
-    status: 429,
-    statusText: 'Too Many Requests',
-    request: {
-      responseURL: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse'
-    }
-  },
-  error: undefined,
-  status: 429,
-  [Symbol(gaxios-gaxios-error)]: '6.7.1'
-}
-Attempt 2 failed with status 429. Retrying with backoff... GaxiosError: [{
-  "error": {
-    "code": 429,
-    "message": "No capacity available for model gemini-3.1-pro-preview on the server",
-    "errors": [
-      {
-        "message": "No capacity available for model gemini-3.1-pro-preview on the server",
-        "domain": "global",
-        "reason": "rateLimitExceeded"
-      }
-    ],
-    "status": "RESOURCE_EXHAUSTED",
-    "details": [
-      {
-        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
-        "reason": "MODEL_CAPACITY_EXHAUSTED",
-        "domain": "cloudcode-pa.googleapis.com",
-        "metadata": {
-          "model": "gemini-3.1-pro-preview"
-        }
-      }
-    ]
-  }
-}
-]
-    at Gaxios._request (/root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/gaxios/build/src/gaxios.js:142:23)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async OAuth2Client.requestAsync (/root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/google-auth-library/build/src/auth/oauth2client.js:429:18)
-    at async CodeAssistServer.requestStreamingPost (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/code_assist/server.js:262:21)
-    at async CodeAssistServer.generateContentStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/code_assist/server.js:54:27)
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/loggingContentGenerator.js:285:26
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/telemetry/trace.js:81:20
-    at async retryWithBackoff (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/retry.js:130:28)
-    at async GeminiChat.makeApiCallAndProcessStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:440:32)
-    at async GeminiChat.streamWithRetries (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:266:40) {
-  config: {
-    url: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse',
-    method: 'POST',
-    params: { alt: 'sse' },
-    headers: {
-      'Content-Type': 'application/json',
-      'User-Agent': 'GeminiCLI/0.34.0/gemini-3.1-pro-preview (linux; x64) google-api-nodejs-client/9.15.1',
-      Authorization: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-      'x-goog-api-client': 'gl-node/20.20.1'
-    },
-    responseType: 'stream',
-    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-    signal: AbortSignal { aborted: false },
-    retry: false,
-    paramsSerializer: [Function: paramsSerializer],
-    validateStatus: [Function: validateStatus],
-    errorRedactor: [Function: defaultErrorRedactor]
-  },
-  response: {
-    config: {
-      url: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse',
-      method: 'POST',
-      params: [Object],
-      headers: [Object],
-      responseType: 'stream',
-      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-      signal: [AbortSignal],
-      retry: false,
-      paramsSerializer: [Function: paramsSerializer],
-      validateStatus: [Function: validateStatus],
-      errorRedactor: [Function: defaultErrorRedactor]
-    },
-    data: '[{\n' +
-      '  "error": {\n' +
-      '    "code": 429,\n' +
-      '    "message": "No capacity available for model gemini-3.1-pro-preview on the server",\n' +
-      '    "errors": [\n' +
-      '      {\n' +
-      '        "message": "No capacity available for model gemini-3.1-pro-preview on the server",\n' +
-      '        "domain": "global",\n' +
-      '        "reason": "rateLimitExceeded"\n' +
-      '      }\n' +
-      '    ],\n' +
-      '    "status": "RESOURCE_EXHAUSTED",\n' +
-      '    "details": [\n' +
-      '      {\n' +
-      '        "@type": "type.googleapis.com/google.rpc.ErrorInfo",\n' +
-      '        "reason": "MODEL_CAPACITY_EXHAUSTED",\n' +
-      '        "domain": "cloudcode-pa.googleapis.com",\n' +
-      '        "metadata": {\n' +
-      '          "model": "gemini-3.1-pro-preview"\n' +
-      '        }\n' +
-      '      }\n' +
-      '    ]\n' +
-      '  }\n' +
-      '}\n' +
-      ']',
-    headers: {
-      'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
-      'content-length': '630',
-      'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:22:56 GMT',
-      server: 'ESF',
-      'server-timing': 'gfet4t7; dur=42',
-      vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': 'abfc31f655e94310',
+      'x-cloudaicompanion-trace-id': 'c29afddc2116af0c',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -1249,11 +1019,11 @@ Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:23:12 GMT',
+      date: 'Tue, 24 Mar 2026 14:30:51 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=26',
+      'server-timing': 'gfet4t7; dur=79',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '3b7cff8076e5c5bf',
+      'x-cloudaicompanion-trace-id': '1906bc89b037cc4f',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -1364,11 +1134,11 @@ Attempt 2 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:23:16 GMT',
+      date: 'Tue, 24 Mar 2026 14:31:02 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=50',
+      'server-timing': 'gfet4t7; dur=6798',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '496a0b67f21eeb93',
+      'x-cloudaicompanion-trace-id': 'c710e976e989eeb1',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -1479,241 +1249,11 @@ Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:23:45 GMT',
-      server: 'ESF',
-      'server-timing': 'gfet4t7; dur=66',
-      vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '9503976c74a79b28',
-      'x-content-type-options': 'nosniff',
-      'x-frame-options': 'SAMEORIGIN',
-      'x-xss-protection': '0'
-    },
-    status: 429,
-    statusText: 'Too Many Requests',
-    request: {
-      responseURL: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse'
-    }
-  },
-  error: undefined,
-  status: 429,
-  [Symbol(gaxios-gaxios-error)]: '6.7.1'
-}
-Attempt 2 failed with status 429. Retrying with backoff... GaxiosError: [{
-  "error": {
-    "code": 429,
-    "message": "No capacity available for model gemini-3.1-pro-preview on the server",
-    "errors": [
-      {
-        "message": "No capacity available for model gemini-3.1-pro-preview on the server",
-        "domain": "global",
-        "reason": "rateLimitExceeded"
-      }
-    ],
-    "status": "RESOURCE_EXHAUSTED",
-    "details": [
-      {
-        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
-        "reason": "MODEL_CAPACITY_EXHAUSTED",
-        "domain": "cloudcode-pa.googleapis.com",
-        "metadata": {
-          "model": "gemini-3.1-pro-preview"
-        }
-      }
-    ]
-  }
-}
-]
-    at Gaxios._request (/root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/gaxios/build/src/gaxios.js:142:23)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async OAuth2Client.requestAsync (/root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/google-auth-library/build/src/auth/oauth2client.js:429:18)
-    at async CodeAssistServer.requestStreamingPost (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/code_assist/server.js:262:21)
-    at async CodeAssistServer.generateContentStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/code_assist/server.js:54:27)
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/loggingContentGenerator.js:285:26
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/telemetry/trace.js:81:20
-    at async retryWithBackoff (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/retry.js:130:28)
-    at async GeminiChat.makeApiCallAndProcessStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:440:32)
-    at async GeminiChat.streamWithRetries (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:266:40) {
-  config: {
-    url: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse',
-    method: 'POST',
-    params: { alt: 'sse' },
-    headers: {
-      'Content-Type': 'application/json',
-      'User-Agent': 'GeminiCLI/0.34.0/gemini-3.1-pro-preview (linux; x64) google-api-nodejs-client/9.15.1',
-      Authorization: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-      'x-goog-api-client': 'gl-node/20.20.1'
-    },
-    responseType: 'stream',
-    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-    signal: AbortSignal { aborted: false },
-    retry: false,
-    paramsSerializer: [Function: paramsSerializer],
-    validateStatus: [Function: validateStatus],
-    errorRedactor: [Function: defaultErrorRedactor]
-  },
-  response: {
-    config: {
-      url: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse',
-      method: 'POST',
-      params: [Object],
-      headers: [Object],
-      responseType: 'stream',
-      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-      signal: [AbortSignal],
-      retry: false,
-      paramsSerializer: [Function: paramsSerializer],
-      validateStatus: [Function: validateStatus],
-      errorRedactor: [Function: defaultErrorRedactor]
-    },
-    data: '[{\n' +
-      '  "error": {\n' +
-      '    "code": 429,\n' +
-      '    "message": "No capacity available for model gemini-3.1-pro-preview on the server",\n' +
-      '    "errors": [\n' +
-      '      {\n' +
-      '        "message": "No capacity available for model gemini-3.1-pro-preview on the server",\n' +
-      '        "domain": "global",\n' +
-      '        "reason": "rateLimitExceeded"\n' +
-      '      }\n' +
-      '    ],\n' +
-      '    "status": "RESOURCE_EXHAUSTED",\n' +
-      '    "details": [\n' +
-      '      {\n' +
-      '        "@type": "type.googleapis.com/google.rpc.ErrorInfo",\n' +
-      '        "reason": "MODEL_CAPACITY_EXHAUSTED",\n' +
-      '        "domain": "cloudcode-pa.googleapis.com",\n' +
-      '        "metadata": {\n' +
-      '          "model": "gemini-3.1-pro-preview"\n' +
-      '        }\n' +
-      '      }\n' +
-      '    ]\n' +
-      '  }\n' +
-      '}\n' +
-      ']',
-    headers: {
-      'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
-      'content-length': '630',
-      'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:23:51 GMT',
-      server: 'ESF',
-      'server-timing': 'gfet4t7; dur=29',
-      vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '3341e180f92f2965',
-      'x-content-type-options': 'nosniff',
-      'x-frame-options': 'SAMEORIGIN',
-      'x-xss-protection': '0'
-    },
-    status: 429,
-    statusText: 'Too Many Requests',
-    request: {
-      responseURL: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse'
-    }
-  },
-  error: undefined,
-  status: 429,
-  [Symbol(gaxios-gaxios-error)]: '6.7.1'
-}
-Attempt 3 failed with status 429. Retrying with backoff... GaxiosError: [{
-  "error": {
-    "code": 429,
-    "message": "No capacity available for model gemini-3.1-pro-preview on the server",
-    "errors": [
-      {
-        "message": "No capacity available for model gemini-3.1-pro-preview on the server",
-        "domain": "global",
-        "reason": "rateLimitExceeded"
-      }
-    ],
-    "status": "RESOURCE_EXHAUSTED",
-    "details": [
-      {
-        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
-        "reason": "MODEL_CAPACITY_EXHAUSTED",
-        "domain": "cloudcode-pa.googleapis.com",
-        "metadata": {
-          "model": "gemini-3.1-pro-preview"
-        }
-      }
-    ]
-  }
-}
-]
-    at Gaxios._request (/root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/gaxios/build/src/gaxios.js:142:23)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async OAuth2Client.requestAsync (/root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/google-auth-library/build/src/auth/oauth2client.js:429:18)
-    at async CodeAssistServer.requestStreamingPost (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/code_assist/server.js:262:21)
-    at async CodeAssistServer.generateContentStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/code_assist/server.js:54:27)
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/loggingContentGenerator.js:285:26
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/telemetry/trace.js:81:20
-    at async retryWithBackoff (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/retry.js:130:28)
-    at async GeminiChat.makeApiCallAndProcessStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:440:32)
-    at async GeminiChat.streamWithRetries (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:266:40) {
-  config: {
-    url: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse',
-    method: 'POST',
-    params: { alt: 'sse' },
-    headers: {
-      'Content-Type': 'application/json',
-      'User-Agent': 'GeminiCLI/0.34.0/gemini-3.1-pro-preview (linux; x64) google-api-nodejs-client/9.15.1',
-      Authorization: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-      'x-goog-api-client': 'gl-node/20.20.1'
-    },
-    responseType: 'stream',
-    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-    signal: AbortSignal { aborted: false },
-    retry: false,
-    paramsSerializer: [Function: paramsSerializer],
-    validateStatus: [Function: validateStatus],
-    errorRedactor: [Function: defaultErrorRedactor]
-  },
-  response: {
-    config: {
-      url: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse',
-      method: 'POST',
-      params: [Object],
-      headers: [Object],
-      responseType: 'stream',
-      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-      signal: [AbortSignal],
-      retry: false,
-      paramsSerializer: [Function: paramsSerializer],
-      validateStatus: [Function: validateStatus],
-      errorRedactor: [Function: defaultErrorRedactor]
-    },
-    data: '[{\n' +
-      '  "error": {\n' +
-      '    "code": 429,\n' +
-      '    "message": "No capacity available for model gemini-3.1-pro-preview on the server",\n' +
-      '    "errors": [\n' +
-      '      {\n' +
-      '        "message": "No capacity available for model gemini-3.1-pro-preview on the server",\n' +
-      '        "domain": "global",\n' +
-      '        "reason": "rateLimitExceeded"\n' +
-      '      }\n' +
-      '    ],\n' +
-      '    "status": "RESOURCE_EXHAUSTED",\n' +
-      '    "details": [\n' +
-      '      {\n' +
-      '        "@type": "type.googleapis.com/google.rpc.ErrorInfo",\n' +
-      '        "reason": "MODEL_CAPACITY_EXHAUSTED",\n' +
-      '        "domain": "cloudcode-pa.googleapis.com",\n' +
-      '        "metadata": {\n' +
-      '          "model": "gemini-3.1-pro-preview"\n' +
-      '        }\n' +
-      '      }\n' +
-      '    ]\n' +
-      '  }\n' +
-      '}\n' +
-      ']',
-    headers: {
-      'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
-      'content-length': '630',
-      'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:24:04 GMT',
+      date: 'Tue, 24 Mar 2026 14:31:34 GMT',
       server: 'ESF',
       'server-timing': 'gfet4t7; dur=41',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '1e57c35aab39fee0',
+      'x-cloudaicompanion-trace-id': 'b9b55c0363c650c1',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -1728,7 +1268,7 @@ Attempt 3 failed with status 429. Retrying with backoff... GaxiosError: [{
   status: 429,
   [Symbol(gaxios-gaxios-error)]: '6.7.1'
 }
-Attempt 4 failed with status 429. Retrying with backoff... GaxiosError: [{
+Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{
   "error": {
     "code": 429,
     "message": "No capacity available for model gemini-3.1-pro-preview on the server",
@@ -1824,11 +1364,11 @@ Attempt 4 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:24:19 GMT',
+      date: 'Tue, 24 Mar 2026 14:31:51 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=37',
+      'server-timing': 'gfet4t7; dur=5993',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '1195d4c2b79eaa17',
+      'x-cloudaicompanion-trace-id': '4e74db7b0d9ecaf6',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -1843,7 +1383,7 @@ Attempt 4 failed with status 429. Retrying with backoff... GaxiosError: [{
   status: 429,
   [Symbol(gaxios-gaxios-error)]: '6.7.1'
 }
-Attempt 5 failed with status 429. Retrying with backoff... GaxiosError: [{
+Attempt 2 failed with status 429. Retrying with backoff... GaxiosError: [{
   "error": {
     "code": 429,
     "message": "No capacity available for model gemini-3.1-pro-preview on the server",
@@ -1939,11 +1479,11 @@ Attempt 5 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:24:52 GMT',
+      date: 'Tue, 24 Mar 2026 14:31:56 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=7103',
+      'server-timing': 'gfet4t7; dur=49',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '61c108705b4d9aec',
+      'x-cloudaicompanion-trace-id': 'a82d9fb0a112f97e',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -1958,7 +1498,7 @@ Attempt 5 failed with status 429. Retrying with backoff... GaxiosError: [{
   status: 429,
   [Symbol(gaxios-gaxios-error)]: '6.7.1'
 }
-Attempt 6 failed with status 429. Retrying with backoff... GaxiosError: [{
+Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{
   "error": {
     "code": 429,
     "message": "No capacity available for model gemini-3.1-pro-preview on the server",
@@ -2054,11 +1594,11 @@ Attempt 6 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:25:30 GMT',
+      date: 'Tue, 24 Mar 2026 14:32:22 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=62',
+      'server-timing': 'gfet4t7; dur=69',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': 'eeb97753ed7f46c2',
+      'x-cloudaicompanion-trace-id': '7edbb428168acf2d',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -2073,7 +1613,7 @@ Attempt 6 failed with status 429. Retrying with backoff... GaxiosError: [{
   status: 429,
   [Symbol(gaxios-gaxios-error)]: '6.7.1'
 }
-Attempt 7 failed with status 429. Retrying with backoff... GaxiosError: [{
+Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{
   "error": {
     "code": 429,
     "message": "No capacity available for model gemini-3.1-pro-preview on the server",
@@ -2169,11 +1709,11 @@ Attempt 7 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:26:05 GMT',
+      date: 'Tue, 24 Mar 2026 14:33:08 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=75',
+      'server-timing': 'gfet4t7; dur=33',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': 'bd0d27c4e53dcfa8',
+      'x-cloudaicompanion-trace-id': '5061806f8d298cd1',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -2188,7 +1728,7 @@ Attempt 7 failed with status 429. Retrying with backoff... GaxiosError: [{
   status: 429,
   [Symbol(gaxios-gaxios-error)]: '6.7.1'
 }
-Attempt 8 failed with status 429. Retrying with backoff... GaxiosError: [{
+Attempt 1 failed with status 429. Retrying with backoff... GaxiosError: [{
   "error": {
     "code": 429,
     "message": "No capacity available for model gemini-3.1-pro-preview on the server",
@@ -2284,11 +1824,11 @@ Attempt 8 failed with status 429. Retrying with backoff... GaxiosError: [{
       'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
       'content-length': '630',
       'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:26:36 GMT',
+      date: 'Tue, 24 Mar 2026 14:34:17 GMT',
       server: 'ESF',
-      'server-timing': 'gfet4t7; dur=84',
+      'server-timing': 'gfet4t7; dur=60',
       vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': '4f01ea6e79913d4',
+      'x-cloudaicompanion-trace-id': '981ca255e02809df',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'SAMEORIGIN',
       'x-xss-protection': '0'
@@ -2302,146 +1842,122 @@ Attempt 8 failed with status 429. Retrying with backoff... GaxiosError: [{
   error: undefined,
   status: 429,
   [Symbol(gaxios-gaxios-error)]: '6.7.1'
-}
-Attempt 9 failed with status 429. Retrying with backoff... GaxiosError: [{
-  "error": {
-    "code": 429,
-    "message": "No capacity available for model gemini-3.1-pro-preview on the server",
-    "errors": [
-      {
-        "message": "No capacity available for model gemini-3.1-pro-preview on the server",
-        "domain": "global",
-        "reason": "rateLimitExceeded"
-      }
-    ],
-    "status": "RESOURCE_EXHAUSTED",
-    "details": [
-      {
-        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
-        "reason": "MODEL_CAPACITY_EXHAUSTED",
-        "domain": "cloudcode-pa.googleapis.com",
-        "metadata": {
-          "model": "gemini-3.1-pro-preview"
-        }
-      }
-    ]
-  }
-}
-]
-    at Gaxios._request (/root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/gaxios/build/src/gaxios.js:142:23)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async OAuth2Client.requestAsync (/root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/google-auth-library/build/src/auth/oauth2client.js:429:18)
-    at async CodeAssistServer.requestStreamingPost (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/code_assist/server.js:262:21)
-    at async CodeAssistServer.generateContentStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/code_assist/server.js:54:27)
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/loggingContentGenerator.js:285:26
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/telemetry/trace.js:81:20
-    at async retryWithBackoff (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/retry.js:130:28)
-    at async GeminiChat.makeApiCallAndProcessStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:440:32)
-    at async GeminiChat.streamWithRetries (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:266:40) {
-  config: {
-    url: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse',
-    method: 'POST',
-    params: { alt: 'sse' },
-    headers: {
-      'Content-Type': 'application/json',
-      'User-Agent': 'GeminiCLI/0.34.0/gemini-3.1-pro-preview (linux; x64) google-api-nodejs-client/9.15.1',
-      Authorization: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-      'x-goog-api-client': 'gl-node/20.20.1'
-    },
-    responseType: 'stream',
-    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-    signal: AbortSignal { aborted: false },
-    retry: false,
-    paramsSerializer: [Function: paramsSerializer],
-    validateStatus: [Function: validateStatus],
-    errorRedactor: [Function: defaultErrorRedactor]
-  },
-  response: {
-    config: {
-      url: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse',
-      method: 'POST',
-      params: [Object],
-      headers: [Object],
-      responseType: 'stream',
-      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
-      signal: [AbortSignal],
-      retry: false,
-      paramsSerializer: [Function: paramsSerializer],
-      validateStatus: [Function: validateStatus],
-      errorRedactor: [Function: defaultErrorRedactor]
-    },
-    data: '[{\n' +
-      '  "error": {\n' +
-      '    "code": 429,\n' +
-      '    "message": "No capacity available for model gemini-3.1-pro-preview on the server",\n' +
-      '    "errors": [\n' +
-      '      {\n' +
-      '        "message": "No capacity available for model gemini-3.1-pro-preview on the server",\n' +
-      '        "domain": "global",\n' +
-      '        "reason": "rateLimitExceeded"\n' +
-      '      }\n' +
-      '    ],\n' +
-      '    "status": "RESOURCE_EXHAUSTED",\n' +
-      '    "details": [\n' +
-      '      {\n' +
-      '        "@type": "type.googleapis.com/google.rpc.ErrorInfo",\n' +
-      '        "reason": "MODEL_CAPACITY_EXHAUSTED",\n' +
-      '        "domain": "cloudcode-pa.googleapis.com",\n' +
-      '        "metadata": {\n' +
-      '          "model": "gemini-3.1-pro-preview"\n' +
-      '        }\n' +
-      '      }\n' +
-      '    ]\n' +
-      '  }\n' +
-      '}\n' +
-      ']',
-    headers: {
-      'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
-      'content-length': '630',
-      'content-type': 'application/json; charset=UTF-8',
-      date: 'Tue, 24 Mar 2026 14:27:00 GMT',
-      server: 'ESF',
-      'server-timing': 'gfet4t7; dur=44',
-      vary: 'Origin, X-Origin, Referer',
-      'x-cloudaicompanion-trace-id': 'bded84e825cdcda4',
-      'x-content-type-options': 'nosniff',
-      'x-frame-options': 'SAMEORIGIN',
-      'x-xss-protection': '0'
-    },
-    status: 429,
-    statusText: 'Too Many Requests',
-    request: {
-      responseURL: 'https://cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse'
-    }
-  },
-  error: undefined,
-  status: 429,
-  [Symbol(gaxios-gaxios-error)]: '6.7.1'
-}
-Attempt 10 failed: No capacity available for model gemini-3.1-pro-preview on the server. Max attempts reached
-Error when talking to Gemini API Full report available at: /tmp/gemini-client-error-Turn.run-sendMessageStream-2026-03-24T14-27-23-091Z.json RetryableQuotaError: No capacity available for model gemini-3.1-pro-preview on the server
-    at classifyGoogleError (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/googleQuotaErrors.js:283:16)
-    at retryWithBackoff (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/retry.js:153:37)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async GeminiChat.makeApiCallAndProcessStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:440:32)
-    at async GeminiChat.streamWithRetries (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/geminiChat.js:266:40)
-    at async Turn.run (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/turn.js:71:30)
-    at async GeminiClient.processTurn (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/client.js:487:26)
-    at async GeminiClient.sendMessageStream (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/core/client.js:605:20)
-    at async file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/dist/src/nonInteractiveCli.js:194:34
-    at async main (file:///root/.nvm/versions/node/v20.20.1/lib/node_modules/@google/gemini-cli/dist/src/gemini.js:544:9) {
-  cause: {
-    code: 429,
-    message: 'No capacity available for model gemini-3.1-pro-preview on the server',
-    details: [ [Object] ]
-  },
-  retryDelayMs: undefined
 }
 {
-  "session_id": "5b84427e-26df-489d-9b1f-a85034e05aee",
-  "error": {
-    "type": "Error",
-    "message": "[object Object]",
-    "code": 1
+  "session_id": "baf7e7ad-f755-431f-a3bd-c64f005d6f19",
+  "response": "The code files have been written successfully to the disk according to the Architectural Requirements (AR-001 through AR-011). The core functional implementation for PicoD, AgentD Reconciler, Workload Manager, Router, and Python CLI Toolkit has been written without placeholders.",
+  "stats": {
+    "models": {
+      "gemini-3.1-pro-preview": {
+        "api": {
+          "totalRequests": 43,
+          "totalErrors": 16,
+          "totalLatencyMs": 560265
+        },
+        "tokens": {
+          "input": 232546,
+          "prompt": 1100197,
+          "candidates": 9883,
+          "total": 1114706,
+          "cached": 867651,
+          "thoughts": 4626,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 43,
+            "totalErrors": 16,
+            "totalLatencyMs": 560265,
+            "tokens": {
+              "input": 232546,
+              "prompt": 1100197,
+              "candidates": 9883,
+              "total": 1114706,
+              "cached": 867651,
+              "thoughts": 4626,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 26,
+      "totalSuccess": 26,
+      "totalFail": 0,
+      "totalDurationMs": 429,
+      "totalDecisions": {
+        "accept": 26,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "read_file": {
+          "count": 2,
+          "success": 2,
+          "fail": 0,
+          "durationMs": 18,
+          "decisions": {
+            "accept": 2,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "grep_search": {
+          "count": 4,
+          "success": 4,
+          "fail": 0,
+          "durationMs": 69,
+          "decisions": {
+            "accept": 4,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "run_shell_command": {
+          "count": 7,
+          "success": 7,
+          "fail": 0,
+          "durationMs": 217,
+          "decisions": {
+            "accept": 7,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "list_directory": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 8,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "write_file": {
+          "count": 12,
+          "success": 12,
+          "fail": 0,
+          "durationMs": 117,
+          "decisions": {
+            "accept": 12,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 951,
+      "totalLinesRemoved": 0
+    }
   }
 }

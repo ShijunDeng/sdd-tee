@@ -5,66 +5,62 @@
   [Guard] Enforcing Session Isolation for opencode-cli...
   [Gate] Base LOC before Implementation: 0
   [round1_planning] Executing opencode-cli ...
-  [round1_planning] Completed in 213s.
+  [round1_planning] Completed in 147s.
   [round1_implementation] Executing opencode-cli ...
-  [round1_implementation] Completed in 600s.
-  [Gate] LOC Delta after Implementation: 2326 lines.
+  [round1_implementation] Completed in 598s.
+  [Gate] LOC Delta after Implementation: 3466 lines.
   [Gate] Verification Passed: Output is realistic.
   [round1_verify] Executing opencode-cli ...
-  [round1_verify] Completed in 186s.
+  [round1_verify] Completed in 396s.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Round 2 / 4: AR-012,AR-013,AR-014,AR-015,AR-016,AR-017,AR-018,AR-019,AR-020,AR-021,AR-022
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   [Guard] Enforcing Session Isolation for opencode-cli...
-  [Gate] Base LOC before Implementation: 2331
+  [Gate] Base LOC before Implementation: 3448
   [round2_planning] Executing opencode-cli ...
-  [round2_planning] Completed in 169s.
+  [round2_planning] Completed in 107s.
   [round2_implementation] Executing opencode-cli ...
-  [round2_implementation] Completed in 600s.
-  [Gate] LOC Delta after Implementation: 2638 lines.
+  [round2_implementation] Completed in 515s.
+  [Gate] LOC Delta after Implementation: 681 lines.
   [Gate] Verification Passed: Output is realistic.
   [round2_verify] Executing opencode-cli ...
-  [round2_verify] Completed in 65s.
+  [round2_verify] Completed in 369s.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Round 3 / 4: AR-023,AR-024,AR-025,AR-026,AR-027,AR-028,AR-029,AR-030,AR-031,AR-032,AR-033
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   [Guard] Enforcing Session Isolation for opencode-cli...
-  [Gate] Base LOC before Implementation: 4969
+  [Gate] Base LOC before Implementation: 4159
   [round3_planning] Executing opencode-cli ...
-  [round3_planning] Completed in 243s.
+  [round3_planning] Completed in 261s.
   [round3_implementation] Executing opencode-cli ...
-  [round3_implementation] Completed in 600s.
-  [Gate] LOC Delta after Implementation: 1387 lines.
+  [round3_implementation] Completed in 439s.
+  [Gate] LOC Delta after Implementation: 393 lines.
   [Gate] Verification Passed: Output is realistic.
   [round3_verify] Executing opencode-cli ...
-  [round3_verify] Completed in 171s.
+  [round3_verify] Completed in 445s.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Round 4 / 4: AR-034,AR-035,AR-036,AR-037,AR-038,AR-039,AR-040,AR-041,AR-042,AR-043
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   [Guard] Enforcing Session Isolation for opencode-cli...
-  [Gate] Base LOC before Implementation: 6402
+  [Gate] Base LOC before Implementation: 5305
   [round4_planning] Executing opencode-cli ...
-  [round4_planning] Completed in 600s.
+  [round4_planning] Completed in 177s.
   [round4_implementation] Executing opencode-cli ...
-  [round4_implementation] Completed in 157s.
-  [Gate] LOC Delta after Implementation: 3 lines.
-  [⚠ CRITICAL GUARD] Zero or near-zero code output detected (Delta: 3)!
-  Triggering Penalty Nudge to force rewrite...
-  [round4_implementation_retry] Executing opencode-cli ...
-  [round4_implementation_retry] Completed in 530s.
-  [Gate] LOC Delta after Penalty Retry: 1038 lines.
+  [round4_implementation] Completed in 408s.
+  [Gate] LOC Delta after Implementation: 1130 lines.
+  [Gate] Verification Passed: Output is realistic.
   [round4_verify] Executing opencode-cli ...
-  [round4_verify] Completed in 384s.
+  [round4_verify] Completed in 584s.
 
 ╔══════════════════════════════════════════════════════════╗
 ║  V3 REALISM-GUARD EVALUATION COMPLETE                    ║
 ╚══════════════════════════════════════════════════════════╝
   Tool:     opencode-cli
-  Model:    bailian-coding-plan/MiniMax-M2.5
-  Duration: 4518s
-  Final LOC: 7453
-  Logs:     /home/dsj/benchmark/results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs
+  Model:    bailian-coding-plan/qwen3.5-plus
+  Duration: 4446s
+  Final LOC: 6373
+  Logs:     /home/dsj/benchmark/results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs
   Note: Use scripts/03_sdd_develop.sh for default execution, or manually collect data.

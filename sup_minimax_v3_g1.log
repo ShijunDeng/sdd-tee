@@ -1,1 +1,41 @@
 Waiting for Evaluation Engine (PID: 4787) to complete...
+Evaluation Engine completed.
+  Telemetry found: 13 stages
+  Audit Complete: 17,041,041 tokens ($63.11), Overhead: 52.62x
+[07] Validating data against SDD-TEE schema...
+[07] Schema: PASS (43 ARs)
+[07] Data → /home/dsj/benchmark/results/reports/sdd_tee_report.json
+[07] HTML → /home/dsj/benchmark/results/reports/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_report.html
+[07] HTML validation: PASS (10 sections, all keywords)
+[07] Total: 43 ARs, 17,041,041 tokens, $63.11
+[11] Processing 3 runs for Deep Summary Report...
+[11] Deep Summary Report generated: results/reports/v3.0/compare_report.html
+supervise_v3.sh: line 129: 49511 Killed                  python3 <<'PYEOF'
+import json, os, re
+run_id = os.environ.get('__RUN_ID')
+tool = os.environ.get('__TOOL')
+model = os.environ.get('__MODEL')
+
+with open(f'results/runs/v3.0/{run_id}.json') as f: d = json.load(f)
+tok = d['token_summary']['total_tokens']
+loc = d['quality']['loc_generated']
+files = d['quality']['files_generated']
+cost = d['token_summary']['cost_usd']
+ts = d['timestamp']
+
+with open('CONTEXT.md', 'r') as f: c = f.read()
+
+# Find the v3.0 table
+v3_section = re.search(r'### 已完成的评测轮次 \(v3.0 Reinforced Evaluation\)\s+\| # \| .* \|\n\|---| .* \|\n((?:\| \d+ \| .* \|\n)*)', c)
+if v3_section:
+    existing_entries = v3_section.group(1).strip().split('\n')
+    # Filter out placeholder if any
+    entries = [e for e in existing_entries if '| 0 | - |' not in e and e.strip()]
+    idx = len(entries) + 1
+    line = f'| {idx} | {tool} | {model} | `..._{ts}` | {tok:,} | {files} | {loc:,} | ~75m | ${cost:.2f} |'
+    
+    new_v3_content = '\n'.join(entries + [line]) + '\n'
+    new_c = c.replace(v3_section.group(1), new_v3_content)
+    with open('CONTEXT.md', 'w') as fw: fw.write(new_c)
+PYEOF
+

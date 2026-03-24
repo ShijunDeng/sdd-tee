@@ -1,0 +1,13 @@
+Waiting for Evaluation Engine (PID: 49573) to complete...
+Evaluation Engine completed.
+  Telemetry found: 12 stages
+  Audit Complete: 22,209,316 tokens ($279.27), Overhead: 70.26x
+[07] Validating data against SDD-TEE schema...
+[07] Schema: PASS (43 ARs)
+[07] WARN: W-CACHE-LOW: Cache rate 30% < 50%
+[07] Data → /home/dsj/benchmark/results/reports/sdd_tee_report.json
+[07] HTML → /home/dsj/benchmark/results/reports/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_report.html
+[07] HTML validation: PASS (10 sections, all keywords)
+[07] Total: 43 ARs, 22,209,316 tokens, $279.27
+[11] Processing 4 runs for Deep Summary Report...
+[11] Deep Summary Report generated: results/reports/v3.0/compare_report.html
