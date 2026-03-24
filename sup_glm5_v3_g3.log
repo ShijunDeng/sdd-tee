@@ -1,1 +1,12 @@
 Waiting for Evaluation Engine (PID: 102556) to complete...
+Evaluation Engine completed.
+  Telemetry found: 12 stages
+  Audit Complete: 18,749,936 tokens ($61.67), Overhead: 68.78x
+[07] Validating data against SDD-TEE schema...
+[07] Schema: PASS (43 ARs)
+[07] Data → /home/dsj/benchmark/results/reports/sdd_tee_report.json
+[07] HTML → /home/dsj/benchmark/results/reports/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_report.html
+[07] HTML validation: PASS (10 sections, all keywords)
+[07] Total: 43 ARs, 18,749,936 tokens, $61.67
+[11] Processing 6 runs for Deep Summary Report...
+[11] Deep Summary Report generated: results/reports/v3.0/compare_report.html
