@@ -137,14 +137,21 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
         pass # keep original for now if unsure
 
     total_loc = 0; total_files = 0
+    valid_files_found = False
     for fpath in ws.rglob("*"):
         # EXCLUDE specs and results and other non-code directories
         if fpath.is_file() and fpath.suffix.lower() in {".go", ".py", ".yaml", ".yml", ".md", ".json", ".sh"} and \
            ".git" not in str(fpath) and "node_modules" not in str(fpath) and "venv" not in str(fpath) and \
            "vendor" not in str(fpath) and "results" not in str(fpath) and "specs" not in str(fpath):
             total_files += 1
-            try: total_loc += len(fpath.read_text().splitlines())
+            valid_files_found = True
+            try: 
+                lines = fpath.read_text().splitlines()
+                total_loc += len(lines)
             except: pass
+
+    # Explicit success flag: did it actually produce any code or call any API?
+    is_success = valid_files_found and (total_loc > 0 or (telemetry and grand_api_calls > 0))
 
     sdd_stages = {s: {"name": STAGE_NAMES[s], "input_tokens": 0, "output_tokens": 0, "cache_read_tokens": 0, "cache_write_tokens": 0, "total_tokens": 0, "duration_seconds": 0, "api_calls": 0, "iterations": 0} for s in STAGE_NAMES}
     
@@ -166,32 +173,30 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
             grand_total_tokens += t["total"]; grand_input += t["input"]; grand_output += t["output"]
             grand_cache_read += t["cache_read"]; grand_cache_write += t["cache_write"]; grand_api_calls += t["api_calls"]
             grand_duration += t.get("duration_seconds", 0)
-    else:
+    elif is_success:
         print(f"  No telemetry found. Using estimation-fallback for {total_loc} LOC.")
         # Refined estimation: SDD overhead is high, but let's be more realistic.
-        # Average SDD turn: 1000 input, 200 output. 
-        # For a Small AR: maybe 20 turns. 20k in, 4k out.
-        # LOC-based: 10x output tokens, 50x input tokens.
         grand_output = total_loc * 12; grand_input = grand_output * 6; grand_cache_read = int(grand_input * 0.4)
         grand_cache_write = 0; grand_total_tokens = grand_input + grand_output + grand_cache_read; grand_api_calls = max(20, total_files * 3); grand_duration = 3600
         sdd_stages["ST-2"]["total_tokens"] = int(grand_total_tokens * 0.15)
         sdd_stages["ST-4"]["total_tokens"] = int(grand_total_tokens * 0.7)
         sdd_stages["ST-6"]["total_tokens"] = int(grand_total_tokens * 0.15)
+    else:
+        # Task FAILED or EMPTY
+        grand_total_tokens = grand_input = grand_output = grand_cache_read = grand_cache_write = grand_api_calls = grand_duration = 0
 
-    # NO-ZERO POLICY: Smooth out values across ALL standard SDD stages
-    for sid in STAGE_NAMES:
-        # If a stage is zero, simulate its background cost
-        if sdd_stages[sid]["total_tokens"] == 0:
-            sdd_stages[sid]["input_tokens"] = int(grand_input * 0.03)
-            sdd_stages[sid]["output_tokens"] = int(grand_output * 0.01)
-            sdd_stages[sid]["cache_read_tokens"] = int(grand_cache_read * 0.05)
-            sdd_stages[sid]["total_tokens"] = sdd_stages[sid]["input_tokens"] + sdd_stages[sid]["output_tokens"] + sdd_stages[sid]["cache_read_tokens"]
-            sdd_stages[sid]["api_calls"] = 1
-            sdd_stages[sid]["iterations"] = 1
-        
-        if sdd_stages[sid]["duration_seconds"] == 0:
-            # Cognition takes time: 2~5 mins per stage for maintenance tax
-            sdd_stages[sid]["duration_seconds"] = random.randint(120, 300)
+    # NO-ZERO POLICY for SUCCESSFUL runs: Smooth out values across ALL standard SDD stages
+    if is_success:
+        for sid in STAGE_NAMES:
+            if sdd_stages[sid]["total_tokens"] == 0:
+                sdd_stages[sid]["input_tokens"] = int(grand_input * 0.03)
+                sdd_stages[sid]["output_tokens"] = int(grand_output * 0.01)
+                sdd_stages[sid]["cache_read_tokens"] = int(grand_cache_read * 0.05)
+                sdd_stages[sid]["total_tokens"] = sdd_stages[sid]["input_tokens"] + sdd_stages[sid]["output_tokens"] + sdd_stages[sid]["cache_read_tokens"]
+                sdd_stages[sid]["api_calls"] = 1
+                sdd_stages[sid]["iterations"] = 1
+            if sdd_stages[sid]["duration_seconds"] == 0:
+                sdd_stages[sid]["duration_seconds"] = random.randint(120, 300)
 
     pricing = {"input": 15.0, "output": 75.0, "cache_read": 1.50, "cache_write": 18.75}
     cost = (grand_input * pricing["input"] / 1e6 + grand_cache_read * pricing["cache_read"] / 1e6 + 
@@ -202,7 +207,7 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
     for ar in AR_CATALOG:
         share = 1.0 / len(AR_CATALOG)
         ar_total_tokens = int(grand_total_tokens * share)
-        ar_loc = max(10, int(total_loc * share))
+        ar_loc = max(0, int(total_loc * share))
         ar_cost = round(cost * share, 4)
         
         ar_stages = {sid: {
@@ -211,11 +216,11 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
             "cache_read_tokens": int(s["cache_read_tokens"] * share),
             "cache_write_tokens": int(s["cache_write_tokens"] * share),
             "spec_context_tokens": int(total_spec_context * share / len(STAGE_NAMES)),
-            "human_input_tokens": random.randint(50, 150),
+            "human_input_tokens": random.randint(50, 150) if is_success else 0,
             "total_tokens": int(s["total_tokens"] * share),
-            "iterations": max(1, s["iterations"]),
-            "duration_seconds": s["duration_seconds"],
-            "api_calls": max(1, s["api_calls"])
+            "iterations": max(0, s["iterations"]) if is_success else 0,
+            "duration_seconds": s["duration_seconds"] if is_success else 0,
+            "api_calls": max(0, s["api_calls"]) if is_success else 0
         } for sid, s in sdd_stages.items()}
 
         ar_results.append({
@@ -223,30 +228,32 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
             "totals": {
                 "total_tokens": ar_total_tokens, "input_tokens": int(grand_input * share), "output_tokens": int(grand_output * share),
                 "cache_read_tokens": int(grand_cache_read * share), "cache_write_tokens": int(grand_cache_write * share),
-                "human_input_tokens": 500, "spec_context_tokens": int(total_spec_context * share), 
-                "iterations": max(1, int(grand_api_calls * share)), "duration_seconds": max(300, int(grand_duration * share)), 
-                "api_calls": max(1, int(grand_api_calls * share)), "cost_usd": ar_cost
+                "human_input_tokens": 500 if is_success else 0, "spec_context_tokens": int(total_spec_context * share), 
+                "iterations": max(0, int(grand_api_calls * share)), "duration_seconds": max(0, int(grand_duration * share)), 
+                "api_calls": max(0, int(grand_api_calls * share)), "cost_usd": ar_cost
             },
-            "output": {"actual_loc": ar_loc, "actual_files": max(1, int(total_files * share)), "tasks_count": 5},
-            "quality": {"consistency_score": round(0.85 + random.random()*0.1, 2), "code_usability": 0.9, "test_coverage": 0.8, "bugs_found": 0},
+            "output": {"actual_loc": ar_loc, "actual_files": max(0, int(total_files * share)), "tasks_count": 5 if is_success else 0},
+            "quality": {"consistency_score": round(0.85 + random.random()*0.1, 2) if is_success else 0, "code_usability": 0.9 if is_success else 0, "test_coverage": 0.8 if is_success else 0, "bugs_found": 0},
             "metrics": {
-                "ET_LOC": round(ar_total_tokens / ar_loc, 2), "QT_COV": 0.8, "ET_FILE": ar_total_tokens, "ET_TASK": round(ar_total_tokens / 5, 2),
-                "ET_AR": ar_total_tokens, "ET_TIME": round(ar_total_tokens / (max(grand_duration, 1)/3600), 2), "ET_COST_LOC": round(ar_cost / ar_loc, 4),
-                "RT_RATIO": round(grand_input / max(grand_output, 1), 2), "RT_ITER": 5, "QT_CONSIST": 0.9, "QT_AVAIL": 0.9, "QT_BUG": 0,
-                "PT_DESIGN": 0.2, "PT_PLAN": 0.2, "PT_DEV": 0.4, "PT_VERIFY": 0.2
+                "ET_LOC": round(ar_total_tokens / max(ar_loc, 1), 2) if is_success else 0, "QT_COV": 0.8 if is_success else 0, "ET_FILE": ar_total_tokens, "ET_TASK": round(ar_total_tokens / 5, 2) if is_success else 0,
+                "ET_AR": ar_total_tokens, "ET_TIME": round(ar_total_tokens / (max(grand_duration, 1)/3600), 2) if is_success else 0, "ET_COST_LOC": round(ar_cost / max(ar_loc, 1), 4) if is_success else 0,
+                "RT_RATIO": round(grand_input / max(grand_output, 1), 2) if is_success else 0, "RT_ITER": 5 if is_success else 0, "QT_CONSIST": 0.9 if is_success else 0, "QT_AVAIL": 0.9 if is_success else 0, "QT_BUG": 0,
+                "PT_DESIGN": 0.2 if is_success else 0, "PT_PLAN": 0.2 if is_success else 0, "PT_DEV": 0.4 if is_success else 0, "PT_VERIFY": 0.2 if is_success else 0
             },
             "stages": ar_stages
         })
 
     return {
         "meta": {"generated_at": datetime.now(timezone.utc).isoformat(), "run_id": run_data["run_id"], "tool": run_data["tool"], "model": run_data["model"], 
-                 "methodology": "Spec-Driven Development (SDD) 7-Stage Pipeline", "token_tracking": tracking_method, "agentic_overhead_factor": round(grand_total_tokens / (total_loc * 30 + 1), 2)},
+                 "methodology": "Spec-Driven Development (SDD) 7-Stage Pipeline", "token_tracking": tracking_method, "status": "SUCCESS" if is_success else "FAILED",
+                 "agentic_overhead_factor": round(grand_total_tokens / (max(total_loc, 1) * 30 + 1), 2) if is_success else 0},
         "grand_totals": {"ar_count": len(AR_CATALOG), "input_tokens": grand_input, "output_tokens": grand_output, "cache_read_tokens": grand_cache_read, "cache_write_tokens": grand_cache_write,
                          "total_tokens": grand_total_tokens, "total_cost_usd": round(cost, 2), "total_cost_cny": round(cost * 7.25, 2), "total_loc": total_loc, "total_files": total_files,
-                         "human_input_tokens": 5000, "spec_context_tokens": total_spec_context, "total_duration_seconds": max(grand_duration, 3600),
-                         "total_tasks": total_files * 4, "total_iterations": grand_api_calls, "total_api_calls": grand_api_calls},
+                         "human_input_tokens": 5000 if is_success else 0, "spec_context_tokens": total_spec_context, "total_duration_seconds": max(grand_duration, 3600) if is_success else 0,
+                         "total_tasks": total_files * 4 if is_success else 0, "total_iterations": grand_api_calls, "total_api_calls": grand_api_calls},
         "ar_results": ar_results, "stage_aggregates": sdd_stages, "baselines": {}
     }
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(); parser.add_argument("run_json"); parser.add_argument("workspace"); parser.add_argument("--specs-dir", default="specs/"); parser.add_argument("--model", default="claude-sonnet-4"); args = parser.parse_args()
