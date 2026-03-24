@@ -1,1 +1,12 @@
 Waiting for Evaluation Engine (PID: 4722) to complete...
+Evaluation Engine completed.
+  Telemetry found: 14 stages
+  Audit Complete: 5,723,913 tokens ($93.99), Overhead: 49.86x
+[07] Validating data against SDD-TEE schema...
+[07] Schema: PASS (43 ARs)
+[07] Data → /home/dsj/benchmark/results/reports/sdd_tee_report.json
+[07] HTML → /home/dsj/benchmark/results/reports/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_report.html
+[07] HTML validation: PASS (10 sections, all keywords)
+[07] Total: 43 ARs, 5,723,913 tokens, $93.99
+[11] Processing 5 runs for Deep Summary Report...
+[11] Deep Summary Report generated: results/reports/v3.0/compare_report.html

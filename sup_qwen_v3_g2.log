@@ -11,3 +11,86 @@ Evaluation Engine completed.
 [07] Total: 43 ARs, 22,209,316 tokens, $279.27
 [11] Processing 4 runs for Deep Summary Report...
 [11] Deep Summary Report generated: results/reports/v3.0/compare_report.html
+[main a86bbf2] Auto-complete reinforced evaluation (V3 Guarded) for bailian-coding-plan/qwen3.5-plus
+ 85 files changed, 53569 insertions(+), 497077 deletions(-)
+ create mode 100644 master_v3_remaining.log
+ create mode 100644 qwen_v3_g2.log
+ create mode 100644 results/reports/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_report.html
+ create mode 100644 results/reports/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_report.html
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round1_implementation.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round1_implementation_retry.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round1_implementation_retry_raw.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round1_verify.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round1_verify_raw.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round2_implementation.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round2_implementation_raw.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round2_planning.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round2_planning_raw.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round2_verify.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round2_verify_raw.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round3_implementation.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round3_implementation_raw.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round3_planning.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round3_planning_raw.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round3_verify.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round3_verify_raw.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round4_implementation_raw.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round4_planning.json
+ create mode 100644 results/runs/v3.0/gemini-cli_gemini-3.1-pro-preview_20260324T141220Z_logs/round4_planning_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_full.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round1_implementation.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round1_verify.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round1_verify_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round2_implementation.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round2_implementation_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round2_planning.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round2_planning_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round2_verify.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round2_verify_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round3_implementation.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round3_implementation_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round3_planning.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round3_planning_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round3_verify.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round3_verify_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round4_implementation.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round4_implementation_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round4_implementation_retry.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round4_implementation_retry_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round4_planning.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round4_planning_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round4_verify.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_MiniMax-M2.5_20260324T141235Z_logs/round4_verify_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_full.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round1_implementation.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round1_implementation_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round1_planning.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round1_planning_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round1_verify.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round1_verify_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round2_implementation.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round2_implementation_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round2_planning.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round2_planning_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round2_verify.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round2_verify_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round3_implementation.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round3_implementation_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round3_planning.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round3_planning_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round3_verify.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round3_verify_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round4_implementation.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round4_implementation_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round4_planning.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round4_planning_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round4_verify.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_qwen3.5-plus_20260324T153310Z_logs/round4_verify_raw.json
+ create mode 100644 sup_qwen_v3_g2.log
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+To github.com:ShijunDeng/sdd-tee.git
+   a5236fd..a86bbf2  main -> main
+Supervisor pipeline fully completed.
