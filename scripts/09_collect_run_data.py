@@ -64,19 +64,46 @@ def audit_logs(log_dir):
                                     found_any = True
                         except: continue
                 elif '"stats":' in content:
-                    json_start = content.find("{")
+                    # Find the START of the actual stats JSON block, not just any {
+                    json_start = content.rfind('{"stats":')
+                    if json_start == -1:
+                        # Try finding the last "stats": and backtrack to its opening {
+                        stats_pos = content.rfind('"stats":')
+                        if stats_pos != -1:
+                            # Backtrack to find the { that opens the object containing "stats"
+                            bracket_count = 0
+                            for i in range(stats_pos, -1, -1):
+                                if content[i] == '}': bracket_count += 1
+                                elif content[i] == '{':
+                                    if bracket_count == 0:
+                                        json_start = i
+                                        break
+                                    bracket_count -= 1
+                    
                     if json_start != -1:
-                        data = json.loads(content[json_start:])
-                        models = data.get("stats", {}).get("models", {})
-                        for m in models.values():
-                            t = m.get("tokens", {})
-                            if t:
-                                stage_breakdown[stage_key]["input"] += t.get("prompt", 0)
-                                stage_breakdown[stage_key]["output"] += t.get("candidates", 0)
-                                stage_breakdown[stage_key]["total"] += t.get("total", 0)
-                                stage_breakdown[stage_key]["cache_read"] += t.get("cached", 0)
-                                stage_breakdown[stage_key]["api_calls"] += m.get("api", {}).get("totalRequests", 1)
-                                found_any = True
+                        try:
+                            # Try to extract the JSON block. It might end with text, so we try to find the matching }
+                            # For simplicity, we try json.loads on the rest and if it fails, we try to find the last }
+                            data = None
+                            try:
+                                data = json.loads(content[json_start:])
+                            except:
+                                last_brace = content.rfind("}")
+                                if last_brace != -1:
+                                    data = json.loads(content[json_start:last_brace+1])
+                            
+                            if data:
+                                models = data.get("stats", {}).get("models", {})
+                                for m in models.values():
+                                    t = m.get("tokens", {})
+                                    if t:
+                                        stage_breakdown[stage_key]["input"] += t.get("prompt", 0)
+                                        stage_breakdown[stage_key]["output"] += t.get("candidates", 0)
+                                        stage_breakdown[stage_key]["total"] += t.get("total", 0)
+                                        stage_breakdown[stage_key]["cache_read"] += t.get("cached", 0)
+                                        stage_breakdown[stage_key]["api_calls"] += m.get("api", {}).get("totalRequests", 1)
+                                        found_any = True
+                        except: continue
         except: continue
     
     return stage_breakdown if found_any else None
@@ -111,7 +138,10 @@ def collect(run_json_path, workspace_dir, specs_dir, model_id):
 
     total_loc = 0; total_files = 0
     for fpath in ws.rglob("*"):
-        if fpath.is_file() and fpath.suffix.lower() in {".go", ".py", ".yaml", ".yml", ".md", ".json", ".sh"} and ".git" not in str(fpath) and "node_modules" not in str(fpath) and "venv" not in str(fpath) and "vendor" not in str(fpath) and "results" not in str(fpath):
+        # EXCLUDE specs and results and other non-code directories
+        if fpath.is_file() and fpath.suffix.lower() in {".go", ".py", ".yaml", ".yml", ".md", ".json", ".sh"} and \
+           ".git" not in str(fpath) and "node_modules" not in str(fpath) and "venv" not in str(fpath) and \
+           "vendor" not in str(fpath) and "results" not in str(fpath) and "specs" not in str(fpath):
             total_files += 1
             try: total_loc += len(fpath.read_text().splitlines())
             except: pass

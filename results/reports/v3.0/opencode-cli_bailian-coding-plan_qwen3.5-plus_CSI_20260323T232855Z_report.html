@@ -62,7 +62,7 @@
   SDD Token Efficiency Evaluation &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
   模型: qwen3.5-plus &nbsp;|&nbsp; 工具: opencode-cli &nbsp;|&nbsp;
   <span style="color:var(--green)">ACTUAL RUN</span> &nbsp;|&nbsp;
-  opencode-cli_bailian-coding-plan_qwen3.5-plus_CSI_20260323T232855Z &nbsp;|&nbsp; 2026-03-24T09:04:54Z
+  opencode-cli_bailian-coding-plan_qwen3.5-plus_CSI_20260323T232855Z &nbsp;|&nbsp; 2026-03-24T09:29:48Z
 </p>
 
 <div class="toc">
@@ -100,9 +100,9 @@
   <div class="stat"><div class="v">27,282,977</div><div class="l">Total Tokens</div></div>
   <div class="stat"><div class="v">$338.22</div><div class="l">总成本 (USD)</div></div>
   <div class="stat"><div class="v">¥2452</div><div class="l">总成本 (CNY)</div></div>
-  <div class="stat"><div class="v">8,829</div><div class="l">生成代码行数</div></div>
-  <div class="stat"><div class="v">50</div><div class="l">生成文件数</div></div>
-  <div class="stat"><div class="v">200</div><div class="l">Task 总数</div></div>
+  <div class="stat"><div class="v">4,579</div><div class="l">生成代码行数</div></div>
+  <div class="stat"><div class="v">28</div><div class="l">生成文件数</div></div>
+  <div class="stat"><div class="v">112</div><div class="l">Task 总数</div></div>
   <div class="stat"><div class="v">402</div><div class="l">交互总轮数</div></div>
   <div class="stat"><div class="v">402</div><div class="l">API 调用次数</div></div>
   <div class="stat"><div class="v">1h0m</div><div class="l">总耗时</div></div>
@@ -256,12 +256,12 @@
 <!-- ===================== 4. EFFICIENCY ===================== -->
 <h2 id="efficiency">4. 效率维度</h2>
 <div class="stats">
-  <div class="stat"><div class="v">3090</div><div class="l">ET-LOC (Token/LOC)</div></div>
-  <div class="stat"><div class="v">545,660</div><div class="l">ET-FILE (Token/File)</div></div>
-  <div class="stat"><div class="v">136,415</div><div class="l">ET-TASK (Token/Task)</div></div>
+  <div class="stat"><div class="v">5958</div><div class="l">ET-LOC (Token/LOC)</div></div>
+  <div class="stat"><div class="v">974,392</div><div class="l">ET-FILE (Token/File)</div></div>
+  <div class="stat"><div class="v">243,598</div><div class="l">ET-TASK (Token/Task)</div></div>
   <div class="stat"><div class="v">634,488</div><div class="l">ET-AR (Token/AR)</div></div>
   <div class="stat"><div class="v">27,282,977</div><div class="l">ET-TIME (Token/h)</div></div>
-  <div class="stat"><div class="v">$38.31</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
+  <div class="stat"><div class="v">$73.86</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
 </div>
 <div class="metric-guide">
   <h4>效率指标指南:</h4>
@@ -277,92 +277,92 @@
         <rect x="60" y="10" width="580" height="340" fill="#fafafa" stroke="#ddd"/>
         <text x="340" y="375" text-anchor="middle" font-size="12" fill="#666">实际代码行数 (LOC)</text>
         <text x="15" y="180" text-anchor="middle" font-size="12" fill="#666" transform="rotate(-90,15,180)">Total Tokens</text>
-        <circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-001 CRD AgentRuntime 类型定义
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-002 CRD CodeInterpreter 类型定义
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-003 CRD 共享类型与常量
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-004 WorkloadManager HTTP 服务框架
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-005 Sandbox 创建处理器
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-006 Sandbox 删除与生命周期管理
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-007 K8s Reconciler 控制器
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-008 Sandbox GC 定时清理机制
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-009 Router HTTP 反向代理核心
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-010 Router 会话管理
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-011 Router JWT 认证与签发
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-012 会话存储接口定义
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-013 Redis 存储实现
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-014 Valkey 存储实现
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-015 PicoD 命令执行 API
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-016 PicoD 文件管理 API
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-017 PicoD JWT 中间件
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-018 Agentd 空闲清理控制器
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-019 CLI 二进制入口 (4 binaries)
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-020 CLI pack 命令
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-021 CLI build 命令
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-022 CLI publish 命令
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-023 CLI invoke/status 命令
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-024 DockerService 封装
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-025 MetadataService 与数据模型
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-026 K8s/AgentCube Provider
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-027 SDK CodeInterpreterClient
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-028 SDK AgentRuntimeClient
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-029 SDK HTTP 底层客户端
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-030 Helm Chart 模板与 Values
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-031 RBAC 配置 (SA/Role/Binding)
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-032 Dockerfile 多阶段构建 (3 images)
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-033 Makefile 构建目标体系
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-034 CI/CD GitHub Actions (12 workflows)
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-035 client-go 类型客户端生成
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-036 Dify 插件集成
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-037 PCAP 分析器示例应用
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-038 Go 单元测试 (workloadmanager)
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-039 Go 单元测试 (router/store/picod)
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-040 Python SDK/CLI 测试
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-041 E2E 集成测试
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-042 Docusaurus 文档站框架
-LOC: 205, Tokens: 634,487</title></circle>
-<circle cx="108" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-043 架构设计文档与 API 文档
-LOC: 205, Tokens: 634,487</title></circle>
+        <circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-001 CRD AgentRuntime 类型定义
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-002 CRD CodeInterpreter 类型定义
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-003 CRD 共享类型与常量
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-004 WorkloadManager HTTP 服务框架
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-005 Sandbox 创建处理器
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-006 Sandbox 删除与生命周期管理
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-007 K8s Reconciler 控制器
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-008 Sandbox GC 定时清理机制
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-009 Router HTTP 反向代理核心
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-010 Router 会话管理
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-011 Router JWT 认证与签发
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-012 会话存储接口定义
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-013 Redis 存储实现
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-014 Valkey 存储实现
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-015 PicoD 命令执行 API
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-016 PicoD 文件管理 API
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-017 PicoD JWT 中间件
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-018 Agentd 空闲清理控制器
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-019 CLI 二进制入口 (4 binaries)
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-020 CLI pack 命令
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-021 CLI build 命令
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-022 CLI publish 命令
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-023 CLI invoke/status 命令
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-024 DockerService 封装
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-025 MetadataService 与数据模型
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-026 K8s/AgentCube Provider
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-027 SDK CodeInterpreterClient
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-028 SDK AgentRuntimeClient
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-029 SDK HTTP 底层客户端
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-030 Helm Chart 模板与 Values
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-031 RBAC 配置 (SA/Role/Binding)
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-032 Dockerfile 多阶段构建 (3 images)
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-033 Makefile 构建目标体系
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-034 CI/CD GitHub Actions (12 workflows)
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-035 client-go 类型客户端生成
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-036 Dify 插件集成
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-037 PCAP 分析器示例应用
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-038 Go 单元测试 (workloadmanager)
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-039 Go 单元测试 (router/store/picod)
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-040 Python SDK/CLI 测试
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-041 E2E 集成测试
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-042 Docusaurus 文档站框架
+LOC: 106, Tokens: 634,487</title></circle>
+<circle cx="85" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-043 架构设计文档与 API 文档
+LOC: 106, Tokens: 634,487</title></circle>
 
     </svg>
   <div class="legend">
@@ -447,8 +447,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>S</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">92%</td>
             <td style="text-align:right">90%</td>
@@ -459,8 +459,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>S</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">87%</td>
             <td style="text-align:right">90%</td>
@@ -471,8 +471,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>S</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">89%</td>
             <td style="text-align:right">90%</td>
@@ -483,8 +483,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">88%</td>
             <td style="text-align:right">90%</td>
@@ -495,8 +495,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">89%</td>
             <td style="text-align:right">90%</td>
@@ -507,8 +507,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">95%</td>
             <td style="text-align:right">90%</td>
@@ -519,8 +519,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>L</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">87%</td>
             <td style="text-align:right">90%</td>
@@ -531,8 +531,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>S</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">94%</td>
             <td style="text-align:right">90%</td>
@@ -543,8 +543,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">87%</td>
             <td style="text-align:right">90%</td>
@@ -555,8 +555,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -567,8 +567,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">87%</td>
             <td style="text-align:right">90%</td>
@@ -579,8 +579,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>S</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">88%</td>
             <td style="text-align:right">90%</td>
@@ -591,8 +591,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">94%</td>
             <td style="text-align:right">90%</td>
@@ -603,8 +603,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>S</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -615,8 +615,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -627,8 +627,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">89%</td>
             <td style="text-align:right">90%</td>
@@ -639,8 +639,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>S</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">94%</td>
             <td style="text-align:right">90%</td>
@@ -651,8 +651,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>S</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">93%</td>
             <td style="text-align:right">90%</td>
@@ -663,8 +663,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">94%</td>
             <td style="text-align:right">90%</td>
@@ -675,8 +675,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">93%</td>
             <td style="text-align:right">90%</td>
@@ -687,8 +687,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">95%</td>
             <td style="text-align:right">90%</td>
@@ -699,8 +699,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>L</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">94%</td>
             <td style="text-align:right">90%</td>
@@ -711,8 +711,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -723,8 +723,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">94%</td>
             <td style="text-align:right">90%</td>
@@ -735,8 +735,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">92%</td>
             <td style="text-align:right">90%</td>
@@ -747,8 +747,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">94%</td>
             <td style="text-align:right">90%</td>
@@ -759,8 +759,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">91%</td>
             <td style="text-align:right">90%</td>
@@ -771,8 +771,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">86%</td>
             <td style="text-align:right">90%</td>
@@ -783,8 +783,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">87%</td>
             <td style="text-align:right">90%</td>
@@ -795,8 +795,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>L</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">93%</td>
             <td style="text-align:right">90%</td>
@@ -807,8 +807,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -819,8 +819,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>S</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">92%</td>
             <td style="text-align:right">90%</td>
@@ -831,8 +831,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">87%</td>
             <td style="text-align:right">90%</td>
@@ -843,8 +843,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>L</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">95%</td>
             <td style="text-align:right">90%</td>
@@ -855,8 +855,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>L</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">87%</td>
             <td style="text-align:right">90%</td>
@@ -867,8 +867,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">93%</td>
             <td style="text-align:right">90%</td>
@@ -879,8 +879,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">90%</td>
             <td style="text-align:right">90%</td>
@@ -891,8 +891,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>L</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">92%</td>
             <td style="text-align:right">90%</td>
@@ -903,8 +903,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>L</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">95%</td>
             <td style="text-align:right">90%</td>
@@ -915,8 +915,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">86%</td>
             <td style="text-align:right">90%</td>
@@ -927,8 +927,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>L</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">92%</td>
             <td style="text-align:right">90%</td>
@@ -939,8 +939,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">87%</td>
             <td style="text-align:right">90%</td>
@@ -951,8 +951,8 @@ LOC: 205, Tokens: 634,487</title></circle>
             <td>go/python</td>
             <td>M</td>
             <td style="text-align:right">634,487</td>
-            <td style="text-align:right">205</td>
-            <td style="text-align:right">3095.06</td>
+            <td style="text-align:right">106</td>
+            <td style="text-align:right">5985.73</td>
             <td style="text-align:right">$7.865</td>
             <td style="text-align:right">94%</td>
             <td style="text-align:right">90%</td>
@@ -1002,7 +1002,7 @@ LOC: 205, Tokens: 634,487</title></circle>
 </div><!-- .container -->
 <div class="footer">
   SDD-TEE v2 (SDD Token Efficiency Evaluation) &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
-  2026-03-24T09:04:54Z &nbsp;|&nbsp; <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
+  2026-03-24T09:29:48Z &nbsp;|&nbsp; <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
 </div>
 </body>
 </html>
