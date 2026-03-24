@@ -10,3 +10,24 @@ Evaluation Engine completed.
 [07] Total: 43 ARs, 18,749,936 tokens, $61.67
 [11] Processing 6 runs for Deep Summary Report...
 [11] Deep Summary Report generated: results/reports/v3.0/compare_report.html
+[main 554c9cd] Auto-complete reinforced evaluation (V3 Guarded) for bailian-coding-plan/glm-5
+ 20 files changed, 11011 insertions(+), 2974 deletions(-)
+ create mode 100644 results/reports/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_report.html
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_full.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round3_implementation.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round3_implementation_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round3_planning.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round3_verify.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round3_verify_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round4_implementation.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round4_implementation_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round4_planning.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round4_planning_raw.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round4_verify.json
+ create mode 100644 results/runs/v3.0/opencode-cli_bailian-coding-plan_glm-5_20260324T164732Z_logs/round4_verify_raw.json
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+To github.com:ShijunDeng/sdd-tee.git
+   030b005..554c9cd  main -> main
+Supervisor pipeline fully completed.
