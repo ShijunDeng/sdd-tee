@@ -6,6 +6,15 @@
 每个 AR 走完整的 SDD 流程（`/opsx:new` → `/opsx:ff` → `/opsx:apply` → `/opsx:verify` → `/opsx:archive`），
 **量化 8 个阶段（ST-0~ST-7）× 5 个维度的 Token 消耗**，为 Token 提效研究提供评估基线。
 
+## 核心演进：v3.0 Reinforced Evaluation
+
+v3.0 引入了 **Realism Guard (现实主义护栏)** 架构，确保评测数据的真实性与代码的实质性完成度：
+
+1.  **Session Isolation (会话隔离)**: 每个评测轮次强制清理环境，避免历史缓存干扰 Token 统计。
+2.  **LOC Delta Gate (代码增量门禁)**: 实时监控每个阶段的代码产出，禁止 AI 通过“伪造存根 (Stubs)”或“空实现”来刷低 Token 消耗。
+3.  **Penalty Retry (惩罚性重试)**: 一旦检测到低 LOC 或空代码产出，自动触发“惩罚性 Prompt”，强制模型重新进行实质性开发。
+4.  **Cumulative Turn Summation (转录累加)**: 精确统计 Agentic Loop 中每一轮对话的累加消耗，而非仅取最后一轮。
+
 ## 评测体系
 
 ### 5 维指标体系
@@ -14,132 +23,62 @@
 |------|------|----------|
 | 阶段维度 | ST-0 ~ ST-7 | 各阶段 Input/Output/Cache Tokens、迭代数、耗时 |
 | 角色维度 | RT-AI / RT-HUMAN | AI Token、人工输入 Token、人机比、预制规范（单独标注） |
-| 效率维度 | ET-LOC / ET-FILE / ET-TASK | Token/LOC、Token/File、Token/Task、Token/AR、Token/h |
+| 效率维度 | ET-LOC / ET-FILE / ET-TASK | Token/LOC、Token/File、Token/Task、Token/AR |
 | 质量维度 | QT-COV / QT-CONSIST | Token/覆盖率、Token/一致性、Token/可用率、Token/Bug |
 | 分布维度 | PT-DESIGN / PT-DEV | 设计/开发/验证阶段占比、峰值阶段 |
-
-### CodeSpec 7 阶段 × OpenSpec OPSX 对齐
-
-```
-ST-0  /opsx:new     → 变更目录脚手架
-ST-1  /opsx:ff      → proposal.md       (需求澄清)
-ST-2  /opsx:ff      → delta-spec.md     (Spec 增量设计)
-ST-3  /opsx:ff      → design.md         (Design 增量设计)
-ST-4  /opsx:ff      → tasks.md          (任务拆解)
-ST-5  /opsx:apply   → 代码文件           (开发实现)
-ST-6  /opsx:verify  → 验证报告           (一致性验证)
-ST-7  /opsx:archive → 归档 + spec 合并   (合并归档)
-```
-
-## 前置工作（一次性）
-
-以下为一次性前置准备，成果可在所有评测中复用，Token/耗时不计入评测基线。
-
-| 前置项 | 产出 |
-|--------|------|
-| 项目技术解析 | [`results/reports/project_analysis_report.html`](results/reports/project_analysis_report.html) |
-| 规范逆向生成 | `specs/` 目录（10 个 capability，22 份 OpenSpec 规范） |
 
 ## 快速开始
 
 ```bash
-# 1. 环境初始化（安装依赖）
+# 1. 环境初始化
 make setup
 
-# 2. 环境预检（验证工具链、config、specs 完整性）
+# 2. 环境预检
 make preflight
 
-# 3. Mock 报告（预览报告格式 + schema 自检）
-make mock
+# 3. 运行评测 (支持 v3.0 自动化编排)
+make run TOOL=gemini-cli  MODEL=gemini-3.1-pro-preview
+make run TOOL=opencode-cli MODEL=bailian-coding-plan/qwen3.5-plus
 
-# 4. 运行评测（4 种 CLI 工具 × 任意模型）
-make run TOOL=cursor-cli  MODEL=claude-4.6-opus-high-thinking
-make run TOOL=claude-code MODEL=claude-sonnet-4-20250514
-make run TOOL=gemini-cli  MODEL=gemini-2.5-pro
-make run TOOL=opencode-cli MODEL=opencode/big-pickle
-
-# 5. 采集 Token 数据
+# 4. 采集并生成报告 (自动归档至 results/reports/v3.0/)
 make collect
-
-# 6. 生成 10 节 5 维报告（自动 schema 校验）
 make report
-
-# 7. 自检：验证报告覆盖 design doc 全部指标
-make selftest
-
-# 8. 跨轮次对比报告
 make compare
-
-# 完整管线（一键）
-make all TOOL=cursor-cli MODEL=claude-4.6-opus-high-thinking
-
-# 全部 4 种工具顺序评测 + 对比
-make eval-all
-```
-
-### LiteLLM Proxy（精确 per-request Token 追踪）
-
-```bash
-export ANTHROPIC_API_KEY=sk-...
-make proxy &          # 启动代理 (localhost:4000)
-make proxy-run MODEL=anthropic/claude-sonnet-4-20250514
-make report && make selftest
 ```
 
 ## 目录结构
 
 ```
 sdd-tee/
-├── config.yaml                 # 评测配置（工具、模型、AR 列表）
-├── Makefile                    # 评测编排
-├── PROPOSAL.md                 # v2 评测体系设计文档
-├── scripts/
-│   ├── schema.py               # 数据合约（Single Source of Truth，关联指标体系 doc）
-│   ├── preflight.py            # 环境预检（7 维：依赖/工具链/config/specs/脚本/工具/代理）
-│   ├── 04_validate.py          # 代码质量验证（Go build/py_compile/YAML syntax）
-│   ├── 07_sdd_tee_report.py    # 报告生成（10 节 5 维，内置 schema 校验）
-│   ├── 09_collect_run_data.py  # Token 采集（litellm.token_counter 精确计数）
-│   ├── 10_litellm_runner.py    # LiteLLM 评测执行器（per-request Token 追踪）
-│   └── 11_compare_runs.py      # 跨轮次对比报告（Tool × Model 横向比较）
-├── specs/                      # 逆向生成的 OpenSpec 规范（capability-based，一次性产出）
-│   ├── project.md              # 项目上下文（技术栈、架构、约定）
-│   ├── {capability}/spec.md    # 需求规范（SHALL/MUST + GIVEN/WHEN/THEN 场景）
-│   └── {capability}/design.md  # 技术设计（类型定义、接口、常量、路由）
-├── workspaces/                 # 各评测轮次的生成代码
-└── results/
-    ├── project_analysis/       # 项目分析原始数据
-    ├── runs/                   # 每次评测的 JSON 原始数据
-    └── reports/                # HTML 报告与图表
+├── configs/                    # 配置文件中心
+│   ├── config.yaml             # 评测配置（工具、模型、AR 列表）
+│   └── litellm_config.yaml     # LiteLLM Proxy 路由配置
+├── orchestration/              # 自动化编排与看护脚本
+│   ├── launch_v3_group1.sh     # 并行启动任务组
+│   ├── supervise_v3.sh         # 实时监控、自动补齐与数据归档
+│   └── master_v3_runner.sh     # 全量自动化评测主入口
+├── scripts/                    # 核心逻辑脚本
+│   ├── schema.py               # 数据合约校验
+│   ├── 07_sdd_tee_report.py    # 维度报告生成
+│   ├── 09_collect_run_data.py  # 物理 LOC 与 Token 采集
+│   ├── 11_compare_runs.py      # 跨模型横向对比报告
+│   └── utils/                  # 维护与审计工具集
+├── logs/                       # 统一存放评测过程日志 (.log)
+├── specs/                      # 逆向生成的 OpenSpec 规范
+├── workspaces/                 # 评测实时生成代码 (v1.0/v2.0/v3.0)
+└── results/                    # 评测产物
+    ├── runs/                   # 每次评测的 JSON 原始数据 (含 logs 备份)
+    └── reports/                # HTML 维度报告与对比看板
 ```
 
 ## 可重入性保障
 
 | 保障层 | 机制 | 验证命令 |
 |--------|------|----------|
-| **数据合约** | `schema.py` 定义全部 8 阶段 × 9 字段 × 16 指标，report 生成前自动校验 | `make selftest` |
-| **环境预检** | `preflight.py` 检查 7 维：依赖/工具链/config/specs/脚本/编码工具/代理 | `make preflight` |
-| **指标完整性** | 所有指标 ID 与 `docs/SDD开发Token消耗度量指标体系设计方案.md` 一一对应 | `python3 scripts/schema.py <data.json>` |
-| **报告完整性** | HTML 渲染后验证 10 节标题 + 17 个必需关键词 | `python3 scripts/schema.py <data.json> <report.html>` |
-| **预警完整性** | 6 条预警规则全部实现（STAGE-BUDGET/TOTAL-BUDGET/ET-LOC/USABILITY/DEV-SKEW/CACHE-LOW） | 报告第 9 节 |
-| **依赖声明** | `requirements.txt` 锁定 Python 依赖 | `make setup` |
-| **工具无关** | 同一管线支持 cursor-cli / claude-code / gemini-cli / opencode-cli，只需 `TOOL=xxx MODEL=xxx` | `make run TOOL=...` |
-| **跨轮对比** | `11_compare_runs.py` 自动扫描全部 *_full.json，生成横向对比报告 | `make compare` |
-
-## Token 追踪
-
-| 方式 | 说明 |
-|------|------|
-| LiteLLM Proxy | 统一代理层拦截所有 API 调用，精确 per-request 记录 |
-| 工具原生 | Claude Code (JSON usage) / Gemini CLI (JSON output) / OpenCode (stats) / Cursor CLI (content-based estimation) |
-| 预制规范 | Spec 文档计入 input tokens，标注为"预制规范"单独统计 |
-
-## 参考基准
-
-| 来源 | 数据 |
-|------|------|
-| BSWEN 2026 (100M tokens tracked) | Claude Code ~78K tokens/request, 84% cache, 166:1 I/O |
-| Iterathon 2026 | Claude Sonnet $0.08/task, Gemini $0.15/task |
-| SWE-AGI 2026 | Frontier models 68-86% on spec-driven construction |
+| **Realism Guard** | v3.0 强制 LOC 增量校验与惩罚性重试，杜绝 Stub 欺诈 | 见报告第 9 节 |
+| **数据合约** | `schema.py` 定义全部 16+ 核心指标，报告生成前强制校验 | `make selftest` |
+| **环境预检** | `preflight.py` 检查依赖、工具链、API 连通性 | `make preflight` |
+| **自动化归档** | 脚本自动将 Raw Logs、JSON、HTML 报告同步至 Git | `git status` |
 
 ## License
 
