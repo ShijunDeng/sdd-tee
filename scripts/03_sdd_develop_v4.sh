@@ -5,6 +5,14 @@ set -euo pipefail
 TOOL=$1
 MODEL=$2
 SPECS_DIR=$3
+
+# --- MEMORY PROTECTION & OPTIMIZATION ---
+# 1. Limit Node.js Heap for opencode-cli/gemini-cli
+export NODE_OPTIONS="--max-old-space-size=6144"
+
+# 2. Lower OOM score priority for the runner (requires sudo or just warning if fails)
+echo 500 > /proc/$$/oom_score_adj 2>/dev/null || echo "[Warning] Could not adjust oom_score_adj. Proceeding..."
+
 RUN_ID="${TOOL}_${MODEL//\//-}_$(date +%Y%m%dT%H%M%SZ)"
 WORKSPACE="workspaces/v4.0/${RUN_ID}"
 RESULTS_DIR="results/runs/v4.0"
@@ -15,17 +23,30 @@ cp -r "$SPECS_DIR"/* "$WORKSPACE/specs/"
 
 echo "=== SDD-TEE v4.0 Reinforced Execution: $MODEL ==="
 
+# Cleanup function to prevent OOM due to disk bloat/caching
+clean_workspace() {
+    echo "  [Cleaning Workspace] Removing cache and build artifacts..."
+    find "$WORKSPACE" -name "__pycache__" -type d -exec rm -rf {} +
+    find "$WORKSPACE" -name "*.log" -type f -delete
+    find "$WORKSPACE" -name ".pytest_cache" -type d -exec rm -rf {} +
+}
+
 # Helper function to call the tool with correct syntax
 call_tool() {
     local prompt=$1
     local log_file=$2
+    
+    # Pre-call cleanup
+    clean_workspace
+
     if [ "$TOOL" == "gemini-cli" ]; then
-        gemini "$WORKSPACE" --model "$MODEL" --prompt "$prompt" --yolo --output-format json > "$log_file" 2>&1
+        (cd "$WORKSPACE" && gemini --model "$MODEL" --prompt "$prompt" --yolo --output-format json > "../../../$log_file" 2>&1)
     elif [ "$TOOL" == "opencode-cli" ]; then
         # CRITICAL: Added explicit instruction to WRITE files
         local final_prompt="INSTRUCTIONS: You are a senior engineer. You must use tool calls to physically WRITE files to the disk. 
         $prompt"
-        opencode run "$final_prompt" --dir "$WORKSPACE" --model "$MODEL" --format json > "$log_file" 2>&1
+        # Added --log-level DEBUG for better troubleshooting
+        opencode run "$final_prompt" --dir "$WORKSPACE" --model "$MODEL" --format json --log-level DEBUG > "$log_file" 2>&1
     else
         echo "Unknown tool: $TOOL"
         exit 1

@@ -1,0 +1,18 @@
+{
+  "run_id": "opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z",
+  "timestamp": "20260325T210051Z",
+  "project": "agentcube",
+  "tool": "opencode-cli",
+  "model": "bailian-coding-plan/kimi-k2.5",
+  "token_summary": {
+    "input_tokens": 1059236,
+    "output_tokens": 294774,
+    "cache_read_tokens": 22404817,
+    "total_tokens": 1354010,
+    "cost_usd": 55.7153
+  },
+  "quality": {
+    "loc_generated": 29611,
+    "build_status": "FAILED"
+  }
+}

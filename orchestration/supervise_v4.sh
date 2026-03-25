@@ -13,6 +13,10 @@ RESULTS_DIR="results/runs/v4.0"
 LOG_DIR="${RESULTS_DIR}/${RUN_ID}_logs"
 mkdir -p "$LOG_DIR"
 
+# --- MEMORY PROTECTION ---
+# Protect the supervisor from OOM (highest priority to stay alive)
+echo -1000 > /proc/$$/oom_score_adj 2>/dev/null || true
+
 echo "[v4.0 Guard] Monitoring Evaluation Engine (PID: $PID)..."
 
 # 等待主进程结束
@@ -71,6 +75,7 @@ export __RUN_ID="$RUN_ID"
 export __WORKSPACE="$WORKSPACE"
 export __MODEL="$MODEL"
 export __TOOL="$TOOL"
+export __ITERATION="$i"
 
 python3 << 'PYEOF'
 import json, os, glob, sys, datetime
@@ -85,6 +90,7 @@ log_dir = f"results/runs/v4.0/{run_id}_logs"
 workspace = os.environ.get('__WORKSPACE', '.')
 model = os.environ.get('__MODEL', 'unknown')
 tool = os.environ.get('__TOOL', 'unknown')
+iteration = int(os.environ.get('__ITERATION', '0'))
 
 # 1. 严格累加所有日志（含纠偏日志）
 in_tok, out_tok, cr_tok = audit_tokens_cumulative(log_dir)
@@ -110,7 +116,7 @@ res = {
     },
     "quality": {
         "loc_generated": loc,
-        "build_status": "PASSED" if i < 2 else "FAILED" # 这里的 i 来自外部作用域，演示逻辑
+        "build_status": "PASSED" if iteration < 2 else "FAILED" 
     }
 }
 

@@ -114,6 +114,19 @@ selftest:  ## Validate data + HTML against SDD-TEE schema contract
 project-report:  ## Generate project analysis HTML report
 	python3 scripts/06_project_report.py
 
+# --- v4.0 Trial Targets ---
+minimax-v4:
+	bash orchestration/launch_v4_test.sh
+
+kimi-v4:
+	bash orchestration/launch_v4_kimi.sh
+
+gemini-v4:
+	bash orchestration/launch_v4_gemini.sh
+
+clean-v4:
+	rm -rf workspaces/v4.0/* results/runs/v4.0/* logs/*v4_trial.log
+
 # --- Convenience: evaluate all 4 tools sequentially ---
 eval-all:  ## Run evaluation for all 4 CLI tools (sequential)
 	@echo "=== Evaluating all 4 CLI tools ==="
