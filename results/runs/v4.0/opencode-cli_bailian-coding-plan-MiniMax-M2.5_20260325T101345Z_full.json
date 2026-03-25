@@ -31,7 +31,7 @@
   "ar_results": [
     {
       "ar_id": "AR-001",
-      "ar_name": "CRD AgentRuntime 类型定义",
+      "ar_name": "CRD AgentRuntime \u7c7b\u578b\u5b9a\u4e49",
       "size": "S",
       "module": "agentcube",
       "lang": "go/python",
@@ -179,7 +179,7 @@
     },
     {
       "ar_id": "AR-002",
-      "ar_name": "CRD CodeInterpreter 类型定义",
+      "ar_name": "CRD CodeInterpreter \u7c7b\u578b\u5b9a\u4e49",
       "size": "S",
       "module": "agentcube",
       "lang": "go/python",
@@ -327,7 +327,7 @@
     },
     {
       "ar_id": "AR-003",
-      "ar_name": "CRD 共享类型与常量",
+      "ar_name": "CRD \u5171\u4eab\u7c7b\u578b\u4e0e\u5e38\u91cf",
       "size": "S",
       "module": "agentcube",
       "lang": "go/python",
@@ -475,7 +475,7 @@
     },
     {
       "ar_id": "AR-004",
-      "ar_name": "WorkloadManager HTTP 服务框架",
+      "ar_name": "WorkloadManager HTTP \u670d\u52a1\u6846\u67b6",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -623,7 +623,7 @@
     },
     {
       "ar_id": "AR-005",
-      "ar_name": "Sandbox 创建处理器",
+      "ar_name": "Sandbox \u521b\u5efa\u5904\u7406\u5668",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -771,7 +771,7 @@
     },
     {
       "ar_id": "AR-006",
-      "ar_name": "Sandbox 删除与生命周期管理",
+      "ar_name": "Sandbox \u5220\u9664\u4e0e\u751f\u547d\u5468\u671f\u7ba1\u7406",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -919,7 +919,7 @@
     },
     {
       "ar_id": "AR-007",
-      "ar_name": "K8s Reconciler 控制器",
+      "ar_name": "K8s Reconciler \u63a7\u5236\u5668",
       "size": "L",
       "module": "agentcube",
       "lang": "go/python",
@@ -1067,7 +1067,7 @@
     },
     {
       "ar_id": "AR-008",
-      "ar_name": "Sandbox GC 定时清理机制",
+      "ar_name": "Sandbox GC \u5b9a\u65f6\u6e05\u7406\u673a\u5236",
       "size": "S",
       "module": "agentcube",
       "lang": "go/python",
@@ -1215,7 +1215,7 @@
     },
     {
       "ar_id": "AR-009",
-      "ar_name": "Router HTTP 反向代理核心",
+      "ar_name": "Router HTTP \u53cd\u5411\u4ee3\u7406\u6838\u5fc3",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -1363,7 +1363,7 @@
     },
     {
       "ar_id": "AR-010",
-      "ar_name": "Router 会话管理",
+      "ar_name": "Router \u4f1a\u8bdd\u7ba1\u7406",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -1511,7 +1511,7 @@
     },
     {
       "ar_id": "AR-011",
-      "ar_name": "Router JWT 认证与签发",
+      "ar_name": "Router JWT \u8ba4\u8bc1\u4e0e\u7b7e\u53d1",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -1659,7 +1659,7 @@
     },
     {
       "ar_id": "AR-012",
-      "ar_name": "会话存储接口定义",
+      "ar_name": "\u4f1a\u8bdd\u5b58\u50a8\u63a5\u53e3\u5b9a\u4e49",
       "size": "S",
       "module": "agentcube",
       "lang": "go/python",
@@ -1807,7 +1807,7 @@
     },
     {
       "ar_id": "AR-013",
-      "ar_name": "Redis 存储实现",
+      "ar_name": "Redis \u5b58\u50a8\u5b9e\u73b0",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -1955,7 +1955,7 @@
     },
     {
       "ar_id": "AR-014",
-      "ar_name": "Valkey 存储实现",
+      "ar_name": "Valkey \u5b58\u50a8\u5b9e\u73b0",
       "size": "S",
       "module": "agentcube",
       "lang": "go/python",
@@ -2103,7 +2103,7 @@
     },
     {
       "ar_id": "AR-015",
-      "ar_name": "PicoD 命令执行 API",
+      "ar_name": "PicoD \u547d\u4ee4\u6267\u884c API",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -2251,7 +2251,7 @@
     },
     {
       "ar_id": "AR-016",
-      "ar_name": "PicoD 文件管理 API",
+      "ar_name": "PicoD \u6587\u4ef6\u7ba1\u7406 API",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -2399,7 +2399,7 @@
     },
     {
       "ar_id": "AR-017",
-      "ar_name": "PicoD JWT 中间件",
+      "ar_name": "PicoD JWT \u4e2d\u95f4\u4ef6",
       "size": "S",
       "module": "agentcube",
       "lang": "go/python",
@@ -2547,7 +2547,7 @@
     },
     {
       "ar_id": "AR-018",
-      "ar_name": "Agentd 空闲清理控制器",
+      "ar_name": "Agentd \u7a7a\u95f2\u6e05\u7406\u63a7\u5236\u5668",
       "size": "S",
       "module": "agentcube",
       "lang": "go/python",
@@ -2695,7 +2695,7 @@
     },
     {
       "ar_id": "AR-019",
-      "ar_name": "CLI 二进制入口 (4 binaries)",
+      "ar_name": "CLI \u4e8c\u8fdb\u5236\u5165\u53e3 (4 binaries)",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -2843,7 +2843,7 @@
     },
     {
       "ar_id": "AR-020",
-      "ar_name": "CLI pack 命令",
+      "ar_name": "CLI pack \u547d\u4ee4",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -2991,7 +2991,7 @@
     },
     {
       "ar_id": "AR-021",
-      "ar_name": "CLI build 命令",
+      "ar_name": "CLI build \u547d\u4ee4",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -3139,7 +3139,7 @@
     },
     {
       "ar_id": "AR-022",
-      "ar_name": "CLI publish 命令",
+      "ar_name": "CLI publish \u547d\u4ee4",
       "size": "L",
       "module": "agentcube",
       "lang": "go/python",
@@ -3287,7 +3287,7 @@
     },
     {
       "ar_id": "AR-023",
-      "ar_name": "CLI invoke/status 命令",
+      "ar_name": "CLI invoke/status \u547d\u4ee4",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -3435,7 +3435,7 @@
     },
     {
       "ar_id": "AR-024",
-      "ar_name": "DockerService 封装",
+      "ar_name": "DockerService \u5c01\u88c5",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -3583,7 +3583,7 @@
     },
     {
       "ar_id": "AR-025",
-      "ar_name": "MetadataService 与数据模型",
+      "ar_name": "MetadataService \u4e0e\u6570\u636e\u6a21\u578b",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -4175,7 +4175,7 @@
     },
     {
       "ar_id": "AR-029",
-      "ar_name": "SDK HTTP 底层客户端",
+      "ar_name": "SDK HTTP \u5e95\u5c42\u5ba2\u6237\u7aef",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -4323,7 +4323,7 @@
     },
     {
       "ar_id": "AR-030",
-      "ar_name": "Helm Chart 模板与 Values",
+      "ar_name": "Helm Chart \u6a21\u677f\u4e0e Values",
       "size": "L",
       "module": "agentcube",
       "lang": "go/python",
@@ -4471,7 +4471,7 @@
     },
     {
       "ar_id": "AR-031",
-      "ar_name": "RBAC 配置 (SA/Role/Binding)",
+      "ar_name": "RBAC \u914d\u7f6e (SA/Role/Binding)",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -4619,7 +4619,7 @@
     },
     {
       "ar_id": "AR-032",
-      "ar_name": "Dockerfile 多阶段构建 (3 images)",
+      "ar_name": "Dockerfile \u591a\u9636\u6bb5\u6784\u5efa (3 images)",
       "size": "S",
       "module": "agentcube",
       "lang": "go/python",
@@ -4767,7 +4767,7 @@
     },
     {
       "ar_id": "AR-033",
-      "ar_name": "Makefile 构建目标体系",
+      "ar_name": "Makefile \u6784\u5efa\u76ee\u6807\u4f53\u7cfb",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -5063,7 +5063,7 @@
     },
     {
       "ar_id": "AR-035",
-      "ar_name": "client-go 类型客户端生成",
+      "ar_name": "client-go \u7c7b\u578b\u5ba2\u6237\u7aef\u751f\u6210",
       "size": "L",
       "module": "agentcube",
       "lang": "go/python",
@@ -5211,7 +5211,7 @@
     },
     {
       "ar_id": "AR-036",
-      "ar_name": "Dify 插件集成",
+      "ar_name": "Dify \u63d2\u4ef6\u96c6\u6210",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -5359,7 +5359,7 @@
     },
     {
       "ar_id": "AR-037",
-      "ar_name": "PCAP 分析器示例应用",
+      "ar_name": "PCAP \u5206\u6790\u5668\u793a\u4f8b\u5e94\u7528",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -5507,7 +5507,7 @@
     },
     {
       "ar_id": "AR-038",
-      "ar_name": "Go 单元测试 (workloadmanager)",
+      "ar_name": "Go \u5355\u5143\u6d4b\u8bd5 (workloadmanager)",
       "size": "L",
       "module": "agentcube",
       "lang": "go/python",
@@ -5655,7 +5655,7 @@
     },
     {
       "ar_id": "AR-039",
-      "ar_name": "Go 单元测试 (router/store/picod)",
+      "ar_name": "Go \u5355\u5143\u6d4b\u8bd5 (router/store/picod)",
       "size": "L",
       "module": "agentcube",
       "lang": "go/python",
@@ -5803,7 +5803,7 @@
     },
     {
       "ar_id": "AR-040",
-      "ar_name": "Python SDK/CLI 测试",
+      "ar_name": "Python SDK/CLI \u6d4b\u8bd5",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -5951,7 +5951,7 @@
     },
     {
       "ar_id": "AR-041",
-      "ar_name": "E2E 集成测试",
+      "ar_name": "E2E \u96c6\u6210\u6d4b\u8bd5",
       "size": "L",
       "module": "agentcube",
       "lang": "go/python",
@@ -6099,7 +6099,7 @@
     },
     {
       "ar_id": "AR-042",
-      "ar_name": "Docusaurus 文档站框架",
+      "ar_name": "Docusaurus \u6587\u6863\u7ad9\u6846\u67b6",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -6247,7 +6247,7 @@
     },
     {
       "ar_id": "AR-043",
-      "ar_name": "架构设计文档与 API 文档",
+      "ar_name": "\u67b6\u6784\u8bbe\u8ba1\u6587\u6863\u4e0e API \u6587\u6863",
       "size": "M",
       "module": "agentcube",
       "lang": "go/python",
@@ -6396,7 +6396,7 @@
   ],
   "stage_aggregates": {
     "ST-0": {
-      "name": "AR 输入",
+      "name": "AR \u8f93\u5165",
       "input_tokens": 56783,
       "output_tokens": 1631,
       "cache_read_tokens": 749254,
@@ -6407,7 +6407,7 @@
       "iterations": 1
     },
     "ST-1": {
-      "name": "需求澄清 (Proposal)",
+      "name": "\u9700\u6c42\u6f84\u6e05 (Proposal)",
       "input_tokens": 192604,
       "output_tokens": 23556,
       "cache_read_tokens": 781336,
@@ -6418,7 +6418,7 @@
       "iterations": 31
     },
     "ST-2": {
-      "name": "Spec 增量设计",
+      "name": "Spec \u589e\u91cf\u8bbe\u8ba1",
       "input_tokens": 192604,
       "output_tokens": 23556,
       "cache_read_tokens": 781336,
@@ -6429,7 +6429,7 @@
       "iterations": 31
     },
     "ST-3": {
-      "name": "Design 增量设计",
+      "name": "Design \u589e\u91cf\u8bbe\u8ba1",
       "input_tokens": 503074,
       "output_tokens": 45832,
       "cache_read_tokens": 4516829,
@@ -6440,7 +6440,7 @@
       "iterations": 88
     },
     "ST-4": {
-      "name": "任务拆解 (Tasks)",
+      "name": "\u4efb\u52a1\u62c6\u89e3 (Tasks)",
       "input_tokens": 503074,
       "output_tokens": 45832,
       "cache_read_tokens": 4516829,
@@ -6451,7 +6451,7 @@
       "iterations": 88
     },
     "ST-5": {
-      "name": "开发实现 (Apply)",
+      "name": "\u5f00\u53d1\u5b9e\u73b0 (Apply)",
       "input_tokens": 56783,
       "output_tokens": 1631,
       "cache_read_tokens": 749254,
@@ -6462,7 +6462,7 @@
       "iterations": 1
     },
     "ST-6": {
-      "name": "一致性验证 (Verify)",
+      "name": "\u4e00\u81f4\u6027\u9a8c\u8bc1 (Verify)",
       "input_tokens": 250709,
       "output_tokens": 12192,
       "cache_read_tokens": 2194378,
@@ -6473,7 +6473,7 @@
       "iterations": 53
     },
     "ST-7": {
-      "name": "合并归档 (Archive)",
+      "name": "\u5408\u5e76\u5f52\u6863 (Archive)",
       "input_tokens": 250709,
       "output_tokens": 12192,
       "cache_read_tokens": 2194378,
