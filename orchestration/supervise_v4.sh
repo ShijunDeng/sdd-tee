@@ -67,6 +67,11 @@ done
 
 echo "[v4.0 Guard] Starting Precision Token Audit (v4.0 Sum-of-Turns)..."
 
+export __RUN_ID="$RUN_ID"
+export __WORKSPACE="$WORKSPACE"
+export __MODEL="$MODEL"
+export __TOOL="$TOOL"
+
 python3 << 'PYEOF'
 import json, os, glob, sys, datetime
 from decimal import Decimal
