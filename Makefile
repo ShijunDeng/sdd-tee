@@ -40,13 +40,14 @@ $(SPECS)/project.md:
 
 # --- Evaluation (CLI tool runners) ---
 run:  ## Run SDD evaluation (TOOL=cursor-cli|claude-code|gemini-cli|opencode-cli MODEL=xxx)
+	@mkdir -p logs
 	@echo "Running evaluation: TOOL=$(TOOL) MODEL=$(MODEL)"
-	bash scripts/03_sdd_develop.sh $(TOOL) $(MODEL) $(SPECS)
+	bash scripts/03_sdd_develop.sh $(TOOL) $(MODEL) $(SPECS) 2>&1 | tee logs/run_$(TOOL)_$$(date +%Y%m%dT%H%M%SZ).log
 	@echo "Evaluation complete. Run 'make collect' to process data."
 
 # --- Evaluation (LiteLLM Proxy — precise per-request token tracking) ---
 proxy:  ## Start LiteLLM Proxy for precise token interception
-	litellm --config litellm_config.yaml --port $(PROXY_PORT)
+	litellm --config configs/litellm_config.yaml --port $(PROXY_PORT)
 
 proxy-run:  ## Run evaluation through LiteLLM Proxy with per-request token tracking
 	python3 scripts/10_litellm_runner.py \
@@ -57,7 +58,8 @@ proxy-run:  ## Run evaluation through LiteLLM Proxy with per-request token track
 # --- Data Collection ---
 collect:  ## Collect run data with precise token counts from workspace
 	@RUN_JSON=$$(ls -t $(RUNS)/*.json 2>/dev/null | grep -v _full | grep -v _validation | grep -v _logs | head -1); \
-	WS_DIR=$$(ls -dt workspaces/* 2>/dev/null | head -1); \
+	WS_DIR=$$(ls -dt workspaces/* 2>/dev/null | grep -v v1.0 | grep -v v2.0 | grep -v v3.0 | head -1); \
+	if [ -z "$$WS_DIR" ]; then WS_DIR=$$(ls -dt workspaces/v3.0/* 2>/dev/null | head -1); fi; \
 	if [ -n "$$RUN_JSON" ] && [ -n "$$WS_DIR" ]; then \
 		echo "Collecting: $$RUN_JSON + $$WS_DIR"; \
 		python3 scripts/09_collect_run_data.py "$$RUN_JSON" "$$WS_DIR" --specs-dir $(SPECS); \

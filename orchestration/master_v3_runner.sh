@@ -24,5 +24,5 @@ while ps -p $PID_GEMINI > /dev/null || ps -p $PID_MINIMAX > /dev/null; do
 done
 
 echo "Task Group 1 completed. Starting remaining tasks (Groups 2, 3, 4)..."
-nohup bash launch_v3_remaining.sh > master_v3_remaining.log 2>&1 &
+nohup bash orchestration/launch_v3_remaining.sh > logs/master_v3_remaining.log 2>&1 &
 echo "Master runner finished. Task groups 2-4 are running in background."
