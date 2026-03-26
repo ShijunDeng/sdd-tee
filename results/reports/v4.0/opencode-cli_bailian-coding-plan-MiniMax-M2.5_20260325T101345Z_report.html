@@ -60,9 +60,9 @@
 <h1>SDD-TEE 综合评测报告</h1>
 <p class="sub">
   SDD Token Efficiency Evaluation &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
-  模型: bailian-coding-plan/glm-5 &nbsp;|&nbsp; 工具: opencode-cli &nbsp;|&nbsp;
+  模型: bailian-coding-plan/MiniMax-M2.5 &nbsp;|&nbsp; 工具: opencode-cli &nbsp;|&nbsp;
   <span style="color:var(--green)">ACTUAL RUN</span> &nbsp;|&nbsp;
-  opencode-cli_bailian-coding-plan-glm-5_20260326T115802Z &nbsp;|&nbsp; 2026-03-24T15:28:51Z
+  opencode-cli_bailian-coding-plan-MiniMax-M2.5_20260325T101345Z &nbsp;|&nbsp; 2026-03-24T15:28:51Z
 </p>
 
 <div class="toc">
@@ -82,9 +82,9 @@
 <div class="card" style="border-left:4px solid var(--primary)">
   <h3>运行信息</h3>
   <table>
-    <tr><th style="width:120px">Run ID</th><td><code>opencode-cli_bailian-coding-plan-glm-5_20260326T115802Z</code></td></tr>
+    <tr><th style="width:120px">Run ID</th><td><code>opencode-cli_bailian-coding-plan-MiniMax-M2.5_20260325T101345Z</code></td></tr>
     <tr><th>工具</th><td>opencode-cli</td></tr>
-    <tr><th>模型</th><td>bailian-coding-plan/glm-5</td></tr>
+    <tr><th>模型</th><td>bailian-coding-plan/MiniMax-M2.5</td></tr>
     <tr><th>开始时间</th><td></td></tr>
     <tr><th>结束时间</th><td></td></tr>
     <tr><th>Token 追踪</th><td>telemetry-audit</td></tr>
@@ -97,8 +97,8 @@
 <h2 id="overview">1. 评测概览</h2>
 <div class="stats">
   <div class="stat"><div class="v">43</div><div class="l">AR 需求数</div></div>
-  <div class="stat"><div class="v">2,962,238</div><div class="l">Total Tokens</div></div>
-  <div class="stat"><div class="v">$20.74</div><div class="l">总成本 (USD)</div></div>
+  <div class="stat"><div class="v">25,023,549</div><div class="l">Total Tokens</div></div>
+  <div class="stat"><div class="v">$185.17</div><div class="l">总成本 (USD)</div></div>
   <div class="stat"><div class="v">¥1342</div><div class="l">总成本 (CNY)</div></div>
   <div class="stat"><div class="v">10,320</div><div class="l">生成代码行数</div></div>
   <div class="stat"><div class="v">67</div><div class="l">生成文件数</div></div>
@@ -110,18 +110,18 @@
 
 <div class="card" style="margin-top:12px">
   <h3>Token 类型分布</h3>
-  <svg width="900" height="30" style="display:block"><rect x="0.0" y="0" width="4693.9" height="30" fill="#90CAF9" rx="3"/><text x="2347.0" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Cache Read</text><rect x="4693.9" y="0" width="75.1" height="30" fill="#EF5350" rx="3"/><text x="4731.5" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Output</text></svg>
+  <svg width="900" height="30" style="display:block"><rect x="0.0" y="0" width="785.1" height="30" fill="#42A5F5" rx="3"/><text x="392.5" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Input</text><rect x="785.1" y="0" width="30.8" height="30" fill="#90CAF9" rx="3"/><rect x="815.9" y="0" width="84.1" height="30" fill="#EF5350" rx="3"/><text x="857.9" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Output</text></svg>
   <div class="legend" style="margin-top:8px">
-    <span><i style="background:#42A5F5"></i> Input (非缓存) -12,734,462</span>
-    <span><i style="background:#90CAF9"></i> Cache Read 15,449,436</span>
-    <span><i style="background:#EF5350"></i> Output 247,264</span>
+    <span><i style="background:#42A5F5"></i> Input (非缓存) 21,828,489</span>
+    <span><i style="background:#90CAF9"></i> Cache Read 856,218</span>
+    <span><i style="background:#EF5350"></i> Output 2,338,842</span>
     <span><i style="background:#FFAB91"></i> Cache Write 0</span>
     <span><i style="background:#fff;border:1px solid #ccc"></i> 预制规范 187,956</span>
   </div>
   <p style="font-size:12px;color:var(--muted);margin-top:4px">
-    Cache 命中率: 569.0% &nbsp;|&nbsp;
-    Input/Output 比: 11.0:1 &nbsp;|&nbsp;
-    预制规范占 Input: 6.9%
+    Cache 命中率: 3.8% &nbsp;|&nbsp;
+    Input/Output 比: 9.7:1 &nbsp;|&nbsp;
+    预制规范占 Input: 0.8%
   </p>
 </div>
 
@@ -131,7 +131,7 @@
   <h3>各阶段 Token 消耗占比</h3>
   <svg width="800" height="32" style="display:block"><rect x="0.0" y="0" width="34.6" height="32" fill="#78909C" rx="3"/><rect x="34.6" y="0" width="42.8" height="32" fill="#42A5F5" rx="3"/><text x="56.0" y="20.0" text-anchor="middle" fill="#fff" font-size="11">需求澄清</text><rect x="77.4" y="0" width="42.8" height="32" fill="#26C6DA" rx="3"/><text x="98.8" y="20.0" text-anchor="middle" fill="#fff" font-size="11">Spec 增量设计</text><rect x="120.2" y="0" width="217.2" height="32" fill="#66BB6A" rx="3"/><text x="228.8" y="20.0" text-anchor="middle" fill="#fff" font-size="11">Design 增量设计</text><rect x="337.4" y="0" width="217.2" height="32" fill="#FFA726" rx="3"/><text x="446.0" y="20.0" text-anchor="middle" fill="#fff" font-size="11">任务拆解</text><rect x="554.6" y="0" width="34.6" height="32" fill="#EF5350" rx="3"/><rect x="589.3" y="0" width="105.4" height="32" fill="#AB47BC" rx="3"/><text x="641.9" y="20.0" text-anchor="middle" fill="#fff" font-size="11">一致性验证</text><rect x="694.6" y="0" width="105.4" height="32" fill="#8D6E63" rx="3"/><text x="747.3" y="20.0" text-anchor="middle" fill="#fff" font-size="11">合并归档</text></svg>
   <div class="legend" style="margin-top:8px">
-    <span><i style="background:#78909C"></i> AR 输入 27.3%</span><span><i style="background:#42A5F5"></i> 需求澄清 33.7%</span><span><i style="background:#26C6DA"></i> Spec 增量设计 33.7%</span><span><i style="background:#66BB6A"></i> Design 增量设计 171.0%</span><span><i style="background:#FFA726"></i> 任务拆解 171.0%</span><span><i style="background:#EF5350"></i> 开发实现 27.3%</span><span><i style="background:#AB47BC"></i> 一致性验证 83.0%</span><span><i style="background:#8D6E63"></i> 合并归档 83.0%</span>
+    <span><i style="background:#78909C"></i> AR 输入 3.2%</span><span><i style="background:#42A5F5"></i> 需求澄清 4.0%</span><span><i style="background:#26C6DA"></i> Spec 增量设计 4.0%</span><span><i style="background:#66BB6A"></i> Design 增量设计 20.2%</span><span><i style="background:#FFA726"></i> 任务拆解 20.2%</span><span><i style="background:#EF5350"></i> 开发实现 3.2%</span><span><i style="background:#AB47BC"></i> 一致性验证 9.8%</span><span><i style="background:#8D6E63"></i> 合并归档 9.8%</span>
   </div>
 </div>
 
@@ -145,7 +145,7 @@
             <td style="text-align:right">56,783</td>
             <td style="text-align:right">1,631</td>
             <td style="text-align:right;font-weight:600">807,668</td>
-            <td style="text-align:right">27.3%</td>
+            <td style="text-align:right">3.2%</td>
             <td style="text-align:right">1</td>
             <td style="text-align:right">4m43s</td>
         </tr><tr>
@@ -155,7 +155,7 @@
             <td style="text-align:right">192,604</td>
             <td style="text-align:right">23,556</td>
             <td style="text-align:right;font-weight:600">997,500</td>
-            <td style="text-align:right">33.7%</td>
+            <td style="text-align:right">4.0%</td>
             <td style="text-align:right">31</td>
             <td style="text-align:right">10m11s</td>
         </tr><tr>
@@ -165,7 +165,7 @@
             <td style="text-align:right">192,604</td>
             <td style="text-align:right">23,556</td>
             <td style="text-align:right;font-weight:600">997,500</td>
-            <td style="text-align:right">33.7%</td>
+            <td style="text-align:right">4.0%</td>
             <td style="text-align:right">31</td>
             <td style="text-align:right">10m11s</td>
         </tr><tr>
@@ -175,7 +175,7 @@
             <td style="text-align:right">503,074</td>
             <td style="text-align:right">45,832</td>
             <td style="text-align:right;font-weight:600">5,065,737</td>
-            <td style="text-align:right">171.0%</td>
+            <td style="text-align:right">20.2%</td>
             <td style="text-align:right">88</td>
             <td style="text-align:right">20m43s</td>
         </tr><tr>
@@ -185,7 +185,7 @@
             <td style="text-align:right">503,074</td>
             <td style="text-align:right">45,832</td>
             <td style="text-align:right;font-weight:600">5,065,737</td>
-            <td style="text-align:right">171.0%</td>
+            <td style="text-align:right">20.2%</td>
             <td style="text-align:right">88</td>
             <td style="text-align:right">20m43s</td>
         </tr><tr>
@@ -195,7 +195,7 @@
             <td style="text-align:right">56,783</td>
             <td style="text-align:right">1,631</td>
             <td style="text-align:right;font-weight:600">807,668</td>
-            <td style="text-align:right">27.3%</td>
+            <td style="text-align:right">3.2%</td>
             <td style="text-align:right">1</td>
             <td style="text-align:right">2m28s</td>
         </tr><tr>
@@ -205,7 +205,7 @@
             <td style="text-align:right">250,709</td>
             <td style="text-align:right">12,192</td>
             <td style="text-align:right;font-weight:600">2,457,280</td>
-            <td style="text-align:right">83.0%</td>
+            <td style="text-align:right">9.8%</td>
             <td style="text-align:right">53</td>
             <td style="text-align:right">6m42s</td>
         </tr><tr>
@@ -215,7 +215,7 @@
             <td style="text-align:right">250,709</td>
             <td style="text-align:right">12,192</td>
             <td style="text-align:right;font-weight:600">2,457,280</td>
-            <td style="text-align:right">83.0%</td>
+            <td style="text-align:right">9.8%</td>
             <td style="text-align:right">53</td>
             <td style="text-align:right">6m42s</td>
         </tr></tbody>
@@ -227,12 +227,12 @@
 <div class="two-col">
   <div class="card">
     <h3>角色 Token 分布</h3>
-    <svg width="400" height="28" style="display:block"><rect x="0.0" y="0" width="399.3" height="28" fill="#42A5F5" rx="3"/><text x="199.7" y="18.0" text-anchor="middle" fill="#fff" font-size="11">AI</text><rect x="399.3" y="0" width="0.7" height="28" fill="#66BB6A" rx="3"/></svg>
+    <svg width="400" height="28" style="display:block"><rect x="0.0" y="0" width="399.9" height="28" fill="#42A5F5" rx="3"/><text x="200.0" y="18.0" text-anchor="middle" fill="#fff" font-size="11">AI</text><rect x="399.9" y="0" width="0.1" height="28" fill="#66BB6A" rx="3"/></svg>
     <table style="margin-top:12px">
       <tr><th>指标编码</th><th>指标</th><th style="text-align:right">值</th></tr>
-      <tr><td>RT-AI</td><td>AI 消耗 Token 总量</td><td style="text-align:right">2,957,238</td></tr>
+      <tr><td>RT-AI</td><td>AI 消耗 Token 总量</td><td style="text-align:right">25,018,549</td></tr>
       <tr><td>RT-HUMAN</td><td>人类输入 Token 总量</td><td style="text-align:right">5,000</td></tr>
-      <tr><td>RT-RATIO</td><td>人机 Token 比</td><td style="text-align:right">0.0017</td></tr>
+      <tr><td>RT-RATIO</td><td>人机 Token 比</td><td style="text-align:right">0.0002</td></tr>
       <tr><td>RT-ITER</td><td>平均迭代次数 / AR</td><td style="text-align:right">8.1</td></tr>
     </table>
   </div>
@@ -256,12 +256,12 @@
 <!-- ===================== 4. EFFICIENCY ===================== -->
 <h2 id="efficiency">4. 效率维度</h2>
 <div class="stats">
-  <div class="stat"><div class="v">287</div><div class="l">ET-LOC (Token/LOC)</div></div>
-  <div class="stat"><div class="v">44,213</div><div class="l">ET-FILE (Token/File)</div></div>
-  <div class="stat"><div class="v">11,053</div><div class="l">ET-TASK (Token/Task)</div></div>
-  <div class="stat"><div class="v">68,889</div><div class="l">ET-AR (Token/AR)</div></div>
-  <div class="stat"><div class="v">2,360,349</div><div class="l">ET-TIME (Token/h)</div></div>
-  <div class="stat"><div class="v">$2.01</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
+  <div class="stat"><div class="v">2425</div><div class="l">ET-LOC (Token/LOC)</div></div>
+  <div class="stat"><div class="v">373,486</div><div class="l">ET-FILE (Token/File)</div></div>
+  <div class="stat"><div class="v">93,371</div><div class="l">ET-TASK (Token/Task)</div></div>
+  <div class="stat"><div class="v">581,943</div><div class="l">ET-AR (Token/AR)</div></div>
+  <div class="stat"><div class="v">19,939,083</div><div class="l">ET-TIME (Token/h)</div></div>
+  <div class="stat"><div class="v">$17.94</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
 </div>
 <div class="metric-guide">
   <h4>效率指标指南:</h4>
@@ -407,21 +407,21 @@ LOC: 240, Tokens: 572,768</title></circle>
 <!-- ===================== 6. DISTRIBUTION ===================== -->
 <h2 id="distribution">6. 阶段间 Token 分布</h2>
 <div class="stats">
-  <div class="stat"><div class="v">238.4%</div><div class="l">PT-DESIGN 设计阶段 (15-30%)</div></div>
-  <div class="stat"><div class="v">198.3%</div><div class="l">PT-PLAN 规划阶段 (5-15%)</div></div>
-  <div class="stat"><div class="v">27.3%</div><div class="l">PT-DEV 开发阶段 (45-65%)</div></div>
-  <div class="stat"><div class="v">165.9%</div><div class="l">PT-VERIFY 验证阶段 (8-18%)</div></div>
+  <div class="stat"><div class="v">28.2%</div><div class="l">PT-DESIGN 设计阶段 (15-30%)</div></div>
+  <div class="stat"><div class="v">23.5%</div><div class="l">PT-PLAN 规划阶段 (5-15%)</div></div>
+  <div class="stat"><div class="v">3.2%</div><div class="l">PT-DEV 开发阶段 (45-65%)</div></div>
+  <div class="stat"><div class="v">19.6%</div><div class="l">PT-VERIFY 验证阶段 (8-18%)</div></div>
   <div class="stat warn"><div class="v">ST-3</div><div class="l">PT-PEAK 峰值阶段</div></div>
-  <div class="stat good"><div class="v">569%</div><div class="l">PT-CACHE 命中率 (&gt;70%)</div></div>
+  <div class="stat danger"><div class="v">4%</div><div class="l">PT-CACHE 命中率 (&gt;70%)</div></div>
 </div>
 
 <div class="card">
   <h3>设计 / 开发 / 验证 Token 分布</h3>
   <svg width="900" height="30" style="display:block"><rect x="0.0" y="0" width="340.6" height="30" fill="#42A5F5" rx="3"/><text x="170.3" y="19.0" text-anchor="middle" fill="#fff" font-size="11">设计 (ST-1~3)</text><rect x="340.6" y="0" width="283.3" height="30" fill="#FFA726" rx="3"/><text x="482.3" y="19.0" text-anchor="middle" fill="#fff" font-size="11">规划 (ST-0,4)</text><rect x="624.0" y="0" width="39.0" height="30" fill="#EF5350" rx="3"/><rect x="662.9" y="0" width="237.1" height="30" fill="#AB47BC" rx="3"/><text x="781.5" y="19.0" text-anchor="middle" fill="#fff" font-size="11">验证归档 (ST-6,7)</text></svg>
   <div class="note" style="margin-top:8px">
-    <strong>分布分析：</strong>开发实现阶段 (ST-5) 占 27.3% 为 Token 消耗主体，
-    设计阶段 (ST-1~3) 占 238.4% 表明 SDD 在设计前移上有合理投入，
-    验证阶段 (ST-6,7) 占 165.9% 为质量保障成本。
+    <strong>分布分析：</strong>开发实现阶段 (ST-5) 占 3.2% 为 Token 消耗主体，
+    设计阶段 (ST-1~3) 占 28.2% 表明 SDD 在设计前移上有合理投入，
+    验证阶段 (ST-6,7) 占 19.6% 为质量保障成本。
   </div>
 </div>
 
@@ -966,7 +966,8 @@ LOC: 240, Tokens: 572,768</title></circle>
 <div class="card">
   <table>
     <thead><tr><th>预警规则</th><th>阈值</th><th>触发数量</th><th>相关 AR</th></tr></thead>
-    <tbody><tr><td colspan="4" style="text-align:center;color:var(--green)">无预警触发 (6 条规则全部通过)</td></tr></tbody>
+    <tbody><tr style="background:#FFE0B2"><td>W-CACHE-LOW: Cache命中率 < 50%</td><td>orange</td><td>1</td><td>全局</td></tr>
+</tbody>
   </table>
 </div>
 

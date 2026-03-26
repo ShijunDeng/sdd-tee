@@ -1,191 +1,1007 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="utf-8">
-<title>SDD-TEE Run Report: opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z</title>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDD-TEE 综合评测报告</title>
 <style>
-  :root { --bg:#0f172a; --card:#1e293b; --accent:#3b82f6; --green:#22c55e; --yellow:#eab308; --red:#ef4444; --text:#e2e8f0; --muted:#94a3b8; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Inter','SF Pro',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2rem; }
-  .container { max-width:1200px; margin:0 auto; }
-  h1 { font-size:1.8rem; margin-bottom:.5rem; color:#fff; }
-  h2 { font-size:1.3rem; margin:2rem 0 1rem; color:var(--accent); border-bottom:1px solid #334155; padding-bottom:.5rem; }
-  h3 { font-size:1.1rem; margin:1.5rem 0 .5rem; color:#cbd5e1; }
-  .meta { color:var(--muted); font-size:.9rem; margin-bottom:2rem; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:1rem 0; }
-  .card { background:var(--card); border-radius:12px; padding:1.2rem; }
-  .card .label { font-size:.85rem; color:var(--muted); }
-  .card .value { font-size:1.8rem; font-weight:700; color:#fff; margin-top:.3rem; }
-  .card .sub { font-size:.8rem; color:var(--muted); margin-top:.2rem; }
-  table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.9rem; }
-  th { background:#334155; padding:.6rem .8rem; text-align:left; font-weight:600; }
-  td { padding:.5rem .8rem; border-bottom:1px solid #1e293b; }
-  tr:hover { background:#1e293b; }
-  .badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:.75rem; font-weight:600; }
-  .badge-pass { background:#166534; color:#86efac; }
-  .badge-warn { background:#854d0e; color:#fde047; }
-  .badge-info { background:#1e3a5f; color:#93c5fd; }
-  .bar { height:24px; border-radius:4px; display:flex; overflow:hidden; margin:.5rem 0; }
-  .bar > div { height:100%; display:flex; align-items:center; justify-content:center; font-size:.7rem; font-weight:600; color:#fff; min-width:30px; }
-  .note { background:#1e293b; border-left:3px solid var(--yellow); padding:1rem; margin:1rem 0; border-radius:0 8px 8px 0; font-size:.9rem; }
-  .timeline { display:flex; gap:.5rem; align-items:end; margin:1rem 0; height:120px; }
-  .timeline .col { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:end; }
-  .timeline .col .bar-v { width:100%; border-radius:4px 4px 0 0; min-height:4px; }
-  .timeline .col .lbl { font-size:.7rem; color:var(--muted); margin-top:4px; text-align:center; }
-</style></head><body>
+  :root { --bg: #f5f6f8; --card: #fff; --border: #e2e5e9; --primary: #1a73e8;
+           --green: #34a853; --red: #ea4335; --orange: #f9ab00; --text: #1f2937; --muted: #6b7280; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 26px; color: var(--primary); margin-bottom: 4px; }
+  h2 { font-size: 20px; margin: 28px 0 14px; padding-bottom: 6px; border-bottom: 2px solid var(--primary); }
+  h3 { font-size: 16px; margin: 20px 0 10px; color: #374151; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; margin-bottom: 16px; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; }
+  .stat .v { font-size: 26px; font-weight: 700; color: var(--primary); }
+  .stat .l { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .stat.warn .v { color: var(--orange); }
+  .stat.danger .v { color: var(--red); }
+  .stat.good .v { color: var(--green); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+  th, td { padding: 7px 10px; border: 1px solid var(--border); text-align: left; }
+  th { background: #f1f3f5; font-weight: 600; font-size: 12px; white-space: nowrap; }
+  tr:hover td { background: #f8f9fa; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .badge-s { background: #e8f5e9; color: #2e7d32; }
+  .badge-m { background: #e3f2fd; color: #1565c0; }
+  .badge-l { background: #fce4ec; color: #c62828; }
+  .toc { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 20px; margin-bottom: 20px; columns: 2; }
+  .toc a { color: var(--primary); text-decoration: none; display: block; padding: 2px 0; font-size: 13px; }
+  .toc a:hover { text-decoration: underline; }
+  
+
+  .metric-guide { margin-top: 12px; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e2e5e9; }
+  .metric-guide h4 { font-size: 13px; color: #1a73e8; margin-bottom: 8px; border: none; }
+  .guide-grid { display: grid; grid-template-columns: 120px 1fr; gap: 8px; font-size: 12px; }
+  .guide-item-name { font-weight: bold; color: #374151; }
+  .guide-item-desc { color: #6b7280; }
+  .best-tag { color: #34a853; font-weight: bold; }
+
+
+  .note { background: #fffde7; border-left: 4px solid var(--orange); padding: 10px 14px; margin: 10px 0; border-radius: 0 8px 8px 0; font-size: 13px; }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; margin: 8px 0; }
+  .legend span { display: flex; align-items: center; gap: 4px; }
+  .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; }
+  code { background: #f1f3f5; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+  .footer { text-align: center; padding: 20px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); margin-top: 24px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } .toc { columns: 1; } }
+</style>
+</head>
+<body>
 <div class="container">
-<h1>SDD-TEE 评测报告</h1>
-<p class="meta">
-  运行 ID: <code>opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z</code><br>
-  工具: <strong>opencode-cli</strong> &nbsp;|&nbsp; 模型: <strong>bailian-coding-plan/kimi-k2.5</strong><br>
-  时间: 2026-03-26 11:58:02 → 2026-03-26 13:59:12 &nbsp;|&nbsp; 总耗时: <strong>206m40s</strong>
+
+<h1>SDD-TEE 综合评测报告</h1>
+<p class="sub">
+  SDD Token Efficiency Evaluation &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
+  模型: bailian-coding-plan/kimi-k2.5 &nbsp;|&nbsp; 工具: opencode-cli &nbsp;|&nbsp;
+  <span style="color:var(--green)">ACTUAL RUN</span> &nbsp;|&nbsp;
+  opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z &nbsp;|&nbsp; 2026-03-24T15:28:51Z
 </p>
 
-<div class="note">
-  <strong>Token 追踪说明：</strong> Cursor CLI 不暴露 per-request Token 计数。本轮评测仅记录 wall-clock 时间、
-  代码产出和质量指标。Token 消耗数据将在后续使用 Claude Code（原生 OTel）或 LiteLLM Proxy 的评测轮次中补充。
+<div class="toc">
+  <a href="#overview">1. 评测概览</a>
+  <a href="#stage">2. 阶段维度 (ST-0~ST-7)</a>
+  <a href="#role">3. 角色维度 (人 vs AI)</a>
+  <a href="#efficiency">4. 效率维度</a>
+  <a href="#quality">5. 质量维度</a>
+  <a href="#distribution">6. 阶段分布</a>
+  <a href="#baselines">7. 基线数据</a>
+  <a href="#ar-detail">8. AR 明细</a>
+  <a href="#warnings">9. 预警分析</a>
+  <a href="#reference">10. 引用与说明</a>
 </div>
 
-<h2>1. 总览</h2>
-<div class="grid">
-  <div class="card">
-    <div class="label">总耗时</div>
-    <div class="value">206m40s</div>
-    <div class="sub">含 4 轮并行批次</div>
-  </div>
-  <div class="card">
-    <div class="label">产出文件数</div>
-    <div class="value">85</div>
-    <div class="sub">源代码文件（不含构建产物）</div>
-  </div>
-  <div class="card">
-    <div class="label">产出 LOC</div>
-    <div class="value">29,828</div>
-    <div class="sub">Go 27,414 / Py 1,995 / YAML 419</div>
-  </div>
-  <div class="card">
-    <div class="label">AR 完成率</div>
-    <div class="value">43/43</div>
-    <div class="sub">100% — S:10 M:24 L:9</div>
-  </div>
-  <div class="card">
-    <div class="label">目录覆盖率</div>
-    <div class="value">95%</div>
-    <div class="sub">18/20 关键目录</div>
-  </div>
-  <div class="card">
-    <div class="label">质量通过率</div>
-    <div class="value">100%</div>
-    <div class="sub">Go build ✓ / Python ✓ / YAML ✓</div>
-  </div>
+
+<div class="card" style="border-left:4px solid var(--primary)">
+  <h3>运行信息</h3>
+  <table>
+    <tr><th style="width:120px">Run ID</th><td><code>opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z</code></td></tr>
+    <tr><th>工具</th><td>opencode-cli</td></tr>
+    <tr><th>模型</th><td>bailian-coding-plan/kimi-k2.5</td></tr>
+    <tr><th>开始时间</th><td></td></tr>
+    <tr><th>结束时间</th><td></td></tr>
+    <tr><th>Token 追踪</th><td>telemetry-audit</td></tr>
+    <tr><th>预制规范</th><td>0 tokens (22 OpenSpec 文件)</td></tr>
+  </table>
 </div>
 
-<h2>2. 执行时间线</h2>
-<table>
-  <tr><th>轮次</th><th>AR 范围</th><th>并行批次</th><th>耗时</th><th>文件数</th><th>LOC</th><th>LOC/s</th></tr>
-  <tr><td>Round 1</td><td>AR-001~AR-011</td><td>Foundation</td>
-  <td>60m00s</td><td>15</td><td>4,500</td><td>1.2</td></tr>
-  <tr><td>Round 2</td><td>AR-012~AR-022</td><td>Logic</td>
-  <td>70m00s</td><td>20</td><td>6,000</td><td>1.4</td></tr>
-  <tr style="font-weight:700;border-top:2px solid #475569">
-    <td>合计</td><td>AR-001~043</td><td>4 轮 × 4 并行</td>
-    <td>206m40s</td><td>35</td><td>10,500</td>
-    <td>0.8</td></tr>
-</table>
 
-<h3>各轮耗时分布</h3>
-<div class="timeline">
-  <div class="col">
-    <div class="bar-v" style="background:#3b82f6;height:86%"></div>
-    <div class="lbl">R1<br>60m00s</div>
-  </div>
-  <div class="col">
-    <div class="bar-v" style="background:#22c55e;height:100%"></div>
-    <div class="lbl">R2<br>70m00s</div>
-  </div>
+<!-- ===================== 1. OVERVIEW ===================== -->
+<h2 id="overview">1. 评测概览</h2>
+<div class="stats">
+  <div class="stat"><div class="v">43</div><div class="l">AR 需求数</div></div>
+  <div class="stat"><div class="v">1,354,010</div><div class="l">Total Tokens</div></div>
+  <div class="stat"><div class="v">$9.48</div><div class="l">总成本 (USD)</div></div>
+  <div class="stat"><div class="v">¥1342</div><div class="l">总成本 (CNY)</div></div>
+  <div class="stat"><div class="v">10,320</div><div class="l">生成代码行数</div></div>
+  <div class="stat"><div class="v">67</div><div class="l">生成文件数</div></div>
+  <div class="stat"><div class="v">268</div><div class="l">Task 总数</div></div>
+  <div class="stat"><div class="v">350</div><div class="l">交互总轮数</div></div>
+  <div class="stat"><div class="v">350</div><div class="l">API 调用次数</div></div>
+  <div class="stat"><div class="v">1h15m</div><div class="l">总耗时</div></div>
 </div>
 
-<h2>3. 批次详情</h2>
-<table>
-  <tr><th>批次</th><th>AR 数</th><th>文件</th><th>LOC</th><th>语言</th></tr>
-  <tr><td>CRD Types (AR-001~003)</td><td>3</td><td>5</td><td>601</td><td>Go</td></tr>
-  <tr><td>WorkloadManager (AR-004~008)</td><td>5</td><td>9</td><td>1,425</td><td>Go</td></tr>
-  <tr><td>Router (AR-009~011)</td><td>3</td><td>6</td><td>959</td><td>Go</td></tr>
-  <tr><td>Store (AR-012~014)</td><td>3</td><td>4</td><td>567</td><td>Go</td></tr>
-  <tr><td>PicoD+Agentd+Binaries (AR-015~019)</td><td>5</td><td>7</td><td>534</td><td>Go</td></tr>
-  <tr><td>Python CLI (AR-020~026)</td><td>7</td><td>17</td><td>1,040</td><td>Python</td></tr>
-  <tr><td>Python SDK (AR-027~029)</td><td>3</td><td>7</td><td>727</td><td>Python</td></tr>
-  <tr><td>Infrastructure (AR-030~034)</td><td>5</td><td>23</td><td>1,063</td><td>YAML/Docker/Make/CI</td></tr>
-  <tr><td>client-go (AR-035)</td><td>1</td><td>14</td><td>1,104</td><td>Go</td></tr>
-  <tr><td>Dify+Example (AR-036~037)</td><td>2</td><td>16</td><td>648</td><td>Python/YAML</td></tr>
-  <tr><td>Tests (AR-038~041)</td><td>4</td><td>19</td><td>1,256</td><td>Go/Python</td></tr>
-  <tr><td>Docs (AR-042~043)</td><td>2</td><td>18</td><td>1,190</td><td>TS/MD</td></tr>
-</table>
-
-<h2>4. 语言分布</h2>
-<div class="bar"><div style="background:#00ADD8;width:91.9%">go 92%</div><div style="background:#3776AB;width:6.7%">python 7%</div>
+<div class="card" style="margin-top:12px">
+  <h3>Token 类型分布</h3>
+  <svg width="900" height="30" style="display:block"><rect x="0.0" y="0" width="14892.3" height="30" fill="#90CAF9" rx="3"/><text x="7446.2" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Cache Read</text><rect x="14892.3" y="0" width="195.9" height="30" fill="#EF5350" rx="3"/><text x="14990.3" y="19.0" text-anchor="middle" fill="#fff" font-size="11">Output</text></svg>
+  <div class="legend" style="margin-top:8px">
+    <span><i style="background:#42A5F5"></i> Input (非缓存) -21,345,581</span>
+    <span><i style="background:#90CAF9"></i> Cache Read 22,404,817</span>
+    <span><i style="background:#EF5350"></i> Output 294,774</span>
+    <span><i style="background:#FFAB91"></i> Cache Write 0</span>
+    <span><i style="background:#fff;border:1px solid #ccc"></i> 预制规范 187,956</span>
+  </div>
+  <p style="font-size:12px;color:var(--muted);margin-top:4px">
+    Cache 命中率: 2115.2% &nbsp;|&nbsp;
+    Input/Output 比: 3.6:1 &nbsp;|&nbsp;
+    预制规范占 Input: 17.7%
+  </p>
 </div>
-<table>
-  <tr><th>语言</th><th>文件数</th><th>LOC</th><th>占比</th></tr>
-  <tr><td>go</td><td>~72</td><td>27,414</td><td>91.9%</td></tr>
-  <tr><td>python</td><td>~9</td><td>1,995</td><td>6.7%</td></tr>
-  <tr><td>yaml</td><td>~4</td><td>419</td><td>1.4%</td></tr>
-</table>
 
-<h2>5. 质量校验</h2>
-<div class="grid">
-  <div class="card">
-    <div class="label">Go Build</div>
-    <div class="value"><span class="badge badge-pass">PASS</span></div>
-    <div class="sub">go build ./... — 0 errors</div>
-  </div>
-  <div class="card">
-    <div class="label">Python 语法</div>
-    <div class="value"><span class="badge badge-pass">33/33</span></div>
-    <div class="sub">py_compile — 100% 通过</div>
-  </div>
-  <div class="card">
-    <div class="label">YAML 语法</div>
-    <div class="value"><span class="badge badge-pass">20/20</span></div>
-    <div class="sub">5 Helm 模板已跳过</div>
-  </div>
-</div>
-<h2>7. 效率指标</h2>
-<div class="grid">
-  <div class="card">
-    <div class="label">LOC / 分钟</div>
-    <div class="value">144</div>
-    <div class="sub">wall-clock（含并行）</div>
-  </div>
-  <div class="card">
-    <div class="label">文件 / 分钟</div>
-    <div class="value">0.4</div>
-    <div class="sub">wall-clock（含并行）</div>
-  </div>
-  <div class="card">
-    <div class="label">AR / 分钟</div>
-    <div class="value">0.2</div>
-    <div class="sub">43 ARs / 206m40s</div>
-  </div>
-  <div class="card">
-    <div class="label">代码可用率（估计）</div>
-    <div class="value">92%</div>
-    <div class="sub">基于 build 通过 + 语法检查</div>
+<!-- ===================== 2. STAGE ===================== -->
+<h2 id="stage">2. 阶段维度 (ST-0 ~ ST-7)</h2>
+<div class="card">
+  <h3>各阶段 Token 消耗占比</h3>
+  <svg width="800" height="32" style="display:block"><rect x="0.0" y="0" width="34.6" height="32" fill="#78909C" rx="3"/><rect x="34.6" y="0" width="42.8" height="32" fill="#42A5F5" rx="3"/><text x="56.0" y="20.0" text-anchor="middle" fill="#fff" font-size="11">需求澄清</text><rect x="77.4" y="0" width="42.8" height="32" fill="#26C6DA" rx="3"/><text x="98.8" y="20.0" text-anchor="middle" fill="#fff" font-size="11">Spec 增量设计</text><rect x="120.2" y="0" width="217.2" height="32" fill="#66BB6A" rx="3"/><text x="228.8" y="20.0" text-anchor="middle" fill="#fff" font-size="11">Design 增量设计</text><rect x="337.4" y="0" width="217.2" height="32" fill="#FFA726" rx="3"/><text x="446.0" y="20.0" text-anchor="middle" fill="#fff" font-size="11">任务拆解</text><rect x="554.6" y="0" width="34.6" height="32" fill="#EF5350" rx="3"/><rect x="589.3" y="0" width="105.4" height="32" fill="#AB47BC" rx="3"/><text x="641.9" y="20.0" text-anchor="middle" fill="#fff" font-size="11">一致性验证</text><rect x="694.6" y="0" width="105.4" height="32" fill="#8D6E63" rx="3"/><text x="747.3" y="20.0" text-anchor="middle" fill="#fff" font-size="11">合并归档</text></svg>
+  <div class="legend" style="margin-top:8px">
+    <span><i style="background:#78909C"></i> AR 输入 59.7%</span><span><i style="background:#42A5F5"></i> 需求澄清 73.7%</span><span><i style="background:#26C6DA"></i> Spec 增量设计 73.7%</span><span><i style="background:#66BB6A"></i> Design 增量设计 374.1%</span><span><i style="background:#FFA726"></i> 任务拆解 374.1%</span><span><i style="background:#EF5350"></i> 开发实现 59.7%</span><span><i style="background:#AB47BC"></i> 一致性验证 181.5%</span><span><i style="background:#8D6E63"></i> 合并归档 181.5%</span>
   </div>
 </div>
 
-<h2>8. 方法论说明</h2>
-<table>
-  <tr><th style="width:150px">项目</th><th>详情</th></tr>
-  <tr><td>评测对象</td><td><a href="https://github.com/ShijunDeng/agentcube">agentcube</a> — Go/Python/K8s AI Agent 沙箱编排平台</td></tr>
-  <tr><td>方法论</td><td>CodeSpec 7 阶段工作流 (ST-0~ST-7) + OpenSpec OPSX</td></tr>
-  <tr><td>AR 数量</td><td>43 个细粒度 AR（S:10 / M:24 / L:9）</td></tr>
-  <tr><td>执行策略</td><td>4 轮并行批次，每轮 ≤4 并行 subagent</td></tr>
-  <tr><td>预制规范</td><td>3 份逆向 spec（Go/Python/Infrastructure），共 298 行</td></tr>
-  <tr><td>Token 追踪</td><td>Cursor CLI 无原生追踪，本轮仅记录 wall-clock 时间</td></tr>
-  <tr><td>后续计划</td><td>Claude Code (OTel) / Aider (session cost) 轮次将补充 Token 数据</td></tr>
-</table>
+<div class="card">
+  <table>
+    <thead><tr><th>阶段</th><th>名称</th><th>OPSX 命令</th><th style="text-align:right">Input</th><th style="text-align:right">Output</th><th style="text-align:right">Total</th><th style="text-align:right">占比</th><th style="text-align:right">迭代</th><th style="text-align:right">耗时</th></tr></thead>
+    <tbody><tr>
+            <td><span style="display:inline-block;width:12px;height:12px;background:#78909C;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-0</td>
+            <td>AR 输入</td>
+            <td>/opsx:new</td>
+            <td style="text-align:right">56,783</td>
+            <td style="text-align:right">1,631</td>
+            <td style="text-align:right;font-weight:600">807,668</td>
+            <td style="text-align:right">59.7%</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">4m43s</td>
+        </tr><tr>
+            <td><span style="display:inline-block;width:12px;height:12px;background:#42A5F5;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-1</td>
+            <td>需求澄清 (Proposal)</td>
+            <td>/opsx:ff → proposal.md</td>
+            <td style="text-align:right">192,604</td>
+            <td style="text-align:right">23,556</td>
+            <td style="text-align:right;font-weight:600">997,500</td>
+            <td style="text-align:right">73.7%</td>
+            <td style="text-align:right">31</td>
+            <td style="text-align:right">10m11s</td>
+        </tr><tr>
+            <td><span style="display:inline-block;width:12px;height:12px;background:#26C6DA;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-2</td>
+            <td>Spec 增量设计</td>
+            <td>/opsx:ff → specs/</td>
+            <td style="text-align:right">192,604</td>
+            <td style="text-align:right">23,556</td>
+            <td style="text-align:right;font-weight:600">997,500</td>
+            <td style="text-align:right">73.7%</td>
+            <td style="text-align:right">31</td>
+            <td style="text-align:right">10m11s</td>
+        </tr><tr>
+            <td><span style="display:inline-block;width:12px;height:12px;background:#66BB6A;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-3</td>
+            <td>Design 增量设计</td>
+            <td>/opsx:ff → design.md</td>
+            <td style="text-align:right">503,074</td>
+            <td style="text-align:right">45,832</td>
+            <td style="text-align:right;font-weight:600">5,065,737</td>
+            <td style="text-align:right">374.1%</td>
+            <td style="text-align:right">88</td>
+            <td style="text-align:right">20m43s</td>
+        </tr><tr>
+            <td><span style="display:inline-block;width:12px;height:12px;background:#FFA726;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-4</td>
+            <td>任务拆解 (Tasks)</td>
+            <td>/opsx:ff → tasks.md</td>
+            <td style="text-align:right">503,074</td>
+            <td style="text-align:right">45,832</td>
+            <td style="text-align:right;font-weight:600">5,065,737</td>
+            <td style="text-align:right">374.1%</td>
+            <td style="text-align:right">88</td>
+            <td style="text-align:right">20m43s</td>
+        </tr><tr>
+            <td><span style="display:inline-block;width:12px;height:12px;background:#EF5350;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-5</td>
+            <td>开发实现 (Apply)</td>
+            <td>/opsx:apply</td>
+            <td style="text-align:right">56,783</td>
+            <td style="text-align:right">1,631</td>
+            <td style="text-align:right;font-weight:600">807,668</td>
+            <td style="text-align:right">59.7%</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">2m28s</td>
+        </tr><tr>
+            <td><span style="display:inline-block;width:12px;height:12px;background:#AB47BC;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-6</td>
+            <td>一致性验证 (Verify)</td>
+            <td>/opsx:verify</td>
+            <td style="text-align:right">250,709</td>
+            <td style="text-align:right">12,192</td>
+            <td style="text-align:right;font-weight:600">2,457,280</td>
+            <td style="text-align:right">181.5%</td>
+            <td style="text-align:right">53</td>
+            <td style="text-align:right">6m42s</td>
+        </tr><tr>
+            <td><span style="display:inline-block;width:12px;height:12px;background:#8D6E63;border-radius:2px;margin-right:6px;vertical-align:middle"></span>ST-7</td>
+            <td>合并归档 (Archive)</td>
+            <td>/opsx:archive</td>
+            <td style="text-align:right">250,709</td>
+            <td style="text-align:right">12,192</td>
+            <td style="text-align:right;font-weight:600">2,457,280</td>
+            <td style="text-align:right">181.5%</td>
+            <td style="text-align:right">53</td>
+            <td style="text-align:right">6m42s</td>
+        </tr></tbody>
+  </table>
+</div>
 
-<p style="color:var(--muted);font-size:.8rem;margin-top:3rem;text-align:center">
-  SDD-TEE v2 | 生成时间: 2026-03-26 08:54:18 UTC |
-  <a href="https://github.com/ShijunDeng/sdd-tee" style="color:var(--accent)">github.com/ShijunDeng/sdd-tee</a>
-</p>
-</div></body></html>
+<!-- ===================== 3. ROLE ===================== -->
+<h2 id="role">3. 角色维度（人 vs AI）</h2>
+<div class="two-col">
+  <div class="card">
+    <h3>角色 Token 分布</h3>
+    <svg width="400" height="28" style="display:block"><rect x="0.0" y="0" width="398.5" height="28" fill="#42A5F5" rx="3"/><text x="199.3" y="18.0" text-anchor="middle" fill="#fff" font-size="11">AI</text><rect x="398.5" y="0" width="1.5" height="28" fill="#66BB6A" rx="3"/></svg>
+    <table style="margin-top:12px">
+      <tr><th>指标编码</th><th>指标</th><th style="text-align:right">值</th></tr>
+      <tr><td>RT-AI</td><td>AI 消耗 Token 总量</td><td style="text-align:right">1,349,010</td></tr>
+      <tr><td>RT-HUMAN</td><td>人类输入 Token 总量</td><td style="text-align:right">5,000</td></tr>
+      <tr><td>RT-RATIO</td><td>人机 Token 比</td><td style="text-align:right">0.0037</td></tr>
+      <tr><td>RT-ITER</td><td>平均迭代次数 / AR</td><td style="text-align:right">8.1</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3>预制规范 Token（单独统计）</h3>
+    <div class="stat" style="margin:12px 0"><div class="v">187,956</div><div class="l">Spec Context Tokens (标注: 预制规范)</div></div>
+    <p style="font-size:12px;color:var(--muted)">
+      预制规范指前置工作逆向生成的 OpenSpec 规范文档内容，在 ST-3/ST-4/ST-5/ST-6 阶段作为 input context 注入，
+      计入 input tokens 但单独标注，不计入人工输入 (RT-HUMAN)。
+    </p>
+<div class="metric-guide">
+  <h4>角色指标指南:</h4>
+  <div class="guide-grid">
+    <div class="guide-item-name">RT-RATIO</div><div class="guide-item-desc">人机 Token 比（人工输入 / AI 生成）。<span class="best-tag">越低越好</span>，代表 AI 独立完成度高。</div>
+    <div class="guide-item-name">RT-ITER</div><div class="guide-item-desc">平均交互轮数。越低代表模型单次意图理解越准确。</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<!-- ===================== 4. EFFICIENCY ===================== -->
+<h2 id="efficiency">4. 效率维度</h2>
+<div class="stats">
+  <div class="stat"><div class="v">131</div><div class="l">ET-LOC (Token/LOC)</div></div>
+  <div class="stat"><div class="v">20,209</div><div class="l">ET-FILE (Token/File)</div></div>
+  <div class="stat"><div class="v">5,052</div><div class="l">ET-TASK (Token/Task)</div></div>
+  <div class="stat"><div class="v">31,489</div><div class="l">ET-AR (Token/AR)</div></div>
+  <div class="stat"><div class="v">1,078,892</div><div class="l">ET-TIME (Token/h)</div></div>
+  <div class="stat"><div class="v">$0.92</div><div class="l">ET-COST-LOC ($/KLOC)</div></div>
+</div>
+<div class="metric-guide">
+  <h4>效率指标指南:</h4>
+  <div class="guide-grid">
+    <div class="guide-item-name">ET-LOC</div><div class="guide-item-desc">生成每行代码所需的 Token。 <span class="best-tag">越低越好</span>，反映代码逻辑的浓缩度与生成效率。</div>
+    <div class="guide-item-name">ET-COST-LOC</div><div class="guide-item-desc">每千行代码的实际金钱成本。受模型定价与缓存命中率共同影响。</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Token vs LOC 散点图（按语言着色）</h3>
+  <svg width="680" height="380" style="display:block;margin:0 auto">
+        <rect x="60" y="10" width="580" height="340" fill="#fafafa" stroke="#ddd"/>
+        <text x="340" y="375" text-anchor="middle" font-size="12" fill="#666">实际代码行数 (LOC)</text>
+        <text x="15" y="180" text-anchor="middle" font-size="12" fill="#666" transform="rotate(-90,15,180)">Total Tokens</text>
+        <circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-001 CRD AgentRuntime 类型定义
+LOC: 240, Tokens: 591,202</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-002 CRD CodeInterpreter 类型定义
+LOC: 240, Tokens: 575,464</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-003 CRD 共享类型与常量
+LOC: 240, Tokens: 571,825</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-004 WorkloadManager HTTP 服务框架
+LOC: 240, Tokens: 576,662</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-005 Sandbox 创建处理器
+LOC: 240, Tokens: 580,977</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-006 Sandbox 删除与生命周期管理
+LOC: 240, Tokens: 589,282</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-007 K8s Reconciler 控制器
+LOC: 240, Tokens: 586,483</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-008 Sandbox GC 定时清理机制
+LOC: 240, Tokens: 573,365</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-009 Router HTTP 反向代理核心
+LOC: 240, Tokens: 573,590</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-010 Router 会话管理
+LOC: 240, Tokens: 589,778</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-011 Router JWT 认证与签发
+LOC: 240, Tokens: 586,740</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-012 会话存储接口定义
+LOC: 240, Tokens: 573,901</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-013 Redis 存储实现
+LOC: 240, Tokens: 575,496</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-014 Valkey 存储实现
+LOC: 240, Tokens: 579,334</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-015 PicoD 命令执行 API
+LOC: 240, Tokens: 572,585</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-016 PicoD 文件管理 API
+LOC: 240, Tokens: 588,109</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-017 PicoD JWT 中间件
+LOC: 240, Tokens: 587,304</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-018 Agentd 空闲清理控制器
+LOC: 240, Tokens: 585,219</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-019 CLI 二进制入口 (4 binaries)
+LOC: 240, Tokens: 583,251</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-020 CLI pack 命令
+LOC: 240, Tokens: 578,329</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-021 CLI build 命令
+LOC: 240, Tokens: 582,931</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-022 CLI publish 命令
+LOC: 240, Tokens: 590,681</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-023 CLI invoke/status 命令
+LOC: 240, Tokens: 582,507</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-024 DockerService 封装
+LOC: 240, Tokens: 591,771</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-025 MetadataService 与数据模型
+LOC: 240, Tokens: 583,642</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-026 K8s/AgentCube Provider
+LOC: 240, Tokens: 586,161</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-027 SDK CodeInterpreterClient
+LOC: 240, Tokens: 588,647</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-028 SDK AgentRuntimeClient
+LOC: 240, Tokens: 591,021</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-029 SDK HTTP 底层客户端
+LOC: 240, Tokens: 575,377</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-030 Helm Chart 模板与 Values
+LOC: 240, Tokens: 581,409</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-031 RBAC 配置 (SA/Role/Binding)
+LOC: 240, Tokens: 578,172</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-032 Dockerfile 多阶段构建 (3 images)
+LOC: 240, Tokens: 580,331</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-033 Makefile 构建目标体系
+LOC: 240, Tokens: 580,045</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-034 CI/CD GitHub Actions (12 workflows)
+LOC: 240, Tokens: 581,983</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-035 client-go 类型客户端生成
+LOC: 240, Tokens: 579,888</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-036 Dify 插件集成
+LOC: 240, Tokens: 583,924</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-037 PCAP 分析器示例应用
+LOC: 240, Tokens: 582,005</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-038 Go 单元测试 (workloadmanager)
+LOC: 240, Tokens: 589,791</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-039 Go 单元测试 (router/store/picod)
+LOC: 240, Tokens: 579,663</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-040 Python SDK/CLI 测试
+LOC: 240, Tokens: 582,338</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-041 E2E 集成测试
+LOC: 240, Tokens: 576,389</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-042 Docusaurus 文档站框架
+LOC: 240, Tokens: 583,209</title></circle>
+<circle cx="116" cy="30" r="5" fill="#999" opacity="0.7"><title>AR-043 架构设计文档与 API 文档
+LOC: 240, Tokens: 572,768</title></circle>
+
+    </svg>
+  <div class="legend">
+    <span><i style="background:#00ADD8"></i> Go</span>
+    <span><i style="background:#3776AB"></i> Python</span>
+    <span><i style="background:#CB171E"></i> YAML</span>
+    <span><i style="background:#3178C6"></i> TypeScript</span>
+    <span><i style="background:#427819"></i> Makefile</span>
+    <span><i style="background:#384d54"></i> Dockerfile</span>
+    <span><i style="background:#083FA1"></i> Markdown</span>
+  </div>
+</div>
+
+<!-- ===================== 5. QUALITY ===================== -->
+<h2 id="quality">5. 质量维度</h2>
+<div class="stats">
+  <div class="stat good"><div class="v">96.0%</div><div class="l">平均 Spec-Code 一致性</div></div>
+  <div class="stat good"><div class="v">94.0%</div><div class="l">平均代码可用率</div></div>
+  <div class="stat"><div class="v">85.0%</div><div class="l">平均测试覆盖率</div></div>
+  <div class="stat warn"><div class="v">0</div><div class="l">发现 Bug 总数</div></div>
+</div>
+
+<div class="card">
+  <table>
+    <thead><tr><th>指标</th><th>说明</th><th style="text-align:right">全局值</th></tr></thead>
+    <tbody>
+      <tr><td>QT-COV</td><td>Token / 测试覆盖率%</td><td style="text-align:right">9,502</td></tr>
+      <tr><td>QT-CONSIST</td><td>Token / 一致性得分%</td><td style="text-align:right">25,597</td></tr>
+      <tr><td>QT-AVAIL</td><td>Token / 代码可用率%</td><td style="text-align:right">8,592</td></tr>
+      <tr><td>QT-BUG</td><td>Token / Bug 数 (反向)</td><td style="text-align:right">807,668</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="metric-guide">
+  <h4>质量指标指南:</h4>
+  <div class="guide-grid">
+    <div class="guide-item-name">一致性得分</div><div class="guide-item-desc"><span class="best-tag">越高越好</span>。基于跨模块接口调用的准确性评估，反映对复杂架构的把控。</div>
+    <div class="guide-item-name">代码可用率</div><div class="guide-item-desc"><span class="best-tag">越高越好</span>。通过编译或静态语法检查的代码占比。</div>
+  </div>
+</div>
+
+<!-- ===================== 6. DISTRIBUTION ===================== -->
+<h2 id="distribution">6. 阶段间 Token 分布</h2>
+<div class="stats">
+  <div class="stat"><div class="v">521.5%</div><div class="l">PT-DESIGN 设计阶段 (15-30%)</div></div>
+  <div class="stat"><div class="v">433.8%</div><div class="l">PT-PLAN 规划阶段 (5-15%)</div></div>
+  <div class="stat"><div class="v">59.7%</div><div class="l">PT-DEV 开发阶段 (45-65%)</div></div>
+  <div class="stat"><div class="v">363.0%</div><div class="l">PT-VERIFY 验证阶段 (8-18%)</div></div>
+  <div class="stat warn"><div class="v">ST-3</div><div class="l">PT-PEAK 峰值阶段</div></div>
+  <div class="stat good"><div class="v">2115%</div><div class="l">PT-CACHE 命中率 (&gt;70%)</div></div>
+</div>
+
+<div class="card">
+  <h3>设计 / 开发 / 验证 Token 分布</h3>
+  <svg width="900" height="30" style="display:block"><rect x="0.0" y="0" width="340.6" height="30" fill="#42A5F5" rx="3"/><text x="170.3" y="19.0" text-anchor="middle" fill="#fff" font-size="11">设计 (ST-1~3)</text><rect x="340.6" y="0" width="283.3" height="30" fill="#FFA726" rx="3"/><text x="482.3" y="19.0" text-anchor="middle" fill="#fff" font-size="11">规划 (ST-0,4)</text><rect x="624.0" y="0" width="39.0" height="30" fill="#EF5350" rx="3"/><rect x="662.9" y="0" width="237.1" height="30" fill="#AB47BC" rx="3"/><text x="781.5" y="19.0" text-anchor="middle" fill="#fff" font-size="11">验证归档 (ST-6,7)</text></svg>
+  <div class="note" style="margin-top:8px">
+    <strong>分布分析：</strong>开发实现阶段 (ST-5) 占 59.7% 为 Token 消耗主体，
+    设计阶段 (ST-1~3) 占 521.5% 表明 SDD 在设计前移上有合理投入，
+    验证阶段 (ST-6,7) 占 363.0% 为质量保障成本。
+  </div>
+</div>
+
+<!-- ===================== 7. BASELINES ===================== -->
+<h2 id="baselines">7. 基线数据（按 AR 规模分层）</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>规模</th><th>AR 数</th><th style="text-align:right">平均 Tokens</th><th style="text-align:right">平均 LOC</th><th style="text-align:right">平均 Token/LOC</th><th style="text-align:right">平均成本</th><th style="text-align:right">平均耗时</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <p style="font-size:12px;color:var(--muted);margin-top:8px">基线用于成本预测和异常预警。新需求 Token 预估 = 基线 × 规模系数 × 复杂度系数。</p>
+</div>
+
+<!-- ===================== 8. AR DETAIL ===================== -->
+<h2 id="ar-detail">8. AR 需求明细（按 Token 消耗降序）</h2>
+<div class="card" style="overflow-x:auto">
+  <table>
+    <thead><tr><th>AR</th><th>名称</th><th>模块</th><th>语言</th><th>规模</th><th style="text-align:right">Tokens</th><th style="text-align:right">LOC</th><th style="text-align:right">Tok/LOC</th><th style="text-align:right">成本</th><th style="text-align:right">一致性</th><th style="text-align:right">可用率</th></tr></thead>
+    <tbody><tr>
+            <td><code>AR-024</code></td>
+            <td>DockerService 封装</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">591,771</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.379</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-001</code></td>
+            <td>CRD AgentRuntime 类型定义</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>S</td>
+            <td style="text-align:right">591,202</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.375</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-028</code></td>
+            <td>SDK AgentRuntimeClient</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">591,021</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.374</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-022</code></td>
+            <td>CLI publish 命令</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>L</td>
+            <td style="text-align:right">590,681</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.371</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-038</code></td>
+            <td>Go 单元测试 (workloadmanager)</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>L</td>
+            <td style="text-align:right">589,791</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.364</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-010</code></td>
+            <td>Router 会话管理</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">589,778</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.364</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-006</code></td>
+            <td>Sandbox 删除与生命周期管理</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">589,282</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.361</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-027</code></td>
+            <td>SDK CodeInterpreterClient</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">588,647</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.356</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-016</code></td>
+            <td>PicoD 文件管理 API</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">588,109</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.352</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-017</code></td>
+            <td>PicoD JWT 中间件</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>S</td>
+            <td style="text-align:right">587,304</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.346</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-011</code></td>
+            <td>Router JWT 认证与签发</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">586,740</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.342</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-007</code></td>
+            <td>K8s Reconciler 控制器</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>L</td>
+            <td style="text-align:right">586,483</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.340</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-026</code></td>
+            <td>K8s/AgentCube Provider</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">586,161</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.338</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-018</code></td>
+            <td>Agentd 空闲清理控制器</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>S</td>
+            <td style="text-align:right">585,219</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.331</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-036</code></td>
+            <td>Dify 插件集成</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">583,924</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.321</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-025</code></td>
+            <td>MetadataService 与数据模型</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">583,642</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.319</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-019</code></td>
+            <td>CLI 二进制入口 (4 binaries)</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">583,251</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.316</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-042</code></td>
+            <td>Docusaurus 文档站框架</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">583,209</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.316</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-021</code></td>
+            <td>CLI build 命令</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">582,931</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.314</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-023</code></td>
+            <td>CLI invoke/status 命令</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">582,507</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.311</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-040</code></td>
+            <td>Python SDK/CLI 测试</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">582,338</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.309</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-037</code></td>
+            <td>PCAP 分析器示例应用</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">582,005</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.307</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-034</code></td>
+            <td>CI/CD GitHub Actions (12 workflows)</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>L</td>
+            <td style="text-align:right">581,983</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.307</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-030</code></td>
+            <td>Helm Chart 模板与 Values</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>L</td>
+            <td style="text-align:right">581,409</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.302</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-005</code></td>
+            <td>Sandbox 创建处理器</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">580,977</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.299</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-032</code></td>
+            <td>Dockerfile 多阶段构建 (3 images)</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>S</td>
+            <td style="text-align:right">580,331</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.294</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-033</code></td>
+            <td>Makefile 构建目标体系</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">580,045</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.292</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-035</code></td>
+            <td>client-go 类型客户端生成</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>L</td>
+            <td style="text-align:right">579,888</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.291</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-039</code></td>
+            <td>Go 单元测试 (router/store/picod)</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>L</td>
+            <td style="text-align:right">579,663</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.290</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-014</code></td>
+            <td>Valkey 存储实现</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>S</td>
+            <td style="text-align:right">579,334</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.287</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-020</code></td>
+            <td>CLI pack 命令</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">578,329</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.280</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-031</code></td>
+            <td>RBAC 配置 (SA/Role/Binding)</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">578,172</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.279</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-004</code></td>
+            <td>WorkloadManager HTTP 服务框架</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">576,662</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.267</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-041</code></td>
+            <td>E2E 集成测试</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>L</td>
+            <td style="text-align:right">576,389</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.265</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-013</code></td>
+            <td>Redis 存储实现</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">575,496</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.259</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-002</code></td>
+            <td>CRD CodeInterpreter 类型定义</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>S</td>
+            <td style="text-align:right">575,464</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.258</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-029</code></td>
+            <td>SDK HTTP 底层客户端</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">575,377</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.258</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-012</code></td>
+            <td>会话存储接口定义</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>S</td>
+            <td style="text-align:right">573,901</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.247</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-009</code></td>
+            <td>Router HTTP 反向代理核心</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">573,590</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.245</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-008</code></td>
+            <td>Sandbox GC 定时清理机制</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>S</td>
+            <td style="text-align:right">573,365</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.243</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-043</code></td>
+            <td>架构设计文档与 API 文档</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">572,768</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.239</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-015</code></td>
+            <td>PicoD 命令执行 API</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>M</td>
+            <td style="text-align:right">572,585</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.237</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr><tr>
+            <td><code>AR-003</code></td>
+            <td>CRD 共享类型与常量</td>
+            <td>agentcube</td>
+            <td>go/python</td>
+            <td>S</td>
+            <td style="text-align:right">571,825</td>
+            <td style="text-align:right">240</td>
+            <td style="text-align:right">1578.9</td>
+            <td style="text-align:right">$4.231</td>
+            <td style="text-align:right">96%</td>
+            <td style="text-align:right">94%</td>
+        </tr></tbody>
+  </table>
+  <p style="font-size:12px;color:var(--muted);margin-top:4px">橙色背景行: Token/LOC 超过同规模基线 200%（异常标记）</p>
+</div>
+
+<!-- ===================== 9. WARNINGS ===================== -->
+<h2 id="warnings">9. 预警分析</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>预警规则</th><th>阈值</th><th>触发数量</th><th>相关 AR</th></tr></thead>
+    <tbody><tr><td colspan="4" style="text-align:center;color:var(--green)">无预警触发 (6 条规则全部通过)</td></tr></tbody>
+  </table>
+</div>
+
+<!-- ===================== 10. REFERENCE ===================== -->
+<h2 id="reference">10. 引用与说明</h2>
+<div class="card">
+  <h3>评测体系说明</h3>
+  <table>
+    <tr><th style="width:150px">方法论</th><td>CodeSpec 7 阶段工作流 (ST-0 ~ ST-7) + OpenSpec OPSX 工具链</td></tr>
+    <tr><th>AR 分解粒度</th><td>capability / feature 级别，共 43 个 AR</td></tr>
+    <tr><th>指标体系</th><td>5 维：阶段 (ST)、角色 (RT)、效率 (ET)、质量 (QT)、分布 (PT)</td></tr>
+    <tr><th>Token 追踪</th><td>telemetry-audit</td></tr>
+    <tr><th>预制规范处理</th><td>计入 input tokens，标注为"预制规范"单独统计，不计入 RT-HUMAN</td></tr>
+    <tr><th>参考基准</th><td>Claude Code ~78K tokens/request, 84% cache, 166:1 I/O ratio (BSWEN 2026)</td></tr>
+  </table>
+
+  <h3 style="margin-top:16px">OpenSpec OPSX 阶段对齐</h3>
+  <table>
+    <thead><tr><th>CodeSpec 阶段</th><th>OPSX 命令</th><th>产物</th><th>Token 追踪</th></tr></thead>
+    <tbody>
+      <tr><td>ST-0 AR 输入</td><td><code>/opsx:new</code></td><td>变更目录脚手架</td><td>✓</td></tr><tr><td>ST-1 需求澄清 (Proposal)</td><td><code>/opsx:ff → proposal.md</code></td><td>proposal.md</td><td>✓</td></tr><tr><td>ST-2 Spec 增量设计</td><td><code>/opsx:ff → specs/</code></td><td>delta-spec.md</td><td>✓</td></tr><tr><td>ST-3 Design 增量设计</td><td><code>/opsx:ff → design.md</code></td><td>design.md</td><td>✓</td></tr><tr><td>ST-4 任务拆解 (Tasks)</td><td><code>/opsx:ff → tasks.md</code></td><td>tasks.md</td><td>✓</td></tr><tr><td>ST-5 开发实现 (Apply)</td><td><code>/opsx:apply</code></td><td>代码文件</td><td>✓</td></tr><tr><td>ST-6 一致性验证 (Verify)</td><td><code>/opsx:verify</code></td><td>归档 + spec 合并</td><td>✓</td></tr><tr><td>ST-7 合并归档 (Archive)</td><td><code>/opsx:archive</code></td><td>验证报告</td><td>✓</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:16px">关联文档</h3>
+  <table>
+    <tr><td><code>PROPOSAL.md</code></td><td>评测体系设计文档（方法论 + 指标定义 + 基线方案）</td></tr>
+    <tr><td><a href="project_analysis_report.html">目标工程技术解析</a></td><td>agentcube 代码量、技术栈、模块结构详情</td></tr>
+  </table>
+</div>
+
+</div><!-- .container -->
+<div class="footer">
+  SDD-TEE v2 (SDD Token Efficiency Evaluation) &mdash; CodeSpec 7-Stage &times; OpenSpec OPSX &nbsp;|&nbsp;
+  2026-03-24T15:28:51Z &nbsp;|&nbsp; <a href="https://github.com/ShijunDeng/sdd-tee">GitHub</a>
+</div>
+</body>
+</html>
