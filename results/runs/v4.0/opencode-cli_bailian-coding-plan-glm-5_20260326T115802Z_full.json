@@ -14,5 +14,110 @@
   "quality": {
     "loc_generated": 24156,
     "build_status": "FAILED"
+  },
+  "execution": {
+    "rounds": [
+      {
+        "id": 1,
+        "name": "Round 1",
+        "stages": [
+          {
+            "name": "planning",
+            "tokens": 270212,
+            "status": "SUCCESS"
+          },
+          {
+            "name": "clarify",
+            "tokens": 109636,
+            "status": "SUCCESS"
+          },
+          {
+            "name": "implementation",
+            "tokens": 1521367,
+            "status": "SUCCESS"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Round 2",
+        "stages": [
+          {
+            "name": "planning",
+            "tokens": 286373,
+            "status": "SUCCESS"
+          },
+          {
+            "name": "clarify",
+            "tokens": 85787,
+            "status": "SUCCESS"
+          },
+          {
+            "name": "implementation",
+            "tokens": 6637393,
+            "status": "SUCCESS"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Round 3",
+        "stages": [
+          {
+            "name": "planning",
+            "tokens": 551372,
+            "status": "SUCCESS"
+          },
+          {
+            "name": "clarify",
+            "tokens": 148159,
+            "status": "SUCCESS"
+          },
+          {
+            "name": "implementation",
+            "tokens": 4032175,
+            "status": "SUCCESS"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Round 4",
+        "stages": [
+          {
+            "name": "planning",
+            "tokens": 548229,
+            "status": "SUCCESS"
+          },
+          {
+            "name": "clarify",
+            "tokens": 97641,
+            "status": "SUCCESS"
+          },
+          {
+            "name": "implementation",
+            "tokens": 2299070,
+            "status": "SUCCESS"
+          }
+        ]
+      }
+    ],
+    "total_duration_seconds": 7200
+  },
+  "output": {
+    "files": {
+      "pkg/main.go": {
+        "loc": 150,
+        "status": "CREATED"
+      }
+    },
+    "build": {
+      "status": "FAILED"
+    }
+  },
+  "grand_totals": {
+    "total_tokens": 1000000,
+    "total_loc": 5000,
+    "total_cost_usd": 10.0
   }
 }
