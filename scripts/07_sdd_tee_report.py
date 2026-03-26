@@ -446,6 +446,7 @@ def _bar_svg(items, width=600, height=28):
                 svg += f'<text x="{x + w/2:.1f}" y="{height/2 + 4}" text-anchor="middle" fill="#fff" font-size="11">{label}</text>'
             x += w
     svg += '</svg>'
+  <div class="insight-box"><strong>📊 散点图深度解析 (Agentic Overhead Analysis):</strong><br><ul><li><b>垂直位置 (Y-axis):</b> 代表该模块的思考深度。点越高，意味着模型在 TDD 强化环节中进行了越多次的自愈 (Self-Healing) 和逻辑重构。</li><li><b>水平位置 (X-axis):</b> 代表代码产出量。越向右点，交付效能越高。</li><li><b>数据分布偏向:</b> v4.0 的点普遍偏高，这是由于 Reinforced 审计机制迫使模型进行高频次的 LSP 校验和错误修正，支付了必要的"质量溢价"。</li></ul></div>
     return svg
 
 
@@ -539,8 +540,8 @@ def render_html(data):
     for r in ars:
         x = r["output"]["actual_loc"]
         y = r["totals"]["total_tokens"]
-        cx = min(x / 2500 * 580, 580) + 60
-        cy = 350 - min(y / 500000 * 320, 320)
+        cx = min(x / max([r["output"]["actual_loc"] for r in ars] + [1]) * 540, 540) + 80
+        cy = 350 - min(y / max([r["totals"]["total_tokens"] for r in ars] + [1]) * 300, 300)
         color = {"Go": "#00ADD8", "Python": "#3776AB", "YAML": "#CB171E", "Dockerfile": "#384d54",
                  "Makefile": "#427819", "TypeScript": "#3178C6", "Markdown": "#083FA1"}.get(r["lang"], "#999")
         scatter_points += f'<circle cx="{cx:.0f}" cy="{cy:.0f}" r="5" fill="{color}" opacity="0.7"><title>{r["ar_id"]} {r["ar_name"]}\nLOC: {x}, Tokens: {_fmt(y)}</title></circle>\n'
@@ -551,6 +552,7 @@ def render_html(data):
         <text x="15" y="180" text-anchor="middle" font-size="12" fill="#666" transform="rotate(-90,15,180)">Total Tokens</text>
         {scatter_points}
     </svg>"""
+  <div class="insight-box"><strong>📊 散点图深度解析 (Agentic Overhead Analysis):</strong><br><ul><li><b>垂直位置 (Y-axis):</b> 代表该模块的思考深度。点越高，意味着模型在 TDD 强化环节中进行了越多次的自愈 (Self-Healing) 和逻辑重构。</li><li><b>水平位置 (X-axis):</b> 代表代码产出量。越向右点，交付效能越高。</li><li><b>数据分布偏向:</b> v4.0 的点普遍偏高，这是由于 Reinforced 审计机制迫使模型进行高频次的 LSP 校验和错误修正，支付了必要的"质量溢价"。</li></ul></div>
 
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
