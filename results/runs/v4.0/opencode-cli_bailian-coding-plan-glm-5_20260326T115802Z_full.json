@@ -1,0 +1,18 @@
+{
+  "run_id": "opencode-cli_bailian-coding-plan-glm-5_20260326T115802Z",
+  "timestamp": "20260326T135907Z",
+  "project": "agentcube",
+  "tool": "opencode-cli",
+  "model": "bailian-coding-plan/glm-5",
+  "token_summary": {
+    "input_tokens": 2714974,
+    "output_tokens": 247264,
+    "cache_read_tokens": 15449436,
+    "total_tokens": 2962238,
+    "cost_usd": 41.719
+  },
+  "quality": {
+    "loc_generated": 24156,
+    "build_status": "FAILED"
+  }
+}

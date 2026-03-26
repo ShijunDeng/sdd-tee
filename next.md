@@ -7,10 +7,10 @@
 任务组2：
     任务2：使用环境上的opencode进行下一轮测试，测试前修改opencode的model为Qwen3.5 Plus
 
-任务组3：
+任务组3（正在运行）：
     任务2：使用环境上的opencode进行下一轮测试，测试前修改opencode的model为glm-5
 
-任务组4：
+任务组4（待启动）：
     任务2：使用环境上的opencode进行下一轮测试，测试前修改opencode的model为glm-4.7
 
 任务组5：

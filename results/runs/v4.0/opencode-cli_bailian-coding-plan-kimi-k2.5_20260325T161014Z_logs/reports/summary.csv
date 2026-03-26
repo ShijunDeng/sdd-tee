@@ -1,0 +1,1 @@
+run_id,tool,model,timestamp,total_duration_s,stage0_analysis_s,stage1_spec_gen_s,stage2_sdd_dev_s,stage3_validate_s,files_generated,loc_generated,original_files,original_loc,file_count_ratio,loc_ratio,directory_similarity,file_overlap_ratio,key_files_rate,python_syntax_rate,yaml_syntax_rate

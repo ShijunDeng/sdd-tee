@@ -30,3 +30,35 @@ Traceback (most recent call last):
 KeyError: 'grand_totals'
 [11] Processing 2 runs for Deep Summary Report...
 [11] Deep Summary Report generated: results/reports/v4.0/compare_report.html
+[main 54b2773] v4.0: Auto-healing & precision audit for bailian-coding-plan/kimi-k2.5
+ 33 files changed, 1428 insertions(+), 10 deletions(-)
+ create mode 100644 logs/gemini_v4_pid.txt
+ create mode 100644 logs/gemini_v4_trial.log
+ create mode 100644 logs/kimi_v4_trial.log
+ create mode 100644 logs/sup_gemini_v4_trial.log
+ create mode 100644 logs/sup_kimi_v4_trial.log
+ create mode 100644 orchestration/launch_v4_gemini.sh
+ create mode 100644 results/reports/sdd_tee_report.json
+ create mode 100644 results/runs/v4.0/gemini-cli_gemini-3.1-pro_20260325T141052Z_logs/round1_planning_raw.json
+ create mode 100644 results/runs/v4.0/gemini-cli_gemini-3.1-pro_20260325T141228Z_logs/round1_planning_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T113706Z_logs/round1_planning_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T120106Z_logs/round1_planning_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T141352Z_logs/round1_planning_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_full.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round1_clarify_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round1_implementation_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round1_planning_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round2_clarify_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round2_implementation_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round2_planning_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round3_clarify_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round3_implementation_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round3_planning_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round4_clarify_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round4_implementation_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/round4_planning_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/self_healing_v4_1_raw.json
+ create mode 100644 results/runs/v4.0/opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z_logs/self_healing_v4_2_raw.json
+To github.com:ShijunDeng/sdd-tee.git
+   96b5b15..54b2773  main -> main
+[v4.0 Guard] Supervisor pipeline fully completed.
