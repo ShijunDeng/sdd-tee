@@ -17,8 +17,8 @@
     "cache_read_tokens": 15449436,
     "cache_write_tokens": 0,
     "total_tokens": 18411674,
-    "total_cost_usd": 25.8,
-    "total_cost_cny": 187.05,
+    "total_cost_usd": 110.47,
+    "total_cost_cny": 800.91,
     "total_loc": 10320,
     "total_files": 67,
     "human_input_tokens": 5000,
@@ -47,7 +47,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6095
+        "cost_usd": 2.6099
       },
       "output": {
         "actual_loc": 240,
@@ -195,7 +195,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5933
+        "cost_usd": 2.5405
       },
       "output": {
         "actual_loc": 240,
@@ -343,7 +343,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5896
+        "cost_usd": 2.5244
       },
       "output": {
         "actual_loc": 240,
@@ -491,7 +491,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5946
+        "cost_usd": 2.5458
       },
       "output": {
         "actual_loc": 240,
@@ -639,7 +639,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.599
+        "cost_usd": 2.5648
       },
       "output": {
         "actual_loc": 240,
@@ -787,7 +787,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6076
+        "cost_usd": 2.6015
       },
       "output": {
         "actual_loc": 240,
@@ -935,7 +935,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6047
+        "cost_usd": 2.5891
       },
       "output": {
         "actual_loc": 240,
@@ -1083,7 +1083,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5912
+        "cost_usd": 2.5312
       },
       "output": {
         "actual_loc": 240,
@@ -1231,7 +1231,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5914
+        "cost_usd": 2.5322
       },
       "output": {
         "actual_loc": 240,
@@ -1379,7 +1379,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6081
+        "cost_usd": 2.6037
       },
       "output": {
         "actual_loc": 240,
@@ -1527,7 +1527,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6049
+        "cost_usd": 2.5902
       },
       "output": {
         "actual_loc": 240,
@@ -1675,7 +1675,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5917
+        "cost_usd": 2.5336
       },
       "output": {
         "actual_loc": 240,
@@ -1823,7 +1823,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5934
+        "cost_usd": 2.5406
       },
       "output": {
         "actual_loc": 240,
@@ -1971,7 +1971,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5973
+        "cost_usd": 2.5575
       },
       "output": {
         "actual_loc": 240,
@@ -2119,7 +2119,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5904
+        "cost_usd": 2.5278
       },
       "output": {
         "actual_loc": 240,
@@ -2267,7 +2267,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6064
+        "cost_usd": 2.5963
       },
       "output": {
         "actual_loc": 240,
@@ -2415,7 +2415,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6055
+        "cost_usd": 2.5927
       },
       "output": {
         "actual_loc": 240,
@@ -2563,7 +2563,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6034
+        "cost_usd": 2.5835
       },
       "output": {
         "actual_loc": 240,
@@ -2711,7 +2711,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6013
+        "cost_usd": 2.5748
       },
       "output": {
         "actual_loc": 240,
@@ -2859,7 +2859,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5963
+        "cost_usd": 2.5531
       },
       "output": {
         "actual_loc": 240,
@@ -3007,7 +3007,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.601
+        "cost_usd": 2.5734
       },
       "output": {
         "actual_loc": 240,
@@ -3155,7 +3155,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.609
+        "cost_usd": 2.6076
       },
       "output": {
         "actual_loc": 240,
@@ -3303,7 +3303,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6006
+        "cost_usd": 2.5716
       },
       "output": {
         "actual_loc": 240,
@@ -3451,7 +3451,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6101
+        "cost_usd": 2.6125
       },
       "output": {
         "actual_loc": 240,
@@ -3599,7 +3599,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6018
+        "cost_usd": 2.5766
       },
       "output": {
         "actual_loc": 240,
@@ -3747,7 +3747,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6043
+        "cost_usd": 2.5877
       },
       "output": {
         "actual_loc": 240,
@@ -3895,7 +3895,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6069
+        "cost_usd": 2.5987
       },
       "output": {
         "actual_loc": 240,
@@ -4043,7 +4043,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6094
+        "cost_usd": 2.6091
       },
       "output": {
         "actual_loc": 240,
@@ -4191,7 +4191,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5932
+        "cost_usd": 2.5401
       },
       "output": {
         "actual_loc": 240,
@@ -4339,7 +4339,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5994
+        "cost_usd": 2.5667
       },
       "output": {
         "actual_loc": 240,
@@ -4487,7 +4487,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5961
+        "cost_usd": 2.5524
       },
       "output": {
         "actual_loc": 240,
@@ -4635,7 +4635,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5983
+        "cost_usd": 2.562
       },
       "output": {
         "actual_loc": 240,
@@ -4783,7 +4783,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.598
+        "cost_usd": 2.5607
       },
       "output": {
         "actual_loc": 240,
@@ -4931,7 +4931,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6
+        "cost_usd": 2.5692
       },
       "output": {
         "actual_loc": 240,
@@ -5079,7 +5079,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5979
+        "cost_usd": 2.56
       },
       "output": {
         "actual_loc": 240,
@@ -5227,7 +5227,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.602
+        "cost_usd": 2.5778
       },
       "output": {
         "actual_loc": 240,
@@ -5375,7 +5375,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6001
+        "cost_usd": 2.5693
       },
       "output": {
         "actual_loc": 240,
@@ -5523,7 +5523,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6081
+        "cost_usd": 2.6037
       },
       "output": {
         "actual_loc": 240,
@@ -5671,7 +5671,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5976
+        "cost_usd": 2.559
       },
       "output": {
         "actual_loc": 240,
@@ -5819,7 +5819,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6004
+        "cost_usd": 2.5708
       },
       "output": {
         "actual_loc": 240,
@@ -5967,7 +5967,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5943
+        "cost_usd": 2.5445
       },
       "output": {
         "actual_loc": 240,
@@ -6115,7 +6115,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.6013
+        "cost_usd": 2.5747
       },
       "output": {
         "actual_loc": 240,
@@ -6263,7 +6263,7 @@
         "iterations": 8,
         "duration_seconds": 105,
         "api_calls": 8,
-        "cost_usd": 0.5905
+        "cost_usd": 2.5286
       },
       "output": {
         "actual_loc": 240,
