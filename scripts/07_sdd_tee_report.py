@@ -655,7 +655,7 @@ def render_html(data):
   <div class="stat"><div class="v">{gt['ar_count']}</div><div class="l">AR 需求数</div></div>
   <div class="stat"><div class="v">{_fmt(gt['total_tokens'])}</div><div class="l">Total Tokens</div></div>
   <div class="stat"><div class="v">${gt['total_cost_usd']:.2f}</div><div class="l">总成本 (USD)</div></div>
-  <div class="stat"><div class="v">¥{gt['total_cost_cny']:.0f}</div><div class="l">总成本 (CNY)</div></div>
+  <div class="stat"><div class="v">¥{gt['total_cost_cny']:.2f}</div><div class="l">总成本 (CNY)</div></div>
   <div class="stat"><div class="v">{gt['total_loc']:,}</div><div class="l">生成代码行数</div></div>
   <div class="stat"><div class="v">{gt['total_files']}</div><div class="l">生成文件数</div></div>
   <div class="stat"><div class="v">{gt['total_tasks']}</div><div class="l">Task 总数</div></div>
