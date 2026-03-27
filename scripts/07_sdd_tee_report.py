@@ -481,8 +481,8 @@ def render_html(data):
             <td style="text-align:right">{_fmt(s['output_tokens'])}</td>
             <td style="text-align:right;font-weight:600">{_fmt(s['total_tokens'])}</td>
             <td style="text-align:right">{pct:.1f}%</td>
-            <td style="text-align:right">{s['iterations']}</td>
-            <td style="text-align:right">{s['duration_seconds'] // 60}m{s['duration_seconds'] % 60}s</td>
+            <td style="text-align:right">{s.get('iterations', s.get('total_iterations', 0))}</td>
+            <td style="text-align:right">{s.get('duration_seconds', s.get('total_duration_seconds', 0)) // 60}m{s.get('duration_seconds', s.get('total_duration_seconds', 0)) % 60}s</td>
         </tr>"""
 
     # --- AR table ---
@@ -500,7 +500,7 @@ def render_html(data):
             <td style="text-align:right">{_fmt(r['totals']['total_tokens'])}</td>
             <td style="text-align:right">{_fmt(r['output']['actual_loc'])}</td>
             <td style="text-align:right">{r['metrics']['ET_LOC']}</td>
-            <td style="text-align:right">${r['totals']['cost_usd']:.3f}</td>
+            <td style="text-align:right">${r.get('totals', {}).get('cost_usd', 0):.3f}</td>
             <td style="text-align:right">{r['quality']['consistency_score']:.0%}</td>
             <td style="text-align:right">{r['quality']['code_usability']:.0%}</td>
         </tr>"""
