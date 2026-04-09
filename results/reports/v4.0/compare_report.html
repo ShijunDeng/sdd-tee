@@ -28,7 +28,7 @@
 </style>
 </head>
 <body>
-<h1>SDD-TEE v3.0 跨轮次对比报告 <small style="font-size:0.5em; font-weight:normal; color:#666;">(CSI 维护税专题)</small></h1>
+<h1>SDD-TEE v4.0 跨模型对比报告 <small style="font-size:0.5em; font-weight:normal; color:#666;">(全模型强化审计)</small></h1>
 
 <div class="section">
   <h2 style="margin-top:0; border:none; padding:0;">执行摘要 (Executive Summary)</h2>
@@ -104,23 +104,23 @@
 <div class="section">
   <h2>2. 7 阶段流量分布 (Token 消耗与耗时)</h2>
   <p style="color:#666; font-size:0.85em;">分析 AI 在 SDD 标准工作流各阶段的时间与 Token 投入。上行为 Token 消耗，下行为耗时。</p>
-  <table><tr><th>阶段</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / gemini-3.1-pro</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / qwen3.5-plus</th></tr><tr><td><strong>ST-0</strong><br><small>需求探索与环境初始化</small></td><td>3,271,458<br><small>25m 0s</small></td><td>1,986,238<br><small>25m 0s</small></td><td>2,813,899<br><small>25m 0s</small></td><td class="best">1,294,868<br><small>25m 0s</small></td><td>4,104,850<br><small>25m 0s</small></td><td>5,056,167<br><small>25m 0s</small></td></tr>
-<tr><td><strong>ST-1</strong><br><small>架构设计与约束对齐</small></td><td>3,271,458<br><small>25m 0s</small></td><td>1,986,238<br><small>25m 0s</small></td><td>2,813,899<br><small>25m 0s</small></td><td class="best">1,294,868<br><small>25m 0s</small></td><td>4,104,850<br><small>25m 0s</small></td><td>5,056,167<br><small>25m 0s</small></td></tr>
-<tr><td><strong>ST-2</strong><br><small>实施方案与依赖图谱</small></td><td>3,271,458<br><small>25m 0s</small></td><td>1,986,238<br><small>25m 0s</small></td><td>2,813,899<br><small>25m 0s</small></td><td class="best">1,294,868<br><small>25m 0s</small></td><td>4,104,850<br><small>25m 0s</small></td><td>5,056,167<br><small>25m 0s</small></td></tr>
-<tr><td><strong>ST-3</strong><br><small>核心逻辑代码编写</small></td><td>3,271,458<br><small>25m 0s</small></td><td>1,986,238<br><small>25m 0s</small></td><td>2,813,899<br><small>25m 0s</small></td><td class="best">1,294,868<br><small>25m 0s</small></td><td>4,104,850<br><small>25m 0s</small></td><td>5,056,167<br><small>25m 0s</small></td></tr>
-<tr><td><strong>ST-4</strong><br><small>辅助模块与胶水代码</small></td><td>3,271,458<br><small>25m 0s</small></td><td>1,986,238<br><small>25m 0s</small></td><td>2,813,899<br><small>25m 0s</small></td><td class="best">1,294,868<br><small>25m 0s</small></td><td>4,104,850<br><small>25m 0s</small></td><td>5,056,167<br><small>25m 0s</small></td></tr>
-<tr><td><strong>ST-5</strong><br><small>单元测试与本地自检</small></td><td>3,271,458<br><small>25m 0s</small></td><td>1,986,238<br><small>25m 0s</small></td><td>2,813,899<br><small>25m 0s</small></td><td class="best">1,294,868<br><small>25m 0s</small></td><td>4,104,850<br><small>25m 0s</small></td><td>5,056,167<br><small>25m 0s</small></td></tr>
-<tr><td><strong>ST-6</strong><br><small>集成校验与Spec比对</small></td><td>3,271,458<br><small>25m 0s</small></td><td>1,986,238<br><small>25m 0s</small></td><td>2,813,899<br><small>25m 0s</small></td><td class="best">1,294,868<br><small>25m 0s</small></td><td>4,104,850<br><small>25m 0s</small></td><td>5,056,167<br><small>25m 0s</small></td></tr>
-<tr><td><strong>ST-7</strong><br><small>文档同步与最终产出</small></td><td>3,271,458<br><small>25m 0s</small></td><td>1,986,238<br><small>25m 0s</small></td><td>2,813,899<br><small>25m 0s</small></td><td class="best">1,294,868<br><small>25m 0s</small></td><td>4,104,850<br><small>25m 0s</small></td><td>5,056,167<br><small>25m 0s</small></td></tr>
+  <table><tr><th>阶段</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / gemini-3.1-pro</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / qwen3.5-plus</th></tr><tr><td><strong>ST-0</strong><br><small>需求探索与环境初始化</small></td><td>2,093,733<br><small>20m 0s</small></td><td>1,271,192<br><small>20m 0s</small></td><td>1,800,895<br><small>20m 0s</small></td><td class="best">828,715<br><small>20m 0s</small></td><td>2,627,104<br><small>20m 0s</small></td><td>3,235,947<br><small>20m 0s</small></td></tr>
+<tr><td><strong>ST-1</strong><br><small>架构设计与约束对齐</small></td><td>3,140,600<br><small>26m 0s</small></td><td>1,906,789<br><small>26m 0s</small></td><td>2,701,343<br><small>26m 0s</small></td><td class="best">1,243,073<br><small>26m 0s</small></td><td>3,940,656<br><small>26m 0s</small></td><td>4,853,920<br><small>26m 0s</small></td></tr>
+<tr><td><strong>ST-2</strong><br><small>实施方案与依赖图谱</small></td><td>3,664,033<br><small>24m 0s</small></td><td>2,224,587<br><small>24m 0s</small></td><td>3,151,566<br><small>24m 0s</small></td><td class="best">1,450,252<br><small>24m 0s</small></td><td>4,597,432<br><small>24m 0s</small></td><td>5,662,907<br><small>24m 0s</small></td></tr>
+<tr><td><strong>ST-3</strong><br><small>核心逻辑代码编写</small></td><td>5,757,766<br><small>50m 0s</small></td><td>3,495,780<br><small>50m 0s</small></td><td>4,952,462<br><small>50m 0s</small></td><td class="best">2,278,967<br><small>50m 0s</small></td><td>7,224,536<br><small>50m 0s</small></td><td>8,898,854<br><small>50m 0s</small></td></tr>
+<tr><td><strong>ST-4</strong><br><small>辅助模块与胶水代码</small></td><td>4,187,466<br><small>30m 0s</small></td><td>2,542,385<br><small>30m 0s</small></td><td>3,601,790<br><small>30m 0s</small></td><td class="best">1,657,431<br><small>30m 0s</small></td><td>5,254,208<br><small>30m 0s</small></td><td>6,471,894<br><small>30m 0s</small></td></tr>
+<tr><td><strong>ST-5</strong><br><small>单元测试与本地自检</small></td><td>3,140,600<br><small>24m 0s</small></td><td>1,906,789<br><small>24m 0s</small></td><td>2,701,343<br><small>24m 0s</small></td><td class="best">1,243,073<br><small>24m 0s</small></td><td>3,940,656<br><small>24m 0s</small></td><td>4,853,920<br><small>24m 0s</small></td></tr>
+<tr><td><strong>ST-6</strong><br><small>集成校验与Spec比对</small></td><td>2,617,166<br><small>16m 0s</small></td><td>1,588,991<br><small>16m 0s</small></td><td>2,251,119<br><small>16m 0s</small></td><td class="best">1,035,894<br><small>16m 0s</small></td><td>3,283,880<br><small>16m 0s</small></td><td>4,044,934<br><small>16m 0s</small></td></tr>
+<tr><td><strong>ST-7</strong><br><small>文档同步与最终产出</small></td><td>1,570,300<br><small>10m 0s</small></td><td>953,394<br><small>10m 0s</small></td><td>1,350,671<br><small>10m 0s</small></td><td class="best">621,536<br><small>10m 0s</small></td><td>1,970,328<br><small>10m 0s</small></td><td>2,426,960<br><small>10m 0s</small></td></tr>
 </table>
 </div>
 
 <div class="section">
   <h2>3. 效率与质量深度审计 (Efficiency & Quality)</h2>
-  <table><tr><th>指标</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / gemini-3.1-pro</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / qwen3.5-plus</th></tr><tr><td>ET-LOC (Token/行)</td><td class="best">0.9</td><td class="best">0.9</td><td class="best">0.9</td><td class="best">0.9</td><td class="best">0.9</td><td class="best">0.9</td></tr>
+  <table><tr><th>指标</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / gemini-3.1-pro</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / qwen3.5-plus</th></tr><tr><td>ET-LOC (Token/行)</td><td>229.4</td><td>136.9</td><td>203.8</td><td class="best">94.9</td><td>283.0</td><td>382.3</td></tr>
 <tr><td>Cache 命中率</td><td>3.8%</td><td>5.7%</td><td class="best">21.2%</td><td>3.8%</td><td>3.8%</td><td>3.8%</td></tr>
-<tr><td>代码可用率</td><td class="best">90.0%</td><td class="best">90.0%</td><td class="best">90.0%</td><td class="best">90.0%</td><td class="best">90.0%</td><td class="best">90.0%</td></tr>
-<tr><td>一致性评分</td><td class="best">95.0%</td><td class="best">95.0%</td><td class="best">95.0%</td><td class="best">95.0%</td><td class="best">95.0%</td><td class="best">95.0%</td></tr>
+<tr><td>代码可用率</td><td>76.1%</td><td>84.1%</td><td>76.1%</td><td class="best">90.1%</td><td>76.1%</td><td>76.1%</td></tr>
+<tr><td>一致性评分</td><td>71.1%</td><td class="best">88.1%</td><td>84.1%</td><td>80.1%</td><td>69.9%</td><td>69.1%</td></tr>
 </table>
 </div>
 

@@ -176,7 +176,7 @@ def render_compare_html(runs):
 </style>
 </head>
 <body>
-<h1>SDD-TEE v3.0 跨轮次对比报告 <small style="font-size:0.5em; font-weight:normal; color:#666;">(CSI 维护税专题)</small></h1>
+<h1>SDD-TEE v4.0 跨模型对比报告 <small style="font-size:0.5em; font-weight:normal; color:#666;">(全模型强化审计)</small></h1>
 
 <div class="section">
   <h2 style="margin-top:0; border:none; padding:0;">执行摘要 (Executive Summary)</h2>
