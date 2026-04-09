@@ -40,10 +40,10 @@
   </p>
 
   <h3>二、核心评测实录 (15 轮次)</h3>
-  <ul><li><b>轮次 1 (opencode-cli / bailian-coding-plan/MiniMax-M2.5)</b>: 生成了 <b>14,946</b> 行代码，耗时 <b>3h 13m</b>，消耗 26,171,668 Tokens，总成本 $185.17。</li>
-<li><b>轮次 2 (opencode-cli / bailian-coding-plan/glm-5)</b>: 生成了 <b>14,819</b> 行代码，耗时 <b>2h 48m</b>，消耗 15,889,911 Tokens，总成本 $110.47。</li>
-<li><b>轮次 3 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>14,560</b> 行代码，耗时 <b>2h 32m</b>，消耗 22,511,192 Tokens，总成本 $154.43。</li>
-<li><b>轮次 4 (opencode-cli / gemini-3.1-pro)</b>: 生成了 <b>14,386</b> 行代码，耗时 <b>2h 55m</b>，消耗 10,358,944 Tokens，总成本 $70.98。</li>
+  <ul><li><b>轮次 1 (gemini-cli / gemini-3.1-pro)</b>: 生成了 <b>14,386</b> 行代码，耗时 <b>2h 55m</b>，消耗 10,358,944 Tokens，总成本 $70.98。</li>
+<li><b>轮次 2 (opencode-cli / bailian-coding-plan/MiniMax-M2.5)</b>: 生成了 <b>14,946</b> 行代码，耗时 <b>3h 13m</b>，消耗 26,171,668 Tokens，总成本 $185.17。</li>
+<li><b>轮次 3 (opencode-cli / bailian-coding-plan/glm-5)</b>: 生成了 <b>14,819</b> 行代码，耗时 <b>2h 48m</b>，消耗 15,889,911 Tokens，总成本 $110.47。</li>
+<li><b>轮次 4 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>14,560</b> 行代码，耗时 <b>2h 32m</b>，消耗 22,511,192 Tokens，总成本 $154.43。</li>
 <li><b>轮次 5 (opencode-cli / glm-4.7)</b>: 生成了 <b>15,305</b> 行代码，耗时 <b>3h 17m</b>，消耗 32,838,802 Tokens，总成本 $196.94。</li>
 <li><b>轮次 6 (opencode-cli / qwen3.5-plus)</b>: 生成了 <b>14,767</b> 行代码，耗时 <b>2h 47m</b>，消耗 40,449,340 Tokens，总成本 $277.93。</li>
 </ul>
@@ -62,7 +62,7 @@
       <div class="card-label">经济性最优 (维护税最低)</div>
       <div class="card-val">$70.98</div>
       <div class="card-meta">
-        <strong>opencode-cli / gemini-3.1-pro</strong><br>
+        <strong>gemini-cli / gemini-3.1-pro</strong><br>
         凭借极高的 <b>Cache 命中率</b> 大幅削减了维护场景下的重复输入成本。
       </div>
     </div>
@@ -89,38 +89,38 @@
 <div class="section">
   <h2>1. 核心总量对比 (Grand Totals)</h2>
   <p style="color:#666; font-size:0.85em;">横向对比 15 轮运行的总消耗。绿色高亮代表该指标在<b>成功运行</b>的任务中表现最优。</p>
-  <table><tr><th>指标</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / gemini-3.1-pro</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / qwen3.5-plus</th></tr><tr><td>总 Token</td><td>26,171,668</td><td>15,889,911</td><td>22,511,192</td><td class="best">10,358,944</td><td>32,838,802</td><td>40,449,340</td></tr>
-<tr><td>Input Token</td><td>20,937,326</td><td>12,711,932</td><td>18,008,916</td><td class="best">8,287,115</td><td>26,270,991</td><td>32,359,459</td></tr>
-<tr><td>Output Token</td><td>4,187,343</td><td>2,542,243</td><td>3,601,645</td><td class="best">1,657,303</td><td>5,254,060</td><td>6,471,730</td></tr>
-<tr><td>Cache Read</td><td>1,046,866</td><td class="best">1,525,431</td><td>1,440,713</td><td>497,226</td><td>1,050,839</td><td>970,783</td></tr>
-<tr><td>总耗时</td><td>3h 13m</td><td>2h 48m</td><td class="best">2h 32m</td><td>2h 55m</td><td>3h 17m</td><td>2h 47m</td></tr>
-<tr><td>总成本 (USD)</td><td>$185.17</td><td>$110.47</td><td>$154.43</td><td class="best">$70.98</td><td>$196.94</td><td>$277.93</td></tr>
-<tr><td>代码行数 (LOC)</td><td>14,946</td><td>14,819</td><td>14,560</td><td>14,386</td><td class="best">15,305</td><td>14,767</td></tr>
-<tr><td>文件数</td><td>80</td><td>80</td><td>79</td><td>78</td><td class="best">81</td><td>79</td></tr>
-<tr><td>API 调用</td><td>1,283</td><td class="best">1,239</td><td>1,499</td><td>1,401</td><td>1,330</td><td>1,459</td></tr>
+  <table><tr><th>指标</th><th>gemini-cli / gemini-3.1-pro</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / qwen3.5-plus</th></tr><tr><td>总 Token</td><td class="best">10,358,944</td><td>26,171,668</td><td>15,889,911</td><td>22,511,192</td><td>32,838,802</td><td>40,449,340</td></tr>
+<tr><td>Input Token</td><td class="best">8,287,115</td><td>20,937,326</td><td>12,711,932</td><td>18,008,916</td><td>26,270,991</td><td>32,359,459</td></tr>
+<tr><td>Output Token</td><td class="best">1,657,303</td><td>4,187,343</td><td>2,542,243</td><td>3,601,645</td><td>5,254,060</td><td>6,471,730</td></tr>
+<tr><td>Cache Read</td><td>497,226</td><td>1,046,866</td><td class="best">1,525,431</td><td>1,440,713</td><td>1,050,839</td><td>970,783</td></tr>
+<tr><td>总耗时</td><td>2h 55m</td><td>3h 13m</td><td>2h 48m</td><td class="best">2h 32m</td><td>3h 17m</td><td>2h 47m</td></tr>
+<tr><td>总成本 (USD)</td><td class="best">$70.98</td><td>$185.17</td><td>$110.47</td><td>$154.43</td><td>$196.94</td><td>$277.93</td></tr>
+<tr><td>代码行数 (LOC)</td><td>14,386</td><td>14,946</td><td>14,819</td><td>14,560</td><td class="best">15,305</td><td>14,767</td></tr>
+<tr><td>文件数</td><td>78</td><td>80</td><td>80</td><td>79</td><td class="best">81</td><td>79</td></tr>
+<tr><td>API 调用</td><td>1,401</td><td>1,283</td><td class="best">1,239</td><td>1,499</td><td>1,330</td><td>1,459</td></tr>
 </table>
 </div>
 
 <div class="section">
   <h2>2. 7 阶段流量分布 (Token 消耗与耗时)</h2>
   <p style="color:#666; font-size:0.85em;">分析 AI 在 SDD 标准工作流各阶段的时间与 Token 投入。上行为 Token 消耗，下行为耗时。</p>
-  <table><tr><th>阶段</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / gemini-3.1-pro</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / qwen3.5-plus</th></tr><tr><td><strong>ST-0</strong><br><small>需求探索与环境初始化</small></td><td>2,093,733<br><small>19m 19s</small></td><td>1,271,192<br><small>16m 51s</small></td><td>1,800,895<br><small>15m 16s</small></td><td class="best">828,715<br><small>17m 34s</small></td><td>2,627,104<br><small>19m 45s</small></td><td>3,235,947<br><small>16m 45s</small></td></tr>
-<tr><td><strong>ST-1</strong><br><small>架构设计与约束对齐</small></td><td>3,140,600<br><small>25m 7s</small></td><td>1,906,789<br><small>21m 54s</small></td><td>2,701,343<br><small>19m 51s</small></td><td class="best">1,243,073<br><small>22m 50s</small></td><td>3,940,656<br><small>25m 40s</small></td><td>4,853,920<br><small>21m 47s</small></td></tr>
-<tr><td><strong>ST-2</strong><br><small>实施方案与依赖图谱</small></td><td>3,664,033<br><small>23m 11s</small></td><td>2,224,587<br><small>20m 13s</small></td><td>3,151,566<br><small>18m 19s</small></td><td class="best">1,450,252<br><small>21m 5s</small></td><td>4,597,432<br><small>23m 42s</small></td><td>5,662,907<br><small>20m 6s</small></td></tr>
-<tr><td><strong>ST-3</strong><br><small>核心逻辑代码编写</small></td><td>5,757,766<br><small>48m 19s</small></td><td>3,495,780<br><small>42m 8s</small></td><td>4,952,462<br><small>38m 11s</small></td><td class="best">2,278,967<br><small>43m 56s</small></td><td>7,224,536<br><small>49m 23s</small></td><td>8,898,854<br><small>41m 53s</small></td></tr>
-<tr><td><strong>ST-4</strong><br><small>辅助模块与胶水代码</small></td><td>4,187,466<br><small>28m 59s</small></td><td>2,542,385<br><small>25m 17s</small></td><td>3,601,790<br><small>22m 54s</small></td><td class="best">1,657,431<br><small>26m 21s</small></td><td>5,254,208<br><small>29m 37s</small></td><td>6,471,894<br><small>25m 8s</small></td></tr>
-<tr><td><strong>ST-5</strong><br><small>单元测试与本地自检</small></td><td>3,140,600<br><small>23m 11s</small></td><td>1,906,789<br><small>20m 13s</small></td><td>2,701,343<br><small>18m 19s</small></td><td class="best">1,243,073<br><small>21m 5s</small></td><td>3,940,656<br><small>23m 42s</small></td><td>4,853,920<br><small>20m 6s</small></td></tr>
-<tr><td><strong>ST-6</strong><br><small>集成校验与Spec比对</small></td><td>2,617,166<br><small>15m 27s</small></td><td>1,588,991<br><small>13m 29s</small></td><td>2,251,119<br><small>12m 13s</small></td><td class="best">1,035,894<br><small>14m 3s</small></td><td>3,283,880<br><small>15m 48s</small></td><td>4,044,934<br><small>13m 24s</small></td></tr>
-<tr><td><strong>ST-7</strong><br><small>文档同步与最终产出</small></td><td>1,570,300<br><small>9m 39s</small></td><td>953,394<br><small>8m 25s</small></td><td>1,350,671<br><small>7m 38s</small></td><td class="best">621,536<br><small>8m 47s</small></td><td>1,970,328<br><small>9m 52s</small></td><td>2,426,960<br><small>8m 22s</small></td></tr>
+  <table><tr><th>阶段</th><th>gemini-cli / gemini-3.1-pro</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / qwen3.5-plus</th></tr><tr><td><strong>ST-0</strong><br><small>需求探索与环境初始化</small></td><td class="best">828,715<br><small>17m 34s</small></td><td>2,093,733<br><small>19m 19s</small></td><td>1,271,192<br><small>16m 51s</small></td><td>1,800,895<br><small>15m 16s</small></td><td>2,627,104<br><small>19m 45s</small></td><td>3,235,947<br><small>16m 45s</small></td></tr>
+<tr><td><strong>ST-1</strong><br><small>架构设计与约束对齐</small></td><td class="best">1,243,073<br><small>22m 50s</small></td><td>3,140,600<br><small>25m 7s</small></td><td>1,906,789<br><small>21m 54s</small></td><td>2,701,343<br><small>19m 51s</small></td><td>3,940,656<br><small>25m 40s</small></td><td>4,853,920<br><small>21m 47s</small></td></tr>
+<tr><td><strong>ST-2</strong><br><small>实施方案与依赖图谱</small></td><td class="best">1,450,252<br><small>21m 5s</small></td><td>3,664,033<br><small>23m 11s</small></td><td>2,224,587<br><small>20m 13s</small></td><td>3,151,566<br><small>18m 19s</small></td><td>4,597,432<br><small>23m 42s</small></td><td>5,662,907<br><small>20m 6s</small></td></tr>
+<tr><td><strong>ST-3</strong><br><small>核心逻辑代码编写</small></td><td class="best">2,278,967<br><small>43m 56s</small></td><td>5,757,766<br><small>48m 19s</small></td><td>3,495,780<br><small>42m 8s</small></td><td>4,952,462<br><small>38m 11s</small></td><td>7,224,536<br><small>49m 23s</small></td><td>8,898,854<br><small>41m 53s</small></td></tr>
+<tr><td><strong>ST-4</strong><br><small>辅助模块与胶水代码</small></td><td class="best">1,657,431<br><small>26m 21s</small></td><td>4,187,466<br><small>28m 59s</small></td><td>2,542,385<br><small>25m 17s</small></td><td>3,601,790<br><small>22m 54s</small></td><td>5,254,208<br><small>29m 37s</small></td><td>6,471,894<br><small>25m 8s</small></td></tr>
+<tr><td><strong>ST-5</strong><br><small>单元测试与本地自检</small></td><td class="best">1,243,073<br><small>21m 5s</small></td><td>3,140,600<br><small>23m 11s</small></td><td>1,906,789<br><small>20m 13s</small></td><td>2,701,343<br><small>18m 19s</small></td><td>3,940,656<br><small>23m 42s</small></td><td>4,853,920<br><small>20m 6s</small></td></tr>
+<tr><td><strong>ST-6</strong><br><small>集成校验与Spec比对</small></td><td class="best">1,035,894<br><small>14m 3s</small></td><td>2,617,166<br><small>15m 27s</small></td><td>1,588,991<br><small>13m 29s</small></td><td>2,251,119<br><small>12m 13s</small></td><td>3,283,880<br><small>15m 48s</small></td><td>4,044,934<br><small>13m 24s</small></td></tr>
+<tr><td><strong>ST-7</strong><br><small>文档同步与最终产出</small></td><td class="best">621,536<br><small>8m 47s</small></td><td>1,570,300<br><small>9m 39s</small></td><td>953,394<br><small>8m 25s</small></td><td>1,350,671<br><small>7m 38s</small></td><td>1,970,328<br><small>9m 52s</small></td><td>2,426,960<br><small>8m 22s</small></td></tr>
 </table>
 </div>
 
 <div class="section">
   <h2>3. 效率与质量深度审计 (Efficiency & Quality)</h2>
-  <table><tr><th>指标</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / gemini-3.1-pro</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / qwen3.5-plus</th></tr><tr><td>ET-LOC (Token/行)</td><td>229.4</td><td>136.9</td><td>203.8</td><td class="best">94.9</td><td>283.0</td><td>382.3</td></tr>
-<tr><td>Cache 命中率</td><td>5.0%</td><td class="best">12.0%</td><td>8.0%</td><td>6.0%</td><td>4.0%</td><td>3.0%</td></tr>
-<tr><td>代码可用率</td><td>75.1%</td><td>84.1%</td><td>76.1%</td><td class="best">89.1%</td><td>75.1%</td><td>75.1%</td></tr>
-<tr><td>一致性评分</td><td>72.1%</td><td>80.1%</td><td>75.1%</td><td class="best">81.1%</td><td>71.1%</td><td>69.1%</td></tr>
+  <table><tr><th>指标</th><th>gemini-cli / gemini-3.1-pro</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / glm-4.7</th><th>opencode-cli / qwen3.5-plus</th></tr><tr><td>ET-LOC (Token/行)</td><td class="best">94.9</td><td>229.4</td><td>136.9</td><td>203.8</td><td>283.0</td><td>382.3</td></tr>
+<tr><td>Cache 命中率</td><td>6.0%</td><td>5.0%</td><td class="best">12.0%</td><td>8.0%</td><td>4.0%</td><td>3.0%</td></tr>
+<tr><td>代码可用率</td><td class="best">89.1%</td><td>75.1%</td><td>84.1%</td><td>76.1%</td><td>75.1%</td><td>75.1%</td></tr>
+<tr><td>一致性评分</td><td class="best">81.1%</td><td>72.1%</td><td>80.1%</td><td>75.1%</td><td>71.1%</td><td>69.1%</td></tr>
 </table>
 </div>
 

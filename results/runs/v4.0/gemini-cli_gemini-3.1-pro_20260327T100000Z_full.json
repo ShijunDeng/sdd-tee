@@ -2,7 +2,7 @@
   "meta": {
     "generated_at": "2026-03-24T15:28:51.179463+00:00",
     "run_id": "gemini-cli_gemini-3.1-pro_20260327T100000Z",
-    "tool": "opencode-cli",
+    "tool": "gemini-cli",
     "model": "gemini-3.1-pro",
     "methodology": "Spec-Driven Development (SDD) 7-Stage Pipeline",
     "token_tracking": "telemetry-audit",
