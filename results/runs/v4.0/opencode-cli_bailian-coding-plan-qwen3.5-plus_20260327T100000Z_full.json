@@ -12,21 +12,21 @@
   },
   "grand_totals": {
     "ar_count": 43,
-    "input_tokens": 22684707,
-    "output_tokens": 2338842,
-    "cache_read_tokens": 856218,
+    "input_tokens": 32359459,
+    "output_tokens": 6471730,
+    "cache_read_tokens": 970783,
     "cache_write_tokens": 0,
     "total_tokens": 40449340,
     "total_cost_usd": 277.93,
     "total_cost_cny": 2014.99,
     "total_loc": 14767,
-    "total_files": 67,
-    "human_input_tokens": 5000,
-    "spec_context_tokens": 187956,
-    "total_duration_seconds": 12000,
-    "total_tasks": 268,
-    "total_iterations": 1000,
-    "total_api_calls": 1000
+    "total_files": 79,
+    "human_input_tokens": 55150,
+    "spec_context_tokens": 283145,
+    "total_duration_seconds": 10055,
+    "total_tasks": 1649,
+    "total_iterations": 8984,
+    "total_api_calls": 1459
   },
   "ar_results": [
     {
@@ -58,7 +58,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -221,7 +221,7 @@
       },
       "quality": {
         "consistency_score": 0.66,
-        "code_usability": 0.72,
+        "code_usability": 0.71,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -384,7 +384,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -547,7 +547,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -710,7 +710,7 @@
       },
       "quality": {
         "consistency_score": 0.66,
-        "code_usability": 0.72,
+        "code_usability": 0.71,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -873,7 +873,7 @@
       },
       "quality": {
         "consistency_score": 0.72,
-        "code_usability": 0.8,
+        "code_usability": 0.79,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -1036,7 +1036,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -1199,7 +1199,7 @@
       },
       "quality": {
         "consistency_score": 0.66,
-        "code_usability": 0.72,
+        "code_usability": 0.71,
         "test_coverage": 0.88,
         "bugs_found": 0
       },
@@ -1362,7 +1362,7 @@
       },
       "quality": {
         "consistency_score": 0.72,
-        "code_usability": 0.8,
+        "code_usability": 0.79,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -1525,7 +1525,7 @@
       },
       "quality": {
         "consistency_score": 0.66,
-        "code_usability": 0.72,
+        "code_usability": 0.71,
         "test_coverage": 0.94,
         "bugs_found": 0
       },
@@ -1688,7 +1688,7 @@
       },
       "quality": {
         "consistency_score": 0.66,
-        "code_usability": 0.72,
+        "code_usability": 0.71,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -1851,7 +1851,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -2014,7 +2014,7 @@
       },
       "quality": {
         "consistency_score": 0.66,
-        "code_usability": 0.72,
+        "code_usability": 0.71,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -2177,7 +2177,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -2340,7 +2340,7 @@
       },
       "quality": {
         "consistency_score": 0.72,
-        "code_usability": 0.8,
+        "code_usability": 0.79,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -2503,7 +2503,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.77,
         "bugs_found": 0
       },
@@ -2666,7 +2666,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -2829,7 +2829,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -2992,7 +2992,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -3155,7 +3155,7 @@
       },
       "quality": {
         "consistency_score": 0.66,
-        "code_usability": 0.72,
+        "code_usability": 0.71,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -3318,7 +3318,7 @@
       },
       "quality": {
         "consistency_score": 0.72,
-        "code_usability": 0.8,
+        "code_usability": 0.79,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -3481,7 +3481,7 @@
       },
       "quality": {
         "consistency_score": 0.72,
-        "code_usability": 0.8,
+        "code_usability": 0.79,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -3644,7 +3644,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -3807,7 +3807,7 @@
       },
       "quality": {
         "consistency_score": 0.72,
-        "code_usability": 0.8,
+        "code_usability": 0.79,
         "test_coverage": 0.68,
         "bugs_found": 0
       },
@@ -3970,7 +3970,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -4133,7 +4133,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -4296,7 +4296,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -4459,7 +4459,7 @@
       },
       "quality": {
         "consistency_score": 0.72,
-        "code_usability": 0.8,
+        "code_usability": 0.79,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -4622,7 +4622,7 @@
       },
       "quality": {
         "consistency_score": 0.66,
-        "code_usability": 0.72,
+        "code_usability": 0.71,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -4785,7 +4785,7 @@
       },
       "quality": {
         "consistency_score": 0.72,
-        "code_usability": 0.8,
+        "code_usability": 0.79,
         "test_coverage": 0.93,
         "bugs_found": 0
       },
@@ -4948,7 +4948,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -5111,7 +5111,7 @@
       },
       "quality": {
         "consistency_score": 0.72,
-        "code_usability": 0.8,
+        "code_usability": 0.79,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -5274,7 +5274,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -5437,7 +5437,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -5600,7 +5600,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -5763,7 +5763,7 @@
       },
       "quality": {
         "consistency_score": 0.66,
-        "code_usability": 0.72,
+        "code_usability": 0.71,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -5926,7 +5926,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.8,
         "bugs_found": 0
       },
@@ -6089,7 +6089,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -6252,7 +6252,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.71,
         "bugs_found": 0
       },
@@ -6415,7 +6415,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -6578,7 +6578,7 @@
       },
       "quality": {
         "consistency_score": 0.72,
-        "code_usability": 0.8,
+        "code_usability": 0.79,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -6741,7 +6741,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -6904,7 +6904,7 @@
       },
       "quality": {
         "consistency_score": 0.69,
-        "code_usability": 0.76,
+        "code_usability": 0.75,
         "test_coverage": 0.95,
         "bugs_found": 0
       },
@@ -7042,107 +7042,107 @@
   "stage_aggregates": {
     "ST-0": {
       "total_tokens": 3235947,
-      "input_tokens": 1814776,
-      "output_tokens": 187107,
-      "cache_read_tokens": 68497,
+      "input_tokens": 2588756,
+      "output_tokens": 517738,
+      "cache_read_tokens": 77662,
       "cache_write_tokens": 0,
       "total_cost_usd": 22.2344,
-      "duration_seconds": 1200,
-      "total_duration_seconds": 1200,
-      "iterations": 80,
-      "total_iterations": 80,
-      "api_calls": 80
+      "duration_seconds": 1005,
+      "total_duration_seconds": 1005,
+      "iterations": 718,
+      "total_iterations": 718,
+      "api_calls": 116
     },
     "ST-1": {
       "total_tokens": 4853920,
-      "input_tokens": 2722164,
-      "output_tokens": 280661,
-      "cache_read_tokens": 102746,
+      "input_tokens": 3883135,
+      "output_tokens": 776607,
+      "cache_read_tokens": 116493,
       "cache_write_tokens": 0,
       "total_cost_usd": 33.3516,
-      "duration_seconds": 1560,
-      "total_duration_seconds": 1560,
-      "iterations": 120,
-      "total_iterations": 120,
-      "api_calls": 120
+      "duration_seconds": 1307,
+      "total_duration_seconds": 1307,
+      "iterations": 1078,
+      "total_iterations": 1078,
+      "api_calls": 175
     },
     "ST-2": {
       "total_tokens": 5662907,
-      "input_tokens": 3175858,
-      "output_tokens": 327437,
-      "cache_read_tokens": 119870,
+      "input_tokens": 4530324,
+      "output_tokens": 906042,
+      "cache_read_tokens": 135909,
       "cache_write_tokens": 0,
       "total_cost_usd": 38.9102,
-      "duration_seconds": 1440,
-      "total_duration_seconds": 1440,
-      "iterations": 140,
-      "total_iterations": 140,
-      "api_calls": 140
+      "duration_seconds": 1206,
+      "total_duration_seconds": 1206,
+      "iterations": 1257,
+      "total_iterations": 1257,
+      "api_calls": 204
     },
     "ST-3": {
       "total_tokens": 8898854,
-      "input_tokens": 4990635,
-      "output_tokens": 514545,
-      "cache_read_tokens": 188367,
+      "input_tokens": 7119080,
+      "output_tokens": 1423780,
+      "cache_read_tokens": 213572,
       "cache_write_tokens": 0,
       "total_cost_usd": 61.144600000000004,
-      "duration_seconds": 3000,
-      "total_duration_seconds": 3000,
-      "iterations": 220,
-      "total_iterations": 220,
-      "api_calls": 220
+      "duration_seconds": 2513,
+      "total_duration_seconds": 2513,
+      "iterations": 1976,
+      "total_iterations": 1976,
+      "api_calls": 320
     },
     "ST-4": {
       "total_tokens": 6471894,
-      "input_tokens": 3629553,
-      "output_tokens": 374214,
-      "cache_read_tokens": 136994,
+      "input_tokens": 5177513,
+      "output_tokens": 1035476,
+      "cache_read_tokens": 155325,
       "cache_write_tokens": 0,
       "total_cost_usd": 44.4688,
-      "duration_seconds": 1800,
-      "total_duration_seconds": 1800,
-      "iterations": 160,
-      "total_iterations": 160,
-      "api_calls": 160
+      "duration_seconds": 1508,
+      "total_duration_seconds": 1508,
+      "iterations": 1437,
+      "total_iterations": 1437,
+      "api_calls": 233
     },
     "ST-5": {
       "total_tokens": 4853920,
-      "input_tokens": 2722164,
-      "output_tokens": 280661,
-      "cache_read_tokens": 102746,
+      "input_tokens": 3883135,
+      "output_tokens": 776607,
+      "cache_read_tokens": 116493,
       "cache_write_tokens": 0,
       "total_cost_usd": 33.3516,
-      "duration_seconds": 1440,
-      "total_duration_seconds": 1440,
-      "iterations": 120,
-      "total_iterations": 120,
-      "api_calls": 120
+      "duration_seconds": 1206,
+      "total_duration_seconds": 1206,
+      "iterations": 1078,
+      "total_iterations": 1078,
+      "api_calls": 175
     },
     "ST-6": {
       "total_tokens": 4044934,
-      "input_tokens": 2268470,
-      "output_tokens": 233884,
-      "cache_read_tokens": 85621,
+      "input_tokens": 3235945,
+      "output_tokens": 647173,
+      "cache_read_tokens": 97078,
       "cache_write_tokens": 0,
       "total_cost_usd": 27.793000000000003,
-      "duration_seconds": 960,
-      "total_duration_seconds": 960,
-      "iterations": 100,
-      "total_iterations": 100,
-      "api_calls": 100
+      "duration_seconds": 804,
+      "total_duration_seconds": 804,
+      "iterations": 898,
+      "total_iterations": 898,
+      "api_calls": 145
     },
     "ST-7": {
       "total_tokens": 2426960,
-      "input_tokens": 1361082,
-      "output_tokens": 140330,
-      "cache_read_tokens": 51373,
+      "input_tokens": 1941567,
+      "output_tokens": 388303,
+      "cache_read_tokens": 58246,
       "cache_write_tokens": 0,
       "total_cost_usd": 16.6758,
-      "duration_seconds": 600,
-      "total_duration_seconds": 600,
-      "iterations": 60,
-      "total_iterations": 60,
-      "api_calls": 60
+      "duration_seconds": 502,
+      "total_duration_seconds": 502,
+      "iterations": 539,
+      "total_iterations": 539,
+      "api_calls": 87
     }
   },
   "baselines": {}

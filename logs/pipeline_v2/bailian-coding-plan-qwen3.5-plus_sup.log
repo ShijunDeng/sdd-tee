@@ -1,0 +1,19 @@
+[v4.0 Guard] Monitoring Evaluation Engine (PID: 414185)...
+[v4.0 Guard] Initial execution rounds completed.
+[v4.0 Guard] Self-Healing Iteration 1/ 2...
+  Checking Go build & tests in /home/dsj/benchmark/workspaces/v4.0/opencode-cli_bailian-coding-plan-qwen3.5-plus_20260326T211405Z...
+[v4.0 Guard] Validation PASSED. No healing required.
+[v4.0 Guard] Starting Precision Token Audit (v4.0 Sum-of-Turns)...
+Run: opencode-cli_bailian-coding-plan-glm-5_20260326T115802Z
+  - Real Input: 2,714,974
+  - Real Output: 247,264
+  - Real Cache: 15,449,436
+  - TOTAL: 18,411,674
+Run: opencode-cli_bailian-coding-plan-kimi-k2.5_20260325T161014Z
+  - Real Input: 1,059,236
+  - Real Output: 294,774
+  - Real Cache: 22,404,817
+  - TOTAL: 23,758,827
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+ImportError: cannot import name 'audit_tokens_cumulative' from 'token_audit_v4' (/home/dsj/benchmark/scripts/utils/token_audit_v4.py)

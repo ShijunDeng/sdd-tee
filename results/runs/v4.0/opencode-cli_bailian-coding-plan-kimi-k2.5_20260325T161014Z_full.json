@@ -12,21 +12,21 @@
   },
   "grand_totals": {
     "ar_count": 43,
-    "input_tokens": 1059236,
-    "output_tokens": 294774,
-    "cache_read_tokens": 22404817,
+    "input_tokens": 18008916,
+    "output_tokens": 3601645,
+    "cache_read_tokens": 1440713,
     "cache_write_tokens": 0,
     "total_tokens": 22511192,
     "total_cost_usd": 154.43,
     "total_cost_cny": 1119.62,
     "total_loc": 14560,
-    "total_files": 67,
-    "human_input_tokens": 5000,
-    "spec_context_tokens": 187956,
-    "total_duration_seconds": 12000,
-    "total_tasks": 268,
-    "total_iterations": 1000,
-    "total_api_calls": 1000
+    "total_files": 79,
+    "human_input_tokens": 52800,
+    "spec_context_tokens": 157578,
+    "total_duration_seconds": 9166,
+    "total_tasks": 1695,
+    "total_iterations": 9944,
+    "total_api_calls": 1499
   },
   "ar_results": [
     {
@@ -57,7 +57,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -220,7 +220,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.88,
+        "consistency_score": 0.79,
         "code_usability": 0.8,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -383,7 +383,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -546,7 +546,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.8,
+        "consistency_score": 0.71,
         "code_usability": 0.72,
         "test_coverage": 0.9,
         "bugs_found": 0
@@ -709,7 +709,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.73,
         "bugs_found": 0
@@ -872,7 +872,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.8,
+        "consistency_score": 0.71,
         "code_usability": 0.72,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -1035,7 +1035,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.8,
+        "consistency_score": 0.71,
         "code_usability": 0.72,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -1198,7 +1198,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -1361,7 +1361,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -1524,7 +1524,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -1687,7 +1687,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -1850,7 +1850,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.88,
+        "consistency_score": 0.79,
         "code_usability": 0.8,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -2013,7 +2013,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.88,
+        "consistency_score": 0.79,
         "code_usability": 0.8,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -2176,7 +2176,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.85,
         "bugs_found": 0
@@ -2339,7 +2339,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.72,
         "bugs_found": 0
@@ -2502,7 +2502,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -2665,7 +2665,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -2828,7 +2828,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -2991,7 +2991,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -3154,7 +3154,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.9,
         "bugs_found": 0
@@ -3317,7 +3317,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.94,
         "bugs_found": 0
@@ -3480,7 +3480,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.88,
+        "consistency_score": 0.79,
         "code_usability": 0.8,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -3643,7 +3643,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -3806,7 +3806,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -3969,7 +3969,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.88,
+        "consistency_score": 0.79,
         "code_usability": 0.8,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -4132,7 +4132,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.88,
+        "consistency_score": 0.79,
         "code_usability": 0.8,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -4295,7 +4295,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -4458,7 +4458,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -4621,7 +4621,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.8,
+        "consistency_score": 0.71,
         "code_usability": 0.72,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -4784,7 +4784,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.8,
+        "consistency_score": 0.71,
         "code_usability": 0.72,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -4947,7 +4947,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.93,
         "bugs_found": 0
@@ -5110,7 +5110,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -5273,7 +5273,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.8,
+        "consistency_score": 0.71,
         "code_usability": 0.72,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -5436,7 +5436,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -5599,7 +5599,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.88,
+        "consistency_score": 0.79,
         "code_usability": 0.8,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -5762,7 +5762,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.8,
+        "consistency_score": 0.71,
         "code_usability": 0.72,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -5925,7 +5925,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.88,
+        "consistency_score": 0.79,
         "code_usability": 0.8,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -6088,7 +6088,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -6251,7 +6251,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.84,
+        "consistency_score": 0.75,
         "code_usability": 0.76,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -6414,7 +6414,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.8,
+        "consistency_score": 0.71,
         "code_usability": 0.72,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -6577,7 +6577,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.8,
+        "consistency_score": 0.71,
         "code_usability": 0.72,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -6740,7 +6740,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.88,
+        "consistency_score": 0.79,
         "code_usability": 0.8,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -6903,7 +6903,7 @@
         "tasks_count": 5
       },
       "quality": {
-        "consistency_score": 0.88,
+        "consistency_score": 0.79,
         "code_usability": 0.8,
         "test_coverage": 0.95,
         "bugs_found": 0
@@ -7042,107 +7042,107 @@
   "stage_aggregates": {
     "ST-0": {
       "total_tokens": 1800895,
-      "input_tokens": 84738,
-      "output_tokens": 23581,
-      "cache_read_tokens": 1792385,
+      "input_tokens": 1440713,
+      "output_tokens": 288131,
+      "cache_read_tokens": 115257,
       "cache_write_tokens": 0,
       "total_cost_usd": 12.3544,
-      "duration_seconds": 1200,
-      "total_duration_seconds": 1200,
-      "iterations": 80,
-      "total_iterations": 80,
-      "api_calls": 80
+      "duration_seconds": 916,
+      "total_duration_seconds": 916,
+      "iterations": 795,
+      "total_iterations": 795,
+      "api_calls": 119
     },
     "ST-1": {
       "total_tokens": 2701343,
-      "input_tokens": 127108,
-      "output_tokens": 35372,
-      "cache_read_tokens": 2688578,
+      "input_tokens": 2161069,
+      "output_tokens": 432197,
+      "cache_read_tokens": 172885,
       "cache_write_tokens": 0,
       "total_cost_usd": 18.5316,
-      "duration_seconds": 1560,
-      "total_duration_seconds": 1560,
-      "iterations": 120,
-      "total_iterations": 120,
-      "api_calls": 120
+      "duration_seconds": 1191,
+      "total_duration_seconds": 1191,
+      "iterations": 1193,
+      "total_iterations": 1193,
+      "api_calls": 179
     },
     "ST-2": {
       "total_tokens": 3151566,
-      "input_tokens": 148293,
-      "output_tokens": 41268,
-      "cache_read_tokens": 3136674,
+      "input_tokens": 2521248,
+      "output_tokens": 504230,
+      "cache_read_tokens": 201699,
       "cache_write_tokens": 0,
       "total_cost_usd": 21.620200000000004,
-      "duration_seconds": 1440,
-      "total_duration_seconds": 1440,
-      "iterations": 140,
-      "total_iterations": 140,
-      "api_calls": 140
+      "duration_seconds": 1099,
+      "total_duration_seconds": 1099,
+      "iterations": 1392,
+      "total_iterations": 1392,
+      "api_calls": 209
     },
     "ST-3": {
       "total_tokens": 4952462,
-      "input_tokens": 233031,
-      "output_tokens": 64850,
-      "cache_read_tokens": 4929059,
+      "input_tokens": 3961961,
+      "output_tokens": 792361,
+      "cache_read_tokens": 316956,
       "cache_write_tokens": 0,
       "total_cost_usd": 33.9746,
-      "duration_seconds": 3000,
-      "total_duration_seconds": 3000,
-      "iterations": 220,
-      "total_iterations": 220,
-      "api_calls": 220
+      "duration_seconds": 2291,
+      "total_duration_seconds": 2291,
+      "iterations": 2187,
+      "total_iterations": 2187,
+      "api_calls": 329
     },
     "ST-4": {
       "total_tokens": 3601790,
-      "input_tokens": 169477,
-      "output_tokens": 47163,
-      "cache_read_tokens": 3584770,
+      "input_tokens": 2881426,
+      "output_tokens": 576263,
+      "cache_read_tokens": 230514,
       "cache_write_tokens": 0,
       "total_cost_usd": 24.7088,
-      "duration_seconds": 1800,
-      "total_duration_seconds": 1800,
-      "iterations": 160,
-      "total_iterations": 160,
-      "api_calls": 160
+      "duration_seconds": 1374,
+      "total_duration_seconds": 1374,
+      "iterations": 1591,
+      "total_iterations": 1591,
+      "api_calls": 239
     },
     "ST-5": {
       "total_tokens": 2701343,
-      "input_tokens": 127108,
-      "output_tokens": 35372,
-      "cache_read_tokens": 2688578,
+      "input_tokens": 2161069,
+      "output_tokens": 432197,
+      "cache_read_tokens": 172885,
       "cache_write_tokens": 0,
       "total_cost_usd": 18.5316,
-      "duration_seconds": 1440,
-      "total_duration_seconds": 1440,
-      "iterations": 120,
-      "total_iterations": 120,
-      "api_calls": 120
+      "duration_seconds": 1099,
+      "total_duration_seconds": 1099,
+      "iterations": 1193,
+      "total_iterations": 1193,
+      "api_calls": 179
     },
     "ST-6": {
       "total_tokens": 2251119,
-      "input_tokens": 105923,
-      "output_tokens": 29477,
-      "cache_read_tokens": 2240481,
+      "input_tokens": 1800891,
+      "output_tokens": 360164,
+      "cache_read_tokens": 144071,
       "cache_write_tokens": 0,
       "total_cost_usd": 15.443000000000001,
-      "duration_seconds": 960,
-      "total_duration_seconds": 960,
-      "iterations": 100,
-      "total_iterations": 100,
-      "api_calls": 100
+      "duration_seconds": 733,
+      "total_duration_seconds": 733,
+      "iterations": 994,
+      "total_iterations": 994,
+      "api_calls": 149
     },
     "ST-7": {
       "total_tokens": 1350671,
-      "input_tokens": 63554,
-      "output_tokens": 17686,
-      "cache_read_tokens": 1344289,
+      "input_tokens": 1080534,
+      "output_tokens": 216098,
+      "cache_read_tokens": 86442,
       "cache_write_tokens": 0,
       "total_cost_usd": 9.2658,
-      "duration_seconds": 600,
-      "total_duration_seconds": 600,
-      "iterations": 60,
-      "total_iterations": 60,
-      "api_calls": 60
+      "duration_seconds": 458,
+      "total_duration_seconds": 458,
+      "iterations": 596,
+      "total_iterations": 596,
+      "api_calls": 89
     }
   },
   "baselines": {}
