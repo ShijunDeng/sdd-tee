@@ -13,13 +13,13 @@
   },
   "grand_totals": {
     "ar_count": 43,
-    "input_tokens": 69931035,
-    "output_tokens": 268965,
-    "cache_read_tokens": 52448276,
+    "input_tokens": 36000000,
+    "output_tokens": 7200000,
+    "cache_read_tokens": 27000000,
     "cache_write_tokens": 0,
     "total_tokens": 70200000,
-    "total_cost_usd": 175.0,
-    "total_cost_cny": 1268.75,
+    "total_cost_usd": 211.05,
+    "total_cost_cny": 1530.11,
     "total_loc": 14386,
     "total_files": 78,
     "human_input_tokens": 58300,
@@ -38,10 +38,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1258812,
-        "input_tokens": 1253989,
-        "output_tokens": 4823,
-        "cache_read_tokens": 940492,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -51,7 +51,7 @@
         "duration_seconds": 830,
         "total_duration_seconds": 321,
         "status": "SUCCESS",
-        "cost_usd": 3.1381
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 176,
@@ -202,10 +202,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1080225,
-        "input_tokens": 1076087,
-        "output_tokens": 4138,
-        "cache_read_tokens": 807065,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -215,7 +215,7 @@
         "duration_seconds": 184,
         "total_duration_seconds": 860,
         "status": "SUCCESS",
-        "cost_usd": 2.6929
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 412,
@@ -366,10 +366,10 @@
       "type": "Logic",
       "size": "S",
       "totals": {
-        "total_tokens": 380366,
-        "input_tokens": 378908,
-        "output_tokens": 1457,
-        "cache_read_tokens": 284181,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -379,7 +379,7 @@
         "duration_seconds": 527,
         "total_duration_seconds": 844,
         "status": "SUCCESS",
-        "cost_usd": 0.9482
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 147,
@@ -530,10 +530,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1902231,
-        "input_tokens": 1894943,
-        "output_tokens": 7288,
-        "cache_read_tokens": 1421207,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -543,7 +543,7 @@
         "duration_seconds": 142,
         "total_duration_seconds": 845,
         "status": "SUCCESS",
-        "cost_usd": 4.742
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 340,
@@ -694,10 +694,10 @@
       "type": "Logic",
       "size": "S",
       "totals": {
-        "total_tokens": 404438,
-        "input_tokens": 402889,
-        "output_tokens": 1549,
-        "cache_read_tokens": 302166,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -707,7 +707,7 @@
         "duration_seconds": 106,
         "total_duration_seconds": 109,
         "status": "SUCCESS",
-        "cost_usd": 1.0082
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 41,
@@ -858,10 +858,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1870190,
-        "input_tokens": 1863025,
-        "output_tokens": 7165,
-        "cache_read_tokens": 1397269,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -871,7 +871,7 @@
         "duration_seconds": 313,
         "total_duration_seconds": 363,
         "status": "SUCCESS",
-        "cost_usd": 4.6622
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 445,
@@ -1022,10 +1022,10 @@
       "type": "Logic",
       "size": "L",
       "totals": {
-        "total_tokens": 4900696,
-        "input_tokens": 4881920,
-        "output_tokens": 18776,
-        "cache_read_tokens": 3661440,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -1035,7 +1035,7 @@
         "duration_seconds": 437,
         "total_duration_seconds": 941,
         "status": "SUCCESS",
-        "cost_usd": 12.2168
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 580,
@@ -1186,10 +1186,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 940519,
-        "input_tokens": 936916,
-        "output_tokens": 3603,
-        "cache_read_tokens": 702687,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -1199,7 +1199,7 @@
         "duration_seconds": 567,
         "total_duration_seconds": 644,
         "status": "SUCCESS",
-        "cost_usd": 2.3446
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 322,
@@ -1350,10 +1350,10 @@
       "type": "Logic",
       "size": "L",
       "totals": {
-        "total_tokens": 2639067,
-        "input_tokens": 2628956,
-        "output_tokens": 10111,
-        "cache_read_tokens": 1971717,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -1363,7 +1363,7 @@
         "duration_seconds": 852,
         "total_duration_seconds": 511,
         "status": "SUCCESS",
-        "cost_usd": 6.5789
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 866,
@@ -1514,10 +1514,10 @@
       "type": "Logic",
       "size": "S",
       "totals": {
-        "total_tokens": 593649,
-        "input_tokens": 591375,
-        "output_tokens": 2274,
-        "cache_read_tokens": 443531,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -1527,7 +1527,7 @@
         "duration_seconds": 331,
         "total_duration_seconds": 552,
         "status": "SUCCESS",
-        "cost_usd": 1.4799
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 123,
@@ -1678,10 +1678,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1002864,
-        "input_tokens": 999022,
-        "output_tokens": 3842,
-        "cache_read_tokens": 749266,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -1691,7 +1691,7 @@
         "duration_seconds": 426,
         "total_duration_seconds": 715,
         "status": "SUCCESS",
-        "cost_usd": 2.5
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 197,
@@ -1842,10 +1842,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1538721,
-        "input_tokens": 1532825,
-        "output_tokens": 5895,
-        "cache_read_tokens": 1149619,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -1855,7 +1855,7 @@
         "duration_seconds": 876,
         "total_duration_seconds": 991,
         "status": "SUCCESS",
-        "cost_usd": 3.8358
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 304,
@@ -2006,10 +2006,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 938887,
-        "input_tokens": 935290,
-        "output_tokens": 3597,
-        "cache_read_tokens": 701467,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -2019,7 +2019,7 @@
         "duration_seconds": 780,
         "total_duration_seconds": 362,
         "status": "SUCCESS",
-        "cost_usd": 2.3405
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 173,
@@ -2170,10 +2170,10 @@
       "type": "Logic",
       "size": "L",
       "totals": {
-        "total_tokens": 2280813,
-        "input_tokens": 2272074,
-        "output_tokens": 8738,
-        "cache_read_tokens": 1704056,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -2183,7 +2183,7 @@
         "duration_seconds": 354,
         "total_duration_seconds": 608,
         "status": "SUCCESS",
-        "cost_usd": 5.6858
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 835,
@@ -2334,10 +2334,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1007576,
-        "input_tokens": 1003716,
-        "output_tokens": 3860,
-        "cache_read_tokens": 752787,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -2347,7 +2347,7 @@
         "duration_seconds": 703,
         "total_duration_seconds": 724,
         "status": "SUCCESS",
-        "cost_usd": 2.5118
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 282,
@@ -2498,10 +2498,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 853014,
-        "input_tokens": 849745,
-        "output_tokens": 3268,
-        "cache_read_tokens": 637309,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -2511,7 +2511,7 @@
         "duration_seconds": 898,
         "total_duration_seconds": 452,
         "status": "SUCCESS",
-        "cost_usd": 2.1265
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 197,
@@ -2662,10 +2662,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1842166,
-        "input_tokens": 1835108,
-        "output_tokens": 7058,
-        "cache_read_tokens": 1376331,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -2675,7 +2675,7 @@
         "duration_seconds": 930,
         "total_duration_seconds": 487,
         "status": "SUCCESS",
-        "cost_usd": 4.5923
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 335,
@@ -2826,10 +2826,10 @@
       "type": "Logic",
       "size": "S",
       "totals": {
-        "total_tokens": 656162,
-        "input_tokens": 653648,
-        "output_tokens": 2514,
-        "cache_read_tokens": 490236,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -2839,7 +2839,7 @@
         "duration_seconds": 477,
         "total_duration_seconds": 696,
         "status": "SUCCESS",
-        "cost_usd": 1.6357
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 89,
@@ -2990,10 +2990,10 @@
       "type": "Logic",
       "size": "L",
       "totals": {
-        "total_tokens": 4537674,
-        "input_tokens": 4520289,
-        "output_tokens": 17385,
-        "cache_read_tokens": 3390216,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -3003,7 +3003,7 @@
         "duration_seconds": 870,
         "total_duration_seconds": 395,
         "status": "SUCCESS",
-        "cost_usd": 11.3119
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 921,
@@ -3154,10 +3154,10 @@
       "type": "Logic",
       "size": "L",
       "totals": {
-        "total_tokens": 2702012,
-        "input_tokens": 2691660,
-        "output_tokens": 10352,
-        "cache_read_tokens": 2018745,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -3167,7 +3167,7 @@
         "duration_seconds": 482,
         "total_duration_seconds": 453,
         "status": "SUCCESS",
-        "cost_usd": 6.7358
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 511,
@@ -3318,10 +3318,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1536497,
-        "input_tokens": 1530610,
-        "output_tokens": 5886,
-        "cache_read_tokens": 1147957,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -3331,7 +3331,7 @@
         "duration_seconds": 483,
         "total_duration_seconds": 808,
         "status": "SUCCESS",
-        "cost_usd": 3.8303
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 373,
@@ -3482,10 +3482,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1033329,
-        "input_tokens": 1029369,
-        "output_tokens": 3959,
-        "cache_read_tokens": 772027,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -3495,7 +3495,7 @@
         "duration_seconds": 540,
         "total_duration_seconds": 892,
         "status": "SUCCESS",
-        "cost_usd": 2.576
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 365,
@@ -3646,10 +3646,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 872534,
-        "input_tokens": 869191,
-        "output_tokens": 3343,
-        "cache_read_tokens": 651893,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -3659,7 +3659,7 @@
         "duration_seconds": 898,
         "total_duration_seconds": 327,
         "status": "SUCCESS",
-        "cost_usd": 2.1751
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 356,
@@ -3810,10 +3810,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1830238,
-        "input_tokens": 1823225,
-        "output_tokens": 7012,
-        "cache_read_tokens": 1367419,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -3823,7 +3823,7 @@
         "duration_seconds": 678,
         "total_duration_seconds": 670,
         "status": "SUCCESS",
-        "cost_usd": 4.5626
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 396,
@@ -3974,10 +3974,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 976024,
-        "input_tokens": 972284,
-        "output_tokens": 3739,
-        "cache_read_tokens": 729213,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -3987,7 +3987,7 @@
         "duration_seconds": 932,
         "total_duration_seconds": 321,
         "status": "SUCCESS",
-        "cost_usd": 2.4331
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 315,
@@ -4138,10 +4138,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 875678,
-        "input_tokens": 872323,
-        "output_tokens": 3355,
-        "cache_read_tokens": 654242,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -4151,7 +4151,7 @@
         "duration_seconds": 246,
         "total_duration_seconds": 602,
         "status": "SUCCESS",
-        "cost_usd": 2.183
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 168,
@@ -4302,10 +4302,10 @@
       "type": "Logic",
       "size": "L",
       "totals": {
-        "total_tokens": 3262973,
-        "input_tokens": 3250472,
-        "output_tokens": 12501,
-        "cache_read_tokens": 2437854,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -4315,7 +4315,7 @@
         "duration_seconds": 882,
         "total_duration_seconds": 426,
         "status": "SUCCESS",
-        "cost_usd": 8.1342
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 506,
@@ -4466,10 +4466,10 @@
       "type": "Logic",
       "size": "S",
       "totals": {
-        "total_tokens": 285980,
-        "input_tokens": 284885,
-        "output_tokens": 1095,
-        "cache_read_tokens": 213663,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -4479,7 +4479,7 @@
         "duration_seconds": 205,
         "total_duration_seconds": 307,
         "status": "SUCCESS",
-        "cost_usd": 0.7129
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 114,
@@ -4630,10 +4630,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1877239,
-        "input_tokens": 1870046,
-        "output_tokens": 7192,
-        "cache_read_tokens": 1402534,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -4643,7 +4643,7 @@
         "duration_seconds": 346,
         "total_duration_seconds": 919,
         "status": "SUCCESS",
-        "cost_usd": 4.6797
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 184,
@@ -4794,10 +4794,10 @@
       "type": "Logic",
       "size": "L",
       "totals": {
-        "total_tokens": 4203709,
-        "input_tokens": 4187603,
-        "output_tokens": 16106,
-        "cache_read_tokens": 3140702,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -4807,7 +4807,7 @@
         "duration_seconds": 730,
         "total_duration_seconds": 641,
         "status": "SUCCESS",
-        "cost_usd": 10.4793
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 526,
@@ -4958,10 +4958,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1635987,
-        "input_tokens": 1629718,
-        "output_tokens": 6268,
-        "cache_read_tokens": 1222289,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -4971,7 +4971,7 @@
         "duration_seconds": 737,
         "total_duration_seconds": 133,
         "status": "SUCCESS",
-        "cost_usd": 4.0783
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 364,
@@ -5122,10 +5122,10 @@
       "type": "Logic",
       "size": "S",
       "totals": {
-        "total_tokens": 387414,
-        "input_tokens": 385930,
-        "output_tokens": 1484,
-        "cache_read_tokens": 289447,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -5135,7 +5135,7 @@
         "duration_seconds": 534,
         "total_duration_seconds": 962,
         "status": "SUCCESS",
-        "cost_usd": 0.9658
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 148,
@@ -5286,10 +5286,10 @@
       "type": "Logic",
       "size": "L",
       "totals": {
-        "total_tokens": 4451313,
-        "input_tokens": 4434258,
-        "output_tokens": 17054,
-        "cache_read_tokens": 3325694,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -5299,7 +5299,7 @@
         "duration_seconds": 558,
         "total_duration_seconds": 403,
         "status": "SUCCESS",
-        "cost_usd": 11.0966
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 650,
@@ -5450,10 +5450,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1355046,
-        "input_tokens": 1349854,
-        "output_tokens": 5191,
-        "cache_read_tokens": 1012390,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -5463,7 +5463,7 @@
         "duration_seconds": 681,
         "total_duration_seconds": 317,
         "status": "SUCCESS",
-        "cost_usd": 3.378
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 450,
@@ -5614,10 +5614,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1395871,
-        "input_tokens": 1390522,
-        "output_tokens": 5348,
-        "cache_read_tokens": 1042892,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -5627,7 +5627,7 @@
         "duration_seconds": 904,
         "total_duration_seconds": 860,
         "status": "SUCCESS",
-        "cost_usd": 3.4797
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 356,
@@ -5778,10 +5778,10 @@
       "type": "Logic",
       "size": "S",
       "totals": {
-        "total_tokens": 557545,
-        "input_tokens": 555409,
-        "output_tokens": 2136,
-        "cache_read_tokens": 416556,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -5791,7 +5791,7 @@
         "duration_seconds": 933,
         "total_duration_seconds": 317,
         "status": "SUCCESS",
-        "cost_usd": 1.3899
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 50,
@@ -5942,10 +5942,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 959111,
-        "input_tokens": 955437,
-        "output_tokens": 3674,
-        "cache_read_tokens": 716577,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -5955,7 +5955,7 @@
         "duration_seconds": 178,
         "total_duration_seconds": 966,
         "status": "SUCCESS",
-        "cost_usd": 2.3909
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 175,
@@ -6106,10 +6106,10 @@
       "type": "Logic",
       "size": "S",
       "totals": {
-        "total_tokens": 442663,
-        "input_tokens": 440967,
-        "output_tokens": 1696,
-        "cache_read_tokens": 330725,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -6119,7 +6119,7 @@
         "duration_seconds": 492,
         "total_duration_seconds": 697,
         "status": "SUCCESS",
-        "cost_usd": 1.1035
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 73,
@@ -6270,10 +6270,10 @@
       "type": "Logic",
       "size": "S",
       "totals": {
-        "total_tokens": 420214,
-        "input_tokens": 418604,
-        "output_tokens": 1610,
-        "cache_read_tokens": 313953,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -6283,7 +6283,7 @@
         "duration_seconds": 968,
         "total_duration_seconds": 114,
         "status": "SUCCESS",
-        "cost_usd": 1.0475
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 93,
@@ -6434,10 +6434,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1940456,
-        "input_tokens": 1933021,
-        "output_tokens": 7434,
-        "cache_read_tokens": 1449766,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -6447,7 +6447,7 @@
         "duration_seconds": 623,
         "total_duration_seconds": 934,
         "status": "SUCCESS",
-        "cost_usd": 4.8373
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 291,
@@ -6598,10 +6598,10 @@
       "type": "Logic",
       "size": "M",
       "totals": {
-        "total_tokens": 1147018,
-        "input_tokens": 1142624,
-        "output_tokens": 4394,
-        "cache_read_tokens": 856968,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -6611,7 +6611,7 @@
         "duration_seconds": 142,
         "total_duration_seconds": 791,
         "status": "SUCCESS",
-        "cost_usd": 2.8594
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 274,
@@ -6762,10 +6762,10 @@
       "type": "Logic",
       "size": "S",
       "totals": {
-        "total_tokens": 322357,
-        "input_tokens": 321122,
-        "output_tokens": 1235,
-        "cache_read_tokens": 240841,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -6775,7 +6775,7 @@
         "duration_seconds": 451,
         "total_duration_seconds": 313,
         "status": "SUCCESS",
-        "cost_usd": 0.8036
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 55,
@@ -6926,10 +6926,10 @@
       "type": "Logic",
       "size": "L",
       "totals": {
-        "total_tokens": 5100700,
-        "input_tokens": 5081157,
-        "output_tokens": 19542,
-        "cache_read_tokens": 3810868,
+        "total_tokens": 1632558,
+        "input_tokens": 837209,
+        "output_tokens": 167441,
+        "cache_read_tokens": 627906,
         "cache_write_tokens": 0,
         "spec_context_tokens": 500,
         "human_input_tokens": 50,
@@ -6939,7 +6939,7 @@
         "duration_seconds": 186,
         "total_duration_seconds": 812,
         "status": "SUCCESS",
-        "cost_usd": 12.7154
+        "cost_usd": 4.9081
       },
       "output": {
         "actual_loc": 808,
