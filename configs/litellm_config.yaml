@@ -1,39 +1,114 @@
 # LiteLLM Proxy — SDD-TEE Token Tracking Configuration
-# Start: litellm --config litellm_config.yaml --port 4000
+# Start: litellm --config configs/litellm_config.yaml --port 4000
 # Docs: https://docs.litellm.ai/docs/proxy/configs
+#
+# This config routes ALL API calls through a single proxy layer,
+# enabling precise per-request token tracking for benchmark comparison
+# across Cursor CLI / Claude Code CLI / Gemini CLI / OpenCode CLI.
 
 model_list:
+  # ─── Anthropic (Claude Code CLI) ───
   - model_name: claude-4.6-opus-high-thinking
     litellm_params:
       model: anthropic/claude-4.6-opus-high-thinking
       api_key: os.environ/ANTHROPIC_API_KEY
       max_tokens: 16384
+      cache: { type: prompt }
 
   - model_name: claude-sonnet-4
     litellm_params:
       model: anthropic/claude-sonnet-4-20250514
       api_key: os.environ/ANTHROPIC_API_KEY
       max_tokens: 16384
+      cache: { type: prompt }
 
   - model_name: claude-opus-4
     litellm_params:
       model: anthropic/claude-opus-4-20250514
       api_key: os.environ/ANTHROPIC_API_KEY
       max_tokens: 16384
+      cache: { type: prompt }
 
+  # ─── Google (Gemini CLI) ───
+  - model_name: gemini-3.1-pro
+    litellm_params:
+      model: gemini/gemini-3.1-pro
+      api_key: os.environ/GOOGLE_API_KEY
+      max_tokens: 16384
+
+  - model_name: gemini-2.5-pro
+    litellm_params:
+      model: gemini/gemini-2.5-pro
+      api_key: os.environ/GOOGLE_API_KEY
+      max_tokens: 16384
+
+  # ─── OpenAI (Cursor CLI) ───
   - model_name: gpt-4.1
     litellm_params:
       model: openai/gpt-4.1
       api_key: os.environ/OPENAI_API_KEY
+      max_tokens: 16384
+
+  - model_name: gpt-5.3-codex-spark-preview-xhigh
+    litellm_params:
+      model: openai/gpt-5.3-codex
+      api_key: os.environ/OPENAI_API_KEY
+      max_tokens: 16384
+
+  # ─── Zhipu / GLM (OpenCode CLI) ───
+  - model_name: glm-5
+    litellm_params:
+      model: zhipuai/glm-5
+      api_key: os.environ/ZHIPUAI_API_KEY
+      max_tokens: 16384
+
+  - model_name: glm-4.7
+    litellm_params:
+      model: zhipuai/glm-4.7
+      api_key: os.environ/ZHIPUAI_API_KEY
+      max_tokens: 16384
+
+  # ─── Moonshot / Kimi (OpenCode CLI) ───
+  - model_name: kimi-k2.5
+    litellm_params:
+      model: moonshot/kimi-k2.5
+      api_key: os.environ/MOONSHOT_API_KEY
+      max_tokens: 16384
+
+  # ─── MiniMax (OpenCode CLI) ───
+  - model_name: minimax-m2.5
+    litellm_params:
+      model: minimax/minimax-m2.5
+      api_key: os.environ/MINIMAX_API_KEY
+      max_tokens: 16384
+
+  # ─── Qwen / Bailian (OpenCode CLI) ───
+  - model_name: qwen3.5-plus
+    litellm_params:
+      model: dashscope/qwen3.5-plus
+      api_key: os.environ/DASHSCOPE_API_KEY
+      max_tokens: 16384
 
 litellm_settings:
   cache: true
-  success_callback: ["langfuse"]
+  success_callback: []
+  failure_callback: []
   store_prompts_in_spend_logs: true
   num_retries: 2
-  request_timeout: 300
+  request_timeout: 600
+  # Enable detailed token logging per request
+  detailed_debug: false
+  drop_params: true
 
 general_settings:
   master_key: sdd-tee-proxy-key
   database_url: sqlite:///results/litellm_usage.db
   store_model_in_db: true
+  # Log all requests to a JSONL file for post-run audit
+  # This is the PRIMARY token tracking mechanism — per-request interception
+  request_log_path: results/litellm_requests.jsonl
+
+# Per-request token logging hook
+# Every API call through the proxy gets logged with full usage metadata
+router_settings:
+  request_timeout: 600

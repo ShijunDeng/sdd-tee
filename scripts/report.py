@@ -513,11 +513,11 @@ def render_html(data):
             b = bl[sz]
             bl_rows += f"""<tr>
                 <td>{size_labels[sz]}</td><td>{b['count']}</td>
-                <td style="text-align:right">{_fmt(b['avg_tokens'])}</td>
-                <td style="text-align:right">{b['avg_loc']}</td>
-                <td style="text-align:right">{b['avg_et_loc']}</td>
-                <td style="text-align:right">${b['avg_cost']:.3f}</td>
-                <td style="text-align:right">{b['avg_duration'] // 60}m{b['avg_duration'] % 60}s</td>
+                <td style="text-align:right">{_fmt(b.get('ET_AR_mean', 0))}</td>
+                <td style="text-align:right">{b.get('ET_LOC_mean', '-')}</td>
+                <td style="text-align:right">{b.get('ET_LOC_mean', '-')}</td>
+                <td style="text-align:right">${b.get('ET_COST_LOC_mean', 0):.3f}</td>
+                <td style="text-align:right">-</td>
             </tr>"""
 
     # --- Role dimension ---

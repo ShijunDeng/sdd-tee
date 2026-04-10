@@ -31,7 +31,7 @@ __all__ = [
 # §1  Stage definitions (from 指标体系 §2.1)
 # ============================================================================
 
-STAGES = ["ST-0", "ST-1", "ST-2", "ST-3", "ST-4", "ST-5", "ST-6", "ST-7"]
+STAGES = ["ST-0", "ST-1", "ST-2", "ST-3", "ST-4", "ST-5", "ST-6", "ST-6.5", "ST-7"]
 
 STAGE_FIELDS = [
     "input_tokens",
