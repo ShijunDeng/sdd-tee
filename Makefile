@@ -34,8 +34,8 @@ proxy:  ## Start LiteLLM Proxy
 	litellm --config configs/litellm_config.yaml --port $(PROXY_PORT)
 
 # --- v5.1 Benchmark ---
-run-v51:  ## Run benchmark: TOOL=xxx MODEL=xxx [ORIG_REPO=path]
-	bash scripts/run_benchmark.sh $(TOOL) $(MODEL) $(if $(ORIG_REPO),--original-repo $(ORIG_REPO),)
+run-v51:  ## Run benchmark: TOOL=xxx MODEL=xxx [ORIG_REPO=path] [AR_LIMIT=N]
+	bash scripts/run_benchmark.sh $(TOOL) $(MODEL) $(if $(AR_LIMIT),--ar-limit $(AR_LIMIT),) $(if $(ORIG_REPO),--original-repo $(ORIG_REPO),)
 
 run-v51-proxy:  ## Run benchmark through LiteLLM Proxy
 	bash scripts/run_benchmark.sh $(TOOL) $(MODEL) --api-base http://localhost:$(PROXY_PORT) $(if $(ORIG_REPO),--original-repo $(ORIG_REPO),)

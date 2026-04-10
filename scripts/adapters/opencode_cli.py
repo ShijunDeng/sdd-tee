@@ -5,9 +5,16 @@ OpenCode CLI supports token telemetry via `run` subcommand with `--format json`:
   opencode run "prompt" --dir WORKSPACE --model MODEL --format json
 
 The output contains usage data that can be parsed per-request.
+
+Prompt handling:
+- For short prompts (<8000 chars), pass directly as CLI argument
+- For long prompts, write to a temporary file and use @filename syntax
+  to avoid shell argument length limits
 """
 
 import json
+import os
+import tempfile
 
 from .base import BaseAdapter, StageRecord
 
@@ -17,6 +24,19 @@ class OpenCodeCliAdapter(BaseAdapter):
         super().__init__("opencode-cli", model)
 
     def build_command(self, prompt: str, workspace: str) -> list[str]:
+        # For long prompts, write to file to avoid shell arg limits
+        if len(prompt) > 8000:
+            prompt_file = os.path.join(workspace, ".sdd_prompt.md")
+            with open(prompt_file, "w", encoding="utf-8") as f:
+                f.write(prompt)
+            return [
+                "opencode", "run",
+                f"@{prompt_file}",
+                "--dir", workspace,
+                "--model", self.model,
+                "--format", "json",
+                "--log-level", "DEBUG",
+            ]
         return [
             "opencode", "run",
             prompt,
@@ -43,7 +63,19 @@ class OpenCodeCliAdapter(BaseAdapter):
             except json.JSONDecodeError:
                 continue
 
-            # Try usage field
+            # Format 1: step_finish events (opencode native JSONL)
+            if obj.get("type") == "step_finish":
+                tokens = obj.get("part", {}).get("tokens", {})
+                if isinstance(tokens, dict):
+                    total_input += tokens.get("input", 0) or 0
+                    total_output += tokens.get("output", 0) or 0
+                    cache = tokens.get("cache", {})
+                    if isinstance(cache, dict):
+                        total_cache_read += cache.get("read", 0) or 0
+                        total_cache_write += cache.get("write", 0) or 0
+                    api_calls += 1
+
+            # Format 2: usage field
             usage = obj.get("usage", obj.get("token_count", {}))
             if isinstance(usage, dict):
                 total_input += usage.get("input_tokens", usage.get("prompt_tokens", 0)) or 0
@@ -52,7 +84,7 @@ class OpenCodeCliAdapter(BaseAdapter):
                 total_cache_write += usage.get("cache_write_tokens", 0) or 0
                 api_calls += 1
 
-            # Direct fields
+            # Format 3: Direct fields
             if "input_tokens" in obj:
                 total_input += obj.get("input_tokens", 0) or 0
             if "output_tokens" in obj:
