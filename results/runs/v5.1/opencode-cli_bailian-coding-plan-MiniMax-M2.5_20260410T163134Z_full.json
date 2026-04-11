@@ -11,7 +11,14 @@
     "token_tracking": "LiteLLM Proxy per-request audit (authoritative) + native CLI parsing (fallback)",
     "litellm_proxy": false,
     "api_base": null,
-    "data_integrity": "All token data from real API responses. No fabrication."
+    "data_integrity": "All token data from real API responses. No fabrication.",
+    "retried_at": "2026-04-11T15:43:27Z",
+    "retry_stats": {
+      "total_retries": 21,
+      "total_fixed": 21,
+      "tool_used": "opencode-cli",
+      "model_used": "bailian-coding-plan/MiniMax-M2.5"
+    }
   },
   "ar_catalog": [
     {
@@ -563,17 +570,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 105086,
+          "output_tokens": 3105,
+          "cache_read_tokens": 809705,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 108191,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.09,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 21,
+          "duration_seconds": 122.14,
+          "api_calls": 21,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 44871,
@@ -616,17 +623,17 @@
         }
       },
       "totals": {
-        "input_tokens": 281267,
-        "output_tokens": 15833,
-        "cache_read_tokens": 929510,
+        "input_tokens": 386353,
+        "output_tokens": 18938,
+        "cache_read_tokens": 1739215,
         "cache_write_tokens": 0,
-        "total_tokens": 297100,
+        "total_tokens": 405291,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 55,
+        "iterations": 76,
         "duration_seconds": 1144.21,
-        "api_calls": 55,
-        "cost_usd": 0.1246
+        "api_calls": 76,
+        "cost_usd": 0.2118
       },
       "output": {
         "actual_loc": 1187,
@@ -1085,17 +1092,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 196462,
+          "output_tokens": 4905,
+          "cache_read_tokens": 2360171,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 201367,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.04,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 30,
+          "duration_seconds": 213.32,
+          "api_calls": 30,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 47098,
@@ -1138,17 +1145,17 @@
         }
       },
       "totals": {
-        "input_tokens": 274053,
-        "output_tokens": 18840,
-        "cache_read_tokens": 2025514,
+        "input_tokens": 470515,
+        "output_tokens": 23745,
+        "cache_read_tokens": 4385685,
         "cache_write_tokens": 0,
-        "total_tokens": 292893,
+        "total_tokens": 494260,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 57,
+        "iterations": 87,
         "duration_seconds": 1143.73,
-        "api_calls": 57,
-        "cost_usd": 0.2402
+        "api_calls": 87,
+        "cost_usd": 0.4861
       },
       "output": {
         "actual_loc": 2929,
@@ -1259,17 +1266,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 142451,
+          "output_tokens": 14116,
+          "cache_read_tokens": 3100093,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 156567,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.09,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 34,
+          "duration_seconds": 397.51,
+          "api_calls": 34,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 47322,
@@ -1312,17 +1319,17 @@
         }
       },
       "totals": {
-        "input_tokens": 232911,
-        "output_tokens": 17751,
-        "cache_read_tokens": 820332,
+        "input_tokens": 375362,
+        "output_tokens": 31867,
+        "cache_read_tokens": 3920425,
         "cache_write_tokens": 0,
-        "total_tokens": 250662,
+        "total_tokens": 407229,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 47,
+        "iterations": 81,
         "duration_seconds": 1072.31,
-        "api_calls": 47,
-        "cost_usd": 0.1175
+        "api_calls": 81,
+        "cost_usd": 0.4558
       },
       "output": {
         "actual_loc": 4820,
@@ -1433,17 +1440,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 170300,
+          "output_tokens": 8586,
+          "cache_read_tokens": 1313963,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 178886,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.05,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 20,
+          "duration_seconds": 898.15,
+          "api_calls": 20,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 39791,
@@ -1486,17 +1493,17 @@
         }
       },
       "totals": {
-        "input_tokens": 297313,
-        "output_tokens": 21206,
-        "cache_read_tokens": 979825,
+        "input_tokens": 467613,
+        "output_tokens": 29792,
+        "cache_read_tokens": 2293788,
         "cache_write_tokens": 0,
-        "total_tokens": 318519,
+        "total_tokens": 497405,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 53,
+        "iterations": 73,
         "duration_seconds": 1150.79,
-        "api_calls": 53,
-        "cost_usd": 0.1404
+        "api_calls": 73,
+        "cost_usd": 0.289
       },
       "output": {
         "actual_loc": 6723,
@@ -1607,17 +1614,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 130408,
+          "output_tokens": 3276,
+          "cache_read_tokens": 1079131,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 133684,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.05,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 19,
+          "duration_seconds": 141.21,
+          "api_calls": 19,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 49932,
@@ -1660,17 +1667,17 @@
         }
       },
       "totals": {
-        "input_tokens": 308241,
-        "output_tokens": 32102,
-        "cache_read_tokens": 1762852,
+        "input_tokens": 438649,
+        "output_tokens": 35378,
+        "cache_read_tokens": 2841983,
         "cache_write_tokens": 0,
-        "total_tokens": 340343,
+        "total_tokens": 474027,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 73,
+        "iterations": 92,
         "duration_seconds": 1284.63,
-        "api_calls": 73,
-        "cost_usd": 0.2405
+        "api_calls": 92,
+        "cost_usd": 0.355
       },
       "output": {
         "actual_loc": 8049,
@@ -1955,17 +1962,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 163447,
+          "output_tokens": 6751,
+          "cache_read_tokens": 1850737,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 170198,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.05,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 32,
+          "duration_seconds": 1107.73,
+          "api_calls": 32,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 46048,
@@ -2008,17 +2015,17 @@
         }
       },
       "totals": {
-        "input_tokens": 156026,
-        "output_tokens": 19808,
-        "cache_read_tokens": 828554,
+        "input_tokens": 319473,
+        "output_tokens": 26559,
+        "cache_read_tokens": 2679291,
         "cache_write_tokens": 0,
-        "total_tokens": 175834,
+        "total_tokens": 346032,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 47,
+        "iterations": 79,
         "duration_seconds": 1124.53,
-        "api_calls": 47,
-        "cost_usd": 0.1225
+        "api_calls": 79,
+        "cost_usd": 0.321
       },
       "output": {
         "actual_loc": 11756,
@@ -2999,17 +3006,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 216536,
+          "output_tokens": 3352,
+          "cache_read_tokens": 805855,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 219888,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.05,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 19,
+          "duration_seconds": 124.56,
+          "api_calls": 19,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 96159,
@@ -3052,17 +3059,17 @@
         }
       },
       "totals": {
-        "input_tokens": 224392,
-        "output_tokens": 20801,
-        "cache_read_tokens": 1631016,
+        "input_tokens": 440928,
+        "output_tokens": 24153,
+        "cache_read_tokens": 2436871,
         "cache_write_tokens": 0,
-        "total_tokens": 245193,
+        "total_tokens": 465081,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 78,
+        "iterations": 97,
         "duration_seconds": 1159.31,
-        "api_calls": 78,
-        "cost_usd": 0.2047
+        "api_calls": 97,
+        "cost_usd": 0.292
       },
       "output": {
         "actual_loc": 16603,
@@ -3121,69 +3128,69 @@
           "data_source": "native_output"
         },
         "ST-1": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 39725,
+          "output_tokens": 2724,
+          "cache_read_tokens": 177180,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 42449,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.13,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 9,
+          "duration_seconds": 64.0,
+          "api_calls": 9,
+          "data_source": "native_output"
         },
         "ST-2": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 78697,
+          "output_tokens": 5044,
+          "cache_read_tokens": 184823,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 83741,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.13,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 10,
+          "duration_seconds": 113.95,
+          "api_calls": 10,
+          "data_source": "native_output"
         },
         "ST-3": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 48945,
+          "output_tokens": 3767,
+          "cache_read_tokens": 160090,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 52712,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.07,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 7,
+          "duration_seconds": 81.11,
+          "api_calls": 7,
+          "data_source": "native_output"
         },
         "ST-4": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 74895,
+          "output_tokens": 3391,
+          "cache_read_tokens": 391070,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 78286,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.15,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 15,
+          "duration_seconds": 99.84,
+          "api_calls": 15,
+          "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 64731,
+          "output_tokens": 5525,
+          "cache_read_tokens": 759214,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 70256,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.11,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 20,
+          "duration_seconds": 157.67,
+          "api_calls": 20,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 53226,
@@ -3226,17 +3233,17 @@
         }
       },
       "totals": {
-        "input_tokens": 82506,
-        "output_tokens": 3187,
-        "cache_read_tokens": 314257,
+        "input_tokens": 389499,
+        "output_tokens": 23638,
+        "cache_read_tokens": 1986634,
         "cache_write_tokens": 0,
-        "total_tokens": 85693,
+        "total_tokens": 413137,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 20,
+        "iterations": 81,
         "duration_seconds": 3117.08,
-        "api_calls": 20,
-        "cost_usd": 0.0378
+        "api_calls": 81,
+        "cost_usd": 0.2459
       },
       "output": {
         "actual_loc": 16603,
@@ -4043,17 +4050,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 130203,
+          "output_tokens": 8495,
+          "cache_read_tokens": 1724232,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 138698,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.06,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 40,
+          "duration_seconds": 266.99,
+          "api_calls": 40,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 60923,
@@ -4096,17 +4103,17 @@
         }
       },
       "totals": {
-        "input_tokens": 247408,
-        "output_tokens": 23413,
-        "cache_read_tokens": 1277774,
+        "input_tokens": 377611,
+        "output_tokens": 31908,
+        "cache_read_tokens": 3002006,
         "cache_write_tokens": 0,
-        "total_tokens": 270821,
+        "total_tokens": 409519,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 53,
+        "iterations": 93,
         "duration_seconds": 1118.4,
-        "api_calls": 53,
-        "cost_usd": 0.1746
+        "api_calls": 93,
+        "cost_usd": 0.364
       },
       "output": {
         "actual_loc": 4127,
@@ -5087,30 +5094,30 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 127873,
+          "output_tokens": 8643,
+          "cache_read_tokens": 1890369,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 136516,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.06,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 38,
+          "duration_seconds": 264.99,
+          "api_calls": 38,
+          "data_source": "native_output"
         },
         "ST-6": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 50735,
+          "output_tokens": 2280,
+          "cache_read_tokens": 186851,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 53015,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.05,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 9,
+          "duration_seconds": 63.15,
+          "api_calls": 9,
+          "data_source": "native_output"
         },
         "ST-6.5": {
           "input_tokens": 0,
@@ -5140,17 +5147,17 @@
         }
       },
       "totals": {
-        "input_tokens": 210069,
-        "output_tokens": 22117,
-        "cache_read_tokens": 721174,
+        "input_tokens": 388677,
+        "output_tokens": 33040,
+        "cache_read_tokens": 2798394,
         "cache_write_tokens": 0,
-        "total_tokens": 232186,
+        "total_tokens": 421717,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 38,
+        "iterations": 85,
         "duration_seconds": 1679.26,
-        "api_calls": 38,
-        "cost_usd": 0.1164
+        "api_calls": 85,
+        "cost_usd": 0.3459
       },
       "output": {
         "actual_loc": 7861,
@@ -5783,30 +5790,30 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 104326,
+          "output_tokens": 8694,
+          "cache_read_tokens": 1863849,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 113020,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.13,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 49,
+          "duration_seconds": 929.38,
+          "api_calls": 49,
+          "data_source": "native_output"
         },
         "ST-6": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 76093,
+          "output_tokens": 1131,
+          "cache_read_tokens": 323261,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 77224,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.13,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 6,
+          "duration_seconds": 49.6,
+          "api_calls": 6,
+          "data_source": "native_output"
         },
         "ST-6.5": {
           "input_tokens": 0,
@@ -5836,17 +5843,17 @@
         }
       },
       "totals": {
-        "input_tokens": 221196,
-        "output_tokens": 16538,
-        "cache_read_tokens": 659386,
+        "input_tokens": 401615,
+        "output_tokens": 26363,
+        "cache_read_tokens": 2846496,
         "cache_write_tokens": 0,
-        "total_tokens": 237734,
+        "total_tokens": 427978,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 36,
+        "iterations": 91,
         "duration_seconds": 1607.61,
-        "api_calls": 36,
-        "cost_usd": 0.099
+        "api_calls": 91,
+        "cost_usd": 0.3374
       },
       "output": {
         "actual_loc": 9134,
@@ -5892,17 +5899,17 @@
       "size": "S",
       "stages": {
         "ST-0": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 15569,
+          "output_tokens": 1241,
+          "cache_read_tokens": 142138,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 16810,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.1,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 8,
+          "duration_seconds": 37.87,
+          "api_calls": 8,
+          "data_source": "native_output"
         },
         "ST-1": {
           "input_tokens": 63855,
@@ -6010,17 +6017,17 @@
         }
       },
       "totals": {
-        "input_tokens": 276720,
-        "output_tokens": 25623,
-        "cache_read_tokens": 2531979,
+        "input_tokens": 292289,
+        "output_tokens": 26864,
+        "cache_read_tokens": 2674117,
         "cache_write_tokens": 0,
-        "total_tokens": 302343,
+        "total_tokens": 319153,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 93,
+        "iterations": 101,
         "duration_seconds": 1440.57,
-        "api_calls": 93,
-        "cost_usd": 0.3044
+        "api_calls": 101,
+        "cost_usd": 0.3211
       },
       "output": {
         "actual_loc": 9134,
@@ -6479,17 +6486,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 234073,
+          "output_tokens": 29570,
+          "cache_read_tokens": 6500814,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 263643,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.05,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 89,
+          "duration_seconds": 1482.51,
+          "api_calls": 89,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 63775,
@@ -6532,17 +6539,17 @@
         }
       },
       "totals": {
-        "input_tokens": 223248,
-        "output_tokens": 23261,
-        "cache_read_tokens": 1658219,
+        "input_tokens": 457321,
+        "output_tokens": 52831,
+        "cache_read_tokens": 8159033,
         "cache_write_tokens": 0,
-        "total_tokens": 246509,
+        "total_tokens": 510152,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 76,
+        "iterations": 165,
         "duration_seconds": 1276.12,
-        "api_calls": 76,
-        "cost_usd": 0.2123
+        "api_calls": 165,
+        "cost_usd": 0.9216
       },
       "output": {
         "actual_loc": 18120,
@@ -7001,17 +7008,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 144804,
+          "output_tokens": 3184,
+          "cache_read_tokens": 1223439,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 147988,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.05,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 21,
+          "duration_seconds": 799.49,
+          "api_calls": 21,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 56814,
@@ -7054,17 +7061,17 @@
         }
       },
       "totals": {
-        "input_tokens": 566933,
-        "output_tokens": 31849,
-        "cache_read_tokens": 3504856,
+        "input_tokens": 711737,
+        "output_tokens": 35033,
+        "cache_read_tokens": 4728295,
         "cache_write_tokens": 0,
-        "total_tokens": 598782,
+        "total_tokens": 746770,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 94,
+        "iterations": 115,
         "duration_seconds": 1469.46,
-        "api_calls": 94,
-        "cost_usd": 0.4142
+        "api_calls": 115,
+        "cost_usd": 0.5429
       },
       "output": {
         "actual_loc": 18111,
@@ -7523,17 +7530,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 156362,
+          "output_tokens": 13941,
+          "cache_read_tokens": 2891788,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 170303,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.05,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 52,
+          "duration_seconds": 398.84,
+          "api_calls": 52,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 78620,
@@ -7576,17 +7583,17 @@
         }
       },
       "totals": {
-        "input_tokens": 300425,
-        "output_tokens": 30564,
-        "cache_read_tokens": 1268703,
+        "input_tokens": 456787,
+        "output_tokens": 44505,
+        "cache_read_tokens": 4160491,
         "cache_write_tokens": 0,
-        "total_tokens": 330989,
+        "total_tokens": 501292,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 56,
+        "iterations": 108,
         "duration_seconds": 1292.14,
-        "api_calls": 56,
-        "cost_usd": 0.188
+        "api_calls": 108,
+        "cost_usd": 0.5051
       },
       "output": {
         "actual_loc": 20736,
@@ -7697,17 +7704,17 @@
           "data_source": "native_output"
         },
         "ST-5": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "cache_read_tokens": 0,
+          "input_tokens": 191373,
+          "output_tokens": 30395,
+          "cache_read_tokens": 6342988,
           "cache_write_tokens": 0,
-          "total_tokens": 0,
+          "total_tokens": 221768,
           "human_input_tokens": 0,
           "spec_context_tokens": 0,
-          "iterations": 0,
-          "duration_seconds": 600.04,
-          "api_calls": 0,
-          "data_source": "none"
+          "iterations": 101,
+          "duration_seconds": 1500.19,
+          "api_calls": 101,
+          "data_source": "native_output"
         },
         "ST-6": {
           "input_tokens": 99115,
@@ -7750,17 +7757,17 @@
         }
       },
       "totals": {
-        "input_tokens": 264369,
-        "output_tokens": 18893,
-        "cache_read_tokens": 1683375,
+        "input_tokens": 455742,
+        "output_tokens": 49288,
+        "cache_read_tokens": 8026363,
         "cache_write_tokens": 0,
-        "total_tokens": 283262,
+        "total_tokens": 505030,
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
-        "iterations": 76,
+        "iterations": 177,
         "duration_seconds": 1297.79,
-        "api_calls": 76,
-        "cost_usd": 0.2061
+        "api_calls": 177,
+        "cost_usd": 0.9012
       },
       "output": {
         "actual_loc": 10254,
@@ -7973,113 +7980,138 @@
     }
   ],
   "grand_totals": {
-    "ar_count": 43,
-    "input_tokens": 15945174,
-    "output_tokens": 1386324,
-    "cache_read_tokens": 115693758,
+    "input_tokens": 18608268,
+    "output_tokens": 1558440,
+    "cache_read_tokens": 151775519,
     "cache_write_tokens": 0,
-    "total_tokens": 17331498,
+    "total_tokens": 20166708,
     "human_input_tokens": 0,
     "spec_context_tokens": 0,
+    "total_iterations": 4462,
     "total_duration_seconds": 49528.68,
-    "total_cost_usd": 14.3419,
-    "total_cost_cny": 103.2617,
+    "total_api_calls": 4462,
+    "total_cost_usd": 18.294499999999992,
     "total_loc": 436516,
     "total_files": 2183,
-    "total_tasks": 211,
-    "total_iterations": 3813,
-    "total_api_calls": 3813
+    "ar_count": 43
   },
   "stage_aggregates": {
     "ST-0": {
-      "name": "AR 输入",
-      "total_tokens": 670620,
-      "input_tokens": 601403,
-      "output_tokens": 69217,
-      "cache_read_tokens": 6012030,
+      "total_tokens": 687430,
+      "input_tokens": 616972,
+      "output_tokens": 70458,
+      "cache_read_tokens": 6154168,
       "cache_write_tokens": 0,
-      "duration_seconds": 2794.85,
-      "iterations": 349
+      "human_input_tokens": 0,
+      "spec_context_tokens": 0,
+      "total_iterations": 357,
+      "duration_seconds": 2232.6200000000003,
+      "total_api_calls": 357,
+      "cost_usd": 0.7563
     },
     "ST-1": {
-      "name": "需求澄清",
-      "total_tokens": 1839178,
-      "input_tokens": 1684257,
-      "output_tokens": 154921,
-      "cache_read_tokens": 8613854,
+      "total_tokens": 1881627,
+      "input_tokens": 1723982,
+      "output_tokens": 157645,
+      "cache_read_tokens": 8791034,
       "cache_write_tokens": 0,
-      "duration_seconds": 4700.27,
-      "iterations": 358
+      "human_input_tokens": 0,
+      "spec_context_tokens": 0,
+      "total_iterations": 367,
+      "duration_seconds": 4164.140000000001,
+      "total_api_calls": 367,
+      "cost_usd": 1.1944
     },
     "ST-2": {
-      "name": "Spec 增量设计",
-      "total_tokens": 2167265,
-      "input_tokens": 1954296,
-      "output_tokens": 212969,
-      "cache_read_tokens": 8513328,
+      "total_tokens": 2251006,
+      "input_tokens": 2032993,
+      "output_tokens": 218013,
+      "cache_read_tokens": 8698151,
       "cache_write_tokens": 0,
-      "duration_seconds": 5439.38,
-      "iterations": 372
+      "human_input_tokens": 0,
+      "spec_context_tokens": 0,
+      "total_iterations": 382,
+      "duration_seconds": 4953.200000000001,
+      "total_api_calls": 382,
+      "cost_usd": 1.3058
     },
     "ST-3": {
-      "name": "Design 增量设计",
-      "total_tokens": 2808462,
-      "input_tokens": 2569246,
-      "output_tokens": 239216,
-      "cache_read_tokens": 9925519,
+      "total_tokens": 2861174,
+      "input_tokens": 2618191,
+      "output_tokens": 242983,
+      "cache_read_tokens": 10085609,
       "cache_write_tokens": 0,
-      "duration_seconds": 5730.25,
-      "iterations": 384
+      "human_input_tokens": 0,
+      "spec_context_tokens": 0,
+      "total_iterations": 391,
+      "duration_seconds": 5211.289999999998,
+      "total_api_calls": 391,
+      "cost_usd": 1.4945
     },
     "ST-4": {
-      "name": "任务拆解",
-      "total_tokens": 2103544,
-      "input_tokens": 1945074,
-      "output_tokens": 158470,
-      "cache_read_tokens": 10892239,
+      "total_tokens": 2181830,
+      "input_tokens": 2019969,
+      "output_tokens": 161861,
+      "cache_read_tokens": 11283309,
       "cache_write_tokens": 0,
-      "duration_seconds": 4884.34,
-      "iterations": 403
+      "human_input_tokens": 0,
+      "spec_context_tokens": 0,
+      "total_iterations": 418,
+      "duration_seconds": 4384.03,
+      "total_api_calls": 418,
+      "cost_usd": 1.4521
     },
     "ST-5": {
-      "name": "开发实现",
-      "total_tokens": 3770163,
-      "input_tokens": 3374737,
-      "output_tokens": 395426,
-      "cache_read_tokens": 53648679,
+      "total_tokens": 6201136,
+      "input_tokens": 5653172,
+      "output_tokens": 547964,
+      "cache_read_tokens": 88165027,
       "cache_write_tokens": 0,
-      "duration_seconds": 19070.83,
-      "iterations": 1096
+      "human_input_tokens": 0,
+      "spec_context_tokens": 0,
+      "total_iterations": 1681,
+      "duration_seconds": 18874.54,
+      "total_api_calls": 1681,
+      "cost_usd": 9.9124
     },
     "ST-6": {
-      "name": "一致性验证",
-      "total_tokens": 2562559,
-      "input_tokens": 2459521,
-      "output_tokens": 103038,
-      "cache_read_tokens": 12560067,
+      "total_tokens": 2692798,
+      "input_tokens": 2586349,
+      "output_tokens": 106449,
+      "cache_read_tokens": 13070179,
       "cache_write_tokens": 0,
-      "duration_seconds": 4992.59,
-      "iterations": 559
+      "human_input_tokens": 0,
+      "spec_context_tokens": 0,
+      "total_iterations": 574,
+      "duration_seconds": 3905.1600000000003,
+      "total_api_calls": 574,
+      "cost_usd": 1.5199
     },
     "ST-6.5": {
-      "name": "原始代码等价性验证",
       "total_tokens": 0,
       "input_tokens": 0,
       "output_tokens": 0,
       "cache_read_tokens": 0,
       "cache_write_tokens": 0,
+      "human_input_tokens": 0,
+      "spec_context_tokens": 0,
+      "total_iterations": 0,
       "duration_seconds": 0.0,
-      "iterations": 0
+      "total_api_calls": 0,
+      "cost_usd": 0.0
     },
     "ST-7": {
-      "name": "合并归档",
       "total_tokens": 1409707,
       "input_tokens": 1356640,
       "output_tokens": 53067,
       "cache_read_tokens": 5528042,
       "cache_write_tokens": 0,
-      "duration_seconds": 1915.26,
-      "iterations": 292
+      "human_input_tokens": 0,
+      "spec_context_tokens": 0,
+      "total_iterations": 292,
+      "duration_seconds": 1915.2600000000002,
+      "total_api_calls": 292,
+      "cost_usd": 0.8061
     }
   },
   "baselines": {

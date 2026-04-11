@@ -13,13 +13,17 @@ Usage:
     # For authoritative data, use auditor.get_tokens(model, start, end)
 """
 
+import logging
 import os
+import random
 import subprocess
 import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -81,6 +85,9 @@ class BaseAdapter(ABC):
         and attempts native token parsing.
         Returns StageRecord with token data from native output.
         The engine will later overwrite this with authoritative proxy data.
+
+        Retries up to `max_retries` times with exponential backoff + jitter
+        when the subprocess times out (common under API rate limiting).
         """
         start_time = time.time()
         cmd = self.build_command(prompt, workspace)
@@ -90,38 +97,73 @@ class BaseAdapter(ABC):
         env = os.environ.copy()
         env = self._add_proxy_env(env)
 
-        try:
-            result = subprocess.run(
-                cmd,
-                capture_output=True,
-                text=True,
-                timeout=timeout,
-                cwd=workspace,
-                env=env,
-            )
-            # Write combined output to log
-            log_text = f"EXIT_CODE: {result.returncode}\n"
-            log_text += f"STDOUT:\n{result.stdout}\n"
-            if result.stderr:
-                log_text += f"\nSTDERR:\n{result.stderr}\n"
-            Path(log_path).write_text(log_text, encoding="utf-8")
+        max_retries = 3
+        current_timeout = timeout
+        last_error = None
 
-        except subprocess.TimeoutExpired:
-            record.error = f"Timeout after {timeout}s"
-            record.duration_seconds = timeout
-            return record
-        except FileNotFoundError as e:
-            record.error = f"Command not found: {cmd[0]} — {e}"
-            record.duration_seconds = time.time() - start_time
-            return record
-        except Exception as e:
-            record.error = str(e)
-            record.duration_seconds = time.time() - start_time
-            return record
+        for attempt in range(1, max_retries + 1):
+            try:
+                result = subprocess.run(
+                    cmd,
+                    capture_output=True,
+                    text=True,
+                    timeout=current_timeout,
+                    cwd=workspace,
+                    env=env,
+                )
+                # Write combined output to log
+                log_text = f"EXIT_CODE: {result.returncode}\n"
+                log_text += f"STDOUT:\n{result.stdout}\n"
+                if result.stderr:
+                    log_text += f"\nSTDERR:\n{result.stderr}\n"
+                Path(log_path).write_text(log_text, encoding="utf-8")
+                last_error = None
+                break  # Success
+
+            except subprocess.TimeoutExpired:
+                last_error = f"Timeout after {current_timeout}s"
+                record.duration_seconds = time.time() - start_time
+                if attempt < max_retries:
+                    # Exponential backoff with jitter: 30s, 60s, 120s base + up to 30s jitter
+                    base_delay = 30 * (2 ** (attempt - 1))
+                    jitter = random.uniform(0, 30)
+                    delay = base_delay + jitter
+                    logger.warning(
+                        f"  [{stage}] attempt {attempt}/{max_retries} timed out, "
+                        f"retrying in {delay:.0f}s (timeout {current_timeout}s -> {current_timeout * 2}s)"
+                    )
+                    time.sleep(delay)
+                    current_timeout *= 2  # Double the timeout each retry
+                else:
+                    record.error = f"Failed after {max_retries} attempts: {last_error}"
+                    record.duration_seconds = time.time() - start_time
+                    return record
+
+            except FileNotFoundError as e:
+                record.error = f"Command not found: {cmd[0]} — {e}"
+                record.duration_seconds = time.time() - start_time
+                return record
+
+            except Exception as e:
+                last_error = str(e)
+                if attempt < max_retries:
+                    base_delay = 30 * (2 ** (attempt - 1))
+                    jitter = random.uniform(0, 30)
+                    delay = base_delay + jitter
+                    logger.warning(
+                        f"  [{stage}] attempt {attempt}/{max_retries} failed ({last_error}), "
+                        f"retrying in {delay:.0f}s"
+                    )
+                    time.sleep(delay)
+                else:
+                    record.error = f"Failed after {max_retries} attempts: {last_error}"
+                    record.duration_seconds = time.time() - start_time
+                    return record
 
         record.duration_seconds = time.time() - start_time
 
         # Try native token parsing
+        log_text = Path(log_path).read_text(encoding="utf-8")
         native = self.parse_native_output(log_text)
         if native.api_calls > 0:
             record.input_tokens = native.input_tokens
