@@ -94,7 +94,9 @@ def short_label(d):
 
 
 def fmt_val(val, unit_type="num"):
-    if val is None or val == 0:
+    if val is None:
+        return "—"
+    if val == 0:
         if unit_type == "pct": return "0.0%"
         if unit_type == "time": return "-"
         if unit_type == "cost": return "$0.00"
@@ -117,15 +119,23 @@ def fmt_val(val, unit_type="num"):
 
 
 def _avg_metric(run, key):
-    """Average a per-AR metric across all ARs in a run."""
+    """Average a per-AR metric across all ARs in a run.
+
+    Returns None when no ARs have valid (non-zero) data for this metric,
+    so the report can show "—" instead of misleading zeros.
+    """
     vals = [ar.get("metrics", {}).get(key, 0) for ar in run.get("ar_results", [])]
     vals = [v for v in vals if v and v > 0]
-    return sum(vals) / len(vals) if vals else 0
+    return sum(vals) / len(vals) if vals else None
 
 
 def _cache_rate(run):
+    """Compute cache hit rate. Returns None if no cache data available (no proxy)."""
     gt = run["grand_totals"]
     cache_read = gt.get("cache_read_tokens", 0)
+    cache_write = gt.get("cache_write_tokens", 0)
+    if cache_read == 0 and cache_write == 0:
+        return None  # No cache data — likely no proxy was used
     gross_input = gt.get("input_tokens", 0) + cache_read
     return cache_read / max(gross_input, 1)
 
@@ -187,23 +197,27 @@ def _compute_scores(runs):
         et_loc = _avg_metric(r, "ET_LOC")
         # Cost efficiency: inverse of total cost, normalized
         cost = gt.get("total_cost_usd", 0)
-        # Code quality: weighted avg of consistency + availability
+        # Code quality: weighted avg of consistency + availability (or 50 if unmeasured)
         consist = _avg_metric(r, "QT_CONSIST")
         avail = _avg_metric(r, "QT_AVAIL")
-        quality = (consist + avail) / 2 if (consist or avail) else 50
+        quality = (consist + avail) / 2 if (consist and avail) else 50
         # Cache utilization
         cache = _cache_rate(r)
         # Execution speed: inverse of duration
         duration = gt.get("total_duration_seconds", 0)
         # Simple normalization across runs
-        et_locs = [_avg_metric(x, "ET_LOC") for x in runs]
+        et_locs = [x for x in (_avg_metric(x, "ET_LOC") for x in runs) if x is not None]
         costs = [x["grand_totals"].get("total_cost_usd", 1) for x in runs]
         durations = [x["grand_totals"].get("total_duration_seconds", 1) for x in runs]
         caches = [_cache_rate(x) for x in runs]
 
-        token_score = _normalize_inverse(et_loc, et_locs)
+        token_score = _normalize_inverse(et_loc, et_locs) if et_locs else 50
         cost_score = _normalize_inverse(cost, costs)
-        quality_score = _normalize(quality, [(_avg_metric(x, "QT_CONSIST") + _avg_metric(x, "QT_AVAIL")) / 2 if (_avg_metric(x, "QT_CONSIST") or _avg_metric(x, "QT_AVAIL")) else 50 for x in runs])
+        quality_vals = [
+            (c + a) / 2 if (c and a) else 50
+            for c, a in ((_avg_metric(x, "QT_CONSIST"), _avg_metric(x, "QT_AVAIL")) for x in runs)
+        ]
+        quality_score = _normalize(quality, quality_vals)
         cache_score = _normalize(cache, caches)
         speed_score = _normalize_inverse(duration, durations)
 
@@ -218,6 +232,8 @@ def _compute_scores(runs):
 
 
 def _normalize(val, vals):
+    if val is None:
+        return 50
     vals = [v for v in vals if v is not None]
     mn, mx = min(vals), max(vals)
     if mx == mn: return 50
@@ -225,6 +241,8 @@ def _normalize(val, vals):
 
 
 def _normalize_inverse(val, vals):
+    if val is None:
+        return 50
     vals = [v for v in vals if v is not None]
     mn, mx = min(vals), max(vals)
     if mx == mn: return 50
@@ -243,12 +261,12 @@ def _build_anomalies(runs):
 
         # Check for very high ET_LOC
         et_loc = _avg_metric(r, "ET_LOC")
-        if et_loc > 2000:
+        if et_loc is not None and et_loc > 2000:
             anomalies.append(("warn", "Token 效率异常", f"ET-LOC = {et_loc:,.0f}，显著高于正常范围（通常 <1000）。", lbl))
 
         # Check for very low cache rate
         cr = _cache_rate(r)
-        if cr < 0.3 and gt.get("cache_read_tokens", 0) > 0:
+        if cr is not None and cr < 0.3 and gt.get("cache_read_tokens", 0) > 0:
             anomalies.append(("warn", "Cache 利用率低", f"Cache 命中率仅 {cr:.1%}，输入 Token 成本偏高。", lbl))
 
         # Check for failed stages
@@ -267,14 +285,15 @@ def _build_anomalies(runs):
 
     # Also add industry benchmark info
     if runs:
-        et_locs = [_avg_metric(r, "ET_LOC") for r in runs]
+        et_locs = [x for x in (_avg_metric(r, "ET_LOC") for r in runs) if x is not None]
         costs = [r["grand_totals"].get("total_cost_usd", 0) / max(r["grand_totals"].get("total_loc", 1), 1) * 1000 for r in runs]
-        min_et = min(et_locs) if et_locs else 0
-        max_et = max(et_locs) if et_locs else 0
-        anomalies.append(("info", "业界对标",
-            f"Token/LOC 范围 {min_et:,.0f}~{max_et:,.0f}，$/KLOC 范围 {min(costs):.2f}~{max(costs):.2f}。"
-            f"业界同类评测（SWE-bench、Aider Polyglot）的 token 效率通常在 30~80 token/LOC 区间。",
-            "全部轮次"))
+        if et_locs:
+            min_et = min(et_locs)
+            max_et = max(et_locs)
+            anomalies.append(("info", "业界对标",
+                f"Token/LOC 范围 {min_et:,.0f}~{max_et:,.0f}，$/KLOC 范围 {min(costs):.2f}~{max(costs):.2f}。"
+                f"业界同类评测（SWE-bench、Aider Polyglot）的 token 效率通常在 30~80 token/LOC 区间。",
+                "全部轮次"))
 
     return anomalies
 
@@ -321,9 +340,17 @@ def render_report(runs):
     # Key extremes
     max_loc_run = max(runs, key=lambda r: r["grand_totals"].get("total_loc", 0))
     min_cost_run = min(runs, key=lambda r: r["grand_totals"].get("total_cost_usd", 1e6))
-    best_eff_run = min(runs, key=lambda r: _avg_metric(r, "ET_LOC"))
+    best_eff_run = min(
+        (r for r in runs if _avg_metric(r, "ET_LOC") is not None),
+        key=lambda r: _avg_metric(r, "ET_LOC"),
+        default=runs[0] if runs else None
+    )
     best_speed_run = min(runs, key=lambda r: r["grand_totals"].get("total_duration_seconds", 1e9))
-    best_cache_run = max(runs, key=lambda r: _cache_rate(r))
+    best_cache_run = max(
+        (r for r in runs if _cache_rate(r) is not None),
+        key=lambda r: _cache_rate(r),
+        default=runs[0] if runs else None
+    )
 
     exec_summary = f"""
 <h2 style="margin-top:0; border:none; padding:0;">执行摘要 (Executive Summary)</h2>
@@ -357,12 +384,16 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
     # ─── 1. Grand Totals Table ────────────────────────────────────────
     def td_row(name, extractor, unit="num", highlight="min"):
         vals = [extractor(r) for r in runs]
-        valid_vals = [v for v in vals if v != 0 or name in ("Cache Write", "Cache 命中率")]
-        best = (min(valid_vals) if highlight == "min" else max(valid_vals)) if valid_vals else None
+        # None = unmeasured, 0 = measured but zero (valid for grand totals like Cache Write)
+        non_none = [v for v in vals if v is not None]
+        non_zero = [v for v in non_none if v != 0]
+        # Use non-zero for highlighting; if all zeros, still show the zeros
+        highlight_vals = non_zero if non_zero else non_none
+        best = (min(highlight_vals) if highlight == "min" else max(highlight_vals)) if highlight_vals else None
         row = f"<tr><td>{name}</td>"
         for v in vals:
             cls = ""
-            if best is not None and v == best and len(valid_vals) > 1 and highlight != "neutral":
+            if best is not None and v == best and len(highlight_vals) > 1 and highlight != "neutral":
                 cls = ' class="best"'
             row += f"<td{cls}>{fmt_val(v, unit)}</td>"
         return row + "</tr>\n"

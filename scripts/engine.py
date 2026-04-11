@@ -606,6 +606,20 @@ def _compute_ar_metrics(ar: dict) -> dict:
     tasks = max(out["tasks_count"], 1)
     dur_h = max(totals["duration_seconds"] / 3600, 0.001)
 
+    # Quality metrics: derive from quality dict, not from raw token counts
+    # When no equivalence check ran, all quality fields are 0 → set metrics to 0 (unmeasured)
+    has_quality = quality.get("consistency_score", 0) > 0 or quality.get("test_coverage", 0) > 0
+    if has_quality:
+        qt_cov = round(quality.get("test_coverage", 0) * 100, 2)
+        qt_consist = round(quality.get("consistency_score", 0) * 100, 2)
+        qt_avail = round(quality.get("code_usability", 0) * 100, 2)
+        qt_bug = round(max(0, 100 - quality.get("consistency_score", 0) * 100), 2)
+    else:
+        qt_cov = 0
+        qt_consist = 0
+        qt_avail = 0
+        qt_bug = 0  # Not measured, not "100 bugs found"
+
     return {
         "ET_LOC": round(total / loc, 2),
         "ET_FILE": round(total / nf, 2),
@@ -615,11 +629,10 @@ def _compute_ar_metrics(ar: dict) -> dict:
         "ET_COST_LOC": round(totals["cost_usd"] / (loc / 1000), 2) if loc > 0 else 0,
         "RT_RATIO": 0,  # Requires human input tracking
         "RT_ITER": round(totals["iterations"], 2),
-        # Quality metrics: derive from quality dict, not from raw token counts
-        "QT_COV": round(quality.get("test_coverage", 0) * 100, 2),  # 0-100 scale
-        "QT_CONSIST": round(quality.get("consistency_score", 0) * 100, 2),  # 0-100 scale
-        "QT_AVAIL": round(quality.get("code_usability", 0) * 100, 2),  # 0-100 scale
-        "QT_BUG": round(max(0, 100 - quality.get("consistency_score", 0) * 100), 2),  # inverse of quality, 0-100
+        "QT_COV": qt_cov,
+        "QT_CONSIST": qt_consist,
+        "QT_AVAIL": qt_avail,
+        "QT_BUG": qt_bug,
         "PT_DESIGN": round(
             sum(stages.get(s, {}).get("total_tokens", 0) for s in ["ST-1", "ST-2", "ST-3"])
             / max(total, 1), 4
