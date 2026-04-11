@@ -122,7 +122,7 @@ def render_report(runs):
         ("Output Token", lambda r: r["grand_totals"].get("output_tokens", 0), "num", "min"),
         ("Cache Read", lambda r: r["grand_totals"].get("cache_read_tokens", 0), "num", "max"),
         ("Cache Write", lambda r: r["grand_totals"].get("cache_write_tokens", 0), "num", "neutral"),
-        ("总成本 (USD)", lambda r: r["grand_totals"].get("cost_usd", 0), "cost", "min"),
+        ("总成本 (USD)", lambda r: r["grand_totals"].get("total_cost_usd", 0), "cost", "min"),
         ("代码行数 (LOC)", lambda r: r["grand_totals"].get("total_loc", 0), "num", "max"),
         ("文件数", lambda r: r["grand_totals"].get("total_files", 0), "num", "max"),
         ("AR 数", lambda r: r["grand_totals"].get("ar_count", 0), "num", "neutral"),
@@ -203,12 +203,12 @@ def render_report(runs):
             f"{gt.get('total_loc', 0):,} LOC, "
             f"{gt.get('total_files', 0)} files, "
             f"耗时 {fmt_val(gt.get('total_duration_seconds', 0), 'time')}, "
-            f"成本 {fmt_val(gt.get('cost_usd', 0), 'cost')}</li>\n"
+            f"成本 {fmt_val(gt.get('total_cost_usd', 0), 'cost')}</li>\n"
         )
 
     if runs:
         max_loc_run = max(runs, key=lambda r: r["grand_totals"].get("total_loc", 0))
-        min_cost_run = min(runs, key=lambda r: r["grand_totals"].get("cost_usd", 1e6))
+        min_cost_run = min(runs, key=lambda r: r["grand_totals"].get("total_cost_usd", 1e6))
         best_eff_run = min(runs, key=lambda r: _avg_metric(r, "ET_LOC"))
         best_speed_run = min(runs, key=lambda r: r["grand_totals"].get("total_duration_seconds", 1e9))
         best_cache_run = max(runs, key=lambda r: _cache_rate(r))
@@ -262,7 +262,7 @@ def render_report(runs):
     </div>
     <div class="summary-card">
       <div class="card-label">经济性最优</div>
-      <div class="card-val">{fmt_val(min_cost_run["grand_totals"].get("cost_usd", 0), "cost")}</div>
+      <div class="card-val">{fmt_val(min_cost_run["grand_totals"].get("total_cost_usd", 0), "cost")}</div>
       <div class="card-meta"><strong>{run_label(min_cost_run)}</strong></div>
     </div>
     <div class="summary-card">
