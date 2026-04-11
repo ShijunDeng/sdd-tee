@@ -154,7 +154,9 @@ def render_report(runs):
 
     def _cache_rate(run):
         gt = run["grand_totals"]
-        return gt.get("cache_read_tokens", 0) / max(gt.get("input_tokens", 1), 1)
+        cache_read = gt.get("cache_read_tokens", 0)
+        gross_input = gt.get("input_tokens", 0) + cache_read
+        return cache_read / max(gross_input, 1)
 
     eff_rows = ""
     for name, ext, unit, hl in [
