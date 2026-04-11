@@ -597,6 +597,7 @@ def _compute_ar_metrics(ar: dict) -> dict:
     stages = ar["stages"]
     totals = ar["totals"]
     out = ar["output"]
+    quality = ar.get("quality", {})
 
     st5 = stages.get("ST-5", {}).get("total_tokens", 0)
     total = totals["total_tokens"]
@@ -606,18 +607,19 @@ def _compute_ar_metrics(ar: dict) -> dict:
     dur_h = max(totals["duration_seconds"] / 3600, 0.001)
 
     return {
-        "ET_LOC": round(st5 / loc, 2),
-        "ET_FILE": round(st5 / nf, 2),
-        "ET_TASK": round(st5 / tasks, 2),
+        "ET_LOC": round(total / loc, 2),
+        "ET_FILE": round(total / nf, 2),
+        "ET_TASK": round(total / tasks, 2),
         "ET_AR": round(total, 2),
         "ET_TIME": round(total / dur_h, 2),
         "ET_COST_LOC": round(totals["cost_usd"] / (loc / 1000), 2) if loc > 0 else 0,
         "RT_RATIO": 0,  # Requires human input tracking
         "RT_ITER": round(totals["iterations"], 2),
-        "QT_COV": round(st5 / 0.01, 2),
-        "QT_CONSIST": round(stages.get("ST-6", {}).get("total_tokens", 0) / 0.01, 2),
-        "QT_AVAIL": round(st5 / 0.01, 2),
-        "QT_BUG": round(st5, 2),
+        # Quality metrics: derive from quality dict, not from raw token counts
+        "QT_COV": round(quality.get("test_coverage", 0) * 100, 2),  # 0-100 scale
+        "QT_CONSIST": round(quality.get("consistency_score", 0) * 100, 2),  # 0-100 scale
+        "QT_AVAIL": round(quality.get("code_usability", 0) * 100, 2),  # 0-100 scale
+        "QT_BUG": round(max(0, 100 - quality.get("consistency_score", 0) * 100), 2),  # inverse of quality, 0-100
         "PT_DESIGN": round(
             sum(stages.get(s, {}).get("total_tokens", 0) for s in ["ST-1", "ST-2", "ST-3"])
             / max(total, 1), 4

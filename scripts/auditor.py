@@ -52,6 +52,7 @@ PRICING = {
     "minimax-m2.5":                  {"input": 0.5,   "output": 2.0,  "cache_read": 0.1,  "cache_write": 0.5},
     # DashScope / Qwen
     "qwen3.5-plus":                  {"input": 0.5,   "output": 2.0,  "cache_read": 0.1,  "cache_write": 0.5},
+    "qwen3.6-plus":                  {"input": 0.5,   "output": 2.0,  "cache_read": 0.1,  "cache_write": 0.5},
 }
 
 

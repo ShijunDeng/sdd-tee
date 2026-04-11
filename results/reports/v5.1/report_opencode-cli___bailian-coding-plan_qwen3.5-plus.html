@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>SDD-TEE v5.1 单模型报告 — bailian-coding-plan/qwen3.5-plus</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f8f9fa; color: #333; }
+  h1 { color: #1a73e8; border-bottom: 3px solid #1a73e8; padding-bottom: 10px; }
+  h2 { color: #333; margin-top: 30px; border-left: 4px solid #1a73e8; padding-left: 10px; }
+  table { border-collapse: collapse; width: 100%; margin: 15px 0; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: right; }
+  th { background: #1a73e8; color: #fff; text-align: center; }
+  td:first-child { text-align: left; font-weight: 500; background: #f0f4ff; }
+  tr:nth-child(even) { background: #f8f9fa; }
+  .section { background: #fff; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .summary-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 15px 0; }
+  .summary-item { background: #f0f4ff; border-radius: 8px; padding: 14px; text-align: center; }
+  .summary-item .big { font-size: 1.5em; font-weight: 700; color: #1a73e8; }
+  .summary-item .label { font-size: 0.8em; color: #666; margin-top: 2px; }
+  .fail-tag { display: inline-block; background: #fce4ec; color: #c62828; font-size: 0.8em; padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .meta { color: #666; font-size: 0.9em; margin-bottom: 20px; }
+  small { color: #999; }
+  ul { line-height: 1.8; }
+  p { line-height: 1.6; }
+  code { background: #f0f2f5; padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+  .footer { text-align: center; color: #999; font-size: 0.8em; margin-top: 30px; padding: 20px; }
+  .num { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<h1>SDD-TEE v5.1 单模型报告 <span style="font-size:0.5em; font-weight:normal; color:#666;">2026-04-11 19:57 UTC</span></h1>
+<div class="meta">模型: bailian-coding-plan/qwen3.5-plus | 工具: opencode-cli | 重试: 否</div>
+
+<div class="section">
+<h2 style="margin-top:0;">一、执行摘要</h2>
+<p>
+<b>opencode-cli / bailian-coding-plan/qwen3.5-plus</b> 完成了 <b>43</b> 个 AR 需求，
+生成了 <b>517,891</b> 行代码（3006 个文件），
+总耗时 <b>15h 48m</b>，
+消耗 <b>1,489,363</b> Tokens，
+总成本 <b>$16.10</b>。
+</p>
+</div>
+
+<div class="summary-box">
+  <div class="summary-item"><div class="big">1,489,363</div><div class="label">总 Token</div></div>
+  <div class="summary-item"><div class="big">517,891</div><div class="label">代码行数 (LOC)</div></div>
+  <div class="summary-item"><div class="big">3006</div><div class="label">文件数</div></div>
+  <div class="summary-item"><div class="big">15h 48m</div><div class="label">总耗时</div></div>
+  <div class="summary-item"><div class="big">$16.10</div><div class="label">总成本</div></div>
+  <div class="summary-item"><div class="big">4.4</div><div class="label">Token/LOC</div></div>
+  <div class="summary-item"><div class="big">100.0%</div><div class="label">Cache 命中率</div></div>
+  <div class="summary-item"><div class="big">2,444</div><div class="label">API 调用</div></div>
+</div>
+
+<div class="section">
+<h2>二、5 维指标</h2>
+<table><tr><td>ET-LOC (Token/行)</td><td class='num'>4.4</td></tr><tr><td>ET-FILE (Token/文件)</td><td class='num'>759.9</td></tr><tr><td>ET-TASK (Token/任务)</td><td class='num'>7,749.9</td></tr><tr><td>ET-AR (Token/AR)</td><td class='num'>34,636.3</td></tr><tr><td>ET-TIME (Token/小时)</td><td class='num'>102,584.1</td></tr><tr><td>ET-COST-LOC ($/千行)</td><td class='num'>$0.05</td></tr><tr><td>RT-RATIO (人工/AI)</td><td class='num'>0.0%</td></tr><tr><td>QT-CONSIST (一致性)</td><td class='num'>0.0%</td></tr><tr><td>QT-AVAIL (可用率)</td><td class='num'>0.0%</td></tr></table>
+</div>
+
+<div class="section">
+<h2>三、8 阶段 Token 分布</h2>
+<table>
+<tr><th>阶段</th><th>总 Token</th><th>Input</th><th>Output</th><th>Cache Read</th><th>Cache Write</th><th>API 调用</th><th>迭代</th><th>耗时</th><th>成本</th></tr>
+
+      <tr>
+        <td><strong>ST-0</strong><br><small style="color:#888">AR 输入</small></td>
+        <td class="num">60,356</td>
+        <td class="num">1,446</td>
+        <td class="num">58,910</td>
+        <td class="num">4,274,632</td>
+        <td class="num">205,046</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td>37m 59s</td>
+        <td class="num">$0.65</td>
+      </tr>
+      <tr>
+        <td><strong>ST-1</strong><br><small style="color:#888">需求澄清</small></td>
+        <td class="num">281,300</td>
+        <td class="num">1,830</td>
+        <td class="num">279,470</td>
+        <td class="num">8,504,289</td>
+        <td class="num">1,330,360</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td>1h 39m</td>
+        <td class="num">$3.04</td>
+      </tr>
+      <tr>
+        <td><strong>ST-2</strong><br><small style="color:#888">Spec 增量设计</small></td>
+        <td class="num">152,660</td>
+        <td class="num">1,020</td>
+        <td class="num">151,640</td>
+        <td class="num">3,878,467</td>
+        <td class="num">780,410</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td>1h 10m</td>
+        <td class="num">$1.65</td>
+      </tr>
+      <tr>
+        <td><strong>ST-3</strong><br><small style="color:#888">Design 增量设计</small></td>
+        <td class="num">181,266</td>
+        <td class="num">1,170</td>
+        <td class="num">180,096</td>
+        <td class="num">5,424,765</td>
+        <td class="num">1,045,614</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td>1h 20m</td>
+        <td class="num">$1.96</td>
+      </tr>
+      <tr>
+        <td><strong>ST-4</strong><br><small style="color:#888">任务拆解</small></td>
+        <td class="num">237,269</td>
+        <td class="num">1,644</td>
+        <td class="num">235,625</td>
+        <td class="num">7,686,588</td>
+        <td class="num">1,375,888</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td>1h 44m</td>
+        <td class="num">$2.57</td>
+      </tr>
+      <tr>
+        <td><strong>ST-5</strong><br><small style="color:#888">开发实现</small></td>
+        <td class="num">336,034</td>
+        <td class="num">8,652</td>
+        <td class="num">327,382</td>
+        <td class="num">32,735,437</td>
+        <td class="num">1,168,829</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td>6h 21m</td>
+        <td class="num">$3.63</td>
+      </tr>
+      <tr>
+        <td><strong>ST-6</strong><br><small style="color:#888">一致性验证</small></td>
+        <td class="num">158,632</td>
+        <td class="num">2,544</td>
+        <td class="num">156,088</td>
+        <td class="num">17,852,793</td>
+        <td class="num">1,231,830</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td>2h 2m</td>
+        <td class="num">$1.72</td>
+      </tr>
+      <tr>
+        <td><strong>ST-6.5</strong><br><small style="color:#888">ST-6.5</small></td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td>-</td>
+        <td class="num">$0.00</td>
+      </tr>
+      <tr>
+        <td><strong>ST-7</strong><br><small style="color:#888">合并归档</small></td>
+        <td class="num">81,846</td>
+        <td class="num">1,698</td>
+        <td class="num">80,148</td>
+        <td class="num">8,462,951</td>
+        <td class="num">1,429,394</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td>52m 10s</td>
+        <td class="num">$0.88</td>
+      </tr>
+</table>
+</div>
+
+<div class="section">
+<h2>四、AR 需求详情</h2>
+<p style="color:#666;font-size:0.9em">
+Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
+代码产出最高的 AR: <b>AR-041</b> (28,697 LOC)<br>
+</p>
+<table>
+<tr><th>AR</th><th>总 Token</th><th>代码产出</th><th>文件数</th><th>Token/LOC</th><th>耗时</th><th>成本</th><th>状态</th></tr>
+
+      <tr>
+        <td>AR-001</td>
+        <td class="num">12,892</td>
+        <td class="num">1,367 LOC</td>
+        <td class="num">10</td>
+        <td class="num">9.4</td>
+        <td>15m 18s</td>
+        <td class="num">$0.15</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-002</td>
+        <td class="num">24,158</td>
+        <td class="num">1,878 LOC</td>
+        <td class="num">11</td>
+        <td class="num">12.9</td>
+        <td>9m 40s</td>
+        <td class="num">$0.25</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-003</td>
+        <td class="num">27,571</td>
+        <td class="num">2,405 LOC</td>
+        <td class="num">11</td>
+        <td class="num">11.5</td>
+        <td>11m 58s</td>
+        <td class="num">$0.35</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-004</td>
+        <td class="num">22,757</td>
+        <td class="num">4,147 LOC</td>
+        <td class="num">27</td>
+        <td class="num">5.5</td>
+        <td>28m 16s</td>
+        <td class="num">$0.20</td>
+        <td><span class="fail-tag">2 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-005</td>
+        <td class="num">25,104</td>
+        <td class="num">5,263 LOC</td>
+        <td class="num">31</td>
+        <td class="num">4.8</td>
+        <td>19m 37s</td>
+        <td class="num">$0.23</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-006</td>
+        <td class="num">31,372</td>
+        <td class="num">5,263 LOC</td>
+        <td class="num">31</td>
+        <td class="num">6.0</td>
+        <td>23m 5s</td>
+        <td class="num">$0.37</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-007</td>
+        <td class="num">35,862</td>
+        <td class="num">6,615 LOC</td>
+        <td class="num">39</td>
+        <td class="num">5.4</td>
+        <td>23m 1s</td>
+        <td class="num">$0.34</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-008</td>
+        <td class="num">46,009</td>
+        <td class="num">7,451 LOC</td>
+        <td class="num">47</td>
+        <td class="num">6.2</td>
+        <td>22m 20s</td>
+        <td class="num">$0.64</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-009</td>
+        <td class="num">57,391</td>
+        <td class="num">9,066 LOC</td>
+        <td class="num">57</td>
+        <td class="num">6.3</td>
+        <td>21m 22s</td>
+        <td class="num">$0.59</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-010</td>
+        <td class="num">21,696</td>
+        <td class="num">11,785 LOC</td>
+        <td class="num">74</td>
+        <td class="num">1.8</td>
+        <td>28m 27s</td>
+        <td class="num">$0.19</td>
+        <td><span class="fail-tag">2 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-011</td>
+        <td class="num">24,463</td>
+        <td class="num">13,496 LOC</td>
+        <td class="num">85</td>
+        <td class="num">1.8</td>
+        <td>24m 27s</td>
+        <td class="num">$0.22</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-012</td>
+        <td class="num">32,662</td>
+        <td class="num">14,699 LOC</td>
+        <td class="num">93</td>
+        <td class="num">2.2</td>
+        <td>21m 40s</td>
+        <td class="num">$0.23</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-013</td>
+        <td class="num">5,594</td>
+        <td class="num">14,699 LOC</td>
+        <td class="num">93</td>
+        <td class="num">0.4</td>
+        <td>53m 27s</td>
+        <td class="num">$0.09</td>
+        <td><span class="fail-tag">5 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-014</td>
+        <td class="num">53,121</td>
+        <td class="num">15,260 LOC</td>
+        <td class="num">94</td>
+        <td class="num">3.5</td>
+        <td>21m 29s</td>
+        <td class="num">$0.48</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-015</td>
+        <td class="num">32,766</td>
+        <td class="num">17,746 LOC</td>
+        <td class="num">111</td>
+        <td class="num">1.9</td>
+        <td>27m 48s</td>
+        <td class="num">$0.29</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-016</td>
+        <td class="num">33,009</td>
+        <td class="num">19,923 LOC</td>
+        <td class="num">119</td>
+        <td class="num">1.7</td>
+        <td>23m 54s</td>
+        <td class="num">$0.69</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-017</td>
+        <td class="num">23,101</td>
+        <td class="num">21,482 LOC</td>
+        <td class="num">126</td>
+        <td class="num">1.1</td>
+        <td>20m 26s</td>
+        <td class="num">$0.27</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-018</td>
+        <td class="num">42,379</td>
+        <td class="num">22,290 LOC</td>
+        <td class="num">130</td>
+        <td class="num">1.9</td>
+        <td>16m 19s</td>
+        <td class="num">$0.56</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-019</td>
+        <td class="num">38,686</td>
+        <td class="num">24,712 LOC</td>
+        <td class="num">152</td>
+        <td class="num">1.6</td>
+        <td>25m 10s</td>
+        <td class="num">$0.27</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-020</td>
+        <td class="num">40,807</td>
+        <td class="num">2,564 LOC</td>
+        <td class="num">23</td>
+        <td class="num">15.9</td>
+        <td>25m 20s</td>
+        <td class="num">$0.42</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-021</td>
+        <td class="num">21,072</td>
+        <td class="num">3,467 LOC</td>
+        <td class="num">25</td>
+        <td class="num">6.1</td>
+        <td>19m 45s</td>
+        <td class="num">$0.27</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-022</td>
+        <td class="num">57,893</td>
+        <td class="num">4,290 LOC</td>
+        <td class="num">26</td>
+        <td class="num">13.5</td>
+        <td>20m 9s</td>
+        <td class="num">$0.51</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-023</td>
+        <td class="num">20,572</td>
+        <td class="num">5,415 LOC</td>
+        <td class="num">28</td>
+        <td class="num">3.8</td>
+        <td>20m 19s</td>
+        <td class="num">$0.20</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-024</td>
+        <td class="num">22,271</td>
+        <td class="num">6,485 LOC</td>
+        <td class="num">29</td>
+        <td class="num">3.4</td>
+        <td>18m 38s</td>
+        <td class="num">$0.28</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-025</td>
+        <td class="num">36,078</td>
+        <td class="num">6,491 LOC</td>
+        <td class="num">29</td>
+        <td class="num">5.6</td>
+        <td>15m 12s</td>
+        <td class="num">$0.59</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-026</td>
+        <td class="num">8,728</td>
+        <td class="num">7,737 LOC</td>
+        <td class="num">31</td>
+        <td class="num">1.1</td>
+        <td>33m 33s</td>
+        <td class="num">$0.12</td>
+        <td><span class="fail-tag">3 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-027</td>
+        <td class="num">26,620</td>
+        <td class="num">7,737 LOC</td>
+        <td class="num">31</td>
+        <td class="num">3.4</td>
+        <td>29m 32s</td>
+        <td class="num">$0.20</td>
+        <td><span class="fail-tag">2 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-028</td>
+        <td class="num">32,161</td>
+        <td class="num">8,934 LOC</td>
+        <td class="num">46</td>
+        <td class="num">3.6</td>
+        <td>23m 2s</td>
+        <td class="num">$0.32</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-029</td>
+        <td class="num">18,269</td>
+        <td class="num">11,169 LOC</td>
+        <td class="num">55</td>
+        <td class="num">1.6</td>
+        <td>17m 30s</td>
+        <td class="num">$0.21</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-030</td>
+        <td class="num">60,006</td>
+        <td class="num">11,169 LOC</td>
+        <td class="num">55</td>
+        <td class="num">5.4</td>
+        <td>22m 31s</td>
+        <td class="num">$0.57</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-031</td>
+        <td class="num">51,157</td>
+        <td class="num">11,169 LOC</td>
+        <td class="num">55</td>
+        <td class="num">4.6</td>
+        <td>23m 11s</td>
+        <td class="num">$0.75</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-032</td>
+        <td class="num">45,390</td>
+        <td class="num">11,169 LOC</td>
+        <td class="num">55</td>
+        <td class="num">4.1</td>
+        <td>16m 28s</td>
+        <td class="num">$0.42</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-033</td>
+        <td class="num">30,449</td>
+        <td class="num">11,169 LOC</td>
+        <td class="num">55</td>
+        <td class="num">2.7</td>
+        <td>11m 17s</td>
+        <td class="num">$0.30</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-034</td>
+        <td class="num">70,488</td>
+        <td class="num">11,284 LOC</td>
+        <td class="num">57</td>
+        <td class="num">6.2</td>
+        <td>25m 9s</td>
+        <td class="num">$0.60</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-035</td>
+        <td class="num">29,136</td>
+        <td class="num">26,325 LOC</td>
+        <td class="num">175</td>
+        <td class="num">1.1</td>
+        <td>21m 18s</td>
+        <td class="num">$0.32</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-036</td>
+        <td class="num">47,304</td>
+        <td class="num">11,893 LOC</td>
+        <td class="num">65</td>
+        <td class="num">4.0</td>
+        <td>15m 56s</td>
+        <td class="num">$0.40</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-037</td>
+        <td class="num">25,867</td>
+        <td class="num">13,107 LOC</td>
+        <td class="num">68</td>
+        <td class="num">2.0</td>
+        <td>20m 7s</td>
+        <td class="num">$0.30</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-038</td>
+        <td class="num">31,161</td>
+        <td class="num">28,046 LOC</td>
+        <td class="num">181</td>
+        <td class="num">1.1</td>
+        <td>21m 40s</td>
+        <td class="num">$0.31</td>
+        <td><span class="fail-tag">1 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-039</td>
+        <td class="num">35,875</td>
+        <td class="num">28,051 LOC</td>
+        <td class="num">181</td>
+        <td class="num">1.3</td>
+        <td>19m 9s</td>
+        <td class="num">$0.63</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-040</td>
+        <td class="num">31,646</td>
+        <td class="num">13,670 LOC</td>
+        <td class="num">71</td>
+        <td class="num">2.3</td>
+        <td>14m 59s</td>
+        <td class="num">$0.57</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-041</td>
+        <td class="num">53,802</td>
+        <td class="num">28,697 LOC</td>
+        <td class="num">182</td>
+        <td class="num">1.9</td>
+        <td>19m 20s</td>
+        <td class="num">$0.46</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+      <tr>
+        <td>AR-042</td>
+        <td class="num">30,970</td>
+        <td class="num">14,153 LOC</td>
+        <td class="num">71</td>
+        <td class="num">2.2</td>
+        <td>31m 23s</td>
+        <td class="num">$0.31</td>
+        <td><span class="fail-tag">2 fail</span></td>
+      </tr>
+      <tr>
+        <td>AR-043</td>
+        <td class="num">71,048</td>
+        <td class="num">14,153 LOC</td>
+        <td class="num">71</td>
+        <td class="num">5.0</td>
+        <td>25m 18s</td>
+        <td class="num">$0.62</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
+      </tr>
+</table>
+</div>
+
+<div class="section">
+<h2>五、说明</h2>
+<ul>
+  <li>Token 来源: LiteLLM Proxy JSONL 日志（权威数据源）</li>
+  <li>Cache 命中率 = Cache Read / (Input + Cache Read)</li>
+  <li>成本基于模型定价表计算（每 1M tokens，USD）</li>
+  <li>状态: <span style="color:#4caf50">&#10004;</span> = 全部 stage 完成 | <span class="fail-tag">N fail</span> = N 个 stage 无数据</li>
+</ul>
+</div>
+
+<div class="footer">
+  SDD-TEE v5.1 Report | Generated 2026-04-11 19:57 UTC | opencode-cli / bailian-coding-plan/qwen3.5-plus
+</div>
+</body></html>
