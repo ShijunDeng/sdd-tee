@@ -75,24 +75,28 @@ class OpenCodeCliAdapter(BaseAdapter):
                         total_cache_write += cache.get("write", 0) or 0
                     api_calls += 1
 
-            # Format 2: usage field
-            usage = obj.get("usage", obj.get("token_count", {}))
-            if isinstance(usage, dict):
+            # Format 2: usage field — only match if key actually exists
+            usage = obj.get("usage") or obj.get("token_count")
+            if isinstance(usage, dict) and usage:
                 total_input += usage.get("input_tokens", usage.get("prompt_tokens", 0)) or 0
                 total_output += usage.get("output_tokens", usage.get("completion_tokens", 0)) or 0
                 total_cache_read += usage.get("cache_read_tokens", usage.get("cached_tokens", 0)) or 0
                 total_cache_write += usage.get("cache_write_tokens", 0) or 0
                 api_calls += 1
 
-            # Format 3: Direct fields
+            # Format 3: Direct token fields
+            direct_counted = False
             if "input_tokens" in obj:
                 total_input += obj.get("input_tokens", 0) or 0
+                direct_counted = True
             if "output_tokens" in obj:
                 total_output += obj.get("output_tokens", 0) or 0
             if "cache_read_tokens" in obj:
                 total_cache_read += obj.get("cache_read_tokens", 0) or 0
             if "cache_write_tokens" in obj:
                 total_cache_write += obj.get("cache_write_tokens", 0) or 0
+            if direct_counted:
+                api_calls += 1
 
         record.input_tokens = total_input
         record.output_tokens = total_output

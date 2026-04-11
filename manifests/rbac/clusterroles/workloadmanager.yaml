@@ -1,0 +1,100 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: workloadmanager
+  labels:
+    app.kubernetes.io/name: workloadmanager
+    app.kubernetes.io/component: control-plane
+    app.kubernetes.io/part-of: agentcube
+rules:
+  # Agent sandbox management
+  - apiGroups: ["agents.x-k8s.io"]
+    resources: ["sandboxes"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["agents.x-k8s.io"]
+    resources: ["sandboxes/status"]
+    verbs: ["get", "update", "patch"]
+  
+  # Sandbox claims
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxclaims"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxclaims/status"]
+    verbs: ["get", "update", "patch"]
+  
+  # Sandbox templates
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxtemplates"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxtemplates/status"]
+    verbs: ["get", "update", "patch"]
+  
+  # Sandbox warm pools
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxwarmpools"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxwarmpools/status"]
+    verbs: ["get", "update", "patch"]
+  
+  # CodeInterpreter CRD
+  - apiGroups: ["runtime.agentcube.volcano.sh"]
+    resources: ["codeinterpreters"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["runtime.agentcube.volcano.sh"]
+    resources: ["codeinterpreters/status"]
+    verbs: ["get", "update", "patch"]
+  - apiGroups: ["runtime.agentcube.volcano.sh"]
+    resources: ["codeinterpreters/finalizers"]
+    verbs: ["update"]
+  
+  # AgentRuntime CRD
+  - apiGroups: ["runtime.agentcube.volcano.sh"]
+    resources: ["agentruntimes"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["runtime.agentcube.volcano.sh"]
+    resources: ["agentruntimes/status"]
+    verbs: ["get"]
+  
+  # Pod management
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: [""]
+    resources: ["pods/status"]
+    verbs: ["get", "update", "patch"]
+  - apiGroups: [""]
+    resources: ["pods/log"]
+    verbs: ["get", "list"]
+  
+  # Secrets for sandbox credentials
+  - apiGroups: [""]
+    resources: ["secrets"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  
+  # ConfigMaps
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  
+  # Services
+  - apiGroups: [""]
+    resources: ["services"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  
+  # Events
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  
+  # Token review for authentication
+  - apiGroups: ["authentication.k8s.io"]
+    resources: ["tokenreviews"]
+    verbs: ["create"]
+  
+  # Subject access review for authorization
+  - apiGroups: ["authorization.k8s.io"]
+    resources: ["subjectaccessreviews"]
+    verbs: ["create"]

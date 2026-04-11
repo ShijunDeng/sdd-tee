@@ -43,7 +43,7 @@ class GeminiCliAdapter(BaseAdapter):
             if obj.get("type") == "step_finish":
                 part = obj.get("part", {})
                 tokens = part.get("tokens", {})
-                if isinstance(tokens, dict):
+                if isinstance(tokens, dict) and tokens:
                     total_input += tokens.get("input", 0) or 0
                     total_output += tokens.get("output", 0) or 0
                     cache = tokens.get("cache", {})
@@ -52,8 +52,8 @@ class GeminiCliAdapter(BaseAdapter):
                     api_calls += 1
             # Also check for direct usage fields
             else:
-                usage = obj.get("usage", obj.get("tokenCount", {}))
-                if isinstance(usage, dict):
+                usage = obj.get("usage") or obj.get("tokenCount")
+                if isinstance(usage, dict) and usage:
                     total_input += usage.get("input_tokens", usage.get("inputTokenCount", 0)) or 0
                     total_output += usage.get("output_tokens", usage.get("outputTokenCount", 0)) or 0
                     api_calls += 1

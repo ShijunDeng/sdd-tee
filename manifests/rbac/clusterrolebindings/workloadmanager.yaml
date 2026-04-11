@@ -1,0 +1,16 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: workloadmanager
+  labels:
+    app.kubernetes.io/name: workloadmanager
+    app.kubernetes.io/component: control-plane
+    app.kubernetes.io/part-of: agentcube
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: workloadmanager
+subjects:
+  - kind: ServiceAccount
+    name: workloadmanager
+    namespace: agentcube

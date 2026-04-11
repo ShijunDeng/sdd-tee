@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: agentcube
+  labels:
+    app.kubernetes.io/name: agentcube
+    app.kubernetes.io/part-of: agentcube

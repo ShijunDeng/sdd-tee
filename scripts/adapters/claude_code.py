@@ -51,8 +51,9 @@ class ClaudeCodeAdapter(BaseAdapter):
             except json.JSONDecodeError:
                 continue
 
-            usage = obj.get("usage", {})
-            if isinstance(usage, dict):
+            # Only match if usage field actually exists with token data
+            usage = obj.get("usage")
+            if isinstance(usage, dict) and any(usage.get(k) for k in ("input_tokens", "output_tokens", "cache_read_input_tokens")):
                 total_input += usage.get("input_tokens", 0) or 0
                 total_output += usage.get("output_tokens", 0) or usage.get("completion_tokens", 0) or 0
                 total_cache_read += usage.get("cache_read_input_tokens", 0) or 0

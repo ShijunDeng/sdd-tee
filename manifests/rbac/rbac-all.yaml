@@ -1,0 +1,252 @@
+---
+# AgentCube RBAC Configuration
+# This file contains all RBAC resources for AgentCube components
+# Apply with: kubectl apply -f rbac-all.yaml
+
+# Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: agentcube
+  labels:
+    app.kubernetes.io/name: agentcube
+    app.kubernetes.io/part-of: agentcube
+
+---
+# WorkloadManager ServiceAccount
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: workloadmanager
+  namespace: agentcube
+  labels:
+    app.kubernetes.io/name: workloadmanager
+    app.kubernetes.io/component: control-plane
+    app.kubernetes.io/part-of: agentcube
+
+---
+# Router ServiceAccount
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: agentcube-router
+  namespace: agentcube
+  labels:
+    app.kubernetes.io/name: agentcube-router
+    app.kubernetes.io/component: control-plane
+    app.kubernetes.io/part-of: agentcube
+
+---
+# Volcano Scheduler ServiceAccount
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: volcano-scheduler
+  namespace: agentcube
+  labels:
+    app.kubernetes.io/name: volcano-scheduler
+    app.kubernetes.io/component: scheduler
+    app.kubernetes.io/part-of: agentcube
+
+---
+# WorkloadManager ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: workloadmanager
+  labels:
+    app.kubernetes.io/name: workloadmanager
+    app.kubernetes.io/component: control-plane
+    app.kubernetes.io/part-of: agentcube
+rules:
+  - apiGroups: ["agents.x-k8s.io"]
+    resources: ["sandboxes"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["agents.x-k8s.io"]
+    resources: ["sandboxes/status"]
+    verbs: ["get", "update", "patch"]
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxclaims"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxclaims/status"]
+    verbs: ["get", "update", "patch"]
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxtemplates"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxtemplates/status"]
+    verbs: ["get", "update", "patch"]
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxwarmpools"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["extensions.agents.x-k8s.io"]
+    resources: ["sandboxwarmpools/status"]
+    verbs: ["get", "update", "patch"]
+  - apiGroups: ["runtime.agentcube.volcano.sh"]
+    resources: ["codeinterpreters"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["runtime.agentcube.volcano.sh"]
+    resources: ["codeinterpreters/status"]
+    verbs: ["get", "update", "patch"]
+  - apiGroups: ["runtime.agentcube.volcano.sh"]
+    resources: ["codeinterpreters/finalizers"]
+    verbs: ["update"]
+  - apiGroups: ["runtime.agentcube.volcano.sh"]
+    resources: ["agentruntimes"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["runtime.agentcube.volcano.sh"]
+    resources: ["agentruntimes/status"]
+    verbs: ["get"]
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: [""]
+    resources: ["pods/status"]
+    verbs: ["get", "update", "patch"]
+  - apiGroups: [""]
+    resources: ["pods/log"]
+    verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["secrets"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: [""]
+    resources: ["services"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["authentication.k8s.io"]
+    resources: ["tokenreviews"]
+    verbs: ["create"]
+  - apiGroups: ["authorization.k8s.io"]
+    resources: ["subjectaccessreviews"]
+    verbs: ["create"]
+
+---
+# Volcano Scheduler ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: volcano-scheduler
+  labels:
+    app.kubernetes.io/name: volcano-scheduler
+    app.kubernetes.io/component: scheduler
+    app.kubernetes.io/part-of: agentcube
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch", "update", "patch"]
+  - apiGroups: [""]
+    resources: ["nodes"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["scheduling.volcano.sh"]
+    resources: ["podgroups"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["scheduling.volcano.sh"]
+    resources: ["podgroups/status"]
+    verbs: ["get", "update", "patch"]
+  - apiGroups: ["scheduling.volcano.sh"]
+    resources: ["queues"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["scheduling.k8s.io"]
+    resources: ["priorityclasses"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get", "list", "watch"]
+
+---
+# WorkloadManager ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: workloadmanager
+  labels:
+    app.kubernetes.io/name: workloadmanager
+    app.kubernetes.io/component: control-plane
+    app.kubernetes.io/part-of: agentcube
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: workloadmanager
+subjects:
+  - kind: ServiceAccount
+    name: workloadmanager
+    namespace: agentcube
+
+---
+# Volcano Scheduler ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: volcano-scheduler
+  labels:
+    app.kubernetes.io/name: volcano-scheduler
+    app.kubernetes.io/component: scheduler
+    app.kubernetes.io/part-of: agentcube
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: volcano-scheduler
+subjects:
+  - kind: ServiceAccount
+    name: volcano-scheduler
+    namespace: agentcube
+
+---
+# Router Role (namespace-scoped)
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: agentcube-router
+  namespace: agentcube
+  labels:
+    app.kubernetes.io/name: agentcube-router
+    app.kubernetes.io/component: control-plane
+    app.kubernetes.io/part-of: agentcube
+rules:
+  - apiGroups: [""]
+    resources: ["secrets"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["services"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["endpoints"]
+    verbs: ["get", "list", "watch"]
+
+---
+# Router RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: agentcube-router
+  namespace: agentcube
+  labels:
+    app.kubernetes.io/name: agentcube-router
+    app.kubernetes.io/component: control-plane
+    app.kubernetes.io/part-of: agentcube
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: agentcube-router
+subjects:
+  - kind: ServiceAccount
+    name: agentcube-router
+    namespace: agentcube

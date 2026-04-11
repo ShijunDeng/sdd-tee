@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: workloadmanager
+  namespace: agentcube
+  labels:
+    app.kubernetes.io/name: workloadmanager
+    app.kubernetes.io/component: control-plane
+    app.kubernetes.io/part-of: agentcube

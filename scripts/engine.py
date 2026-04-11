@@ -87,6 +87,32 @@ def create_adapter(tool: str, model: str, api_base: Optional[str] = None) -> Bas
     return factories[tool]()
 
 
+def reconcile_stage_records(adapter, log_dir: str, stage_records: dict, ar_id: str) -> dict:
+    """Re-parse all log files to get authoritative api_calls/iterations counts.
+
+    This corrects any parser-induced inflation of call counts from the live run.
+    Token values (input/output/cache) are preserved as-is since they were already
+    correctly extracted — the bug only affected api_calls counting.
+    """
+    log_path = Path(log_dir)
+    if not log_path.exists():
+        return stage_records
+
+    for stage_id, record in stage_records.items():
+        log_file = log_path / f"{ar_id}_{stage_id}.log"
+        if not log_file.exists():
+            continue
+
+        log_text = log_file.read_text(encoding="utf-8")
+        verified = adapter.parse_native_output(log_text)
+        if verified.api_calls > 0:
+            # Only update api_calls/iterations, preserve token values
+            record.api_calls = verified.api_calls
+            record.iterations = verified.api_calls
+
+    return stage_records
+
+
 # ─── Prompt builder ──────────────────────────────────────────────────────
 
 def load_specs(specs_dir: str) -> dict:
@@ -372,6 +398,10 @@ def run_benchmark(
             prev_outputs[stage_id] = f"[Stage {stage_id} completed]"
 
         ar_end = time.time()
+
+        # ─── Reconcile: re-parse logs to correct api_calls ────────────────
+        if not dry_run_prompts:
+            reconcile_stage_records(adapter, str(log_dir), stage_records, ar["id"])
 
         # ─── Compute AR totals ────────────────────────────────────────────
         totals = {
