@@ -89,8 +89,15 @@ def fmt_val(val, unit_type="num"):
 
 
 def render_report(runs):
-    runs.sort(key=lambda r: (is_run_failed(r), r["meta"].get("tool", ""), r["meta"].get("model", "")))
-    valid_runs = [r for r in runs if not is_run_failed(r)]
+    # Separate valid and failed runs — failed runs are excluded from output
+    failed_runs = [r for r in runs if is_run_failed(r)]
+    runs = [r for r in runs if not is_run_failed(r)]
+
+    if failed_runs:
+        failed_labels = [f"{r['meta'].get('tool','?')} / {r['meta'].get('model','?')}" for r in failed_runs]
+        print(f"[11] Excluded {len(failed_runs)} invalid run(s): {', '.join(failed_labels)}")
+
+    runs.sort(key=lambda r: (r["meta"].get("tool", ""), r["meta"].get("model", "")))
     n = len(runs)
     labels = [run_label(r) for r in runs]
     headers = "".join(f"<th>{l}</th>" for l in labels)
@@ -98,13 +105,12 @@ def render_report(runs):
     # ─── 1. Grand Totals Table ────────────────────────────────────────────
     def td_row(name, extractor, unit="num", highlight="min"):
         vals = [extractor(r) for r in runs]
-        valid_vals = [v for r, v in zip(runs, vals) if not is_run_failed(r)]
+        valid_vals = [v for v in vals if v != 0 or name == "Cache Write"]
         best = (min(valid_vals) if highlight == "min" else max(valid_vals)) if valid_vals else None
         row = f"<tr><td>{name}</td>"
-        for i, r in enumerate(runs):
-            v = vals[i]
+        for v in vals:
             cls = ""
-            if not is_run_failed(r) and best is not None and v == best and len(valid_vals) > 1 and highlight != "neutral":
+            if best is not None and v == best and len(valid_vals) > 1 and highlight != "neutral":
                 cls = ' class="best"'
             row += f"<td{cls}>{fmt_val(v, unit)}</td>"
         return row + "</tr>\n"
@@ -130,19 +136,18 @@ def render_report(runs):
     stage_rows = ""
     for sid in STAGES:
         name = STAGE_NAMES.get(sid, sid)
-        valid_vals = [r.get("stage_aggregates", {}).get(sid, {}).get("total_tokens", 0) for r in valid_runs]
+        valid_vals = [r.get("stage_aggregates", {}).get(sid, {}).get("total_tokens", 0) for r in runs]
         best = min(valid_vals) if valid_vals else None
         stage_rows += f"<tr><td><strong>{sid}</strong><br><small>{name}</small></td>"
         for r in runs:
             v = r.get("stage_aggregates", {}).get(sid, {}).get("total_tokens", 0)
             dur = r.get("stage_aggregates", {}).get(sid, {}).get("duration_seconds", 0)
-            cls = ' class="best"' if not is_run_failed(r) and best is not None and v == best and len(valid_vals) > 1 else ""
+            cls = ' class="best"' if best is not None and v == best and len(valid_vals) > 1 else ""
             stage_rows += f"<td{cls}>{fmt_val(v)}<br><small>{fmt_val(dur, 'time')}</small></td>"
         stage_rows += "</tr>\n"
 
     # ─── 3. Efficiency & Quality Table ────────────────────────────────────
     def _avg_metric(run, key):
-        if is_run_failed(run): return 0
         vals = [ar.get("metrics", {}).get(key, 0) for ar in run.get("ar_results", [])]
         vals = [v for v in vals if v and v > 0]
         return sum(vals) / len(vals) if vals else 0
@@ -189,27 +194,24 @@ def render_report(runs):
 
     # ─── 5. Executive Summary ─────────────────────────────────────────────
     run_list_html = ""
-    for i, r in enumerate(runs):
+    for r in runs:
         gt = r["grand_totals"]
         lbl = run_label(r)
-        if is_run_failed(r):
-            run_list_html += f"<li><b>{lbl}</b>: <span class='failed-text'>未产出有效代码或Token数据</span></li>\n"
-        else:
-            run_list_html += (
-                f"<li><b>{lbl}</b>: "
-                f"{gt.get('total_tokens', 0):,} Tokens, "
-                f"{gt.get('total_loc', 0):,} LOC, "
-                f"{gt.get('total_files', 0)} files, "
-                f"耗时 {fmt_val(gt.get('total_duration_seconds', 0), 'time')}, "
-                f"成本 {fmt_val(gt.get('cost_usd', 0), 'cost')}</li>\n"
-            )
+        run_list_html += (
+            f"<li><b>{lbl}</b>: "
+            f"{gt.get('total_tokens', 0):,} Tokens, "
+            f"{gt.get('total_loc', 0):,} LOC, "
+            f"{gt.get('total_files', 0)} files, "
+            f"耗时 {fmt_val(gt.get('total_duration_seconds', 0), 'time')}, "
+            f"成本 {fmt_val(gt.get('cost_usd', 0), 'cost')}</li>\n"
+        )
 
-    if valid_runs:
-        max_loc_run = max(valid_runs, key=lambda r: r["grand_totals"].get("total_loc", 0))
-        min_cost_run = min(valid_runs, key=lambda r: r["grand_totals"].get("cost_usd", 1e6))
-        best_eff_run = min(valid_runs, key=lambda r: _avg_metric(r, "ET_LOC"))
-        best_speed_run = min(valid_runs, key=lambda r: r["grand_totals"].get("total_duration_seconds", 1e9))
-        best_cache_run = max(valid_runs, key=lambda r: _cache_rate(r))
+    if runs:
+        max_loc_run = max(runs, key=lambda r: r["grand_totals"].get("total_loc", 0))
+        min_cost_run = min(runs, key=lambda r: r["grand_totals"].get("cost_usd", 1e6))
+        best_eff_run = min(runs, key=lambda r: _avg_metric(r, "ET_LOC"))
+        best_speed_run = min(runs, key=lambda r: r["grand_totals"].get("total_duration_seconds", 1e9))
+        best_cache_run = max(runs, key=lambda r: _cache_rate(r))
     else:
         max_loc_run = min_cost_run = best_eff_run = best_speed_run = best_cache_run = runs[0]
 
