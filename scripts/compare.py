@@ -38,6 +38,7 @@ STAGE_NAMES = {
 # Metric labels for display
 METRIC_LABELS = {
     "ET_LOC": "ET-LOC (Token/行)",
+    "ET_LOC_GROSS": "ET-LOC-GROSS (含缓存 Token/行)",
     "ET_FILE": "ET-FILE (Token/文件)",
     "ET_TASK": "ET-TASK (Token/任务)",
     "ET_AR": "ET-AR (Token/AR)",
@@ -56,7 +57,7 @@ METRIC_LABELS = {
 }
 
 # Which metrics are "lower is better"
-LOWER_BETTER = {"ET_LOC", "ET_FILE", "ET_TASK", "ET_AR", "ET_TIME", "ET_COST_LOC", "RT_RATIO", "RT_ITER", "QT_BUG"}
+LOWER_BETTER = {"ET_LOC", "ET_LOC_GROSS", "ET_FILE", "ET_TASK", "ET_AR", "ET_TIME", "ET_COST_LOC", "RT_RATIO", "RT_ITER", "QT_BUG"}
 
 
 def load_runs(paths):
@@ -140,6 +141,20 @@ def _cache_rate(run):
     return cache_read / max(gross_input, 1)
 
 
+def _et_loc_gross(run):
+    """Gross ET_LOC: (net_input + cache_read + output) / LOC.
+    This is the true API traffic per line of code, unlike ET_LOC which
+    only counts net_input + output and can be misleading when cache_read is high.
+    Returns None if no valid data.
+    """
+    gt = run["grand_totals"]
+    gross = gt.get("input_tokens", 0) + gt.get("cache_read_tokens", 0) + gt.get("output_tokens", 0)
+    loc = gt.get("total_loc", 0)
+    if loc == 0:
+        return None
+    return gross / loc
+
+
 def _failed_stages_count(run):
     count = 0
     for ar in run.get("ar_results", []):
@@ -193,8 +208,8 @@ def _compute_scores(runs):
     scores = []
     for r in runs:
         gt = r["grand_totals"]
-        # Token efficiency: inverse of ET_LOC, normalized
-        et_loc = _avg_metric(r, "ET_LOC")
+        # Token efficiency: inverse of ET_LOC_GROSS (gross, including cache), normalized
+        et_loc_gross = _et_loc_gross(r)
         # Cost efficiency: inverse of total cost, normalized
         cost = gt.get("total_cost_usd", 0)
         # Code quality: weighted avg of consistency + availability (or 50 if unmeasured)
@@ -206,12 +221,13 @@ def _compute_scores(runs):
         # Execution speed: inverse of duration
         duration = gt.get("total_duration_seconds", 0)
         # Simple normalization across runs
-        et_locs = [x for x in (_avg_metric(x, "ET_LOC") for x in runs) if x is not None]
+        et_locs_gross = [_et_loc_gross(x) for x in runs]
+        et_locs_gross = [x for x in et_locs_gross if x is not None]
         costs = [x["grand_totals"].get("total_cost_usd", 1) for x in runs]
         durations = [x["grand_totals"].get("total_duration_seconds", 1) for x in runs]
         caches = [_cache_rate(x) for x in runs]
 
-        token_score = _normalize_inverse(et_loc, et_locs) if et_locs else 50
+        token_score = _normalize_inverse(et_loc_gross, et_locs_gross) if et_locs_gross else 50
         cost_score = _normalize_inverse(cost, costs)
         quality_vals = [
             (c + a) / 2 if (c and a) else 50
@@ -286,13 +302,27 @@ def _build_anomalies(runs):
     # Also add industry benchmark info
     if runs:
         et_locs = [x for x in (_avg_metric(r, "ET_LOC") for r in runs) if x is not None]
+        et_locs_gross = [_et_loc_gross(r) for r in runs]
+        et_locs_gross = [x for x in et_locs_gross if x is not None]
         costs = [r["grand_totals"].get("total_cost_usd", 0) / max(r["grand_totals"].get("total_loc", 1), 1) * 1000 for r in runs]
-        if et_locs:
-            min_et = min(et_locs)
-            max_et = max(et_locs)
+
+        # Check if any model has suspiciously low ET_LOC (net) due to cache classification
+        for r in runs:
+            et_loc = _avg_metric(r, "ET_LOC")
+            et_loc_gross = _et_loc_gross(r)
+            if et_loc is not None and et_loc_gross is not None and et_loc_gross > et_loc * 3:
+                anomalies.append(("warn", "Token 统计偏差",
+                    f"该模型 ET-LOC(净) = {et_loc:,.0f}，但 ET-LOC-GROSS(含缓存) = {et_loc_gross:,.0f}，相差 {et_loc_gross/et_loc:.0f}x。"
+                    f"原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，"
+                    f"不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。",
+                    run_label(r)))
+
+        if et_locs_gross:
+            min_et_gross = min(et_locs_gross)
+            max_et_gross = max(et_locs_gross)
             anomalies.append(("info", "业界对标",
-                f"Token/LOC 范围 {min_et:,.0f}~{max_et:,.0f}，$/KLOC 范围 {min(costs):.2f}~{max(costs):.2f}。"
-                f"业界同类评测（SWE-bench、Aider Polyglot）的 token 效率通常在 30~80 token/LOC 区间。",
+                f"ET-LOC-GROSS (含缓存) 范围 {min_et_gross:,.0f}~{max_et_gross:,.0f} token/LOC。"
+                f"业界同类评测（SWE-bench、Aider Polyglot）的 token 效率通常在 30~2000 token/LOC 区间。",
                 "全部轮次"))
 
     return anomalies
@@ -341,8 +371,8 @@ def render_report(runs):
     max_loc_run = max(runs, key=lambda r: r["grand_totals"].get("total_loc", 0))
     min_cost_run = min(runs, key=lambda r: r["grand_totals"].get("total_cost_usd", 1e6))
     best_eff_run = min(
-        (r for r in runs if _avg_metric(r, "ET_LOC") is not None),
-        key=lambda r: _avg_metric(r, "ET_LOC"),
+        (r for r in runs if _et_loc_gross(r) is not None),
+        key=lambda r: _et_loc_gross(r),
         default=runs[0] if runs else None
     )
     best_speed_run = min(runs, key=lambda r: r["grand_totals"].get("total_duration_seconds", 1e9))
@@ -372,7 +402,7 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <li><b>产出规模最大</b>: <code>{run_label(max_loc_run)}</code> 输出了 <b>{max_loc_run['grand_totals'].get('total_loc', 0):,} LOC</b> 和 <b>{max_loc_run['grand_totals'].get('total_files', 0)}</b> 个文件。</li>
 <li><b>经济性最优</b>: <code>{run_label(min_cost_run)}</code> 总成本仅 <b>{fmt_val(min_cost_run['grand_totals'].get('total_cost_usd', 0), 'cost')}</b>。</li>
 <li><b>交付速度最快</b>: <code>{run_label(best_speed_run)}</code> 仅耗时 <b>{fmt_val(best_speed_run['grand_totals'].get('total_duration_seconds', 0), 'time')}</b> 完成全量需求。</li>
-<li><b>Token 效率最高</b>: <code>{run_label(best_eff_run)}</code> 每行代码平均消耗 <b>{fmt_val(_avg_metric(best_eff_run, 'ET_LOC'))} Tokens/LOC</b>，代码逻辑密度最高。</li>
+<li><b>Token 效率最高</b>: <code>{run_label(best_eff_run)}</code> 每行代码平均消耗 <b>{fmt_val(_et_loc_gross(best_eff_run))} Tokens/LOC (含缓存)</b>，代码逻辑密度最高。</li>
 <li><b>Cache 命中率最高</b>: <code>{run_label(best_cache_run)}</code> 上下文复用率达到 <b>{fmt_val(_cache_rate(best_cache_run), 'pct')}</b>。</li>
 </ul>
 
@@ -400,7 +430,8 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 
     gt_rows = ""
     for name, ext, unit, hl in [
-        ("总 Token", lambda r: r["grand_totals"].get("total_tokens", 0), "num", "min"),
+        ("总 Token (净)", lambda r: r["grand_totals"].get("total_tokens", 0), "num", "min"),
+        ("总 Token (含缓存)", lambda r: r["grand_totals"].get("input_tokens", 0) + r["grand_totals"].get("cache_read_tokens", 0) + r["grand_totals"].get("output_tokens", 0), "num", "neutral"),
         ("Input Token (净)", lambda r: r["grand_totals"].get("input_tokens", 0), "num", "min"),
         ("Output Token", lambda r: r["grand_totals"].get("output_tokens", 0), "num", "min"),
         ("Cache Read", lambda r: r["grand_totals"].get("cache_read_tokens", 0), "num", "max"),
@@ -432,10 +463,13 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 
     # ─── 3. Efficiency Table ──────────────────────────────────────────
     eff_rows = ""
-    for key in ["ET_LOC", "ET_FILE", "ET_TASK", "ET_AR", "ET_TIME", "ET_COST_LOC"]:
+    for key in ["ET_LOC", "ET_LOC_GROSS", "ET_FILE", "ET_TASK", "ET_AR", "ET_TIME", "ET_COST_LOC"]:
         hl = "min" if key in LOWER_BETTER else "max"
         unit = "cost" if key == "ET_COST_LOC" else "num"
-        eff_rows += td_row(METRIC_LABELS[key], lambda r, k=key: _avg_metric(r, k), unit, hl)
+        if key == "ET_LOC_GROSS":
+            eff_rows += td_row(METRIC_LABELS[key], lambda r: _et_loc_gross(r), unit, hl)
+        else:
+            eff_rows += td_row(METRIC_LABELS[key], lambda r, k=key: _avg_metric(r, k), unit, hl)
 
     eff_rows += td_row("Cache 命中率", lambda r: _cache_rate(r), "pct", "max")
     eff_rows += td_row("RT-RATIO (人工/AI)", lambda r: _avg_metric(r, "RT_RATIO"), "pct", "min")
@@ -507,7 +541,8 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 
     # ─── Guide Table ──────────────────────────────────────────────────
     guide_html = """
-  <tr><td width='120'><b>ET-LOC</b></td><td>总 Token / 生成代码行数 (LOC)。<b>越低越好</b>，代表模型生成代码的逻辑密度高，废话少。</td></tr>
+  <tr><td width='120'><b>ET-LOC</b></td><td>净 Token (input_net + output) / 生成代码行数 (LOC)。<b>越低越好</b>，但不包含 cache_read，在 cache 命中率高时不代表实际 API 流量。</td></tr>
+  <tr><td><b>ET-LOC-GROSS</b></td><td>总 Token (input_net + cache_read + output) / 生成代码行数 (LOC)。<b>越低越好</b>，反映实际 API 流量 per LOC，是跨模型比较的公平指标。</td></tr>
   <tr><td><b>RT-RATIO</b></td><td>人工输入 Token / AI 生成 Token。<b>越低越好</b>，代表高度自动化，AI 在无人工干预下完成任务的能力强。</td></tr>
   <tr><td><b>Cache 命中率</b></td><td>Cache Read / (Input + Cache Read)。<b>越高越好</b>，代表对长上下文的利用极其高效，大幅降低重复输入成本。</td></tr>
   <tr><td><b>一致性评分</b></td><td>跨模块/文件接口调用的一致性。<b>越高越好</b>，代表模型对复杂工程架构的整体把控能力。</td></tr>
@@ -776,12 +811,14 @@ def render_single_report(run):
 </div>
 
 <div class="summary-box">
-  <div class="summary-item"><div class="big">{gt.get('total_tokens', 0):,}</div><div class="label">总 Token</div></div>
+  <div class="summary-item"><div class="big">{gt.get('total_tokens', 0):,}</div><div class="label">总 Token (净)</div></div>
+  <div class="summary-item"><div class="big">{gt.get('input_tokens', 0) + gt.get('cache_read_tokens', 0) + gt.get('output_tokens', 0):,}</div><div class="label">总 Token (含缓存)</div></div>
   <div class="summary-item"><div class="big">{gt.get('total_loc', 0):,}</div><div class="label">代码行数 (LOC)</div></div>
   <div class="summary-item"><div class="big">{gt.get('total_files', 0)}</div><div class="label">文件数</div></div>
   <div class="summary-item"><div class="big">{fmt_val(duration, 'time')}</div><div class="label">总耗时</div></div>
   <div class="summary-item"><div class="big">{fmt_val(cost, 'cost')}</div><div class="label">总成本</div></div>
-  <div class="summary-item"><div class="big">{fmt_val(et_loc)}</div><div class="label">Token/LOC</div></div>
+  <div class="summary-item"><div class="big">{fmt_val(et_loc)}</div><div class="label">ET-LOC (净)</div></div>
+  <div class="summary-item"><div class="big">{fmt_val(_et_loc_gross(run))}</div><div class="label">ET-LOC-GROSS (含缓存)</div></div>
   <div class="summary-item"><div class="big">{fmt_val(cr, 'pct')}</div><div class="label">Cache 命中率</div></div>
   <div class="summary-item"><div class="big">{gt.get('total_api_calls', 0):,}</div><div class="label">API 调用</div></div>
 </div>

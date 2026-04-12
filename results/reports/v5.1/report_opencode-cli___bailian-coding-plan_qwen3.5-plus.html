@@ -28,8 +28,8 @@
 </style>
 </head>
 <body>
-<h1>SDD-TEE v5.1 单模型报告 <span style="font-size:0.5em; font-weight:normal; color:#666;">2026-04-11 20:09 UTC</span></h1>
-<div class="meta">模型: bailian-coding-plan/qwen3.5-plus | 工具: opencode-cli | 重试: 否</div>
+<h1>SDD-TEE v5.1 单模型报告 <span style="font-size:0.5em; font-weight:normal; color:#666;">2026-04-12 04:22 UTC</span></h1>
+<div class="meta">模型: bailian-coding-plan/qwen3.5-plus | 工具: opencode-cli | 重试: 是</div>
 
 <div class="section">
 <h2 style="margin-top:0;">一、执行摘要</h2>
@@ -37,25 +37,27 @@
 <b>opencode-cli / bailian-coding-plan/qwen3.5-plus</b> 完成了 <b>43</b> 个 AR 需求，
 生成了 <b>517,891</b> 行代码（3006 个文件），
 总耗时 <b>15h 48m</b>，
-消耗 <b>1,489,363</b> Tokens，
-总成本 <b>$16.10</b>。
+消耗 <b>1,842,676</b> Tokens，
+总成本 <b>$22.64</b>。
 </p>
 </div>
 
 <div class="summary-box">
-  <div class="summary-item"><div class="big">1,489,363</div><div class="label">总 Token</div></div>
+  <div class="summary-item"><div class="big">1,842,676</div><div class="label">总 Token (净)</div></div>
+  <div class="summary-item"><div class="big">138,381,877</div><div class="label">总 Token (含缓存)</div></div>
   <div class="summary-item"><div class="big">517,891</div><div class="label">代码行数 (LOC)</div></div>
   <div class="summary-item"><div class="big">3006</div><div class="label">文件数</div></div>
   <div class="summary-item"><div class="big">15h 48m</div><div class="label">总耗时</div></div>
-  <div class="summary-item"><div class="big">$16.10</div><div class="label">总成本</div></div>
-  <div class="summary-item"><div class="big">4.4</div><div class="label">Token/LOC</div></div>
+  <div class="summary-item"><div class="big">$22.64</div><div class="label">总成本</div></div>
+  <div class="summary-item"><div class="big">2.3</div><div class="label">ET-LOC (净)</div></div>
+  <div class="summary-item"><div class="big">267.2</div><div class="label">ET-LOC-GROSS (含缓存)</div></div>
   <div class="summary-item"><div class="big">100.0%</div><div class="label">Cache 命中率</div></div>
-  <div class="summary-item"><div class="big">2,444</div><div class="label">API 调用</div></div>
+  <div class="summary-item"><div class="big">3,217</div><div class="label">API 调用</div></div>
 </div>
 
 <div class="section">
 <h2>二、5 维指标</h2>
-<table><tr><td>ET-LOC (Token/行)</td><td class='num'>4.4</td></tr><tr><td>ET-FILE (Token/文件)</td><td class='num'>759.9</td></tr><tr><td>ET-TASK (Token/任务)</td><td class='num'>7,749.9</td></tr><tr><td>ET-AR (Token/AR)</td><td class='num'>34,636.3</td></tr><tr><td>ET-TIME (Token/小时)</td><td class='num'>102,584.1</td></tr><tr><td>ET-COST-LOC ($/千行)</td><td class='num'>$0.05</td></tr><tr><td>RT-RATIO (人工/AI)</td><td class='num'>—</td></tr><tr><td>QT-CONSIST (一致性)</td><td class='num'>—</td></tr><tr><td>QT-AVAIL (可用率)</td><td class='num'>—</td></tr></table>
+<table><tr><td>ET-LOC (Token/行)</td><td class='num'>2.3</td></tr><tr><td>ET-FILE (Token/文件)</td><td class='num'>424.6</td></tr><tr><td>ET-TASK (Token/任务)</td><td class='num'>4,199.4</td></tr><tr><td>ET-AR (Token/AR)</td><td class='num'>34,636.3</td></tr><tr><td>ET-TIME (Token/小时)</td><td class='num'>102,584.1</td></tr><tr><td>ET-COST-LOC ($/千行)</td><td class='num'>$0.05</td></tr><tr><td>RT-RATIO (人工/AI)</td><td class='num'>—</td></tr><tr><td>QT-CONSIST (一致性)</td><td class='num'>417452.6%</td></tr><tr><td>QT-AVAIL (可用率)</td><td class='num'>1866855.6%</td></tr></table>
 </div>
 
 <div class="section">
@@ -65,15 +67,15 @@
 
       <tr>
         <td><strong>ST-0</strong><br><small style="color:#888">AR 输入</small></td>
-        <td class="num">60,356</td>
-        <td class="num">1,446</td>
-        <td class="num">58,910</td>
-        <td class="num">4,274,632</td>
-        <td class="num">205,046</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td>37m 59s</td>
-        <td class="num">$0.65</td>
+        <td class="num">62,135</td>
+        <td class="num">1,488</td>
+        <td class="num">60,647</td>
+        <td class="num">4,406,309</td>
+        <td class="num">211,434</td>
+        <td class="num">248</td>
+        <td class="num">248</td>
+        <td>30m 27s</td>
+        <td class="num">$0.76</td>
       </tr>
       <tr>
         <td><strong>ST-1</strong><br><small style="color:#888">需求澄清</small></td>
@@ -82,70 +84,70 @@
         <td class="num">279,470</td>
         <td class="num">8,504,289</td>
         <td class="num">1,330,360</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td class="num">305</td>
+        <td class="num">305</td>
         <td>1h 39m</td>
-        <td class="num">$3.04</td>
+        <td class="num">$3.46</td>
       </tr>
       <tr>
         <td><strong>ST-2</strong><br><small style="color:#888">Spec 增量设计</small></td>
-        <td class="num">152,660</td>
-        <td class="num">1,020</td>
-        <td class="num">151,640</td>
-        <td class="num">3,878,467</td>
-        <td class="num">780,410</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td>1h 10m</td>
-        <td class="num">$1.65</td>
-      </tr>
-      <tr>
-        <td><strong>ST-3</strong><br><small style="color:#888">Design 增量设计</small></td>
-        <td class="num">181,266</td>
-        <td class="num">1,170</td>
-        <td class="num">180,096</td>
-        <td class="num">5,424,765</td>
-        <td class="num">1,045,614</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td>1h 20m</td>
+        <td class="num">159,564</td>
+        <td class="num">1,074</td>
+        <td class="num">158,490</td>
+        <td class="num">4,137,040</td>
+        <td class="num">808,785</td>
+        <td class="num">179</td>
+        <td class="num">179</td>
+        <td>1h 2m</td>
         <td class="num">$1.96</td>
       </tr>
       <tr>
+        <td><strong>ST-3</strong><br><small style="color:#888">Design 增量设计</small></td>
+        <td class="num">188,951</td>
+        <td class="num">1,218</td>
+        <td class="num">187,733</td>
+        <td class="num">5,690,818</td>
+        <td class="num">1,089,688</td>
+        <td class="num">203</td>
+        <td class="num">203</td>
+        <td>1h 13m</td>
+        <td class="num">$2.32</td>
+      </tr>
+      <tr>
         <td><strong>ST-4</strong><br><small style="color:#888">任务拆解</small></td>
-        <td class="num">237,269</td>
-        <td class="num">1,644</td>
-        <td class="num">235,625</td>
-        <td class="num">7,686,588</td>
-        <td class="num">1,375,888</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td>1h 44m</td>
-        <td class="num">$2.57</td>
+        <td class="num">242,700</td>
+        <td class="num">1,680</td>
+        <td class="num">241,020</td>
+        <td class="num">7,858,441</td>
+        <td class="num">1,412,660</td>
+        <td class="num">280</td>
+        <td class="num">280</td>
+        <td>1h 36m</td>
+        <td class="num">$2.98</td>
       </tr>
       <tr>
         <td><strong>ST-5</strong><br><small style="color:#888">开发实现</small></td>
-        <td class="num">336,034</td>
-        <td class="num">8,652</td>
-        <td class="num">327,382</td>
-        <td class="num">32,735,437</td>
-        <td class="num">1,168,829</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td>6h 21m</td>
-        <td class="num">$3.63</td>
+        <td class="num">632,475</td>
+        <td class="num">12,516</td>
+        <td class="num">619,959</td>
+        <td class="num">75,502,501</td>
+        <td class="num">2,910,291</td>
+        <td class="num">1,196</td>
+        <td class="num">1,196</td>
+        <td>6h 11m</td>
+        <td class="num">$7.77</td>
       </tr>
       <tr>
         <td><strong>ST-6</strong><br><small style="color:#888">一致性验证</small></td>
-        <td class="num">158,632</td>
-        <td class="num">2,544</td>
-        <td class="num">156,088</td>
-        <td class="num">17,852,793</td>
-        <td class="num">1,231,830</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td>2h 2m</td>
-        <td class="num">$1.72</td>
+        <td class="num">192,478</td>
+        <td class="num">3,120</td>
+        <td class="num">189,358</td>
+        <td class="num">21,917,904</td>
+        <td class="num">1,479,630</td>
+        <td class="num">520</td>
+        <td class="num">520</td>
+        <td>1h 29m</td>
+        <td class="num">$2.36</td>
       </tr>
       <tr>
         <td><strong>ST-6.5</strong><br><small style="color:#888">ST-6.5</small></td>
@@ -161,15 +163,15 @@
       </tr>
       <tr>
         <td><strong>ST-7</strong><br><small style="color:#888">合并归档</small></td>
-        <td class="num">81,846</td>
-        <td class="num">1,698</td>
-        <td class="num">80,148</td>
-        <td class="num">8,462,951</td>
-        <td class="num">1,429,394</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td>52m 10s</td>
-        <td class="num">$0.88</td>
+        <td class="num">83,073</td>
+        <td class="num">1,716</td>
+        <td class="num">81,357</td>
+        <td class="num">8,521,899</td>
+        <td class="num">1,448,627</td>
+        <td class="num">286</td>
+        <td class="num">286</td>
+        <td>42m 52s</td>
+        <td class="num">$1.02</td>
       </tr>
 </table>
 </div>
@@ -185,20 +187,20 @@ Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
 
       <tr>
         <td>AR-001</td>
-        <td class="num">12,892</td>
+        <td class="num">26,186</td>
         <td class="num">1,367 LOC</td>
         <td class="num">10</td>
-        <td class="num">9.4</td>
+        <td class="num">-</td>
         <td>15m 18s</td>
-        <td class="num">$0.15</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.39</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-002</td>
         <td class="num">24,158</td>
         <td class="num">1,878 LOC</td>
         <td class="num">11</td>
-        <td class="num">12.9</td>
+        <td class="num">4.8</td>
         <td>9m 40s</td>
         <td class="num">$0.25</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
@@ -208,57 +210,57 @@ Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
         <td class="num">27,571</td>
         <td class="num">2,405 LOC</td>
         <td class="num">11</td>
-        <td class="num">11.5</td>
+        <td class="num">6.6</td>
         <td>11m 58s</td>
         <td class="num">$0.35</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-004</td>
-        <td class="num">22,757</td>
+        <td class="num">41,831</td>
         <td class="num">4,147 LOC</td>
         <td class="num">27</td>
-        <td class="num">5.5</td>
+        <td class="num">-</td>
         <td>28m 16s</td>
-        <td class="num">$0.20</td>
-        <td><span class="fail-tag">2 fail</span></td>
+        <td class="num">$0.64</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-005</td>
-        <td class="num">25,104</td>
+        <td class="num">49,682</td>
         <td class="num">5,263 LOC</td>
         <td class="num">31</td>
-        <td class="num">4.8</td>
+        <td class="num">-</td>
         <td>19m 37s</td>
-        <td class="num">$0.23</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.53</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-006</td>
-        <td class="num">31,372</td>
+        <td class="num">55,766</td>
         <td class="num">5,263 LOC</td>
         <td class="num">31</td>
-        <td class="num">6.0</td>
+        <td class="num">-</td>
         <td>23m 5s</td>
-        <td class="num">$0.37</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$1.01</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-007</td>
-        <td class="num">35,862</td>
+        <td class="num">53,691</td>
         <td class="num">6,615 LOC</td>
         <td class="num">39</td>
-        <td class="num">5.4</td>
+        <td class="num">-</td>
         <td>23m 1s</td>
-        <td class="num">$0.34</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.65</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-008</td>
         <td class="num">46,009</td>
         <td class="num">7,451 LOC</td>
         <td class="num">47</td>
-        <td class="num">6.2</td>
+        <td class="num">3.4</td>
         <td>22m 20s</td>
         <td class="num">$0.64</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
@@ -268,217 +270,217 @@ Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
         <td class="num">57,391</td>
         <td class="num">9,066 LOC</td>
         <td class="num">57</td>
-        <td class="num">6.3</td>
+        <td class="num">2.8</td>
         <td>21m 22s</td>
         <td class="num">$0.59</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-010</td>
-        <td class="num">21,696</td>
+        <td class="num">37,205</td>
         <td class="num">11,785 LOC</td>
         <td class="num">74</td>
-        <td class="num">1.8</td>
+        <td class="num">-</td>
         <td>28m 27s</td>
-        <td class="num">$0.19</td>
-        <td><span class="fail-tag">2 fail</span></td>
+        <td class="num">$0.49</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-011</td>
-        <td class="num">24,463</td>
+        <td class="num">31,657</td>
         <td class="num">13,496 LOC</td>
         <td class="num">85</td>
-        <td class="num">1.8</td>
+        <td class="num">-</td>
         <td>24m 27s</td>
-        <td class="num">$0.22</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.39</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-012</td>
-        <td class="num">32,662</td>
+        <td class="num">36,027</td>
         <td class="num">14,699 LOC</td>
         <td class="num">93</td>
-        <td class="num">2.2</td>
+        <td class="num">-</td>
         <td>21m 40s</td>
-        <td class="num">$0.23</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.29</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-013</td>
-        <td class="num">5,594</td>
+        <td class="num">32,529</td>
         <td class="num">14,699 LOC</td>
         <td class="num">93</td>
-        <td class="num">0.4</td>
+        <td class="num">-</td>
         <td>53m 27s</td>
-        <td class="num">$0.09</td>
-        <td><span class="fail-tag">5 fail</span></td>
+        <td class="num">$0.41</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-014</td>
         <td class="num">53,121</td>
         <td class="num">15,260 LOC</td>
         <td class="num">94</td>
-        <td class="num">3.5</td>
+        <td class="num">1.1</td>
         <td>21m 29s</td>
         <td class="num">$0.48</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-015</td>
-        <td class="num">32,766</td>
+        <td class="num">35,268</td>
         <td class="num">17,746 LOC</td>
         <td class="num">111</td>
-        <td class="num">1.9</td>
+        <td class="num">-</td>
         <td>27m 48s</td>
-        <td class="num">$0.29</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.36</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-016</td>
-        <td class="num">33,009</td>
+        <td class="num">35,600</td>
         <td class="num">19,923 LOC</td>
         <td class="num">119</td>
-        <td class="num">1.7</td>
+        <td class="num">-</td>
         <td>23m 54s</td>
-        <td class="num">$0.69</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.78</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-017</td>
-        <td class="num">23,101</td>
+        <td class="num">42,143</td>
         <td class="num">21,482 LOC</td>
         <td class="num">126</td>
-        <td class="num">1.1</td>
+        <td class="num">-</td>
         <td>20m 26s</td>
-        <td class="num">$0.27</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.58</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-018</td>
         <td class="num">42,379</td>
         <td class="num">22,290 LOC</td>
         <td class="num">130</td>
-        <td class="num">1.9</td>
+        <td class="num">0.6</td>
         <td>16m 19s</td>
         <td class="num">$0.56</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-019</td>
-        <td class="num">38,686</td>
+        <td class="num">57,750</td>
         <td class="num">24,712 LOC</td>
         <td class="num">152</td>
-        <td class="num">1.6</td>
+        <td class="num">-</td>
         <td>25m 10s</td>
-        <td class="num">$0.27</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.61</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-020</td>
-        <td class="num">40,807</td>
+        <td class="num">45,616</td>
         <td class="num">2,564 LOC</td>
         <td class="num">23</td>
-        <td class="num">15.9</td>
+        <td class="num">-</td>
         <td>25m 20s</td>
-        <td class="num">$0.42</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.60</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-021</td>
-        <td class="num">21,072</td>
+        <td class="num">24,012</td>
         <td class="num">3,467 LOC</td>
         <td class="num">25</td>
-        <td class="num">6.1</td>
+        <td class="num">-</td>
         <td>19m 45s</td>
-        <td class="num">$0.27</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.34</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-022</td>
         <td class="num">57,893</td>
         <td class="num">4,290 LOC</td>
         <td class="num">26</td>
-        <td class="num">13.5</td>
+        <td class="num">6.1</td>
         <td>20m 9s</td>
         <td class="num">$0.51</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-023</td>
-        <td class="num">20,572</td>
+        <td class="num">33,472</td>
         <td class="num">5,415 LOC</td>
         <td class="num">28</td>
-        <td class="num">3.8</td>
+        <td class="num">-</td>
         <td>20m 19s</td>
-        <td class="num">$0.20</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.49</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-024</td>
-        <td class="num">22,271</td>
+        <td class="num">24,836</td>
         <td class="num">6,485 LOC</td>
         <td class="num">29</td>
-        <td class="num">3.4</td>
+        <td class="num">-</td>
         <td>18m 38s</td>
-        <td class="num">$0.28</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.35</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-025</td>
         <td class="num">36,078</td>
         <td class="num">6,491 LOC</td>
         <td class="num">29</td>
-        <td class="num">5.6</td>
+        <td class="num">1.9</td>
         <td>15m 12s</td>
         <td class="num">$0.59</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-026</td>
-        <td class="num">8,728</td>
+        <td class="num">18,903</td>
         <td class="num">7,737 LOC</td>
         <td class="num">31</td>
-        <td class="num">1.1</td>
+        <td class="num">-</td>
         <td>33m 33s</td>
-        <td class="num">$0.12</td>
-        <td><span class="fail-tag">3 fail</span></td>
+        <td class="num">$0.34</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-027</td>
-        <td class="num">26,620</td>
+        <td class="num">32,291</td>
         <td class="num">7,737 LOC</td>
         <td class="num">31</td>
-        <td class="num">3.4</td>
+        <td class="num">-</td>
         <td>29m 32s</td>
-        <td class="num">$0.20</td>
-        <td><span class="fail-tag">2 fail</span></td>
+        <td class="num">$0.35</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-028</td>
-        <td class="num">32,161</td>
+        <td class="num">35,797</td>
         <td class="num">8,934 LOC</td>
         <td class="num">46</td>
-        <td class="num">3.6</td>
+        <td class="num">-</td>
         <td>23m 2s</td>
-        <td class="num">$0.32</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.43</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-029</td>
-        <td class="num">18,269</td>
+        <td class="num">23,917</td>
         <td class="num">11,169 LOC</td>
         <td class="num">55</td>
-        <td class="num">1.6</td>
+        <td class="num">-</td>
         <td>17m 30s</td>
-        <td class="num">$0.21</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.37</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-030</td>
         <td class="num">60,006</td>
         <td class="num">11,169 LOC</td>
         <td class="num">55</td>
-        <td class="num">5.4</td>
+        <td class="num">1.6</td>
         <td>22m 31s</td>
         <td class="num">$0.57</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
@@ -488,7 +490,7 @@ Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
         <td class="num">51,157</td>
         <td class="num">11,169 LOC</td>
         <td class="num">55</td>
-        <td class="num">4.6</td>
+        <td class="num">1.5</td>
         <td>23m 11s</td>
         <td class="num">$0.75</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
@@ -498,7 +500,7 @@ Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
         <td class="num">45,390</td>
         <td class="num">11,169 LOC</td>
         <td class="num">55</td>
-        <td class="num">4.1</td>
+        <td class="num">1.4</td>
         <td>16m 28s</td>
         <td class="num">$0.42</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
@@ -508,7 +510,7 @@ Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
         <td class="num">30,449</td>
         <td class="num">11,169 LOC</td>
         <td class="num">55</td>
-        <td class="num">2.7</td>
+        <td class="num">0.2</td>
         <td>11m 17s</td>
         <td class="num">$0.30</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
@@ -518,57 +520,57 @@ Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
         <td class="num">70,488</td>
         <td class="num">11,284 LOC</td>
         <td class="num">57</td>
-        <td class="num">6.2</td>
+        <td class="num">1.9</td>
         <td>25m 9s</td>
         <td class="num">$0.60</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-035</td>
-        <td class="num">29,136</td>
+        <td class="num">60,137</td>
         <td class="num">26,325 LOC</td>
         <td class="num">175</td>
-        <td class="num">1.1</td>
+        <td class="num">-</td>
         <td>21m 18s</td>
-        <td class="num">$0.32</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$1.14</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-036</td>
         <td class="num">47,304</td>
         <td class="num">11,893 LOC</td>
         <td class="num">65</td>
-        <td class="num">4.0</td>
+        <td class="num">2.7</td>
         <td>15m 56s</td>
         <td class="num">$0.40</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-037</td>
-        <td class="num">25,867</td>
+        <td class="num">39,225</td>
         <td class="num">13,107 LOC</td>
         <td class="num">68</td>
-        <td class="num">2.0</td>
+        <td class="num">-</td>
         <td>20m 7s</td>
-        <td class="num">$0.30</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.44</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-038</td>
-        <td class="num">31,161</td>
+        <td class="num">60,231</td>
         <td class="num">28,046 LOC</td>
         <td class="num">181</td>
-        <td class="num">1.1</td>
+        <td class="num">-</td>
         <td>21m 40s</td>
-        <td class="num">$0.31</td>
-        <td><span class="fail-tag">1 fail</span></td>
+        <td class="num">$0.61</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-039</td>
         <td class="num">35,875</td>
         <td class="num">28,051 LOC</td>
         <td class="num">181</td>
-        <td class="num">1.3</td>
+        <td class="num">0.4</td>
         <td>19m 9s</td>
         <td class="num">$0.63</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
@@ -578,7 +580,7 @@ Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
         <td class="num">31,646</td>
         <td class="num">13,670 LOC</td>
         <td class="num">71</td>
-        <td class="num">2.3</td>
+        <td class="num">1.1</td>
         <td>14m 59s</td>
         <td class="num">$0.57</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
@@ -588,27 +590,27 @@ Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
         <td class="num">53,802</td>
         <td class="num">28,697 LOC</td>
         <td class="num">182</td>
-        <td class="num">1.9</td>
+        <td class="num">1.0</td>
         <td>19m 20s</td>
         <td class="num">$0.46</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-042</td>
-        <td class="num">30,970</td>
+        <td class="num">67,139</td>
         <td class="num">14,153 LOC</td>
         <td class="num">71</td>
-        <td class="num">2.2</td>
+        <td class="num">-</td>
         <td>31m 23s</td>
-        <td class="num">$0.31</td>
-        <td><span class="fail-tag">2 fail</span></td>
+        <td class="num">$0.77</td>
+        <td><span style="color:#4caf50">&#10004;</span></td>
       </tr>
       <tr>
         <td>AR-043</td>
         <td class="num">71,048</td>
         <td class="num">14,153 LOC</td>
         <td class="num">71</td>
-        <td class="num">5.0</td>
+        <td class="num">2.1</td>
         <td>25m 18s</td>
         <td class="num">$0.62</td>
         <td><span style="color:#4caf50">&#10004;</span></td>
@@ -627,6 +629,6 @@ Token 消耗最高的 AR: <b>AR-043</b> (71,048 Tokens)<br>
 </div>
 
 <div class="footer">
-  SDD-TEE v5.1 Report | Generated 2026-04-11 20:09 UTC | opencode-cli / bailian-coding-plan/qwen3.5-plus
+  SDD-TEE v5.1 Report | Generated 2026-04-12 04:22 UTC | opencode-cli / bailian-coding-plan/qwen3.5-plus
 </div>
 </body></html>

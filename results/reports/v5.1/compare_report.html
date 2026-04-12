@@ -33,8 +33,8 @@
 </style>
 </head>
 <body>
-<h1>SDD-TEE v5.1 跨轮次对比报告 <span style="font-size:0.5em; font-weight:normal; color:#666;">2026-04-11 20:09 UTC</span></h1>
-<div class="meta">对比轮次: 5 | 目标项目: <a href="https://github.com/ShijunDeng/agentcube">AgentCube</a></div>
+<h1>SDD-TEE v5.1 跨轮次对比报告 <span style="font-size:0.5em; font-weight:normal; color:#666;">2026-04-12 04:22 UTC</span></h1>
+<div class="meta">对比轮次: 6 | 目标项目: <a href="https://github.com/ShijunDeng/agentcube">AgentCube</a></div>
 
 <div class="section" style="background-color:#f8f9fa; border-left:4px solid #1a73e8; padding:15px;">
 
@@ -49,20 +49,21 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 旨在量化不同 AI Coding Assistant 在真实开源项目上的 Token 效率。
 </p>
 
-<h3 style="font-size:1.05em;">二、5 轮测试实录</h3>
+<h3 style="font-size:1.05em;">二、6 轮测试实录</h3>
 <ul><li><b>轮次 1 (opencode-cli / alibaba-cn/qwen3.6-plus)</b>: 生成了 <b>371,798</b> 行代码，耗时 <b>26h 28m</b>，消耗 79,892,063 Tokens，总成本 $42.11。 <span class='fail-tag'>51 个 stage 无数据</span></li>
 <li><b>轮次 2 (opencode-cli / bailian-coding-plan/MiniMax-M2.5)</b>: 生成了 <b>436,516</b> 行代码，耗时 <b>13h 45m</b>，消耗 20,166,708 Tokens，总成本 $18.29。</li>
 <li><b>轮次 3 (opencode-cli / bailian-coding-plan/glm-4.7)</b>: 生成了 <b>624,121</b> 行代码，耗时 <b>17h 16m</b>，消耗 39,067,326 Tokens，总成本 $23.89。</li>
 <li><b>轮次 4 (opencode-cli / bailian-coding-plan/glm-5)</b>: 生成了 <b>386,384</b> 行代码，耗时 <b>19h 4m</b>，消耗 31,653,054 Tokens，总成本 $15.26。</li>
-<li><b>轮次 5 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>517,891</b> 行代码，耗时 <b>15h 48m</b>，消耗 1,489,363 Tokens，总成本 $16.10。 <span class='fail-tag'>35 个 stage 无数据</span></li>
+<li><b>轮次 5 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>435,484</b> 行代码，耗时 <b>28h 35m</b>，消耗 3,537,809 Tokens，总成本 $15.13。 <span class='fail-tag'>64 个 stage 无数据</span></li>
+<li><b>轮次 6 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>517,891</b> 行代码，耗时 <b>15h 48m</b>，消耗 1,842,676 Tokens，总成本 $22.64。</li>
 </ul>
 
 <h3 style="font-size:1.05em;">三、核心指标极值</h3>
 <ul>
 <li><b>产出规模最大</b>: <code>opencode-cli / bailian-coding-plan/glm-4.7</code> 输出了 <b>624,121 LOC</b> 和 <b>2883</b> 个文件。</li>
-<li><b>经济性最优</b>: <code>opencode-cli / bailian-coding-plan/glm-5</code> 总成本仅 <b>$15.26</b>。</li>
+<li><b>经济性最优</b>: <code>opencode-cli / bailian-coding-plan/kimi-k2.5</code> 总成本仅 <b>$15.13</b>。</li>
 <li><b>交付速度最快</b>: <code>opencode-cli / bailian-coding-plan/MiniMax-M2.5</code> 仅耗时 <b>13h 45m</b> 完成全量需求。</li>
-<li><b>Token 效率最高</b>: <code>opencode-cli / bailian-coding-plan/qwen3.5-plus</code> 每行代码平均消耗 <b>4.4 Tokens/LOC</b>，代码逻辑密度最高。</li>
+<li><b>Token 效率最高</b>: <code>opencode-cli / bailian-coding-plan/kimi-k2.5</code> 每行代码平均消耗 <b>163.2 Tokens/LOC (含缓存)</b>，代码逻辑密度最高。</li>
 <li><b>Cache 命中率最高</b>: <code>opencode-cli / bailian-coding-plan/qwen3.5-plus</code> 上下文复用率达到 <b>100.0%</b>。</li>
 </ul>
 
@@ -75,24 +76,26 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <div class="section">
 <h2>1. 总量对比</h2>
 <table>
-<tr><th>指标</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
-<tr><td>总 Token</td><td>79,892,063</td><td>20,166,708</td><td>39,067,326</td><td>31,653,054</td><td class="best">1,489,363</td></tr>
-<tr><td>Input Token (净)</td><td>78,449,183</td><td>18,608,268</td><td>36,388,362</td><td>29,687,188</td><td class="best">20,004</td></tr>
-<tr><td>Output Token</td><td class="best">1,442,880</td><td>1,558,440</td><td>2,678,964</td><td>1,965,866</td><td>1,469,359</td></tr>
-<tr><td>Cache Read</td><td>0</td><td>151,775,519</td><td class="best">185,349,673</td><td>113,233,992</td><td>88,819,922</td></tr>
-<tr><td>Cache Write</td><td>0</td><td>0</td><td>0</td><td>0</td><td>8,567,371</td></tr>
-<tr><td>总成本 (USD)</td><td>$42.11</td><td>$18.29</td><td>$23.89</td><td class="best">$15.26</td><td>$16.10</td></tr>
-<tr><td>代码行数 (LOC)</td><td>371,798</td><td>436,516</td><td class="best">624,121</td><td>386,384</td><td>517,891</td></tr>
-<tr><td>文件数</td><td>2,704</td><td>2,183</td><td>2,883</td><td>2,377</td><td class="best">3,006</td></tr>
-<tr><td>AR 数</td><td>43</td><td>43</td><td>43</td><td>43</td><td>43</td></tr>
-<tr><td>总耗时</td><td>26h 28m</td><td class="best">13h 45m</td><td>17h 16m</td><td>19h 4m</td><td>15h 48m</td></tr>
-<tr><td>API 调用</td><td>11,045</td><td>4,462</td><td>4,592</td><td>3,260</td><td class="best">2,444</td></tr>
-<tr><td>迭代次数</td><td>11,045</td><td>4,462</td><td>4,592</td><td>3,260</td><td class="best">2,444</td></tr>
+<tr><th>指标</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
+<tr><td>总 Token (净)</td><td>79,892,063</td><td>20,166,708</td><td>39,067,326</td><td>31,653,054</td><td>3,537,809</td><td class="best">1,842,676</td></tr>
+<tr><td>总 Token (含缓存)</td><td>79,892,063</td><td>171,942,227</td><td>224,416,999</td><td>144,887,046</td><td>71,064,061</td><td>138,381,877</td></tr>
+<tr><td>Input Token (净)</td><td>78,449,183</td><td>18,608,268</td><td>36,388,362</td><td>29,687,188</td><td>1,790,334</td><td class="best">24,642</td></tr>
+<tr><td>Output Token</td><td class="best">1,442,880</td><td>1,558,440</td><td>2,678,964</td><td>1,965,866</td><td>1,747,475</td><td>1,818,034</td></tr>
+<tr><td>Cache Read</td><td>0</td><td>151,775,519</td><td class="best">185,349,673</td><td>113,233,992</td><td>67,526,252</td><td>136,539,201</td></tr>
+<tr><td>Cache Write</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9,760,148</td><td>10,691,475</td></tr>
+<tr><td>总成本 (USD)</td><td>$42.11</td><td>$18.29</td><td>$23.89</td><td>$15.26</td><td class="best">$15.13</td><td>$22.64</td></tr>
+<tr><td>代码行数 (LOC)</td><td>371,798</td><td>436,516</td><td class="best">624,121</td><td>386,384</td><td>435,484</td><td>517,891</td></tr>
+<tr><td>文件数</td><td>2,704</td><td>2,183</td><td>2,883</td><td>2,377</td><td>1,867</td><td class="best">3,006</td></tr>
+<tr><td>AR 数</td><td>43</td><td>43</td><td>43</td><td>43</td><td>43</td><td>43</td></tr>
+<tr><td>总耗时</td><td>26h 28m</td><td class="best">13h 45m</td><td>17h 16m</td><td>19h 4m</td><td>28h 35m</td><td>15h 48m</td></tr>
+<tr><td>API 调用</td><td>11,045</td><td>4,462</td><td>4,592</td><td>3,260</td><td class="best">2,244</td><td>3,217</td></tr>
+<tr><td>迭代次数</td><td>11,045</td><td>4,462</td><td>4,592</td><td>3,260</td><td class="best">2,244</td><td>3,217</td></tr>
 
 </table>
 <div class='guide-title'>核心指标指南:</div>
 <table class='guide-table'>
-  <tr><td width='120'><b>ET-LOC</b></td><td>总 Token / 生成代码行数 (LOC)。<b>越低越好</b>，代表模型生成代码的逻辑密度高，废话少。</td></tr>
+  <tr><td width='120'><b>ET-LOC</b></td><td>净 Token (input_net + output) / 生成代码行数 (LOC)。<b>越低越好</b>，但不包含 cache_read，在 cache 命中率高时不代表实际 API 流量。</td></tr>
+  <tr><td><b>ET-LOC-GROSS</b></td><td>总 Token (input_net + cache_read + output) / 生成代码行数 (LOC)。<b>越低越好</b>，反映实际 API 流量 per LOC，是跨模型比较的公平指标。</td></tr>
   <tr><td><b>RT-RATIO</b></td><td>人工输入 Token / AI 生成 Token。<b>越低越好</b>，代表高度自动化，AI 在无人工干预下完成任务的能力强。</td></tr>
   <tr><td><b>Cache 命中率</b></td><td>Cache Read / (Input + Cache Read)。<b>越高越好</b>，代表对长上下文的利用极其高效，大幅降低重复输入成本。</td></tr>
   <tr><td><b>一致性评分</b></td><td>跨模块/文件接口调用的一致性。<b>越高越好</b>，代表模型对复杂工程架构的整体把控能力。</td></tr>
@@ -103,16 +106,16 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <div class="section">
 <h2>2. 阶段分布对比</h2>
 <table>
-<tr><th>阶段</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
-<tr><td><strong>ST-0</strong><br><small>AR 输入</small></td><td>8,156,337<br><small>47m 33s · 0 calls</small></td><td>687,430<br><small>37m 12s · 357 calls</small></td><td>1,313,803<br><small>47m 23s · 405 calls</small></td><td>2,321,410<br><small>1h 7m · 268 calls</small></td><td class="best">60,356<br><small>37m 59s · 0 calls</small></td></tr>
-<tr><td><strong>ST-1</strong><br><small>需求澄清</small></td><td>8,829,665<br><small>2h 13m · 0 calls</small></td><td>1,881,627<br><small>1h 9m · 367 calls</small></td><td>3,492,706<br><small>1h 31m · 304 calls</small></td><td>3,274,637<br><small>1h 42m · 356 calls</small></td><td class="best">281,300<br><small>1h 39m · 0 calls</small></td></tr>
-<tr><td><strong>ST-2</strong><br><small>Spec 增量设计</small></td><td>10,204,668<br><small>3h 5m · 0 calls</small></td><td>2,251,006<br><small>1h 22m · 382 calls</small></td><td>2,898,052<br><small>1h 49m · 342 calls</small></td><td>3,928,129<br><small>2h 20m · 311 calls</small></td><td class="best">152,660<br><small>1h 10m · 0 calls</small></td></tr>
-<tr><td><strong>ST-3</strong><br><small>Design 增量设计</small></td><td>11,305,320<br><small>3h 53m · 0 calls</small></td><td>2,861,174<br><small>1h 26m · 391 calls</small></td><td>4,018,164<br><small>1h 54m · 357 calls</small></td><td>3,770,605<br><small>2h 9m · 315 calls</small></td><td class="best">181,266<br><small>1h 20m · 0 calls</small></td></tr>
-<tr><td><strong>ST-4</strong><br><small>任务拆解</small></td><td>9,996,153<br><small>3h 40m · 0 calls</small></td><td>2,181,830<br><small>1h 13m · 418 calls</small></td><td>4,032,814<br><small>2h 10m · 353 calls</small></td><td>5,248,870<br><small>2h 45m · 310 calls</small></td><td class="best">237,269<br><small>1h 44m · 0 calls</small></td></tr>
-<tr><td><strong>ST-5</strong><br><small>开发实现</small></td><td>16,399,244<br><small>6h 37m · 0 calls</small></td><td>6,201,136<br><small>5h 14m · 1,681 calls</small></td><td>14,769,522<br><small>6h 7m · 1,700 calls</small></td><td>6,404,796<br><small>7h 2m · 964 calls</small></td><td class="best">336,034<br><small>6h 21m · 0 calls</small></td></tr>
-<tr><td><strong>ST-6</strong><br><small>一致性验证</small></td><td>10,569,997<br><small>4h 19m · 0 calls</small></td><td>2,692,798<br><small>1h 5m · 574 calls</small></td><td>4,804,722<br><small>1h 20m · 657 calls</small></td><td>3,862,032<br><small>1h 41m · 470 calls</small></td><td class="best">158,632<br><small>2h 2m · 0 calls</small></td></tr>
-<tr><td><strong>ST-6.5</strong><br><small>ST-6.5</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td></tr>
-<tr><td><strong>ST-7</strong><br><small>合并归档</small></td><td>4,430,679<br><small>1h 51m · 0 calls</small></td><td>1,409,707<br><small>31m 55s · 292 calls</small></td><td>3,737,543<br><small>51m 45s · 474 calls</small></td><td>2,842,575<br><small>48m 38s · 266 calls</small></td><td class="best">81,846<br><small>52m 10s · 0 calls</small></td></tr>
+<tr><th>阶段</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
+<tr><td><strong>ST-0</strong><br><small>AR 输入</small></td><td>8,156,337<br><small>47m 33s · 0 calls</small></td><td>687,430<br><small>37m 12s · 357 calls</small></td><td>1,313,803<br><small>47m 23s · 405 calls</small></td><td>2,321,410<br><small>1h 7m · 268 calls</small></td><td>576,684<br><small>2h 30m · 0 calls</small></td><td class="best">62,135<br><small>30m 27s · 248 calls</small></td></tr>
+<tr><td><strong>ST-1</strong><br><small>需求澄清</small></td><td>8,829,665<br><small>2h 13m · 0 calls</small></td><td>1,881,627<br><small>1h 9m · 367 calls</small></td><td>3,492,706<br><small>1h 31m · 304 calls</small></td><td>3,274,637<br><small>1h 42m · 356 calls</small></td><td>325,739<br><small>2h 55m · 0 calls</small></td><td class="best">281,300<br><small>1h 39m · 305 calls</small></td></tr>
+<tr><td><strong>ST-2</strong><br><small>Spec 增量设计</small></td><td>10,204,668<br><small>3h 5m · 0 calls</small></td><td>2,251,006<br><small>1h 22m · 382 calls</small></td><td>2,898,052<br><small>1h 49m · 342 calls</small></td><td>3,928,129<br><small>2h 20m · 311 calls</small></td><td>502,030<br><small>3h 37m · 0 calls</small></td><td class="best">159,564<br><small>1h 2m · 179 calls</small></td></tr>
+<tr><td><strong>ST-3</strong><br><small>Design 增量设计</small></td><td>11,305,320<br><small>3h 53m · 0 calls</small></td><td>2,861,174<br><small>1h 26m · 391 calls</small></td><td>4,018,164<br><small>1h 54m · 357 calls</small></td><td>3,770,605<br><small>2h 9m · 315 calls</small></td><td>460,165<br><small>4h 47m · 0 calls</small></td><td class="best">188,951<br><small>1h 13m · 203 calls</small></td></tr>
+<tr><td><strong>ST-4</strong><br><small>任务拆解</small></td><td>9,996,153<br><small>3h 40m · 0 calls</small></td><td>2,181,830<br><small>1h 13m · 418 calls</small></td><td>4,032,814<br><small>2h 10m · 353 calls</small></td><td>5,248,870<br><small>2h 45m · 310 calls</small></td><td>280,063<br><small>3h 11m · 0 calls</small></td><td class="best">242,700<br><small>1h 36m · 280 calls</small></td></tr>
+<tr><td><strong>ST-5</strong><br><small>开发实现</small></td><td>16,399,244<br><small>6h 37m · 0 calls</small></td><td>6,201,136<br><small>5h 14m · 1,681 calls</small></td><td>14,769,522<br><small>6h 7m · 1,700 calls</small></td><td>6,404,796<br><small>7h 2m · 964 calls</small></td><td class="best">197,968<br><small>6h 39m · 0 calls</small></td><td>632,475<br><small>6h 11m · 1,196 calls</small></td></tr>
+<tr><td><strong>ST-6</strong><br><small>一致性验证</small></td><td>10,569,997<br><small>4h 19m · 0 calls</small></td><td>2,692,798<br><small>1h 5m · 574 calls</small></td><td>4,804,722<br><small>1h 20m · 657 calls</small></td><td>3,862,032<br><small>1h 41m · 470 calls</small></td><td>1,049,387<br><small>3h 41m · 0 calls</small></td><td class="best">192,478<br><small>1h 29m · 520 calls</small></td></tr>
+<tr><td><strong>ST-6.5</strong><br><small>ST-6.5</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td></tr>
+<tr><td><strong>ST-7</strong><br><small>合并归档</small></td><td>4,430,679<br><small>1h 51m · 0 calls</small></td><td>1,409,707<br><small>31m 55s · 292 calls</small></td><td>3,737,543<br><small>51m 45s · 474 calls</small></td><td>2,842,575<br><small>48m 38s · 266 calls</small></td><td>145,773<br><small>1h 12m · 0 calls</small></td><td class="best">83,073<br><small>42m 52s · 286 calls</small></td></tr>
 
 </table>
 </div>
@@ -120,16 +123,17 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <div class="section">
 <h2>3. 效率指标对比</h2>
 <table>
-<tr><th>指标</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
-<tr><td>ET-LOC (Token/行)</td><td>347.2</td><td>75.7</td><td>92.6</td><td>120.7</td><td class="best">4.4</td></tr>
-<tr><td>ET-FILE (Token/文件)</td><td>42,550.6</td><td>14,828.5</td><td>24,102.0</td><td>17,540.9</td><td class="best">759.9</td></tr>
-<tr><td>ET-TASK (Token/任务)</td><td>443,420.2</td><td>104,521.6</td><td>208,054.3</td><td>161,721.9</td><td class="best">7,749.9</td></tr>
-<tr><td>ET-AR (Token/AR)</td><td>1,857,955.0</td><td>468,993.2</td><td>908,542.5</td><td>736,117.5</td><td class="best">34,636.3</td></tr>
-<tr><td>ET-TIME (Token/小时)</td><td>3,139,051.5</td><td>1,547,156.4</td><td>2,397,710.0</td><td>1,702,764.3</td><td class="best">102,584.1</td></tr>
-<tr><td>ET-COST-LOC ($/千行)</td><td>$0.18</td><td>$0.06</td><td>$0.06</td><td>$0.06</td><td class="best">$0.05</td></tr>
-<tr><td>Cache 命中率</td><td>—</td><td>89.1%</td><td>83.6%</td><td>79.2%</td><td class="best">100.0%</td></tr>
-<tr><td>RT-RATIO (人工/AI)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>RT-ITER (平均迭代)</td><td>256.9</td><td>103.8</td><td>106.8</td><td>75.8</td><td class="best">56.8</td></tr>
+<tr><th>指标</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
+<tr><td>ET-LOC (Token/行)</td><td>347.2</td><td>75.7</td><td>92.6</td><td>120.7</td><td>20.5</td><td class="best">2.3</td></tr>
+<tr><td>ET-LOC-GROSS (含缓存 Token/行)</td><td>214.9</td><td>393.9</td><td>359.6</td><td>375.0</td><td class="best">163.2</td><td>267.2</td></tr>
+<tr><td>ET-FILE (Token/文件)</td><td>42,550.6</td><td>14,828.5</td><td>24,102.0</td><td>17,540.9</td><td>7,120.5</td><td class="best">424.6</td></tr>
+<tr><td>ET-TASK (Token/任务)</td><td>443,420.2</td><td>104,521.6</td><td>208,054.3</td><td>161,721.9</td><td>12,047.0</td><td class="best">4,199.4</td></tr>
+<tr><td>ET-AR (Token/AR)</td><td>1,857,955.0</td><td>468,993.2</td><td>908,542.5</td><td>736,117.5</td><td>82,274.6</td><td class="best">34,636.3</td></tr>
+<tr><td>ET-TIME (Token/小时)</td><td>3,139,051.5</td><td>1,547,156.4</td><td>2,397,710.0</td><td>1,702,764.3</td><td>131,136.4</td><td class="best">102,584.1</td></tr>
+<tr><td>ET-COST-LOC ($/千行)</td><td>$0.18</td><td>$0.06</td><td>$0.06</td><td>$0.06</td><td>$0.05</td><td class="best">$0.05</td></tr>
+<tr><td>Cache 命中率</td><td>—</td><td>89.1%</td><td>83.6%</td><td>79.2%</td><td>97.4%</td><td class="best">100.0%</td></tr>
+<tr><td>RT-RATIO (人工/AI)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>RT-ITER (平均迭代)</td><td>256.9</td><td>103.8</td><td>106.8</td><td>75.8</td><td class="best">52.2</td><td>56.8</td></tr>
 
 </table>
 </div>
@@ -137,11 +141,11 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <div class="section">
 <h2>4. 阶段分布占比</h2>
 <table>
-<tr><th>指标</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
-<tr><td>PT-DESIGN (设计占比)</td><td>42.1%</td><td>34.3%</td><td>27.2%</td><td>35.3%</td><td>42.7%</td></tr>
-<tr><td>PT-PLAN (计划占比)</td><td>25.8%</td><td>14.1%</td><td>14.4%</td><td>23.8%</td><td>23.5%</td></tr>
-<tr><td>PT-DEV (开发占比)</td><td>45.0%</td><td>30.9%</td><td>36.6%</td><td>19.4%</td><td>39.7%</td></tr>
-<tr><td>PT-VERIFY (验证占比)</td><td>19.5%</td><td>20.7%</td><td>21.9%</td><td>21.5%</td><td>17.6%</td></tr>
+<tr><th>指标</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
+<tr><td>PT-DESIGN (设计占比)</td><td>42.1%</td><td>34.3%</td><td>27.2%</td><td>35.3%</td><td>39.3%</td><td>42.7%</td></tr>
+<tr><td>PT-PLAN (计划占比)</td><td>25.8%</td><td>14.1%</td><td>14.4%</td><td>23.8%</td><td>31.6%</td><td>23.5%</td></tr>
+<tr><td>PT-DEV (开发占比)</td><td>45.0%</td><td>30.9%</td><td>36.6%</td><td>19.4%</td><td>32.9%</td><td>39.7%</td></tr>
+<tr><td>PT-VERIFY (验证占比)</td><td>19.5%</td><td>20.7%</td><td>21.9%</td><td>21.5%</td><td>26.7%</td><td>17.6%</td></tr>
 
 </table>
 </div>
@@ -149,11 +153,11 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <div class="section">
 <h2>5. 质量指标对比</h2>
 <table>
-<tr><th>指标</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
-<tr><td>QT-COV (覆盖率)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>QT-CONSIST (一致性)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>QT-AVAIL (可用率)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>QT-BUG (Bug 数)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><th>指标</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
+<tr><td>QT-COV (覆盖率)</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="best">3959360.0%</td><td>1866855.6%</td></tr>
+<tr><td>QT-CONSIST (一致性)</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="best">2761544.7%</td><td>417452.6%</td></tr>
+<tr><td>QT-AVAIL (可用率)</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="best">3959360.0%</td><td>1866855.6%</td></tr>
+<tr><td>QT-BUG (Bug 数)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>39,593.6</td><td class="best">18,668.6</td></tr>
 
 </table>
 </div>
@@ -161,50 +165,50 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <div class="section">
 <h2>6. AR 需求级对比</h2>
 <table>
-<tr><th>AR</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
-<tr><td>AR-001</td><td>1,722,322<br><small>976 LOC <span class="fail-tag">2 fail</span></small></td><td>405,291<br><small>1,187 LOC </small></td><td>609,928<br><small>2,907 LOC </small></td><td>448,129<br><small>1,204 LOC </small></td><td>12,892<br><small>1,367 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-002</td><td>2,015,329<br><small>1,542 LOC </small></td><td>352,097<br><small>1,176 LOC </small></td><td>643,088<br><small>3,636 LOC </small></td><td>345,796<br><small>1,204 LOC </small></td><td>24,158<br><small>1,878 LOC </small></td></tr>
-<tr><td>AR-003</td><td>1,924,182<br><small>1,567 LOC <span class="fail-tag">1 fail</span></small></td><td>241,935<br><small>1,429 LOC </small></td><td>1,015,163<br><small>4,416 LOC </small></td><td>428,954<br><small>1,441 LOC </small></td><td>27,571<br><small>2,405 LOC </small></td></tr>
-<tr><td>AR-004</td><td>852,167<br><small>2,368 LOC <span class="fail-tag">2 fail</span></small></td><td>494,260<br><small>2,929 LOC </small></td><td>1,101,296<br><small>6,495 LOC </small></td><td>689,548<br><small>3,247 LOC </small></td><td>22,757<br><small>4,147 LOC <span class="fail-tag">2 fail</span></small></td></tr>
-<tr><td>AR-005</td><td>1,660,025<br><small>3,165 LOC <span class="fail-tag">1 fail</span></small></td><td>407,229<br><small>4,820 LOC </small></td><td>1,504,939<br><small>8,422 LOC </small></td><td>680,220<br><small>3,941 LOC </small></td><td>25,104<br><small>5,263 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-006</td><td>1,105,866<br><small>4,835 LOC <span class="fail-tag">2 fail</span></small></td><td>497,405<br><small>6,723 LOC </small></td><td>846,871<br><small>8,951 LOC </small></td><td>824,594<br><small>5,904 LOC </small></td><td>31,372<br><small>5,263 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-007</td><td>1,181,516<br><small>5,810 LOC <span class="fail-tag">2 fail</span></small></td><td>474,027<br><small>8,049 LOC </small></td><td>917,090<br><small>10,129 LOC </small></td><td>621,269<br><small>5,919 LOC </small></td><td>35,862<br><small>6,615 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-008</td><td>1,396,935<br><small>6,307 LOC <span class="fail-tag">2 fail</span></small></td><td>469,137<br><small>9,693 LOC </small></td><td>1,103,855<br><small>12,216 LOC </small></td><td>610,208<br><small>5,919 LOC </small></td><td>46,009<br><small>7,451 LOC </small></td></tr>
-<tr><td>AR-009</td><td>1,247,563<br><small>7,427 LOC <span class="fail-tag">2 fail</span></small></td><td>346,032<br><small>11,756 LOC </small></td><td>992,895<br><small>14,234 LOC </small></td><td>788,857<br><small>8,546 LOC </small></td><td>57,391<br><small>9,066 LOC </small></td></tr>
-<tr><td>AR-010</td><td>1,881,123<br><small>8,027 LOC <span class="fail-tag">1 fail</span></small></td><td>491,018<br><small>12,705 LOC </small></td><td>1,129,675<br><small>16,039 LOC </small></td><td>646,918<br><small>8,546 LOC </small></td><td>21,696<br><small>11,785 LOC <span class="fail-tag">2 fail</span></small></td></tr>
-<tr><td>AR-011</td><td>1,497,258<br><small>8,917 LOC <span class="fail-tag">1 fail</span></small></td><td>395,993<br><small>14,228 LOC </small></td><td>604,849<br><small>18,094 LOC </small></td><td>639,193<br><small>10,092 LOC </small></td><td>24,463<br><small>13,496 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-012</td><td>1,117,090<br><small>9,793 LOC <span class="fail-tag">1 fail</span></small></td><td>430,100<br><small>14,977 LOC </small></td><td>745,586<br><small>18,943 LOC </small></td><td>589,369<br><small>10,092 LOC </small></td><td>32,662<br><small>14,699 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-013</td><td>1,754,942<br><small>9,987 LOC <span class="fail-tag">1 fail</span></small></td><td>400,541<br><small>14,961 LOC </small></td><td>621,934<br><small>18,943 LOC </small></td><td>444,069<br><small>11,399 LOC </small></td><td>5,594<br><small>14,699 LOC <span class="fail-tag">5 fail</span></small></td></tr>
-<tr><td>AR-014</td><td>2,614,165<br><small>10,384 LOC <span class="fail-tag">1 fail</span></small></td><td>370,374<br><small>14,961 LOC </small></td><td>899,985<br><small>18,962 LOC </small></td><td>604,739<br><small>12,236 LOC </small></td><td>53,121<br><small>15,260 LOC </small></td></tr>
-<tr><td>AR-015</td><td>996,113<br><small>11,969 LOC <span class="fail-tag">2 fail</span></small></td><td>465,081<br><small>16,603 LOC </small></td><td>1,030,990<br><small>20,498 LOC </small></td><td>805,439<br><small>13,753 LOC </small></td><td>32,766<br><small>17,746 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-016</td><td>1,425,912<br><small>13,509 LOC <span class="fail-tag">1 fail</span></small></td><td>413,137<br><small>16,603 LOC </small></td><td>943,316<br><small>22,285 LOC </small></td><td>737,528<br><small>14,014 LOC </small></td><td>33,009<br><small>19,923 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-017</td><td>2,621,710<br><small>13,518 LOC </small></td><td>320,599<br><small>17,141 LOC </small></td><td>806,131<br><small>22,663 LOC </small></td><td>685,372<br><small>14,495 LOC </small></td><td>23,101<br><small>21,482 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-018</td><td>3,945,925<br><small>13,971 LOC </small></td><td>535,998<br><small>17,632 LOC </small></td><td>1,068,313<br><small>23,478 LOC </small></td><td>596,523<br><small>15,361 LOC </small></td><td>42,379<br><small>22,290 LOC </small></td></tr>
-<tr><td>AR-019</td><td>1,929,410<br><small>14,568 LOC <span class="fail-tag">1 fail</span></small></td><td>478,294<br><small>17,839 LOC </small></td><td>1,361,286<br><small>26,282 LOC </small></td><td>747,490<br><small>15,806 LOC </small></td><td>38,686<br><small>24,712 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-020</td><td>1,677,856<br><small>1,264 LOC <span class="fail-tag">1 fail</span></small></td><td>406,376<br><small>1,474 LOC </small></td><td>940,150<br><small>2,612 LOC </small></td><td>636,460<br><small>1,123 LOC </small></td><td>40,807<br><small>2,564 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-021</td><td>1,783,289<br><small>2,616 LOC <span class="fail-tag">1 fail</span></small></td><td>409,519<br><small>4,127 LOC </small></td><td>790,269<br><small>3,712 LOC </small></td><td>647,420<br><small>2,173 LOC </small></td><td>21,072<br><small>3,467 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-022</td><td>1,703,301<br><small>4,026 LOC <span class="fail-tag">1 fail</span></small></td><td>713,577<br><small>4,491 LOC </small></td><td>980,824<br><small>4,326 LOC </small></td><td>709,098<br><small>4,290 LOC </small></td><td>57,893<br><small>4,290 LOC </small></td></tr>
-<tr><td>AR-023</td><td>1,849,284<br><small>5,346 LOC <span class="fail-tag">2 fail</span></small></td><td>526,884<br><small>5,000 LOC </small></td><td>1,193,829<br><small>5,516 LOC </small></td><td>782,625<br><small>5,598 LOC </small></td><td>20,572<br><small>5,415 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-024</td><td>3,169,267<br><small>5,634 LOC </small></td><td>649,441<br><small>5,558 LOC </small></td><td>907,174<br><small>5,818 LOC </small></td><td>631,020<br><small>5,598 LOC </small></td><td>22,271<br><small>6,485 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-025</td><td>3,844,786<br><small>5,808 LOC <span class="fail-tag">1 fail</span></small></td><td>649,291<br><small>5,942 LOC </small></td><td>567,411<br><small>6,881 LOC </small></td><td>593,531<br><small>5,889 LOC </small></td><td>36,078<br><small>6,491 LOC </small></td></tr>
-<tr><td>AR-026</td><td>1,855,730<br><small>6,275 LOC <span class="fail-tag">2 fail</span></small></td><td>510,316<br><small>6,200 LOC </small></td><td>1,123,494<br><small>9,774 LOC </small></td><td>732,213<br><small>5,881 LOC </small></td><td>8,728<br><small>7,737 LOC <span class="fail-tag">3 fail</span></small></td></tr>
-<tr><td>AR-027</td><td>1,084,492<br><small>7,174 LOC <span class="fail-tag">1 fail</span></small></td><td>421,717<br><small>7,861 LOC </small></td><td>368,268<br><small>11,950 LOC </small></td><td>572,070<br><small>6,992 LOC </small></td><td>26,620<br><small>7,737 LOC <span class="fail-tag">2 fail</span></small></td></tr>
-<tr><td>AR-028</td><td>2,032,765<br><small>8,011 LOC <span class="fail-tag">1 fail</span></small></td><td>452,270<br><small>8,652 LOC </small></td><td>652,082<br><small>11,969 LOC </small></td><td>640,633<br><small>7,698 LOC </small></td><td>32,161<br><small>8,934 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-029</td><td>854,313<br><small>9,661 LOC <span class="fail-tag">2 fail</span></small></td><td>382,624<br><small>8,846 LOC </small></td><td>708,068<br><small>12,028 LOC </small></td><td>918,657<br><small>8,210 LOC </small></td><td>18,269<br><small>11,169 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-030</td><td>3,422,597<br><small>9,661 LOC </small></td><td>589,924<br><small>9,134 LOC </small></td><td>822,744<br><small>12,028 LOC </small></td><td>674,504<br><small>8,210 LOC </small></td><td>60,006<br><small>11,169 LOC </small></td></tr>
-<tr><td>AR-031</td><td>1,485,273<br><small>9,661 LOC <span class="fail-tag">2 fail</span></small></td><td>427,978<br><small>9,134 LOC </small></td><td>674,984<br><small>12,028 LOC </small></td><td>637,734<br><small>8,210 LOC </small></td><td>51,157<br><small>11,169 LOC </small></td></tr>
-<tr><td>AR-032</td><td>1,936,270<br><small>9,661 LOC </small></td><td>319,153<br><small>9,134 LOC </small></td><td>680,186<br><small>12,028 LOC </small></td><td>566,047<br><small>8,210 LOC </small></td><td>45,390<br><small>11,169 LOC </small></td></tr>
-<tr><td>AR-033</td><td>1,063,839<br><small>9,661 LOC <span class="fail-tag">1 fail</span></small></td><td>384,487<br><small>9,134 LOC </small></td><td>858,654<br><small>12,028 LOC </small></td><td>835,383<br><small>8,210 LOC </small></td><td>30,449<br><small>11,169 LOC </small></td></tr>
-<tr><td>AR-034</td><td>1,435,565<br><small>9,661 LOC </small></td><td>393,480<br><small>9,134 LOC </small></td><td>748,486<br><small>12,431 LOC </small></td><td>677,862<br><small>8,708 LOC </small></td><td>70,488<br><small>11,284 LOC </small></td></tr>
-<tr><td>AR-035</td><td>1,829,842<br><small>14,756 LOC <span class="fail-tag">2 fail</span></small></td><td>510,152<br><small>18,120 LOC </small></td><td>890,730<br><small>27,203 LOC </small></td><td>967,266<br><small>17,693 LOC </small></td><td>29,136<br><small>26,325 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-036</td><td>2,279,991<br><small>11,084 LOC <span class="fail-tag">1 fail</span></small></td><td>471,941<br><small>10,197 LOC </small></td><td>784,505<br><small>14,146 LOC </small></td><td>729,517<br><small>8,858 LOC </small></td><td>47,304<br><small>11,893 LOC </small></td></tr>
-<tr><td>AR-037</td><td>1,370,216<br><small>11,329 LOC <span class="fail-tag">1 fail</span></small></td><td>530,575<br><small>10,256 LOC </small></td><td>734,161<br><small>17,355 LOC </small></td><td>970,879<br><small>10,573 LOC </small></td><td>25,867<br><small>13,107 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-038</td><td>2,068,081<br><small>15,514 LOC <span class="fail-tag">1 fail</span></small></td><td>746,770<br><small>18,111 LOC </small></td><td>1,420,893<br><small>27,253 LOC </small></td><td>1,115,984<br><small>18,713 LOC </small></td><td>31,161<br><small>28,046 LOC <span class="fail-tag">1 fail</span></small></td></tr>
-<tr><td>AR-039</td><td>960,744<br><small>16,184 LOC <span class="fail-tag">4 fail</span></small></td><td>564,457<br><small>19,101 LOC </small></td><td>1,366,568<br><small>29,016 LOC </small></td><td>1,943,083<br><small>19,630 LOC </small></td><td>35,875<br><small>28,051 LOC </small></td></tr>
-<tr><td>AR-040</td><td>4,019,201<br><small>11,329 LOC </small></td><td>515,575<br><small>10,254 LOC </small></td><td>868,560<br><small>21,417 LOC </small></td><td>706,933<br><small>10,654 LOC </small></td><td>31,646<br><small>13,670 LOC </small></td></tr>
-<tr><td>AR-041</td><td>1,505,874<br><small>16,184 LOC <span class="fail-tag">1 fail</span></small></td><td>501,292<br><small>20,736 LOC </small></td><td>894,649<br><small>32,175 LOC </small></td><td>1,170,766<br><small>20,836 LOC </small></td><td>53,802<br><small>28,697 LOC </small></td></tr>
-<tr><td>AR-042</td><td>2,284,414<br><small>11,329 LOC <span class="fail-tag">1 fail</span></small></td><td>505,030<br><small>10,254 LOC </small></td><td>890,987<br><small>21,417 LOC </small></td><td>830,538<br><small>10,654 LOC </small></td><td>30,970<br><small>14,153 LOC <span class="fail-tag">2 fail</span></small></td></tr>
-<tr><td>AR-043</td><td>1,485,520<br><small>11,329 LOC <span class="fail-tag">2 fail</span></small></td><td>595,331<br><small>10,254 LOC </small></td><td>1,252,460<br><small>21,417 LOC </small></td><td>1,028,616<br><small>10,654 LOC </small></td><td>71,048<br><small>14,153 LOC </small></td></tr>
+<tr><th>AR</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
+<tr><td>AR-001</td><td>1,722,322<br><small>976 LOC <span class="fail-tag">2 fail</span></small></td><td>405,291<br><small>1,187 LOC </small></td><td>609,928<br><small>2,907 LOC </small></td><td>448,129<br><small>1,204 LOC </small></td><td>146,024<br><small>1,595 LOC </small></td><td>26,186<br><small>1,367 LOC </small></td></tr>
+<tr><td>AR-002</td><td>2,015,329<br><small>1,542 LOC </small></td><td>352,097<br><small>1,176 LOC </small></td><td>643,088<br><small>3,636 LOC </small></td><td>345,796<br><small>1,204 LOC </small></td><td>91,010<br><small>3,221 LOC </small></td><td>24,158<br><small>1,878 LOC </small></td></tr>
+<tr><td>AR-003</td><td>1,924,182<br><small>1,567 LOC <span class="fail-tag">1 fail</span></small></td><td>241,935<br><small>1,429 LOC </small></td><td>1,015,163<br><small>4,416 LOC </small></td><td>428,954<br><small>1,441 LOC </small></td><td>227,763<br><small>4,701 LOC <span class="fail-tag">1 fail</span></small></td><td>27,571<br><small>2,405 LOC </small></td></tr>
+<tr><td>AR-004</td><td>852,167<br><small>2,368 LOC <span class="fail-tag">2 fail</span></small></td><td>494,260<br><small>2,929 LOC </small></td><td>1,101,296<br><small>6,495 LOC </small></td><td>689,548<br><small>3,247 LOC </small></td><td>33,883<br><small>5,743 LOC <span class="fail-tag">2 fail</span></small></td><td>41,831<br><small>4,147 LOC </small></td></tr>
+<tr><td>AR-005</td><td>1,660,025<br><small>3,165 LOC <span class="fail-tag">1 fail</span></small></td><td>407,229<br><small>4,820 LOC </small></td><td>1,504,939<br><small>8,422 LOC </small></td><td>680,220<br><small>3,941 LOC </small></td><td>53,361<br><small>5,743 LOC <span class="fail-tag">1 fail</span></small></td><td>49,682<br><small>5,263 LOC </small></td></tr>
+<tr><td>AR-006</td><td>1,105,866<br><small>4,835 LOC <span class="fail-tag">2 fail</span></small></td><td>497,405<br><small>6,723 LOC </small></td><td>846,871<br><small>8,951 LOC </small></td><td>824,594<br><small>5,904 LOC </small></td><td>53,516<br><small>6,282 LOC <span class="fail-tag">3 fail</span></small></td><td>55,766<br><small>5,263 LOC </small></td></tr>
+<tr><td>AR-007</td><td>1,181,516<br><small>5,810 LOC <span class="fail-tag">2 fail</span></small></td><td>474,027<br><small>8,049 LOC </small></td><td>917,090<br><small>10,129 LOC </small></td><td>621,269<br><small>5,919 LOC </small></td><td>84,707<br><small>7,533 LOC <span class="fail-tag">2 fail</span></small></td><td>53,691<br><small>6,615 LOC </small></td></tr>
+<tr><td>AR-008</td><td>1,396,935<br><small>6,307 LOC <span class="fail-tag">2 fail</span></small></td><td>469,137<br><small>9,693 LOC </small></td><td>1,103,855<br><small>12,216 LOC </small></td><td>610,208<br><small>5,919 LOC </small></td><td>64,730<br><small>7,533 LOC <span class="fail-tag">4 fail</span></small></td><td>46,009<br><small>7,451 LOC </small></td></tr>
+<tr><td>AR-009</td><td>1,247,563<br><small>7,427 LOC <span class="fail-tag">2 fail</span></small></td><td>346,032<br><small>11,756 LOC </small></td><td>992,895<br><small>14,234 LOC </small></td><td>788,857<br><small>8,546 LOC </small></td><td>130,985<br><small>7,756 LOC <span class="fail-tag">1 fail</span></small></td><td>57,391<br><small>9,066 LOC </small></td></tr>
+<tr><td>AR-010</td><td>1,881,123<br><small>8,027 LOC <span class="fail-tag">1 fail</span></small></td><td>491,018<br><small>12,705 LOC </small></td><td>1,129,675<br><small>16,039 LOC </small></td><td>646,918<br><small>8,546 LOC </small></td><td>104,793<br><small>8,331 LOC <span class="fail-tag">1 fail</span></small></td><td>37,205<br><small>11,785 LOC </small></td></tr>
+<tr><td>AR-011</td><td>1,497,258<br><small>8,917 LOC <span class="fail-tag">1 fail</span></small></td><td>395,993<br><small>14,228 LOC </small></td><td>604,849<br><small>18,094 LOC </small></td><td>639,193<br><small>10,092 LOC </small></td><td>179,249<br><small>9,819 LOC <span class="fail-tag">1 fail</span></small></td><td>31,657<br><small>13,496 LOC </small></td></tr>
+<tr><td>AR-012</td><td>1,117,090<br><small>9,793 LOC <span class="fail-tag">1 fail</span></small></td><td>430,100<br><small>14,977 LOC </small></td><td>745,586<br><small>18,943 LOC </small></td><td>589,369<br><small>10,092 LOC </small></td><td>52,760<br><small>10,801 LOC <span class="fail-tag">1 fail</span></small></td><td>36,027<br><small>14,699 LOC </small></td></tr>
+<tr><td>AR-013</td><td>1,754,942<br><small>9,987 LOC <span class="fail-tag">1 fail</span></small></td><td>400,541<br><small>14,961 LOC </small></td><td>621,934<br><small>18,943 LOC </small></td><td>444,069<br><small>11,399 LOC </small></td><td>98,037<br><small>11,568 LOC <span class="fail-tag">1 fail</span></small></td><td>32,529<br><small>14,699 LOC </small></td></tr>
+<tr><td>AR-014</td><td>2,614,165<br><small>10,384 LOC <span class="fail-tag">1 fail</span></small></td><td>370,374<br><small>14,961 LOC </small></td><td>899,985<br><small>18,962 LOC </small></td><td>604,739<br><small>12,236 LOC </small></td><td>39,016<br><small>12,513 LOC <span class="fail-tag">2 fail</span></small></td><td>53,121<br><small>15,260 LOC </small></td></tr>
+<tr><td>AR-015</td><td>996,113<br><small>11,969 LOC <span class="fail-tag">2 fail</span></small></td><td>465,081<br><small>16,603 LOC </small></td><td>1,030,990<br><small>20,498 LOC </small></td><td>805,439<br><small>13,753 LOC </small></td><td>49,643<br><small>13,966 LOC <span class="fail-tag">3 fail</span></small></td><td>35,268<br><small>17,746 LOC </small></td></tr>
+<tr><td>AR-016</td><td>1,425,912<br><small>13,509 LOC <span class="fail-tag">1 fail</span></small></td><td>413,137<br><small>16,603 LOC </small></td><td>943,316<br><small>22,285 LOC </small></td><td>737,528<br><small>14,014 LOC </small></td><td>87,199<br><small>14,948 LOC <span class="fail-tag">2 fail</span></small></td><td>35,600<br><small>19,923 LOC </small></td></tr>
+<tr><td>AR-017</td><td>2,621,710<br><small>13,518 LOC </small></td><td>320,599<br><small>17,141 LOC </small></td><td>806,131<br><small>22,663 LOC </small></td><td>685,372<br><small>14,495 LOC </small></td><td>81,739<br><small>16,541 LOC <span class="fail-tag">1 fail</span></small></td><td>42,143<br><small>21,482 LOC </small></td></tr>
+<tr><td>AR-018</td><td>3,945,925<br><small>13,971 LOC </small></td><td>535,998<br><small>17,632 LOC </small></td><td>1,068,313<br><small>23,478 LOC </small></td><td>596,523<br><small>15,361 LOC </small></td><td>208,574<br><small>17,941 LOC <span class="fail-tag">1 fail</span></small></td><td>42,379<br><small>22,290 LOC </small></td></tr>
+<tr><td>AR-019</td><td>1,929,410<br><small>14,568 LOC <span class="fail-tag">1 fail</span></small></td><td>478,294<br><small>17,839 LOC </small></td><td>1,361,286<br><small>26,282 LOC </small></td><td>747,490<br><small>15,806 LOC </small></td><td>47,179<br><small>17,941 LOC <span class="fail-tag">2 fail</span></small></td><td>57,750<br><small>24,712 LOC </small></td></tr>
+<tr><td>AR-020</td><td>1,677,856<br><small>1,264 LOC <span class="fail-tag">1 fail</span></small></td><td>406,376<br><small>1,474 LOC </small></td><td>940,150<br><small>2,612 LOC </small></td><td>636,460<br><small>1,123 LOC </small></td><td>57,649<br><small>1,251 LOC <span class="fail-tag">1 fail</span></small></td><td>45,616<br><small>2,564 LOC </small></td></tr>
+<tr><td>AR-021</td><td>1,783,289<br><small>2,616 LOC <span class="fail-tag">1 fail</span></small></td><td>409,519<br><small>4,127 LOC </small></td><td>790,269<br><small>3,712 LOC </small></td><td>647,420<br><small>2,173 LOC </small></td><td>40,067<br><small>1,921 LOC <span class="fail-tag">2 fail</span></small></td><td>24,012<br><small>3,467 LOC </small></td></tr>
+<tr><td>AR-022</td><td>1,703,301<br><small>4,026 LOC <span class="fail-tag">1 fail</span></small></td><td>713,577<br><small>4,491 LOC </small></td><td>980,824<br><small>4,326 LOC </small></td><td>709,098<br><small>4,290 LOC </small></td><td>39,770<br><small>3,527 LOC <span class="fail-tag">2 fail</span></small></td><td>57,893<br><small>4,290 LOC </small></td></tr>
+<tr><td>AR-023</td><td>1,849,284<br><small>5,346 LOC <span class="fail-tag">2 fail</span></small></td><td>526,884<br><small>5,000 LOC </small></td><td>1,193,829<br><small>5,516 LOC </small></td><td>782,625<br><small>5,598 LOC </small></td><td>134,057<br><small>4,159 LOC <span class="fail-tag">1 fail</span></small></td><td>33,472<br><small>5,415 LOC </small></td></tr>
+<tr><td>AR-024</td><td>3,169,267<br><small>5,634 LOC </small></td><td>649,441<br><small>5,558 LOC </small></td><td>907,174<br><small>5,818 LOC </small></td><td>631,020<br><small>5,598 LOC </small></td><td>51,092<br><small>4,159 LOC </small></td><td>24,836<br><small>6,485 LOC </small></td></tr>
+<tr><td>AR-025</td><td>3,844,786<br><small>5,808 LOC <span class="fail-tag">1 fail</span></small></td><td>649,291<br><small>5,942 LOC </small></td><td>567,411<br><small>6,881 LOC </small></td><td>593,531<br><small>5,889 LOC </small></td><td>54,352<br><small>5,134 LOC <span class="fail-tag">2 fail</span></small></td><td>36,078<br><small>6,491 LOC </small></td></tr>
+<tr><td>AR-026</td><td>1,855,730<br><small>6,275 LOC <span class="fail-tag">2 fail</span></small></td><td>510,316<br><small>6,200 LOC </small></td><td>1,123,494<br><small>9,774 LOC </small></td><td>732,213<br><small>5,881 LOC </small></td><td>132,711<br><small>5,791 LOC <span class="fail-tag">1 fail</span></small></td><td>18,903<br><small>7,737 LOC </small></td></tr>
+<tr><td>AR-027</td><td>1,084,492<br><small>7,174 LOC <span class="fail-tag">1 fail</span></small></td><td>421,717<br><small>7,861 LOC </small></td><td>368,268<br><small>11,950 LOC </small></td><td>572,070<br><small>6,992 LOC </small></td><td>85,299<br><small>7,426 LOC <span class="fail-tag">1 fail</span></small></td><td>32,291<br><small>7,737 LOC </small></td></tr>
+<tr><td>AR-028</td><td>2,032,765<br><small>8,011 LOC <span class="fail-tag">1 fail</span></small></td><td>452,270<br><small>8,652 LOC </small></td><td>652,082<br><small>11,969 LOC </small></td><td>640,633<br><small>7,698 LOC </small></td><td>47,926<br><small>8,911 LOC <span class="fail-tag">2 fail</span></small></td><td>35,797<br><small>8,934 LOC </small></td></tr>
+<tr><td>AR-029</td><td>854,313<br><small>9,661 LOC <span class="fail-tag">2 fail</span></small></td><td>382,624<br><small>8,846 LOC </small></td><td>708,068<br><small>12,028 LOC </small></td><td>918,657<br><small>8,210 LOC </small></td><td>77,743<br><small>9,267 LOC <span class="fail-tag">1 fail</span></small></td><td>23,917<br><small>11,169 LOC </small></td></tr>
+<tr><td>AR-030</td><td>3,422,597<br><small>9,661 LOC </small></td><td>589,924<br><small>9,134 LOC </small></td><td>822,744<br><small>12,028 LOC </small></td><td>674,504<br><small>8,210 LOC </small></td><td>109,816<br><small>9,267 LOC <span class="fail-tag">2 fail</span></small></td><td>60,006<br><small>11,169 LOC </small></td></tr>
+<tr><td>AR-031</td><td>1,485,273<br><small>9,661 LOC <span class="fail-tag">2 fail</span></small></td><td>427,978<br><small>9,134 LOC </small></td><td>674,984<br><small>12,028 LOC </small></td><td>637,734<br><small>8,210 LOC </small></td><td>59,096<br><small>9,765 LOC <span class="fail-tag">1 fail</span></small></td><td>51,157<br><small>11,169 LOC </small></td></tr>
+<tr><td>AR-032</td><td>1,936,270<br><small>9,661 LOC </small></td><td>319,153<br><small>9,134 LOC </small></td><td>680,186<br><small>12,028 LOC </small></td><td>566,047<br><small>8,210 LOC </small></td><td>37,350<br><small>10,614 LOC <span class="fail-tag">1 fail</span></small></td><td>45,390<br><small>11,169 LOC </small></td></tr>
+<tr><td>AR-033</td><td>1,063,839<br><small>9,661 LOC <span class="fail-tag">1 fail</span></small></td><td>384,487<br><small>9,134 LOC </small></td><td>858,654<br><small>12,028 LOC </small></td><td>835,383<br><small>8,210 LOC </small></td><td>58,298<br><small>10,614 LOC <span class="fail-tag">1 fail</span></small></td><td>30,449<br><small>11,169 LOC </small></td></tr>
+<tr><td>AR-034</td><td>1,435,565<br><small>9,661 LOC </small></td><td>393,480<br><small>9,134 LOC </small></td><td>748,486<br><small>12,431 LOC </small></td><td>677,862<br><small>8,708 LOC </small></td><td>43,684<br><small>10,614 LOC <span class="fail-tag">2 fail</span></small></td><td>70,488<br><small>11,284 LOC </small></td></tr>
+<tr><td>AR-035</td><td>1,829,842<br><small>14,756 LOC <span class="fail-tag">2 fail</span></small></td><td>510,152<br><small>18,120 LOC </small></td><td>890,730<br><small>27,203 LOC </small></td><td>967,266<br><small>17,693 LOC </small></td><td>151,469<br><small>19,777 LOC <span class="fail-tag">2 fail</span></small></td><td>60,137<br><small>26,325 LOC </small></td></tr>
+<tr><td>AR-036</td><td>2,279,991<br><small>11,084 LOC <span class="fail-tag">1 fail</span></small></td><td>471,941<br><small>10,197 LOC </small></td><td>784,505<br><small>14,146 LOC </small></td><td>729,517<br><small>8,858 LOC </small></td><td>61,343<br><small>10,879 LOC <span class="fail-tag">1 fail</span></small></td><td>47,304<br><small>11,893 LOC </small></td></tr>
+<tr><td>AR-037</td><td>1,370,216<br><small>11,329 LOC <span class="fail-tag">1 fail</span></small></td><td>530,575<br><small>10,256 LOC </small></td><td>734,161<br><small>17,355 LOC </small></td><td>970,879<br><small>10,573 LOC </small></td><td>68,969<br><small>12,706 LOC <span class="fail-tag">1 fail</span></small></td><td>39,225<br><small>13,107 LOC </small></td></tr>
+<tr><td>AR-038</td><td>2,068,081<br><small>15,514 LOC <span class="fail-tag">1 fail</span></small></td><td>746,770<br><small>18,111 LOC </small></td><td>1,420,893<br><small>27,253 LOC </small></td><td>1,115,984<br><small>18,713 LOC </small></td><td>49,354<br><small>19,777 LOC <span class="fail-tag">1 fail</span></small></td><td>60,231<br><small>28,046 LOC </small></td></tr>
+<tr><td>AR-039</td><td>960,744<br><small>16,184 LOC <span class="fail-tag">4 fail</span></small></td><td>564,457<br><small>19,101 LOC </small></td><td>1,366,568<br><small>29,016 LOC </small></td><td>1,943,083<br><small>19,630 LOC </small></td><td>44,406<br><small>20,768 LOC <span class="fail-tag">2 fail</span></small></td><td>35,875<br><small>28,051 LOC </small></td></tr>
+<tr><td>AR-040</td><td>4,019,201<br><small>11,329 LOC </small></td><td>515,575<br><small>10,254 LOC </small></td><td>868,560<br><small>21,417 LOC </small></td><td>706,933<br><small>10,654 LOC </small></td><td>58,456<br><small>14,186 LOC <span class="fail-tag">2 fail</span></small></td><td>31,646<br><small>13,670 LOC </small></td></tr>
+<tr><td>AR-041</td><td>1,505,874<br><small>16,184 LOC <span class="fail-tag">1 fail</span></small></td><td>501,292<br><small>20,736 LOC </small></td><td>894,649<br><small>32,175 LOC </small></td><td>1,170,766<br><small>20,836 LOC </small></td><td>171,380<br><small>22,123 LOC <span class="fail-tag">1 fail</span></small></td><td>53,802<br><small>28,697 LOC </small></td></tr>
+<tr><td>AR-042</td><td>2,284,414<br><small>11,329 LOC <span class="fail-tag">1 fail</span></small></td><td>505,030<br><small>10,254 LOC </small></td><td>890,987<br><small>21,417 LOC </small></td><td>830,538<br><small>10,654 LOC </small></td><td>18,838<br><small>14,186 LOC <span class="fail-tag">3 fail</span></small></td><td>67,139<br><small>14,153 LOC </small></td></tr>
+<tr><td>AR-043</td><td>1,485,520<br><small>11,329 LOC <span class="fail-tag">2 fail</span></small></td><td>595,331<br><small>10,254 LOC </small></td><td>1,252,460<br><small>21,417 LOC </small></td><td>1,028,616<br><small>10,654 LOC </small></td><td>50,516<br><small>14,186 LOC <span class="fail-tag">2 fail</span></small></td><td>71,048<br><small>14,153 LOC </small></td></tr>
 
 </table>
 </div>
@@ -215,47 +219,56 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">qwen3.6-plus</div>
-    <div>Token 效率: <span class="radar-val">0</span></div>
+    <div>Token 效率: <span class="radar-val">77</span></div>
     <div>成本效率: <span class="radar-val">0</span></div>
-    <div>代码质量: <span class="radar-val">50</span></div>
+    <div>代码质量: <span class="radar-val">0</span></div>
     <div>Cache 利用: <span class="radar-val">50</span></div>
-    <div>执行速度: <span class="radar-val">0</span></div>
+    <div>执行速度: <span class="radar-val">14</span></div>
   </div>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">MiniMax-M2.5</div>
-    <div>Token 效率: <span class="radar-val">79</span></div>
+    <div>Token 效率: <span class="radar-val">0</span></div>
     <div>成本效率: <span class="radar-val">88</span></div>
-    <div>代码质量: <span class="radar-val">50</span></div>
+    <div>代码质量: <span class="radar-val">0</span></div>
     <div>Cache 利用: <span class="radar-val">47</span></div>
     <div>执行速度: <span class="radar-val">100</span></div>
   </div>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">glm-4.7</div>
-    <div>Token 效率: <span class="radar-val">74</span></div>
+    <div>Token 效率: <span class="radar-val">14</span></div>
     <div>成本效率: <span class="radar-val">67</span></div>
-    <div>代码质量: <span class="radar-val">50</span></div>
+    <div>代码质量: <span class="radar-val">0</span></div>
     <div>Cache 利用: <span class="radar-val">21</span></div>
-    <div>执行速度: <span class="radar-val">72</span></div>
+    <div>执行速度: <span class="radar-val">76</span></div>
   </div>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">glm-5</div>
-    <div>Token 效率: <span class="radar-val">66</span></div>
-    <div>成本效率: <span class="radar-val">100</span></div>
-    <div>代码质量: <span class="radar-val">50</span></div>
+    <div>Token 效率: <span class="radar-val">8</span></div>
+    <div>成本效率: <span class="radar-val">99</span></div>
+    <div>代码质量: <span class="radar-val">0</span></div>
     <div>Cache 利用: <span class="radar-val">0</span></div>
-    <div>执行速度: <span class="radar-val">58</span></div>
+    <div>执行速度: <span class="radar-val">64</span></div>
+  </div>
+
+  <div class="radar-item">
+    <div style="font-weight:bold; margin-bottom:10px;">kimi-k2.5</div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>代码质量: <span class="radar-val">100</span></div>
+    <div>Cache 利用: <span class="radar-val">87</span></div>
+    <div>执行速度: <span class="radar-val">0</span></div>
   </div>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">qwen3.5-plus</div>
-    <div>Token 效率: <span class="radar-val">100</span></div>
-    <div>成本效率: <span class="radar-val">96</span></div>
-    <div>代码质量: <span class="radar-val">50</span></div>
+    <div>Token 效率: <span class="radar-val">54</span></div>
+    <div>成本效率: <span class="radar-val">72</span></div>
+    <div>代码质量: <span class="radar-val">33</span></div>
     <div>Cache 利用: <span class="radar-val">100</span></div>
-    <div>执行速度: <span class="radar-val">83</span></div>
+    <div>执行速度: <span class="radar-val">86</span></div>
   </div>
 
 </div>
@@ -267,8 +280,13 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <table>
 <tr><th style="width:40px">级别</th><th style="width:100px">类别</th><th>详情</th><th style="width:180px">涉及轮次</th></tr>
 <tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>数据不完整</td><td>51 个 stage 无 token 数据（data_source=none），涉及 AR: AR-001, AR-003, AR-004, AR-005, AR-006...。</td><td>opencode-cli / alibaba-cn/qwen3.6-plus</td></tr>
-<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>数据不完整</td><td>35 个 stage 无 token 数据（data_source=none），涉及 AR: AR-001, AR-004, AR-005, AR-006, AR-007...。</td><td>opencode-cli / bailian-coding-plan/qwen3.5-plus</td></tr>
-<tr><td style='color:#4285f4;text-align:center'>&#8505;</td><td>业界对标</td><td>Token/LOC 范围 4~347，$/KLOC 范围 0.03~0.11。业界同类评测（SWE-bench、Aider Polyglot）的 token 效率通常在 30~80 token/LOC 区间。</td><td>全部轮次</td></tr>
+<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>数据不完整</td><td>64 个 stage 无 token 数据（data_source=none），涉及 AR: AR-003, AR-004, AR-005, AR-006, AR-007...。</td><td>opencode-cli / bailian-coding-plan/kimi-k2.5</td></tr>
+<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>Token 统计偏差</td><td>该模型 ET-LOC(净) = 76，但 ET-LOC-GROSS(含缓存) = 394，相差 5x。原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。</td><td>opencode-cli / bailian-coding-plan/MiniMax-M2.5</td></tr>
+<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>Token 统计偏差</td><td>该模型 ET-LOC(净) = 93，但 ET-LOC-GROSS(含缓存) = 360，相差 4x。原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。</td><td>opencode-cli / bailian-coding-plan/glm-4.7</td></tr>
+<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>Token 统计偏差</td><td>该模型 ET-LOC(净) = 121，但 ET-LOC-GROSS(含缓存) = 375，相差 3x。原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。</td><td>opencode-cli / bailian-coding-plan/glm-5</td></tr>
+<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>Token 统计偏差</td><td>该模型 ET-LOC(净) = 20，但 ET-LOC-GROSS(含缓存) = 163，相差 8x。原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。</td><td>opencode-cli / bailian-coding-plan/kimi-k2.5</td></tr>
+<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>Token 统计偏差</td><td>该模型 ET-LOC(净) = 2，但 ET-LOC-GROSS(含缓存) = 267，相差 117x。原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。</td><td>opencode-cli / bailian-coding-plan/qwen3.5-plus</td></tr>
+<tr><td style='color:#4285f4;text-align:center'>&#8505;</td><td>业界对标</td><td>ET-LOC-GROSS (含缓存) 范围 163~394 token/LOC。业界同类评测（SWE-bench、Aider Polyglot）的 token 效率通常在 30~2000 token/LOC 区间。</td><td>全部轮次</td></tr>
 
 </table>
 <p style="color:#999;font-size:0.85em;margin-top:10px">
@@ -289,6 +307,6 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 </div>
 
 <div class="footer">
-  SDD-TEE v5.1 Report | Generated 2026-04-11 20:09 UTC | SDD-TEE Benchmark Framework
+  SDD-TEE v5.1 Report | Generated 2026-04-12 04:22 UTC | SDD-TEE Benchmark Framework
 </div>
 </body></html>
