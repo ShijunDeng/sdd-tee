@@ -44,6 +44,7 @@ METRIC_LABELS = {
     "ET_AR": "ET-AR (Token/AR)",
     "ET_TIME": "ET-TIME (Token/小时)",
     "ET_COST_LOC": "ET-COST-LOC ($/千行)",
+    "OUTPUT_RATIO_GROSS": "Output 占比 (Gross%)",
     "RT_RATIO": "RT-RATIO (人工/AI)",
     "RT_ITER": "RT-ITER (平均迭代数)",
     "QT_COV": "QT-COV (覆盖率)",
@@ -153,6 +154,19 @@ def _et_loc_gross(run):
     if loc == 0:
         return None
     return gross / loc
+
+
+def _output_ratio_gross(run):
+    """Output tokens as % of gross total (net_input + cache_read + output).
+    Industry typical for code generation: 1-15%.
+    Returns None if no valid data.
+    """
+    gt = run["grand_totals"]
+    gross = gt.get("input_tokens", 0) + gt.get("cache_read_tokens", 0) + gt.get("output_tokens", 0)
+    output = gt.get("output_tokens", 0)
+    if gross == 0:
+        return None
+    return output / gross
 
 
 def _failed_stages_count(run):
@@ -472,6 +486,7 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
             eff_rows += td_row(METRIC_LABELS[key], lambda r, k=key: _avg_metric(r, k), unit, hl)
 
     eff_rows += td_row("Cache 命中率", lambda r: _cache_rate(r), "pct", "max")
+    eff_rows += td_row("Output 占比 (Gross%)", lambda r: _output_ratio_gross(r), "pct", "neutral")
     eff_rows += td_row("RT-RATIO (人工/AI)", lambda r: _avg_metric(r, "RT_RATIO"), "pct", "min")
     eff_rows += td_row("RT-ITER (平均迭代)", lambda r: _avg_metric(r, "RT_ITER"), "num", "min")
 
@@ -541,8 +556,9 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 
     # ─── Guide Table ──────────────────────────────────────────────────
     guide_html = """
-  <tr><td width='120'><b>ET-LOC</b></td><td>净 Token (input_net + output) / 生成代码行数 (LOC)。<b>越低越好</b>，但不包含 cache_read，在 cache 命中率高时不代表实际 API 流量。</td></tr>
+  <tr><td><b>ET-LOC</b></td><td>净 Token (input_net + output) / 生成代码行数 (LOC)。<b>越低越好</b>，但不包含 cache_read，在 cache 命中率高时不代表实际 API 流量。</td></tr>
   <tr><td><b>ET-LOC-GROSS</b></td><td>总 Token (input_net + cache_read + output) / 生成代码行数 (LOC)。<b>越低越好</b>，反映实际 API 流量 per LOC，是跨模型比较的公平指标。</td></tr>
+  <tr><td><b>Output 占比 (Gross%)</b></td><td>Output Token / 总 Token (含缓存)。<b>越低越表示上下文利用率高</b>，代码生成任务通常在 1-15% 区间。</td></tr>
   <tr><td><b>RT-RATIO</b></td><td>人工输入 Token / AI 生成 Token。<b>越低越好</b>，代表高度自动化，AI 在无人工干预下完成任务的能力强。</td></tr>
   <tr><td><b>Cache 命中率</b></td><td>Cache Read / (Input + Cache Read)。<b>越高越好</b>，代表对长上下文的利用极其高效，大幅降低重复输入成本。</td></tr>
   <tr><td><b>一致性评分</b></td><td>跨模块/文件接口调用的一致性。<b>越高越好</b>，代表模型对复杂工程架构的整体把控能力。</td></tr>

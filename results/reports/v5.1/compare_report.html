@@ -33,7 +33,7 @@
 </style>
 </head>
 <body>
-<h1>SDD-TEE v5.1 跨轮次对比报告 <span style="font-size:0.5em; font-weight:normal; color:#666;">2026-04-12 04:22 UTC</span></h1>
+<h1>SDD-TEE v5.1 跨轮次对比报告 <span style="font-size:0.5em; font-weight:normal; color:#666;">2026-04-12 08:49 UTC</span></h1>
 <div class="meta">对比轮次: 6 | 目标项目: <a href="https://github.com/ShijunDeng/agentcube">AgentCube</a></div>
 
 <div class="section" style="background-color:#f8f9fa; border-left:4px solid #1a73e8; padding:15px;">
@@ -51,20 +51,20 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 
 <h3 style="font-size:1.05em;">二、6 轮测试实录</h3>
 <ul><li><b>轮次 1 (opencode-cli / alibaba-cn/qwen3.6-plus)</b>: 生成了 <b>371,798</b> 行代码，耗时 <b>26h 28m</b>，消耗 79,892,063 Tokens，总成本 $42.11。 <span class='fail-tag'>51 个 stage 无数据</span></li>
-<li><b>轮次 2 (opencode-cli / bailian-coding-plan/MiniMax-M2.5)</b>: 生成了 <b>436,516</b> 行代码，耗时 <b>13h 45m</b>，消耗 20,166,708 Tokens，总成本 $18.29。</li>
-<li><b>轮次 3 (opencode-cli / bailian-coding-plan/glm-4.7)</b>: 生成了 <b>624,121</b> 行代码，耗时 <b>17h 16m</b>，消耗 39,067,326 Tokens，总成本 $23.89。</li>
-<li><b>轮次 4 (opencode-cli / bailian-coding-plan/glm-5)</b>: 生成了 <b>386,384</b> 行代码，耗时 <b>19h 4m</b>，消耗 31,653,054 Tokens，总成本 $15.26。</li>
-<li><b>轮次 5 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>435,484</b> 行代码，耗时 <b>28h 35m</b>，消耗 3,537,809 Tokens，总成本 $15.13。 <span class='fail-tag'>64 个 stage 无数据</span></li>
-<li><b>轮次 6 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>517,891</b> 行代码，耗时 <b>15h 48m</b>，消耗 1,842,676 Tokens，总成本 $22.64。</li>
+<li><b>轮次 2 (opencode-cli / bailian-coding-plan/MiniMax-M2.5)</b>: 生成了 <b>436,516</b> 行代码，耗时 <b>13h 45m</b>，消耗 20,166,708 Tokens，总成本 $12.42。</li>
+<li><b>轮次 3 (opencode-cli / bailian-coding-plan/glm-4.7)</b>: 生成了 <b>624,121</b> 行代码，耗时 <b>17h 16m</b>，消耗 39,067,326 Tokens，总成本 $23.55。</li>
+<li><b>轮次 4 (opencode-cli / bailian-coding-plan/glm-5)</b>: 生成了 <b>386,384</b> 行代码，耗时 <b>19h 4m</b>，消耗 31,653,054 Tokens，总成本 $18.78。</li>
+<li><b>轮次 5 (opencode-cli / bailian-coding-plan/kimi-k2.5)</b>: 生成了 <b>435,484</b> 行代码，耗时 <b>28h 35m</b>，消耗 3,537,809 Tokens，总成本 $4.93。 <span class='fail-tag'>64 个 stage 无数据</span></li>
+<li><b>轮次 6 (opencode-cli / bailian-coding-plan/qwen3.5-plus)</b>: 生成了 <b>517,891</b> 行代码，耗时 <b>15h 48m</b>，消耗 1,842,676 Tokens，总成本 $3.66。</li>
 </ul>
 
 <h3 style="font-size:1.05em;">三、核心指标极值</h3>
 <ul>
 <li><b>产出规模最大</b>: <code>opencode-cli / bailian-coding-plan/glm-4.7</code> 输出了 <b>624,121 LOC</b> 和 <b>2883</b> 个文件。</li>
-<li><b>经济性最优</b>: <code>opencode-cli / bailian-coding-plan/kimi-k2.5</code> 总成本仅 <b>$15.13</b>。</li>
+<li><b>经济性最优</b>: <code>opencode-cli / bailian-coding-plan/qwen3.5-plus</code> 总成本仅 <b>$3.66</b>。</li>
 <li><b>交付速度最快</b>: <code>opencode-cli / bailian-coding-plan/MiniMax-M2.5</code> 仅耗时 <b>13h 45m</b> 完成全量需求。</li>
-<li><b>Token 效率最高</b>: <code>opencode-cli / bailian-coding-plan/kimi-k2.5</code> 每行代码平均消耗 <b>163.2 Tokens/LOC (含缓存)</b>，代码逻辑密度最高。</li>
-<li><b>Cache 命中率最高</b>: <code>opencode-cli / bailian-coding-plan/qwen3.5-plus</code> 上下文复用率达到 <b>100.0%</b>。</li>
+<li><b>Token 效率最高</b>: <code>opencode-cli / bailian-coding-plan/qwen3.5-plus</code> 每行代码平均消耗 <b>3.6 Tokens/LOC (含缓存)</b>，代码逻辑密度最高。</li>
+<li><b>Cache 命中率最高</b>: <code>opencode-cli / bailian-coding-plan/kimi-k2.5</code> 上下文复用率达到 <b>79.9%</b>。</li>
 </ul>
 
 <p><b>洞察与建议</b>：长上下文缓存命中率是降低多轮迭代成本的关键。不同模型在"代码骨架搭建"与"逻辑细节深挖"上的侧重点差异明显。
@@ -78,12 +78,12 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <table>
 <tr><th>指标</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
 <tr><td>总 Token (净)</td><td>79,892,063</td><td>20,166,708</td><td>39,067,326</td><td>31,653,054</td><td>3,537,809</td><td class="best">1,842,676</td></tr>
-<tr><td>总 Token (含缓存)</td><td>79,892,063</td><td>171,942,227</td><td>224,416,999</td><td>144,887,046</td><td>71,064,061</td><td>138,381,877</td></tr>
+<tr><td>总 Token (含缓存)</td><td>79,892,063</td><td>20,166,708</td><td>39,067,326</td><td>31,653,054</td><td>10,639,649</td><td>1,842,676</td></tr>
 <tr><td>Input Token (净)</td><td>78,449,183</td><td>18,608,268</td><td>36,388,362</td><td>29,687,188</td><td>1,790,334</td><td class="best">24,642</td></tr>
 <tr><td>Output Token</td><td class="best">1,442,880</td><td>1,558,440</td><td>2,678,964</td><td>1,965,866</td><td>1,747,475</td><td>1,818,034</td></tr>
-<tr><td>Cache Read</td><td>0</td><td>151,775,519</td><td class="best">185,349,673</td><td>113,233,992</td><td>67,526,252</td><td>136,539,201</td></tr>
-<tr><td>Cache Write</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9,760,148</td><td>10,691,475</td></tr>
-<tr><td>总成本 (USD)</td><td>$42.11</td><td>$18.29</td><td>$23.89</td><td>$15.26</td><td class="best">$15.13</td><td>$22.64</td></tr>
+<tr><td>Cache Read</td><td>0</td><td>0</td><td>0</td><td>0</td><td>7,101,840</td><td>0</td></tr>
+<tr><td>Cache Write</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1,454,324</td><td>24,642</td></tr>
+<tr><td>总成本 (USD)</td><td>$42.11</td><td>$12.42</td><td>$23.55</td><td>$18.78</td><td>$4.93</td><td class="best">$3.66</td></tr>
 <tr><td>代码行数 (LOC)</td><td>371,798</td><td>436,516</td><td class="best">624,121</td><td>386,384</td><td>435,484</td><td>517,891</td></tr>
 <tr><td>文件数</td><td>2,704</td><td>2,183</td><td>2,883</td><td>2,377</td><td>1,867</td><td class="best">3,006</td></tr>
 <tr><td>AR 数</td><td>43</td><td>43</td><td>43</td><td>43</td><td>43</td><td>43</td></tr>
@@ -94,8 +94,9 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 </table>
 <div class='guide-title'>核心指标指南:</div>
 <table class='guide-table'>
-  <tr><td width='120'><b>ET-LOC</b></td><td>净 Token (input_net + output) / 生成代码行数 (LOC)。<b>越低越好</b>，但不包含 cache_read，在 cache 命中率高时不代表实际 API 流量。</td></tr>
+  <tr><td><b>ET-LOC</b></td><td>净 Token (input_net + output) / 生成代码行数 (LOC)。<b>越低越好</b>，但不包含 cache_read，在 cache 命中率高时不代表实际 API 流量。</td></tr>
   <tr><td><b>ET-LOC-GROSS</b></td><td>总 Token (input_net + cache_read + output) / 生成代码行数 (LOC)。<b>越低越好</b>，反映实际 API 流量 per LOC，是跨模型比较的公平指标。</td></tr>
+  <tr><td><b>Output 占比 (Gross%)</b></td><td>Output Token / 总 Token (含缓存)。<b>越低越表示上下文利用率高</b>，代码生成任务通常在 1-15% 区间。</td></tr>
   <tr><td><b>RT-RATIO</b></td><td>人工输入 Token / AI 生成 Token。<b>越低越好</b>，代表高度自动化，AI 在无人工干预下完成任务的能力强。</td></tr>
   <tr><td><b>Cache 命中率</b></td><td>Cache Read / (Input + Cache Read)。<b>越高越好</b>，代表对长上下文的利用极其高效，大幅降低重复输入成本。</td></tr>
   <tr><td><b>一致性评分</b></td><td>跨模块/文件接口调用的一致性。<b>越高越好</b>，代表模型对复杂工程架构的整体把控能力。</td></tr>
@@ -107,15 +108,15 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <h2>2. 阶段分布对比</h2>
 <table>
 <tr><th>阶段</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
-<tr><td><strong>ST-0</strong><br><small>AR 输入</small></td><td>8,156,337<br><small>47m 33s · 0 calls</small></td><td>687,430<br><small>37m 12s · 357 calls</small></td><td>1,313,803<br><small>47m 23s · 405 calls</small></td><td>2,321,410<br><small>1h 7m · 268 calls</small></td><td>576,684<br><small>2h 30m · 0 calls</small></td><td class="best">62,135<br><small>30m 27s · 248 calls</small></td></tr>
-<tr><td><strong>ST-1</strong><br><small>需求澄清</small></td><td>8,829,665<br><small>2h 13m · 0 calls</small></td><td>1,881,627<br><small>1h 9m · 367 calls</small></td><td>3,492,706<br><small>1h 31m · 304 calls</small></td><td>3,274,637<br><small>1h 42m · 356 calls</small></td><td>325,739<br><small>2h 55m · 0 calls</small></td><td class="best">281,300<br><small>1h 39m · 305 calls</small></td></tr>
-<tr><td><strong>ST-2</strong><br><small>Spec 增量设计</small></td><td>10,204,668<br><small>3h 5m · 0 calls</small></td><td>2,251,006<br><small>1h 22m · 382 calls</small></td><td>2,898,052<br><small>1h 49m · 342 calls</small></td><td>3,928,129<br><small>2h 20m · 311 calls</small></td><td>502,030<br><small>3h 37m · 0 calls</small></td><td class="best">159,564<br><small>1h 2m · 179 calls</small></td></tr>
-<tr><td><strong>ST-3</strong><br><small>Design 增量设计</small></td><td>11,305,320<br><small>3h 53m · 0 calls</small></td><td>2,861,174<br><small>1h 26m · 391 calls</small></td><td>4,018,164<br><small>1h 54m · 357 calls</small></td><td>3,770,605<br><small>2h 9m · 315 calls</small></td><td>460,165<br><small>4h 47m · 0 calls</small></td><td class="best">188,951<br><small>1h 13m · 203 calls</small></td></tr>
-<tr><td><strong>ST-4</strong><br><small>任务拆解</small></td><td>9,996,153<br><small>3h 40m · 0 calls</small></td><td>2,181,830<br><small>1h 13m · 418 calls</small></td><td>4,032,814<br><small>2h 10m · 353 calls</small></td><td>5,248,870<br><small>2h 45m · 310 calls</small></td><td>280,063<br><small>3h 11m · 0 calls</small></td><td class="best">242,700<br><small>1h 36m · 280 calls</small></td></tr>
-<tr><td><strong>ST-5</strong><br><small>开发实现</small></td><td>16,399,244<br><small>6h 37m · 0 calls</small></td><td>6,201,136<br><small>5h 14m · 1,681 calls</small></td><td>14,769,522<br><small>6h 7m · 1,700 calls</small></td><td>6,404,796<br><small>7h 2m · 964 calls</small></td><td class="best">197,968<br><small>6h 39m · 0 calls</small></td><td>632,475<br><small>6h 11m · 1,196 calls</small></td></tr>
-<tr><td><strong>ST-6</strong><br><small>一致性验证</small></td><td>10,569,997<br><small>4h 19m · 0 calls</small></td><td>2,692,798<br><small>1h 5m · 574 calls</small></td><td>4,804,722<br><small>1h 20m · 657 calls</small></td><td>3,862,032<br><small>1h 41m · 470 calls</small></td><td>1,049,387<br><small>3h 41m · 0 calls</small></td><td class="best">192,478<br><small>1h 29m · 520 calls</small></td></tr>
+<tr><td><strong>ST-0</strong><br><small>AR 输入</small></td><td>8,156,337<br><small>47m 33s · 0 calls</small></td><td>687,430<br><small>37m 12s · 357 calls</small></td><td>1,313,803<br><small>47m 23s · 405 calls</small></td><td>2,321,410<br><small>1h 7m · 268 calls</small></td><td>576,684<br><small>2h 30m · 278 calls</small></td><td class="best">62,135<br><small>30m 27s · 248 calls</small></td></tr>
+<tr><td><strong>ST-1</strong><br><small>需求澄清</small></td><td>8,829,665<br><small>2h 13m · 0 calls</small></td><td>1,881,627<br><small>1h 9m · 367 calls</small></td><td>3,492,706<br><small>1h 31m · 304 calls</small></td><td>3,274,637<br><small>1h 42m · 356 calls</small></td><td>325,739<br><small>2h 55m · 291 calls</small></td><td class="best">281,300<br><small>1h 39m · 305 calls</small></td></tr>
+<tr><td><strong>ST-2</strong><br><small>Spec 增量设计</small></td><td>10,204,668<br><small>3h 5m · 0 calls</small></td><td>2,251,006<br><small>1h 22m · 382 calls</small></td><td>2,898,052<br><small>1h 49m · 342 calls</small></td><td>3,928,129<br><small>2h 20m · 311 calls</small></td><td>502,030<br><small>3h 37m · 340 calls</small></td><td class="best">159,564<br><small>1h 2m · 179 calls</small></td></tr>
+<tr><td><strong>ST-3</strong><br><small>Design 增量设计</small></td><td>11,305,320<br><small>3h 53m · 0 calls</small></td><td>2,861,174<br><small>1h 26m · 391 calls</small></td><td>4,018,164<br><small>1h 54m · 357 calls</small></td><td>3,770,605<br><small>2h 9m · 315 calls</small></td><td>460,165<br><small>4h 47m · 292 calls</small></td><td class="best">188,951<br><small>1h 13m · 203 calls</small></td></tr>
+<tr><td><strong>ST-4</strong><br><small>任务拆解</small></td><td>9,996,153<br><small>3h 40m · 0 calls</small></td><td>2,181,830<br><small>1h 13m · 418 calls</small></td><td>4,032,814<br><small>2h 10m · 353 calls</small></td><td>5,248,870<br><small>2h 45m · 310 calls</small></td><td>280,063<br><small>3h 11m · 245 calls</small></td><td class="best">242,700<br><small>1h 36m · 280 calls</small></td></tr>
+<tr><td><strong>ST-5</strong><br><small>开发实现</small></td><td>16,399,244<br><small>6h 37m · 0 calls</small></td><td>6,201,136<br><small>5h 14m · 1,681 calls</small></td><td>14,769,522<br><small>6h 7m · 1,700 calls</small></td><td>6,404,796<br><small>7h 2m · 964 calls</small></td><td class="best">197,968<br><small>6h 39m · 45 calls</small></td><td>632,475<br><small>6h 11m · 1,196 calls</small></td></tr>
+<tr><td><strong>ST-6</strong><br><small>一致性验证</small></td><td>10,569,997<br><small>4h 19m · 0 calls</small></td><td>2,692,798<br><small>1h 5m · 574 calls</small></td><td>4,804,722<br><small>1h 20m · 657 calls</small></td><td>3,862,032<br><small>1h 41m · 470 calls</small></td><td>1,049,387<br><small>3h 41m · 500 calls</small></td><td class="best">192,478<br><small>1h 29m · 520 calls</small></td></tr>
 <tr><td><strong>ST-6.5</strong><br><small>ST-6.5</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td><td class="best">0<br><small>- · 0 calls</small></td></tr>
-<tr><td><strong>ST-7</strong><br><small>合并归档</small></td><td>4,430,679<br><small>1h 51m · 0 calls</small></td><td>1,409,707<br><small>31m 55s · 292 calls</small></td><td>3,737,543<br><small>51m 45s · 474 calls</small></td><td>2,842,575<br><small>48m 38s · 266 calls</small></td><td>145,773<br><small>1h 12m · 0 calls</small></td><td class="best">83,073<br><small>42m 52s · 286 calls</small></td></tr>
+<tr><td><strong>ST-7</strong><br><small>合并归档</small></td><td>4,430,679<br><small>1h 51m · 0 calls</small></td><td>1,409,707<br><small>31m 55s · 292 calls</small></td><td>3,737,543<br><small>51m 45s · 474 calls</small></td><td>2,842,575<br><small>48m 38s · 266 calls</small></td><td>145,773<br><small>1h 12m · 253 calls</small></td><td class="best">83,073<br><small>42m 52s · 286 calls</small></td></tr>
 
 </table>
 </div>
@@ -125,13 +126,14 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <table>
 <tr><th>指标</th><th>opencode-cli / alibaba-cn/qwen3.6-plus</th><th>opencode-cli / bailian-coding-plan/MiniMax-M2.5</th><th>opencode-cli / bailian-coding-plan/glm-4.7</th><th>opencode-cli / bailian-coding-plan/glm-5</th><th>opencode-cli / bailian-coding-plan/kimi-k2.5</th><th>opencode-cli / bailian-coding-plan/qwen3.5-plus</th></tr>
 <tr><td>ET-LOC (Token/行)</td><td>347.2</td><td>75.7</td><td>92.6</td><td>120.7</td><td>20.5</td><td class="best">2.3</td></tr>
-<tr><td>ET-LOC-GROSS (含缓存 Token/行)</td><td>214.9</td><td>393.9</td><td>359.6</td><td>375.0</td><td class="best">163.2</td><td>267.2</td></tr>
+<tr><td>ET-LOC-GROSS (含缓存 Token/行)</td><td>214.9</td><td>46.2</td><td>62.6</td><td>81.9</td><td>24.4</td><td class="best">3.6</td></tr>
 <tr><td>ET-FILE (Token/文件)</td><td>42,550.6</td><td>14,828.5</td><td>24,102.0</td><td>17,540.9</td><td>7,120.5</td><td class="best">424.6</td></tr>
 <tr><td>ET-TASK (Token/任务)</td><td>443,420.2</td><td>104,521.6</td><td>208,054.3</td><td>161,721.9</td><td>12,047.0</td><td class="best">4,199.4</td></tr>
 <tr><td>ET-AR (Token/AR)</td><td>1,857,955.0</td><td>468,993.2</td><td>908,542.5</td><td>736,117.5</td><td>82,274.6</td><td class="best">34,636.3</td></tr>
 <tr><td>ET-TIME (Token/小时)</td><td>3,139,051.5</td><td>1,547,156.4</td><td>2,397,710.0</td><td>1,702,764.3</td><td>131,136.4</td><td class="best">102,584.1</td></tr>
 <tr><td>ET-COST-LOC ($/千行)</td><td>$0.18</td><td>$0.06</td><td>$0.06</td><td>$0.06</td><td>$0.05</td><td class="best">$0.05</td></tr>
-<tr><td>Cache 命中率</td><td>—</td><td>89.1%</td><td>83.6%</td><td>79.2%</td><td>97.4%</td><td class="best">100.0%</td></tr>
+<tr><td>Cache 命中率</td><td>—</td><td>—</td><td>—</td><td>—</td><td>79.9%</td><td>0.0%</td></tr>
+<tr><td>Output 占比 (Gross%)</td><td>1.8%</td><td>7.7%</td><td>6.9%</td><td>6.2%</td><td>16.4%</td><td>98.7%</td></tr>
 <tr><td>RT-RATIO (人工/AI)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
 <tr><td>RT-ITER (平均迭代)</td><td>256.9</td><td>103.8</td><td>106.8</td><td>75.8</td><td class="best">52.2</td><td>56.8</td></tr>
 
@@ -219,7 +221,7 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">qwen3.6-plus</div>
-    <div>Token 效率: <span class="radar-val">77</span></div>
+    <div>Token 效率: <span class="radar-val">0</span></div>
     <div>成本效率: <span class="radar-val">0</span></div>
     <div>代码质量: <span class="radar-val">0</span></div>
     <div>Cache 利用: <span class="radar-val">50</span></div>
@@ -228,46 +230,46 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">MiniMax-M2.5</div>
-    <div>Token 效率: <span class="radar-val">0</span></div>
-    <div>成本效率: <span class="radar-val">88</span></div>
+    <div>Token 效率: <span class="radar-val">79</span></div>
+    <div>成本效率: <span class="radar-val">77</span></div>
     <div>代码质量: <span class="radar-val">0</span></div>
-    <div>Cache 利用: <span class="radar-val">47</span></div>
+    <div>Cache 利用: <span class="radar-val">50</span></div>
     <div>执行速度: <span class="radar-val">100</span></div>
   </div>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">glm-4.7</div>
-    <div>Token 效率: <span class="radar-val">14</span></div>
-    <div>成本效率: <span class="radar-val">67</span></div>
+    <div>Token 效率: <span class="radar-val">72</span></div>
+    <div>成本效率: <span class="radar-val">48</span></div>
     <div>代码质量: <span class="radar-val">0</span></div>
-    <div>Cache 利用: <span class="radar-val">21</span></div>
+    <div>Cache 利用: <span class="radar-val">50</span></div>
     <div>执行速度: <span class="radar-val">76</span></div>
   </div>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">glm-5</div>
-    <div>Token 效率: <span class="radar-val">8</span></div>
-    <div>成本效率: <span class="radar-val">99</span></div>
+    <div>Token 效率: <span class="radar-val">62</span></div>
+    <div>成本效率: <span class="radar-val">60</span></div>
     <div>代码质量: <span class="radar-val">0</span></div>
-    <div>Cache 利用: <span class="radar-val">0</span></div>
+    <div>Cache 利用: <span class="radar-val">50</span></div>
     <div>执行速度: <span class="radar-val">64</span></div>
   </div>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">kimi-k2.5</div>
-    <div>Token 效率: <span class="radar-val">100</span></div>
-    <div>成本效率: <span class="radar-val">100</span></div>
+    <div>Token 效率: <span class="radar-val">90</span></div>
+    <div>成本效率: <span class="radar-val">96</span></div>
     <div>代码质量: <span class="radar-val">100</span></div>
-    <div>Cache 利用: <span class="radar-val">87</span></div>
+    <div>Cache 利用: <span class="radar-val">100</span></div>
     <div>执行速度: <span class="radar-val">0</span></div>
   </div>
 
   <div class="radar-item">
     <div style="font-weight:bold; margin-bottom:10px;">qwen3.5-plus</div>
-    <div>Token 效率: <span class="radar-val">54</span></div>
-    <div>成本效率: <span class="radar-val">72</span></div>
+    <div>Token 效率: <span class="radar-val">100</span></div>
+    <div>成本效率: <span class="radar-val">100</span></div>
     <div>代码质量: <span class="radar-val">33</span></div>
-    <div>Cache 利用: <span class="radar-val">100</span></div>
+    <div>Cache 利用: <span class="radar-val">0</span></div>
     <div>执行速度: <span class="radar-val">86</span></div>
   </div>
 
@@ -280,13 +282,9 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 <table>
 <tr><th style="width:40px">级别</th><th style="width:100px">类别</th><th>详情</th><th style="width:180px">涉及轮次</th></tr>
 <tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>数据不完整</td><td>51 个 stage 无 token 数据（data_source=none），涉及 AR: AR-001, AR-003, AR-004, AR-005, AR-006...。</td><td>opencode-cli / alibaba-cn/qwen3.6-plus</td></tr>
+<tr><td style='color:#4285f4;text-align:center'>&#8505;</td><td>成本异常</td><td>成本 $42.11 是均值 $17.58 的 2.4 倍。</td><td>opencode-cli / alibaba-cn/qwen3.6-plus</td></tr>
 <tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>数据不完整</td><td>64 个 stage 无 token 数据（data_source=none），涉及 AR: AR-003, AR-004, AR-005, AR-006, AR-007...。</td><td>opencode-cli / bailian-coding-plan/kimi-k2.5</td></tr>
-<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>Token 统计偏差</td><td>该模型 ET-LOC(净) = 76，但 ET-LOC-GROSS(含缓存) = 394，相差 5x。原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。</td><td>opencode-cli / bailian-coding-plan/MiniMax-M2.5</td></tr>
-<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>Token 统计偏差</td><td>该模型 ET-LOC(净) = 93，但 ET-LOC-GROSS(含缓存) = 360，相差 4x。原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。</td><td>opencode-cli / bailian-coding-plan/glm-4.7</td></tr>
-<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>Token 统计偏差</td><td>该模型 ET-LOC(净) = 121，但 ET-LOC-GROSS(含缓存) = 375，相差 3x。原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。</td><td>opencode-cli / bailian-coding-plan/glm-5</td></tr>
-<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>Token 统计偏差</td><td>该模型 ET-LOC(净) = 20，但 ET-LOC-GROSS(含缓存) = 163，相差 8x。原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。</td><td>opencode-cli / bailian-coding-plan/kimi-k2.5</td></tr>
-<tr><td style='color:#f4b400;text-align:center'>&#9888;</td><td>Token 统计偏差</td><td>该模型 ET-LOC(净) = 2，但 ET-LOC-GROSS(含缓存) = 267，相差 117x。原因是 opencode-cli 原生解析器将大量 input token 归类为 cache_read，导致 total_tokens 仅反映 net_input + output，不代表实际 API 流量低。建议以 ET-LOC-GROSS 为准进行跨模型比较。</td><td>opencode-cli / bailian-coding-plan/qwen3.5-plus</td></tr>
-<tr><td style='color:#4285f4;text-align:center'>&#8505;</td><td>业界对标</td><td>ET-LOC-GROSS (含缓存) 范围 163~394 token/LOC。业界同类评测（SWE-bench、Aider Polyglot）的 token 效率通常在 30~2000 token/LOC 区间。</td><td>全部轮次</td></tr>
+<tr><td style='color:#4285f4;text-align:center'>&#8505;</td><td>业界对标</td><td>ET-LOC-GROSS (含缓存) 范围 4~215 token/LOC。业界同类评测（SWE-bench、Aider Polyglot）的 token 效率通常在 30~2000 token/LOC 区间。</td><td>全部轮次</td></tr>
 
 </table>
 <p style="color:#999;font-size:0.85em;margin-top:10px">
@@ -307,6 +305,6 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
 </div>
 
 <div class="footer">
-  SDD-TEE v5.1 Report | Generated 2026-04-12 04:22 UTC | SDD-TEE Benchmark Framework
+  SDD-TEE v5.1 Report | Generated 2026-04-12 08:49 UTC | SDD-TEE Benchmark Framework
 </div>
 </body></html>

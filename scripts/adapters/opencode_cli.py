@@ -63,40 +63,44 @@ class OpenCodeCliAdapter(BaseAdapter):
             except json.JSONDecodeError:
                 continue
 
-            # Format 1: step_finish events (opencode native JSONL)
-            if obj.get("type") == "step_finish":
-                tokens = obj.get("part", {}).get("tokens", {})
-                if isinstance(tokens, dict):
-                    total_input += tokens.get("input", 0) or 0
-                    total_output += tokens.get("output", 0) or 0
-                    cache = tokens.get("cache", {})
-                    if isinstance(cache, dict):
-                        total_cache_read += cache.get("read", 0) or 0
-                        total_cache_write += cache.get("write", 0) or 0
-                    api_calls += 1
+            # Only parse step_finish events — these are the authoritative per-request
+            # token records from opencode CLI. Other JSON lines (debug logs, cumulative
+            # stats, session summaries) are ignored to prevent double-counting.
+            if obj.get("type") != "step_finish":
+                continue
 
-            # Format 2: usage field — only match if key actually exists
-            usage = obj.get("usage") or obj.get("token_count")
-            if isinstance(usage, dict) and usage:
-                total_input += usage.get("input_tokens", usage.get("prompt_tokens", 0)) or 0
-                total_output += usage.get("output_tokens", usage.get("completion_tokens", 0)) or 0
-                total_cache_read += usage.get("cache_read_tokens", usage.get("cached_tokens", 0)) or 0
-                total_cache_write += usage.get("cache_write_tokens", 0) or 0
-                api_calls += 1
+            tokens = obj.get("part", {}).get("tokens", {})
+            if not isinstance(tokens, dict):
+                continue
 
-            # Format 3: Direct token fields
-            direct_counted = False
-            if "input_tokens" in obj:
-                total_input += obj.get("input_tokens", 0) or 0
-                direct_counted = True
-            if "output_tokens" in obj:
-                total_output += obj.get("output_tokens", 0) or 0
-            if "cache_read_tokens" in obj:
-                total_cache_read += obj.get("cache_read_tokens", 0) or 0
-            if "cache_write_tokens" in obj:
-                total_cache_write += obj.get("cache_write_tokens", 0) or 0
-            if direct_counted:
-                api_calls += 1
+            inp = tokens.get("input", 0) or 0
+            out = tokens.get("output", 0) or 0
+            cache = tokens.get("cache", {})
+            if not isinstance(cache, dict):
+                cache = {}
+            cr = cache.get("read", 0) or 0
+            cw = cache.get("write", 0) or 0
+
+            # Validation: cache tokens cannot exceed input (physically impossible).
+            # When violated, the fields are likely misinterpreted (e.g. cumulative
+            # session stats). Clamp to input to prevent inflated totals.
+            gross_input = inp + cr  # opencode may report base input + cache separately
+            if cw > gross_input:
+                cw = gross_input
+            if cr > gross_input:
+                cr = gross_input
+            # After clamping, ensure individual cache fields don't exceed total input
+            total_prompt = inp + cr  # total prompt = fresh input + cached input
+            if cw > total_prompt:
+                cw = total_prompt
+            if cr > total_prompt:
+                cr = total_prompt
+
+            total_input += inp
+            total_output += out
+            total_cache_read += cr
+            total_cache_write += cw
+            api_calls += 1
 
         record.input_tokens = total_input
         record.output_tokens = total_output

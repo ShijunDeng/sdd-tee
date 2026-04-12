@@ -507,7 +507,7 @@
         "ST-0": {
           "input_tokens": 30961,
           "output_tokens": 578,
-          "cache_read_tokens": 62787,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 31539,
           "human_input_tokens": 0,
@@ -520,7 +520,7 @@
         "ST-1": {
           "input_tokens": 29980,
           "output_tokens": 3161,
-          "cache_read_tokens": 250802,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 33141,
           "human_input_tokens": 0,
@@ -533,7 +533,7 @@
         "ST-2": {
           "input_tokens": 23113,
           "output_tokens": 3924,
-          "cache_read_tokens": 256763,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 27037,
           "human_input_tokens": 0,
@@ -546,7 +546,7 @@
         "ST-3": {
           "input_tokens": 78848,
           "output_tokens": 4428,
-          "cache_read_tokens": 209065,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 83276,
           "human_input_tokens": 0,
@@ -559,7 +559,7 @@
         "ST-4": {
           "input_tokens": 3176,
           "output_tokens": 1661,
-          "cache_read_tokens": 46559,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 4837,
           "human_input_tokens": 0,
@@ -572,7 +572,7 @@
         "ST-5": {
           "input_tokens": 105086,
           "output_tokens": 3105,
-          "cache_read_tokens": 809705,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 108191,
           "human_input_tokens": 0,
@@ -585,7 +585,7 @@
         "ST-6": {
           "input_tokens": 44871,
           "output_tokens": 1382,
-          "cache_read_tokens": 86903,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 46253,
           "human_input_tokens": 0,
@@ -611,7 +611,7 @@
         "ST-7": {
           "input_tokens": 70318,
           "output_tokens": 699,
-          "cache_read_tokens": 16631,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 71017,
           "human_input_tokens": 0,
@@ -625,7 +625,7 @@
       "totals": {
         "input_tokens": 386353,
         "output_tokens": 18938,
-        "cache_read_tokens": 1739215,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 405291,
         "human_input_tokens": 0,
@@ -681,7 +681,7 @@
         "ST-0": {
           "input_tokens": 9013,
           "output_tokens": 1384,
-          "cache_read_tokens": 111739,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 10397,
           "human_input_tokens": 0,
@@ -694,7 +694,7 @@
         "ST-1": {
           "input_tokens": 23915,
           "output_tokens": 3050,
-          "cache_read_tokens": 221497,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 26965,
           "human_input_tokens": 0,
@@ -707,7 +707,7 @@
         "ST-2": {
           "input_tokens": 22498,
           "output_tokens": 3681,
-          "cache_read_tokens": 130751,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 26179,
           "human_input_tokens": 0,
@@ -720,7 +720,7 @@
         "ST-3": {
           "input_tokens": 53893,
           "output_tokens": 5130,
-          "cache_read_tokens": 178605,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 59023,
           "human_input_tokens": 0,
@@ -733,7 +733,7 @@
         "ST-4": {
           "input_tokens": 16175,
           "output_tokens": 3313,
-          "cache_read_tokens": 141743,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 19488,
           "human_input_tokens": 0,
@@ -746,7 +746,7 @@
         "ST-5": {
           "input_tokens": 58624,
           "output_tokens": 6030,
-          "cache_read_tokens": 890077,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 64654,
           "human_input_tokens": 0,
@@ -759,7 +759,7 @@
         "ST-6": {
           "input_tokens": 65306,
           "output_tokens": 2698,
-          "cache_read_tokens": 281736,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 68004,
           "human_input_tokens": 0,
@@ -785,7 +785,7 @@
         "ST-7": {
           "input_tokens": 76808,
           "output_tokens": 579,
-          "cache_read_tokens": 16643,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 77387,
           "human_input_tokens": 0,
@@ -799,7 +799,7 @@
       "totals": {
         "input_tokens": 326232,
         "output_tokens": 25865,
-        "cache_read_tokens": 1972791,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 352097,
         "human_input_tokens": 0,
@@ -855,7 +855,7 @@
         "ST-0": {
           "input_tokens": 4130,
           "output_tokens": 694,
-          "cache_read_tokens": 76408,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 4824,
           "human_input_tokens": 0,
@@ -868,7 +868,7 @@
         "ST-1": {
           "input_tokens": 19737,
           "output_tokens": 2286,
-          "cache_read_tokens": 146039,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 22023,
           "human_input_tokens": 0,
@@ -881,7 +881,7 @@
         "ST-2": {
           "input_tokens": 3304,
           "output_tokens": 330,
-          "cache_read_tokens": 29787,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 3634,
           "human_input_tokens": 0,
@@ -894,7 +894,7 @@
         "ST-3": {
           "input_tokens": 61885,
           "output_tokens": 6213,
-          "cache_read_tokens": 225815,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 68098,
           "human_input_tokens": 0,
@@ -907,7 +907,7 @@
         "ST-4": {
           "input_tokens": 14405,
           "output_tokens": 4387,
-          "cache_read_tokens": 115537,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 18792,
           "human_input_tokens": 0,
@@ -920,7 +920,7 @@
         "ST-5": {
           "input_tokens": 40943,
           "output_tokens": 4485,
-          "cache_read_tokens": 424908,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 45428,
           "human_input_tokens": 0,
@@ -933,7 +933,7 @@
         "ST-6": {
           "input_tokens": 47585,
           "output_tokens": 1633,
-          "cache_read_tokens": 260721,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 49218,
           "human_input_tokens": 0,
@@ -959,7 +959,7 @@
         "ST-7": {
           "input_tokens": 27717,
           "output_tokens": 2201,
-          "cache_read_tokens": 320711,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 29918,
           "human_input_tokens": 0,
@@ -973,7 +973,7 @@
       "totals": {
         "input_tokens": 219706,
         "output_tokens": 22229,
-        "cache_read_tokens": 1599926,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 241935,
         "human_input_tokens": 0,
@@ -1029,7 +1029,7 @@
         "ST-0": {
           "input_tokens": 6723,
           "output_tokens": 1343,
-          "cache_read_tokens": 182741,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 8066,
           "human_input_tokens": 0,
@@ -1042,7 +1042,7 @@
         "ST-1": {
           "input_tokens": 14812,
           "output_tokens": 3904,
-          "cache_read_tokens": 82590,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 18716,
           "human_input_tokens": 0,
@@ -1055,7 +1055,7 @@
         "ST-2": {
           "input_tokens": 24418,
           "output_tokens": 4769,
-          "cache_read_tokens": 182266,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 29187,
           "human_input_tokens": 0,
@@ -1068,7 +1068,7 @@
         "ST-3": {
           "input_tokens": 10950,
           "output_tokens": 592,
-          "cache_read_tokens": 67252,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 11542,
           "human_input_tokens": 0,
@@ -1081,7 +1081,7 @@
         "ST-4": {
           "input_tokens": 149882,
           "output_tokens": 5385,
-          "cache_read_tokens": 1223605,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 155267,
           "human_input_tokens": 0,
@@ -1094,7 +1094,7 @@
         "ST-5": {
           "input_tokens": 196462,
           "output_tokens": 4905,
-          "cache_read_tokens": 2360171,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 201367,
           "human_input_tokens": 0,
@@ -1107,7 +1107,7 @@
         "ST-6": {
           "input_tokens": 47098,
           "output_tokens": 1355,
-          "cache_read_tokens": 95204,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 48453,
           "human_input_tokens": 0,
@@ -1133,7 +1133,7 @@
         "ST-7": {
           "input_tokens": 20170,
           "output_tokens": 1492,
-          "cache_read_tokens": 191856,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 21662,
           "human_input_tokens": 0,
@@ -1147,7 +1147,7 @@
       "totals": {
         "input_tokens": 470515,
         "output_tokens": 23745,
-        "cache_read_tokens": 4385685,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 494260,
         "human_input_tokens": 0,
@@ -1203,7 +1203,7 @@
         "ST-0": {
           "input_tokens": 19812,
           "output_tokens": 1321,
-          "cache_read_tokens": 153047,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 21133,
           "human_input_tokens": 0,
@@ -1216,7 +1216,7 @@
         "ST-1": {
           "input_tokens": 27780,
           "output_tokens": 2930,
-          "cache_read_tokens": 133016,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 30710,
           "human_input_tokens": 0,
@@ -1229,7 +1229,7 @@
         "ST-2": {
           "input_tokens": 77147,
           "output_tokens": 4244,
-          "cache_read_tokens": 127864,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 81391,
           "human_input_tokens": 0,
@@ -1242,7 +1242,7 @@
         "ST-3": {
           "input_tokens": 22790,
           "output_tokens": 3863,
-          "cache_read_tokens": 146577,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 26653,
           "human_input_tokens": 0,
@@ -1255,7 +1255,7 @@
         "ST-4": {
           "input_tokens": 30524,
           "output_tokens": 3164,
-          "cache_read_tokens": 116648,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 33688,
           "human_input_tokens": 0,
@@ -1268,7 +1268,7 @@
         "ST-5": {
           "input_tokens": 142451,
           "output_tokens": 14116,
-          "cache_read_tokens": 3100093,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 156567,
           "human_input_tokens": 0,
@@ -1281,7 +1281,7 @@
         "ST-6": {
           "input_tokens": 47322,
           "output_tokens": 1568,
-          "cache_read_tokens": 78429,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 48890,
           "human_input_tokens": 0,
@@ -1307,7 +1307,7 @@
         "ST-7": {
           "input_tokens": 7536,
           "output_tokens": 661,
-          "cache_read_tokens": 64751,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 8197,
           "human_input_tokens": 0,
@@ -1321,7 +1321,7 @@
       "totals": {
         "input_tokens": 375362,
         "output_tokens": 31867,
-        "cache_read_tokens": 3920425,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 407229,
         "human_input_tokens": 0,
@@ -1377,7 +1377,7 @@
         "ST-0": {
           "input_tokens": 20676,
           "output_tokens": 5682,
-          "cache_read_tokens": 128766,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 26358,
           "human_input_tokens": 0,
@@ -1390,7 +1390,7 @@
         "ST-1": {
           "input_tokens": 46525,
           "output_tokens": 3328,
-          "cache_read_tokens": 151969,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 49853,
           "human_input_tokens": 0,
@@ -1403,7 +1403,7 @@
         "ST-2": {
           "input_tokens": 45082,
           "output_tokens": 1807,
-          "cache_read_tokens": 219050,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 46889,
           "human_input_tokens": 0,
@@ -1416,7 +1416,7 @@
         "ST-3": {
           "input_tokens": 61314,
           "output_tokens": 4562,
-          "cache_read_tokens": 84610,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 65876,
           "human_input_tokens": 0,
@@ -1429,7 +1429,7 @@
         "ST-4": {
           "input_tokens": 40438,
           "output_tokens": 3234,
-          "cache_read_tokens": 113952,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 43672,
           "human_input_tokens": 0,
@@ -1442,7 +1442,7 @@
         "ST-5": {
           "input_tokens": 170300,
           "output_tokens": 8586,
-          "cache_read_tokens": 1313963,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 178886,
           "human_input_tokens": 0,
@@ -1455,7 +1455,7 @@
         "ST-6": {
           "input_tokens": 39791,
           "output_tokens": 1296,
-          "cache_read_tokens": 106347,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 41087,
           "human_input_tokens": 0,
@@ -1481,7 +1481,7 @@
         "ST-7": {
           "input_tokens": 43487,
           "output_tokens": 1297,
-          "cache_read_tokens": 175131,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 44784,
           "human_input_tokens": 0,
@@ -1495,7 +1495,7 @@
       "totals": {
         "input_tokens": 467613,
         "output_tokens": 29792,
-        "cache_read_tokens": 2293788,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 497405,
         "human_input_tokens": 0,
@@ -1551,7 +1551,7 @@
         "ST-0": {
           "input_tokens": 17193,
           "output_tokens": 4944,
-          "cache_read_tokens": 96176,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 22137,
           "human_input_tokens": 0,
@@ -1564,7 +1564,7 @@
         "ST-1": {
           "input_tokens": 65456,
           "output_tokens": 3266,
-          "cache_read_tokens": 169900,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 68722,
           "human_input_tokens": 0,
@@ -1577,7 +1577,7 @@
         "ST-2": {
           "input_tokens": 56270,
           "output_tokens": 3726,
-          "cache_read_tokens": 170383,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 59996,
           "human_input_tokens": 0,
@@ -1590,7 +1590,7 @@
         "ST-3": {
           "input_tokens": 55137,
           "output_tokens": 8864,
-          "cache_read_tokens": 277564,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 64001,
           "human_input_tokens": 0,
@@ -1603,7 +1603,7 @@
         "ST-4": {
           "input_tokens": 49968,
           "output_tokens": 8541,
-          "cache_read_tokens": 768396,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 58509,
           "human_input_tokens": 0,
@@ -1616,7 +1616,7 @@
         "ST-5": {
           "input_tokens": 130408,
           "output_tokens": 3276,
-          "cache_read_tokens": 1079131,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 133684,
           "human_input_tokens": 0,
@@ -1629,7 +1629,7 @@
         "ST-6": {
           "input_tokens": 49932,
           "output_tokens": 1674,
-          "cache_read_tokens": 174749,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 51606,
           "human_input_tokens": 0,
@@ -1655,7 +1655,7 @@
         "ST-7": {
           "input_tokens": 14285,
           "output_tokens": 1087,
-          "cache_read_tokens": 105684,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 15372,
           "human_input_tokens": 0,
@@ -1669,7 +1669,7 @@
       "totals": {
         "input_tokens": 438649,
         "output_tokens": 35378,
-        "cache_read_tokens": 2841983,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 474027,
         "human_input_tokens": 0,
@@ -1725,7 +1725,7 @@
         "ST-0": {
           "input_tokens": 5248,
           "output_tokens": 939,
-          "cache_read_tokens": 158495,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 6187,
           "human_input_tokens": 0,
@@ -1738,7 +1738,7 @@
         "ST-1": {
           "input_tokens": 8435,
           "output_tokens": 2668,
-          "cache_read_tokens": 87627,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 11103,
           "human_input_tokens": 0,
@@ -1751,7 +1751,7 @@
         "ST-2": {
           "input_tokens": 59145,
           "output_tokens": 4477,
-          "cache_read_tokens": 296599,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 63622,
           "human_input_tokens": 0,
@@ -1764,7 +1764,7 @@
         "ST-3": {
           "input_tokens": 88109,
           "output_tokens": 7124,
-          "cache_read_tokens": 279866,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 95233,
           "human_input_tokens": 0,
@@ -1777,7 +1777,7 @@
         "ST-4": {
           "input_tokens": 48576,
           "output_tokens": 3441,
-          "cache_read_tokens": 290265,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 52017,
           "human_input_tokens": 0,
@@ -1790,7 +1790,7 @@
         "ST-5": {
           "input_tokens": 141245,
           "output_tokens": 19160,
-          "cache_read_tokens": 2263237,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 160405,
           "human_input_tokens": 0,
@@ -1803,7 +1803,7 @@
         "ST-6": {
           "input_tokens": 26807,
           "output_tokens": 2021,
-          "cache_read_tokens": 196211,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 28828,
           "human_input_tokens": 0,
@@ -1829,7 +1829,7 @@
         "ST-7": {
           "input_tokens": 50270,
           "output_tokens": 1472,
-          "cache_read_tokens": 127622,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 51742,
           "human_input_tokens": 0,
@@ -1843,7 +1843,7 @@
       "totals": {
         "input_tokens": 427835,
         "output_tokens": 41302,
-        "cache_read_tokens": 3699922,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 469137,
         "human_input_tokens": 0,
@@ -1899,7 +1899,7 @@
         "ST-0": {
           "input_tokens": 19070,
           "output_tokens": 1463,
-          "cache_read_tokens": 208617,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 20533,
           "human_input_tokens": 0,
@@ -1912,7 +1912,7 @@
         "ST-1": {
           "input_tokens": 26913,
           "output_tokens": 3274,
-          "cache_read_tokens": 129643,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 30187,
           "human_input_tokens": 0,
@@ -1925,7 +1925,7 @@
         "ST-2": {
           "input_tokens": 17471,
           "output_tokens": 3938,
-          "cache_read_tokens": 121565,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 21409,
           "human_input_tokens": 0,
@@ -1938,7 +1938,7 @@
         "ST-3": {
           "input_tokens": 29877,
           "output_tokens": 6964,
-          "cache_read_tokens": 116927,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 36841,
           "human_input_tokens": 0,
@@ -1951,7 +1951,7 @@
         "ST-4": {
           "input_tokens": 9480,
           "output_tokens": 1722,
-          "cache_read_tokens": 94246,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 11202,
           "human_input_tokens": 0,
@@ -1964,7 +1964,7 @@
         "ST-5": {
           "input_tokens": 163447,
           "output_tokens": 6751,
-          "cache_read_tokens": 1850737,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 170198,
           "human_input_tokens": 0,
@@ -1977,7 +1977,7 @@
         "ST-6": {
           "input_tokens": 46048,
           "output_tokens": 1732,
-          "cache_read_tokens": 75678,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 47780,
           "human_input_tokens": 0,
@@ -2003,7 +2003,7 @@
         "ST-7": {
           "input_tokens": 7167,
           "output_tokens": 715,
-          "cache_read_tokens": 81878,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 7882,
           "human_input_tokens": 0,
@@ -2017,7 +2017,7 @@
       "totals": {
         "input_tokens": 319473,
         "output_tokens": 26559,
-        "cache_read_tokens": 2679291,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 346032,
         "human_input_tokens": 0,
@@ -2073,7 +2073,7 @@
         "ST-0": {
           "input_tokens": 7033,
           "output_tokens": 1280,
-          "cache_read_tokens": 87607,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 8313,
           "human_input_tokens": 0,
@@ -2086,7 +2086,7 @@
         "ST-1": {
           "input_tokens": 53128,
           "output_tokens": 3101,
-          "cache_read_tokens": 116198,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 56229,
           "human_input_tokens": 0,
@@ -2099,7 +2099,7 @@
         "ST-2": {
           "input_tokens": 66279,
           "output_tokens": 4452,
-          "cache_read_tokens": 283172,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 70731,
           "human_input_tokens": 0,
@@ -2112,7 +2112,7 @@
         "ST-3": {
           "input_tokens": 65818,
           "output_tokens": 7242,
-          "cache_read_tokens": 317816,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 73060,
           "human_input_tokens": 0,
@@ -2125,7 +2125,7 @@
         "ST-4": {
           "input_tokens": 36438,
           "output_tokens": 2398,
-          "cache_read_tokens": 124358,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 38836,
           "human_input_tokens": 0,
@@ -2138,7 +2138,7 @@
         "ST-5": {
           "input_tokens": 134522,
           "output_tokens": 18952,
-          "cache_read_tokens": 2851074,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 153474,
           "human_input_tokens": 0,
@@ -2151,7 +2151,7 @@
         "ST-6": {
           "input_tokens": 43963,
           "output_tokens": 1216,
-          "cache_read_tokens": 53510,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 45179,
           "human_input_tokens": 0,
@@ -2177,7 +2177,7 @@
         "ST-7": {
           "input_tokens": 42740,
           "output_tokens": 2456,
-          "cache_read_tokens": 282748,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 45196,
           "human_input_tokens": 0,
@@ -2191,7 +2191,7 @@
       "totals": {
         "input_tokens": 449921,
         "output_tokens": 41097,
-        "cache_read_tokens": 4116483,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 491018,
         "human_input_tokens": 0,
@@ -2247,7 +2247,7 @@
         "ST-0": {
           "input_tokens": 13201,
           "output_tokens": 2665,
-          "cache_read_tokens": 163040,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 15866,
           "human_input_tokens": 0,
@@ -2260,7 +2260,7 @@
         "ST-1": {
           "input_tokens": 22569,
           "output_tokens": 3166,
-          "cache_read_tokens": 107261,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 25735,
           "human_input_tokens": 0,
@@ -2273,7 +2273,7 @@
         "ST-2": {
           "input_tokens": 44107,
           "output_tokens": 3033,
-          "cache_read_tokens": 249188,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 47140,
           "human_input_tokens": 0,
@@ -2286,7 +2286,7 @@
         "ST-3": {
           "input_tokens": 55179,
           "output_tokens": 6535,
-          "cache_read_tokens": 162966,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 61714,
           "human_input_tokens": 0,
@@ -2299,7 +2299,7 @@
         "ST-4": {
           "input_tokens": 37636,
           "output_tokens": 2953,
-          "cache_read_tokens": 96159,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 40589,
           "human_input_tokens": 0,
@@ -2312,7 +2312,7 @@
         "ST-5": {
           "input_tokens": 118473,
           "output_tokens": 20830,
-          "cache_read_tokens": 2162514,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 139303,
           "human_input_tokens": 0,
@@ -2325,7 +2325,7 @@
         "ST-6": {
           "input_tokens": 58882,
           "output_tokens": 2395,
-          "cache_read_tokens": 223265,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 61277,
           "human_input_tokens": 0,
@@ -2351,7 +2351,7 @@
         "ST-7": {
           "input_tokens": 3945,
           "output_tokens": 424,
-          "cache_read_tokens": 44590,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 4369,
           "human_input_tokens": 0,
@@ -2365,7 +2365,7 @@
       "totals": {
         "input_tokens": 353992,
         "output_tokens": 42001,
-        "cache_read_tokens": 3208983,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 395993,
         "human_input_tokens": 0,
@@ -2421,7 +2421,7 @@
         "ST-0": {
           "input_tokens": 14273,
           "output_tokens": 1083,
-          "cache_read_tokens": 104452,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 15356,
           "human_input_tokens": 0,
@@ -2434,7 +2434,7 @@
         "ST-1": {
           "input_tokens": 22273,
           "output_tokens": 2626,
-          "cache_read_tokens": 89119,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 24899,
           "human_input_tokens": 0,
@@ -2447,7 +2447,7 @@
         "ST-2": {
           "input_tokens": 47629,
           "output_tokens": 6742,
-          "cache_read_tokens": 132020,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 54371,
           "human_input_tokens": 0,
@@ -2460,7 +2460,7 @@
         "ST-3": {
           "input_tokens": 44994,
           "output_tokens": 3205,
-          "cache_read_tokens": 198371,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 48199,
           "human_input_tokens": 0,
@@ -2473,7 +2473,7 @@
         "ST-4": {
           "input_tokens": 14348,
           "output_tokens": 1873,
-          "cache_read_tokens": 122533,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 16221,
           "human_input_tokens": 0,
@@ -2486,7 +2486,7 @@
         "ST-5": {
           "input_tokens": 145701,
           "output_tokens": 13878,
-          "cache_read_tokens": 1908819,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 159579,
           "human_input_tokens": 0,
@@ -2499,7 +2499,7 @@
         "ST-6": {
           "input_tokens": 94549,
           "output_tokens": 7616,
-          "cache_read_tokens": 1235576,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 102165,
           "human_input_tokens": 0,
@@ -2525,7 +2525,7 @@
         "ST-7": {
           "input_tokens": 8520,
           "output_tokens": 790,
-          "cache_read_tokens": 102924,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 9310,
           "human_input_tokens": 0,
@@ -2539,7 +2539,7 @@
       "totals": {
         "input_tokens": 392287,
         "output_tokens": 37813,
-        "cache_read_tokens": 3893814,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 430100,
         "human_input_tokens": 0,
@@ -2595,7 +2595,7 @@
         "ST-0": {
           "input_tokens": 12296,
           "output_tokens": 962,
-          "cache_read_tokens": 145558,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 13258,
           "human_input_tokens": 0,
@@ -2608,7 +2608,7 @@
         "ST-1": {
           "input_tokens": 28820,
           "output_tokens": 3301,
-          "cache_read_tokens": 142975,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 32121,
           "human_input_tokens": 0,
@@ -2621,7 +2621,7 @@
         "ST-2": {
           "input_tokens": 24052,
           "output_tokens": 3879,
-          "cache_read_tokens": 117980,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 27931,
           "human_input_tokens": 0,
@@ -2634,7 +2634,7 @@
         "ST-3": {
           "input_tokens": 50336,
           "output_tokens": 5248,
-          "cache_read_tokens": 90120,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 55584,
           "human_input_tokens": 0,
@@ -2647,7 +2647,7 @@
         "ST-4": {
           "input_tokens": 28454,
           "output_tokens": 2228,
-          "cache_read_tokens": 113718,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 30682,
           "human_input_tokens": 0,
@@ -2660,7 +2660,7 @@
         "ST-5": {
           "input_tokens": 176101,
           "output_tokens": 10242,
-          "cache_read_tokens": 1030428,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 186343,
           "human_input_tokens": 0,
@@ -2673,7 +2673,7 @@
         "ST-6": {
           "input_tokens": 23696,
           "output_tokens": 2420,
-          "cache_read_tokens": 270963,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 26116,
           "human_input_tokens": 0,
@@ -2699,7 +2699,7 @@
         "ST-7": {
           "input_tokens": 26611,
           "output_tokens": 1895,
-          "cache_read_tokens": 172018,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 28506,
           "human_input_tokens": 0,
@@ -2713,7 +2713,7 @@
       "totals": {
         "input_tokens": 370366,
         "output_tokens": 30175,
-        "cache_read_tokens": 2083760,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 400541,
         "human_input_tokens": 0,
@@ -2769,7 +2769,7 @@
         "ST-0": {
           "input_tokens": 5147,
           "output_tokens": 648,
-          "cache_read_tokens": 141903,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 5795,
           "human_input_tokens": 0,
@@ -2782,7 +2782,7 @@
         "ST-1": {
           "input_tokens": 30456,
           "output_tokens": 2823,
-          "cache_read_tokens": 118762,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 33279,
           "human_input_tokens": 0,
@@ -2795,7 +2795,7 @@
         "ST-2": {
           "input_tokens": 24046,
           "output_tokens": 5272,
-          "cache_read_tokens": 124218,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 29318,
           "human_input_tokens": 0,
@@ -2808,7 +2808,7 @@
         "ST-3": {
           "input_tokens": 37931,
           "output_tokens": 4683,
-          "cache_read_tokens": 81117,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 42614,
           "human_input_tokens": 0,
@@ -2821,7 +2821,7 @@
         "ST-4": {
           "input_tokens": 23317,
           "output_tokens": 3302,
-          "cache_read_tokens": 134734,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 26619,
           "human_input_tokens": 0,
@@ -2834,7 +2834,7 @@
         "ST-5": {
           "input_tokens": 160306,
           "output_tokens": 4111,
-          "cache_read_tokens": 944629,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 164417,
           "human_input_tokens": 0,
@@ -2847,7 +2847,7 @@
         "ST-6": {
           "input_tokens": 49800,
           "output_tokens": 2406,
-          "cache_read_tokens": 308699,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 52206,
           "human_input_tokens": 0,
@@ -2873,7 +2873,7 @@
         "ST-7": {
           "input_tokens": 14676,
           "output_tokens": 1450,
-          "cache_read_tokens": 103608,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 16126,
           "human_input_tokens": 0,
@@ -2887,7 +2887,7 @@
       "totals": {
         "input_tokens": 345679,
         "output_tokens": 24695,
-        "cache_read_tokens": 1957670,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 370374,
         "human_input_tokens": 0,
@@ -2943,7 +2943,7 @@
         "ST-0": {
           "input_tokens": 9738,
           "output_tokens": 1015,
-          "cache_read_tokens": 132890,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 10753,
           "human_input_tokens": 0,
@@ -2956,7 +2956,7 @@
         "ST-1": {
           "input_tokens": 15952,
           "output_tokens": 777,
-          "cache_read_tokens": 146122,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 16729,
           "human_input_tokens": 0,
@@ -2969,7 +2969,7 @@
         "ST-2": {
           "input_tokens": 23925,
           "output_tokens": 3712,
-          "cache_read_tokens": 136148,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 27637,
           "human_input_tokens": 0,
@@ -2982,7 +2982,7 @@
         "ST-3": {
           "input_tokens": 49622,
           "output_tokens": 7363,
-          "cache_read_tokens": 456458,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 56985,
           "human_input_tokens": 0,
@@ -2995,7 +2995,7 @@
         "ST-4": {
           "input_tokens": 13373,
           "output_tokens": 2805,
-          "cache_read_tokens": 138800,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 16178,
           "human_input_tokens": 0,
@@ -3008,7 +3008,7 @@
         "ST-5": {
           "input_tokens": 216536,
           "output_tokens": 3352,
-          "cache_read_tokens": 805855,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 219888,
           "human_input_tokens": 0,
@@ -3021,7 +3021,7 @@
         "ST-6": {
           "input_tokens": 96159,
           "output_tokens": 3533,
-          "cache_read_tokens": 415559,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 99692,
           "human_input_tokens": 0,
@@ -3047,7 +3047,7 @@
         "ST-7": {
           "input_tokens": 15623,
           "output_tokens": 1596,
-          "cache_read_tokens": 205039,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 17219,
           "human_input_tokens": 0,
@@ -3061,7 +3061,7 @@
       "totals": {
         "input_tokens": 440928,
         "output_tokens": 24153,
-        "cache_read_tokens": 2436871,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 465081,
         "human_input_tokens": 0,
@@ -3117,7 +3117,7 @@
         "ST-0": {
           "input_tokens": 25550,
           "output_tokens": 1102,
-          "cache_read_tokens": 85763,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 26652,
           "human_input_tokens": 0,
@@ -3130,7 +3130,7 @@
         "ST-1": {
           "input_tokens": 39725,
           "output_tokens": 2724,
-          "cache_read_tokens": 177180,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 42449,
           "human_input_tokens": 0,
@@ -3143,7 +3143,7 @@
         "ST-2": {
           "input_tokens": 78697,
           "output_tokens": 5044,
-          "cache_read_tokens": 184823,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 83741,
           "human_input_tokens": 0,
@@ -3156,7 +3156,7 @@
         "ST-3": {
           "input_tokens": 48945,
           "output_tokens": 3767,
-          "cache_read_tokens": 160090,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 52712,
           "human_input_tokens": 0,
@@ -3169,7 +3169,7 @@
         "ST-4": {
           "input_tokens": 74895,
           "output_tokens": 3391,
-          "cache_read_tokens": 391070,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 78286,
           "human_input_tokens": 0,
@@ -3182,7 +3182,7 @@
         "ST-5": {
           "input_tokens": 64731,
           "output_tokens": 5525,
-          "cache_read_tokens": 759214,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 70256,
           "human_input_tokens": 0,
@@ -3195,7 +3195,7 @@
         "ST-6": {
           "input_tokens": 53226,
           "output_tokens": 1360,
-          "cache_read_tokens": 151685,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 54586,
           "human_input_tokens": 0,
@@ -3221,7 +3221,7 @@
         "ST-7": {
           "input_tokens": 3730,
           "output_tokens": 725,
-          "cache_read_tokens": 76809,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 4455,
           "human_input_tokens": 0,
@@ -3235,7 +3235,7 @@
       "totals": {
         "input_tokens": 389499,
         "output_tokens": 23638,
-        "cache_read_tokens": 1986634,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 413137,
         "human_input_tokens": 0,
@@ -3291,7 +3291,7 @@
         "ST-0": {
           "input_tokens": 5066,
           "output_tokens": 849,
-          "cache_read_tokens": 77890,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 5915,
           "human_input_tokens": 0,
@@ -3304,7 +3304,7 @@
         "ST-1": {
           "input_tokens": 64368,
           "output_tokens": 3136,
-          "cache_read_tokens": 127931,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 67504,
           "human_input_tokens": 0,
@@ -3317,7 +3317,7 @@
         "ST-2": {
           "input_tokens": 57004,
           "output_tokens": 4032,
-          "cache_read_tokens": 253872,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 61036,
           "human_input_tokens": 0,
@@ -3330,7 +3330,7 @@
         "ST-3": {
           "input_tokens": 6982,
           "output_tokens": 357,
-          "cache_read_tokens": 44689,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 7339,
           "human_input_tokens": 0,
@@ -3343,7 +3343,7 @@
         "ST-4": {
           "input_tokens": 30226,
           "output_tokens": 2528,
-          "cache_read_tokens": 113188,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 32754,
           "human_input_tokens": 0,
@@ -3356,7 +3356,7 @@
         "ST-5": {
           "input_tokens": 70177,
           "output_tokens": 14219,
-          "cache_read_tokens": 1627300,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 84396,
           "human_input_tokens": 0,
@@ -3369,7 +3369,7 @@
         "ST-6": {
           "input_tokens": 44761,
           "output_tokens": 1772,
-          "cache_read_tokens": 131389,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 46533,
           "human_input_tokens": 0,
@@ -3395,7 +3395,7 @@
         "ST-7": {
           "input_tokens": 13588,
           "output_tokens": 1534,
-          "cache_read_tokens": 152789,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 15122,
           "human_input_tokens": 0,
@@ -3409,7 +3409,7 @@
       "totals": {
         "input_tokens": 292172,
         "output_tokens": 28427,
-        "cache_read_tokens": 2529048,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 320599,
         "human_input_tokens": 0,
@@ -3465,7 +3465,7 @@
         "ST-0": {
           "input_tokens": 7334,
           "output_tokens": 1369,
-          "cache_read_tokens": 151098,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 8703,
           "human_input_tokens": 0,
@@ -3478,7 +3478,7 @@
         "ST-1": {
           "input_tokens": 24902,
           "output_tokens": 2685,
-          "cache_read_tokens": 264376,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 27587,
           "human_input_tokens": 0,
@@ -3491,7 +3491,7 @@
         "ST-2": {
           "input_tokens": 67985,
           "output_tokens": 4047,
-          "cache_read_tokens": 281039,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 72032,
           "human_input_tokens": 0,
@@ -3504,7 +3504,7 @@
         "ST-3": {
           "input_tokens": 60044,
           "output_tokens": 6302,
-          "cache_read_tokens": 347215,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 66346,
           "human_input_tokens": 0,
@@ -3517,7 +3517,7 @@
         "ST-4": {
           "input_tokens": 90429,
           "output_tokens": 4016,
-          "cache_read_tokens": 494350,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 94445,
           "human_input_tokens": 0,
@@ -3530,7 +3530,7 @@
         "ST-5": {
           "input_tokens": 161954,
           "output_tokens": 16344,
-          "cache_read_tokens": 2733126,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 178298,
           "human_input_tokens": 0,
@@ -3543,7 +3543,7 @@
         "ST-6": {
           "input_tokens": 58713,
           "output_tokens": 2655,
-          "cache_read_tokens": 417036,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 61368,
           "human_input_tokens": 0,
@@ -3569,7 +3569,7 @@
         "ST-7": {
           "input_tokens": 25594,
           "output_tokens": 1625,
-          "cache_read_tokens": 245338,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 27219,
           "human_input_tokens": 0,
@@ -3583,7 +3583,7 @@
       "totals": {
         "input_tokens": 496955,
         "output_tokens": 39043,
-        "cache_read_tokens": 4933578,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 535998,
         "human_input_tokens": 0,
@@ -3639,7 +3639,7 @@
         "ST-0": {
           "input_tokens": 10584,
           "output_tokens": 1432,
-          "cache_read_tokens": 153857,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 12016,
           "human_input_tokens": 0,
@@ -3652,7 +3652,7 @@
         "ST-1": {
           "input_tokens": 21854,
           "output_tokens": 3173,
-          "cache_read_tokens": 249298,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 25027,
           "human_input_tokens": 0,
@@ -3665,7 +3665,7 @@
         "ST-2": {
           "input_tokens": 57829,
           "output_tokens": 5328,
-          "cache_read_tokens": 551899,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 63157,
           "human_input_tokens": 0,
@@ -3678,7 +3678,7 @@
         "ST-3": {
           "input_tokens": 48845,
           "output_tokens": 7753,
-          "cache_read_tokens": 293969,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 56598,
           "human_input_tokens": 0,
@@ -3691,7 +3691,7 @@
         "ST-4": {
           "input_tokens": 58935,
           "output_tokens": 4759,
-          "cache_read_tokens": 511568,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 63694,
           "human_input_tokens": 0,
@@ -3704,7 +3704,7 @@
         "ST-5": {
           "input_tokens": 161630,
           "output_tokens": 14913,
-          "cache_read_tokens": 3455952,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 176543,
           "human_input_tokens": 0,
@@ -3717,7 +3717,7 @@
         "ST-6": {
           "input_tokens": 54368,
           "output_tokens": 1741,
-          "cache_read_tokens": 109895,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 56109,
           "human_input_tokens": 0,
@@ -3743,7 +3743,7 @@
         "ST-7": {
           "input_tokens": 22976,
           "output_tokens": 2174,
-          "cache_read_tokens": 236981,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 25150,
           "human_input_tokens": 0,
@@ -3757,7 +3757,7 @@
       "totals": {
         "input_tokens": 437021,
         "output_tokens": 41273,
-        "cache_read_tokens": 5563419,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 478294,
         "human_input_tokens": 0,
@@ -3813,7 +3813,7 @@
         "ST-0": {
           "input_tokens": 5495,
           "output_tokens": 945,
-          "cache_read_tokens": 131832,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 6440,
           "human_input_tokens": 0,
@@ -3826,7 +3826,7 @@
         "ST-1": {
           "input_tokens": 60475,
           "output_tokens": 5765,
-          "cache_read_tokens": 179298,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 66240,
           "human_input_tokens": 0,
@@ -3839,7 +3839,7 @@
         "ST-2": {
           "input_tokens": 61810,
           "output_tokens": 9849,
-          "cache_read_tokens": 265610,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 71659,
           "human_input_tokens": 0,
@@ -3852,7 +3852,7 @@
         "ST-3": {
           "input_tokens": 76306,
           "output_tokens": 8306,
-          "cache_read_tokens": 215716,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 84612,
           "human_input_tokens": 0,
@@ -3865,7 +3865,7 @@
         "ST-4": {
           "input_tokens": 30972,
           "output_tokens": 2848,
-          "cache_read_tokens": 90333,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 33820,
           "human_input_tokens": 0,
@@ -3878,7 +3878,7 @@
         "ST-5": {
           "input_tokens": 77333,
           "output_tokens": 16973,
-          "cache_read_tokens": 1783947,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 94306,
           "human_input_tokens": 0,
@@ -3891,7 +3891,7 @@
         "ST-6": {
           "input_tokens": 26880,
           "output_tokens": 1809,
-          "cache_read_tokens": 104729,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 28689,
           "human_input_tokens": 0,
@@ -3917,7 +3917,7 @@
         "ST-7": {
           "input_tokens": 18955,
           "output_tokens": 1655,
-          "cache_read_tokens": 168716,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 20610,
           "human_input_tokens": 0,
@@ -3931,7 +3931,7 @@
       "totals": {
         "input_tokens": 358226,
         "output_tokens": 48150,
-        "cache_read_tokens": 2940181,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 406376,
         "human_input_tokens": 0,
@@ -3987,7 +3987,7 @@
         "ST-0": {
           "input_tokens": 17663,
           "output_tokens": 1104,
-          "cache_read_tokens": 107122,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 18767,
           "human_input_tokens": 0,
@@ -4000,7 +4000,7 @@
         "ST-1": {
           "input_tokens": 38754,
           "output_tokens": 4186,
-          "cache_read_tokens": 145252,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 42940,
           "human_input_tokens": 0,
@@ -4013,7 +4013,7 @@
         "ST-2": {
           "input_tokens": 43918,
           "output_tokens": 6252,
-          "cache_read_tokens": 232215,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 50170,
           "human_input_tokens": 0,
@@ -4026,7 +4026,7 @@
         "ST-3": {
           "input_tokens": 49253,
           "output_tokens": 6245,
-          "cache_read_tokens": 246225,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 55498,
           "human_input_tokens": 0,
@@ -4039,7 +4039,7 @@
         "ST-4": {
           "input_tokens": 31294,
           "output_tokens": 2240,
-          "cache_read_tokens": 195952,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 33534,
           "human_input_tokens": 0,
@@ -4052,7 +4052,7 @@
         "ST-5": {
           "input_tokens": 130203,
           "output_tokens": 8495,
-          "cache_read_tokens": 1724232,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 138698,
           "human_input_tokens": 0,
@@ -4065,7 +4065,7 @@
         "ST-6": {
           "input_tokens": 60923,
           "output_tokens": 2666,
-          "cache_read_tokens": 270460,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 63589,
           "human_input_tokens": 0,
@@ -4091,7 +4091,7 @@
         "ST-7": {
           "input_tokens": 5603,
           "output_tokens": 720,
-          "cache_read_tokens": 80548,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 6323,
           "human_input_tokens": 0,
@@ -4105,7 +4105,7 @@
       "totals": {
         "input_tokens": 377611,
         "output_tokens": 31908,
-        "cache_read_tokens": 3002006,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 409519,
         "human_input_tokens": 0,
@@ -4161,7 +4161,7 @@
         "ST-0": {
           "input_tokens": 19307,
           "output_tokens": 3507,
-          "cache_read_tokens": 104287,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 22814,
           "human_input_tokens": 0,
@@ -4174,7 +4174,7 @@
         "ST-1": {
           "input_tokens": 71060,
           "output_tokens": 4576,
-          "cache_read_tokens": 339670,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 75636,
           "human_input_tokens": 0,
@@ -4187,7 +4187,7 @@
         "ST-2": {
           "input_tokens": 67427,
           "output_tokens": 5120,
-          "cache_read_tokens": 237210,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 72547,
           "human_input_tokens": 0,
@@ -4200,7 +4200,7 @@
         "ST-3": {
           "input_tokens": 154271,
           "output_tokens": 28321,
-          "cache_read_tokens": 578800,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 182592,
           "human_input_tokens": 0,
@@ -4213,7 +4213,7 @@
         "ST-4": {
           "input_tokens": 81732,
           "output_tokens": 3189,
-          "cache_read_tokens": 173720,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 84921,
           "human_input_tokens": 0,
@@ -4226,7 +4226,7 @@
         "ST-5": {
           "input_tokens": 147638,
           "output_tokens": 20829,
-          "cache_read_tokens": 1849327,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 168467,
           "human_input_tokens": 0,
@@ -4239,7 +4239,7 @@
         "ST-6": {
           "input_tokens": 85841,
           "output_tokens": 7240,
-          "cache_read_tokens": 977866,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 93081,
           "human_input_tokens": 0,
@@ -4265,7 +4265,7 @@
         "ST-7": {
           "input_tokens": 12619,
           "output_tokens": 900,
-          "cache_read_tokens": 110607,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 13519,
           "human_input_tokens": 0,
@@ -4279,7 +4279,7 @@
       "totals": {
         "input_tokens": 639895,
         "output_tokens": 73682,
-        "cache_read_tokens": 4371487,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 713577,
         "human_input_tokens": 0,
@@ -4335,7 +4335,7 @@
         "ST-0": {
           "input_tokens": 4574,
           "output_tokens": 566,
-          "cache_read_tokens": 125779,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 5140,
           "human_input_tokens": 0,
@@ -4348,7 +4348,7 @@
         "ST-1": {
           "input_tokens": 48085,
           "output_tokens": 4587,
-          "cache_read_tokens": 238232,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 52672,
           "human_input_tokens": 0,
@@ -4361,7 +4361,7 @@
         "ST-2": {
           "input_tokens": 44540,
           "output_tokens": 4980,
-          "cache_read_tokens": 191770,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 49520,
           "human_input_tokens": 0,
@@ -4374,7 +4374,7 @@
         "ST-3": {
           "input_tokens": 48633,
           "output_tokens": 5309,
-          "cache_read_tokens": 439634,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 53942,
           "human_input_tokens": 0,
@@ -4387,7 +4387,7 @@
         "ST-4": {
           "input_tokens": 52412,
           "output_tokens": 2610,
-          "cache_read_tokens": 214981,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 55022,
           "human_input_tokens": 0,
@@ -4400,7 +4400,7 @@
         "ST-5": {
           "input_tokens": 152782,
           "output_tokens": 18651,
-          "cache_read_tokens": 2051231,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 171433,
           "human_input_tokens": 0,
@@ -4413,7 +4413,7 @@
         "ST-6": {
           "input_tokens": 79540,
           "output_tokens": 2712,
-          "cache_read_tokens": 203247,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 82252,
           "human_input_tokens": 0,
@@ -4439,7 +4439,7 @@
         "ST-7": {
           "input_tokens": 56228,
           "output_tokens": 675,
-          "cache_read_tokens": 29623,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 56903,
           "human_input_tokens": 0,
@@ -4453,7 +4453,7 @@
       "totals": {
         "input_tokens": 486794,
         "output_tokens": 40090,
-        "cache_read_tokens": 3494497,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 526884,
         "human_input_tokens": 0,
@@ -4509,7 +4509,7 @@
         "ST-0": {
           "input_tokens": 17825,
           "output_tokens": 1087,
-          "cache_read_tokens": 108742,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 18912,
           "human_input_tokens": 0,
@@ -4522,7 +4522,7 @@
         "ST-1": {
           "input_tokens": 47886,
           "output_tokens": 4657,
-          "cache_read_tokens": 277078,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 52543,
           "human_input_tokens": 0,
@@ -4535,7 +4535,7 @@
         "ST-2": {
           "input_tokens": 44189,
           "output_tokens": 6905,
-          "cache_read_tokens": 191077,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 51094,
           "human_input_tokens": 0,
@@ -4548,7 +4548,7 @@
         "ST-3": {
           "input_tokens": 131300,
           "output_tokens": 3929,
-          "cache_read_tokens": 226012,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 135229,
           "human_input_tokens": 0,
@@ -4561,7 +4561,7 @@
         "ST-4": {
           "input_tokens": 73456,
           "output_tokens": 3175,
-          "cache_read_tokens": 215129,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 76631,
           "human_input_tokens": 0,
@@ -4574,7 +4574,7 @@
         "ST-5": {
           "input_tokens": 146545,
           "output_tokens": 17016,
-          "cache_read_tokens": 3082531,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 163561,
           "human_input_tokens": 0,
@@ -4587,7 +4587,7 @@
         "ST-6": {
           "input_tokens": 86914,
           "output_tokens": 2268,
-          "cache_read_tokens": 315338,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 89182,
           "human_input_tokens": 0,
@@ -4613,7 +4613,7 @@
         "ST-7": {
           "input_tokens": 59297,
           "output_tokens": 2992,
-          "cache_read_tokens": 360724,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 62289,
           "human_input_tokens": 0,
@@ -4627,7 +4627,7 @@
       "totals": {
         "input_tokens": 607412,
         "output_tokens": 42029,
-        "cache_read_tokens": 4776631,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 649441,
         "human_input_tokens": 0,
@@ -4683,7 +4683,7 @@
         "ST-0": {
           "input_tokens": 40230,
           "output_tokens": 1155,
-          "cache_read_tokens": 144403,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 41385,
           "human_input_tokens": 0,
@@ -4696,7 +4696,7 @@
         "ST-1": {
           "input_tokens": 63811,
           "output_tokens": 5866,
-          "cache_read_tokens": 389396,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 69677,
           "human_input_tokens": 0,
@@ -4709,7 +4709,7 @@
         "ST-2": {
           "input_tokens": 56958,
           "output_tokens": 5769,
-          "cache_read_tokens": 213858,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 62727,
           "human_input_tokens": 0,
@@ -4722,7 +4722,7 @@
         "ST-3": {
           "input_tokens": 123765,
           "output_tokens": 4912,
-          "cache_read_tokens": 248220,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 128677,
           "human_input_tokens": 0,
@@ -4735,7 +4735,7 @@
         "ST-4": {
           "input_tokens": 64966,
           "output_tokens": 3307,
-          "cache_read_tokens": 273301,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 68273,
           "human_input_tokens": 0,
@@ -4748,7 +4748,7 @@
         "ST-5": {
           "input_tokens": 68023,
           "output_tokens": 10724,
-          "cache_read_tokens": 1025122,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 78747,
           "human_input_tokens": 0,
@@ -4761,7 +4761,7 @@
         "ST-6": {
           "input_tokens": 69119,
           "output_tokens": 2775,
-          "cache_read_tokens": 318334,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 71894,
           "human_input_tokens": 0,
@@ -4787,7 +4787,7 @@
         "ST-7": {
           "input_tokens": 126852,
           "output_tokens": 1059,
-          "cache_read_tokens": 138743,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 127911,
           "human_input_tokens": 0,
@@ -4801,7 +4801,7 @@
       "totals": {
         "input_tokens": 613724,
         "output_tokens": 35567,
-        "cache_read_tokens": 2751377,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 649291,
         "human_input_tokens": 0,
@@ -4857,7 +4857,7 @@
         "ST-0": {
           "input_tokens": 17184,
           "output_tokens": 1165,
-          "cache_read_tokens": 149892,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 18349,
           "human_input_tokens": 0,
@@ -4870,7 +4870,7 @@
         "ST-1": {
           "input_tokens": 55625,
           "output_tokens": 3684,
-          "cache_read_tokens": 432964,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 59309,
           "human_input_tokens": 0,
@@ -4883,7 +4883,7 @@
         "ST-2": {
           "input_tokens": 39626,
           "output_tokens": 3204,
-          "cache_read_tokens": 185678,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 42830,
           "human_input_tokens": 0,
@@ -4896,7 +4896,7 @@
         "ST-3": {
           "input_tokens": 118115,
           "output_tokens": 5203,
-          "cache_read_tokens": 244427,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 123318,
           "human_input_tokens": 0,
@@ -4909,7 +4909,7 @@
         "ST-4": {
           "input_tokens": 54899,
           "output_tokens": 4364,
-          "cache_read_tokens": 275201,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 59263,
           "human_input_tokens": 0,
@@ -4922,7 +4922,7 @@
         "ST-5": {
           "input_tokens": 110815,
           "output_tokens": 7608,
-          "cache_read_tokens": 1409355,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 118423,
           "human_input_tokens": 0,
@@ -4935,7 +4935,7 @@
         "ST-6": {
           "input_tokens": 23955,
           "output_tokens": 2452,
-          "cache_read_tokens": 224819,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 26407,
           "human_input_tokens": 0,
@@ -4961,7 +4961,7 @@
         "ST-7": {
           "input_tokens": 61541,
           "output_tokens": 876,
-          "cache_read_tokens": 29623,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 62417,
           "human_input_tokens": 0,
@@ -4975,7 +4975,7 @@
       "totals": {
         "input_tokens": 481760,
         "output_tokens": 28556,
-        "cache_read_tokens": 2951959,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 510316,
         "human_input_tokens": 0,
@@ -5031,7 +5031,7 @@
         "ST-0": {
           "input_tokens": 8566,
           "output_tokens": 1122,
-          "cache_read_tokens": 92343,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 9688,
           "human_input_tokens": 0,
@@ -5044,7 +5044,7 @@
         "ST-1": {
           "input_tokens": 28794,
           "output_tokens": 3484,
-          "cache_read_tokens": 112822,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 32278,
           "human_input_tokens": 0,
@@ -5057,7 +5057,7 @@
         "ST-2": {
           "input_tokens": 59808,
           "output_tokens": 7153,
-          "cache_read_tokens": 143970,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 66961,
           "human_input_tokens": 0,
@@ -5070,7 +5070,7 @@
         "ST-3": {
           "input_tokens": 5979,
           "output_tokens": 821,
-          "cache_read_tokens": 29739,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 6800,
           "human_input_tokens": 0,
@@ -5083,7 +5083,7 @@
         "ST-4": {
           "input_tokens": 58270,
           "output_tokens": 8316,
-          "cache_read_tokens": 208963,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 66586,
           "human_input_tokens": 0,
@@ -5096,7 +5096,7 @@
         "ST-5": {
           "input_tokens": 127873,
           "output_tokens": 8643,
-          "cache_read_tokens": 1890369,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 136516,
           "human_input_tokens": 0,
@@ -5109,7 +5109,7 @@
         "ST-6": {
           "input_tokens": 50735,
           "output_tokens": 2280,
-          "cache_read_tokens": 186851,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 53015,
           "human_input_tokens": 0,
@@ -5135,7 +5135,7 @@
         "ST-7": {
           "input_tokens": 48652,
           "output_tokens": 1221,
-          "cache_read_tokens": 133337,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 49873,
           "human_input_tokens": 0,
@@ -5149,7 +5149,7 @@
       "totals": {
         "input_tokens": 388677,
         "output_tokens": 33040,
-        "cache_read_tokens": 2798394,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 421717,
         "human_input_tokens": 0,
@@ -5205,7 +5205,7 @@
         "ST-0": {
           "input_tokens": 22795,
           "output_tokens": 5232,
-          "cache_read_tokens": 155864,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 28027,
           "human_input_tokens": 0,
@@ -5218,7 +5218,7 @@
         "ST-1": {
           "input_tokens": 20197,
           "output_tokens": 2574,
-          "cache_read_tokens": 86357,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 22771,
           "human_input_tokens": 0,
@@ -5231,7 +5231,7 @@
         "ST-2": {
           "input_tokens": 34832,
           "output_tokens": 6122,
-          "cache_read_tokens": 113147,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 40954,
           "human_input_tokens": 0,
@@ -5244,7 +5244,7 @@
         "ST-3": {
           "input_tokens": 29148,
           "output_tokens": 3482,
-          "cache_read_tokens": 113466,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 32630,
           "human_input_tokens": 0,
@@ -5257,7 +5257,7 @@
         "ST-4": {
           "input_tokens": 64937,
           "output_tokens": 4145,
-          "cache_read_tokens": 267081,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 69082,
           "human_input_tokens": 0,
@@ -5270,7 +5270,7 @@
         "ST-5": {
           "input_tokens": 132302,
           "output_tokens": 24100,
-          "cache_read_tokens": 2412326,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 156402,
           "human_input_tokens": 0,
@@ -5283,7 +5283,7 @@
         "ST-6": {
           "input_tokens": 81006,
           "output_tokens": 2961,
-          "cache_read_tokens": 419478,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 83967,
           "human_input_tokens": 0,
@@ -5309,7 +5309,7 @@
         "ST-7": {
           "input_tokens": 17389,
           "output_tokens": 1048,
-          "cache_read_tokens": 151921,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 18437,
           "human_input_tokens": 0,
@@ -5323,7 +5323,7 @@
       "totals": {
         "input_tokens": 402606,
         "output_tokens": 49664,
-        "cache_read_tokens": 3719640,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 452270,
         "human_input_tokens": 0,
@@ -5379,7 +5379,7 @@
         "ST-0": {
           "input_tokens": 16949,
           "output_tokens": 1162,
-          "cache_read_tokens": 149073,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 18111,
           "human_input_tokens": 0,
@@ -5392,7 +5392,7 @@
         "ST-1": {
           "input_tokens": 18304,
           "output_tokens": 4015,
-          "cache_read_tokens": 88959,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 22319,
           "human_input_tokens": 0,
@@ -5405,7 +5405,7 @@
         "ST-2": {
           "input_tokens": 67461,
           "output_tokens": 8585,
-          "cache_read_tokens": 175516,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 76046,
           "human_input_tokens": 0,
@@ -5418,7 +5418,7 @@
         "ST-3": {
           "input_tokens": 29913,
           "output_tokens": 2148,
-          "cache_read_tokens": 164156,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 32061,
           "human_input_tokens": 0,
@@ -5431,7 +5431,7 @@
         "ST-4": {
           "input_tokens": 56458,
           "output_tokens": 5236,
-          "cache_read_tokens": 345595,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 61694,
           "human_input_tokens": 0,
@@ -5444,7 +5444,7 @@
         "ST-5": {
           "input_tokens": 61496,
           "output_tokens": 11435,
-          "cache_read_tokens": 1084020,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 72931,
           "human_input_tokens": 0,
@@ -5457,7 +5457,7 @@
         "ST-6": {
           "input_tokens": 80245,
           "output_tokens": 3115,
-          "cache_read_tokens": 382127,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 83360,
           "human_input_tokens": 0,
@@ -5483,7 +5483,7 @@
         "ST-7": {
           "input_tokens": 15132,
           "output_tokens": 970,
-          "cache_read_tokens": 80905,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 16102,
           "human_input_tokens": 0,
@@ -5497,7 +5497,7 @@
       "totals": {
         "input_tokens": 345958,
         "output_tokens": 36666,
-        "cache_read_tokens": 2470351,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 382624,
         "human_input_tokens": 0,
@@ -5553,7 +5553,7 @@
         "ST-0": {
           "input_tokens": 8087,
           "output_tokens": 1440,
-          "cache_read_tokens": 182279,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 9527,
           "human_input_tokens": 0,
@@ -5566,7 +5566,7 @@
         "ST-1": {
           "input_tokens": 64497,
           "output_tokens": 4271,
-          "cache_read_tokens": 212089,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 68768,
           "human_input_tokens": 0,
@@ -5579,7 +5579,7 @@
         "ST-2": {
           "input_tokens": 42502,
           "output_tokens": 5341,
-          "cache_read_tokens": 159387,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 47843,
           "human_input_tokens": 0,
@@ -5592,7 +5592,7 @@
         "ST-3": {
           "input_tokens": 40849,
           "output_tokens": 4549,
-          "cache_read_tokens": 135220,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 45398,
           "human_input_tokens": 0,
@@ -5605,7 +5605,7 @@
         "ST-4": {
           "input_tokens": 58358,
           "output_tokens": 5035,
-          "cache_read_tokens": 329611,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 63393,
           "human_input_tokens": 0,
@@ -5618,7 +5618,7 @@
         "ST-5": {
           "input_tokens": 187946,
           "output_tokens": 20388,
-          "cache_read_tokens": 3630632,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 208334,
           "human_input_tokens": 0,
@@ -5631,7 +5631,7 @@
         "ST-6": {
           "input_tokens": 93807,
           "output_tokens": 2243,
-          "cache_read_tokens": 344303,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 96050,
           "human_input_tokens": 0,
@@ -5657,7 +5657,7 @@
         "ST-7": {
           "input_tokens": 49828,
           "output_tokens": 783,
-          "cache_read_tokens": 29623,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 50611,
           "human_input_tokens": 0,
@@ -5671,7 +5671,7 @@
       "totals": {
         "input_tokens": 545874,
         "output_tokens": 44050,
-        "cache_read_tokens": 5023144,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 589924,
         "human_input_tokens": 0,
@@ -5727,7 +5727,7 @@
         "ST-0": {
           "input_tokens": 12127,
           "output_tokens": 2163,
-          "cache_read_tokens": 187355,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 14290,
           "human_input_tokens": 0,
@@ -5740,7 +5740,7 @@
         "ST-1": {
           "input_tokens": 30326,
           "output_tokens": 3352,
-          "cache_read_tokens": 166949,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 33678,
           "human_input_tokens": 0,
@@ -5753,7 +5753,7 @@
         "ST-2": {
           "input_tokens": 9631,
           "output_tokens": 673,
-          "cache_read_tokens": 47204,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 10304,
           "human_input_tokens": 0,
@@ -5766,7 +5766,7 @@
         "ST-3": {
           "input_tokens": 32645,
           "output_tokens": 5504,
-          "cache_read_tokens": 115118,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 38149,
           "human_input_tokens": 0,
@@ -5779,7 +5779,7 @@
         "ST-4": {
           "input_tokens": 52019,
           "output_tokens": 3605,
-          "cache_read_tokens": 139085,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 55624,
           "human_input_tokens": 0,
@@ -5792,7 +5792,7 @@
         "ST-5": {
           "input_tokens": 104326,
           "output_tokens": 8694,
-          "cache_read_tokens": 1863849,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 113020,
           "human_input_tokens": 0,
@@ -5805,7 +5805,7 @@
         "ST-6": {
           "input_tokens": 76093,
           "output_tokens": 1131,
-          "cache_read_tokens": 323261,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 77224,
           "human_input_tokens": 0,
@@ -5831,7 +5831,7 @@
         "ST-7": {
           "input_tokens": 84448,
           "output_tokens": 1241,
-          "cache_read_tokens": 3675,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 85689,
           "human_input_tokens": 0,
@@ -5845,7 +5845,7 @@
       "totals": {
         "input_tokens": 401615,
         "output_tokens": 26363,
-        "cache_read_tokens": 2846496,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 427978,
         "human_input_tokens": 0,
@@ -5901,7 +5901,7 @@
         "ST-0": {
           "input_tokens": 15569,
           "output_tokens": 1241,
-          "cache_read_tokens": 142138,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 16810,
           "human_input_tokens": 0,
@@ -5914,7 +5914,7 @@
         "ST-1": {
           "input_tokens": 63855,
           "output_tokens": 3714,
-          "cache_read_tokens": 358205,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 67569,
           "human_input_tokens": 0,
@@ -5927,7 +5927,7 @@
         "ST-2": {
           "input_tokens": 18715,
           "output_tokens": 2851,
-          "cache_read_tokens": 194671,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 21566,
           "human_input_tokens": 0,
@@ -5940,7 +5940,7 @@
         "ST-3": {
           "input_tokens": 38196,
           "output_tokens": 4437,
-          "cache_read_tokens": 300375,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 42633,
           "human_input_tokens": 0,
@@ -5953,7 +5953,7 @@
         "ST-4": {
           "input_tokens": 44426,
           "output_tokens": 3021,
-          "cache_read_tokens": 160764,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 47447,
           "human_input_tokens": 0,
@@ -5966,7 +5966,7 @@
         "ST-5": {
           "input_tokens": 66751,
           "output_tokens": 8682,
-          "cache_read_tokens": 1197172,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 75433,
           "human_input_tokens": 0,
@@ -5979,7 +5979,7 @@
         "ST-6": {
           "input_tokens": 41424,
           "output_tokens": 2330,
-          "cache_read_tokens": 275342,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 43754,
           "human_input_tokens": 0,
@@ -6005,7 +6005,7 @@
         "ST-7": {
           "input_tokens": 3353,
           "output_tokens": 588,
-          "cache_read_tokens": 45450,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 3941,
           "human_input_tokens": 0,
@@ -6019,7 +6019,7 @@
       "totals": {
         "input_tokens": 292289,
         "output_tokens": 26864,
-        "cache_read_tokens": 2674117,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 319153,
         "human_input_tokens": 0,
@@ -6075,7 +6075,7 @@
         "ST-0": {
           "input_tokens": 8488,
           "output_tokens": 657,
-          "cache_read_tokens": 99928,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 9145,
           "human_input_tokens": 0,
@@ -6088,7 +6088,7 @@
         "ST-1": {
           "input_tokens": 28102,
           "output_tokens": 3268,
-          "cache_read_tokens": 119735,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 31370,
           "human_input_tokens": 0,
@@ -6101,7 +6101,7 @@
         "ST-2": {
           "input_tokens": 25821,
           "output_tokens": 3915,
-          "cache_read_tokens": 134322,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 29736,
           "human_input_tokens": 0,
@@ -6114,7 +6114,7 @@
         "ST-3": {
           "input_tokens": 69151,
           "output_tokens": 4699,
-          "cache_read_tokens": 357861,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 73850,
           "human_input_tokens": 0,
@@ -6127,7 +6127,7 @@
         "ST-4": {
           "input_tokens": 54395,
           "output_tokens": 4394,
-          "cache_read_tokens": 236686,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 58789,
           "human_input_tokens": 0,
@@ -6140,7 +6140,7 @@
         "ST-5": {
           "input_tokens": 61788,
           "output_tokens": 6785,
-          "cache_read_tokens": 942008,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 68573,
           "human_input_tokens": 0,
@@ -6153,7 +6153,7 @@
         "ST-6": {
           "input_tokens": 79696,
           "output_tokens": 1763,
-          "cache_read_tokens": 199171,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 81459,
           "human_input_tokens": 0,
@@ -6179,7 +6179,7 @@
         "ST-7": {
           "input_tokens": 30348,
           "output_tokens": 1217,
-          "cache_read_tokens": 88254,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 31565,
           "human_input_tokens": 0,
@@ -6193,7 +6193,7 @@
       "totals": {
         "input_tokens": 357789,
         "output_tokens": 26698,
-        "cache_read_tokens": 2177965,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 384487,
         "human_input_tokens": 0,
@@ -6249,7 +6249,7 @@
         "ST-0": {
           "input_tokens": 25188,
           "output_tokens": 2429,
-          "cache_read_tokens": 214411,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 27617,
           "human_input_tokens": 0,
@@ -6262,7 +6262,7 @@
         "ST-1": {
           "input_tokens": 44719,
           "output_tokens": 4514,
-          "cache_read_tokens": 95080,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 49233,
           "human_input_tokens": 0,
@@ -6275,7 +6275,7 @@
         "ST-2": {
           "input_tokens": 52187,
           "output_tokens": 3374,
-          "cache_read_tokens": 190089,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 55561,
           "human_input_tokens": 0,
@@ -6288,7 +6288,7 @@
         "ST-3": {
           "input_tokens": 66703,
           "output_tokens": 3880,
-          "cache_read_tokens": 259041,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 70583,
           "human_input_tokens": 0,
@@ -6301,7 +6301,7 @@
         "ST-4": {
           "input_tokens": 11342,
           "output_tokens": 3217,
-          "cache_read_tokens": 120556,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 14559,
           "human_input_tokens": 0,
@@ -6314,7 +6314,7 @@
         "ST-5": {
           "input_tokens": 54691,
           "output_tokens": 7279,
-          "cache_read_tokens": 281128,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 61970,
           "human_input_tokens": 0,
@@ -6327,7 +6327,7 @@
         "ST-6": {
           "input_tokens": 63925,
           "output_tokens": 3794,
-          "cache_read_tokens": 414663,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 67719,
           "human_input_tokens": 0,
@@ -6353,7 +6353,7 @@
         "ST-7": {
           "input_tokens": 44091,
           "output_tokens": 2147,
-          "cache_read_tokens": 190038,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 46238,
           "human_input_tokens": 0,
@@ -6367,7 +6367,7 @@
       "totals": {
         "input_tokens": 362846,
         "output_tokens": 30634,
-        "cache_read_tokens": 1765006,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 393480,
         "human_input_tokens": 0,
@@ -6423,7 +6423,7 @@
         "ST-0": {
           "input_tokens": 10194,
           "output_tokens": 1630,
-          "cache_read_tokens": 178442,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 11824,
           "human_input_tokens": 0,
@@ -6436,7 +6436,7 @@
         "ST-1": {
           "input_tokens": 43646,
           "output_tokens": 6955,
-          "cache_read_tokens": 117947,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 50601,
           "human_input_tokens": 0,
@@ -6449,7 +6449,7 @@
         "ST-2": {
           "input_tokens": 24630,
           "output_tokens": 3310,
-          "cache_read_tokens": 126195,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 27940,
           "human_input_tokens": 0,
@@ -6462,7 +6462,7 @@
         "ST-3": {
           "input_tokens": 15401,
           "output_tokens": 2918,
-          "cache_read_tokens": 185824,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 18319,
           "human_input_tokens": 0,
@@ -6475,7 +6475,7 @@
         "ST-4": {
           "input_tokens": 45988,
           "output_tokens": 4385,
-          "cache_read_tokens": 144154,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 50373,
           "human_input_tokens": 0,
@@ -6488,7 +6488,7 @@
         "ST-5": {
           "input_tokens": 234073,
           "output_tokens": 29570,
-          "cache_read_tokens": 6500814,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 263643,
           "human_input_tokens": 0,
@@ -6501,7 +6501,7 @@
         "ST-6": {
           "input_tokens": 63775,
           "output_tokens": 3246,
-          "cache_read_tokens": 876034,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 67021,
           "human_input_tokens": 0,
@@ -6527,7 +6527,7 @@
         "ST-7": {
           "input_tokens": 19614,
           "output_tokens": 817,
-          "cache_read_tokens": 29623,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 20431,
           "human_input_tokens": 0,
@@ -6541,7 +6541,7 @@
       "totals": {
         "input_tokens": 457321,
         "output_tokens": 52831,
-        "cache_read_tokens": 8159033,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 510152,
         "human_input_tokens": 0,
@@ -6597,7 +6597,7 @@
         "ST-0": {
           "input_tokens": 10479,
           "output_tokens": 1260,
-          "cache_read_tokens": 140261,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 11739,
           "human_input_tokens": 0,
@@ -6610,7 +6610,7 @@
         "ST-1": {
           "input_tokens": 27945,
           "output_tokens": 2367,
-          "cache_read_tokens": 97822,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 30312,
           "human_input_tokens": 0,
@@ -6623,7 +6623,7 @@
         "ST-2": {
           "input_tokens": 70901,
           "output_tokens": 8483,
-          "cache_read_tokens": 141156,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 79384,
           "human_input_tokens": 0,
@@ -6636,7 +6636,7 @@
         "ST-3": {
           "input_tokens": 87337,
           "output_tokens": 1879,
-          "cache_read_tokens": 171360,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 89216,
           "human_input_tokens": 0,
@@ -6649,7 +6649,7 @@
         "ST-4": {
           "input_tokens": 27126,
           "output_tokens": 3033,
-          "cache_read_tokens": 108627,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 30159,
           "human_input_tokens": 0,
@@ -6662,7 +6662,7 @@
         "ST-5": {
           "input_tokens": 146557,
           "output_tokens": 19473,
-          "cache_read_tokens": 2009222,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 166030,
           "human_input_tokens": 0,
@@ -6675,7 +6675,7 @@
         "ST-6": {
           "input_tokens": 44894,
           "output_tokens": 1821,
-          "cache_read_tokens": 201381,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 46715,
           "human_input_tokens": 0,
@@ -6701,7 +6701,7 @@
         "ST-7": {
           "input_tokens": 17037,
           "output_tokens": 1349,
-          "cache_read_tokens": 126146,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 18386,
           "human_input_tokens": 0,
@@ -6715,7 +6715,7 @@
       "totals": {
         "input_tokens": 432276,
         "output_tokens": 39665,
-        "cache_read_tokens": 2995975,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 471941,
         "human_input_tokens": 0,
@@ -6771,7 +6771,7 @@
         "ST-0": {
           "input_tokens": 9827,
           "output_tokens": 1208,
-          "cache_read_tokens": 166220,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 11035,
           "human_input_tokens": 0,
@@ -6784,7 +6784,7 @@
         "ST-1": {
           "input_tokens": 47841,
           "output_tokens": 2432,
-          "cache_read_tokens": 186235,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 50273,
           "human_input_tokens": 0,
@@ -6797,7 +6797,7 @@
         "ST-2": {
           "input_tokens": 61735,
           "output_tokens": 5257,
-          "cache_read_tokens": 249648,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 66992,
           "human_input_tokens": 0,
@@ -6810,7 +6810,7 @@
         "ST-3": {
           "input_tokens": 48830,
           "output_tokens": 5743,
-          "cache_read_tokens": 155188,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 54573,
           "human_input_tokens": 0,
@@ -6823,7 +6823,7 @@
         "ST-4": {
           "input_tokens": 59853,
           "output_tokens": 2795,
-          "cache_read_tokens": 137060,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 62648,
           "human_input_tokens": 0,
@@ -6836,7 +6836,7 @@
         "ST-5": {
           "input_tokens": 163296,
           "output_tokens": 14493,
-          "cache_read_tokens": 3507160,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 177789,
           "human_input_tokens": 0,
@@ -6849,7 +6849,7 @@
         "ST-6": {
           "input_tokens": 83848,
           "output_tokens": 3450,
-          "cache_read_tokens": 449892,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 87298,
           "human_input_tokens": 0,
@@ -6875,7 +6875,7 @@
         "ST-7": {
           "input_tokens": 18763,
           "output_tokens": 1204,
-          "cache_read_tokens": 151154,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 19967,
           "human_input_tokens": 0,
@@ -6889,7 +6889,7 @@
       "totals": {
         "input_tokens": 493993,
         "output_tokens": 36582,
-        "cache_read_tokens": 5002557,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 530575,
         "human_input_tokens": 0,
@@ -6945,7 +6945,7 @@
         "ST-0": {
           "input_tokens": 14311,
           "output_tokens": 2400,
-          "cache_read_tokens": 284620,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 16711,
           "human_input_tokens": 0,
@@ -6958,7 +6958,7 @@
         "ST-1": {
           "input_tokens": 126371,
           "output_tokens": 5884,
-          "cache_read_tokens": 894655,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 132255,
           "human_input_tokens": 0,
@@ -6971,7 +6971,7 @@
         "ST-2": {
           "input_tokens": 135840,
           "output_tokens": 8789,
-          "cache_read_tokens": 688137,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 144629,
           "human_input_tokens": 0,
@@ -6984,7 +6984,7 @@
         "ST-3": {
           "input_tokens": 116464,
           "output_tokens": 8010,
-          "cache_read_tokens": 548010,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 124474,
           "human_input_tokens": 0,
@@ -6997,7 +6997,7 @@
         "ST-4": {
           "input_tokens": 74847,
           "output_tokens": 3466,
-          "cache_read_tokens": 741889,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 78313,
           "human_input_tokens": 0,
@@ -7010,7 +7010,7 @@
         "ST-5": {
           "input_tokens": 144804,
           "output_tokens": 3184,
-          "cache_read_tokens": 1223439,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 147988,
           "human_input_tokens": 0,
@@ -7023,7 +7023,7 @@
         "ST-6": {
           "input_tokens": 56814,
           "output_tokens": 2722,
-          "cache_read_tokens": 294486,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 59536,
           "human_input_tokens": 0,
@@ -7049,7 +7049,7 @@
         "ST-7": {
           "input_tokens": 42286,
           "output_tokens": 578,
-          "cache_read_tokens": 53059,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 42864,
           "human_input_tokens": 0,
@@ -7063,7 +7063,7 @@
       "totals": {
         "input_tokens": 711737,
         "output_tokens": 35033,
-        "cache_read_tokens": 4728295,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 746770,
         "human_input_tokens": 0,
@@ -7119,7 +7119,7 @@
         "ST-0": {
           "input_tokens": 18517,
           "output_tokens": 2544,
-          "cache_read_tokens": 155268,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 21061,
           "human_input_tokens": 0,
@@ -7132,7 +7132,7 @@
         "ST-1": {
           "input_tokens": 67666,
           "output_tokens": 4724,
-          "cache_read_tokens": 763758,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 72390,
           "human_input_tokens": 0,
@@ -7145,7 +7145,7 @@
         "ST-2": {
           "input_tokens": 67150,
           "output_tokens": 14627,
-          "cache_read_tokens": 373995,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 81777,
           "human_input_tokens": 0,
@@ -7158,7 +7158,7 @@
         "ST-3": {
           "input_tokens": 78933,
           "output_tokens": 5904,
-          "cache_read_tokens": 332682,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 84837,
           "human_input_tokens": 0,
@@ -7171,7 +7171,7 @@
         "ST-4": {
           "input_tokens": 53350,
           "output_tokens": 5837,
-          "cache_read_tokens": 191840,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 59187,
           "human_input_tokens": 0,
@@ -7184,7 +7184,7 @@
         "ST-5": {
           "input_tokens": 148228,
           "output_tokens": 13472,
-          "cache_read_tokens": 2019787,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 161700,
           "human_input_tokens": 0,
@@ -7197,7 +7197,7 @@
         "ST-6": {
           "input_tokens": 53288,
           "output_tokens": 1878,
-          "cache_read_tokens": 244209,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 55166,
           "human_input_tokens": 0,
@@ -7223,7 +7223,7 @@
         "ST-7": {
           "input_tokens": 27226,
           "output_tokens": 1113,
-          "cache_read_tokens": 84828,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 28339,
           "human_input_tokens": 0,
@@ -7237,7 +7237,7 @@
       "totals": {
         "input_tokens": 514358,
         "output_tokens": 50099,
-        "cache_read_tokens": 4166367,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 564457,
         "human_input_tokens": 0,
@@ -7293,7 +7293,7 @@
         "ST-0": {
           "input_tokens": 8457,
           "output_tokens": 1105,
-          "cache_read_tokens": 182576,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 9562,
           "human_input_tokens": 0,
@@ -7306,7 +7306,7 @@
         "ST-1": {
           "input_tokens": 32182,
           "output_tokens": 3494,
-          "cache_read_tokens": 217839,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 35676,
           "human_input_tokens": 0,
@@ -7319,7 +7319,7 @@
         "ST-2": {
           "input_tokens": 63239,
           "output_tokens": 8541,
-          "cache_read_tokens": 150389,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 71780,
           "human_input_tokens": 0,
@@ -7332,7 +7332,7 @@
         "ST-3": {
           "input_tokens": 137050,
           "output_tokens": 8775,
-          "cache_read_tokens": 522561,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 145825,
           "human_input_tokens": 0,
@@ -7345,7 +7345,7 @@
         "ST-4": {
           "input_tokens": 69650,
           "output_tokens": 7982,
-          "cache_read_tokens": 601008,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 77632,
           "human_input_tokens": 0,
@@ -7358,7 +7358,7 @@
         "ST-5": {
           "input_tokens": 119968,
           "output_tokens": 6465,
-          "cache_read_tokens": 2814172,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 126433,
           "human_input_tokens": 0,
@@ -7371,7 +7371,7 @@
         "ST-6": {
           "input_tokens": 24700,
           "output_tokens": 2219,
-          "cache_read_tokens": 248503,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 26919,
           "human_input_tokens": 0,
@@ -7397,7 +7397,7 @@
         "ST-7": {
           "input_tokens": 20782,
           "output_tokens": 966,
-          "cache_read_tokens": 103976,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 21748,
           "human_input_tokens": 0,
@@ -7411,7 +7411,7 @@
       "totals": {
         "input_tokens": 476028,
         "output_tokens": 39547,
-        "cache_read_tokens": 4841024,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 515575,
         "human_input_tokens": 0,
@@ -7467,7 +7467,7 @@
         "ST-0": {
           "input_tokens": 42761,
           "output_tokens": 2398,
-          "cache_read_tokens": 185923,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 45159,
           "human_input_tokens": 0,
@@ -7480,7 +7480,7 @@
         "ST-1": {
           "input_tokens": 22900,
           "output_tokens": 7528,
-          "cache_read_tokens": 82390,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 30428,
           "human_input_tokens": 0,
@@ -7493,7 +7493,7 @@
         "ST-2": {
           "input_tokens": 51759,
           "output_tokens": 7346,
-          "cache_read_tokens": 101412,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 59105,
           "human_input_tokens": 0,
@@ -7506,7 +7506,7 @@
         "ST-3": {
           "input_tokens": 26813,
           "output_tokens": 4739,
-          "cache_read_tokens": 142393,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 31552,
           "human_input_tokens": 0,
@@ -7519,7 +7519,7 @@
         "ST-4": {
           "input_tokens": 41759,
           "output_tokens": 5480,
-          "cache_read_tokens": 402300,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 47239,
           "human_input_tokens": 0,
@@ -7532,7 +7532,7 @@
         "ST-5": {
           "input_tokens": 156362,
           "output_tokens": 13941,
-          "cache_read_tokens": 2891788,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 170303,
           "human_input_tokens": 0,
@@ -7545,7 +7545,7 @@
         "ST-6": {
           "input_tokens": 78620,
           "output_tokens": 2159,
-          "cache_read_tokens": 339444,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 80779,
           "human_input_tokens": 0,
@@ -7571,7 +7571,7 @@
         "ST-7": {
           "input_tokens": 35813,
           "output_tokens": 914,
-          "cache_read_tokens": 14841,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 36727,
           "human_input_tokens": 0,
@@ -7585,7 +7585,7 @@
       "totals": {
         "input_tokens": 456787,
         "output_tokens": 44505,
-        "cache_read_tokens": 4160491,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 501292,
         "human_input_tokens": 0,
@@ -7641,7 +7641,7 @@
         "ST-0": {
           "input_tokens": 13436,
           "output_tokens": 1536,
-          "cache_read_tokens": 214202,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 14972,
           "human_input_tokens": 0,
@@ -7654,7 +7654,7 @@
         "ST-1": {
           "input_tokens": 36327,
           "output_tokens": 3238,
-          "cache_read_tokens": 104260,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 39565,
           "human_input_tokens": 0,
@@ -7667,7 +7667,7 @@
         "ST-2": {
           "input_tokens": 33942,
           "output_tokens": 3237,
-          "cache_read_tokens": 122552,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 37179,
           "human_input_tokens": 0,
@@ -7680,7 +7680,7 @@
         "ST-3": {
           "input_tokens": 25177,
           "output_tokens": 3613,
-          "cache_read_tokens": 122550,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 28790,
           "human_input_tokens": 0,
@@ -7693,7 +7693,7 @@
         "ST-4": {
           "input_tokens": 23720,
           "output_tokens": 2195,
-          "cache_read_tokens": 134414,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 25915,
           "human_input_tokens": 0,
@@ -7706,7 +7706,7 @@
         "ST-5": {
           "input_tokens": 191373,
           "output_tokens": 30395,
-          "cache_read_tokens": 6342988,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 221768,
           "human_input_tokens": 0,
@@ -7719,7 +7719,7 @@
         "ST-6": {
           "input_tokens": 99115,
           "output_tokens": 3159,
-          "cache_read_tokens": 521861,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 102274,
           "human_input_tokens": 0,
@@ -7745,7 +7745,7 @@
         "ST-7": {
           "input_tokens": 32652,
           "output_tokens": 1915,
-          "cache_read_tokens": 463536,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 34567,
           "human_input_tokens": 0,
@@ -7759,7 +7759,7 @@
       "totals": {
         "input_tokens": 455742,
         "output_tokens": 49288,
-        "cache_read_tokens": 8026363,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 505030,
         "human_input_tokens": 0,
@@ -7815,7 +7815,7 @@
         "ST-0": {
           "input_tokens": 5895,
           "output_tokens": 649,
-          "cache_read_tokens": 128374,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 6544,
           "human_input_tokens": 0,
@@ -7828,7 +7828,7 @@
         "ST-1": {
           "input_tokens": 47014,
           "output_tokens": 3131,
-          "cache_read_tokens": 171737,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 50145,
           "human_input_tokens": 0,
@@ -7841,7 +7841,7 @@
         "ST-2": {
           "input_tokens": 34371,
           "output_tokens": 1893,
-          "cache_read_tokens": 219556,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 36264,
           "human_input_tokens": 0,
@@ -7854,7 +7854,7 @@
         "ST-3": {
           "input_tokens": 136460,
           "output_tokens": 9462,
-          "cache_read_tokens": 491939,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 145922,
           "human_input_tokens": 0,
@@ -7867,7 +7867,7 @@
         "ST-4": {
           "input_tokens": 63065,
           "output_tokens": 2885,
-          "cache_read_tokens": 423630,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 65950,
           "human_input_tokens": 0,
@@ -7880,7 +7880,7 @@
         "ST-5": {
           "input_tokens": 158902,
           "output_tokens": 27889,
-          "cache_read_tokens": 2257475,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 186791,
           "human_input_tokens": 0,
@@ -7893,7 +7893,7 @@
         "ST-6": {
           "input_tokens": 88315,
           "output_tokens": 1783,
-          "cache_read_tokens": 260825,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 90098,
           "human_input_tokens": 0,
@@ -7919,7 +7919,7 @@
         "ST-7": {
           "input_tokens": 12370,
           "output_tokens": 1247,
-          "cache_read_tokens": 135341,
+          "cache_read_tokens": 0,
           "cache_write_tokens": 0,
           "total_tokens": 13617,
           "human_input_tokens": 0,
@@ -7933,7 +7933,7 @@
       "totals": {
         "input_tokens": 546392,
         "output_tokens": 48939,
-        "cache_read_tokens": 4088877,
+        "cache_read_tokens": 0,
         "cache_write_tokens": 0,
         "total_tokens": 595331,
         "human_input_tokens": 0,
@@ -7982,7 +7982,7 @@
   "grand_totals": {
     "input_tokens": 18608268,
     "output_tokens": 1558440,
-    "cache_read_tokens": 151775519,
+    "cache_read_tokens": 0,
     "cache_write_tokens": 0,
     "total_tokens": 20166708,
     "human_input_tokens": 0,
@@ -7990,103 +7990,103 @@
     "total_iterations": 4462,
     "total_duration_seconds": 49528.68,
     "total_api_calls": 4462,
-    "total_cost_usd": 18.2945,
+    "total_cost_usd": 12.421,
     "total_loc": 436516,
     "total_files": 2183,
     "ar_count": 43,
-    "total_cost_cny": 131.7204
+    "total_cost_cny": 89.4312
   },
   "stage_aggregates": {
     "ST-0": {
       "total_tokens": 687430,
       "input_tokens": 616972,
       "output_tokens": 70458,
-      "cache_read_tokens": 6154168,
+      "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "human_input_tokens": 0,
       "spec_context_tokens": 0,
       "total_iterations": 357,
       "duration_seconds": 2232.6200000000003,
       "total_api_calls": 357,
-      "cost_usd": 0.7563
+      "cost_usd": 0.0
     },
     "ST-1": {
       "total_tokens": 1881627,
       "input_tokens": 1723982,
       "output_tokens": 157645,
-      "cache_read_tokens": 8791034,
+      "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "human_input_tokens": 0,
       "spec_context_tokens": 0,
       "total_iterations": 367,
       "duration_seconds": 4164.140000000001,
       "total_api_calls": 367,
-      "cost_usd": 1.1944
+      "cost_usd": 0.0
     },
     "ST-2": {
       "total_tokens": 2251006,
       "input_tokens": 2032993,
       "output_tokens": 218013,
-      "cache_read_tokens": 8698151,
+      "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "human_input_tokens": 0,
       "spec_context_tokens": 0,
       "total_iterations": 382,
       "duration_seconds": 4953.200000000001,
       "total_api_calls": 382,
-      "cost_usd": 1.3058
+      "cost_usd": 0.0
     },
     "ST-3": {
       "total_tokens": 2861174,
       "input_tokens": 2618191,
       "output_tokens": 242983,
-      "cache_read_tokens": 10085609,
+      "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "human_input_tokens": 0,
       "spec_context_tokens": 0,
       "total_iterations": 391,
       "duration_seconds": 5211.289999999998,
       "total_api_calls": 391,
-      "cost_usd": 1.4945
+      "cost_usd": 0.0
     },
     "ST-4": {
       "total_tokens": 2181830,
       "input_tokens": 2019969,
       "output_tokens": 161861,
-      "cache_read_tokens": 11283309,
+      "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "human_input_tokens": 0,
       "spec_context_tokens": 0,
       "total_iterations": 418,
       "duration_seconds": 4384.03,
       "total_api_calls": 418,
-      "cost_usd": 1.4521
+      "cost_usd": 0.0
     },
     "ST-5": {
       "total_tokens": 6201136,
       "input_tokens": 5653172,
       "output_tokens": 547964,
-      "cache_read_tokens": 88165027,
+      "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "human_input_tokens": 0,
       "spec_context_tokens": 0,
       "total_iterations": 1681,
       "duration_seconds": 18874.54,
       "total_api_calls": 1681,
-      "cost_usd": 9.9124
+      "cost_usd": 0.0
     },
     "ST-6": {
       "total_tokens": 2692798,
       "input_tokens": 2586349,
       "output_tokens": 106449,
-      "cache_read_tokens": 13070179,
+      "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "human_input_tokens": 0,
       "spec_context_tokens": 0,
       "total_iterations": 574,
       "duration_seconds": 3905.1600000000003,
       "total_api_calls": 574,
-      "cost_usd": 1.5199
+      "cost_usd": 0.0
     },
     "ST-6.5": {
       "total_tokens": 0,
@@ -8105,14 +8105,14 @@
       "total_tokens": 1409707,
       "input_tokens": 1356640,
       "output_tokens": 53067,
-      "cache_read_tokens": 5528042,
+      "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "human_input_tokens": 0,
       "spec_context_tokens": 0,
       "total_iterations": 292,
       "duration_seconds": 1915.2600000000002,
       "total_api_calls": 292,
-      "cost_usd": 0.6589
+      "cost_usd": 0.0
     }
   },
   "baselines": {
