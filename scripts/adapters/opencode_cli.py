@@ -14,7 +14,6 @@ Prompt handling:
 
 import json
 import os
-import tempfile
 
 from .base import BaseAdapter, StageRecord
 
@@ -81,20 +80,19 @@ class OpenCodeCliAdapter(BaseAdapter):
             cr = cache.get("read", 0) or 0
             cw = cache.get("write", 0) or 0
 
-            # Validation: cache tokens cannot exceed input (physically impossible).
-            # When violated, the fields are likely misinterpreted (e.g. cumulative
-            # session stats). Clamp to input to prevent inflated totals.
-            gross_input = inp + cr  # opencode may report base input + cache separately
-            if cw > gross_input:
-                cw = gross_input
-            if cr > gross_input:
-                cr = gross_input
-            # After clamping, ensure individual cache fields don't exceed total input
-            total_prompt = inp + cr  # total prompt = fresh input + cached input
-            if cw > total_prompt:
-                cw = total_prompt
-            if cr > total_prompt:
-                cr = total_prompt
+            # Validation: the `total` field from opencode is the authoritative
+            # per-step token count. We verify that our components sum correctly.
+            # The `input` field only counts fresh (non-cached) prompt tokens,
+            # while cache_read/cache_write track prompt cache reuse.
+            # No clamping is applied because cache_write on the first step of a
+            # session naturally exceeds the fresh input (it's the full prompt
+            # being written to the provider's cache).
+            step_total = inp + out + cr + cw
+            if abs(step_total - tokens.get("total", step_total)) > 1:
+                # If components don't match total, trust the total field and
+                # derive input from it (output and cache are typically more reliable)
+                total_reported = tokens.get("total", 0) or 0
+                inp = max(0, total_reported - out - cr - cw)
 
             total_input += inp
             total_output += out
