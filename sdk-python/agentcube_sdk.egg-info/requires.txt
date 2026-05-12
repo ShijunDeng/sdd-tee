@@ -1,3 +1,0 @@
-requests
-PyJWT>=2.0.0
-cryptography

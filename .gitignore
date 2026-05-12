@@ -12,11 +12,21 @@ Thumbs.db
 __pycache__/
 *.pyc
 *.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
 .venv/
 venv/
 
 # Node
 node_modules/
+docs/.docusaurus/
+docs/build/
+
+# Python build artifacts
+build/
+dist/
 
 # IDE
 .idea/
@@ -26,3 +36,7 @@ node_modules/
 
 # LiteLLM
 results/litellm_usage.db
+
+# Benchmark transient logs
+results/**/*.log
+results/**/*_logs/

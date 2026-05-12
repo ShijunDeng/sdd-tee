@@ -1,8 +1,0 @@
-Metadata-Version: 2.4
-Name: agentcube-sdk
-Version: 0.1.0
-Summary: AgentCube Python SDK for Code Interpreter and Agent Runtime
-Requires-Python: >=3.9
-Requires-Dist: requests
-Requires-Dist: PyJWT>=2.0.0
-Requires-Dist: cryptography

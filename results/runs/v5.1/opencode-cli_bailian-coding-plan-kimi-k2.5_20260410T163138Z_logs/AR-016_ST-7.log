@@ -1,5 +1,0 @@
-EXIT_CODE: 0
-STDOUT:
-{"type":"step_start","timestamp":1775877189480,"sessionID":"ses_285789876ffeyIoUglVqSacJ8A","part":{"id":"prt_d7a876f64001qAtXHZLhLT4ZHW","messageID":"msg_d7a876887001QzWkWc1rlz8P7L","sessionID":"ses_285789876ffeyIoUglVqSacJ8A","snapshot":"f33c5114db06c230ebdbad281b75532a26b6f114","type":"step-start"}}
-{"type":"step_finish","timestamp":1775877194790,"sessionID":"ses_285789876ffeyIoUglVqSacJ8A","part":{"id":"prt_d7a87840c001qnFWLI1YU6UwM3","reason":"stop","snapshot":"f33c5114db06c230ebdbad281b75532a26b6f114","messageID":"msg_d7a876887001QzWkWc1rlz8P7L","sessionID":"ses_285789876ffeyIoUglVqSacJ8A","type":"step-finish","tokens":{"total":14329,"input":4,"output":179,"reasoning":0,"cache":{"write":52,"read":14094}},"cost":0}}
-

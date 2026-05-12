@@ -20,7 +20,7 @@ ORIG_REPO ?=
         run-v51 run-v51-proxy run-v51-dry \
         batch-v51 batch-v51-proxy \
         report-v51 compare-v51 export-v51 \
-        clean-v51 clean selftest mock
+        clean-v51 clean-generated clean selftest mock
 
 # --- Environment ---
 setup:  ## Install Python dependencies
@@ -89,6 +89,9 @@ selftest:  ## Validate latest data against schema
 # --- Maintenance ---
 clean-v51:
 	rm -rf workspaces/v5.1/* results/runs/v5.1/* $(REPORTS)/v5.1/*
+
+clean-generated:  ## Remove rebuildable local caches and generated artifacts
+	rm -rf workspaces/* docs/build docs/.docusaurus .pytest_cache sdk-python/.pytest_cache sdk-python/.coverage
 
 clean:  ## Remove all generated results
 	rm -rf $(RUNS)/v5.1/* $(REPORTS)/v5.1/* workspaces/v5.1/*
