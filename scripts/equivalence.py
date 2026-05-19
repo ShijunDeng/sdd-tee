@@ -46,6 +46,9 @@ class EquivalenceResult:
     api_generated_count: int = 0
     api_matched: int = 0
     api_compliance_pct: float = 0.0
+    module_path_match: bool = True
+    original_module_path: str = ""
+    generated_module_path: str = ""
     # Quality metrics
     overall_score: float = 0.0  # weighted: 40% file_coverage + 30% api_compliance + 30% line_similarity
     notes: str = ""
@@ -58,7 +61,22 @@ class EquivalenceChecker:
         self.original = Path(original_repo)
         self.generated = Path(generated_workspace)
         self.lang = lang
-        self.file_exts = {".go", ".mod", ".sum"} if lang == "Go" else {".py", "requirements.txt"}
+        if lang == "Go":
+            self.file_exts = {".go", ".mod", ".sum"}
+        elif lang == "Python":
+            self.file_exts = {".py", ".toml", ".txt", ".yaml", ".yml"}
+        elif lang == "YAML":
+            self.file_exts = {".yaml", ".yml"}
+        elif lang == "Dockerfile":
+            self.file_exts = {".dockerfile", "Dockerfile"}
+        elif lang == "Makefile":
+            self.file_exts = {".mk", "Makefile"}
+        elif lang == "TypeScript":
+            self.file_exts = {".ts", ".tsx", ".js", ".jsx", ".json", ".md", ".mdx"}
+        elif lang == "Markdown":
+            self.file_exts = {".md", ".mdx"}
+        else:
+            self.file_exts = {".py"}
 
     def verify(
         self,
@@ -136,7 +154,22 @@ class EquivalenceChecker:
         if orig_apis:
             result.api_compliance_pct = round(matched_apis / len(orig_apis) * 100, 2)
 
-        # 4. Overall score
+        # 4. Project-level module identity for Go workspaces. A generated
+        # project can compile while still exposing the wrong import path, which
+        # breaks downstream clients and should reduce equivalence.
+        if self.lang == "Go":
+            result.original_module_path = self._read_go_module(self.original)
+            result.generated_module_path = self._read_go_module(self.generated)
+            if result.original_module_path and result.generated_module_path:
+                result.module_path_match = result.original_module_path == result.generated_module_path
+                if not result.module_path_match:
+                    result.api_compliance_pct = min(result.api_compliance_pct, 80.0)
+                    result.notes = (
+                        f"go.mod module mismatch: original={result.original_module_path}, "
+                        f"generated={result.generated_module_path}"
+                    )
+
+        # 5. Overall score
         result.overall_score = round(
             0.4 * result.file_coverage_pct
             + 0.3 * result.api_compliance_pct
@@ -160,7 +193,7 @@ class EquivalenceChecker:
             rel_dir = Path(dirpath).relative_to(root)
             for fn in filenames:
                 ext = os.path.splitext(fn)[1]
-                if ext in self.file_exts:
+                if ext in self.file_exts or fn in self.file_exts:
                     rel = str(rel_dir / fn) if str(rel_dir) != "." else fn
                     files.append(rel)
         return sorted(files)
@@ -223,9 +256,14 @@ class EquivalenceChecker:
             }]
             for fn in filenames:
                 ext = os.path.splitext(fn)[1]
-                if ext not in self.file_exts:
+                if ext not in self.file_exts and fn not in self.file_exts:
                     continue
                 fpath = Path(dirpath) / fn
+                if module_filter:
+                    rel = str(fpath.relative_to(root)).lower()
+                    lower_filter = module_filter.lower()
+                    if lower_filter not in rel and lower_filter not in fn.lower():
+                        continue
                 try:
                     text = fpath.read_text(encoding="utf-8", errors="replace")
                     if self.lang == "Go":
@@ -247,9 +285,18 @@ class EquivalenceChecker:
                 except OSError:
                     pass
 
-        if module_filter:
-            # Keep APIs that relate to the module
-            lower_filter = module_filter.lower()
-            apis = {a for a in apis if lower_filter in a.lower()}
-
         return apis
+
+    @staticmethod
+    def _read_go_module(root: Path) -> str:
+        path = root / "go.mod"
+        if not path.exists():
+            return ""
+        try:
+            for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+                line = line.strip()
+                if line.startswith("module "):
+                    return line.split(None, 1)[1].strip()
+        except OSError:
+            return ""
+        return ""

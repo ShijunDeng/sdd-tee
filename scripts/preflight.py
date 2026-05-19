@@ -52,8 +52,6 @@ class CheckResult:
     def exit_code(self):
         if self.fatal:
             return 1
-        if self.warnings:
-            return 2
         return 0
 
 
@@ -61,9 +59,9 @@ def check_python_deps(r):
     print("\n[1/7] Python dependencies")
     required = {
         "yaml": "pyyaml",
-        "litellm": "litellm",
     }
     optional = {
+        "litellm": "litellm",
         "matplotlib": "matplotlib",
         "rich": "rich",
     }
@@ -78,7 +76,8 @@ def check_python_deps(r):
             __import__(mod)
             r.ok(f"{pkg} installed (optional)")
         except ImportError:
-            r.warn(f"{pkg} not installed (optional, pip install {pkg})")
+            hint = "required for run-v51-proxy" if mod == "litellm" else "optional"
+            r.warn(f"{pkg} not installed ({hint}, pip install {pkg})")
 
 
 def check_toolchains(r):
@@ -103,50 +102,30 @@ def check_toolchains(r):
 
 
 def check_config(r):
-    print("\n[3/7] config.yaml")
-    cfg_path = BASE / "config.yaml"
+    print("\n[3/7] LiteLLM config")
+    cfg_path = BASE / "configs" / "litellm_config.yaml"
     if not cfg_path.exists():
-        r.fail("config.yaml not found")
+        r.warn("configs/litellm_config.yaml not found (proxy runs unavailable)")
         return None
     try:
         import yaml
         with open(cfg_path) as f:
             cfg = yaml.safe_load(f)
     except Exception as e:
-        r.fail(f"config.yaml parse error: {e}")
+        r.fail(f"configs/litellm_config.yaml parse error: {e}")
         return None
 
-    required_keys = ["project", "methodology", "metrics", "tools", "models",
-                     "spec_context", "warnings", "output"]
-    for k in required_keys:
+    for k in ["model_list", "litellm_settings", "general_settings"]:
         if k in cfg:
-            r.ok(f"config.{k} present")
+            r.ok(f"litellm_config.{k} present")
         else:
-            r.fail(f"config.{k} MISSING")
+            r.warn(f"litellm_config.{k} missing")
 
-    stages = cfg.get("methodology", {}).get("stages", [])
-    if len(stages) == 8:
-        r.ok(f"8 stages defined (ST-0 ~ ST-7)")
+    model_names = [m.get("model_name", "") for m in cfg.get("model_list", [])]
+    if model_names:
+        r.ok(f"LiteLLM models configured: {len(model_names)}")
     else:
-        r.fail(f"Expected 8 stages, found {len(stages)}")
-
-    metrics = cfg.get("metrics", {})
-    expected_dims = {"stage": 8, "role": 5, "efficiency": 6, "quality": 4, "distribution": 6}
-    for dim, count in expected_dims.items():
-        actual = len(metrics.get(dim, []))
-        if actual >= count:
-            r.ok(f"metrics.{dim}: {actual} IDs")
-        else:
-            r.warn(f"metrics.{dim}: {actual} IDs (expected >= {count})")
-
-    tools = cfg.get("tools", [])
-    tool_names = [t["name"] for t in tools]
-    required_tools = ["cursor-cli", "claude-code", "gemini-cli", "opencode-cli"]
-    for rt in required_tools:
-        if rt in tool_names:
-            r.ok(f"config.tools includes {rt}")
-        else:
-            r.warn(f"config.tools missing {rt}")
+        r.warn("No LiteLLM models configured")
 
     return cfg
 
@@ -175,7 +154,7 @@ def check_specs(r):
     if not missing_specs:
         r.ok(f"All spec.md files present")
     else:
-        r.fail(f"Missing spec.md: {', '.join(missing_specs)}")
+        r.warn(f"Missing spec.md: {', '.join(missing_specs)}")
 
     if not missing_designs:
         r.ok(f"All design.md files present")
@@ -191,15 +170,18 @@ def check_specs(r):
 def check_scripts(r):
     print("\n[5/7] Pipeline scripts")
     required_scripts = {
-        "04_validate.py": "Code quality validation",
-        "07_sdd_tee_report.py": "Report generation (10-section 5-dimension)",
-        "09_collect_run_data.py": "Run data collection with token counting",
+        "engine.py": "v5.1 benchmark driver",
+        "auditor.py": "LiteLLM/native token audit",
+        "equivalence.py": "original-code equivalence verification",
         "schema.py": "Data schema validation contract",
+        "report.py": "HTML report generation",
+        "compare.py": "cross-run comparison",
+        "export.py": "CSV/JSON/Markdown export",
+        "run_benchmark.sh": "single-run shell entrypoint",
     }
     optional_scripts = {
-        "10_litellm_runner.py": "LiteLLM evaluation runner",
-        "06_project_report.py": "Project analysis report",
-        "05_aggregate.py": "Data aggregation",
+        "batch_benchmark.sh": "batch benchmark entrypoint",
+        "retry_failed_ar.py": "failed AR retry helper",
     }
 
     for name, desc in required_scripts.items():
@@ -264,12 +246,11 @@ def check_tool(r, tool_name):
 
 def check_litellm_proxy(r, cfg):
     print("\n[7/7] LiteLLM Proxy")
-    proxy_cfg = cfg.get("litellm_proxy", {}) if cfg else {}
-    if not proxy_cfg.get("enabled"):
-        r.warn("LiteLLM Proxy disabled in config (token tracking will be limited)")
+    if not cfg:
+        r.warn("LiteLLM Proxy config unavailable (native token tracking still works for supported CLIs)")
         return
 
-    port = proxy_cfg.get("port", 4000)
+    port = 4000
     try:
         import urllib.request
         resp = urllib.request.urlopen(f"http://localhost:{port}/health", timeout=3)

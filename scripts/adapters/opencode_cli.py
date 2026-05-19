@@ -24,26 +24,23 @@ class OpenCodeCliAdapter(BaseAdapter):
 
     def build_command(self, prompt: str, workspace: str) -> list[str]:
         # For long prompts, write to file to avoid shell arg limits
-        if len(prompt) > 8000:
-            prompt_file = os.path.join(workspace, ".sdd_prompt.md")
-            with open(prompt_file, "w", encoding="utf-8") as f:
-                f.write(prompt)
-            return [
-                "opencode", "run",
-                f"@{prompt_file}",
-                "--dir", workspace,
-                "--model", self.model,
-                "--format", "json",
-                "--log-level", "DEBUG",
-            ]
-        return [
+        base = [
             "opencode", "run",
-            prompt,
             "--dir", workspace,
             "--model", self.model,
             "--format", "json",
             "--log-level", "DEBUG",
+            "--dangerously-skip-permissions",
         ]
+        if len(prompt) > 8000:
+            prompt_file = os.path.join(workspace, ".sdd_prompt.md")
+            with open(prompt_file, "w", encoding="utf-8") as f:
+                f.write(prompt)
+            return base + [
+                "Execute the SDD benchmark instructions in the attached prompt file. Write required files to disk.",
+                "--file", prompt_file,
+            ]
+        return base + [prompt]
 
     def parse_native_output(self, log_text: str) -> StageRecord:
         record = StageRecord()

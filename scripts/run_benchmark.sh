@@ -4,7 +4,7 @@ set -euo pipefail
 # SDD-TEE v5.1 Automated Benchmark Orchestration
 #
 # Usage:
-#   ./scripts/run_benchmark.sh <TOOL> <MODEL> [--api-base URL] [--dry-run-prompts] [--ar-limit N] [--original-repo PATH]
+#   ./scripts/run_benchmark.sh <TOOL> <MODEL> [--api-base URL] [--dry-run-prompts] [--ar-limit N] [--ar-offset N] [--original-repo PATH]
 #
 # Examples:
 #   ./scripts/run_benchmark.sh claude-code claude-sonnet-4 --api-base http://localhost:4000
@@ -23,7 +23,7 @@ MODEL="${2:-}"
 shift 2 || true
 
 if [ -z "$TOOL" ] || [ -z "$MODEL" ]; then
-    echo "Usage: $0 <TOOL> <MODEL> [--api-base URL] [--dry-run-prompts] [--ar-limit N]"
+    echo "Usage: $0 <TOOL> <MODEL> [--api-base URL] [--dry-run-prompts] [--ar-limit N] [--ar-offset N]"
     echo ""
     echo "Supported tools:"
     echo "  claude-code   - Claude Code CLI (Anthropic models)"
@@ -42,12 +42,14 @@ fi
 API_BASE=""
 DRY_RUN=""
 AR_LIMIT=""
+AR_OFFSET=""
 ORIGINAL_REPO=""
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --api-base)       API_BASE="$2"; shift 2 ;;
         --dry-run-prompts) DRY_RUN="--dry-run-prompts"; shift ;;
         --ar-limit)       AR_LIMIT="--ar-limit $2"; shift 2 ;;
+        --ar-offset)      AR_OFFSET="--ar-offset $2"; shift 2 ;;
         --original-repo)  ORIGINAL_REPO="--original-repo $2"; shift 2 ;;
         *)                echo "Unknown arg: $1"; exit 1 ;;
     esac
@@ -82,6 +84,7 @@ echo "Model:      $MODEL"
 echo "API Base:   ${API_BASE:-none}"
 echo "Dry Run:    ${DRY_RUN:-no}"
 echo "AR Limit:   ${AR_LIMIT:-all}"
+echo "AR Offset:  ${AR_OFFSET:-0}"
 echo ""
 
 # ─── Execute ─────────────────────────────────────────────────────────────
@@ -90,6 +93,7 @@ RUN_ARGS="--tool $TOOL --model $MODEL"
 [ -n "$API_BASE" ] && RUN_ARGS="$RUN_ARGS --api-base $API_BASE"
 [ -n "$DRY_RUN" ]  && RUN_ARGS="$RUN_ARGS --dry-run-prompts"
 [ -n "$AR_LIMIT" ] && RUN_ARGS="$RUN_ARGS $AR_LIMIT"
+[ -n "$AR_OFFSET" ] && RUN_ARGS="$RUN_ARGS $AR_OFFSET"
 [ -n "$ORIGINAL_REPO" ] && RUN_ARGS="$RUN_ARGS $ORIGINAL_REPO"
 
 echo "=== Starting Benchmark ==="

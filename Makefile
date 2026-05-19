@@ -35,10 +35,10 @@ proxy:  ## Start LiteLLM Proxy
 
 # --- v5.1 Benchmark ---
 run-v51:  ## Run benchmark: TOOL=xxx MODEL=xxx [ORIG_REPO=path] [AR_LIMIT=N]
-	bash scripts/run_benchmark.sh $(TOOL) $(MODEL) $(if $(AR_LIMIT),--ar-limit $(AR_LIMIT),) $(if $(ORIG_REPO),--original-repo $(ORIG_REPO),)
+	bash scripts/run_benchmark.sh $(TOOL) $(MODEL) $(if $(AR_LIMIT),--ar-limit $(AR_LIMIT),) $(if $(AR_OFFSET),--ar-offset $(AR_OFFSET),) $(if $(ORIG_REPO),--original-repo $(ORIG_REPO),)
 
 run-v51-proxy:  ## Run benchmark through LiteLLM Proxy
-	bash scripts/run_benchmark.sh $(TOOL) $(MODEL) --api-base http://localhost:$(PROXY_PORT) $(if $(ORIG_REPO),--original-repo $(ORIG_REPO),)
+	bash scripts/run_benchmark.sh $(TOOL) $(MODEL) --api-base http://localhost:$(PROXY_PORT) $(if $(AR_LIMIT),--ar-limit $(AR_LIMIT),) $(if $(AR_OFFSET),--ar-offset $(AR_OFFSET),) $(if $(ORIG_REPO),--original-repo $(ORIG_REPO),)
 
 run-v51-dry:  ## Dry run (test prompts, no API calls)
 	bash scripts/run_benchmark.sh $(TOOL) $(MODEL) --dry-run-prompts

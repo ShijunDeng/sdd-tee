@@ -15,7 +15,7 @@ Usage:
 
 import logging
 import os
-import random
+import signal
 import subprocess
 import time
 from abc import ABC, abstractmethod
@@ -50,6 +50,22 @@ class StageRecord:
     api_calls: int = 0
     error: Optional[str] = None
     data_source: str = "none"
+    exit_code: Optional[int] = None
+    attempts: int = 1
+    changed_files: int = 0
+    source_changed_files: int = 0
+    added_files: int = 0
+    restored_files: int = 0
+    out_of_scope_files: int = 0
+    loc_delta: int = 0
+    validation_errors: list[str] = None
+    local_checks: list[dict] = None
+
+    def __post_init__(self):
+        if self.validation_errors is None:
+            self.validation_errors = []
+        if self.local_checks is None:
+            self.local_checks = []
 
 
 class BaseAdapter(ABC):
@@ -78,6 +94,7 @@ class BaseAdapter(ABC):
         stage: str = "",
         stage_name: str = "",
         timeout: int = 600,
+        max_retries: int = 1,
     ) -> StageRecord:
         """Run a prompt through the CLI tool.
 
@@ -97,40 +114,62 @@ class BaseAdapter(ABC):
         env = os.environ.copy()
         env = self._add_proxy_env(env)
 
-        max_retries = 3
         current_timeout = timeout
         last_error = None
 
         for attempt in range(1, max_retries + 1):
+            proc: subprocess.Popen | None = None
             try:
-                result = subprocess.run(
+                proc = subprocess.Popen(
                     cmd,
-                    capture_output=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
                     text=True,
-                    timeout=current_timeout,
                     cwd=workspace,
                     env=env,
+                    start_new_session=True,
                 )
+                stdout, stderr = proc.communicate(timeout=current_timeout)
+                record.exit_code = proc.returncode
                 # Write combined output to log
-                log_text = f"EXIT_CODE: {result.returncode}\n"
-                log_text += f"STDOUT:\n{result.stdout}\n"
-                if result.stderr:
-                    log_text += f"\nSTDERR:\n{result.stderr}\n"
+                log_text = f"EXIT_CODE: {proc.returncode}\n"
+                log_text += f"STDOUT:\n{stdout}\n"
+                if stderr:
+                    log_text += f"\nSTDERR:\n{stderr}\n"
                 Path(log_path).write_text(log_text, encoding="utf-8")
+                if proc.returncode != 0:
+                    record.error = f"Command exited with code {proc.returncode}"
                 last_error = None
                 break  # Success
 
-            except subprocess.TimeoutExpired:
+            except subprocess.TimeoutExpired as e:
+                if proc and proc.pid:
+                    try:
+                        os.killpg(proc.pid, signal.SIGTERM)
+                        time.sleep(2)
+                        os.killpg(proc.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                    except Exception as kill_error:
+                        logger.warning(f"  [{stage}] failed to terminate process group {proc.pid}: {kill_error}")
+                stdout = e.output or ""
+                stderr = e.stderr or ""
+                if isinstance(stdout, bytes):
+                    stdout = stdout.decode("utf-8", errors="replace")
+                if isinstance(stderr, bytes):
+                    stderr = stderr.decode("utf-8", errors="replace")
+                log_text = f"EXIT_CODE: TIMEOUT\nSTDOUT:\n{stdout}\n"
+                if stderr:
+                    log_text += f"\nSTDERR:\n{stderr}\n"
+                Path(log_path).write_text(log_text, encoding="utf-8")
                 last_error = f"Timeout after {current_timeout}s"
                 record.duration_seconds = time.time() - start_time
                 if attempt < max_retries:
-                    # Exponential backoff with jitter: 30s, 60s, 120s base + up to 30s jitter
-                    base_delay = 30 * (2 ** (attempt - 1))
-                    jitter = random.uniform(0, 30)
-                    delay = base_delay + jitter
+                    # Fixed backoff: 30s between retries
+                    delay = 30
                     logger.warning(
                         f"  [{stage}] attempt {attempt}/{max_retries} timed out, "
-                        f"retrying in {delay:.0f}s (timeout {current_timeout}s -> {current_timeout * 2}s)"
+                        f"retrying in {delay}s (timeout {current_timeout}s -> {current_timeout * 2}s)"
                     )
                     time.sleep(delay)
                     current_timeout *= 2  # Double the timeout each retry
@@ -147,12 +186,11 @@ class BaseAdapter(ABC):
             except Exception as e:
                 last_error = str(e)
                 if attempt < max_retries:
-                    base_delay = 30 * (2 ** (attempt - 1))
-                    jitter = random.uniform(0, 30)
-                    delay = base_delay + jitter
+                    # Fixed backoff: 30s between retries
+                    delay = 30
                     logger.warning(
                         f"  [{stage}] attempt {attempt}/{max_retries} failed ({last_error}), "
-                        f"retrying in {delay:.0f}s"
+                        f"retrying in {delay}s"
                     )
                     time.sleep(delay)
                 else:

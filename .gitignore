@@ -3,6 +3,7 @@ task.md
 
 # Runtime workspaces (large, regenerated per run)
 workspaces/
+.cache/
 
 # OS
 .DS_Store

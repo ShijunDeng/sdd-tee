@@ -77,8 +77,13 @@ class TokenAudit:
 
     @property
     def net_input_tokens(self) -> int:
-        """Billable input tokens (input minus cache hits)."""
-        return max(0, self.input_tokens - self.cache_read_tokens)
+        """Fresh billable input tokens.
+
+        CLI/proxy records used by this benchmark report fresh input and cache
+        reads as separate fields. Do not subtract cache reads again or cached
+        runs are underpriced.
+        """
+        return self.input_tokens
 
     def compute_cost(self, model_name: str) -> float:
         """Compute cost in USD using official pricing."""
