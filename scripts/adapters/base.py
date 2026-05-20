@@ -48,6 +48,7 @@ class StageRecord:
     iterations: int = 0
     duration_seconds: float = 0.0
     api_calls: int = 0
+    cost_usd: float = 0.0
     error: Optional[str] = None
     data_source: str = "none"
     exit_code: Optional[int] = None
@@ -176,6 +177,16 @@ class BaseAdapter(ABC):
                 else:
                     record.error = f"Failed after {max_retries} attempts: {last_error}"
                     record.duration_seconds = time.time() - start_time
+                    native = self.parse_native_output(log_text)
+                    if native.api_calls > 0:
+                        record.input_tokens = native.input_tokens
+                        record.output_tokens = native.output_tokens
+                        record.cache_read_tokens = native.cache_read_tokens
+                        record.cache_write_tokens = native.cache_write_tokens
+                        record.cost_usd = native.cost_usd
+                        record.api_calls = native.api_calls
+                        record.iterations = native.api_calls
+                        record.data_source = "native_output"
                     return record
 
             except FileNotFoundError as e:
@@ -208,6 +219,7 @@ class BaseAdapter(ABC):
             record.output_tokens = native.output_tokens
             record.cache_read_tokens = native.cache_read_tokens
             record.cache_write_tokens = native.cache_write_tokens
+            record.cost_usd = native.cost_usd
             record.api_calls = native.api_calls
             record.iterations = native.api_calls
             record.data_source = "native_output"

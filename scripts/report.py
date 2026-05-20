@@ -151,6 +151,7 @@ STAGE_NAMES = {
     "ST-4": "任务拆解 (Tasks)",
     "ST-5": "开发实现 (Apply)",
     "ST-6": "一致性验证 (Verify)",
+    "ST-6.5": "原始代码等价性验证",
     "ST-7": "合并归档 (Archive)",
 }
 
@@ -162,6 +163,7 @@ OPSX_COMMANDS = {
     "ST-4": "/opsx:ff → tasks.md",
     "ST-5": "/opsx:apply",
     "ST-6": "/opsx:verify",
+    "ST-6.5": "programmatic equivalence",
     "ST-7": "/opsx:archive",
 }
 
@@ -204,6 +206,8 @@ def generate_stage_tokens(ar, stage_id):
                  "human_input": 2000, "cache_ratio": 0.84},
         "ST-6": {"input": 40000, "output": 6000, "iters": (1, 3), "dur_s": (30, 120),
                  "human_input": 400, "cache_ratio": 0.8},
+        "ST-6.5": {"input": 0, "output": 0, "iters": (0, 0), "dur_s": (0, 1),
+                   "human_input": 0, "cache_ratio": 0.0},
         "ST-7": {"input": 8000, "output": 2500, "iters": (1, 1), "dur_s": (10, 30),
                  "human_input": 200, "cache_ratio": 0.85},
     }
@@ -230,7 +234,7 @@ def generate_stage_tokens(ar, stage_id):
         "output_tokens": output_tok,
         "cache_read_tokens": cache_read,
         "cache_write_tokens": cache_write,
-        "total_tokens": input_tok + output_tok,
+        "total_tokens": input_tok + output_tok + cache_read + cache_write,
         "human_input_tokens": human_tok,
         "spec_context_tokens": spec_ctx_tokens,
         "iterations": iters,
@@ -249,6 +253,7 @@ def generate_ar_data(ar):
     total_output = sum(s["output_tokens"] for s in stages.values())
     total_cache_read = sum(s["cache_read_tokens"] for s in stages.values())
     total_cache_write = sum(s["cache_write_tokens"] for s in stages.values())
+    total_tokens = total_input + total_output + total_cache_read + total_cache_write
     total_human = sum(s["human_input_tokens"] for s in stages.values())
     total_spec_ctx = sum(s["spec_context_tokens"] for s in stages.values())
     total_iters = sum(s["iterations"] for s in stages.values())
@@ -282,7 +287,7 @@ def generate_ar_data(ar):
             "output_tokens": total_output,
             "cache_read_tokens": total_cache_read,
             "cache_write_tokens": total_cache_write,
-            "total_tokens": total_input + total_output,
+            "total_tokens": total_tokens,
             "human_input_tokens": total_human,
             "spec_context_tokens": total_spec_ctx,
             "iterations": total_iters,
@@ -305,19 +310,19 @@ def generate_ar_data(ar):
             "ET_LOC": round(stages["ST-5"]["total_tokens"] / max(actual_loc, 1), 1),
             "ET_FILE": round(stages["ST-5"]["total_tokens"] / max(actual_files, 1), 0),
             "ET_TASK": round(stages["ST-5"]["total_tokens"] / max(tasks_count, 1), 0),
-            "ET_AR": total_input + total_output,
-            "ET_TIME": round((total_input + total_output) / max(total_dur / 3600, 0.01), 0),
+            "ET_AR": total_tokens,
+            "ET_TIME": round(total_tokens / max(total_dur / 3600, 0.01), 0),
             "ET_COST_LOC": round(total_cost / max(actual_loc / 1000, 0.01), 4),
-            "RT_RATIO": round(total_human / max(total_input + total_output - total_human, 1), 4),
+            "RT_RATIO": round(total_human / max(total_tokens - total_human, 1), 4),
             "RT_ITER": total_iters,
             "QT_COV": round(stages["ST-5"]["total_tokens"] / max(test_coverage * 100, 1), 1),
             "QT_CONSIST": round(stages["ST-6"]["total_tokens"] / max(consistency_score * 100, 1), 1),
             "QT_AVAIL": round(stages["ST-5"]["total_tokens"] / max(code_usability * 100, 1), 1),
             "QT_BUG": round(stages["ST-5"]["total_tokens"] / max(bugs_found, 1), 0),
-            "PT_DESIGN": round(sum(stages[s]["total_tokens"] for s in ("ST-1", "ST-2", "ST-3")) / max(total_input + total_output, 1), 4),
-            "PT_PLAN": round(sum(stages[s]["total_tokens"] for s in ("ST-0", "ST-4")) / max(total_input + total_output, 1), 4),
-            "PT_DEV": round(stages["ST-5"]["total_tokens"] / max(total_input + total_output, 1), 4),
-            "PT_VERIFY": round(sum(stages[s]["total_tokens"] for s in ("ST-6", "ST-7")) / max(total_input + total_output, 1), 4),
+            "PT_DESIGN": round(sum(stages[s]["total_tokens"] for s in ("ST-1", "ST-2", "ST-3")) / max(total_tokens, 1), 4),
+            "PT_PLAN": round(sum(stages[s]["total_tokens"] for s in ("ST-0", "ST-4")) / max(total_tokens, 1), 4),
+            "PT_DEV": round(stages["ST-5"]["total_tokens"] / max(total_tokens, 1), 4),
+            "PT_VERIFY": round(sum(stages[s]["total_tokens"] for s in ("ST-6", "ST-6.5", "ST-7")) / max(total_tokens, 1), 4),
         },
     }
 
@@ -399,11 +404,11 @@ def generate_mock_data():
             "output_tokens": grand_output,
             "cache_read_tokens": grand_cache_read,
             "cache_write_tokens": grand_cache_write,
-            "total_tokens": grand_input + grand_output,
+            "total_tokens": grand_input + grand_output + grand_cache_read + grand_cache_write,
             "human_input_tokens": grand_human,
             "spec_context_tokens": grand_spec,
             "total_duration_seconds": grand_dur,
-            "total_cost_usd": round(grand_cost, 2),
+            "total_cost_usd": round(grand_cost, 4),
             "total_cost_cny": round(grand_cost * 7.25, 2),
             "total_loc": grand_loc,
             "total_files": grand_files,
@@ -431,6 +436,16 @@ def _pct(part, total):
     return f"{part / total * 100:.1f}%" if total else "0%"
 
 
+def _score_pct(value):
+    """Render quality values that may be stored as 0-1 or 0-100."""
+    if value is None:
+        return "0.0%"
+    val = float(value)
+    if val > 1:
+        val = val / 100
+    return f"{val:.1%}"
+
+
 def _bar_svg(items, width=600, height=28):
     """Render a horizontal stacked bar as inline SVG."""
     total = sum(v for _, v, _ in items)
@@ -455,12 +470,23 @@ def render_html(data):
     bl = data["baselines"]
     ars = data["ar_results"]
     meta = data["meta"]
+    stage_outputs = {
+        "ST-0": "变更目录脚手架",
+        "ST-1": "proposal.md",
+        "ST-2": "delta-spec.md",
+        "ST-3": "design.md",
+        "ST-4": "tasks.md",
+        "ST-5": "代码文件",
+        "ST-6": "验证报告",
+        "ST-6.5": "等价性报告",
+        "ST-7": "归档记录",
+    }
 
     # --- Stage distribution pie data ---
     stage_colors = {
         "ST-0": "#78909C", "ST-1": "#42A5F5", "ST-2": "#26C6DA",
         "ST-3": "#66BB6A", "ST-4": "#FFA726", "ST-5": "#EF5350",
-        "ST-6": "#AB47BC", "ST-7": "#8D6E63",
+        "ST-6": "#AB47BC", "ST-6.5": "#7E57C2", "ST-7": "#8D6E63",
     }
 
     total_tok = gt["total_tokens"]
@@ -501,7 +527,7 @@ def render_html(data):
             <td style="text-align:right">{_fmt(r['output']['actual_loc'])}</td>
             <td style="text-align:right">{r['metrics']['ET_LOC']}</td>
             <td style="text-align:right">${r.get('totals', {}).get('cost_usd', 0):.3f}</td>
-            <td style="text-align:right">{r['quality']['consistency_score']:.0%}</td>
+            <td style="text-align:right">{_score_pct(r['quality']['consistency_score'])}</td>
             <td style="text-align:right">{r['quality']['code_usability']:.0%}</td>
         </tr>"""
 
@@ -521,7 +547,7 @@ def render_html(data):
             </tr>"""
 
     # --- Role dimension ---
-    rt_ai = gt["total_tokens"] - gt["human_input_tokens"]
+    rt_ai = gt["total_tokens"] - gt["human_input_tokens"] - gt.get("spec_context_tokens", 0)
     rt_human = gt["human_input_tokens"]
     rt_ratio = rt_human / rt_ai if rt_ai else 0
     rt_iter = gt["total_iterations"] / gt["ar_count"] if gt["ar_count"] else 0
@@ -530,9 +556,9 @@ def render_html(data):
     design_tok = sum(sa[s]["total_tokens"] for s in ("ST-1", "ST-2", "ST-3"))
     plan_tok = sum(sa[s]["total_tokens"] for s in ("ST-0", "ST-4"))
     dev_tok = sa["ST-5"]["total_tokens"]
-    verify_tok = sum(sa[s]["total_tokens"] for s in ("ST-6", "ST-7"))
+    verify_tok = sum(sa[s]["total_tokens"] for s in ("ST-6", "ST-6.5", "ST-7") if s in sa)
     peak_stage = max(STAGE_NAMES, key=lambda s: sa[s]["total_tokens"])
-    cache_rate = gt["cache_read_tokens"] / max(gt["input_tokens"], 1)
+    cache_rate = gt["cache_read_tokens"] / max(gt["input_tokens"] + gt["cache_read_tokens"], 1)
 
     # --- Efficiency scatter data (Token vs LOC for each AR) ---
     scatter_points = ""
@@ -667,20 +693,20 @@ def render_html(data):
 <div class="card" style="margin-top:12px">
   <h3>Token 类型分布</h3>
   {_bar_svg([
-      ("Input", gt["input_tokens"] - gt["cache_read_tokens"], "#42A5F5"),
+      ("Input", gt["input_tokens"], "#42A5F5"),
       ("Cache Read", gt["cache_read_tokens"], "#90CAF9"),
       ("Output", gt["output_tokens"], "#EF5350"),
       ("Cache Write", gt["cache_write_tokens"], "#FFAB91"),
   ], width=900, height=30)}
   <div class="legend" style="margin-top:8px">
-    <span><i style="background:#42A5F5"></i> Input (非缓存) {_fmt(gt['input_tokens'] - gt['cache_read_tokens'])}</span>
+    <span><i style="background:#42A5F5"></i> Input {_fmt(gt['input_tokens'])}</span>
     <span><i style="background:#90CAF9"></i> Cache Read {_fmt(gt['cache_read_tokens'])}</span>
     <span><i style="background:#EF5350"></i> Output {_fmt(gt['output_tokens'])}</span>
     <span><i style="background:#FFAB91"></i> Cache Write {_fmt(gt['cache_write_tokens'])}</span>
     <span><i style="background:#fff;border:1px solid #ccc"></i> 预制规范 {_fmt(gt['spec_context_tokens'])}</span>
   </div>
   <p style="font-size:12px;color:var(--muted);margin-top:4px">
-    Cache 命中率: {_pct(gt['cache_read_tokens'], gt['input_tokens'])} &nbsp;|&nbsp;
+    Cache 命中率: {_pct(gt['cache_read_tokens'], gt['input_tokens'] + gt['cache_read_tokens'])} &nbsp;|&nbsp;
     Input/Output 比: {gt['input_tokens'] / max(gt['output_tokens'], 1):.1f}:1 &nbsp;|&nbsp;
     预制规范占 Input: {_pct(gt['spec_context_tokens'], gt['input_tokens'])}
   </p>
@@ -769,7 +795,7 @@ def render_html(data):
 <!-- ===================== 5. QUALITY ===================== -->
 <h2 id="quality">5. 质量维度</h2>
 <div class="stats">
-  <div class="stat good"><div class="v">{sum(r['quality']['consistency_score'] for r in ars) / len(ars):.1%}</div><div class="l">平均 Spec-Code 一致性</div></div>
+  <div class="stat good"><div class="v">{_score_pct(sum((r['quality']['consistency_score'] / 100 if r['quality']['consistency_score'] > 1 else r['quality']['consistency_score']) for r in ars) / len(ars))}</div><div class="l">平均 Spec-Code 一致性</div></div>
   <div class="stat good"><div class="v">{sum(r['quality']['code_usability'] for r in ars) / len(ars):.1%}</div><div class="l">平均代码可用率</div></div>
   <div class="stat"><div class="v">{sum(r['quality']['test_coverage'] for r in ars) / len(ars):.1%}</div><div class="l">平均测试覆盖率</div></div>
   <div class="stat warn"><div class="v">{sum(r['quality']['bugs_found'] for r in ars)}</div><div class="l">发现 Bug 总数</div></div>
@@ -780,7 +806,7 @@ def render_html(data):
     <thead><tr><th>指标</th><th>说明</th><th style="text-align:right">全局值</th></tr></thead>
     <tbody>
       <tr><td>QT-COV</td><td>Token / 测试覆盖率%</td><td style="text-align:right">{sa['ST-5']['total_tokens'] / max(sum(r['quality']['test_coverage'] for r in ars) / len(ars) * 100, 1):,.0f}</td></tr>
-      <tr><td>QT-CONSIST</td><td>Token / 一致性得分%</td><td style="text-align:right">{sa['ST-6']['total_tokens'] / max(sum(r['quality']['consistency_score'] for r in ars) / len(ars) * 100, 1):,.0f}</td></tr>
+      <tr><td>QT-CONSIST</td><td>Token / 一致性得分%</td><td style="text-align:right">{sa['ST-6']['total_tokens'] / max(sum((r['quality']['consistency_score'] / 100 if r['quality']['consistency_score'] > 1 else r['quality']['consistency_score']) for r in ars) / len(ars) * 100, 1):,.0f}</td></tr>
       <tr><td>QT-AVAIL</td><td>Token / 代码可用率%</td><td style="text-align:right">{sa['ST-5']['total_tokens'] / max(sum(r['quality']['code_usability'] for r in ars) / len(ars) * 100, 1):,.0f}</td></tr>
       <tr><td>QT-BUG</td><td>Token / Bug 数 (反向)</td><td style="text-align:right">{sa['ST-5']['total_tokens'] / max(sum(r['quality']['bugs_found'] for r in ars), 1):,.0f}</td></tr>
     </tbody>
@@ -811,7 +837,7 @@ def render_html(data):
       ("设计 (ST-1~3)", design_tok, "#42A5F5"),
       ("规划 (ST-0,4)", sa["ST-0"]["total_tokens"] + sa["ST-4"]["total_tokens"], "#FFA726"),
       ("开发 (ST-5)", dev_tok, "#EF5350"),
-      ("验证归档 (ST-6,7)", verify_tok, "#AB47BC"),
+      ("验证归档 (ST-6,6.5,7)", verify_tok, "#AB47BC"),
   ], width=900, height=30)}
   <div class="note" style="margin-top:8px">
     <strong>分布分析：</strong>开发实现阶段 (ST-5) 占 {_pct(dev_tok, total_tok)} 为 Token 消耗主体，
@@ -852,16 +878,20 @@ def render_html(data):
     for r in ars:
         sz_bl = bl.get(r["size"], {})
         # W-STAGE-BUDGET: 单阶段 Token > 基线 150%
-        avg_tok = sz_bl.get("avg_tokens", r["totals"]["total_tokens"])
+        avg_tok = sz_bl.get("ET_AR_mean", r["totals"]["total_tokens"])
         if r["totals"]["total_tokens"] > avg_tok * 1.5:
             warnings.append(("yellow", "W-STAGE-BUDGET: 总Token > 基线 150%", r["ar_id"]))
         # W-ET-LOC: Token/LOC > 基线 200%
-        avg_et = sz_bl.get("avg_et_loc", r["metrics"]["ET_LOC"])
+        avg_et = sz_bl.get("ET_LOC_mean", r["metrics"]["ET_LOC"])
         if r["metrics"]["ET_LOC"] > avg_et * 2:
             warnings.append(("red", "W-ET-LOC: Token/LOC > 基线 200%", r["ar_id"]))
         # W-USABILITY: 代码可用率 < 75%
         if r["quality"]["code_usability"] < 0.75:
             warnings.append(("orange", "W-USABILITY: 代码可用率 < 75%", r["ar_id"]))
+        if not r.get("quality", {}).get("implementation_valid", True):
+            warnings.append(("red", "W-IMPLEMENTATION: ST-5 实现验证失败", r["ar_id"]))
+        if not r.get("quality", {}).get("local_checks_passed", True):
+            warnings.append(("red", "W-LOCAL-CHECK: 本地检查失败", r["ar_id"]))
         # W-DEV-SKEW: 开发占比 > 80%
         pt_dev = r["metrics"].get("PT_DEV", 0)
         if pt_dev > 0.80:
@@ -911,7 +941,7 @@ def render_html(data):
   <table>
     <thead><tr><th>CodeSpec 阶段</th><th>OPSX 命令</th><th>产物</th><th>Token 追踪</th></tr></thead>
     <tbody>
-      {"".join(f'<tr><td>{sid} {STAGE_NAMES[sid]}</td><td><code>{OPSX_COMMANDS[sid]}</code></td><td>{["变更目录脚手架","proposal.md","delta-spec.md","design.md","tasks.md","代码文件","归档 + spec 合并","验证报告"][i]}</td><td>✓</td></tr>' for i, sid in enumerate(STAGE_NAMES))}
+      {"".join(f'<tr><td>{sid} {STAGE_NAMES[sid]}</td><td><code>{OPSX_COMMANDS[sid]}</code></td><td>{stage_outputs[sid]}</td><td>✓</td></tr>' for sid in STAGE_NAMES)}
     </tbody>
   </table>
 
@@ -940,8 +970,8 @@ def main():
     parser = argparse.ArgumentParser(description="SDD-TEE Comprehensive Report Generator v2")
     parser.add_argument("--mock", action="store_true", help="Generate mock data report")
     parser.add_argument("--data", help="Path to real data JSON")
-    parser.add_argument("--output", default="results/reports/sdd_tee_report.html")
-    parser.add_argument("--data-output", default="results/reports/sdd_tee_report.json")
+    parser.add_argument("--output", default="results/reports/v5.1/sdd_tee_report.html")
+    parser.add_argument("--data-output", default="results/reports/v5.1/sdd_tee_report.json")
     args = parser.parse_args()
 
     base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -965,8 +995,9 @@ def main():
         for sw in schema_warnings:
             print(f"[07] WARN: {sw}")
     except SchemaError as e:
-        print(f"[07] Schema: FAIL — report may be incomplete!")
+        print(f"[07] Schema: FAIL — refusing to render inconsistent report")
         print(str(e))
+        raise SystemExit(1)
     except ImportError:
         print("[07] schema.py not found, skipping validation")
 

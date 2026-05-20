@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-SDD-TEE v5.0 Data Exporter
+SDD-TEE v5.1 Data Exporter
 
 Exports benchmark run data into formats suitable for chart generation
 and cross-run comparison: CSV, aggregated JSON, and Markdown tables.
 
 Usage:
-  # Export all v5.0 runs to CSV
+  # Export all v5.1 runs to CSV
   python3 scripts/export_data.py --format csv
 
   # Export specific runs to JSON summary
@@ -35,7 +35,7 @@ def load_run(path: str) -> dict:
         return json.load(f)
 
 
-def discover_runs(pattern: str = "results/runs/v5.0/*_full.json") -> list[str]:
+def discover_runs(pattern: str = "results/runs/v5.1/*_full.json") -> list[str]:
     import glob
     return sorted(glob.glob(pattern))
 
@@ -66,7 +66,7 @@ def export_csv(runs: list[dict], output_dir: Path):
                 gt.get("output_tokens", 0),
                 gt.get("cache_read_tokens", 0),
                 gt.get("cache_write_tokens", 0),
-                round(gt.get("cost_usd", 0), 4),
+                round(gt.get("total_cost_usd", gt.get("cost_usd", 0)), 4),
                 gt.get("total_loc", 0),
                 gt.get("total_files", 0),
                 gt.get("ar_count", 0),
@@ -159,7 +159,7 @@ def export_json_summary(runs: list[dict], output_dir: Path):
                 "cache_read": gt.get("cache_read_tokens", 0),
                 "cache_write": gt.get("cache_write_tokens", 0),
             },
-            "cost_usd": round(gt.get("cost_usd", 0), 4),
+            "cost_usd": round(gt.get("total_cost_usd", gt.get("cost_usd", 0)), 4),
             "output": {
                 "loc": gt.get("total_loc", 0),
                 "files": gt.get("total_files", 0),
@@ -190,7 +190,7 @@ def export_json_summary(runs: list[dict], output_dir: Path):
         if valid:
             summary["comparison"] = {
                 "best_total_tokens": min(r["grand_totals"]["total_tokens"] for r in valid),
-                "best_cost_usd": min(r["grand_totals"]["cost_usd"] for r in valid),
+                "best_cost_usd": min(r["grand_totals"].get("total_cost_usd", r["grand_totals"].get("cost_usd", 0)) for r in valid),
                 "most_loc": max(r["grand_totals"]["total_loc"] for r in valid),
                 "fastest": min(r["grand_totals"]["total_duration_seconds"] for r in valid),
                 "best_cache_rate": max(
@@ -211,7 +211,7 @@ def export_markdown(runs: list[dict], output_dir: Path):
     output_dir.mkdir(parents=True, exist_ok=True)
 
     lines = [
-        "# SDD-TEE v5.0 Benchmark Comparison",
+        "# SDD-TEE v5.1 Benchmark Comparison",
         "",
         f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
         f"Runs: {len(runs)}",
@@ -236,7 +236,7 @@ def export_markdown(runs: list[dict], output_dir: Path):
             f"| {m.get('tool', '?')} "
             f"| {m.get('model', '?')} "
             f"| {gt.get('total_tokens', 0):,} "
-            f"| ${gt.get('cost_usd', 0):.2f} "
+            f"| ${gt.get('total_cost_usd', gt.get('cost_usd', 0)):.2f} "
             f"| {gt.get('total_loc', 0):,} "
             f"| {dur_str} |"
         )
@@ -263,12 +263,12 @@ def export_markdown(runs: list[dict], output_dir: Path):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="SDD-TEE v5.0 Data Exporter")
+    parser = argparse.ArgumentParser(description="SDD-TEE v5.1 Data Exporter")
     parser.add_argument("--format", choices=["csv", "json", "markdown", "all"],
                         default="all", help="Export format")
     parser.add_argument("--runs", nargs="*",
-                        help="Paths to *_full.json files (default: all v5.0 runs)")
-    parser.add_argument("--output", default="results/reports/v5.0",
+                        help="Paths to *_full.json files (default: all v5.1 runs)")
+    parser.add_argument("--output", default="results/reports/v5.1",
                         help="Output directory")
     args = parser.parse_args()
 

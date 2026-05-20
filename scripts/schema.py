@@ -229,6 +229,18 @@ def validate_report_data(data):
                     for fld in STAGE_FIELDS:
                         if fld not in stages[sid]:
                             errors.append(f"{prefix}.stages.{sid}.{fld} missing")
+                    sv = stages.get(sid, {})
+                    expected_stage_total = (
+                        sv.get("input_tokens", 0)
+                        + sv.get("output_tokens", 0)
+                        + sv.get("cache_read_tokens", 0)
+                        + sv.get("cache_write_tokens", 0)
+                    )
+                    if sv.get("total_tokens", expected_stage_total) != expected_stage_total:
+                        errors.append(
+                            f"{prefix}.stages.{sid}.total_tokens inconsistent: "
+                            f"{sv.get('total_tokens')} != {expected_stage_total}"
+                        )
 
             # totals
             for k in REQUIRED_AR_TOTALS:
@@ -250,10 +262,76 @@ def validate_report_data(data):
                 if k not in ar.get("metrics", {}):
                     errors.append(f"{prefix}.metrics.{k} missing")
 
+            if stages and ar.get("totals"):
+                totals = ar["totals"]
+                sums = {
+                    "input_tokens": sum(s.get("input_tokens", 0) for s in stages.values()),
+                    "output_tokens": sum(s.get("output_tokens", 0) for s in stages.values()),
+                    "cache_read_tokens": sum(s.get("cache_read_tokens", 0) for s in stages.values()),
+                    "cache_write_tokens": sum(s.get("cache_write_tokens", 0) for s in stages.values()),
+                    "total_tokens": sum(s.get("total_tokens", 0) for s in stages.values()),
+                    "iterations": sum(s.get("iterations", 0) for s in stages.values()),
+                    "api_calls": sum(s.get("api_calls", 0) for s in stages.values()),
+                }
+                for key, expected in sums.items():
+                    if totals.get(key, expected) != expected:
+                        errors.append(
+                            f"{prefix}.totals.{key} inconsistent: {totals.get(key)} != {expected}"
+                        )
+
             # check only first 3 ARs in detail to limit output
             if i >= 2 and errors:
                 errors.append(f"... (stopped checking after {i+1} ARs, fix above first)")
                 break
+
+    if errors:
+        raise SchemaError(errors)
+
+    # Cross-object aggregate consistency. These are fatal because the report
+    # otherwise shows contradictory numbers across summary, stage, and AR views.
+    if ars and gt:
+        expected_ar_count = len(ars)
+        if gt.get("ar_count") != expected_ar_count:
+            errors.append(f"grand_totals.ar_count inconsistent: {gt.get('ar_count')} != {expected_ar_count}")
+        grand_sums = {
+            "input_tokens": sum(ar["totals"].get("input_tokens", 0) for ar in ars),
+            "output_tokens": sum(ar["totals"].get("output_tokens", 0) for ar in ars),
+            "cache_read_tokens": sum(ar["totals"].get("cache_read_tokens", 0) for ar in ars),
+            "cache_write_tokens": sum(ar["totals"].get("cache_write_tokens", 0) for ar in ars),
+            "total_tokens": sum(ar["totals"].get("total_tokens", 0) for ar in ars),
+            "human_input_tokens": sum(ar["totals"].get("human_input_tokens", 0) for ar in ars),
+            "spec_context_tokens": sum(ar["totals"].get("spec_context_tokens", 0) for ar in ars),
+            "total_loc": sum(ar["output"].get("actual_loc", 0) for ar in ars),
+            "total_files": sum(ar["output"].get("actual_files", 0) for ar in ars),
+            "total_tasks": sum(ar["output"].get("tasks_count", 0) for ar in ars),
+            "total_iterations": sum(ar["totals"].get("iterations", 0) for ar in ars),
+            "total_api_calls": sum(ar["totals"].get("api_calls", 0) for ar in ars),
+        }
+        for key, expected in grand_sums.items():
+            if gt.get(key, expected) != expected:
+                errors.append(f"grand_totals.{key} inconsistent: {gt.get(key)} != {expected}")
+        expected_cost = round(sum(ar["totals"].get("cost_usd", 0.0) for ar in ars), 4)
+        if abs(gt.get("total_cost_usd", expected_cost) - expected_cost) > 0.0001:
+            errors.append(
+                f"grand_totals.total_cost_usd inconsistent: "
+                f"{gt.get('total_cost_usd')} != {expected_cost}"
+            )
+
+    if ars and sa:
+        for sid in STAGES:
+            if sid not in sa:
+                continue
+            expected = {
+                "input_tokens": sum(ar["stages"][sid].get("input_tokens", 0) for ar in ars),
+                "output_tokens": sum(ar["stages"][sid].get("output_tokens", 0) for ar in ars),
+                "cache_read_tokens": sum(ar["stages"][sid].get("cache_read_tokens", 0) for ar in ars),
+                "cache_write_tokens": sum(ar["stages"][sid].get("cache_write_tokens", 0) for ar in ars),
+                "total_tokens": sum(ar["stages"][sid].get("total_tokens", 0) for ar in ars),
+                "iterations": sum(ar["stages"][sid].get("iterations", 0) for ar in ars),
+            }
+            for key, val in expected.items():
+                if sa[sid].get(key, val) != val:
+                    errors.append(f"stage_aggregates.{sid}.{key} inconsistent: {sa[sid].get(key)} != {val}")
 
     if errors:
         raise SchemaError(errors)

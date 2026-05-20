@@ -50,9 +50,21 @@ PRICING = {
     "kimi-k2.5":                     {"input": 0.5,   "output": 2.0,  "cache_read": 0.1,  "cache_write": 0.5},
     # MiniMax
     "minimax-m2.5":                  {"input": 0.5,   "output": 2.0,  "cache_read": 0.1,  "cache_write": 0.5},
+    # Qwen Cloud pricing, 2026-05-19:
+    # https://docs.qwencloud.com/developer-guides/getting-started/pricing
+    # qwen3.6-plus is tiered by prompt context length:
+    # <=256K: input $0.50, output $3.00; 256K-1M: input $2.00, output $6.00.
+    # The generic table fields below are kept for non-tiered aggregate fallback.
+    "qwen3.6-plus": {
+        "input": 0.5, "output": 3.0, "cache_read": 0.5, "cache_write": 0.5,
+        "tiers": [
+            {"max_prompt_tokens": 256_000, "input": 0.5, "output": 3.0},
+            {"max_prompt_tokens": 1_000_000, "input": 2.0, "output": 6.0},
+        ],
+        "cache_billing": "input",
+    },
     # DashScope / Qwen
     "qwen3.5-plus":                  {"input": 0.5,   "output": 2.0,  "cache_read": 0.1,  "cache_write": 0.5},
-    "qwen3.6-plus":                  {"input": 0.5,   "output": 2.0,  "cache_read": 0.1,  "cache_write": 0.5},
 }
 
 
@@ -73,7 +85,10 @@ class TokenAudit:
 
     @property
     def total_tokens(self) -> int:
-        return self.input_tokens + self.output_tokens
+        return (
+            self.input_tokens + self.output_tokens
+            + self.cache_read_tokens + self.cache_write_tokens
+        )
 
     @property
     def net_input_tokens(self) -> int:
@@ -87,15 +102,13 @@ class TokenAudit:
 
     def compute_cost(self, model_name: str) -> float:
         """Compute cost in USD using official pricing."""
-        pricing = get_pricing(model_name)
-        if not pricing:
-            return 0.0
-        return (
-            self.net_input_tokens * pricing["input"]
-            + self.output_tokens * pricing["output"]
-            + self.cache_read_tokens * pricing["cache_read"]
-            + self.cache_write_tokens * pricing["cache_write"]
-        ) / 1_000_000
+        return compute_token_cost(
+            model_name,
+            self.input_tokens,
+            self.output_tokens,
+            self.cache_read_tokens,
+            self.cache_write_tokens,
+        )
 
 
 def get_pricing(model_name: str) -> Optional[dict]:
@@ -109,6 +122,41 @@ def get_pricing(model_name: str) -> Optional[dict]:
         if key.lower() in model_lower or model_lower.split("/")[-1] == key.lower():
             return pricing
     return None
+
+
+def compute_token_cost(
+    model_name: str,
+    input_tokens: int,
+    output_tokens: int,
+    cache_read_tokens: int = 0,
+    cache_write_tokens: int = 0,
+) -> float:
+    """Compute USD cost from token components.
+
+    For tiered Qwen text models, prompt-side tokens determine the context tier.
+    Qwen's public text-generation table does not publish separate cache read/write
+    prices, so cache tokens are billed as prompt input for cost estimation.
+    """
+    pricing = get_pricing(model_name)
+    if not pricing:
+        return 0.0
+
+    prompt_side = input_tokens + cache_read_tokens + cache_write_tokens
+    tiers = pricing.get("tiers") or []
+    if tiers:
+        tier = tiers[-1]
+        for candidate in tiers:
+            if prompt_side <= candidate["max_prompt_tokens"]:
+                tier = candidate
+                break
+        return (prompt_side * tier["input"] + output_tokens * tier["output"]) / 1_000_000
+
+    return (
+        input_tokens * pricing["input"]
+        + output_tokens * pricing["output"]
+        + cache_read_tokens * pricing["cache_read"]
+        + cache_write_tokens * pricing["cache_write"]
+    ) / 1_000_000
 
 
 class TokenAuditor:

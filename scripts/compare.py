@@ -143,13 +143,18 @@ def _cache_rate(run):
 
 
 def _et_loc_gross(run):
-    """Gross ET_LOC: (net_input + cache_read + output) / LOC.
+    """Gross ET_LOC: (input + cache_read + cache_write + output) / LOC.
     This is the true API traffic per line of code, unlike ET_LOC which
     only counts net_input + output and can be misleading when cache_read is high.
     Returns None if no valid data.
     """
     gt = run["grand_totals"]
-    gross = gt.get("input_tokens", 0) + gt.get("cache_read_tokens", 0) + gt.get("output_tokens", 0)
+    gross = (
+        gt.get("input_tokens", 0)
+        + gt.get("cache_read_tokens", 0)
+        + gt.get("cache_write_tokens", 0)
+        + gt.get("output_tokens", 0)
+    )
     loc = gt.get("total_loc", 0)
     if loc == 0:
         return None
@@ -157,12 +162,17 @@ def _et_loc_gross(run):
 
 
 def _output_ratio_gross(run):
-    """Output tokens as % of gross total (net_input + cache_read + output).
+    """Output tokens as % of gross total (input + cache_read + cache_write + output).
     Industry typical for code generation: 1-15%.
     Returns None if no valid data.
     """
     gt = run["grand_totals"]
-    gross = gt.get("input_tokens", 0) + gt.get("cache_read_tokens", 0) + gt.get("output_tokens", 0)
+    gross = (
+        gt.get("input_tokens", 0)
+        + gt.get("cache_read_tokens", 0)
+        + gt.get("cache_write_tokens", 0)
+        + gt.get("output_tokens", 0)
+    )
     output = gt.get("output_tokens", 0)
     if gross == 0:
         return None
@@ -445,7 +455,7 @@ Helm 部署、Dify 插件集成等多维度工程。<br>
     gt_rows = ""
     for name, ext, unit, hl in [
         ("总 Token (净)", lambda r: r["grand_totals"].get("total_tokens", 0), "num", "min"),
-        ("总 Token (含缓存)", lambda r: r["grand_totals"].get("input_tokens", 0) + r["grand_totals"].get("cache_read_tokens", 0) + r["grand_totals"].get("output_tokens", 0), "num", "neutral"),
+        ("总 Token (含缓存)", lambda r: r["grand_totals"].get("total_tokens", 0), "num", "neutral"),
         ("Input Token (净)", lambda r: r["grand_totals"].get("input_tokens", 0), "num", "min"),
         ("Output Token", lambda r: r["grand_totals"].get("output_tokens", 0), "num", "min"),
         ("Cache Read", lambda r: r["grand_totals"].get("cache_read_tokens", 0), "num", "max"),
@@ -828,7 +838,7 @@ def render_single_report(run):
 
 <div class="summary-box">
   <div class="summary-item"><div class="big">{gt.get('total_tokens', 0):,}</div><div class="label">总 Token (净)</div></div>
-  <div class="summary-item"><div class="big">{gt.get('input_tokens', 0) + gt.get('cache_read_tokens', 0) + gt.get('output_tokens', 0):,}</div><div class="label">总 Token (含缓存)</div></div>
+  <div class="summary-item"><div class="big">{gt.get('total_tokens', 0):,}</div><div class="label">总 Token (含缓存)</div></div>
   <div class="summary-item"><div class="big">{gt.get('total_loc', 0):,}</div><div class="label">代码行数 (LOC)</div></div>
   <div class="summary-item"><div class="big">{gt.get('total_files', 0)}</div><div class="label">文件数</div></div>
   <div class="summary-item"><div class="big">{fmt_val(duration, 'time')}</div><div class="label">总耗时</div></div>

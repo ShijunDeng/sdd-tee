@@ -53,8 +53,8 @@ batch-v51-proxy:  ## Run all combos through LiteLLM Proxy
 report-v51:  ## Generate report from latest run
 	@FULL_JSON=$$(ls -t $(RUNS)/v5.1/*_full.json 2>/dev/null | head -1); \
 	if [ -n "$$FULL_JSON" ]; then \
-		python3 scripts/report.py --data "$$FULL_JSON" 2>/dev/null || true; \
-		echo "Report: $(REPORTS)/v5.1/"; \
+		python3 scripts/report.py --data "$$FULL_JSON"; \
+		echo "Report: $(REPORTS)/v5.1/sdd_tee_report.html"; \
 	else \
 		echo "No v5.1 data found. Run 'make run-v51' first."; \
 	fi

@@ -29,7 +29,7 @@ BASE = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE / "scripts"))
 
 from schema import STAGES
-from auditor import get_pricing
+from auditor import compute_token_cost
 from adapters.opencode_cli import OpenCodeCliAdapter
 from adapters.claude_code import ClaudeCodeAdapter
 from adapters.base import BaseAdapter, StageRecord
@@ -166,12 +166,18 @@ def main():
             log.info(f"  {stage_id}: executing (attempt 1 of 3 with backoff)...")
             stage_start = time.time()
 
+            # Model-specific timeout: kimi-k2.5 has long-tail API latency
+            timeout = 600
+            if "kimi" in model.lower() and stage_id == "ST-5":
+                timeout = 1800  # 30min initial timeout for kimi ST-5
+
             rec = adapter.run(
                 prompt=prompt,
                 workspace=str(workspace),
                 log_path=str(log_file),
                 stage=stage_id,
                 stage_name=stage_name,
+                timeout=timeout,
             )
 
             stage_end = time.time()
@@ -198,7 +204,10 @@ def main():
                     "output_tokens": rec.output_tokens,
                     "cache_read_tokens": rec.cache_read_tokens,
                     "cache_write_tokens": rec.cache_write_tokens,
-                    "total_tokens": rec.input_tokens + rec.output_tokens,
+                    "total_tokens": (
+                        rec.input_tokens + rec.output_tokens
+                        + rec.cache_read_tokens + rec.cache_write_tokens
+                    ),
                     "human_input_tokens": 0,
                     "spec_context_tokens": 0,
                     "iterations": rec.iterations,
@@ -222,7 +231,7 @@ def main():
             "output_tokens": total_output,
             "cache_read_tokens": total_cache_read,
             "cache_write_tokens": total_cache_write,
-            "total_tokens": total_input + total_output,
+            "total_tokens": total_input + total_output + total_cache_read + total_cache_write,
             "human_input_tokens": 0,
             "spec_context_tokens": 0,
             "iterations": total_iterations,
@@ -231,17 +240,10 @@ def main():
             "cost_usd": 0.0,
         }
 
-        # Recompute cost
-        pricing = get_pricing(model)
-        if pricing:
-            net_in = max(0, total_input - total_cache_read)
-            ar["totals"]["cost_usd"] = round(
-                (net_in * pricing["input"] +
-                 total_output * pricing["output"] +
-                 total_cache_read * pricing["cache_read"] +
-                 total_cache_write * pricing["cache_write"]) / 1_000_000,
-                4,
-            )
+        ar["totals"]["cost_usd"] = round(
+            compute_token_cost(model, total_input, total_output, total_cache_read, total_cache_write),
+            4,
+        )
 
     # Recompute grand totals
     gt = data.get("grand_totals", {})
@@ -251,13 +253,14 @@ def main():
         "output_tokens": sum(ar["totals"]["output_tokens"] for ar in ar_results),
         "cache_read_tokens": sum(ar["totals"]["cache_read_tokens"] for ar in ar_results),
         "cache_write_tokens": sum(ar["totals"]["cache_write_tokens"] for ar in ar_results),
-        "total_tokens": sum(ar["totals"]["input_tokens"] + ar["totals"]["output_tokens"] for ar in ar_results),
+        "total_tokens": sum(ar["totals"]["total_tokens"] for ar in ar_results),
         "human_input_tokens": 0,
         "spec_context_tokens": 0,
         "total_iterations": sum(ar["totals"]["iterations"] for ar in ar_results),
         "total_duration_seconds": gt.get("total_duration_seconds", 0),
         "total_api_calls": sum(ar["totals"]["api_calls"] for ar in ar_results),
-        "total_cost_usd": sum(ar["totals"]["cost_usd"] for ar in ar_results),
+        "total_cost_usd": round(sum(ar["totals"]["cost_usd"] for ar in ar_results), 4),
+        "total_cost_cny": round(sum(ar["totals"]["cost_usd"] for ar in ar_results) * 7.2, 4),
         "total_loc": gt.get("total_loc", 0),
         "total_files": gt.get("total_files", 0),
         "ar_count": len(ar_results),
@@ -284,14 +287,13 @@ def main():
             sa["total_iterations"] += sv.get("iterations", 0)
             sa["duration_seconds"] += sv.get("duration_seconds", 0)
             sa["total_api_calls"] += sv.get("api_calls", 0)
-            pricing = get_pricing(model)
-            if pricing:
-                net_in = max(0, sv.get("input_tokens", 0) - sv.get("cache_read_tokens", 0))
-                sa["cost_usd"] += (
-                    (net_in * pricing["input"] + sv.get("output_tokens", 0) * pricing["output"] +
-                     sv.get("cache_read_tokens", 0) * pricing["cache_read"] +
-                     sv.get("cache_write_tokens", 0) * pricing["cache_write"]) / 1_000_000
-                )
+            sa["cost_usd"] += compute_token_cost(
+                model,
+                sv.get("input_tokens", 0),
+                sv.get("output_tokens", 0),
+                sv.get("cache_read_tokens", 0),
+                sv.get("cache_write_tokens", 0),
+            )
     for sa in stage_agg.values():
         sa["cost_usd"] = round(sa["cost_usd"], 4)
     data["stage_aggregates"] = stage_agg

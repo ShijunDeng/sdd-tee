@@ -44,7 +44,7 @@ BASE = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE / "scripts"))
 
 from schema import STAGES
-from auditor import TokenAuditor, get_pricing
+from auditor import TokenAuditor, get_pricing, compute_token_cost
 from equivalence import EquivalenceChecker, EquivalenceResult
 
 # ─── AR catalog ───────────────────────────────────────────────────────────
@@ -707,6 +707,7 @@ def _merge_stage_record(total: StageRecord, part: StageRecord) -> StageRecord:
     total.cache_write_tokens += part.cache_write_tokens
     total.iterations += part.iterations
     total.api_calls += part.api_calls
+    total.cost_usd += part.cost_usd
     total.duration_seconds += part.duration_seconds
     total.attempts += max(0, part.attempts)
     if part.error:
@@ -1066,6 +1067,7 @@ def run_benchmark(
                         rec.output_tokens = proxy_audit.output_tokens
                         rec.cache_read_tokens = proxy_audit.cache_read_tokens
                         rec.cache_write_tokens = proxy_audit.cache_write_tokens
+                        rec.cost_usd = proxy_audit.compute_cost(model)
                         rec.api_calls = proxy_audit.api_calls
                         rec.iterations = proxy_audit.api_calls
                         rec.data_source = "litellm_proxy"
@@ -1112,13 +1114,17 @@ def run_benchmark(
         }
 
         # Compute cost from real pricing
-        pricing = get_pricing(model)
-        if pricing:
+        if any(r.cost_usd for r in stage_records.values()):
+            totals["cost_usd"] = round(sum(r.cost_usd for r in stage_records.values()), 4)
+        else:
             totals["cost_usd"] = round(
-                (totals["input_tokens"] * pricing["input"] +
-                 totals["output_tokens"] * pricing["output"] +
-                 totals["cache_read_tokens"] * pricing["cache_read"] +
-                 totals["cache_write_tokens"] * pricing["cache_write"]) / 1_000_000,
+                compute_token_cost(
+                    model,
+                    totals["input_tokens"],
+                    totals["output_tokens"],
+                    totals["cache_read_tokens"],
+                    totals["cache_write_tokens"],
+                ),
                 4,
             )
 
@@ -1129,13 +1135,44 @@ def run_benchmark(
         actual_loc = st5_record.loc_delta
         actual_files = st5_record.source_changed_files
 
-        # Quality metrics from equivalence check
+        # Quality metrics from equivalence check, adjusted by benchmark
+        # validation failures. Equivalence is cumulative within a workspace, so
+        # a nearly-empty AR can appear equivalent because earlier ARs already
+        # generated files in the same module. Implementation-stage validation
+        # must therefore cap the per-AR quality score.
         eq_data = _eq_result if '_eq_result' in dir() else EquivalenceResult()
+        st5_errors = stage_records.get("ST-5", StageRecord()).validation_errors or []
+        st6_errors = stage_records.get("ST-6", StageRecord()).validation_errors or []
+        all_validation_errors = [
+            err
+            for record in stage_records.values()
+            for err in (record.validation_errors or [])
+        ]
+        local_check_failed = any("local checks failed" in e for e in st6_errors)
+        implementation_failed = bool(st5_errors)
+        model_verification_failed = any("model verification failed" in e for e in st6_errors)
+        consistency_score = eq_data.overall_score / 100 if eq_data.overall_score > 0 else 0
+        code_usability = eq_data.api_compliance_pct / 100 if eq_data.api_compliance_pct > 0 else 0
+        if implementation_failed:
+            consistency_score = min(consistency_score, 0.25)
+            code_usability = min(code_usability, 0.25)
+        if local_check_failed:
+            consistency_score = min(consistency_score, 0.2)
+            code_usability = 0
+        elif model_verification_failed:
+            consistency_score = min(consistency_score, 0.8)
         quality = {
-            "consistency_score": eq_data.overall_score,
-            "code_usability": eq_data.api_compliance_pct / 100 if eq_data.api_compliance_pct > 0 else 0,
+            "consistency_score": consistency_score,
+            "consistency_pct": round(consistency_score * 100, 2),
+            "code_usability": code_usability,
             "test_coverage": 0,  # Requires running actual tests
             "bugs_found": 0,
+            "implementation_valid": not implementation_failed,
+            "local_checks_passed": not local_check_failed,
+            "validation_error_count": len(all_validation_errors),
+            "critical_validation_errors": st5_errors + [
+                e for e in st6_errors if "local checks failed" in e or "model verification failed" in e
+            ],
             "original_code_coverage": eq_data.file_coverage_pct,
             "api_contract_compliance": eq_data.api_compliance_pct,
             "line_similarity": eq_data.line_similarity_pct,
@@ -1169,6 +1206,7 @@ def run_benchmark(
                     "iterations": v.iterations,
                     "duration_seconds": round(v.duration_seconds, 2),
                     "api_calls": v.api_calls,
+                    "cost_usd": round(v.cost_usd, 6),
                     "data_source": v.data_source,
                     "exit_code": v.exit_code,
                     "attempts": v.attempts,
@@ -1236,6 +1274,8 @@ def run_benchmark(
             "cache_write_tokens": sum(r["stages"][sid]["cache_write_tokens"] for r in ar_results),
             "duration_seconds": round(sum(r["stages"][sid]["duration_seconds"] for r in ar_results), 2),
             "iterations": sum(r["stages"][sid]["iterations"] for r in ar_results),
+            "api_calls": sum(r["stages"][sid]["api_calls"] for r in ar_results),
+            "cost_usd": round(sum(r["stages"][sid].get("cost_usd", 0.0) for r in ar_results), 4),
         }
 
     baselines = _compute_baselines(ar_results)
@@ -1332,9 +1372,9 @@ def _compute_ar_metrics(ar: dict) -> dict:
         qt_bug = 0  # Not measured, not "100 bugs found"
 
     return {
-        "ET_LOC": round(total / loc, 2),
-        "ET_FILE": round(total / nf, 2),
-        "ET_TASK": round(total / tasks, 2),
+        "ET_LOC": round(st5 / loc, 2),
+        "ET_FILE": round(st5 / nf, 2),
+        "ET_TASK": round(st5 / tasks, 2),
         "ET_AR": round(total, 2),
         "ET_TIME": round(total / dur_h, 2),
         "ET_COST_LOC": round(totals["cost_usd"] / (loc / 1000), 2) if loc > 0 else 0,

@@ -16,6 +16,10 @@ import json
 import os
 
 from .base import BaseAdapter, StageRecord
+try:
+    from auditor import compute_token_cost
+except ImportError:
+    from scripts.auditor import compute_token_cost
 
 
 class OpenCodeCliAdapter(BaseAdapter):
@@ -48,6 +52,7 @@ class OpenCodeCliAdapter(BaseAdapter):
         total_output = 0
         total_cache_read = 0
         total_cache_write = 0
+        total_cost = 0.0
         api_calls = 0
 
         for line in log_text.splitlines():
@@ -95,12 +100,14 @@ class OpenCodeCliAdapter(BaseAdapter):
             total_output += out
             total_cache_read += cr
             total_cache_write += cw
+            total_cost += compute_token_cost(self.model, inp, out, cr, cw)
             api_calls += 1
 
         record.input_tokens = total_input
         record.output_tokens = total_output
         record.cache_read_tokens = total_cache_read
         record.cache_write_tokens = total_cache_write
+        record.cost_usd = total_cost
         record.api_calls = api_calls
         record.iterations = api_calls
         return record
