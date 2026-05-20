@@ -38,6 +38,13 @@ dist/
 # LiteLLM
 results/litellm_usage.db
 
+# Benchmark outputs
+results/6.0/
+results/project_analysis/
+results/reports/
+results/runs/
+!results/.gitkeep
+
 # Benchmark transient logs
 results/**/*.log
 results/**/*_logs/

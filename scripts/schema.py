@@ -77,7 +77,7 @@ METRIC_IDS = {
     "PT-DEV":    "开发占比 = ST-5 / 总Token; 预期 45-65%",
     "PT-VERIFY": "验证归档占比 = (ST-6+ST-7) / 总Token; 预期 8-18%",
     "PT-PEAK":   "峰值阶段 = argmax(ST-0~ST-7)",
-    "PT-CACHE":  "Cache命中率 = cache_read / input_tokens; 预期 >70%",
+    "PT-CACHE":  "Cache命中率 = cache_read / (input_tokens + cache_read); 预期 >70%",
 }
 
 # ============================================================================
@@ -338,7 +338,10 @@ def validate_report_data(data):
 
     # Non-fatal warnings
     if gt:
-        cache_rate = gt.get("cache_read_tokens", 0) / max(gt.get("input_tokens", 1), 1)
+        cache_rate = gt.get("cache_read_tokens", 0) / max(
+            gt.get("input_tokens", 0) + gt.get("cache_read_tokens", 0),
+            1,
+        )
         if cache_rate < 0.50:
             warnings.append(f"W-CACHE-LOW: Cache rate {cache_rate:.0%} < 50%")
         dev_rate = sa.get("ST-5", {}).get("total_tokens", 0) / max(gt.get("total_tokens", 1), 1)

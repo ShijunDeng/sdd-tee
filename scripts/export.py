@@ -40,6 +40,14 @@ def discover_runs(pattern: str = "results/runs/v5.1/*_full.json") -> list[str]:
     return sorted(glob.glob(pattern))
 
 
+def cache_hit_rate(values: dict) -> float:
+    """Cache hit rate = cache_read / (input + cache_read)."""
+    return values.get("cache_read_tokens", 0) / max(
+        values.get("input_tokens", 0) + values.get("cache_read_tokens", 0),
+        1,
+    )
+
+
 def export_csv(runs: list[dict], output_dir: Path):
     """Export runs as CSV files — one for summary, one for per-stage, one for per-AR."""
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -51,7 +59,7 @@ def export_csv(runs: list[dict], output_dir: Path):
         writer.writerow([
             "run_id", "tool", "model", "total_tokens", "input_tokens",
             "output_tokens", "cache_read_tokens", "cache_write_tokens",
-            "cost_usd", "total_loc", "total_files", "ar_count",
+            "cache_hit_rate", "cost_usd", "total_loc", "total_files", "ar_count",
             "duration_seconds", "api_calls", "iterations",
         ])
         for r in runs:
@@ -66,6 +74,7 @@ def export_csv(runs: list[dict], output_dir: Path):
                 gt.get("output_tokens", 0),
                 gt.get("cache_read_tokens", 0),
                 gt.get("cache_write_tokens", 0),
+                round(cache_hit_rate(gt), 6),
                 round(gt.get("total_cost_usd", gt.get("cost_usd", 0)), 4),
                 gt.get("total_loc", 0),
                 gt.get("total_files", 0),
@@ -83,11 +92,12 @@ def export_csv(runs: list[dict], output_dir: Path):
         writer.writerow([
             "run_id", "tool", "model", "stage", "stage_name",
             "total_tokens", "input_tokens", "output_tokens",
-            "cache_read_tokens", "duration_seconds", "iterations",
+            "cache_read_tokens", "cache_write_tokens", "cache_hit_rate",
+            "duration_seconds", "iterations",
         ])
         for r in runs:
             m = r["meta"]
-            for sid in ["ST-0", "ST-1", "ST-2", "ST-3", "ST-4", "ST-5", "ST-6", "ST-7"]:
+            for sid in ["ST-0", "ST-1", "ST-2", "ST-3", "ST-4", "ST-5", "ST-6", "ST-6.5", "ST-7"]:
                 sa = r.get("stage_aggregates", {}).get(sid, {})
                 writer.writerow([
                     m.get("run_id", ""),
@@ -99,6 +109,8 @@ def export_csv(runs: list[dict], output_dir: Path):
                     sa.get("input_tokens", 0),
                     sa.get("output_tokens", 0),
                     sa.get("cache_read_tokens", 0),
+                    sa.get("cache_write_tokens", 0),
+                    round(cache_hit_rate(sa), 6),
                     sa.get("duration_seconds", 0),
                     sa.get("iterations", 0),
                 ])
@@ -111,7 +123,7 @@ def export_csv(runs: list[dict], output_dir: Path):
         writer.writerow([
             "run_id", "tool", "model", "ar_id", "ar_name", "module",
             "lang", "size", "total_tokens", "cost_usd",
-            "actual_loc", "actual_files", "duration_seconds",
+            "cache_hit_rate", "actual_loc", "actual_files", "duration_seconds",
         ])
         for r in runs:
             m = r["meta"]
@@ -127,6 +139,7 @@ def export_csv(runs: list[dict], output_dir: Path):
                     ar["size"],
                     ar["totals"]["total_tokens"],
                     round(ar["totals"]["cost_usd"], 4),
+                    round(cache_hit_rate(ar.get("totals", {})), 6),
                     ar["output"]["actual_loc"],
                     ar["output"]["actual_files"],
                     ar["totals"]["duration_seconds"],
@@ -158,6 +171,8 @@ def export_json_summary(runs: list[dict], output_dir: Path):
                 "output": gt.get("output_tokens", 0),
                 "cache_read": gt.get("cache_read_tokens", 0),
                 "cache_write": gt.get("cache_write_tokens", 0),
+                "cache_total": gt.get("cache_read_tokens", 0) + gt.get("cache_write_tokens", 0),
+                "cache_hit_rate": round(cache_hit_rate(gt), 6),
             },
             "cost_usd": round(gt.get("total_cost_usd", gt.get("cost_usd", 0)), 4),
             "output": {
@@ -175,11 +190,12 @@ def export_json_summary(runs: list[dict], output_dir: Path):
 
         # Stage distribution
         total = max(gt.get("total_tokens", 1), 1)
-        for sid in ["ST-0", "ST-1", "ST-2", "ST-3", "ST-4", "ST-5", "ST-6", "ST-7"]:
+        for sid in ["ST-0", "ST-1", "ST-2", "ST-3", "ST-4", "ST-5", "ST-6", "ST-6.5", "ST-7"]:
             sa = r.get("stage_aggregates", {}).get(sid, {})
             run_data["stage_distribution"][sid] = {
                 "tokens": sa.get("total_tokens", 0),
                 "pct": round(sa.get("total_tokens", 0) / total, 4),
+                "cache_hit_rate": round(cache_hit_rate(sa), 6),
             }
 
         summary["runs"].append(run_data)
@@ -194,8 +210,7 @@ def export_json_summary(runs: list[dict], output_dir: Path):
                 "most_loc": max(r["grand_totals"]["total_loc"] for r in valid),
                 "fastest": min(r["grand_totals"]["total_duration_seconds"] for r in valid),
                 "best_cache_rate": max(
-                    r["grand_totals"].get("cache_read_tokens", 0)
-                    / max(r["grand_totals"].get("input_tokens", 1), 1)
+                    cache_hit_rate(r["grand_totals"])
                     for r in valid
                 ),
             }
@@ -218,8 +233,8 @@ def export_markdown(runs: list[dict], output_dir: Path):
         "",
         "## Summary",
         "",
-        "| Run | Tool | Model | Tokens | Cost | LOC | Duration |",
-        "|-----|------|-------|--------|------|-----|----------|",
+        "| Run | Tool | Model | Tokens | Cache Hit | Cost | LOC | Duration |",
+        "|-----|------|-------|--------|-----------|------|-----|----------|",
     ]
 
     for r in runs:
@@ -236,6 +251,7 @@ def export_markdown(runs: list[dict], output_dir: Path):
             f"| {m.get('tool', '?')} "
             f"| {m.get('model', '?')} "
             f"| {gt.get('total_tokens', 0):,} "
+            f"| {cache_hit_rate(gt):.1%} "
             f"| ${gt.get('total_cost_usd', gt.get('cost_usd', 0)):.2f} "
             f"| {gt.get('total_loc', 0):,} "
             f"| {dur_str} |"

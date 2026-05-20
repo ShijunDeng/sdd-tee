@@ -1352,6 +1352,10 @@ def _compute_ar_metrics(ar: dict) -> dict:
 
     st5 = stages.get("ST-5", {}).get("total_tokens", 0)
     total = totals["total_tokens"]
+    cache_hit_rate = totals.get("cache_read_tokens", 0) / max(
+        totals.get("input_tokens", 0) + totals.get("cache_read_tokens", 0),
+        1,
+    )
     loc = max(out["actual_loc"], 1)
     nf = max(out["actual_files"], 1)
     tasks = max(out["tasks_count"], 1)
@@ -1394,9 +1398,10 @@ def _compute_ar_metrics(ar: dict) -> dict:
         ),
         "PT_DEV": round(st5 / max(total, 1), 4),
         "PT_VERIFY": round(
-            sum(stages.get(s, {}).get("total_tokens", 0) for s in ["ST-6", "ST-7"])
+            sum(stages.get(s, {}).get("total_tokens", 0) for s in ["ST-6", "ST-6.5", "ST-7"])
             / max(total, 1), 4
         ),
+        "PT_CACHE": round(cache_hit_rate, 4),
     }
 
 

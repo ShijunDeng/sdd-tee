@@ -355,6 +355,8 @@ def generate_mock_data():
             "total_tokens": sum(r["stages"][sid]["total_tokens"] for r in ar_results),
             "input_tokens": sum(r["stages"][sid]["input_tokens"] for r in ar_results),
             "output_tokens": sum(r["stages"][sid]["output_tokens"] for r in ar_results),
+            "cache_read_tokens": sum(r["stages"][sid]["cache_read_tokens"] for r in ar_results),
+            "cache_write_tokens": sum(r["stages"][sid]["cache_write_tokens"] for r in ar_results),
             "duration_seconds": sum(r["stages"][sid]["duration_seconds"] for r in ar_results),
             "iterations": sum(r["stages"][sid]["iterations"] for r in ar_results),
         }
@@ -446,6 +448,34 @@ def _score_pct(value):
     return f"{val:.1%}"
 
 
+def _cache_hit_rate(values):
+    """Cache hit rate = cache_read / (input + cache_read)."""
+    input_tokens = values.get("input_tokens", 0)
+    cache_read = values.get("cache_read_tokens", 0)
+    return cache_read / max(input_tokens + cache_read, 1)
+
+
+def enrich_cache_metrics(data):
+    """Add derived cache metrics for HTML/report JSON consumers."""
+    gt = data.get("grand_totals", {})
+    if gt:
+        gt["cache_hit_rate"] = round(_cache_hit_rate(gt), 6)
+        gt["cache_total_tokens"] = gt.get("cache_read_tokens", 0) + gt.get("cache_write_tokens", 0)
+        gt["cache_token_share"] = round(gt["cache_total_tokens"] / max(gt.get("total_tokens", 0), 1), 6)
+
+    for stage in data.get("stage_aggregates", {}).values():
+        stage["cache_hit_rate"] = round(_cache_hit_rate(stage), 6)
+        stage["cache_total_tokens"] = stage.get("cache_read_tokens", 0) + stage.get("cache_write_tokens", 0)
+
+    for ar in data.get("ar_results", []):
+        totals = ar.get("totals", {})
+        if totals:
+            totals["cache_hit_rate"] = round(_cache_hit_rate(totals), 6)
+            totals["cache_total_tokens"] = totals.get("cache_read_tokens", 0) + totals.get("cache_write_tokens", 0)
+            ar.setdefault("metrics", {})["PT_CACHE"] = round(totals["cache_hit_rate"], 4)
+    return data
+
+
 def _bar_svg(items, width=600, height=28):
     """Render a horizontal stacked bar as inline SVG."""
     total = sum(v for _, v, _ in items)
@@ -499,12 +529,16 @@ def render_html(data):
     for sid in STAGE_NAMES:
         s = sa[sid]
         pct = s["total_tokens"] / total_tok * 100 if total_tok else 0
+        stage_cache_rate = s.get("cache_hit_rate", _cache_hit_rate(s))
         stage_rows += f"""<tr>
             <td><span style="display:inline-block;width:12px;height:12px;background:{stage_colors[sid]};border-radius:2px;margin-right:6px;vertical-align:middle"></span>{sid}</td>
             <td>{STAGE_NAMES[sid]}</td>
             <td>{OPSX_COMMANDS[sid]}</td>
             <td style="text-align:right">{_fmt(s['input_tokens'])}</td>
             <td style="text-align:right">{_fmt(s['output_tokens'])}</td>
+            <td style="text-align:right">{_fmt(s.get('cache_read_tokens', 0))}</td>
+            <td style="text-align:right">{_fmt(s.get('cache_write_tokens', 0))}</td>
+            <td style="text-align:right">{stage_cache_rate:.1%}</td>
             <td style="text-align:right;font-weight:600">{_fmt(s['total_tokens'])}</td>
             <td style="text-align:right">{pct:.1f}%</td>
             <td style="text-align:right">{s.get('iterations', s.get('total_iterations', 0))}</td>
@@ -526,6 +560,7 @@ def render_html(data):
             <td style="text-align:right">{_fmt(r['totals']['total_tokens'])}</td>
             <td style="text-align:right">{_fmt(r['output']['actual_loc'])}</td>
             <td style="text-align:right">{r['metrics']['ET_LOC']}</td>
+            <td style="text-align:right">{r.get('totals', {}).get('cache_hit_rate', _cache_hit_rate(r.get('totals', {}))):.1%}</td>
             <td style="text-align:right">${r.get('totals', {}).get('cost_usd', 0):.3f}</td>
             <td style="text-align:right">{_score_pct(r['quality']['consistency_score'])}</td>
             <td style="text-align:right">{r['quality']['code_usability']:.0%}</td>
@@ -558,7 +593,7 @@ def render_html(data):
     dev_tok = sa["ST-5"]["total_tokens"]
     verify_tok = sum(sa[s]["total_tokens"] for s in ("ST-6", "ST-6.5", "ST-7") if s in sa)
     peak_stage = max(STAGE_NAMES, key=lambda s: sa[s]["total_tokens"])
-    cache_rate = gt["cache_read_tokens"] / max(gt["input_tokens"] + gt["cache_read_tokens"], 1)
+    cache_rate = gt.get("cache_hit_rate", _cache_hit_rate(gt))
 
     # --- Efficiency scatter data (Token vs LOC for each AR) ---
     scatter_points = ""
@@ -687,6 +722,7 @@ def render_html(data):
   <div class="stat"><div class="v">{gt['total_tasks']}</div><div class="l">Task 总数</div></div>
   <div class="stat"><div class="v">{gt['total_iterations']}</div><div class="l">交互总轮数</div></div>
   <div class="stat"><div class="v">{gt['total_api_calls']}</div><div class="l">API 调用次数</div></div>
+  <div class="stat {'good' if cache_rate > 0.7 else 'warn' if cache_rate > 0.5 else 'danger'}"><div class="v">{cache_rate:.1%}</div><div class="l">Cache 命中率</div></div>
   <div class="stat"><div class="v">{gt['total_duration_seconds'] // 3600}h{(gt['total_duration_seconds'] % 3600) // 60}m</div><div class="l">总耗时</div></div>
 </div>
 
@@ -707,6 +743,8 @@ def render_html(data):
   </div>
   <p style="font-size:12px;color:var(--muted);margin-top:4px">
     Cache 命中率: {_pct(gt['cache_read_tokens'], gt['input_tokens'] + gt['cache_read_tokens'])} &nbsp;|&nbsp;
+    Cache 总量: {_fmt(gt.get('cache_total_tokens', gt['cache_read_tokens'] + gt['cache_write_tokens']))} &nbsp;|&nbsp;
+    Cache 占总 Token: {_pct(gt.get('cache_total_tokens', gt['cache_read_tokens'] + gt['cache_write_tokens']), gt['total_tokens'])} &nbsp;|&nbsp;
     Input/Output 比: {gt['input_tokens'] / max(gt['output_tokens'], 1):.1f}:1 &nbsp;|&nbsp;
     预制规范占 Input: {_pct(gt['spec_context_tokens'], gt['input_tokens'])}
   </p>
@@ -724,7 +762,7 @@ def render_html(data):
 
 <div class="card">
   <table>
-    <thead><tr><th>阶段</th><th>名称</th><th>OPSX 命令</th><th style="text-align:right">Input</th><th style="text-align:right">Output</th><th style="text-align:right">Total</th><th style="text-align:right">占比</th><th style="text-align:right">迭代</th><th style="text-align:right">耗时</th></tr></thead>
+    <thead><tr><th>阶段</th><th>名称</th><th>OPSX 命令</th><th style="text-align:right">Input</th><th style="text-align:right">Output</th><th style="text-align:right">Cache Read</th><th style="text-align:right">Cache Write</th><th style="text-align:right">Cache 命中率</th><th style="text-align:right">Total</th><th style="text-align:right">占比</th><th style="text-align:right">迭代</th><th style="text-align:right">耗时</th></tr></thead>
     <tbody>{stage_rows}</tbody>
   </table>
 </div>
@@ -860,7 +898,7 @@ def render_html(data):
 <h2 id="ar-detail">8. AR 需求明细（按 Token 消耗降序）</h2>
 <div class="card" style="overflow-x:auto">
   <table>
-    <thead><tr><th>AR</th><th>名称</th><th>模块</th><th>语言</th><th>规模</th><th style="text-align:right">Tokens</th><th style="text-align:right">LOC</th><th style="text-align:right">Tok/LOC</th><th style="text-align:right">成本</th><th style="text-align:right">一致性</th><th style="text-align:right">可用率</th></tr></thead>
+    <thead><tr><th>AR</th><th>名称</th><th>模块</th><th>语言</th><th>规模</th><th style="text-align:right">Tokens</th><th style="text-align:right">LOC</th><th style="text-align:right">Tok/LOC</th><th style="text-align:right">Cache 命中率</th><th style="text-align:right">成本</th><th style="text-align:right">一致性</th><th style="text-align:right">可用率</th></tr></thead>
     <tbody>{ar_rows}</tbody>
   </table>
   <p style="font-size:12px;color:var(--muted);margin-top:4px">橙色背景行: Token/LOC 超过同规模基线 200%（异常标记）</p>
@@ -985,6 +1023,8 @@ def main():
     else:
         print("Usage: --mock for mock data, or --data <file> for real data")
         return
+
+    data = enrich_cache_metrics(data)
 
     # Schema validation — ensures ALL metrics from design doc are present
     try:
