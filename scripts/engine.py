@@ -126,7 +126,10 @@ PLACEHOLDER_PATTERNS = [
 ALLOWED_PLACEHOLDER_LINE_SNIPPETS = [
     "pass  # ignore errors during cleanup",
     "store placeholder",
+    "store sandbox placeholder",
     "storeplaceholder",
+    "sandboxstoreplaceholder",
+    "buildsandboxplaceholder",
     "todo extend this to unknown resources with a client pool",
     "placeholder:",
     "testbuildsandboxplaceholder",
