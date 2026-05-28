@@ -7069,7 +7069,9 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
         ]
     elif ar["lang"] == "Go":
         target = f"./{module}/..." if module else "./..."
-        if ar.get("id") == "AR-035" or ar.get("id") in FORBIDDEN_DEPENDENCY_METADATA_BY_AR:
+        if ar.get("id") in {"AR-013", "AR-014"}:
+            cmd = ["bash", "-lc", f"go test -mod=readonly {target}"]
+        elif ar.get("id") == "AR-035" or ar.get("id") in FORBIDDEN_DEPENDENCY_METADATA_BY_AR:
             cmd = ["bash", "-lc", f"go test {target}"]
         else:
             cmd = ["bash", "-lc", f"go mod tidy && go test {target}"]
