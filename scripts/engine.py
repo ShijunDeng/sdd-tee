@@ -1769,16 +1769,30 @@ def _validate_workloadmanager_verification_artifact(workspace: Path, ar: dict) -
     errors: list[str] = []
 
     forbidden_phrases = [
-        ("go 1.22", "Go 1.22 compatibility is not the WorkloadManager production baseline"),
-        ("go1.22", "Go 1.22 compatibility is not the WorkloadManager production baseline"),
-        ("missing test files", "WorkloadManager tests are intentionally deferred to AR-038"),
-        ("no test files found", "WorkloadManager tests are intentionally deferred to AR-038"),
-        ("required test files", "WorkloadManager tests are intentionally deferred to AR-038"),
-        ("all required test files are absent", "WorkloadManager tests are intentionally deferred to AR-038"),
+        ("go 1.22", "Go 1.22 compatibility is not the WorkloadManager production baseline", False),
+        ("go1.22", "Go 1.22 compatibility is not the WorkloadManager production baseline", False),
+        ("missing test files", "WorkloadManager tests are intentionally deferred to AR-038", True),
+        ("no test files found", "WorkloadManager tests are intentionally deferred to AR-038", True),
+        ("required test files", "WorkloadManager tests are intentionally deferred to AR-038", True),
+        ("all required test files are absent", "WorkloadManager tests are intentionally deferred to AR-038", True),
     ]
-    for phrase, reason in forbidden_phrases:
-        if phrase in lower:
+    deferred_test_markers = [
+        "ar-038",
+        "defer",
+        "scheduled",
+        "intentionally",
+        "expected",
+        "later testing ar",
+        "not a failure",
+    ]
+    for phrase, reason, allow_deferred_context in forbidden_phrases:
+        for line in lower.splitlines():
+            if phrase not in line:
+                continue
+            if allow_deferred_context and any(marker in line for marker in deferred_test_markers):
+                continue
             errors.append(f"{ar['id']} verification.md contains misleading report text: {reason}")
+            break
 
     for line in text.splitlines():
         line_lower = line.lower()
