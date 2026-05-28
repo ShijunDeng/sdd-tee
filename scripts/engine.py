@@ -3003,6 +3003,7 @@ def _validate_ar004_workloadmanager_framework(workspace: Path) -> list[str]:
             ],
         },
         "AR-004",
+        exact_production_files=True,
         forbid_tests=True,
     ) + _validate_workloadmanager_shared_contracts(workspace, "AR-004", forbid_tests=True)
 
@@ -7014,7 +7015,10 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "original AgentCube baseline (`go 1.24.4`, `toolchain go1.24.9`, Kubernetes modules v0.34.1, "
             "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2). "
             "For AR-004 specifically, the minimum required production files are `server.go`, `utils.go`, "
-            "`client_cache.go`, `k8s_client.go`, and the two `pkg/common/types` files."
+            "`client_cache.go`, `k8s_client.go`, and the two `pkg/common/types` files. The exact AR-004 "
+            "`pkg/workloadmanager/` production file set is only `server.go`, `utils.go`, `client_cache.go`, and "
+            "`k8s_client.go`; delete later-AR files such as `auth.go`, `handlers.go`, `informers.go`, "
+            "`garbage_collection.go`, controller files, and `cmd/workload-manager/main.go`."
         )
         if ar.get("id") == "AR-005":
             ar_repair_policy += (
