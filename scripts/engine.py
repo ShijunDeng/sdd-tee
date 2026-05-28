@@ -249,6 +249,12 @@ ROUTER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
     "AR-011": ["jwt.go", "config.go", "server.go", "handlers.go"],
 }
 
+STORE_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
+    "AR-012": ["interface.go", "error.go"],
+    "AR-013": ["store_redis.go", "store_redis_test.go", "singleton.go"],
+    "AR-014": ["store_valkey.go", "store_valkey_test.go", "singleton.go"],
+}
+
 AR_IMPLEMENTATION_NOTES = {
     "AR-004": (
         "Scope split: implement the real WorkloadManager HTTP server framework, not an alternate simplified API. "
@@ -317,9 +323,10 @@ AR_IMPLEMENTATION_NOTES = {
         "Scope split: implement only the store package contracts for this AR: Store interface, "
         "ErrNotFound, and the shared sandbox document type under `pkg/common/types/...` if it "
         "is missing. Do not modify existing `pkg/common/...` files outside that subpackage. "
-        "Do not create Redis or Valkey backend implementation files, placeholder provider "
-        "constructors, or singleton wiring that depends on absent backends; those belong to "
-        "AR-013 and AR-014. Do not modify go.mod or go.sum in this AR."
+        "Remove earlier temporary in-memory/empty store implementations. Do not create Redis or Valkey backend "
+        "implementation files, placeholder provider constructors, or singleton wiring that depends on absent "
+        "backends; those belong to AR-013 and AR-014. Keep a compileable `Storage()` singleton surface that "
+        "fails explicitly for deferred providers without empty Store methods. Do not modify go.mod or go.sum in this AR."
     ),
     "AR-013": (
         "Scope split: implement the Redis backend only. It may update store wiring and Redis tests, "
@@ -1288,6 +1295,20 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         original_reference_note = (
             "FULL ORIGINAL ROUTER JWT REFERENCE (ground truth for AR-011; tests and cmd/router are intentionally omitted):"
         )
+    if ar["id"] == "AR-012":
+        st5_intro = (
+            "Implement ONLY the Store contract split for this AR. Replace the earlier temporary `pkg/store/store.go` "
+            "empty implementation with real contract files: `pkg/store/interface.go`, `pkg/store/error.go`, and a "
+            "compileable `pkg/store/singleton.go` surface. Do not create Redis or Valkey backend files, tests, "
+            "mock stores, no-op Store method implementations, `initRedisStore`/`initValkeyStore` placeholders, or "
+            "dependency metadata changes. The singleton may return explicit deferred-provider errors until AR-013 "
+            "and AR-014 implement the concrete backends, but it must not return an empty Store implementation."
+        )
+        previous_ctx_limit = 6000
+        original_snippets_limit = 30000
+        original_reference_note = (
+            "LIMITED ORIGINAL STORE CONTRACT REFERENCE (ground truth for AR-012; Redis/Valkey backends are intentionally omitted):"
+        )
     if ar["id"] == "AR-042":
         st5_intro = (
             "Implement ONLY the fixed Docusaurus scaffold for this AR. This is not a full documentation "
@@ -2036,6 +2057,8 @@ def _validate_ar_specific_implementation(workspace: Path, ar: dict) -> list[str]
         return _validate_ar010_router_session_manager(workspace)
     if ar.get("id") == "AR-011":
         return _validate_ar011_router_jwt(workspace)
+    if ar.get("id") == "AR-012":
+        return _validate_ar012_store_contract(workspace)
     if ar.get("id") == "AR-013":
         return _validate_ar013_redis_backend(workspace)
     if ar.get("id") == "AR-014":
@@ -3619,6 +3642,108 @@ def _validate_ar011_router_jwt(workspace: Path) -> list[str]:
         if "github.com/golang-jwt/jwt/v5 v5.2.2" not in go_mod_text:
             errors.append("AR-011 go.mod missing original dependency: github.com/golang-jwt/jwt/v5 v5.2.2")
     errors.extend(_validate_workloadmanager_shared_contracts(workspace, "AR-011", forbid_tests=True))
+    return errors
+
+
+def _validate_ar012_store_contract(workspace: Path) -> list[str]:
+    errors: list[str] = []
+    root = workspace / "pkg" / "store"
+    if not root.exists():
+        return ["AR-012 must create pkg/store"]
+
+    early_tests = sorted(p.name for p in root.glob("*_test.go") if p.is_file())
+    if early_tests:
+        errors.append(
+            "AR-012 must not create store tests before backend/testing ARs: "
+            + ", ".join(early_tests[:12])
+        )
+
+    allowed_production = {"interface.go", "error.go", "singleton.go"}
+    production_files = {
+        p.name for p in root.glob("*.go")
+        if p.is_file() and not p.name.endswith("_test.go")
+    }
+    unexpected = sorted(production_files - allowed_production)
+    if unexpected:
+        errors.append(
+            "AR-012 store contract must not keep temporary or backend production files: "
+            + ", ".join(unexpected[:12])
+        )
+
+    required = {
+        "interface.go": [
+            "package store",
+            "github.com/volcano-sh/agentcube/pkg/common/types",
+            "type Store interface",
+            "Ping(ctx context.Context) error",
+            "GetSandboxBySessionID(ctx context.Context, sessionID string) (*types.SandboxInfo, error)",
+            "StoreSandbox(ctx context.Context, sandboxStore *types.SandboxInfo) error",
+            "UpdateSandbox(ctx context.Context, sandboxStore *types.SandboxInfo) error",
+            "DeleteSandboxBySessionID(ctx context.Context, sessionID string) error",
+            "ListExpiredSandboxes(ctx context.Context, before time.Time, limit int64) ([]*types.SandboxInfo, error)",
+            "ListInactiveSandboxes(ctx context.Context, before time.Time, limit int64) ([]*types.SandboxInfo, error)",
+            "UpdateSessionLastActivity(ctx context.Context, sessionID string, at time.Time) error",
+            "Close() error",
+        ],
+        "error.go": [
+            "package store",
+            "\"errors\"",
+            "ErrNotFound = errors.New(\"store: not found\")",
+        ],
+        "singleton.go": [
+            "package store",
+            "\"fmt\"",
+            "\"os\"",
+            "\"strings\"",
+            "\"sync\"",
+            "k8s.io/klog/v2",
+            "redisStoreType  string = \"redis\"",
+            "valkeyStoreType string = \"valkey\"",
+            "initStoreOnce = &sync.Once{}",
+            "provider      Store",
+            "func Storage() Store",
+            "initStoreOnce.Do",
+            "klog.Fatalf(\"init store failed: %v\", err)",
+            "return provider",
+            "func initStore() error",
+            "os.LookupEnv(\"STORE_TYPE\")",
+            "providerType = redisStoreType",
+            "strings.ToLower(providerType)",
+            "case redisStoreType:",
+            "case valkeyStoreType:",
+            "unsupported provider type",
+        ],
+    }
+    combined = ""
+    for rel, tokens in required.items():
+        path = root / rel
+        if not path.exists():
+            errors.append(f"AR-012 must create pkg/store/{rel}")
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        combined += "\n" + text
+        for token in tokens:
+            if token not in text:
+                errors.append(f"AR-012 pkg/store/{rel} missing production token: {token}")
+
+    for forbidden in [
+        "type storage struct",
+        "func (s *storage)",
+        "return &storage",
+        "initRedisStore(",
+        "initValkeyStore(",
+        "store_redis",
+        "store_valkey",
+        "github.com/redis/go-redis",
+        "github.com/valkey-io/valkey-go",
+        "not implemented",
+        "TODO",
+    ]:
+        if forbidden in combined:
+            errors.append(f"AR-012 store contract must not keep placeholder/backend token: {forbidden}")
+
+    errors.extend(_validate_common_types_package(workspace, "AR-012", forbid_tests=True))
+    errors.extend(_validate_workloadmanager_go_mod_baseline(workspace, "AR-012"))
     return errors
 
 
@@ -7034,6 +7159,17 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
             "stderr": "",
         })
 
+    if ar.get("id") == "AR-012":
+        start = time.time()
+        validation_errors = _validate_ar012_store_contract(workspace)
+        checks.append({
+            "command": "internal:validate_ar012_store_contract",
+            "exit_code": 1 if validation_errors else 0,
+            "duration_seconds": round(time.time() - start, 2),
+            "stdout": "\n".join(validation_errors[-40:]),
+            "stderr": "",
+        })
+
     if ar.get("id") == "AR-030":
         start = time.time()
         validation_errors = _validate_ar030_helm_chart(workspace)
@@ -7491,6 +7627,17 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`forwardToSandbox` to call `s.jwtManager.GenerateToken(claims)` for `Sandbox`/`SandboxClaim` kinds "
             "and set `Authorization: Bearer <token>`. Remove the earlier AR-009 `tokenSigner` shim. Ensure "
             "`go.mod` includes `github.com/golang-jwt/jwt/v5 v5.2.2`."
+        )
+    if ar.get("id") == "AR-012" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-012, reset `pkg/store` to only the store contract files for this split: "
+            "`pkg/store/interface.go`, `pkg/store/error.go`, and `pkg/store/singleton.go`. Remove the earlier "
+            "temporary `pkg/store/store.go` empty implementation and do not create `store_redis.go`, "
+            "`store_valkey.go`, tests, mocks, no-op Store method implementations, or dependency metadata changes. "
+            "`interface.go` must contain the real `Store` interface using `*types.SandboxInfo` and int64 limits. "
+            "`error.go` must define `ErrNotFound = errors.New(\"store: not found\")`. `singleton.go` must expose "
+            "`Storage()` with `sync.Once`, `STORE_TYPE` selection for redis/valkey, and explicit deferred-provider "
+            "errors until AR-013/AR-014; it must not call absent `initRedisStore` or `initValkeyStore` functions."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
@@ -8886,6 +9033,36 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
                         snippets.append(f"--- {rel} ---\n{go_mod.read_text(encoding='utf-8', errors='replace')}")
                     except OSError:
                         pass
+        return "\n\n".join(snippets) if snippets else ""
+
+    if module.strip("/") == "pkg/store":
+        store_root = original_path / "pkg" / "store"
+        snippets = []
+        if store_root.exists():
+            production_paths = {
+                fpath.name: fpath
+                for fpath in store_root.glob("*.go")
+                if not fpath.name.endswith("_test.go")
+            }
+            test_paths = {
+                fpath.name: fpath
+                for fpath in store_root.glob("*_test.go")
+            }
+            ordered_names = [
+                name for name in STORE_REFERENCE_ORDER_BY_AR.get(ar_id, [])
+                if name in production_paths or name in test_paths
+            ]
+            if not ordered_names:
+                ordered_names = sorted(production_paths)
+            for name in ordered_names:
+                fpath = production_paths.get(name) or test_paths.get(name)
+                if not fpath:
+                    continue
+                try:
+                    rel = fpath.relative_to(original_path)
+                    snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
+                except OSError:
+                    pass
         return "\n\n".join(snippets) if snippets else ""
 
     if module.strip("/") == "client-go":
