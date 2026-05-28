@@ -288,13 +288,16 @@ AR_IMPLEMENTATION_NOTES = {
     ),
     "AR-009": (
         "Scope split: implement only the Router HTTP reverse-proxy core in exactly "
-        "`pkg/router/config.go`, `pkg/router/server.go`, and `pkg/router/handlers.go`. Recreate the real route "
-        "wiring, health handlers, concurrency middleware, session-header flow, upstream selection, reverse proxy, "
-        "forwarding headers, and last-activity update calls from the original reference. Do not implement Router "
-        "session manager or JWT key management yet; those belong to AR-010 and AR-011. If the core needs future "
-        "collaborators to compile before those ARs, declare narrow interfaces inside the three allowed files instead "
-        "of creating `session_manager.go`, `session.go`, `jwt.go`, `jwt_manager.go`, tests, `cmd/router`, or shared "
-        "package rewrites. Treat `go.mod`, `go.sum`, `pkg/api`, `pkg/store`, and `pkg/common` as read-only in AR-009."
+            "`pkg/router/config.go`, `pkg/router/server.go`, and `pkg/router/handlers.go`. Recreate the real route "
+            "wiring, health handlers, concurrency middleware, session-header flow, upstream selection, reverse proxy, "
+            "forwarding headers, and last-activity update calls from the original reference. Do not implement Router "
+            "session manager or JWT key management yet; those belong to AR-010 and AR-011. If the core needs future "
+            "collaborators to compile before those ARs, declare narrow interfaces inside the three allowed files instead "
+            "of creating `session_manager.go`, `session.go`, `jwt.go`, `jwt_manager.go`, tests, `cmd/router`, or shared "
+            "package rewrites. Session lookup must return `*types.SandboxInfo` from `pkg/common/types`; do not define "
+            "local SandboxInfo or SandboxEntryPoint structs in `pkg/router`. Use an unexported JWT signer interface "
+            "such as `tokenSigner` rather than `type JWTManager interface`, because AR-011 owns the concrete "
+            "`JWTManager` type. Treat `go.mod`, `go.sum`, `pkg/api`, `pkg/store`, and `pkg/common` as read-only in AR-009."
     ),
     "AR-012": (
         "Scope split: implement only the store package contracts for this AR: Store interface, "
@@ -1186,7 +1189,11 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "implementation files, `cmd/router`, or shared package rewrites. AR-010 will implement the concrete "
             "session manager and AR-011 will implement JWT key management; for AR-009, keep those collaborators as "
             "narrow package-local interfaces or optional fields inside the three allowed files so `go test "
-            "./pkg/router/...` can compile without fake future implementations."
+            "./pkg/router/...` can compile without fake future implementations. The session interface must return "
+            "`*types.SandboxInfo` from `github.com/volcano-sh/agentcube/pkg/common/types`; do not define local "
+            "`SandboxInfo` or `SandboxEntryPoint` structs or conversion shims in `pkg/router`. Use an unexported "
+            "JWT signer interface such as `tokenSigner`; do not define `type JWTManager interface` because AR-011 "
+            "owns the concrete `JWTManager` type."
         )
         previous_ctx_limit = 5000
         original_snippets_limit = 50000
@@ -1289,7 +1296,7 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "2. Create or modify only `pkg/router/config.go`, `pkg/router/server.go`, and `pkg/router/handlers.go`\n"
             "3. Do not create `pkg/router/*_test.go`, `pkg/router/jwt*.go`, `pkg/router/session*.go`, `cmd/router`, or shared package files\n"
             "4. Preserve existing `go.mod` and `go.sum`; the dependency baseline already exists from earlier ARs\n"
-            "5. Use narrow interfaces for deferred AR-010/AR-011 collaborators instead of implementing fake session or JWT managers\n"
+            "5. Use `*types.SandboxInfo` and the existing shared `types.SandboxEntryPoint`; do not create local sandbox structs, conversion shims, or `type JWTManager interface`\n"
             "6. Match the real health routes, invocation routes, concurrency limit, reverse proxy behavior, and session header handling\n"
             "7. Do not report completion unless files were actually created or modified"
         )
@@ -2890,6 +2897,25 @@ def _validate_common_types_package(workspace: Path, label: str, *, forbid_tests:
             if token not in text:
                 errors.append(f"{label} {rel} missing token: {token}")
 
+    sandbox_path = workspace / "pkg" / "common" / "types" / "sandbox.go"
+    types_path = workspace / "pkg" / "common" / "types" / "types.go"
+    sandbox_text = sandbox_path.read_text(encoding="utf-8", errors="replace") if sandbox_path.exists() else ""
+    types_text = types_path.read_text(encoding="utf-8", errors="replace") if types_path.exists() else ""
+    if re.search(r"type\s+EntryPoint\s+struct", sandbox_text + "\n" + types_text):
+        errors.append(f"{label} shared types must not define non-original type EntryPoint; use SandboxEntryPoint")
+    if not re.search(r"type\s+SandboxInfo\s+struct\s*\{[^}]*EntryPoints\s+\[\]SandboxEntryPoint", sandbox_text, re.S):
+        errors.append(f"{label} SandboxInfo.EntryPoints must use []SandboxEntryPoint")
+    if not re.search(r"type\s+CreateSandboxResponse\s+struct\s*\{[^}]*EntryPoints\s+\[\]SandboxEntryPoint", sandbox_text, re.S):
+        errors.append(f"{label} CreateSandboxResponse.EntryPoints must use []SandboxEntryPoint")
+    entrypoint_tokens = [
+        ("Path", r"Path\s+string\s+`json:\"path\"`"),
+        ("Protocol", r"Protocol\s+string\s+`json:\"protocol\"`"),
+        ("Endpoint", r"Endpoint\s+string\s+`json:\"endpoint\"`"),
+    ]
+    for field, pattern in entrypoint_tokens:
+        if not re.search(pattern, sandbox_text):
+            errors.append(f"{label} SandboxEntryPoint missing original field {field}")
+
     return errors
 
 
@@ -2914,16 +2940,34 @@ def _validate_workloadmanager_store_contract(workspace: Path, label: str) -> lis
     store_root = workspace / "pkg" / "store"
     if not store_root.exists():
         return []
+    errors: list[str] = []
     concrete = sorted(
         p.name for p in store_root.glob("*.go")
         if p.is_file() and p.name != "store.go" and not p.name.endswith("_test.go")
     )
     if concrete:
-        return [
+        errors.append(
             f"{label} must not create concrete store backends before store ARs: "
             + ", ".join(concrete[:12])
+        )
+    store_go = store_root / "store.go"
+    if store_go.exists():
+        text = store_go.read_text(encoding="utf-8", errors="replace")
+        required = [
+            "type Store interface",
+            "GetSandboxBySessionID(ctx context.Context, sessionID string) (*types.SandboxInfo, error)",
+            "StoreSandbox(ctx context.Context",
+            "UpdateSandbox(ctx context.Context",
+            "DeleteSandboxBySessionID(ctx context.Context, sessionID string) error",
+            "ListExpiredSandboxes(ctx context.Context, before time.Time, limit int64)",
+            "ListInactiveSandboxes(ctx context.Context, before time.Time, limit int64)",
+            "UpdateSessionLastActivity(ctx context.Context, sessionID string, at time.Time) error",
+            "Close() error",
         ]
-    return []
+        for token in required:
+            if token not in text:
+                errors.append(f"{label} pkg/store/store.go missing original store contract token: {token}")
+    return errors
 
 
 def _validate_workloadmanager_shared_contracts(workspace: Path, label: str, *, forbid_tests: bool = False) -> list[str]:
@@ -3117,6 +3161,9 @@ def _validate_ar009_router_core(workspace: Path) -> list[str]:
             ],
             "server.go": [
                 "type Server struct",
+                "github.com/volcano-sh/agentcube/pkg/common/types",
+                "GetSandboxBySession(ctx context.Context, sessionID string, namespace string, name string, kind string) (*types.SandboxInfo, error)",
+                "type tokenSigner interface",
                 "func NewServer(config *Config) (*Server, error)",
                 "func (s *Server) concurrencyLimitMiddleware() gin.HandlerFunc",
                 "func (s *Server) setupRoutes()",
@@ -3134,8 +3181,11 @@ def _validate_ar009_router_core(workspace: Path) -> list[str]:
                 "func (s *Server) handleInvoke(c *gin.Context, namespace, name, path, kind string)",
                 "\"x-agentcube-session-id\"",
                 "GetSandboxBySession",
-                "UpdateSessionLastActivity",
+                "s.storeClient.UpdateSessionLastActivity",
                 "func determineUpstreamURL(sandbox *types.SandboxInfo, path string) (*url.URL, error)",
+                "strings.HasPrefix(path, ep.Path)",
+                "buildURL(ep.Protocol, ep.Endpoint)",
+                "func buildURL(protocol, endpoint string) *url.URL",
                 "func (s *Server) handleAgentInvoke(c *gin.Context)",
                 "func (s *Server) handleCodeInterpreterInvoke(c *gin.Context)",
                 "func (s *Server) forwardToSandbox(c *gin.Context, sandbox *types.SandboxInfo, path string)",
@@ -3159,6 +3209,22 @@ def _validate_ar009_router_core(workspace: Path) -> list[str]:
                 "AR-009 must not create router production files reserved for later ARs: "
                 + ", ".join(unexpected[:12])
             )
+        combined = "\n".join(
+            p.read_text(encoding="utf-8", errors="replace")
+            for p in root.glob("*.go")
+            if p.is_file()
+        )
+        for forbidden in [
+            "type SandboxInfo struct",
+            "type SandboxEntryPoint struct",
+            "func convertToTypesEntryPoints",
+            "type JWTManager interface",
+            "*JWTManager",
+            "UpdateSessionLastActivity(ctx context.Context, storeClient store.Store",
+        ]:
+            if forbidden in combined:
+                errors.append(f"AR-009 router core must not define local/future shim: {forbidden}")
+    errors.extend(_validate_workloadmanager_shared_contracts(workspace, "AR-009", forbid_tests=True))
     return errors
 
 
@@ -6940,7 +7006,11 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`pkg/workloadmanager/token_cache.go`. Delete any `pkg/workloadmanager/*_test.go` and "
             "`pkg/common/types/*_test.go`; tests belong to later testing ARs. Shared types must be exactly under "
             "`pkg/common/types/types.go` and `pkg/common/types/sandbox.go`, not `pkg/common/types.go`, and "
-            "workloadmanager must import `github.com/volcano-sh/agentcube/pkg/common/types`. Do not create concrete "
+            "workloadmanager must import `github.com/volcano-sh/agentcube/pkg/common/types`. `SandboxInfo.EntryPoints` "
+            "and `CreateSandboxResponse.EntryPoints` must use `[]SandboxEntryPoint`, and `SandboxEntryPoint` must have "
+            "`Path`, `Protocol`, and `Endpoint` fields; do not create a non-original `EntryPoint` type. The early "
+            "`pkg/store/store.go` contract must include `UpdateSessionLastActivity(ctx context.Context, sessionID string, "
+            "at time.Time) error` and the expired/inactive list methods with `limit int64`. Do not create concrete "
             "store backends such as `pkg/store/memory_store.go`, Redis, or Valkey implementations in WorkloadManager "
             "production ARs; only the shared `pkg/store/store.go` interface is allowed before the dedicated store ARs. "
             "Keep `go.mod` on the "
@@ -6967,7 +7037,10 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`workload_builder.go`. Remove non-original shim files such as `defaults.go`, `memory_store.go`, "
             "`middleware.go`, `sandbox_creator.go`, `store.go`, and `token_cache.go`. Use the original reference "
             "instead of patching individual missing tokens with dummy wrappers. Keep shared types under "
-            "`pkg/common/types/` and keep `go.mod` on the original AgentCube dependency baseline; do not import "
+            "`pkg/common/types/`: `SandboxEntryPoint` must have `Path`, `Protocol`, and `Endpoint`, and sandbox "
+            "responses must use `[]SandboxEntryPoint`, not a local `EntryPoint` type. Keep `pkg/store/store.go` aligned "
+            "with the original Store interface, including `UpdateSessionLastActivity` and int64 list limits. Keep "
+            "`go.mod` on the original AgentCube dependency baseline; do not import "
             "`github.com/volcano-sh/agentcube/pkg/common` from workloadmanager. Do not create workloadmanager or "
             "common/types tests in AR-008; tests belong to later testing ARs."
         )
@@ -6980,9 +7053,12 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`go.mod`, or `go.sum`. Implement the real Config/LastActivityAnnotationKey, Server/NewServer/Start, "
             "Gin health and invocation routes, concurrency middleware, `handleInvoke`, `determineUpstreamURL`, "
             "`handleAgentInvoke`, `handleCodeInterpreterInvoke`, `forwardToSandbox`, `httputil.NewSingleHostReverseProxy`, "
-            "forwarding headers, response `x-agentcube-session-id`, and best-effort last-activity update. Because "
-            "AR-010 and AR-011 are deferred, define only narrow package-local interfaces inside the allowed files for "
-            "session lookup and optional JWT signing; do not implement concrete session or JWT managers in AR-009."
+            "forwarding headers, response `x-agentcube-session-id`, and `s.storeClient.UpdateSessionLastActivity`. "
+            "Use `*types.SandboxInfo` and `types.SandboxEntryPoint` directly; do not define local `SandboxInfo`, "
+            "`SandboxEntryPoint`, `convertToTypesEntryPoints`, or a wrapper `UpdateSessionLastActivity` function. "
+            "Because AR-010 and AR-011 are deferred, define only narrow package-local interfaces inside the allowed "
+            "files for session lookup and optional JWT signing; use an unexported JWT signer interface such as "
+            "`tokenSigner`, not `type JWTManager interface` or `*JWTManager`."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
