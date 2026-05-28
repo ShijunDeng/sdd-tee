@@ -3546,11 +3546,7 @@ def _validate_ar011_router_jwt(workspace: Path) -> list[str]:
             "jwt.go": [
                 "github.com/golang-jwt/jwt/v5",
                 "crypto/rand",
-                "rsaKeySize = 2048",
-                "jwtExpiration = 5 * time.Minute",
                 "IdentitySecretName = \"picod-router-identity\"",
-                "PrivateKeyDataKey = \"private.pem\"",
-                "PublicKeyDataKey = \"public.pem\"",
                 "var IdentityNamespace = \"default\"",
                 "os.Getenv(\"AGENTCUBE_NAMESPACE\")",
                 "type JWTManager struct",
@@ -3596,6 +3592,15 @@ def _validate_ar011_router_jwt(workspace: Path) -> list[str]:
             for p in root.glob("*.go")
             if p.is_file()
         )
+        jwt_text = (root / "jwt.go").read_text(encoding="utf-8", errors="replace") if (root / "jwt.go").is_file() else ""
+        for label, pattern in {
+            "rsaKeySize": r"rsaKeySize\s*=\s*2048",
+            "jwtExpiration": r"jwtExpiration\s*=\s*5\s*\*\s*time\.Minute",
+            "PrivateKeyDataKey": r"PrivateKeyDataKey\s*=\s*\"private\.pem\"",
+            "PublicKeyDataKey": r"PublicKeyDataKey\s*=\s*\"public\.pem\"",
+        }.items():
+            if not re.search(pattern, jwt_text):
+                errors.append(f"AR-011 pkg/router/jwt.go missing original constant: {label}")
         for forbidden in [
             "type JWTManager interface",
             "tokenSigner    tokenSigner",
