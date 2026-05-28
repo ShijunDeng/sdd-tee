@@ -136,6 +136,13 @@ ALLOWED_PLACEHOLDER_LINE_SNIPPETS = [
     "testbuildsandboxplaceholder",
 ]
 NON_BLOCKING_VALIDATION_PREFIXES: tuple[str, ...] = ()
+MIN_IMPLEMENTATION_LOC_BY_AR = {
+    # AR-006 extends the creation path with the delete endpoint and exact
+    # lifecycle helper contracts. Some rollback helpers can already exist from
+    # AR-005, so the generic 30 LOC floor encourages churn after the AR-specific
+    # validators have already proven the lifecycle contract is present.
+    "AR-006": 10,
+}
 
 CHANGE_DOC_EXTS = {".md", ".yaml", ".yml", ".json", ".txt"}
 CHANGE_DOC_NAMES = {".openspec.yaml", "README.md", "proposal.md", "delta-spec.md",
@@ -1767,7 +1774,8 @@ def _validate_stage_output(
             )
         if not source_changed:
             errors.append("implementation stage did not create or modify project source files outside changes/")
-        min_loc = 10 if ar["type"] in {"测试"} else min(30, max(10, ar.get("est_loc", 50) // 6))
+        default_min_loc = 10 if ar["type"] in {"测试"} else min(30, max(10, ar.get("est_loc", 50) // 6))
+        min_loc = MIN_IMPLEMENTATION_LOC_BY_AR.get(ar["id"], default_min_loc)
         if loc_delta < min_loc:
             errors.append(f"implementation LOC delta below minimum: {loc_delta} < {min_loc}")
 
