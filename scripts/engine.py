@@ -2466,13 +2466,18 @@ def _validate_ar015_picod_execute_api(workspace: Path) -> list[str]:
             errors.append(f"AR-015 PicoD server missing required behavior token: {token}")
     if 'POST("/execute"' not in server_text and 'POST("/api/execute"' not in server_text:
         errors.append("AR-015 PicoD server missing execute route registration")
-    if "sanitizePath" not in impl_text:
+    if "sanitizePath" not in picod_go_text:
         errors.append("AR-015 implementation missing working-directory sanitizePath behavior")
 
     for token in [
         "type ExecuteRequest struct",
         "type ExecuteResponse struct",
         "TimeoutExitCode",
+    ]:
+        if token not in picod_go_text:
+            errors.append(f"AR-015 PicoD package missing required behavior token: {token}")
+
+    for token in [
         "ExecuteHandler",
         "ShouldBindJSON",
         "command cannot be empty",
