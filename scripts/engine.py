@@ -2645,8 +2645,6 @@ def _validate_workloadmanager_go_mod_baseline(workspace: Path, label: str) -> li
         "k8s.io/client-go v0.34.1",
         "sigs.k8s.io/agent-sandbox v0.1.1",
         "sigs.k8s.io/controller-runtime v0.22.2",
-        "github.com/redis/go-redis/v9 v9.17.1",
-        "github.com/stretchr/testify v1.11.1",
     ]
     return [f"{label} go.mod missing original dependency baseline token: {token}" for token in required if token not in text]
 
@@ -6552,7 +6550,7 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`pkg/common/types/types.go` and `pkg/common/types/sandbox.go`, not `pkg/common/types.go`, and "
             "workloadmanager must import `github.com/volcano-sh/agentcube/pkg/common/types`. Keep `go.mod` on the "
             "original AgentCube baseline (`go 1.24.4`, `toolchain go1.24.9`, Kubernetes modules v0.34.1, "
-            "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2, Redis v9.17.1, testify v1.11.1). "
+            "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2). "
             "For AR-004 specifically, the minimum required production files are `server.go`, `utils.go`, "
             "`client_cache.go`, `k8s_client.go`, and the two `pkg/common/types` files."
         )
