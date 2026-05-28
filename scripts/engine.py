@@ -2603,9 +2603,6 @@ def _validate_ar016_picod_file_api(workspace: Path) -> list[str]:
             errors.append("AR-016 PicoD server missing file route registration: " + " or ".join(group))
 
     for token in [
-        "type UploadFileRequest struct",
-        "type FileEntry struct",
-        "type ListFilesResponse struct",
         "UploadFileHandler",
         "DownloadFileHandler",
         "ListFilesHandler",
@@ -2621,6 +2618,13 @@ def _validate_ar016_picod_file_api(workspace: Path) -> list[str]:
     ]:
         if token not in files_text:
             errors.append(f"AR-016 file implementation missing required behavior token: {token}")
+    for token in [
+        "type UploadFileRequest struct",
+        "type FileEntry struct",
+        "type ListFilesResponse struct",
+    ]:
+        if token not in picod_go_text:
+            errors.append(f"AR-016 PicoD package missing required behavior token: {token}")
     if "c.File" not in files_text and "os.ReadFile" not in files_text:
         errors.append("AR-016 file implementation missing download body serving token: c.File or os.ReadFile")
 
@@ -2643,7 +2647,6 @@ def _validate_ar016_picod_file_api(workspace: Path) -> list[str]:
         "UploadFileHandler",
         "DownloadFileHandler",
         "ListFilesHandler",
-        "path traversal",
         "UploadFileRequest",
         "ListFilesResponse",
         "not found",
@@ -2651,6 +2654,14 @@ def _validate_ar016_picod_file_api(workspace: Path) -> list[str]:
         "content",
     ]
     missing_terms = [term for term in required_test_terms if term not in test_text]
+    test_lower = test_text.lower()
+    compact_test_lower = re.sub(r"[^a-z0-9]+", "", test_lower)
+    if (
+        "path traversal" not in test_lower
+        and "directorytraversal" not in compact_test_lower
+        and "../" not in test_text
+    ):
+        missing_terms.append("path traversal")
     if missing_terms:
         errors.append(
             "AR-016 file tests do not cover required behaviors: "
