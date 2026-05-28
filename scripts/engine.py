@@ -182,6 +182,8 @@ FORBIDDEN_DEPENDENCY_METADATA_BY_AR = {
     "AR-012": {"go.mod", "go.sum"},
 }
 
+WORKLOADMANAGER_PRODUCTION_AR_IDS = {"AR-004", "AR-005", "AR-006", "AR-007", "AR-008"}
+
 AR_IMPLEMENTATION_NOTES = {
     "AR-004": (
         "Scope split: implement the real WorkloadManager HTTP server framework, not an alternate simplified API. "
@@ -995,15 +997,36 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             f"under {change_dir}/. Do not create, modify, or delete project implementation/source files "
             "outside the change directory; implementation source is allowed only in ST-5.\n"
         )
+    if ar["id"] in WORKLOADMANAGER_PRODUCTION_AR_IDS:
+        go_dependency_guidance = (
+            "The real AgentCube WorkloadManager dependency baseline is `go 1.24.4` with "
+            "`toolchain go1.24.9`. Preserve that baseline for these WorkloadManager production ARs; "
+            "the benchmark runner has a compatible Go toolchain and this AR-specific requirement overrides "
+            "generic older-toolchain fallback guidance.\n"
+        )
+        local_import_guidance = (
+            "For Go imports, local module import paths must match real directories in this workspace. "
+            "Shared sandbox request/response types must live under `pkg/common/types/{types.go,sandbox.go}` "
+            "and be imported as `github.com/volcano-sh/agentcube/pkg/common/types`; do not create or reference "
+            "`pkg/common/types.go` for WorkloadManager.\n"
+        )
+    else:
+        go_dependency_guidance = (
+            "The benchmark environment runs Go 1.22.x. Keep the `go` directive at 1.22.x and choose "
+            "dependency versions that compile on Go 1.22; do not introduce packages that require Go 1.23+.\n"
+        )
+        local_import_guidance = (
+            "For Go imports, local module import paths must match real directories in this workspace. "
+            "If you create `pkg/common/types.go`, import it as `github.com/volcano-sh/agentcube/pkg/common` "
+            "or create a real `pkg/common/types/` directory; never import non-existent local subpackages.\n"
+        )
+
     common = (
         "You are reconstructing the real open-source project agentcube from an empty workspace "
         "through a Specification-Driven Development benchmark.\n"
         "The Go module path MUST be `github.com/volcano-sh/agentcube`.\n"
-        "The benchmark environment runs Go 1.22.x. Keep the `go` directive at 1.22.x and choose "
-        "dependency versions that compile on Go 1.22; do not introduce packages that require Go 1.23+.\n"
-        "For Go imports, local module import paths must match real directories in this workspace. "
-        "If you create `pkg/common/types.go`, import it as `github.com/volcano-sh/agentcube/pkg/common` "
-        "or create a real `pkg/common/types/` directory; never import non-existent local subpackages.\n"
+        f"{go_dependency_guidance}"
+        f"{local_import_guidance}"
         "The project root is the current working directory for this CLI session. "
         "Do not inspect, create, modify, delete, or run commands against parent directories "
         "or the benchmark harness repository outside the current working directory.\n"
@@ -1144,6 +1167,18 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         "6. Match the original code's API contracts, function signatures, and behavior\n"
         "7. Do not report completion unless files were actually created or modified"
     )
+    if ar["id"] in WORKLOADMANAGER_PRODUCTION_AR_IDS:
+        critical_text = (
+            "CRITICAL:\n"
+            "1. Write COMPLETE production code matching the original WorkloadManager APIs — no placeholders, TODOs, or stubs\n"
+            "2. Do not create workloadmanager or common/types `_test.go` files in AR-004..AR-008; "
+            "WorkloadManager tests are intentionally deferred to AR-038\n"
+            "3. Follow Go best practices and preserve the original Go 1.24.4/toolchain go1.24.9 dependency baseline\n"
+            "4. Handle errors properly and keep local imports aligned with real directories\n"
+            "5. You MUST use tool calls to WRITE files to disk\n"
+            "6. Match the original code's API contracts, function signatures, file names, and route wiring\n"
+            "7. Do not report completion unless files were actually created or modified"
+        )
     if ar["id"] == "AR-042":
         critical_text = (
             "CRITICAL:\n"
@@ -1177,6 +1212,15 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "Do NOT vendor dependency directories, lockfiles, or generated build outputs such as "
             "`node_modules/`, `package-lock.json`, `pnpm-lock.yaml`, `yarn.lock`, `.docusaurus/`, "
             "`build/`, `dist/`, or `coverage/`; source/config/docs are enough.\n"
+        )
+
+    verification_scope_note = ""
+    if ar["id"] in WORKLOADMANAGER_PRODUCTION_AR_IDS:
+        verification_scope_note = (
+            "For this WorkloadManager production AR, do not mark missing `pkg/workloadmanager/*_test.go` files "
+            "as a failure; those tests are intentionally scheduled for AR-038. Treat `go 1.24.4` and "
+            "`toolchain go1.24.9` as the required original AgentCube baseline, not as a compatibility issue. "
+            "Shared types must be documented as `pkg/common/types/{types.go,sandbox.go}`, not `pkg/common/types.go`. "
         )
 
     prompts = {
@@ -1249,6 +1293,7 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             f"Spec:\n{spec_ctx[:3000]}\n\n"
             f"Write exactly: {change_dir}/verification.md\n"
             f"Check: Are all requirements met? Are tests passing?\n"
+            f"{verification_scope_note}"
             f"Do NOT run shell commands. The benchmark harness runs local checks separately. "
             f"Inspect the files already in the workspace and write a concise verification report with explicit unknowns. "
             f"Do not fabricate passing tests. Keep the report under 120 lines and do not copy specs or source files."
@@ -1656,6 +1701,60 @@ def _validate_stage_output(
                     + ", ".join(bad_imports[:8])
                 )
         errors.extend(_validate_ar_specific_implementation(workspace, ar))
+
+    if stage_id == "ST-6" and ar.get("id") in WORKLOADMANAGER_PRODUCTION_AR_IDS:
+        errors.extend(_validate_workloadmanager_verification_artifact(workspace, ar))
+
+    return errors
+
+
+def _validate_workloadmanager_verification_artifact(workspace: Path, ar: dict) -> list[str]:
+    """Keep WorkloadManager verification reports aligned with the AR split."""
+    path = workspace / "changes" / ar["id"] / "verification.md"
+    if not path.exists():
+        return []
+    text = path.read_text(encoding="utf-8", errors="replace")
+    lower = text.lower()
+    errors: list[str] = []
+
+    forbidden_phrases = [
+        ("go 1.22", "Go 1.22 compatibility is not the WorkloadManager production baseline"),
+        ("go1.22", "Go 1.22 compatibility is not the WorkloadManager production baseline"),
+        ("missing test files", "WorkloadManager tests are intentionally deferred to AR-038"),
+        ("no test files found", "WorkloadManager tests are intentionally deferred to AR-038"),
+        ("required test files", "WorkloadManager tests are intentionally deferred to AR-038"),
+        ("all required test files are absent", "WorkloadManager tests are intentionally deferred to AR-038"),
+    ]
+    for phrase, reason in forbidden_phrases:
+        if phrase in lower:
+            errors.append(f"{ar['id']} verification.md contains misleading report text: {reason}")
+
+    for line in text.splitlines():
+        line_lower = line.lower()
+        if "pkg/common/types.go" not in line_lower:
+            continue
+        if any(marker in line_lower for marker in ["not `pkg/common/types.go`", "not pkg/common/types.go", "do not", "must not", "avoid"]):
+            continue
+        errors.append(
+            f"{ar['id']} verification.md references obsolete shared-types path pkg/common/types.go"
+        )
+        break
+
+    source_errors = _validate_ar_specific_implementation(workspace, ar)
+    if not source_errors:
+        for phrase in [
+            "critical issue",
+            "critical issues",
+            "non-functional",
+            "prevents compilation",
+            "will not compile",
+            "cannot compile",
+        ]:
+            if phrase in lower:
+                errors.append(
+                    f"{ar['id']} verification.md reports a blocking source issue after local validators passed: {phrase}"
+                )
+                break
 
     return errors
 
