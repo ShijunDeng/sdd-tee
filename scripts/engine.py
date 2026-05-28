@@ -204,10 +204,6 @@ WORKLOADMANAGER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
         "utils.go",
         "client_cache.go",
         "k8s_client.go",
-        "auth.go",
-        "informers.go",
-        "handlers.go",
-        "garbage_collection.go",
     ],
     "AR-005": [
         "handlers.go",
@@ -8389,9 +8385,10 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
                     name for name in WORKLOADMANAGER_REFERENCE_ORDER_BY_AR.get(ar_id, [])
                     if name in production_paths
                 ]
-                ordered_names.extend(
-                    sorted(name for name in production_paths if name not in set(ordered_names))
-                )
+                if ar_id == "AR-008" or not ordered_names:
+                    ordered_names.extend(
+                        sorted(name for name in production_paths if name not in set(ordered_names))
+                    )
                 paths = [production_paths[name] for name in ordered_names]
             for fpath in paths:
                 try:
