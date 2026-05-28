@@ -175,7 +175,7 @@ DEPENDENCY_METADATA_FILES = {
 EXTRA_IMPLEMENTATION_PREFIXES_BY_MODULE = {
     # Shared contracts that appear in the real agentcube tree and are needed
     # for early, compileable reconstruction of the owning module.
-    "pkg/workloadmanager": ["cmd/workload-manager", "pkg/api", "pkg/apis", "pkg/common", "pkg/store"],
+    "pkg/workloadmanager": ["pkg/api", "pkg/apis", "pkg/common", "pkg/store"],
     "pkg/router": ["cmd/router", "pkg/api", "pkg/common", "pkg/store"],
     "pkg/picod": ["cmd/picod", "pkg/api", "pkg/common"],
     "pkg/agentd": ["cmd/agentd", "pkg/common", "pkg/workloadmanager"],
@@ -7009,6 +7009,7 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "at time.Time) error` and the expired/inactive list methods with `limit int64`. Do not create concrete "
             "store backends such as `pkg/store/memory_store.go`, Redis, or Valkey implementations in WorkloadManager "
             "production ARs; only the shared `pkg/store/store.go` interface is allowed before the dedicated store ARs. "
+            "Do not create service entrypoints such as `cmd/workload-manager/main.go`; those belong to AR-019. "
             "Keep `go.mod` on the "
             "original AgentCube baseline (`go 1.24.4`, `toolchain go1.24.9`, Kubernetes modules v0.34.1, "
             "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2). "
