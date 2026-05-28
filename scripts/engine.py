@@ -189,6 +189,9 @@ EXTRA_IMPLEMENTATION_PREFIXES_BY_AR = {
 }
 
 FORBIDDEN_DEPENDENCY_METADATA_BY_AR = {
+    # The AR-008 checkpoint already carries the router dependency baseline. AR-009
+    # must not churn dependency metadata while implementing only router core files.
+    "AR-009": {"go.mod", "go.sum"},
     # AR-012 is a contract-only split; it must not add test helpers or backend deps.
     "AR-012": {"go.mod", "go.sum"},
 }
@@ -241,6 +244,12 @@ WORKLOADMANAGER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
     ],
 }
 
+ROUTER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
+    "AR-009": ["config.go", "server.go", "handlers.go"],
+    "AR-010": ["session_manager.go", "config.go", "server.go", "handlers.go"],
+    "AR-011": ["jwt.go", "config.go", "server.go", "handlers.go"],
+}
+
 AR_IMPLEMENTATION_NOTES = {
     "AR-004": (
         "Scope split: implement the real WorkloadManager HTTP server framework, not an alternate simplified API. "
@@ -276,6 +285,16 @@ AR_IMPLEMENTATION_NOTES = {
         "`handlers.go`, `informers.go`, `k8s_client.go`, `sandbox_controller.go`, `sandbox_helper.go`, `server.go`, "
         "`utils.go`, and `workload_builder.go`. Remove non-original shim files such as `defaults.go`, "
         "`memory_store.go`, `middleware.go`, `sandbox_creator.go`, `store.go`, or `token_cache.go`."
+    ),
+    "AR-009": (
+        "Scope split: implement only the Router HTTP reverse-proxy core in exactly "
+        "`pkg/router/config.go`, `pkg/router/server.go`, and `pkg/router/handlers.go`. Recreate the real route "
+        "wiring, health handlers, concurrency middleware, session-header flow, upstream selection, reverse proxy, "
+        "forwarding headers, and last-activity update calls from the original reference. Do not implement Router "
+        "session manager or JWT key management yet; those belong to AR-010 and AR-011. If the core needs future "
+        "collaborators to compile before those ARs, declare narrow interfaces inside the three allowed files instead "
+        "of creating `session_manager.go`, `session.go`, `jwt.go`, `jwt_manager.go`, tests, `cmd/router`, or shared "
+        "package rewrites. Treat `go.mod`, `go.sum`, `pkg/api`, `pkg/store`, and `pkg/common` as read-only in AR-009."
     ),
     "AR-012": (
         "Scope split: implement only the store package contracts for this AR: Store interface, "
@@ -649,6 +668,15 @@ AR_043_DOC_MARKDOWN = {
 }
 
 AR_RESERVED_IMPLEMENTATION_PATTERNS = {
+    "AR-009": [
+        "pkg/router/*_test.go",
+        "pkg/router/jwt.go",
+        "pkg/router/*jwt*.go",
+        "pkg/router/session.go",
+        "pkg/router/session_manager.go",
+        "pkg/router/*session*.go",
+        "cmd/router/*",
+    ],
     "AR-012": [
         "pkg/store/store_redis.go",
         "pkg/store/store_redis_test.go",
@@ -925,6 +953,8 @@ def _filter_spec_text_for_ar(ar: dict, name: str, text: str) -> str:
 
 
 def _allowed_implementation_prefixes(ar: dict) -> list[str]:
+    if ar.get("id") == "AR-009":
+        return ["pkg/router"]
     module = ar["module"].strip("/")
     prefixes = [module] if module else []
     prefixes.extend(EXTRA_IMPLEMENTATION_PREFIXES_BY_MODULE.get(module, []))
@@ -1148,6 +1178,21 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "and no non-original shim files. Remove any earlier simplified Session/Store/defaults/memory/token-cache "
             "files that are not in the reference."
         )
+    if ar["id"] == "AR-009":
+        st5_intro = (
+            "Implement ONLY the Router HTTP reverse-proxy core for this AR. Write exactly "
+            "`pkg/router/config.go`, `pkg/router/server.go`, and `pkg/router/handlers.go` using the original "
+            "router core reference below. Do not create router tests, JWT implementation files, session manager "
+            "implementation files, `cmd/router`, or shared package rewrites. AR-010 will implement the concrete "
+            "session manager and AR-011 will implement JWT key management; for AR-009, keep those collaborators as "
+            "narrow package-local interfaces or optional fields inside the three allowed files so `go test "
+            "./pkg/router/...` can compile without fake future implementations."
+        )
+        previous_ctx_limit = 5000
+        original_snippets_limit = 50000
+        original_reference_note = (
+            "FULL ORIGINAL ROUTER CORE REFERENCE (ground truth for AR-009; deferred files are intentionally omitted):"
+        )
     if ar["id"] == "AR-042":
         st5_intro = (
             "Implement ONLY the fixed Docusaurus scaffold for this AR. This is not a full documentation "
@@ -1235,6 +1280,17 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "4. Handle errors properly and keep local imports aligned with real directories\n"
             "5. You MUST use tool calls to WRITE files to disk\n"
             "6. Match the original code's API contracts, function signatures, file names, and route wiring\n"
+            "7. Do not report completion unless files were actually created or modified"
+        )
+    if ar["id"] == "AR-009":
+        critical_text = (
+            "CRITICAL:\n"
+            "1. Write COMPLETE Router core code matching the original config/server/handlers contracts — no placeholders, TODOs, or stubs\n"
+            "2. Create or modify only `pkg/router/config.go`, `pkg/router/server.go`, and `pkg/router/handlers.go`\n"
+            "3. Do not create `pkg/router/*_test.go`, `pkg/router/jwt*.go`, `pkg/router/session*.go`, `cmd/router`, or shared package files\n"
+            "4. Preserve existing `go.mod` and `go.sum`; the dependency baseline already exists from earlier ARs\n"
+            "5. Use narrow interfaces for deferred AR-010/AR-011 collaborators instead of implementing fake session or JWT managers\n"
+            "6. Match the real health routes, invocation routes, concurrency limit, reverse proxy behavior, and session header handling\n"
             "7. Do not report completion unless files were actually created or modified"
         )
     if ar["id"] == "AR-042":
@@ -6379,7 +6435,7 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
         ]
     elif ar["lang"] == "Go":
         target = f"./{module}/..." if module else "./..."
-        if ar.get("id") == "AR-035":
+        if ar.get("id") == "AR-035" or ar.get("id") in FORBIDDEN_DEPENDENCY_METADATA_BY_AR:
             cmd = ["bash", "-lc", f"go test {target}"]
         else:
             cmd = ["bash", "-lc", f"go mod tidy && go test {target}"]
@@ -6914,6 +6970,19 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`pkg/common/types/` and keep `go.mod` on the original AgentCube dependency baseline; do not import "
             "`github.com/volcano-sh/agentcube/pkg/common` from workloadmanager. Do not create workloadmanager or "
             "common/types tests in AR-008; tests belong to later testing ARs."
+        )
+    if ar.get("id") == "AR-009" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-009, reset the implementation to exactly three Router core production files: "
+            "`pkg/router/config.go`, `pkg/router/server.go`, and `pkg/router/handlers.go`. Delete or avoid "
+            "`pkg/router/*_test.go`, `pkg/router/jwt.go`, `pkg/router/jwt_manager.go`, `pkg/router/session.go`, "
+            "`pkg/router/session_manager.go`, `cmd/router`, and any edits to `pkg/api`, `pkg/store`, `pkg/common`, "
+            "`go.mod`, or `go.sum`. Implement the real Config/LastActivityAnnotationKey, Server/NewServer/Start, "
+            "Gin health and invocation routes, concurrency middleware, `handleInvoke`, `determineUpstreamURL`, "
+            "`handleAgentInvoke`, `handleCodeInterpreterInvoke`, `forwardToSandbox`, `httputil.NewSingleHostReverseProxy`, "
+            "forwarding headers, response `x-agentcube-session-id`, and best-effort last-activity update. Because "
+            "AR-010 and AR-011 are deferred, define only narrow package-local interfaces inside the allowed files for "
+            "session lookup and optional JWT signing; do not implement concrete session or JWT managers in AR-009."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
@@ -8268,6 +8337,30 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
                         snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
                     except OSError:
                         pass
+        return "\n\n".join(snippets) if snippets else ""
+
+    if module.strip("/") == "pkg/router":
+        router_root = original_path / "pkg" / "router"
+        snippets = []
+        if router_root.exists():
+            production_paths = {
+                fpath.name: fpath
+                for fpath in router_root.glob("*.go")
+                if not fpath.name.endswith("_test.go")
+            }
+            ordered_names = [
+                name for name in ROUTER_REFERENCE_ORDER_BY_AR.get(ar_id, [])
+                if name in production_paths
+            ]
+            if not ordered_names:
+                ordered_names = sorted(production_paths)
+            paths = [production_paths[name] for name in ordered_names]
+            for fpath in paths:
+                try:
+                    rel = fpath.relative_to(original_path)
+                    snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
+                except OSError:
+                    pass
         return "\n\n".join(snippets) if snippets else ""
 
     if module.strip("/") == "client-go":
