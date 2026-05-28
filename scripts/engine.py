@@ -192,6 +192,9 @@ FORBIDDEN_DEPENDENCY_METADATA_BY_AR = {
     # The AR-008 checkpoint already carries the router dependency baseline. AR-009
     # must not churn dependency metadata while implementing only router core files.
     "AR-009": {"go.mod", "go.sum"},
+    # AR-010 only adds the concrete router session manager; JWT dependencies are
+    # intentionally deferred to AR-011.
+    "AR-010": {"go.mod", "go.sum"},
     # AR-012 is a contract-only split; it must not add test helpers or backend deps.
     "AR-012": {"go.mod", "go.sum"},
 }
@@ -242,7 +245,7 @@ WORKLOADMANAGER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
 
 ROUTER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
     "AR-009": ["config.go", "server.go", "handlers.go"],
-    "AR-010": ["session_manager.go", "config.go", "server.go", "handlers.go"],
+    "AR-010": ["session_manager.go"],
     "AR-011": ["jwt.go", "config.go", "server.go", "handlers.go"],
 }
 
@@ -294,6 +297,13 @@ AR_IMPLEMENTATION_NOTES = {
             "local SandboxInfo or SandboxEntryPoint structs in `pkg/router`. Use an unexported JWT signer interface "
             "such as `tokenSigner` rather than `type JWTManager interface`, because AR-011 owns the concrete "
             "`JWTManager` type. Treat `go.mod`, `go.sum`, `pkg/api`, `pkg/store`, and `pkg/common` as read-only in AR-009."
+    ),
+    "AR-010": (
+        "Scope split: implement only the concrete Router session manager in `pkg/router/session_manager.go` "
+        "and wire the existing Router server to `NewSessionManager(store.Storage())` without replacing the "
+        "AR-009 reverse-proxy core. Keep `pkg/router/config.go`, `pkg/router/server.go`, and "
+        "`pkg/router/handlers.go` present and compatible. Do not implement JWT key management, `jwt.go`, "
+        "`cmd/router`, tests, dependency metadata, or shared package rewrites in AR-010; AR-011 owns JWT."
     ),
     "AR-012": (
         "Scope split: implement only the store package contracts for this AR: Store interface, "
@@ -676,6 +686,12 @@ AR_RESERVED_IMPLEMENTATION_PATTERNS = {
         "pkg/router/*session*.go",
         "cmd/router/*",
     ],
+    "AR-010": [
+        "pkg/router/*_test.go",
+        "pkg/router/jwt.go",
+        "pkg/router/*jwt*.go",
+        "cmd/router/*",
+    ],
     "AR-012": [
         "pkg/store/store_redis.go",
         "pkg/store/store_redis_test.go",
@@ -849,8 +865,12 @@ def _workspace_checkpoint_path(run_id: str, ar_id: str) -> Path:
 
 def _workspace_snapshot_ignore(dirpath: str, names: list[str]) -> set[str]:
     ignored = set()
+    base = Path(dirpath)
     for name in names:
-        if name == ".git" or name in GENERATED_ARTIFACT_DIRS or name in GENERATED_ARTIFACT_FILES:
+        path = base / name
+        if name == ".git" or name in GENERATED_ARTIFACT_DIRS:
+            ignored.add(name)
+        elif name in GENERATED_ARTIFACT_FILES and path.is_file():
             ignored.add(name)
     return ignored
 
@@ -926,6 +946,30 @@ def _spec_keywords_for_ar(ar: dict) -> list[str]:
 
 def _filter_spec_text_for_ar(ar: dict, name: str, text: str) -> str:
     """Keep shared integration specs aligned with the current AR split."""
+    if ar["id"] in {"AR-009", "AR-010"} and name == "session-routing/spec.md":
+        text = text.replace(
+            "resolve or create sessions via the workload manager, track activity in the store, "
+            "reverse-proxy to pod endpoints, and sign outbound requests with JWT when targeting sandboxes.",
+            "resolve or create sessions via the workload manager, track activity in the store, "
+            "and reverse-proxy to pod endpoints. JWT key management is deferred to AR-011.",
+        )
+        jwt_start = "### Requirement: JWT injection for sandbox kinds"
+        jwt_end = "### Requirement: Forwarding headers and response header"
+        if jwt_start in text and jwt_end in text:
+            before, rest = text.split(jwt_start, 1)
+            _, after = rest.split(jwt_end, 1)
+            text = before.rstrip() + "\n\n<!-- Signing requirements are omitted for this AR; they belong to AR-011. -->\n\n" + jwt_end + after
+        secret_start = "### Requirement: Identity secret bootstrap for JWT"
+        if secret_start in text:
+            text = text.split(secret_start, 1)[0].rstrip() + "\n\n<!-- Identity bootstrap is omitted for this AR; it belongs to AR-011. -->\n"
+    if ar["id"] in {"AR-009", "AR-010"} and name == "session-routing/design.md":
+        jwt_start = "### JWT (`jwt.go`)"
+        jwt_end = "### Reverse proxy"
+        if jwt_start in text and jwt_end in text:
+            before, rest = text.split(jwt_start, 1)
+            _, after = rest.split(jwt_end, 1)
+            text = before.rstrip() + "\n\n<!-- Signing design is omitted for this AR; it belongs to AR-011. -->\n\n" + jwt_end + after
+        text = text.replace("    jwtManager     *JWTManager\n", "")
     if ar["id"] == "AR-036" and name in {"integrations/spec.md", "integrations/design.md"}:
         for marker in (
             "### Requirement: PCAP analyzer FastAPI service",
@@ -952,7 +996,7 @@ def _filter_spec_text_for_ar(ar: dict, name: str, text: str) -> str:
 
 
 def _allowed_implementation_prefixes(ar: dict) -> list[str]:
-    if ar.get("id") == "AR-009":
+    if ar.get("id") in {"AR-009", "AR-010"}:
         return ["pkg/router"]
     module = ar["module"].strip("/")
     prefixes = [module] if module else []
@@ -1197,6 +1241,21 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         original_snippets_limit = 50000
         original_reference_note = (
             "FULL ORIGINAL ROUTER CORE REFERENCE (ground truth for AR-009; deferred files are intentionally omitted):"
+        )
+    if ar["id"] == "AR-010":
+        st5_intro = (
+            "Implement ONLY the Router concrete session manager for this AR. Add `pkg/router/session_manager.go` "
+            "from the original reference and wire the existing Router server to call "
+            "`NewSessionManager(store.Storage())`. Preserve the AR-009 Router core files "
+            "`pkg/router/config.go`, `pkg/router/server.go`, and `pkg/router/handlers.go`; do not replace or "
+            "delete them. Do not implement JWT key management, `pkg/router/jwt.go`, router tests, `cmd/router`, "
+            "shared package rewrites, or dependency metadata in AR-010. Keep the JWT collaborator as the existing "
+            "narrow `tokenSigner` interface until AR-011."
+        )
+        previous_ctx_limit = 6500
+        original_snippets_limit = 35000
+        original_reference_note = (
+            "FULL ORIGINAL ROUTER SESSION MANAGER REFERENCE (ground truth for AR-010; JWT is intentionally omitted):"
         )
     if ar["id"] == "AR-042":
         st5_intro = (
@@ -1942,6 +2001,8 @@ def _validate_ar_specific_implementation(workspace: Path, ar: dict) -> list[str]
         return _validate_ar008_workloadmanager_gc_complete(workspace)
     if ar.get("id") == "AR-009":
         return _validate_ar009_router_core(workspace)
+    if ar.get("id") == "AR-010":
+        return _validate_ar010_router_session_manager(workspace)
     if ar.get("id") == "AR-013":
         return _validate_ar013_redis_backend(workspace)
     if ar.get("id") == "AR-014":
@@ -3228,6 +3289,137 @@ def _validate_ar009_router_core(workspace: Path) -> list[str]:
             if forbidden in combined:
                 errors.append(f"AR-009 router core must not define local/future shim: {forbidden}")
     errors.extend(_validate_workloadmanager_shared_contracts(workspace, "AR-009", forbid_tests=True))
+    return errors
+
+
+def _validate_ar010_router_session_manager(workspace: Path) -> list[str]:
+    errors = _validate_router_tokens(
+        workspace,
+        {
+            "config.go": [
+                "LastActivityAnnotationKey",
+                "type Config struct",
+                "MaxConcurrentRequests",
+            ],
+            "server.go": [
+                "type Server struct",
+                "sessionManager SessionManager",
+                "storeClient    store.Store",
+                "httpTransport  *http.Transport",
+                "type tokenSigner interface",
+                "tokenSigner    tokenSigner",
+                "func NewServer(config *Config) (*Server, error)",
+                "NewSessionManager(store.Storage())",
+                "sessionManager: sessionManager",
+                "func (s *Server) setupRoutes()",
+                "\"/health/live\"",
+                "\"/health/ready\"",
+                "\"/namespaces/:namespace/agent-runtimes/:name/invocations/*path\"",
+                "\"/namespaces/:namespace/code-interpreters/:name/invocations/*path\"",
+                "func (s *Server) Start(ctx context.Context) error",
+                "h2c.NewHandler",
+            ],
+            "handlers.go": [
+                "github.com/volcano-sh/agentcube/pkg/common/types",
+                "func (s *Server) handleInvoke(c *gin.Context, namespace, name, path, kind string)",
+                "\"x-agentcube-session-id\"",
+                "GetSandboxBySession",
+                "s.storeClient.UpdateSessionLastActivity",
+                "func determineUpstreamURL(sandbox *types.SandboxInfo, path string) (*url.URL, error)",
+                "strings.HasPrefix(path, ep.Path)",
+                "buildURL(ep.Protocol, ep.Endpoint)",
+                "func (s *Server) forwardToSandbox(c *gin.Context, sandbox *types.SandboxInfo, path string)",
+                "httputil.NewSingleHostReverseProxy",
+            ],
+            "session_manager.go": [
+                "github.com/volcano-sh/agentcube/pkg/api",
+                "github.com/volcano-sh/agentcube/pkg/common/types",
+                "github.com/volcano-sh/agentcube/pkg/store",
+                "var serviceAccountTokenPath = \"/var/run/secrets/kubernetes.io/serviceaccount/token\"",
+                "type SessionManager interface",
+                "GetSandboxBySession(ctx context.Context, sessionID string, namespace string, name string, kind string) (*types.SandboxInfo, error)",
+                "type manager struct",
+                "storeClient     store.Store",
+                "workloadMgrAddr string",
+                "httpClient      *http.Client",
+                "func NewSessionManager(storeClient store.Store) (SessionManager, error)",
+                "os.Getenv(\"WORKLOAD_MANAGER_URL\")",
+                "http2.ConfigureTransports",
+                "ReadIdleTimeout = 30 * time.Second",
+                "PingTimeout = 15 * time.Second",
+                "func (m *manager) GetSandboxBySession(ctx context.Context, sessionID string, namespace string, name string, kind string) (*types.SandboxInfo, error)",
+                "if sessionID == \"\"",
+                "return m.createSandbox(ctx, namespace, name, kind)",
+                "m.storeClient.GetSandboxBySessionID(ctx, sessionID)",
+                "errors.Is(err, store.ErrNotFound)",
+                "api.NewSessionNotFoundError(sessionID)",
+                "func (m *manager) createSandbox(ctx context.Context, namespace string, name string, kind string) (*types.SandboxInfo, error)",
+                "types.AgentRuntimeKind",
+                "\"/v1/agent-runtime\"",
+                "types.CodeInterpreterKind",
+                "\"/v1/code-interpreter\"",
+                "types.CreateSandboxRequest",
+                "json.Marshal",
+                "http.NewRequestWithContext",
+                "req.Header.Set(\"Content-Type\", \"application/json\")",
+                "loadWorkloadManagerAuthToken()",
+                "req.Header.Set(\"Authorization\", \"Bearer \"+token)",
+                "m.httpClient.Do(req)",
+                "io.ReadAll",
+                "resp.StatusCode != http.StatusOK",
+                "api.NewSandboxTemplateNotFoundError(namespace, name, kind)",
+                "var res types.CreateSandboxResponse",
+                "json.Unmarshal",
+                "res.SessionID == \"\"",
+                "&types.SandboxInfo{",
+                "EntryPoints: res.EntryPoints",
+                "func loadWorkloadManagerAuthToken() string",
+                "os.ReadFile(serviceAccountTokenPath)",
+                "strings.TrimSpace",
+            ],
+        },
+        "AR-010",
+        min_total_loc=420,
+        forbid_tests=True,
+    )
+    root = workspace / "pkg" / "router"
+    if root.exists():
+        allowed_production = {"config.go", "server.go", "handlers.go", "session_manager.go"}
+        production_files = {
+            p.name for p in root.glob("*.go")
+            if p.is_file() and not p.name.endswith("_test.go")
+        }
+        unexpected = sorted(production_files - allowed_production)
+        if unexpected:
+            errors.append(
+                "AR-010 must not create router production files reserved for later ARs: "
+                + ", ".join(unexpected[:12])
+            )
+        combined = "\n".join(
+            p.read_text(encoding="utf-8", errors="replace")
+            for p in root.glob("*.go")
+            if p.is_file()
+        )
+        for forbidden in [
+            "type SandboxInfo struct",
+            "type SandboxEntryPoint struct",
+            "func convertToTypesEntryPoints",
+            "type JWTManager",
+            "*JWTManager",
+            "NewJWTManager",
+            "TryStoreOrLoadJWTKeySecret",
+            "GenerateJWT",
+            "GenerateToken(claims map[string]interface{})",
+            "github.com/golang-jwt/jwt",
+            "rsa.GenerateKey",
+            "PrivateKeyDataKey",
+            "PublicKeyDataKey",
+            "IdentitySecretName",
+            "UpdateSessionLastActivity(ctx context.Context, storeClient store.Store",
+        ]:
+            if forbidden in combined:
+                errors.append(f"AR-010 router session manager must not define local/future shim: {forbidden}")
+    errors.extend(_validate_workloadmanager_shared_contracts(workspace, "AR-010", forbid_tests=True))
     return errors
 
 
@@ -6628,6 +6820,7 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
 
     router_validators = {
         "AR-009": ("internal:validate_ar009_router_core", _validate_ar009_router_core),
+        "AR-010": ("internal:validate_ar010_router_session_manager", _validate_ar010_router_session_manager),
     }
     if ar.get("id") in router_validators:
         command, validator = router_validators[ar["id"]]
@@ -7066,6 +7259,20 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "Because AR-010 and AR-011 are deferred, define only narrow package-local interfaces inside the allowed "
             "files for session lookup and optional JWT signing; use an unexported JWT signer interface such as "
             "`tokenSigner`, not `type JWTManager interface` or `*JWTManager`."
+        )
+    if ar.get("id") == "AR-010" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-010, reset the Router package to exactly four production files for this split: "
+            "`pkg/router/config.go`, `pkg/router/server.go`, `pkg/router/handlers.go`, and "
+            "`pkg/router/session_manager.go`. Delete or avoid `pkg/router/jwt.go`, `pkg/router/jwt_manager.go`, "
+            "`pkg/router/*_test.go`, `cmd/router`, and any edits to `pkg/api`, `pkg/store`, `pkg/common`, "
+            "`go.mod`, or `go.sum`. Implement the real `SessionManager` interface, `manager`, "
+            "`NewSessionManager(store.Store)`, `GetSandboxBySession`, workload manager create calls, auth token "
+            "loading from `/var/run/secrets/kubernetes.io/serviceaccount/token`, HTTP/2 transport settings, "
+            "store lookup with `store.ErrNotFound`, and `types.CreateSandboxResponse` to `types.SandboxInfo` mapping. "
+            "Wire `NewServer` to `NewSessionManager(store.Storage())` while preserving the AR-009 reverse-proxy "
+            "routes and handlers. JWT key management is AR-011; keep only the existing narrow `tokenSigner` "
+            "interface and do not define `JWTManager`, `NewJWTManager`, or `TryStoreOrLoadJWTKeySecret` in AR-010."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
