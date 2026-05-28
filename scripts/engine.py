@@ -7071,12 +7071,7 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
         ]
     elif ar["lang"] == "Go":
         target = f"./{module}/..." if module else "./..."
-        if ar.get("id") in {"AR-013", "AR-014"}:
-            cmd = ["bash", "-lc", f"go test -mod=readonly {target}"]
-        elif ar.get("id") == "AR-035" or ar.get("id") in FORBIDDEN_DEPENDENCY_METADATA_BY_AR:
-            cmd = ["bash", "-lc", f"go test {target}"]
-        else:
-            cmd = ["bash", "-lc", f"go mod tidy && go test {target}"]
+        cmd = ["bash", "-lc", f"go test -mod=readonly {target}"]
     elif ar["lang"] == "Python":
         if (workspace / module).exists():
             cmd = [
@@ -7219,6 +7214,23 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
     }
     if ar.get("id") in store_validators:
         command, validator = store_validators[ar["id"]]
+        start = time.time()
+        validation_errors = validator(workspace)
+        checks.append({
+            "command": command,
+            "exit_code": 1 if validation_errors else 0,
+            "duration_seconds": round(time.time() - start, 2),
+            "stdout": "\n".join(validation_errors[-40:]),
+            "stderr": "",
+        })
+
+    picod_validators = {
+        "AR-015": ("internal:validate_ar015_picod_execute_api", _validate_ar015_picod_execute_api),
+        "AR-016": ("internal:validate_ar016_picod_file_api", _validate_ar016_picod_file_api),
+        "AR-017": ("internal:validate_ar017_picod_auth_middleware", _validate_ar017_picod_auth_middleware),
+    }
+    if ar.get("id") in picod_validators:
+        command, validator = picod_validators[ar["id"]]
         start = time.time()
         validation_errors = validator(workspace)
         checks.append({
