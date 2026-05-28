@@ -1699,6 +1699,37 @@ def _validate_stage_output(
         elif path.stat().st_size < 80:
             errors.append(f"artifact too small: {path.relative_to(workspace)}")
 
+    allowed_stage_docs = {
+        "ST-0": {
+            f"changes/{ar['id']}/.openspec.yaml",
+            f"changes/{ar['id']}/README.md",
+            f"changes/{ar['id']}/changelog/entries.md",
+        },
+        "ST-1": {f"changes/{ar['id']}/proposal.md"},
+        "ST-2": {f"changes/{ar['id']}/delta-spec.md"},
+        "ST-3": {f"changes/{ar['id']}/design.md"},
+        "ST-4": {f"changes/{ar['id']}/tasks.md"},
+        "ST-5": {f"changes/{ar['id']}/implementation.md"},
+        "ST-6": {f"changes/{ar['id']}/verification.md"},
+        "ST-7": {
+            f"changes/{ar['id']}/README.md",
+            f"changes/{ar['id']}/changelog/entries.md",
+        },
+    }.get(stage_id, set())
+    change_prefix = f"changes/{ar['id']}/"
+    early_or_extra_docs: list[str] = []
+    for rel in delta["changed"]:
+        if not rel.startswith(change_prefix) or rel in allowed_stage_docs:
+            continue
+        rel_path = Path(rel)
+        if rel_path.name in CHANGE_DOC_NAMES or rel_path.suffix.lower() in CHANGE_DOC_EXTS:
+            early_or_extra_docs.append(rel)
+    if early_or_extra_docs:
+        errors.append(
+            f"{stage_id} modified SDD artifacts outside its stage boundary: "
+            + ", ".join(early_or_extra_docs[:10])
+        )
+
     artifact_line_limits = _sdd_artifact_line_limits(ar)
     limit = artifact_line_limits.get(stage_id)
     if limit:
