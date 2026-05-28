@@ -1875,6 +1875,8 @@ def _validate_ar_specific_implementation(workspace: Path, ar: dict) -> list[str]
         return _validate_ar007_workloadmanager_controllers(workspace)
     if ar.get("id") == "AR-008":
         return _validate_ar008_workloadmanager_gc_complete(workspace)
+    if ar.get("id") == "AR-009":
+        return _validate_ar009_router_core(workspace)
     if ar.get("id") == "AR-013":
         return _validate_ar013_redis_backend(workspace)
     if ar.get("id") == "AR-014":
@@ -3003,6 +3005,91 @@ def _validate_workloadmanager_production_complete(workspace: Path, label: str, *
 
 def _validate_ar008_workloadmanager_gc_complete(workspace: Path) -> list[str]:
     return _validate_workloadmanager_production_complete(workspace, "AR-008", forbid_tests=True)
+
+
+def _validate_router_tokens(
+    workspace: Path,
+    file_tokens: dict[str, list[str]],
+    label: str,
+    *,
+    min_total_loc: int = 0,
+    forbid_tests: bool = False,
+) -> list[str]:
+    errors: list[str] = []
+    root = workspace / "pkg" / "router"
+    if not root.exists():
+        return [f"{label} must create pkg/router"]
+
+    if forbid_tests:
+        early_tests = sorted(p.name for p in root.glob("*_test.go") if p.is_file())
+        if early_tests:
+            errors.append(
+                f"{label} must not create router Go tests before the router testing AR: "
+                + ", ".join(early_tests[:12])
+            )
+
+    total_loc = 0
+    for rel, tokens in file_tokens.items():
+        path = root / rel
+        if not path.exists():
+            errors.append(f"{label} must create pkg/router/{rel}")
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        total_loc += len(text.splitlines())
+        lower = text.lower()
+        for marker in ["notimplementederror", "stub implementation", "stubbed implementation"]:
+            if marker in lower:
+                errors.append(f"{label} pkg/router/{rel} must not contain placeholder marker: {marker}")
+        for token in tokens:
+            if token not in text:
+                errors.append(f"{label} pkg/router/{rel} missing production token: {token}")
+
+    if min_total_loc and total_loc < min_total_loc:
+        errors.append(f"{label} router production LOC is too small: {total_loc} < {min_total_loc}")
+
+    return errors
+
+
+def _validate_ar009_router_core(workspace: Path) -> list[str]:
+    return _validate_router_tokens(
+        workspace,
+        {
+            "config.go": [
+                "LastActivityAnnotationKey",
+                "type Config struct",
+                "MaxConcurrentRequests",
+            ],
+            "server.go": [
+                "type Server struct",
+                "func NewServer(config *Config) (*Server, error)",
+                "func (s *Server) concurrencyLimitMiddleware() gin.HandlerFunc",
+                "func (s *Server) setupRoutes()",
+                "\"/health/live\"",
+                "\"/health/ready\"",
+                "\"/namespaces/:namespace/agent-runtimes/:name/invocations/*path\"",
+                "\"/namespaces/:namespace/code-interpreters/:name/invocations/*path\"",
+                "func (s *Server) Start(ctx context.Context) error",
+                "h2c.NewHandler",
+            ],
+            "handlers.go": [
+                "github.com/volcano-sh/agentcube/pkg/common/types",
+                "func (s *Server) handleHealthLive(c *gin.Context)",
+                "func (s *Server) handleHealthReady(c *gin.Context)",
+                "func (s *Server) handleInvoke(c *gin.Context, namespace, name, path, kind string)",
+                "\"x-agentcube-session-id\"",
+                "GetSandboxBySession",
+                "UpdateSessionLastActivity",
+                "func determineUpstreamURL(sandbox *types.SandboxInfo, path string) (*url.URL, error)",
+                "func (s *Server) handleAgentInvoke(c *gin.Context)",
+                "func (s *Server) handleCodeInterpreterInvoke(c *gin.Context)",
+                "func (s *Server) forwardToSandbox(c *gin.Context, sandbox *types.SandboxInfo, path string)",
+                "httputil.NewSingleHostReverseProxy",
+            ],
+        },
+        "AR-009",
+        min_total_loc=220,
+        forbid_tests=True,
+    )
 
 
 def _validate_ar019_go_service_binaries(workspace: Path) -> list[str]:
@@ -6390,6 +6477,21 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
     }
     if ar.get("id") in workloadmanager_validators:
         command, validator = workloadmanager_validators[ar["id"]]
+        start = time.time()
+        validation_errors = validator(workspace)
+        checks.append({
+            "command": command,
+            "exit_code": 1 if validation_errors else 0,
+            "duration_seconds": round(time.time() - start, 2),
+            "stdout": "\n".join(validation_errors[-40:]),
+            "stderr": "",
+        })
+
+    router_validators = {
+        "AR-009": ("internal:validate_ar009_router_core", _validate_ar009_router_core),
+    }
+    if ar.get("id") in router_validators:
+        command, validator = router_validators[ar["id"]]
         start = time.time()
         validation_errors = validator(workspace)
         checks.append({
