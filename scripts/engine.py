@@ -1125,8 +1125,9 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "do not create `pkg/common/types.go` or alias these types from `pkg/store`. Align `go.mod` to the "
             "original baseline (`go 1.24.4`, `toolchain go1.24.9`, Kubernetes modules v0.34.1, "
             "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2) so `go mod tidy` does not pull a "
-            "newer incompatible agent-sandbox release. Do not create workloadmanager or common/types `_test.go` files "
-            "in these production ARs; workloadmanager tests belong to AR-038."
+            "newer incompatible agent-sandbox release. Do not create concrete `pkg/store` backend implementations "
+            "in these production ARs; store backends belong to the later store ARs. Do not create workloadmanager "
+            "or common/types `_test.go` files in these production ARs; workloadmanager tests belong to AR-038."
         )
         previous_ctx_limit = 5000
         original_snippets_limit = 95000
@@ -2798,10 +2799,27 @@ def _validate_workloadmanager_go_mod_baseline(workspace: Path, label: str) -> li
     return [f"{label} go.mod missing original dependency baseline token: {token}" for token in required if token not in text]
 
 
+def _validate_workloadmanager_store_contract(workspace: Path, label: str) -> list[str]:
+    store_root = workspace / "pkg" / "store"
+    if not store_root.exists():
+        return []
+    concrete = sorted(
+        p.name for p in store_root.glob("*.go")
+        if p.is_file() and p.name != "store.go" and not p.name.endswith("_test.go")
+    )
+    if concrete:
+        return [
+            f"{label} must not create concrete store backends before store ARs: "
+            + ", ".join(concrete[:12])
+        ]
+    return []
+
+
 def _validate_workloadmanager_shared_contracts(workspace: Path, label: str, *, forbid_tests: bool = False) -> list[str]:
     return (
         _validate_common_types_package(workspace, label, forbid_tests=forbid_tests)
         + _validate_workloadmanager_go_mod_baseline(workspace, label)
+        + _validate_workloadmanager_store_contract(workspace, label)
     )
 
 
@@ -6697,7 +6715,10 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`pkg/workloadmanager/token_cache.go`. Delete any `pkg/workloadmanager/*_test.go` and "
             "`pkg/common/types/*_test.go`; tests belong to later testing ARs. Shared types must be exactly under "
             "`pkg/common/types/types.go` and `pkg/common/types/sandbox.go`, not `pkg/common/types.go`, and "
-            "workloadmanager must import `github.com/volcano-sh/agentcube/pkg/common/types`. Keep `go.mod` on the "
+            "workloadmanager must import `github.com/volcano-sh/agentcube/pkg/common/types`. Do not create concrete "
+            "store backends such as `pkg/store/memory_store.go`, Redis, or Valkey implementations in WorkloadManager "
+            "production ARs; only the shared `pkg/store/store.go` interface is allowed before the dedicated store ARs. "
+            "Keep `go.mod` on the "
             "original AgentCube baseline (`go 1.24.4`, `toolchain go1.24.9`, Kubernetes modules v0.34.1, "
             "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2). "
             "For AR-004 specifically, the minimum required production files are `server.go`, `utils.go`, "
