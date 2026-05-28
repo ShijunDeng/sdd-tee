@@ -1075,7 +1075,9 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
     if stage_id == "ST-5":
         stage_write_policy = (
             "Stage write boundary: this is the implementation stage. Project source changes are allowed "
-            "only under the allowed implementation paths listed below.\n"
+            "only under the allowed implementation paths listed below. You must also create or update the "
+            f"single stage artifact `{change_dir}/implementation.md`; files such as `implementation-notes.md`, "
+            "`summary.md`, or `verification.md` do not satisfy the ST-5 artifact requirement.\n"
         )
     else:
         stage_write_policy = (
@@ -1271,7 +1273,8 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         "4. Handle errors properly\n"
         "5. You MUST use tool calls to WRITE files to disk\n"
         "6. Match the original code's API contracts, function signatures, and behavior\n"
-        "7. Do not report completion unless files were actually created or modified"
+        f"7. Record the source changes in `{change_dir}/implementation.md` before completion\n"
+        "8. Do not report completion unless files were actually created or modified"
     )
     if ar["id"] in WORKLOADMANAGER_PRODUCTION_AR_IDS:
         critical_text = (
@@ -1283,7 +1286,8 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "4. Handle errors properly and keep local imports aligned with real directories\n"
             "5. You MUST use tool calls to WRITE files to disk\n"
             "6. Match the original code's API contracts, function signatures, file names, and route wiring\n"
-            "7. Do not report completion unless files were actually created or modified"
+            f"7. Record the source changes in `{change_dir}/implementation.md` before completion\n"
+            "8. Do not report completion unless files were actually created or modified"
         )
     if ar["id"] == "AR-009":
         critical_text = (
@@ -1400,7 +1404,9 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             f"{dependency_metadata_policy}"
             f"{generated_artifact_policy}"
             f"The `{change_dir}/` directory is only for SDD documents and notes.\n"
-            f"Record what you changed in {change_dir}/implementation.md.\n\n"
+            f"Mandatory ST-5 artifact: write exactly `{change_dir}/implementation.md` with a concise summary "
+            "of changed source files, validation performed, and known deferrals. Do not use alternate names "
+            "such as `implementation-notes.md`, `summary.md`, or `verification.md` for this stage.\n\n"
             f"{critical_text}"
         ),
         "ST-6": (
