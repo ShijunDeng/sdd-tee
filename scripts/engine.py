@@ -1966,6 +1966,7 @@ def _validate_stage_output(
                     "Go files import local module paths that do not exist: "
                     + ", ".join(bad_imports[:8])
                 )
+            errors.extend(_validate_workloadmanager_go_mod_baseline(workspace, ar["id"]))
         errors.extend(_validate_ar_specific_implementation(workspace, ar))
 
     if stage_id == "ST-6" and ar.get("id") in WORKLOADMANAGER_PRODUCTION_AR_IDS:
@@ -7176,6 +7177,17 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
                 ),
             )
 
+    if ar.get("lang") == "Go":
+        start = time.time()
+        validation_errors = _validate_workloadmanager_go_mod_baseline(workspace, ar["id"])
+        checks.append({
+            "command": "internal:validate_go_mod_baseline",
+            "exit_code": 1 if validation_errors else 0,
+            "duration_seconds": round(time.time() - start, 2),
+            "stdout": "\n".join(validation_errors[-40:]),
+            "stderr": "",
+        })
+
     workloadmanager_validators = {
         "AR-004": ("internal:validate_ar004_workloadmanager_framework", _validate_ar004_workloadmanager_framework),
         "AR-005": ("internal:validate_ar005_workloadmanager_creation", _validate_ar005_workloadmanager_creation),
@@ -7540,6 +7552,16 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "page must have exactly one default export. Use "
             "Docusaurus package versions `^3.10.1` or `3.10.1`, not 3.5.x."
         )
+    go_dependency_policy = ""
+    if ar.get("lang") == "Go" and stage_id == "ST-5":
+        go_dependency_policy = (
+            " Keep `go.mod` and `go.sum` aligned with the original AgentCube dependency baseline: "
+            "`go 1.24.4`, `toolchain go1.24.9`, Kubernetes modules v0.34.1, "
+            "`golang.org/x/net v0.47.0`, `golang.org/x/sys v0.39.0`, "
+            "`sigs.k8s.io/agent-sandbox v0.1.1`, and controller-runtime v0.22.2. "
+            "Do not run `go get` or update dependencies to latest versions; if dependency metadata drifted, "
+            "restore the original versions before returning."
+        )
     missing_implementation_note_only = (
         stage_id == "ST-5"
         and errors
@@ -7812,7 +7834,7 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             repair_policy = (
                 f"Implementation source belongs under these allowed project paths: {allowed_paths}.{test_repair_policy} "
                 "Repair only the validation errors listed above; do not expand scope or add unrelated files."
-                f"{ar_repair_policy}{package_manager_policy}"
+                f"{ar_repair_policy}{go_dependency_policy}{package_manager_policy}"
             )
     return (
         f"The previous attempt for {ar['id']} {stage_id} failed benchmark validation.\n"
