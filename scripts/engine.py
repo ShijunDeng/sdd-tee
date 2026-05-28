@@ -9143,6 +9143,14 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
                     snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
                 except OSError:
                     pass
+            if ar_id in {"AR-013", "AR-014"}:
+                go_mod = original_path / "go.mod"
+                if go_mod.is_file():
+                    try:
+                        rel = go_mod.relative_to(original_path)
+                        snippets.append(f"--- {rel} ---\n{go_mod.read_text(encoding='utf-8', errors='replace')}")
+                    except OSError:
+                        pass
         return "\n\n".join(snippets) if snippets else ""
 
     if module.strip("/") == "client-go":
