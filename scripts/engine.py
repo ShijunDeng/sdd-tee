@@ -2269,6 +2269,7 @@ def _validate_ar013_redis_backend(workspace: Path) -> list[str]:
     errors: list[str] = []
     redis_impl = workspace / "pkg/store/store_redis.go"
     redis_test = workspace / "pkg/store/store_redis_test.go"
+    singleton = workspace / "pkg/store/singleton.go"
 
     if not redis_impl.exists():
         errors.append("AR-013 must create pkg/store/store_redis.go")
@@ -2309,6 +2310,35 @@ def _validate_ar013_redis_backend(workspace: Path) -> list[str]:
             "AR-013 Redis tests do not cover required behaviors: "
             + ", ".join(missing_terms)
         )
+
+    if not singleton.exists():
+        errors.append("AR-013 must update pkg/store/singleton.go")
+    else:
+        singleton_text = singleton.read_text(encoding="utf-8", errors="replace")
+        for token in [
+            "case redisStoreType:",
+            "initRedisStore()",
+            "provider = redisProvider",
+            "init redis store successfully",
+        ]:
+            if token not in singleton_text:
+                errors.append(f"AR-013 singleton wiring missing Redis token: {token}")
+        lowered = singleton_text.lower()
+        for forbidden in [
+            "redis provider initialization failed",
+            "redis backend is deferred",
+            "redis backend deferred",
+            "redis not implemented",
+            "initValkeyStore(",
+        ]:
+            if forbidden.lower() in lowered:
+                errors.append(f"AR-013 singleton wiring must not keep invalid provider branch: {forbidden}")
+
+    go_mod = workspace / "go.mod"
+    if go_mod.exists():
+        go_mod_text = go_mod.read_text(encoding="utf-8", errors="replace")
+        if "github.com/redis/go-redis/v9 v9.17.1" not in go_mod_text:
+            errors.append("AR-013 go.mod missing original Redis dependency: github.com/redis/go-redis/v9 v9.17.1")
     return errors
 
 
@@ -7638,6 +7668,16 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`error.go` must define `ErrNotFound = errors.New(\"store: not found\")`. `singleton.go` must expose "
             "`Storage()` with `sync.Once`, `STORE_TYPE` selection for redis/valkey, and explicit deferred-provider "
             "errors until AR-013/AR-014; it must not call absent `initRedisStore` or `initValkeyStore` functions."
+        )
+    if ar.get("id") == "AR-013" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-013, implement the Redis backend only. Create or repair `pkg/store/store_redis.go`, "
+            "`pkg/store/store_redis_test.go`, and the Redis branch in `pkg/store/singleton.go`. The singleton "
+            "must call `initRedisStore()`, assign `provider = redisProvider`, and may keep the Valkey branch as an "
+            "explicit unsupported/deferred provider until AR-014; do not call `initValkeyStore` or create Valkey "
+            "files. Use `redisv9 \"github.com/redis/go-redis/v9\"` at v9.17.1 and real miniredis/redismock-backed "
+            "tests covering StoreSandbox, GetSandboxBySessionID, expiry/inactive lists, UpdateSessionLastActivity, "
+            "and ErrNotFound."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
