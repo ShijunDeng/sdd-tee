@@ -2551,7 +2551,15 @@ def _validate_ar015_picod_execute_api(workspace: Path) -> list[str]:
         "Stdout",
     ]
     missing_terms = [term for term in required_test_terms if term not in test_text]
-    if not any(term in test_text for term in ["invalid JSON", "malformed JSON", "not json"]):
+    test_lower = test_text.lower()
+    compact_test_lower = re.sub(r"[^a-z0-9]+", "", test_lower)
+    if not (
+        "invalid json" in test_lower
+        or "malformed json" in test_lower
+        or "not json" in test_lower
+        or "invalidjson" in compact_test_lower
+        or "malformedjson" in compact_test_lower
+    ):
         missing_terms.append("invalid/malformed JSON request")
     if missing_terms:
         errors.append(
