@@ -3051,7 +3051,7 @@ def _validate_router_tokens(
 
 
 def _validate_ar009_router_core(workspace: Path) -> list[str]:
-    return _validate_router_tokens(
+    errors = _validate_router_tokens(
         workspace,
         {
             "config.go": [
@@ -3090,6 +3090,20 @@ def _validate_ar009_router_core(workspace: Path) -> list[str]:
         min_total_loc=220,
         forbid_tests=True,
     )
+    root = workspace / "pkg" / "router"
+    if root.exists():
+        allowed_production = {"config.go", "server.go", "handlers.go"}
+        production_files = {
+            p.name for p in root.glob("*.go")
+            if p.is_file() and not p.name.endswith("_test.go")
+        }
+        unexpected = sorted(production_files - allowed_production)
+        if unexpected:
+            errors.append(
+                "AR-009 must not create router production files reserved for later ARs: "
+                + ", ".join(unexpected[:12])
+            )
+    return errors
 
 
 def _validate_ar019_go_service_binaries(workspace: Path) -> list[str]:
