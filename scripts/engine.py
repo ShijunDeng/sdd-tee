@@ -2439,6 +2439,26 @@ def _validate_ar015_picod_execute_api(workspace: Path) -> list[str]:
     if not execute_test.exists():
         errors.append("AR-015 must create pkg/picod/execute_test.go with command execution behavior tests")
     if errors:
+        picod_go_text = "\n".join(
+            path.read_text(encoding="utf-8", errors="replace")
+            for path in sorted(picod_dir.glob("*.go"))
+        )
+        forbidden_scope_tokens = [
+            "AuthMiddleware",
+            "LoadPublicKeyFromEnv",
+            "PublicKeyEnvVar",
+            "MaxBodySize",
+            "jwt.",
+            "UploadFileHandler",
+            "DownloadFileHandler",
+            "ListFilesHandler",
+        ]
+        forbidden_found = [token for token in forbidden_scope_tokens if token in picod_go_text]
+        if forbidden_found:
+            errors.append(
+                "AR-015 source/tests include auth/file-management behavior reserved for later ARs: "
+                + ", ".join(forbidden_found)
+            )
         return errors
 
     server_text = server.read_text(encoding="utf-8", errors="replace")
@@ -2456,15 +2476,19 @@ def _validate_ar015_picod_execute_api(workspace: Path) -> list[str]:
         "NewServer",
         "gin.New",
         "gin.Recovery",
-        "HealthCheckHandler",
         'GET("/health"',
         "ReadHeaderTimeout",
         "ListenAndServe",
-        "workspaceDir",
-        "setWorkspace",
     ]:
         if token not in server_text:
             errors.append(f"AR-015 PicoD server missing required behavior token: {token}")
+    for token in [
+        "HealthCheckHandler",
+        "workspaceDir",
+        "setWorkspace",
+    ]:
+        if token not in picod_go_text:
+            errors.append(f"AR-015 PicoD package missing required behavior token: {token}")
     if 'POST("/execute"' not in server_text and 'POST("/api/execute"' not in server_text:
         errors.append("AR-015 PicoD server missing execute route registration")
     if "sanitizePath" not in picod_go_text:
@@ -2487,7 +2511,6 @@ def _validate_ar015_picod_execute_api(workspace: Path) -> list[str]:
         "exec.CommandContext",
         "cmd.Stdout",
         "cmd.Stderr",
-        "ProcessState.ExitCode",
         "DeadlineExceeded",
         "req.WorkingDir",
         "req.Env",
@@ -2495,6 +2518,8 @@ def _validate_ar015_picod_execute_api(workspace: Path) -> list[str]:
     ]:
         if token not in execute_text:
             errors.append(f"AR-015 execute implementation missing required behavior token: {token}")
+    if "ProcessState.ExitCode" not in execute_text and ".ExitCode()" not in execute_text:
+        errors.append("AR-015 execute implementation missing required behavior token: exit code extraction")
 
     forbidden_scope_tokens = [
         "AuthMiddleware",
@@ -7759,6 +7784,15 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "GetSandboxBySessionID, expiry/inactive lists, UpdateSessionLastActivity, ErrNotFound, "
             "VALKEY_DISABLE_CACHE, and VALKEY_FORCE_SINGLE. Do not use `v0.0.0`, pseudo-version replaces, "
             "or a newer Go directive; keep `go 1.24.4` and `toolchain go1.24.9`."
+        )
+    if ar.get("id") == "AR-015" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-015, implement only the PicoD command execution API and unauthenticated health/server wiring. "
+            "Allowed PicoD files are command/server support such as `pkg/picod/server.go`, `pkg/picod/execute.go`, "
+            "`pkg/picod/execute_test.go`, and small same-package helpers/types if needed. Delete or avoid "
+            "`pkg/picod/auth.go`, `pkg/picod/auth_test.go`, `pkg/picod/files.go`, `pkg/picod/files_test.go`, "
+            "AuthMiddleware, JWT/public-key loading, MaxBodySize, upload/download/list file APIs, and any tests "
+            "that require bearer tokens; those belong to AR-016 and AR-017."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
