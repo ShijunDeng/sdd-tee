@@ -187,6 +187,52 @@ FORBIDDEN_DEPENDENCY_METADATA_BY_AR = {
 
 WORKLOADMANAGER_PRODUCTION_AR_IDS = {"AR-004", "AR-005", "AR-006", "AR-007", "AR-008"}
 
+WORKLOADMANAGER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
+    "AR-004": [
+        "server.go",
+        "utils.go",
+        "client_cache.go",
+        "k8s_client.go",
+        "auth.go",
+        "informers.go",
+        "handlers.go",
+        "garbage_collection.go",
+    ],
+    "AR-005": [
+        "handlers.go",
+        "workload_builder.go",
+        "sandbox_helper.go",
+        "k8s_client.go",
+        "client_cache.go",
+        "informers.go",
+        "server.go",
+        "sandbox_controller.go",
+    ],
+    "AR-006": [
+        "handlers.go",
+        "k8s_client.go",
+        "garbage_collection.go",
+        "sandbox_helper.go",
+        "workload_builder.go",
+        "server.go",
+    ],
+    "AR-007": [
+        "sandbox_controller.go",
+        "codeinterpreter_controller.go",
+        "informers.go",
+        "workload_builder.go",
+        "k8s_client.go",
+    ],
+    "AR-008": [
+        "garbage_collection.go",
+        "handlers.go",
+        "k8s_client.go",
+        "workload_builder.go",
+        "sandbox_helper.go",
+        "server.go",
+    ],
+}
+
 AR_IMPLEMENTATION_NOTES = {
     "AR-004": (
         "Scope split: implement the real WorkloadManager HTTP server framework, not an alternate simplified API. "
@@ -6656,6 +6702,15 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "For AR-004 specifically, the minimum required production files are `server.go`, `utils.go`, "
             "`client_cache.go`, `k8s_client.go`, and the two `pkg/common/types` files."
         )
+        if ar.get("id") == "AR-005":
+            ar_repair_policy += (
+                " For AR-005 specifically, the required production files are `handlers.go`, "
+                "`workload_builder.go`, `sandbox_helper.go`, and `k8s_client.go`; repair them from the original "
+                "reference instead of inventing alternate workload lookup helpers. `workload_builder.go` must contain "
+                "`buildSandboxObject`, `buildSandboxClaimObject`, `buildSandboxByAgentRuntime`, "
+                "`buildSandboxByCodeInterpreter`, `PICOD_AUTH_PUBLIC_KEY`, and `RuntimeClassName`. "
+                "`sandbox_helper.go` must keep the real `buildSandboxPlaceHolder` and `buildSandboxInfo` helpers."
+            )
     if ar.get("id") == "AR-008" and stage_id == "ST-5":
         ar_repair_policy = (
             " For AR-008, the WorkloadManager production package must be complete and real after repair. "
@@ -7989,10 +8044,19 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
             if ar_id == "AR-038":
                 paths = sorted(workload_root.glob("*_test.go"))
             else:
-                paths = sorted(
-                    fpath for fpath in workload_root.glob("*.go")
+                production_paths = {
+                    fpath.name: fpath
+                    for fpath in workload_root.glob("*.go")
                     if not fpath.name.endswith("_test.go")
+                }
+                ordered_names = [
+                    name for name in WORKLOADMANAGER_REFERENCE_ORDER_BY_AR.get(ar_id, [])
+                    if name in production_paths
+                ]
+                ordered_names.extend(
+                    sorted(name for name in production_paths if name not in set(ordered_names))
                 )
+                paths = [production_paths[name] for name in ordered_names]
             for fpath in paths:
                 try:
                     rel = fpath.relative_to(original_path)
