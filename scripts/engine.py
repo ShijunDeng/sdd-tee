@@ -130,6 +130,7 @@ ALLOWED_PLACEHOLDER_LINE_SNIPPETS = [
     "storeplaceholder",
     "sandboxstoreplaceholder",
     "buildsandboxplaceholder",
+    "todo(hzxuzhonghu): make use of typed informer",
     "todo extend this to unknown resources with a client pool",
     "placeholder:",
     "testbuildsandboxplaceholder",
