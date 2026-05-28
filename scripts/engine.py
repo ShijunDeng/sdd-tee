@@ -1052,7 +1052,8 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "do not create `pkg/common/types.go` or alias these types from `pkg/store`. Align `go.mod` to the "
             "original baseline (`go 1.24.4`, `toolchain go1.24.9`, Kubernetes modules v0.34.1, "
             "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2) so `go mod tidy` does not pull a "
-            "newer incompatible agent-sandbox release."
+            "newer incompatible agent-sandbox release. Do not create workloadmanager or common/types `_test.go` files "
+            "in these production ARs; workloadmanager tests belong to AR-038."
         )
         previous_ctx_limit = 5000
         original_snippets_limit = 95000
@@ -2522,6 +2523,7 @@ def _validate_workloadmanager_tokens(
     *,
     exact_production_files: bool = False,
     min_total_loc: int = 0,
+    forbid_tests: bool = False,
 ) -> list[str]:
     errors: list[str] = []
     root = workspace / "pkg" / "workloadmanager"
@@ -2533,6 +2535,18 @@ def _validate_workloadmanager_tokens(
         p.name for p in root.glob("*.go")
         if p.is_file() and not p.name.endswith("_test.go")
     }
+    non_original_production = sorted(production_files - set(WORKLOADMANAGER_FINAL_PRODUCTION_TOKENS))
+    if non_original_production:
+        errors.append(
+            f"{label} must not create non-original workloadmanager production files: "
+            + ", ".join(non_original_production[:12])
+        )
+    early_tests = sorted(p.name for p in root.glob("*_test.go") if p.is_file())
+    if forbid_tests and early_tests:
+        errors.append(
+            f"{label} must not create workloadmanager Go tests before AR-038: "
+            + ", ".join(early_tests[:12])
+        )
     if exact_production_files:
         missing = sorted(expected - production_files)
         unexpected = sorted(production_files - expected)
@@ -2566,11 +2580,17 @@ def _validate_workloadmanager_tokens(
     return errors
 
 
-def _validate_common_types_package(workspace: Path, label: str) -> list[str]:
+def _validate_common_types_package(workspace: Path, label: str, *, forbid_tests: bool = False) -> list[str]:
     errors: list[str] = []
     misplaced = workspace / "pkg" / "common" / "types.go"
     if misplaced.exists():
         errors.append(f"{label} must not create pkg/common/types.go; use pkg/common/types/{{types.go,sandbox.go}}")
+    early_common_tests = sorted((workspace / "pkg" / "common" / "types").glob("*_test.go"))
+    if forbid_tests and early_common_tests:
+        errors.append(
+            f"{label} must not create pkg/common/types tests in WorkloadManager production ARs: "
+            + ", ".join(str(p.relative_to(workspace)) for p in early_common_tests[:8])
+        )
 
     required = {
         "pkg/common/types/types.go": [
@@ -2631,9 +2651,9 @@ def _validate_workloadmanager_go_mod_baseline(workspace: Path, label: str) -> li
     return [f"{label} go.mod missing original dependency baseline token: {token}" for token in required if token not in text]
 
 
-def _validate_workloadmanager_shared_contracts(workspace: Path, label: str) -> list[str]:
+def _validate_workloadmanager_shared_contracts(workspace: Path, label: str, *, forbid_tests: bool = False) -> list[str]:
     return (
-        _validate_common_types_package(workspace, label)
+        _validate_common_types_package(workspace, label, forbid_tests=forbid_tests)
         + _validate_workloadmanager_go_mod_baseline(workspace, label)
     )
 
@@ -2667,7 +2687,8 @@ def _validate_ar004_workloadmanager_framework(workspace: Path) -> list[str]:
             ],
         },
         "AR-004",
-    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-004")
+        forbid_tests=True,
+    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-004", forbid_tests=True)
 
 
 def _validate_ar005_workloadmanager_creation(workspace: Path) -> list[str]:
@@ -2704,7 +2725,8 @@ def _validate_ar005_workloadmanager_creation(workspace: Path) -> list[str]:
             ],
         },
         "AR-005",
-    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-005")
+        forbid_tests=True,
+    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-005", forbid_tests=True)
 
 
 def _validate_ar006_workloadmanager_lifecycle(workspace: Path) -> list[str]:
@@ -2725,7 +2747,8 @@ def _validate_ar006_workloadmanager_lifecycle(workspace: Path) -> list[str]:
             ],
         },
         "AR-006",
-    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-006")
+        forbid_tests=True,
+    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-006", forbid_tests=True)
 
 
 def _validate_ar007_workloadmanager_controllers(workspace: Path) -> list[str]:
@@ -2745,21 +2768,23 @@ def _validate_ar007_workloadmanager_controllers(workspace: Path) -> list[str]:
             "informers.go": WORKLOADMANAGER_FINAL_PRODUCTION_TOKENS["informers.go"],
         },
         "AR-007",
-    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-007")
+        forbid_tests=True,
+    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-007", forbid_tests=True)
 
 
-def _validate_workloadmanager_production_complete(workspace: Path, label: str) -> list[str]:
+def _validate_workloadmanager_production_complete(workspace: Path, label: str, *, forbid_tests: bool = False) -> list[str]:
     return _validate_workloadmanager_tokens(
         workspace,
         WORKLOADMANAGER_FINAL_PRODUCTION_TOKENS,
         label,
         exact_production_files=True,
         min_total_loc=2300,
-    ) + _validate_workloadmanager_shared_contracts(workspace, label)
+        forbid_tests=forbid_tests,
+    ) + _validate_workloadmanager_shared_contracts(workspace, label, forbid_tests=forbid_tests)
 
 
 def _validate_ar008_workloadmanager_gc_complete(workspace: Path) -> list[str]:
-    return _validate_workloadmanager_production_complete(workspace, "AR-008")
+    return _validate_workloadmanager_production_complete(workspace, "AR-008", forbid_tests=True)
 
 
 def _validate_ar019_go_service_binaries(workspace: Path) -> list[str]:
@@ -6516,6 +6541,21 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`.github/workflows/workflows-approve.yml`. Repair missing or invalid workflow YAML under "
             "`.github/workflows/` only; do not create Makefile, Docker, Helm, source, test, docs, or generated files."
         )
+    if ar.get("id") in {"AR-004", "AR-005", "AR-006", "AR-007"} and stage_id == "ST-5":
+        ar_repair_policy = (
+            f" For {ar['id']}, repair only real WorkloadManager production files from the original reference. "
+            "Delete non-original files such as `pkg/workloadmanager/cache.go`, `pkg/workloadmanager/defaults.go`, "
+            "`pkg/workloadmanager/memory_store.go`, `pkg/workloadmanager/middleware.go`, "
+            "`pkg/workloadmanager/sandbox_creator.go`, `pkg/workloadmanager/store.go`, and "
+            "`pkg/workloadmanager/token_cache.go`. Delete any `pkg/workloadmanager/*_test.go` and "
+            "`pkg/common/types/*_test.go`; tests belong to later testing ARs. Shared types must be exactly under "
+            "`pkg/common/types/types.go` and `pkg/common/types/sandbox.go`, not `pkg/common/types.go`, and "
+            "workloadmanager must import `github.com/volcano-sh/agentcube/pkg/common/types`. Keep `go.mod` on the "
+            "original AgentCube baseline (`go 1.24.4`, `toolchain go1.24.9`, Kubernetes modules v0.34.1, "
+            "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2, Redis v9.17.1, testify v1.11.1). "
+            "For AR-004 specifically, the minimum required production files are `server.go`, `utils.go`, "
+            "`client_cache.go`, `k8s_client.go`, and the two `pkg/common/types` files."
+        )
     if ar.get("id") == "AR-008" and stage_id == "ST-5":
         ar_repair_policy = (
             " For AR-008, the WorkloadManager production package must be complete and real after repair. "
@@ -6526,7 +6566,8 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`middleware.go`, `sandbox_creator.go`, `store.go`, and `token_cache.go`. Use the original reference "
             "instead of patching individual missing tokens with dummy wrappers. Keep shared types under "
             "`pkg/common/types/` and keep `go.mod` on the original AgentCube dependency baseline; do not import "
-            "`github.com/volcano-sh/agentcube/pkg/common` from workloadmanager."
+            "`github.com/volcano-sh/agentcube/pkg/common` from workloadmanager. Do not create workloadmanager or "
+            "common/types tests in AR-008; tests belong to later testing ARs."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
