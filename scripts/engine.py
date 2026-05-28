@@ -307,6 +307,12 @@ AR_IMPLEMENTATION_NOTES = {
         "contracts. Do not implement JWT key management, `jwt.go`, `cmd/router`, tests, dependency metadata, "
         "or other shared package rewrites in AR-010; AR-011 owns JWT."
     ),
+    "AR-011": (
+        "Scope split: implement only Router JWT key management in `pkg/router/jwt.go` and wire the existing "
+        "Router server/handler to `*JWTManager`. Preserve the AR-009/AR-010 Router core and session manager. "
+        "Do not create router tests, `cmd/router`, store/common rewrites, or alternate JWT interfaces. Use the "
+        "original RS256 key generation, Kubernetes Secret bootstrap, and `GenerateToken` contract."
+    ),
     "AR-012": (
         "Scope split: implement only the store package contracts for this AR: Store interface, "
         "ErrNotFound, and the shared sandbox document type under `pkg/common/types/...` if it "
@@ -694,6 +700,10 @@ AR_RESERVED_IMPLEMENTATION_PATTERNS = {
         "pkg/router/*jwt*.go",
         "cmd/router/*",
     ],
+    "AR-011": [
+        "pkg/router/*_test.go",
+        "cmd/router/*",
+    ],
     "AR-012": [
         "pkg/store/store_redis.go",
         "pkg/store/store_redis_test.go",
@@ -1002,6 +1012,8 @@ def _allowed_implementation_prefixes(ar: dict) -> list[str]:
         return ["pkg/router"]
     if ar.get("id") == "AR-010":
         return ["pkg/router", "pkg/api"]
+    if ar.get("id") == "AR-011":
+        return ["pkg/router"]
     module = ar["module"].strip("/")
     prefixes = [module] if module else []
     prefixes.extend(EXTRA_IMPLEMENTATION_PREFIXES_BY_MODULE.get(module, []))
@@ -1261,6 +1273,20 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         original_snippets_limit = 35000
         original_reference_note = (
             "FULL ORIGINAL ROUTER SESSION MANAGER REFERENCE (ground truth for AR-010; JWT is intentionally omitted):"
+        )
+    if ar["id"] == "AR-011":
+        st5_intro = (
+            "Implement ONLY Router JWT key management for this AR. Add `pkg/router/jwt.go` from the original "
+            "reference and wire the existing Router server and forwarding handler to use `*JWTManager`. Preserve "
+            "`pkg/router/config.go`, `pkg/router/server.go`, `pkg/router/handlers.go`, and "
+            "`pkg/router/session_manager.go`; do not replace the router core or session manager. Do not create "
+            "router tests, `cmd/router`, store/common rewrites, or alternate JWT interfaces. Update `go.mod` and "
+            "`go.sum` only as needed to add the original `github.com/golang-jwt/jwt/v5 v5.2.2` dependency."
+        )
+        previous_ctx_limit = 6500
+        original_snippets_limit = 55000
+        original_reference_note = (
+            "FULL ORIGINAL ROUTER JWT REFERENCE (ground truth for AR-011; tests and cmd/router are intentionally omitted):"
         )
     if ar["id"] == "AR-042":
         st5_intro = (
@@ -2008,6 +2034,8 @@ def _validate_ar_specific_implementation(workspace: Path, ar: dict) -> list[str]
         return _validate_ar009_router_core(workspace)
     if ar.get("id") == "AR-010":
         return _validate_ar010_router_session_manager(workspace)
+    if ar.get("id") == "AR-011":
+        return _validate_ar011_router_jwt(workspace)
     if ar.get("id") == "AR-013":
         return _validate_ar013_redis_backend(workspace)
     if ar.get("id") == "AR-014":
@@ -3468,6 +3496,124 @@ def _validate_ar010_router_session_manager(workspace: Path) -> list[str]:
             if token not in api_errors_text:
                 errors.append(f"AR-010 pkg/api/errors.go missing production token: {token}")
     errors.extend(_validate_workloadmanager_shared_contracts(workspace, "AR-010", forbid_tests=True))
+    return errors
+
+
+def _validate_ar011_router_jwt(workspace: Path) -> list[str]:
+    errors = _validate_router_tokens(
+        workspace,
+        {
+            "config.go": [
+                "LastActivityAnnotationKey",
+                "type Config struct",
+                "MaxConcurrentRequests",
+            ],
+            "server.go": [
+                "type Server struct",
+                "sessionManager SessionManager",
+                "storeClient    store.Store",
+                "httpTransport  *http.Transport",
+                "jwtManager     *JWTManager",
+                "func NewServer(config *Config) (*Server, error)",
+                "NewSessionManager(",
+                "NewJWTManager()",
+                "TryStoreOrLoadJWTKeySecret(context.Background())",
+                "server.jwtManager = jwtManager",
+                "JWT manager initialized successfully",
+                "func (s *Server) setupRoutes()",
+                "func (s *Server) Start(ctx context.Context) error",
+                "h2c.NewHandler",
+            ],
+            "handlers.go": [
+                "github.com/volcano-sh/agentcube/pkg/common/types",
+                "func (s *Server) forwardToSandbox(c *gin.Context, sandbox *types.SandboxInfo, path string)",
+                "if sandbox.Kind == types.SandboxClaimsKind || sandbox.Kind == types.SandboxKind",
+                "if s.jwtManager != nil",
+                "claims := map[string]interface{}",
+                "\"session_id\": sandbox.SessionID",
+                "s.jwtManager.GenerateToken(claims)",
+                "\"error\": \"failed to sign request\"",
+                "\"code\":  \"JWT_SIGNING_FAILED\"",
+                "req.Header.Set(\"Authorization\", \"Bearer \"+jwtToken)",
+            ],
+            "session_manager.go": [
+                "type SessionManager interface",
+                "func NewSessionManager(storeClient store.Store) (SessionManager, error)",
+                "func (m *manager) GetSandboxBySession(ctx context.Context, sessionID string, namespace string, name string, kind string) (*types.SandboxInfo, error)",
+                "api.NewSessionNotFoundError(sessionID)",
+                "api.NewSandboxTemplateNotFoundError(namespace, name, kind)",
+            ],
+            "jwt.go": [
+                "github.com/golang-jwt/jwt/v5",
+                "crypto/rand",
+                "rsaKeySize = 2048",
+                "jwtExpiration = 5 * time.Minute",
+                "IdentitySecretName = \"picod-router-identity\"",
+                "PrivateKeyDataKey = \"private.pem\"",
+                "PublicKeyDataKey = \"public.pem\"",
+                "var IdentityNamespace = \"default\"",
+                "os.Getenv(\"AGENTCUBE_NAMESPACE\")",
+                "type JWTManager struct",
+                "clientset  kubernetes.Interface",
+                "func NewJWTManager() (*JWTManager, error)",
+                "rsa.GenerateKey(rand.Reader, rsaKeySize)",
+                "func (jm *JWTManager) GenerateToken(claims map[string]interface{}) (string, error)",
+                "jwt.MapClaims",
+                "\"iss\": \"agentcube-router\"",
+                "jwt.SigningMethodRS256",
+                "func (jm *JWTManager) GetPublicKeyPEM() ([]byte, error)",
+                "x509.MarshalPKIXPublicKey",
+                "func (jm *JWTManager) GetPrivateKeyPEM() []byte",
+                "x509.MarshalPKCS1PrivateKey",
+                "func (jm *JWTManager) TryStoreOrLoadJWTKeySecret(ctx context.Context) error",
+                "rest.InClusterConfig",
+                "kubernetes.NewForConfig",
+                "corev1.Secret",
+                "apierrors.IsAlreadyExists",
+                "loadPrivateKeyPEM",
+                "func (jm *JWTManager) loadPrivateKeyPEM(privateKeyPEM []byte) error",
+            ],
+        },
+        "AR-011",
+        min_total_loc=620,
+        forbid_tests=True,
+    )
+    root = workspace / "pkg" / "router"
+    if root.exists():
+        allowed_production = {"config.go", "server.go", "handlers.go", "session_manager.go", "jwt.go"}
+        production_files = {
+            p.name for p in root.glob("*.go")
+            if p.is_file() and not p.name.endswith("_test.go")
+        }
+        unexpected = sorted(production_files - allowed_production)
+        if unexpected:
+            errors.append(
+                "AR-011 must not create router production files outside the JWT split: "
+                + ", ".join(unexpected[:12])
+            )
+        combined = "\n".join(
+            p.read_text(encoding="utf-8", errors="replace")
+            for p in root.glob("*.go")
+            if p.is_file()
+        )
+        for forbidden in [
+            "type JWTManager interface",
+            "tokenSigner    tokenSigner",
+            "type tokenSigner interface",
+            "rsa.GenerateKey(nil",
+            "RSA PUBLIC KEY",
+            "privateKey not initialized",
+        ]:
+            if forbidden in combined:
+                errors.append(f"AR-011 router JWT must not keep shim/incorrect JWT token: {forbidden}")
+    go_mod = workspace / "go.mod"
+    if not go_mod.exists():
+        errors.append("AR-011 must keep go.mod")
+    else:
+        go_mod_text = go_mod.read_text(encoding="utf-8", errors="replace")
+        if "github.com/golang-jwt/jwt/v5 v5.2.2" not in go_mod_text:
+            errors.append("AR-011 go.mod missing original dependency: github.com/golang-jwt/jwt/v5 v5.2.2")
+    errors.extend(_validate_workloadmanager_shared_contracts(workspace, "AR-011", forbid_tests=True))
     return errors
 
 
@@ -6869,6 +7015,7 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
     router_validators = {
         "AR-009": ("internal:validate_ar009_router_core", _validate_ar009_router_core),
         "AR-010": ("internal:validate_ar010_router_session_manager", _validate_ar010_router_session_manager),
+        "AR-011": ("internal:validate_ar011_router_jwt", _validate_ar011_router_jwt),
     }
     if ar.get("id") in router_validators:
         command, validator = router_validators[ar["id"]]
@@ -7323,6 +7470,22 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "Wire `NewServer` to `NewSessionManager(store.Storage())` while preserving the AR-009 reverse-proxy "
             "routes and handlers. JWT key management is AR-011; keep only the existing narrow `tokenSigner` "
             "interface and do not define `JWTManager`, `NewJWTManager`, or `TryStoreOrLoadJWTKeySecret` in AR-010."
+        )
+    if ar.get("id") == "AR-011" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-011, reset the Router package to the cumulative five production files: "
+            "`pkg/router/config.go`, `pkg/router/server.go`, `pkg/router/handlers.go`, "
+            "`pkg/router/session_manager.go`, and `pkg/router/jwt.go`. Delete router tests, `cmd/router`, "
+            "alternate JWT interfaces, and any rewrites outside `pkg/router` except dependency metadata. "
+            "Implement the original `JWTManager` in `jwt.go`: RS256 RSA key generation with `rand.Reader`, "
+            "`rsaKeySize`, `jwtExpiration`, `IdentitySecretName`, `PrivateKeyDataKey`, `PublicKeyDataKey`, "
+            "`IdentityNamespace` from `AGENTCUBE_NAMESPACE`, `GenerateToken`, PEM helpers, "
+            "`TryStoreOrLoadJWTKeySecret`, Kubernetes Secret create/load, and `loadPrivateKeyPEM`. Wire "
+            "`Server` to hold `jwtManager *JWTManager`, call `NewJWTManager`, call "
+            "`TryStoreOrLoadJWTKeySecret(context.Background())`, and set `server.jwtManager`. Wire "
+            "`forwardToSandbox` to call `s.jwtManager.GenerateToken(claims)` for `Sandbox`/`SandboxClaim` kinds "
+            "and set `Authorization: Bearer <token>`. Remove the earlier AR-009 `tokenSigner` shim. Ensure "
+            "`go.mod` includes `github.com/golang-jwt/jwt/v5 v5.2.2`."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
@@ -8708,6 +8871,14 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
                     try:
                         rel = api_errors.relative_to(original_path)
                         snippets.append(f"--- {rel} ---\n{api_errors.read_text(encoding='utf-8', errors='replace')}")
+                    except OSError:
+                        pass
+            if ar_id == "AR-011":
+                go_mod = original_path / "go.mod"
+                if go_mod.is_file():
+                    try:
+                        rel = go_mod.relative_to(original_path)
+                        snippets.append(f"--- {rel} ---\n{go_mod.read_text(encoding='utf-8', errors='replace')}")
                     except OSError:
                         pass
         return "\n\n".join(snippets) if snippets else ""
