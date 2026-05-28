@@ -1047,7 +1047,12 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "Implement the WorkloadManager production Go code for this AR using the real AgentCube production "
             "interfaces from the original reference below. Keep the output compatible with the cumulative real "
             "`pkg/workloadmanager` package; do not invent alternate session models, request/response types, "
-            "test-only controller shims, or non-original production files."
+            "test-only controller shims, or non-original production files. Use the original shared package "
+            "`pkg/common/types/{types.go,sandbox.go}` and import it as `github.com/volcano-sh/agentcube/pkg/common/types`; "
+            "do not create `pkg/common/types.go` or alias these types from `pkg/store`. Align `go.mod` to the "
+            "original baseline (`go 1.24.4`, `toolchain go1.24.9`, Kubernetes modules v0.34.1, "
+            "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2) so `go mod tidy` does not pull a "
+            "newer incompatible agent-sandbox release."
         )
         previous_ctx_limit = 5000
         original_snippets_limit = 95000
@@ -2405,6 +2410,7 @@ WORKLOADMANAGER_FINAL_PRODUCTION_TOKENS: dict[str, list[str]] = {
         "SetupWithManager",
     ],
     "garbage_collection.go": [
+        "github.com/volcano-sh/agentcube/pkg/common/types",
         "type garbageCollector struct",
         "func newGarbageCollector(k8sClient *K8sClient, storeClient store.Store, interval time.Duration) *garbageCollector",
         "func (gc *garbageCollector) run(stopCh <-chan struct{})",
@@ -2415,6 +2421,7 @@ WORKLOADMANAGER_FINAL_PRODUCTION_TOKENS: dict[str, list[str]] = {
         "deleteSandbox",
     ],
     "handlers.go": [
+        "github.com/volcano-sh/agentcube/pkg/common/types",
         "func (s *Server) handleAgentRuntimeCreate(c *gin.Context)",
         "func (s *Server) handleCodeInterpreterCreate(c *gin.Context)",
         "func (s *Server) extractUserK8sClient(c *gin.Context) (dynamic.Interface, error)",
@@ -2465,6 +2472,7 @@ WORKLOADMANAGER_FINAL_PRODUCTION_TOKENS: dict[str, list[str]] = {
         "func (r *SandboxReconciler) UnWatchSandbox(namespace, name string)",
     ],
     "sandbox_helper.go": [
+        "github.com/volcano-sh/agentcube/pkg/common/types",
         "func buildSandboxPlaceHolder(sandboxCR *sandboxv1alpha1.Sandbox, entry *sandboxEntry) *types.SandboxInfo",
         "func buildSandboxInfo(sandbox *sandboxv1alpha1.Sandbox, podIP string, entry *sandboxEntry) *types.SandboxInfo",
         "func getSandboxStatus(sandbox *sandboxv1alpha1.Sandbox) string",
@@ -2492,6 +2500,7 @@ WORKLOADMANAGER_FINAL_PRODUCTION_TOKENS: dict[str, list[str]] = {
         "func RandString(n int) string",
     ],
     "workload_builder.go": [
+        "github.com/volcano-sh/agentcube/pkg/common/types",
         "func GetCachedPublicKey() string",
         "func IsPublicKeyCached() bool",
         "func InitPublicKeyCache(clientset kubernetes.Interface)",
@@ -2557,6 +2566,78 @@ def _validate_workloadmanager_tokens(
     return errors
 
 
+def _validate_common_types_package(workspace: Path, label: str) -> list[str]:
+    errors: list[str] = []
+    misplaced = workspace / "pkg" / "common" / "types.go"
+    if misplaced.exists():
+        errors.append(f"{label} must not create pkg/common/types.go; use pkg/common/types/{{types.go,sandbox.go}}")
+
+    required = {
+        "pkg/common/types/types.go": [
+            "package types",
+            "AgentRuntimeKind    = \"AgentRuntime\"",
+            "CodeInterpreterKind = \"CodeInterpreter\"",
+            "SandboxKind       = \"Sandbox\"",
+            "SandboxClaimsKind = \"SandboxClaim\"",
+        ],
+        "pkg/common/types/sandbox.go": [
+            "package types",
+            "type SandboxInfo struct",
+            "type SandboxEntryPoint struct",
+            "type CreateSandboxRequest struct",
+            "type CreateSandboxResponse struct",
+            "func (car *CreateSandboxRequest) Validate() error",
+            "namespace is required",
+            "name is required",
+            "invalid kind",
+        ],
+    }
+    for rel, tokens in required.items():
+        path = workspace / rel
+        if not path.exists():
+            errors.append(f"{label} must create {rel}")
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for forbidden in [
+            "github.com/volcano-sh/agentcube/pkg/store",
+            "type SandboxInfo =",
+            "type SandboxEntryPoint =",
+        ]:
+            if forbidden in text:
+                errors.append(f"{label} {rel} must not alias store types or import store: {forbidden}")
+        for token in tokens:
+            if token not in text:
+                errors.append(f"{label} {rel} missing token: {token}")
+
+    return errors
+
+
+def _validate_workloadmanager_go_mod_baseline(workspace: Path, label: str) -> list[str]:
+    go_mod = workspace / "go.mod"
+    if not go_mod.exists():
+        return [f"{label} must create go.mod with the original AgentCube Go dependency baseline"]
+    text = go_mod.read_text(encoding="utf-8", errors="replace")
+    required = [
+        "go 1.24.4",
+        "toolchain go1.24.9",
+        "k8s.io/api v0.34.1",
+        "k8s.io/apimachinery v0.34.1",
+        "k8s.io/client-go v0.34.1",
+        "sigs.k8s.io/agent-sandbox v0.1.1",
+        "sigs.k8s.io/controller-runtime v0.22.2",
+        "github.com/redis/go-redis/v9 v9.17.1",
+        "github.com/stretchr/testify v1.11.1",
+    ]
+    return [f"{label} go.mod missing original dependency baseline token: {token}" for token in required if token not in text]
+
+
+def _validate_workloadmanager_shared_contracts(workspace: Path, label: str) -> list[str]:
+    return (
+        _validate_common_types_package(workspace, label)
+        + _validate_workloadmanager_go_mod_baseline(workspace, label)
+    )
+
+
 def _validate_ar004_workloadmanager_framework(workspace: Path) -> list[str]:
     return _validate_workloadmanager_tokens(
         workspace,
@@ -2586,7 +2667,7 @@ def _validate_ar004_workloadmanager_framework(workspace: Path) -> list[str]:
             ],
         },
         "AR-004",
-    )
+    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-004")
 
 
 def _validate_ar005_workloadmanager_creation(workspace: Path) -> list[str]:
@@ -2594,6 +2675,7 @@ def _validate_ar005_workloadmanager_creation(workspace: Path) -> list[str]:
         workspace,
         {
             "handlers.go": [
+                "github.com/volcano-sh/agentcube/pkg/common/types",
                 "func (s *Server) handleSandboxCreate(c *gin.Context, kind string)",
                 "func (s *Server) extractUserK8sClient(c *gin.Context) (dynamic.Interface, error)",
                 "buildSandboxByAgentRuntime",
@@ -2602,6 +2684,7 @@ def _validate_ar005_workloadmanager_creation(workspace: Path) -> list[str]:
                 "func (s *Server) createSandbox(ctx context.Context, dynamicClient dynamic.Interface",
             ],
             "workload_builder.go": [
+                "github.com/volcano-sh/agentcube/pkg/common/types",
                 "func buildSandboxObject(params *buildSandboxParams) *sandboxv1alpha1.Sandbox",
                 "func buildSandboxClaimObject(params *buildSandboxClaimParams) *extensionsv1alpha1.SandboxClaim",
                 "func buildSandboxByAgentRuntime(namespace string, name string, ifm *Informers) (*sandboxv1alpha1.Sandbox, *sandboxEntry, error)",
@@ -2610,6 +2693,7 @@ def _validate_ar005_workloadmanager_creation(workspace: Path) -> list[str]:
                 "RuntimeClassName",
             ],
             "sandbox_helper.go": [
+                "github.com/volcano-sh/agentcube/pkg/common/types",
                 "func buildSandboxPlaceHolder(sandboxCR *sandboxv1alpha1.Sandbox, entry *sandboxEntry) *types.SandboxInfo",
                 "func buildSandboxInfo(sandbox *sandboxv1alpha1.Sandbox, podIP string, entry *sandboxEntry) *types.SandboxInfo",
             ],
@@ -2620,7 +2704,7 @@ def _validate_ar005_workloadmanager_creation(workspace: Path) -> list[str]:
             ],
         },
         "AR-005",
-    )
+    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-005")
 
 
 def _validate_ar006_workloadmanager_lifecycle(workspace: Path) -> list[str]:
@@ -2628,6 +2712,7 @@ def _validate_ar006_workloadmanager_lifecycle(workspace: Path) -> list[str]:
         workspace,
         {
             "handlers.go": [
+                "github.com/volcano-sh/agentcube/pkg/common/types",
                 "func (s *Server) handleDeleteSandbox(c *gin.Context)",
                 "GetSandboxBySessionID",
                 "DeleteSandboxBySessionID",
@@ -2640,7 +2725,7 @@ def _validate_ar006_workloadmanager_lifecycle(workspace: Path) -> list[str]:
             ],
         },
         "AR-006",
-    )
+    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-006")
 
 
 def _validate_ar007_workloadmanager_controllers(workspace: Path) -> list[str]:
@@ -2660,7 +2745,7 @@ def _validate_ar007_workloadmanager_controllers(workspace: Path) -> list[str]:
             "informers.go": WORKLOADMANAGER_FINAL_PRODUCTION_TOKENS["informers.go"],
         },
         "AR-007",
-    )
+    ) + _validate_workloadmanager_shared_contracts(workspace, "AR-007")
 
 
 def _validate_workloadmanager_production_complete(workspace: Path, label: str) -> list[str]:
@@ -2670,7 +2755,7 @@ def _validate_workloadmanager_production_complete(workspace: Path, label: str) -
         label,
         exact_production_files=True,
         min_total_loc=2300,
-    )
+    ) + _validate_workloadmanager_shared_contracts(workspace, label)
 
 
 def _validate_ar008_workloadmanager_gc_complete(workspace: Path) -> list[str]:
@@ -6439,7 +6524,9 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`k8s_client.go`, `sandbox_controller.go`, `sandbox_helper.go`, `server.go`, `utils.go`, and "
             "`workload_builder.go`. Remove non-original shim files such as `defaults.go`, `memory_store.go`, "
             "`middleware.go`, `sandbox_creator.go`, `store.go`, and `token_cache.go`. Use the original reference "
-            "instead of patching individual missing tokens with dummy wrappers."
+            "instead of patching individual missing tokens with dummy wrappers. Keep shared types under "
+            "`pkg/common/types/` and keep `go.mod` on the original AgentCube dependency baseline; do not import "
+            "`github.com/volcano-sh/agentcube/pkg/common` from workloadmanager."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
@@ -7771,6 +7858,20 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
                     snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
                 except OSError:
                     pass
+            if ar_id != "AR-038":
+                for rel_name in [
+                    "pkg/common/types/types.go",
+                    "pkg/common/types/sandbox.go",
+                    "go.mod",
+                ]:
+                    fpath = original_path / rel_name
+                    if not fpath.is_file():
+                        continue
+                    try:
+                        rel = fpath.relative_to(original_path)
+                        snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
+                    except OSError:
+                        pass
         return "\n\n".join(snippets) if snippets else ""
 
     if module.strip("/") == "client-go":
