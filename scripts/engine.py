@@ -2739,6 +2739,8 @@ def _validate_ar017_picod_auth_middleware(workspace: Path) -> list[str]:
         "jwt.NewWithClaims",
     ]
     missing_terms = [term for term in required_test_terms if term not in test_text]
+    test_lower = test_text.lower()
+    compact_test_lower = re.sub(r"[^a-z0-9]+", "", test_lower)
     if not any(term in test_text for term in [
         "missing Authorization",
         "Missing Authorization",
@@ -2754,7 +2756,11 @@ def _validate_ar017_picod_auth_middleware(workspace: Path) -> list[str]:
         "invalid JWT signature",
         "InvalidSignature",
         "InvalidJWTSignature",
-    ]):
+    ]) and not (
+        "different key" in test_lower
+        or "wrong key" in test_lower
+        or "otherprivatekey" in compact_test_lower
+    ):
         missing_terms.append("invalid signature")
     if missing_terms:
         errors.append(
