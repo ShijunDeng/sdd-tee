@@ -2339,6 +2339,8 @@ def _validate_ar013_redis_backend(workspace: Path) -> list[str]:
         go_mod_text = go_mod.read_text(encoding="utf-8", errors="replace")
         if "github.com/redis/go-redis/v9 v9.17.1" not in go_mod_text:
             errors.append("AR-013 go.mod missing original Redis dependency: github.com/redis/go-redis/v9 v9.17.1")
+        if "miniredis" in test_text and "github.com/alicebob/miniredis/v2 v2.35.0" not in go_mod_text:
+            errors.append("AR-013 go.mod missing original miniredis dependency: github.com/alicebob/miniredis/v2 v2.35.0")
     return errors
 
 
@@ -7189,11 +7191,17 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
             "stderr": "",
         })
 
-    if ar.get("id") == "AR-012":
+    store_validators = {
+        "AR-012": ("internal:validate_ar012_store_contract", _validate_ar012_store_contract),
+        "AR-013": ("internal:validate_ar013_redis_backend", _validate_ar013_redis_backend),
+        "AR-014": ("internal:validate_ar014_valkey_backend", _validate_ar014_valkey_backend),
+    }
+    if ar.get("id") in store_validators:
+        command, validator = store_validators[ar["id"]]
         start = time.time()
-        validation_errors = _validate_ar012_store_contract(workspace)
+        validation_errors = validator(workspace)
         checks.append({
-            "command": "internal:validate_ar012_store_contract",
+            "command": command,
             "exit_code": 1 if validation_errors else 0,
             "duration_seconds": round(time.time() - start, 2),
             "stdout": "\n".join(validation_errors[-40:]),
@@ -7677,7 +7685,7 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "explicit unsupported/deferred provider until AR-014; do not call `initValkeyStore` or create Valkey "
             "files. Use `redisv9 \"github.com/redis/go-redis/v9\"` at v9.17.1 and real miniredis/redismock-backed "
             "tests covering StoreSandbox, GetSandboxBySessionID, expiry/inactive lists, UpdateSessionLastActivity, "
-            "and ErrNotFound."
+            "and ErrNotFound. If using miniredis, keep `github.com/alicebob/miniredis/v2` at the original v2.35.0."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
