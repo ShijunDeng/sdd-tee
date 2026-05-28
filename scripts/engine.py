@@ -2341,6 +2341,7 @@ def _validate_ar013_redis_backend(workspace: Path) -> list[str]:
             errors.append("AR-013 go.mod missing original Redis dependency: github.com/redis/go-redis/v9 v9.17.1")
         if "miniredis" in test_text and "github.com/alicebob/miniredis/v2 v2.35.0" not in go_mod_text:
             errors.append("AR-013 go.mod missing original miniredis dependency: github.com/alicebob/miniredis/v2 v2.35.0")
+    errors.extend(_validate_workloadmanager_go_mod_baseline(workspace, "AR-013"))
     return errors
 
 
@@ -2417,6 +2418,9 @@ def _validate_ar014_valkey_backend(workspace: Path) -> list[str]:
             errors.append("AR-014 go.mod missing original Valkey dependency: github.com/valkey-io/valkey-go v1.0.69")
         if "github.com/alicebob/miniredis/v2 v2.35.0" not in go_mod_text:
             errors.append("AR-014 go.mod missing original miniredis dependency: github.com/alicebob/miniredis/v2 v2.35.0")
+        if "replace github.com/valkey-io/valkey-go" in go_mod_text or "github.com/valkey-io/valkey-go v0.0.0" in go_mod_text:
+            errors.append("AR-014 go.mod must use direct original Valkey v1.0.69, not v0.0.0 or replace")
+    errors.extend(_validate_workloadmanager_go_mod_baseline(workspace, "AR-014"))
     return errors
 
 
@@ -7698,7 +7702,8 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "explicit unsupported/deferred provider until AR-014; do not call `initValkeyStore` or create Valkey "
             "files. Use `redisv9 \"github.com/redis/go-redis/v9\"` at v9.17.1 and real miniredis/redismock-backed "
             "tests covering StoreSandbox, GetSandboxBySessionID, expiry/inactive lists, UpdateSessionLastActivity, "
-            "and ErrNotFound. If using miniredis, keep `github.com/alicebob/miniredis/v2` at the original v2.35.0."
+            "and ErrNotFound. If using miniredis, keep `github.com/alicebob/miniredis/v2` at the original v2.35.0. "
+            "Keep the original Go baseline in go.mod: `go 1.24.4` and `toolchain go1.24.9`."
         )
     if ar.get("id") == "AR-014" and stage_id == "ST-5":
         ar_repair_policy = (
@@ -7709,7 +7714,8 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`provider = valkeyProvider`, and log successful Valkey init. Use `github.com/valkey-io/valkey-go` "
             "at v1.0.69 and miniredis v2.35.0; tests must cover makeValkeyOptions, StoreSandbox, "
             "GetSandboxBySessionID, expiry/inactive lists, UpdateSessionLastActivity, ErrNotFound, "
-            "VALKEY_DISABLE_CACHE, and VALKEY_FORCE_SINGLE."
+            "VALKEY_DISABLE_CACHE, and VALKEY_FORCE_SINGLE. Do not use `v0.0.0`, pseudo-version replaces, "
+            "or a newer Go directive; keep `go 1.24.4` and `toolchain go1.24.9`."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
