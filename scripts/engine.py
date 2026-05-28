@@ -2375,8 +2375,14 @@ def _validate_ar014_valkey_backend(workspace: Path) -> list[str]:
         errors.append("AR-014 must update pkg/store/singleton.go")
     else:
         singleton_text = singleton.read_text(encoding="utf-8", errors="replace")
-        if "initValkeyStore" not in singleton_text:
-            errors.append("AR-014 singleton wiring must call initValkeyStore for STORE_TYPE=valkey")
+        for token in [
+            "case valkeyStoreType:",
+            "initValkeyStore()",
+            "provider = valkeyProvider",
+            "init valkey store successfully",
+        ]:
+            if token not in singleton_text:
+                errors.append(f"AR-014 singleton wiring missing Valkey token: {token}")
         lowered = singleton_text.lower()
         if "valkey provider not implemented" in lowered or "valkey not implemented" in lowered:
             errors.append("AR-014 singleton wiring still contains not-implemented Valkey branch")
@@ -2404,6 +2410,13 @@ def _validate_ar014_valkey_backend(workspace: Path) -> list[str]:
             "AR-014 Valkey tests do not cover required behaviors: "
             + ", ".join(missing_terms)
         )
+    go_mod = workspace / "go.mod"
+    if go_mod.exists():
+        go_mod_text = go_mod.read_text(encoding="utf-8", errors="replace")
+        if "github.com/valkey-io/valkey-go v1.0.69" not in go_mod_text:
+            errors.append("AR-014 go.mod missing original Valkey dependency: github.com/valkey-io/valkey-go v1.0.69")
+        if "github.com/alicebob/miniredis/v2 v2.35.0" not in go_mod_text:
+            errors.append("AR-014 go.mod missing original miniredis dependency: github.com/alicebob/miniredis/v2 v2.35.0")
     return errors
 
 
@@ -7686,6 +7699,17 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "files. Use `redisv9 \"github.com/redis/go-redis/v9\"` at v9.17.1 and real miniredis/redismock-backed "
             "tests covering StoreSandbox, GetSandboxBySessionID, expiry/inactive lists, UpdateSessionLastActivity, "
             "and ErrNotFound. If using miniredis, keep `github.com/alicebob/miniredis/v2` at the original v2.35.0."
+        )
+    if ar.get("id") == "AR-014" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-014, implement the Valkey backend only. Create or repair `pkg/store/store_valkey.go`, "
+            "`pkg/store/store_valkey_test.go`, and the Valkey branch in `pkg/store/singleton.go`. Do not modify "
+            "Redis backend files except as required by shared interfaces, and do not leave an unsupported or "
+            "not-implemented Valkey branch. The singleton must call `initValkeyStore()`, assign "
+            "`provider = valkeyProvider`, and log successful Valkey init. Use `github.com/valkey-io/valkey-go` "
+            "at v1.0.69 and miniredis v2.35.0; tests must cover makeValkeyOptions, StoreSandbox, "
+            "GetSandboxBySessionID, expiry/inactive lists, UpdateSessionLastActivity, ErrNotFound, "
+            "VALKEY_DISABLE_CACHE, and VALKEY_FORCE_SINGLE."
         )
     if ar.get("id") == "AR-035" and stage_id == "ST-5":
         ar_repair_policy = (
