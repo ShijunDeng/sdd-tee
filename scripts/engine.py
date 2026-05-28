@@ -2613,7 +2613,6 @@ def _validate_ar016_picod_file_api(workspace: Path) -> list[str]:
         "sanitizePath",
         "os.MkdirAll",
         "os.WriteFile",
-        "os.ReadFile",
         "os.ReadDir",
         "strconv.ParseUint",
         "filepath.Dir",
@@ -2622,6 +2621,8 @@ def _validate_ar016_picod_file_api(workspace: Path) -> list[str]:
     ]:
         if token not in files_text:
             errors.append(f"AR-016 file implementation missing required behavior token: {token}")
+    if "c.File" not in files_text and "os.ReadFile" not in files_text:
+        errors.append("AR-016 file implementation missing download body serving token: c.File or os.ReadFile")
 
     forbidden_scope_tokens = [
         "AuthMiddleware",
