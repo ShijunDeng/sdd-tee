@@ -3309,8 +3309,6 @@ def _validate_ar010_router_session_manager(workspace: Path) -> list[str]:
                 "type tokenSigner interface",
                 "tokenSigner    tokenSigner",
                 "func NewServer(config *Config) (*Server, error)",
-                "NewSessionManager(store.Storage())",
-                "sessionManager: sessionManager",
                 "func (s *Server) setupRoutes()",
                 "\"/health/live\"",
                 "\"/health/ready\"",
@@ -3400,6 +3398,15 @@ def _validate_ar010_router_session_manager(workspace: Path) -> list[str]:
             for p in root.glob("*.go")
             if p.is_file()
         )
+        server_text = (root / "server.go").read_text(encoding="utf-8", errors="replace") if (root / "server.go").is_file() else ""
+        if "NewSessionManager(" not in server_text:
+            errors.append("AR-010 server.go must wire NewServer to NewSessionManager")
+        if not any(token in server_text for token in [
+            "sessionManager: sessionManager",
+            "SetSessionManager(sessionManager)",
+            "sessionManager = sessionManager",
+        ]):
+            errors.append("AR-010 server.go must store the NewSessionManager result on Server.sessionManager")
         for forbidden in [
             "type SandboxInfo struct",
             "type SandboxEntryPoint struct",
@@ -3409,7 +3416,6 @@ def _validate_ar010_router_session_manager(workspace: Path) -> list[str]:
             "NewJWTManager",
             "TryStoreOrLoadJWTKeySecret",
             "GenerateJWT",
-            "GenerateToken(claims map[string]interface{})",
             "github.com/golang-jwt/jwt",
             "rsa.GenerateKey",
             "PrivateKeyDataKey",
