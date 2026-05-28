@@ -302,8 +302,10 @@ AR_IMPLEMENTATION_NOTES = {
         "Scope split: implement only the concrete Router session manager in `pkg/router/session_manager.go` "
         "and wire the existing Router server to `NewSessionManager(store.Storage())` without replacing the "
         "AR-009 reverse-proxy core. Keep `pkg/router/config.go`, `pkg/router/server.go`, and "
-        "`pkg/router/handlers.go` present and compatible. Do not implement JWT key management, `jwt.go`, "
-        "`cmd/router`, tests, dependency metadata, or shared package rewrites in AR-010; AR-011 owns JWT."
+        "`pkg/router/handlers.go` present and compatible. If the API error helpers are missing, update only "
+        "`pkg/api/errors.go` with the original `NewSessionNotFoundError` and `NewSandboxTemplateNotFoundError` "
+        "contracts. Do not implement JWT key management, `jwt.go`, `cmd/router`, tests, dependency metadata, "
+        "or other shared package rewrites in AR-010; AR-011 owns JWT."
     ),
     "AR-012": (
         "Scope split: implement only the store package contracts for this AR: Store interface, "
@@ -996,8 +998,10 @@ def _filter_spec_text_for_ar(ar: dict, name: str, text: str) -> str:
 
 
 def _allowed_implementation_prefixes(ar: dict) -> list[str]:
-    if ar.get("id") in {"AR-009", "AR-010"}:
+    if ar.get("id") == "AR-009":
         return ["pkg/router"]
+    if ar.get("id") == "AR-010":
+        return ["pkg/router", "pkg/api"]
     module = ar["module"].strip("/")
     prefixes = [module] if module else []
     prefixes.extend(EXTRA_IMPLEMENTATION_PREFIXES_BY_MODULE.get(module, []))
@@ -1249,8 +1253,9 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "`NewSessionManager(store.Storage())`. Preserve the AR-009 Router core files "
             "`pkg/router/config.go`, `pkg/router/server.go`, and `pkg/router/handlers.go`; do not replace or "
             "delete them. Do not implement JWT key management, `pkg/router/jwt.go`, router tests, `cmd/router`, "
-            "shared package rewrites, or dependency metadata in AR-010. Keep the JWT collaborator as the existing "
-            "narrow `tokenSigner` interface until AR-011."
+            "or dependency metadata in AR-010. You may update only `pkg/api/errors.go` outside `pkg/router` if "
+            "needed to add the original API error helpers used by the session manager. Keep the JWT collaborator "
+            "as the existing narrow `tokenSigner` interface until AR-011."
         )
         previous_ctx_limit = 6500
         original_snippets_limit = 35000
@@ -3425,6 +3430,43 @@ def _validate_ar010_router_session_manager(workspace: Path) -> list[str]:
         ]:
             if forbidden in combined:
                 errors.append(f"AR-010 router session manager must not define local/future shim: {forbidden}")
+    api_root = workspace / "pkg" / "api"
+    if api_root.exists():
+        api_files = {
+            p.name for p in api_root.glob("*.go")
+            if p.is_file() and not p.name.endswith("_test.go")
+        }
+        unexpected_api = sorted(api_files - {"errors.go"})
+        if unexpected_api:
+            errors.append(
+                "AR-010 may only update pkg/api/errors.go outside pkg/router, found: "
+                + ", ".join(unexpected_api[:12])
+            )
+    api_errors_path = workspace / "pkg" / "api" / "errors.go"
+    if not api_errors_path.exists():
+        errors.append("AR-010 must keep pkg/api/errors.go for session manager API errors")
+    else:
+        api_errors_text = api_errors_path.read_text(encoding="utf-8", errors="replace")
+        for token in [
+            "apierrors \"k8s.io/apimachinery/pkg/api/errors\"",
+            "\"k8s.io/apimachinery/pkg/runtime/schema\"",
+            "github.com/volcano-sh/agentcube/pkg/common/types",
+            "resourceGroup               = \"agentcube.volcano.sh\"",
+            "sessionResourceName         = \"sessions\"",
+            "agentRuntimeResourceName    = \"agentruntimes\"",
+            "codeInterpreterResourceName = \"codeinterpreters\"",
+            "sessionResource         = schema.GroupResource{Group: resourceGroup, Resource: sessionResourceName}",
+            "func NewSessionNotFoundError(sessionID string) error",
+            "return apierrors.NewNotFound(sessionResource, sessionID)",
+            "func workloadResource(kind string) schema.GroupResource",
+            "case types.CodeInterpreterKind:",
+            "func NewSandboxTemplateNotFoundError(namespace, name, kind string) error",
+            "return apierrors.NewNotFound(gr, fmt.Sprintf(\"%s/%s\", namespace, name))",
+            "func NewUpstreamUnavailableError(err error) error",
+            "func NewInternalError(err error) error",
+        ]:
+            if token not in api_errors_text:
+                errors.append(f"AR-010 pkg/api/errors.go missing production token: {token}")
     errors.extend(_validate_workloadmanager_shared_contracts(workspace, "AR-010", forbid_tests=True))
     return errors
 
@@ -7271,8 +7313,10 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             " For AR-010, reset the Router package to exactly four production files for this split: "
             "`pkg/router/config.go`, `pkg/router/server.go`, `pkg/router/handlers.go`, and "
             "`pkg/router/session_manager.go`. Delete or avoid `pkg/router/jwt.go`, `pkg/router/jwt_manager.go`, "
-            "`pkg/router/*_test.go`, `cmd/router`, and any edits to `pkg/api`, `pkg/store`, `pkg/common`, "
-            "`go.mod`, or `go.sum`. Implement the real `SessionManager` interface, `manager`, "
+            "`pkg/router/*_test.go`, `cmd/router`, and any edits to `pkg/store`, `pkg/common`, `go.mod`, "
+            "or `go.sum`. The only allowed non-router source edit is `pkg/api/errors.go`, and only to add the "
+            "original `NewSessionNotFoundError` and `NewSandboxTemplateNotFoundError` helpers. Implement the real "
+            "`SessionManager` interface, `manager`, "
             "`NewSessionManager(store.Store)`, `GetSandboxBySession`, workload manager create calls, auth token "
             "loading from `/var/run/secrets/kubernetes.io/serviceaccount/token`, HTTP/2 transport settings, "
             "store lookup with `store.ErrNotFound`, and `types.CreateSandboxResponse` to `types.SandboxInfo` mapping. "
@@ -8658,6 +8702,14 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
                     snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
                 except OSError:
                     pass
+            if ar_id == "AR-010":
+                api_errors = original_path / "pkg" / "api" / "errors.go"
+                if api_errors.is_file():
+                    try:
+                        rel = api_errors.relative_to(original_path)
+                        snippets.append(f"--- {rel} ---\n{api_errors.read_text(encoding='utf-8', errors='replace')}")
+                    except OSError:
+                        pass
         return "\n\n".join(snippets) if snippets else ""
 
     if module.strip("/") == "client-go":
