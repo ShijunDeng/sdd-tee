@@ -4017,12 +4017,12 @@ def _validate_ar020_cli_pack_command(workspace: Path) -> list[str]:
     if "agentcube" not in pyproject_text or "typer" not in pyproject_text:
         errors.append("AR-020 pyproject.toml must define the agentcube CLI package and typer dependency")
 
-    tests_root = cli_root / "agentcube/tests"
     pack_tests = []
-    if tests_root.exists():
-        pack_tests = [p for p in tests_root.rglob("test_*.py") if "pack" in p.name]
+    for tests_root in [cli_root / "agentcube/tests", cli_root / "tests"]:
+        if tests_root.exists():
+            pack_tests.extend(p for p in tests_root.rglob("test_*.py") if "pack" in p.name)
     if not pack_tests:
-        errors.append("AR-020 must include pack-focused tests under cmd/cli/agentcube/tests")
+        errors.append("AR-020 must include pack-focused tests under cmd/cli/agentcube/tests or cmd/cli/tests")
     else:
         combined_tests = "\n".join(p.read_text(encoding="utf-8", errors="replace") for p in pack_tests)
         for token in ["PackRuntime", "Dockerfile", "requirements"]:
@@ -7159,8 +7159,11 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
     if ar["lang"] == "Python" and module == "cmd/cli" and all(
         check.get("exit_code") in (0, "0") for check in checks
     ):
-        tests_dir = workspace / module / "agentcube/tests"
-        if tests_dir.exists() and any(tests_dir.rglob("test_*.py")):
+        test_dirs = [
+            rel for rel in [f"{module}/agentcube/tests", f"{module}/tests"]
+            if (workspace / rel).exists() and any((workspace / rel).rglob("test_*.py"))
+        ]
+        if test_dirs:
             try:
                 pytest_timeout = int(os.getenv("SDD_LOCAL_CHECK_TIMEOUT_PY", "240"))
             except ValueError:
@@ -7172,7 +7175,7 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
                 sys.executable,
                 "-m",
                 "pytest",
-                f"{module}/agentcube/tests",
+                *test_dirs,
                 "-q",
                 "-p",
                 "no:cacheprovider",
