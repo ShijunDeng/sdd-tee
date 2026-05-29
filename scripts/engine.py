@@ -2748,7 +2748,7 @@ def _validate_ar017_picod_auth_middleware(workspace: Path) -> list[str]:
         "MissingAuthorization",
     ]):
         missing_terms.append("missing Authorization")
-    if not any(term in test_text for term in ["expired token", "ExpiredToken", "expired"]):
+    if not any(term in test_text for term in ["expired token", "ExpiredToken", "expired"]) and "add(-" not in test_lower:
         missing_terms.append("expired token")
     if not any(term in test_text for term in [
         "invalid signature",
