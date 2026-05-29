@@ -2182,7 +2182,17 @@ def _validate_workloadmanager_verification_artifact(workspace: Path, ar: dict) -
         line_lower = line.lower()
         if "pkg/common/types.go" not in line_lower:
             continue
-        if any(marker in line_lower for marker in ["not `pkg/common/types.go`", "not pkg/common/types.go", "do not", "must not", "avoid"]):
+        if any(marker in line_lower for marker in [
+            "not `pkg/common/types.go`",
+            "not pkg/common/types.go",
+            "no `pkg/common/types.go`",
+            "no pkg/common/types.go",
+            "does not exist",
+            "absent",
+            "do not",
+            "must not",
+            "avoid",
+        ]):
             continue
         errors.append(
             f"{ar['id']} verification.md references obsolete shared-types path pkg/common/types.go"
@@ -3538,6 +3548,26 @@ def _validate_workloadmanager_store_contract(
     return errors
 
 
+def _validate_api_contract_files(workspace: Path, label: str) -> list[str]:
+    api_root = workspace / "pkg" / "api"
+    if not api_root.exists():
+        return []
+    errors: list[str] = []
+    if (api_root / "error.go").exists():
+        errors.append(f"{label} must not create pkg/api/error.go; the original file is pkg/api/errors.go")
+    production = sorted(
+        p.name for p in api_root.glob("*.go")
+        if p.is_file() and not p.name.endswith("_test.go")
+    )
+    unexpected = [name for name in production if name != "errors.go"]
+    if unexpected:
+        errors.append(
+            f"{label} must not create non-original pkg/api production files: "
+            + ", ".join(unexpected[:8])
+        )
+    return errors
+
+
 def _validate_workloadmanager_shared_contracts(
     workspace: Path,
     label: str,
@@ -3547,6 +3577,7 @@ def _validate_workloadmanager_shared_contracts(
 ) -> list[str]:
     return (
         _validate_common_types_package(workspace, label, forbid_tests=forbid_tests)
+        + _validate_api_contract_files(workspace, label)
         + _validate_workloadmanager_go_mod_baseline(workspace, label)
         + _validate_workloadmanager_store_contract(
             workspace,
@@ -8819,7 +8850,8 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "and `CreateSandboxResponse.EntryPoints` must use `[]SandboxEntryPoint`, and `SandboxEntryPoint` must have "
             "`Path`, `Protocol`, and `Endpoint` fields; do not create a non-original `EntryPoint` type. The early "
             "`pkg/store/store.go` contract must include `UpdateSessionLastActivity(ctx context.Context, sessionID string, "
-            "at time.Time) error` and the expired/inactive list methods with `limit int64`. Do not create concrete "
+            "at time.Time) error` and the expired/inactive list methods with `limit int64`. If API error helpers are "
+            "needed, use the original `pkg/api/errors.go`; never create `pkg/api/error.go`. Do not create concrete "
             "store backends such as `pkg/store/memory_store.go`, Redis, or Valkey implementations in WorkloadManager "
             "production ARs; only the shared `pkg/store/store.go` interface is allowed before the dedicated store ARs. "
             "Do not create service entrypoints such as `cmd/workload-manager/main.go`; those belong to AR-019. "
