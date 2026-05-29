@@ -7508,6 +7508,31 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
             "stdout": "\n".join(validation_errors[-40:]),
             "stderr": "",
         })
+        if not validation_errors:
+            append_check(
+                [
+                    sys.executable,
+                    "-c",
+                    (
+                        "from pathlib import Path\n"
+                        "import sys, yaml\n"
+                        "root = Path('.github/workflows')\n"
+                        "errors = []\n"
+                        "for path in sorted(root.glob('*.y*ml')):\n"
+                        "    try:\n"
+                        "        data = yaml.safe_load(path.read_text(encoding='utf-8'))\n"
+                        "        if not isinstance(data, dict):\n"
+                        "            errors.append(f'{path}: top-level YAML document is not a mapping')\n"
+                        "    except Exception as exc:\n"
+                        "        errors.append(f'{path}: {exc}')\n"
+                        "print('\\n'.join(errors))\n"
+                        "sys.exit(1 if errors else 0)\n"
+                    ),
+                ],
+                workspace,
+                30,
+                display_cmd="python -c validate_github_workflow_yaml",
+            )
 
     if ar.get("id") == "AR-035":
         start = time.time()
