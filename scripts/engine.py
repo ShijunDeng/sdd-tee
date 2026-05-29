@@ -7325,6 +7325,30 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
             "stderr": "",
         })
 
+    python_package_validators = {
+        "AR-020": ("internal:validate_ar020_cli_pack_command", _validate_ar020_cli_pack_command),
+        "AR-021": ("internal:validate_ar021_cli_build_command", _validate_ar021_cli_build_command),
+        "AR-022": ("internal:validate_ar022_cli_publish_command", _validate_ar022_cli_publish_command),
+        "AR-023": ("internal:validate_ar023_cli_invoke_status_command", _validate_ar023_cli_invoke_status_command),
+        "AR-024": ("internal:validate_ar024_cli_docker_service", _validate_ar024_cli_docker_service),
+        "AR-025": ("internal:validate_ar025_cli_metadata_service", _validate_ar025_cli_metadata_service),
+        "AR-026": ("internal:validate_ar026_cli_providers", _validate_ar026_cli_providers),
+        "AR-027": ("internal:validate_ar027_sdk_code_interpreter", _validate_ar027_sdk_code_interpreter),
+        "AR-028": ("internal:validate_ar028_sdk_agent_runtime", _validate_ar028_sdk_agent_runtime),
+        "AR-029": ("internal:validate_ar029_sdk_http_clients", _validate_ar029_sdk_http_clients),
+    }
+    if ar.get("id") in python_package_validators:
+        command, validator = python_package_validators[ar["id"]]
+        start = time.time()
+        validation_errors = validator(workspace)
+        checks.append({
+            "command": command,
+            "exit_code": 1 if validation_errors else 0,
+            "duration_seconds": round(time.time() - start, 2),
+            "stdout": "\n".join(validation_errors[-40:]),
+            "stderr": "",
+        })
+
     if ar.get("id") == "AR-030":
         start = time.time()
         validation_errors = _validate_ar030_helm_chart(workspace)
