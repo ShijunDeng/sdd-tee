@@ -580,7 +580,9 @@ AR_IMPLEMENTATION_NOTES = {
         "`generate: controller-gen gen-crd`, `gen-all: generate gen-client`, `build: generate`, "
         "`build-agentd: generate`, `build-router: generate`, and `build-all: build build-agentd build-router`. "
         "Do not replace the real root `run`, `docker-build`, `docker-buildx`, `docker-push`, or `kind-load` "
-        "targets with a generic `COMPONENT` dispatcher; those root targets are concrete workloadmanager targets."
+        "targets with a generic `COMPONENT` dispatcher; those root targets are concrete workloadmanager targets. "
+        "Push and buildx-push targets must guard missing `IMAGE_REGISTRY`, and local tool targets must use the "
+        "versioned `go-install-tool` macro that installs into `LOCALBIN`, moves `$(1)` to `$(1)-$(3)`, and symlinks it."
     ),
     "AR-034": (
         "Scope split: implement only GitHub Actions workflow YAML under `.github/workflows`. Required files are "
@@ -5861,6 +5863,7 @@ def _validate_ar033_makefile(workspace: Path) -> list[str]:
         "PICOD_IMAGE ?= picod:latest",
         "IMAGE_REGISTRY ?= \"\"",
         "LOCALBIN ?= $(shell pwd)/bin",
+        "$(LOCALBIN):",
         "CONTROLLER_GEN ?= $(LOCALBIN)/controller-gen",
         "GOLANGCI_LINT ?= $(LOCALBIN)/golangci-lint",
         "CONTROLLER_TOOLS_VERSION ?= v0.17.2",
@@ -5971,7 +5974,23 @@ def _validate_ar033_makefile(workspace: Path) -> list[str]:
         "docker buildx build -f docker/Dockerfile.picod --platform linux/amd64,linux/arm64",
         "docker tag $(PICOD_IMAGE) $(IMAGE_REGISTRY)/$(PICOD_IMAGE)",
         "docker push $(IMAGE_REGISTRY)/$(PICOD_IMAGE)",
+        "if [ -z \"$(IMAGE_REGISTRY)\" ]; then",
+        "Error: IMAGE_REGISTRY not set. Usage: make docker-buildx-push IMAGE_REGISTRY=your-registry.com",
+        "Error: IMAGE_REGISTRY not set. Usage: make docker-push IMAGE_REGISTRY=your-registry.com",
+        "Error: IMAGE_REGISTRY not set. Usage: make docker-buildx-push-router IMAGE_REGISTRY=your-registry.com",
+        "Error: IMAGE_REGISTRY not set. Usage: make docker-push-router IMAGE_REGISTRY=your-registry.com",
+        "Error: IMAGE_REGISTRY not set. Usage: make docker-buildx-push-picod IMAGE_REGISTRY=your-registry.com",
+        "Error: IMAGE_REGISTRY not set. Usage: make docker-push-picod IMAGE_REGISTRY=your-registry.com",
+        "mkdir -p $(LOCALBIN)",
+        "$(CONTROLLER_GEN): $(LOCALBIN)",
+        "$(GOLANGCI_LINT): $(LOCALBIN)",
+        "$(call go-install-tool,$(CONTROLLER_GEN),sigs.k8s.io/controller-tools/cmd/controller-gen,$(CONTROLLER_TOOLS_VERSION))",
+        "$(call go-install-tool,$(GOLANGCI_LINT),github.com/golangci/golangci-lint/cmd/golangci-lint,$(GOLANGCI_LINT_VERSION))",
         "define go-install-tool",
+        "@[ -f \"$(1)-$(3)\" ]",
+        "package=$(2)@$(3)",
+        "GOBIN=$(LOCALBIN) go install $${package}",
+        "mv $(1) $(1)-$(3)",
         "go install $${package}",
         "ln -sf $(1)-$(3) $(1)",
         "./test/e2e/run_e2e.sh",
