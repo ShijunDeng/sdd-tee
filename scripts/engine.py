@@ -4574,7 +4574,6 @@ def _validate_ar025_cli_metadata_service(workspace: Path) -> list[str]:
         "metadata.entrypoint",
         "metadata.requirements_file",
         "entrypoint_parts",
-        "src_main_java",
         "src/main/java",
         "root.tag",
         "agent_metadata.yaml",
@@ -4590,6 +4589,20 @@ def _validate_ar025_cli_metadata_service(workspace: Path) -> list[str]:
     ]:
         if token not in service_text:
             errors.append(f"AR-025 MetadataService missing behavior token: {token}")
+
+    has_java_source_dir_check = (
+        "src_main_java" in service_text
+        or re.search(
+            r"workspace_path\s*/\s*['\"]src['\"]\s*/\s*['\"]main['\"]\s*/\s*['\"]java['\"]",
+            service_text,
+        )
+        or re.search(
+            r"\.joinpath\(\s*['\"]src['\"]\s*,\s*['\"]main['\"]\s*,\s*['\"]java['\"]\s*\)",
+            service_text,
+        )
+    )
+    if not has_java_source_dir_check:
+        errors.append("AR-025 MetadataService must validate the Java src/main/java source directory")
 
     if "class MetadataOptions" not in pack_models_text:
         errors.append("AR-025 must keep the AR-020 MetadataOptions model in pack_models.py")
