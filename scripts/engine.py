@@ -578,7 +578,9 @@ AR_IMPLEMENTATION_NOTES = {
         "targets using the `go-install-tool` macro, E2E targets, and the Python SDK build target. Preserve the "
         "real target dependency shape such as `all: build`, `gen-crd: controller-gen`, "
         "`generate: controller-gen gen-crd`, `gen-all: generate gen-client`, `build: generate`, "
-        "`build-agentd: generate`, `build-router: generate`, and `build-all: build build-agentd build-router`."
+        "`build-agentd: generate`, `build-router: generate`, and `build-all: build build-agentd build-router`. "
+        "Do not replace the real root `run`, `docker-build`, `docker-buildx`, `docker-push`, or `kind-load` "
+        "targets with a generic `COMPONENT` dispatcher; those root targets are concrete workloadmanager targets."
     ),
     "AR-034": (
         "Scope split: implement only GitHub Actions workflow YAML under `.github/workflows`. Required files are "
@@ -5985,7 +5987,17 @@ def _validate_ar033_makefile(workspace: Path) -> list[str]:
     for token in ["notimplemented", "todo", "placeholder", "stub implementation"]:
         if token in combined:
             errors.append(f"AR-033 Makefile must not contain placeholder marker: {token}")
-    for forbidden in ["dockerfile\n", "apiVersion:", "kind: deployment", "github/workflows"]:
+    for forbidden in [
+        "dockerfile\n",
+        "apiVersion:",
+        "kind: deployment",
+        "github/workflows",
+        "$(COMPONENT)",
+        "COMPONENT variable not set",
+        "COMPONENT parameter is required",
+        "COMPONENT=<component>",
+        "Unknown component",
+    ]:
         if forbidden.lower() in combined:
             errors.append(f"AR-033 must not include out-of-scope artifact token: {forbidden}")
 
