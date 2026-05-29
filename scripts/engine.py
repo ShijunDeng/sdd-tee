@@ -642,6 +642,13 @@ AR_IMPLEMENTATION_NOTES = {
         "`pkg/picod/server_test.go`. Do not modify production Go files, workloadmanager tests, E2E tests, "
         "Python tests, docs, dependency metadata, or generated files."
     ),
+    "AR-040": (
+        "Test-only scope: complete the Python SDK test suite under `sdk-python/tests`. Required files include "
+        "`test_code_interpreter.py`, `test_agent_runtime.py`, `test_code_interpreter_data_plane.py`, "
+        "`test_control_plane.py`, `test_exceptions.py`, `test_http.py`, `test_log.py`, `test_utils.py`, "
+        "`test_utils_http.py`, and `test_utils_utils.py`. Do not modify SDK source, CLI source/tests, Go code, "
+        "docs, dependency metadata, or generated files."
+    ),
     "AR-042": (
         "Scope limit: implement the Docusaurus documentation site framework only. Create concise, real "
         "starter pages for the home page, sidebar categories, i18n, MDX, and API-reference placeholders, "
@@ -1404,6 +1411,18 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         original_snippets_limit = 90000
         original_reference_note = (
             "FULL ORIGINAL ROUTER/STORE/PICOD TEST REFERENCE (ground truth — recreate these thirteen Go test files):"
+        )
+    if ar["id"] == "AR-040":
+        st5_intro = (
+            "Implement ONLY the Python SDK tests under `sdk-python/tests/` for this AR. Complete the SDK test "
+            "suite across high-level clients, data-plane/control-plane clients, HTTP utilities, token utilities, "
+            "logging, and exceptions. Do not modify SDK source, CLI source/tests, Go code, dependency metadata, "
+            "or generated files."
+        )
+        previous_ctx_limit = 5000
+        original_snippets_limit = 20000
+        original_reference_note = (
+            "ORIGINAL PYTHON SDK TEST REFERENCE (ground truth for existing public SDK test style and behavior):"
         )
     critical_text = (
         "CRITICAL:\n"
@@ -7216,6 +7235,176 @@ def _validate_ar039_router_store_picod_tests(workspace: Path) -> list[str]:
     return errors
 
 
+def _validate_ar040_python_sdk_tests(workspace: Path) -> list[str]:
+    errors: list[str] = []
+    tests_root = workspace / "sdk-python" / "tests"
+    required: dict[str, dict[str, object]] = {
+        "__init__.py": {"min_loc": 1, "tokens": []},
+        "test_code_interpreter.py": {
+            "min_loc": 250,
+            "tokens": [
+                "CodeInterpreterClient",
+                "ControlPlaneClient",
+                "CodeInterpreterDataPlaneClient",
+                "create_session",
+                "delete_session",
+                "execute_command",
+                "run_code",
+                "write_file",
+                "upload_file",
+                "download_file",
+                "list_files",
+                "context",
+            ],
+        },
+        "test_agent_runtime.py": {
+            "min_loc": 220,
+            "tokens": [
+                "AgentRuntimeClient",
+                "AgentRuntimeDataPlaneClient",
+                "bootstrap_session_id",
+                "invoke",
+                "raise_for_status",
+                "JSONDecodeError",
+                "x-agentcube-session-id",
+            ],
+        },
+        "test_code_interpreter_data_plane.py": {
+            "min_loc": 300,
+            "tokens": [
+                "CodeInterpreterDataPlaneClient",
+                "execute_command",
+                "CommandExecutionError",
+                "run_code",
+                "write_file",
+                "upload_file",
+                "download_file",
+                "list_files",
+                "base64",
+                "multipart",
+            ],
+        },
+        "test_control_plane.py": {
+            "min_loc": 180,
+            "tokens": [
+                "ControlPlaneClient",
+                "create_session",
+                "delete_session",
+                "WORKLOAD_MANAGER_URL",
+                "Authorization",
+                "sessionId",
+                "404",
+            ],
+        },
+        "test_exceptions.py": {
+            "min_loc": 25,
+            "tokens": [
+                "AgentCubeError",
+                "CommandExecutionError",
+                "SessionError",
+                "DataPlaneError",
+            ],
+        },
+        "test_http.py": {
+            "min_loc": 20,
+            "tokens": [
+                "create_session",
+                "pool_connections",
+                "pool_maxsize",
+                "mount",
+            ],
+        },
+        "test_log.py": {
+            "min_loc": 50,
+            "tokens": [
+                "get_logger",
+                "logging.Logger",
+                "StreamHandler",
+                "formatter",
+            ],
+        },
+        "test_utils.py": {
+            "min_loc": 20,
+            "tokens": [
+                "read_token_from_file",
+                "not_found",
+            ],
+        },
+        "test_utils_http.py": {
+            "min_loc": 30,
+            "tokens": [
+                "create_session",
+                "HTTPAdapter",
+                "pool_connections",
+                "pool_maxsize",
+            ],
+        },
+        "test_utils_utils.py": {
+            "min_loc": 50,
+            "tokens": [
+                "read_token_from_file",
+                "tempfile",
+                "non-existent",
+            ],
+        },
+    }
+
+    if not tests_root.exists():
+        return ["AR-040 must create sdk-python/tests"]
+
+    actual = {p.name for p in tests_root.glob("*.py") if p.is_file()}
+    expected = set(required)
+    missing = sorted(expected - actual)
+    for name in missing:
+        errors.append(f"AR-040 must create sdk-python/tests/{name}")
+    unexpected = sorted(actual - expected)
+    if unexpected:
+        errors.append("AR-040 must not create unexpected sdk-python/tests files: " + ", ".join(unexpected[:12]))
+
+    total_loc = 0
+    test_count = 0
+    combined = []
+    for name, meta in required.items():
+        path = tests_root / name
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        combined.append(text)
+        loc = len(text.splitlines())
+        total_loc += loc
+        if name.startswith("test_"):
+            test_count += len(re.findall(r"(?m)^\s*def test_[A-Za-z0-9_]*\s*\(", text))
+            test_count += len(re.findall(r"(?m)^\s*class Test[A-Za-z0-9_]*\s*[:(]", text))
+        min_loc = int(meta["min_loc"])
+        if loc < min_loc:
+            errors.append(f"AR-040 sdk-python/tests/{name} is too small: {loc} < {min_loc} LOC")
+        lower = text.lower()
+        for marker in ["notimplementederror", "stub implementation", "mock implementation", "todo"]:
+            if marker in lower:
+                errors.append(f"AR-040 sdk-python/tests/{name} must not contain placeholder marker: {marker}")
+        for token in meta["tokens"]:  # type: ignore[index]
+            if token not in text:
+                errors.append(f"AR-040 sdk-python/tests/{name} missing token: {token}")
+
+    if total_loc < 1800:
+        errors.append(f"AR-040 sdk-python test LOC is too small: {total_loc} < 1800")
+    if test_count < 45:
+        errors.append(f"AR-040 sdk-python test count is too small: {test_count} < 45")
+    combined_text = "\n".join(combined)
+    for token in [
+        "Mock",
+        "patch",
+        "pytest",
+        "requests",
+        "ROUTER_URL",
+        "WORKLOAD_MANAGER_URL",
+    ]:
+        if token not in combined_text:
+            errors.append(f"AR-040 sdk-python tests missing cross-suite token: {token}")
+
+    return errors
+
+
 def _validate_ar043_docs(workspace: Path, docs_root: Path) -> list[str]:
     errors: list[str] = []
     content_markdown: list[str] = []
@@ -7549,6 +7738,45 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
                 ),
             )
 
+    if ar["lang"] == "Python" and module.endswith("/tests") and all(
+        check.get("exit_code") in (0, "0") for check in checks
+    ):
+        tests_dir = workspace / module
+        pythonpath = module.rsplit("/tests", 1)[0]
+        if tests_dir.exists() and any(tests_dir.rglob("test_*.py")) and (workspace / pythonpath).exists():
+            try:
+                pytest_timeout = int(os.getenv("SDD_LOCAL_CHECK_TIMEOUT_PY", "240"))
+            except ValueError:
+                pytest_timeout = 240
+            env = os.environ.copy()
+            env["PYTHONDONTWRITEBYTECODE"] = "1"
+            env["PYTHONPATH"] = pythonpath
+            pytest_cmd = [
+                sys.executable,
+                "-m",
+                "pytest",
+                module,
+                "-q",
+                "-x",
+                "--tb=short",
+                "-p",
+                "no:cacheprovider",
+                "-W",
+                "error",
+                "-W",
+                "error::pytest.PytestUnraisableExceptionWarning",
+            ]
+            append_check(
+                pytest_cmd,
+                workspace,
+                pytest_timeout,
+                env=env,
+                display_cmd=(
+                    f"PYTHONDONTWRITEBYTECODE=1 PYTHONPATH={pythonpath} "
+                    + " ".join(pytest_cmd)
+                ),
+            )
+
     if ar.get("lang") == "Go":
         start = time.time()
         validation_errors = _validate_workloadmanager_go_mod_baseline(workspace, ar["id"])
@@ -7834,6 +8062,17 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
         validation_errors = _validate_ar039_router_store_picod_tests(workspace)
         checks.append({
             "command": "internal:validate_ar039_router_store_picod_tests",
+            "exit_code": 1 if validation_errors else 0,
+            "duration_seconds": round(time.time() - start, 2),
+            "stdout": "\n".join(validation_errors[-40:]),
+            "stderr": "",
+        })
+
+    if ar.get("id") == "AR-040":
+        start = time.time()
+        validation_errors = _validate_ar040_python_sdk_tests(workspace)
+        checks.append({
+            "command": "internal:validate_ar040_python_sdk_tests",
             "exit_code": 1 if validation_errors else 0,
             "duration_seconds": round(time.time() - start, 2),
             "stdout": "\n".join(validation_errors[-40:]),
@@ -8320,6 +8559,19 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "and end-to-end PicoD request-flow tests from the original reference. Repair only these `_test.go` files. "
             "Do not modify production Go files, go.mod/go.sum, workloadmanager tests, E2E tests, Python tests, docs, "
             "or generated files."
+        )
+    if ar.get("id") == "AR-040" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-040, repair only `sdk-python/tests/*.py`. The minimum complete SDK test suite is "
+            "`__init__.py`, `test_code_interpreter.py`, `test_agent_runtime.py`, "
+            "`test_code_interpreter_data_plane.py`, `test_control_plane.py`, `test_exceptions.py`, "
+            "`test_http.py`, `test_log.py`, `test_utils.py`, `test_utils_http.py`, and "
+            "`test_utils_utils.py`. Tests must cover high-level CodeInterpreter/AgentRuntime clients, "
+            "control-plane and data-plane HTTP clients, command execution errors, file operations, session headers, "
+            "HTTP adapter utilities, token-file utilities, logging, and exception classes. The full suite must pass "
+            "with `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=sdk-python python -m pytest sdk-python/tests -q -x "
+            "--tb=short -p no:cacheprovider -W error -W error::pytest.PytestUnraisableExceptionWarning`. Do not "
+            "modify SDK source, CLI source/tests, Go code, dependency metadata, docs, or generated files."
         )
     if stage_id != "ST-5":
         repair_policy = (
