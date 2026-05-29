@@ -1328,7 +1328,9 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2) so `go mod tidy` does not pull a "
             "newer incompatible agent-sandbox release. Do not create concrete `pkg/store` backend implementations "
             "in these production ARs; store backends belong to the later store ARs. Do not create workloadmanager "
-            "or common/types `_test.go` files in these production ARs; workloadmanager tests belong to AR-038."
+            "or workloadmanager `_test.go` files in these production ARs; workloadmanager tests belong to AR-038. "
+            "Preserve the original `pkg/common/types/sandbox_test.go` created by AR-003, but do not add other "
+            "common/types tests."
         )
         previous_ctx_limit = 5000
         original_snippets_limit = 95000
@@ -1544,8 +1546,9 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         critical_text = (
             "CRITICAL:\n"
             "1. Write COMPLETE production code matching the original WorkloadManager APIs — no placeholders, TODOs, or stubs\n"
-            "2. Do not create workloadmanager or common/types `_test.go` files in AR-004..AR-008; "
-            "WorkloadManager tests are intentionally deferred to AR-038\n"
+            "2. Do not create workloadmanager `_test.go` files in AR-004..AR-008; WorkloadManager tests are "
+            "intentionally deferred to AR-038. Preserve `pkg/common/types/sandbox_test.go` and do not add other "
+            "common/types tests\n"
             "3. Follow Go best practices and preserve the original Go 1.24.4/toolchain go1.24.9 dependency baseline\n"
             "4. Handle errors properly and keep local imports aligned with real directories\n"
             "5. You MUST use tool calls to WRITE files to disk\n"
@@ -3401,11 +3404,12 @@ def _validate_common_types_package(workspace: Path, label: str, *, forbid_tests:
     misplaced = workspace / "pkg" / "common" / "types.go"
     if misplaced.exists():
         errors.append(f"{label} must not create pkg/common/types.go; use pkg/common/types/{{types.go,sandbox.go}}")
-    early_common_tests = sorted((workspace / "pkg" / "common" / "types").glob("*_test.go"))
-    if forbid_tests and early_common_tests:
+    common_tests = sorted((workspace / "pkg" / "common" / "types").glob("*_test.go"))
+    unexpected_common_tests = [p for p in common_tests if p.name != "sandbox_test.go"]
+    if forbid_tests and unexpected_common_tests:
         errors.append(
-            f"{label} must not create pkg/common/types tests in WorkloadManager production ARs: "
-            + ", ".join(str(p.relative_to(workspace)) for p in early_common_tests[:8])
+            f"{label} must not create extra pkg/common/types tests in WorkloadManager production ARs: "
+            + ", ".join(str(p.relative_to(workspace)) for p in unexpected_common_tests[:8])
         )
 
     required = {
@@ -3423,6 +3427,15 @@ def _validate_common_types_package(workspace: Path, label: str, *, forbid_tests:
             "type CreateSandboxRequest struct",
             "type CreateSandboxResponse struct",
             "func (car *CreateSandboxRequest) Validate() error",
+            "namespace is required",
+            "name is required",
+            "invalid kind",
+        ],
+        "pkg/common/types/sandbox_test.go": [
+            "package types",
+            "func TestCreateSandboxRequest_Validate(t *testing.T)",
+            "AgentRuntimeKind",
+            "CodeInterpreterKind",
             "namespace is required",
             "name is required",
             "invalid kind",
@@ -8797,9 +8810,11 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "Delete non-original files such as `pkg/workloadmanager/cache.go`, `pkg/workloadmanager/defaults.go`, "
             "`pkg/workloadmanager/memory_store.go`, `pkg/workloadmanager/middleware.go`, "
             "`pkg/workloadmanager/sandbox_creator.go`, `pkg/workloadmanager/store.go`, and "
-            "`pkg/workloadmanager/token_cache.go`. Delete any `pkg/workloadmanager/*_test.go` and "
-            "`pkg/common/types/*_test.go`; tests belong to later testing ARs. Shared types must be exactly under "
-            "`pkg/common/types/types.go` and `pkg/common/types/sandbox.go`, not `pkg/common/types.go`, and "
+            "`pkg/workloadmanager/token_cache.go`. Delete any `pkg/workloadmanager/*_test.go`; tests belong to "
+            "later testing ARs. Preserve the original `pkg/common/types/sandbox_test.go` from AR-003, but delete "
+            "any other `pkg/common/types/*_test.go` files. Shared types must be exactly under "
+            "`pkg/common/types/types.go`, `pkg/common/types/sandbox.go`, and `pkg/common/types/sandbox_test.go`, not "
+            "`pkg/common/types.go`, and "
             "workloadmanager must import `github.com/volcano-sh/agentcube/pkg/common/types`. `SandboxInfo.EntryPoints` "
             "and `CreateSandboxResponse.EntryPoints` must use `[]SandboxEntryPoint`, and `SandboxEntryPoint` must have "
             "`Path`, `Protocol`, and `Endpoint` fields; do not create a non-original `EntryPoint` type. The early "
@@ -8812,7 +8827,7 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "original AgentCube baseline (`go 1.24.4`, `toolchain go1.24.9`, Kubernetes modules v0.34.1, "
             "`sigs.k8s.io/agent-sandbox v0.1.1`, controller-runtime v0.22.2). "
             "For AR-004 specifically, the minimum required production files are `server.go`, `utils.go`, "
-            "`client_cache.go`, `k8s_client.go`, and the two `pkg/common/types` files. The exact AR-004 "
+            "`client_cache.go`, `k8s_client.go`, and the three `pkg/common/types` files. The exact AR-004 "
             "`pkg/workloadmanager/` production file set is only `server.go`, `utils.go`, `client_cache.go`, and "
             "`k8s_client.go`; delete later-AR files such as `auth.go`, `handlers.go`, `informers.go`, "
             "`garbage_collection.go`, controller files, and `cmd/workload-manager/main.go`."
@@ -8839,8 +8854,9 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "responses must use `[]SandboxEntryPoint`, not a local `EntryPoint` type. Keep `pkg/store/store.go` aligned "
             "with the original Store interface, including `UpdateSessionLastActivity` and int64 list limits. Keep "
             "`go.mod` on the original AgentCube dependency baseline; do not import "
-            "`github.com/volcano-sh/agentcube/pkg/common` from workloadmanager. Do not create workloadmanager or "
-            "common/types tests in AR-008; tests belong to later testing ARs."
+            "`github.com/volcano-sh/agentcube/pkg/common` from workloadmanager. Do not create workloadmanager "
+            "tests in AR-008; tests belong to later testing ARs. Preserve `pkg/common/types/sandbox_test.go` "
+            "and do not add other common/types tests."
         )
     if ar.get("id") == "AR-009" and stage_id == "ST-5":
         ar_repair_policy = (
@@ -10403,6 +10419,7 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
                 for rel_name in [
                     "pkg/common/types/types.go",
                     "pkg/common/types/sandbox.go",
+                    "pkg/common/types/sandbox_test.go",
                     "go.mod",
                 ]:
                     fpath = original_path / rel_name
