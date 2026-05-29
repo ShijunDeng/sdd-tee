@@ -1122,13 +1122,13 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         module_path = ar["module"].strip("/")
         if module_path.startswith("test/") or module_path == "test":
             scope_notes.append(
-                "Test-only scope: create or modify Go E2E tests and test helper .go files only under "
+                "Test-only implementation scope for ST-5: create or modify Go E2E tests and test helper .go files only under "
                 f"`{module_path}/...`. Do not modify production Go packages such as `pkg/...` in this AR. "
                 f"The generated tests must compile and pass with `go test ./{module_path}/...`."
             )
         else:
             scope_notes.append(
-                "Test-only scope: create or modify Go test files ending in _test.go. "
+                "Test-only implementation scope for ST-5: create or modify Go test files ending in _test.go. "
                 "Do not modify production .go implementation files in this AR; those are reserved for feature ARs. "
                 f"The generated tests must compile and pass with `go test ./{module_path}/...`; "
                 "if a fake client or external dependency makes a success-path test impractical, test the pure builder, "
@@ -1481,7 +1481,8 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             f"{ar_desc}\n\n"
             f"Relevant specs:\n{spec_ctx}\n\n"
             f"Write exactly: {change_dir}/proposal.md\n"
-            f"Include: purpose, scope, impact analysis, alternatives considered, acceptance criteria."
+            f"Include: purpose, scope, impact analysis, alternatives considered, acceptance criteria.\n"
+            f"Strict ST-1 boundary: do not create or modify implementation files, tests, generated code, or dependency files."
         ),
         "ST-2": (
             f"{common}\n"
