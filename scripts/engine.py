@@ -71,7 +71,7 @@ DEFAULT_ORIGINAL_REPO = "https://github.com/ShijunDeng/agentcube.git"
 DEFAULT_WORKSPACE_ROOT = BASE.parent / f"{BASE.name}-workspaces"
 
 SOURCE_EXTS_BY_LANG = {
-    "Go": {".go", ".mod", ".sum"},
+    "Go": {".go", ".mod", ".sum", ".yaml", ".yml", ".sh", ".py", ".md"},
     "Python": {".py", ".toml", ".txt", ".yaml", ".yml"},
     "YAML": {".yaml", ".yml"},
     "Dockerfile": {".dockerfile"},
@@ -649,6 +649,14 @@ AR_IMPLEMENTATION_NOTES = {
         "`test_utils_http.py`, and `test_utils_utils.py`. Do not modify SDK source, CLI source/tests, Go code, "
         "docs, dependency metadata, or generated files."
     ),
+    "AR-041": (
+        "Test-only scope: recreate the real E2E test assets under `test/e2e`. Required files are `README.md`, "
+        "`__init__.py`, `e2e_code_interpreter.yaml`, `e2e_code_interpreter_warmpool.yaml`, `e2e_test.go`, "
+        "`echo_agent.yaml`, `run_e2e.sh`, and `test_codeinterpreter.py`. These E2E tests are allowed to require "
+        "a real Kind/Kubernetes/AgentCube environment at runtime; local benchmark checks compile and statically "
+        "validate them without executing live infrastructure flows. Do not create split fake unit-test replacements, "
+        "root `*.test` binaries, production code, docs outside `test/e2e`, dependency metadata, or generated files."
+    ),
     "AR-042": (
         "Scope limit: implement the Docusaurus documentation site framework only. Create concise, real "
         "starter pages for the home page, sidebar categories, i18n, MDX, and API-reference placeholders, "
@@ -914,7 +922,7 @@ def _workspace_snapshot_ignore(dirpath: str, names: list[str]) -> set[str]:
         path = base / name
         if name == ".git" or name in GENERATED_ARTIFACT_DIRS:
             ignored.add(name)
-        elif name in GENERATED_ARTIFACT_FILES and path.is_file():
+        elif path.is_file() and (name in GENERATED_ARTIFACT_FILES or name.endswith(".test")):
             ignored.add(name)
     return ignored
 
@@ -1423,6 +1431,18 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         original_snippets_limit = 20000
         original_reference_note = (
             "ORIGINAL PYTHON SDK TEST REFERENCE (ground truth for existing public SDK test style and behavior):"
+        )
+    if ar["id"] == "AR-041":
+        st5_intro = (
+            "Implement ONLY the real E2E test assets under `test/e2e/` for this AR. Recreate the original E2E "
+            "Go test, shell runner, Python PicoD E2E helper, YAML fixtures, README, and package marker. These "
+            "tests may require live Kubernetes/AgentCube services at runtime; do not replace them with simplified "
+            "unit tests just to pass in this benchmark environment."
+        )
+        previous_ctx_limit = 5000
+        original_snippets_limit = 90000
+        original_reference_note = (
+            "FULL ORIGINAL E2E TEST REFERENCE (ground truth — recreate the test/e2e asset set):"
         )
     critical_text = (
         "CRITICAL:\n"
@@ -7405,6 +7425,126 @@ def _validate_ar040_python_sdk_tests(workspace: Path) -> list[str]:
     return errors
 
 
+def _validate_ar041_e2e_tests(workspace: Path) -> list[str]:
+    errors: list[str] = []
+    root = workspace / "test" / "e2e"
+    required: dict[str, dict[str, object]] = {
+        "README.md": {
+            "min_loc": 80,
+            "tokens": ["run_e2e.sh", "kind", "kubectl", "CodeInterpreter", "AgentRuntime"],
+        },
+        "__init__.py": {
+            "min_loc": 1,
+            "tokens": [],
+        },
+        "e2e_code_interpreter.yaml": {
+            "min_loc": 20,
+            "tokens": ["kind: CodeInterpreter", "picod:latest", "sessionTimeout", "maxSessionDuration"],
+        },
+        "e2e_code_interpreter_warmpool.yaml": {
+            "min_loc": 20,
+            "tokens": ["kind: CodeInterpreter", "warmPoolSize", "picod:latest", "sessionTimeout"],
+        },
+        "e2e_test.go": {
+            "min_loc": 1200,
+            "tokens": [
+                "TestAgentRuntimeBasicInvocation",
+                "TestAgentRuntimeErrorHandling",
+                "TestAgentRuntimeSessionTTL",
+                "TestCodeInterpreterWarmPool",
+                "TestCodeInterpreterBasicInvocation",
+                "TestCodeInterpreterFileOperations",
+                "TestCodeInterpreterWarmPoolLoad",
+                "TestCodeInterpreterBasicInvocationLoad",
+                "runCodeInterpreterLoadTest",
+                "loadCodeInterpreterYAML",
+                "createCodeInterpreterSession",
+                "deleteCodeInterpreterSession",
+                "invokeAgentRuntime",
+                "invokeCodeInterpreter",
+                "SandboxWarmPool",
+                "require.Eventually",
+            ],
+        },
+        "echo_agent.yaml": {
+            "min_loc": 80,
+            "tokens": ["kind: AgentRuntime", "echo-agent", "python:3.9-slim", "sessionTimeout", "maxSessionDuration"],
+        },
+        "run_e2e.sh": {
+            "min_loc": 350,
+            "tokens": [
+                "set -euo pipefail",
+                "E2E_CLUSTER_NAME",
+                "kind create cluster",
+                "kind load docker-image",
+                "kubectl port-forward",
+                "make docker-build",
+                "docker-build-router",
+                "docker-build-picod",
+                "$E2E_VENV_DIR/bin/python",
+                "test_codeinterpreter.py",
+                "go test",
+                "collect_component_logs",
+            ],
+        },
+        "test_codeinterpreter.py": {
+            "min_loc": 150,
+            "tokens": [
+                "CodeInterpreterClient",
+                "CommandExecutionError",
+                "WORKLOAD_MANAGER_URL",
+                "ROUTER_URL",
+                "test_case1_simple_code_execution_auto_session",
+                "test_case2_code_execution_in_session",
+                "test_case3_file_based_workflow_fibonacci_json",
+                "run_code",
+                "write_file",
+                "download_file",
+            ],
+        },
+    }
+
+    if not root.exists():
+        return ["AR-041 must create test/e2e"]
+
+    actual = {p.name for p in root.iterdir() if p.is_file()}
+    expected = set(required)
+    missing = sorted(expected - actual)
+    for name in missing:
+        errors.append(f"AR-041 must create test/e2e/{name}")
+    unexpected = sorted(actual - expected)
+    if unexpected:
+        errors.append("AR-041 must not create unexpected files under test/e2e: " + ", ".join(unexpected[:12]))
+
+    root_test_binaries = sorted(p.name for p in workspace.glob("*.test") if p.is_file())
+    if root_test_binaries:
+        errors.append("AR-041 must not leave root Go test binaries: " + ", ".join(root_test_binaries[:8]))
+
+    total_loc = 0
+    for name, meta in required.items():
+        path = root / name
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        loc = len(text.splitlines())
+        total_loc += loc
+        min_loc = int(meta["min_loc"])
+        if loc < min_loc:
+            errors.append(f"AR-041 test/e2e/{name} is too small: {loc} < {min_loc} LOC")
+        lower = text.lower()
+        for marker in ["notimplementederror", "stub implementation", "mock implementation", "placeholder", "todo"]:
+            if marker in lower:
+                errors.append(f"AR-041 test/e2e/{name} must not contain placeholder marker: {marker}")
+        for token in meta["tokens"]:  # type: ignore[index]
+            if token not in text:
+                errors.append(f"AR-041 test/e2e/{name} missing token: {token}")
+
+    if total_loc < 2300:
+        errors.append(f"AR-041 E2E asset LOC is too small: {total_loc} < 2300")
+
+    return errors
+
+
 def _validate_ar043_docs(workspace: Path, docs_root: Path) -> list[str]:
     errors: list[str] = []
     content_markdown: list[str] = []
@@ -7631,7 +7771,10 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
         ]
     elif ar["lang"] == "Go":
         target = f"./{module}/..." if module else "./..."
-        cmd = ["bash", "-lc", f"go test -count=1 -mod=readonly {target}"]
+        if ar.get("id") == "AR-041":
+            cmd = ["bash", "-lc", f"go test -run '^$' -count=1 -mod=readonly {target}"]
+        else:
+            cmd = ["bash", "-lc", f"go test -count=1 -mod=readonly {target}"]
     elif ar["lang"] == "Python":
         if (workspace / module).exists():
             cmd = [
@@ -7787,6 +7930,19 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
             "stdout": "\n".join(validation_errors[-40:]),
             "stderr": "",
         })
+
+    if ar.get("id") == "AR-041" and all(
+        check.get("exit_code") in (0, "0") for check in checks
+    ):
+        append_check(
+            [
+                "bash",
+                "-lc",
+                "bash -n test/e2e/run_e2e.sh && python3 -m py_compile test/e2e/test_codeinterpreter.py",
+            ],
+            workspace,
+            60,
+        )
 
     workloadmanager_validators = {
         "AR-004": ("internal:validate_ar004_workloadmanager_framework", _validate_ar004_workloadmanager_framework),
@@ -8073,6 +8229,17 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
         validation_errors = _validate_ar040_python_sdk_tests(workspace)
         checks.append({
             "command": "internal:validate_ar040_python_sdk_tests",
+            "exit_code": 1 if validation_errors else 0,
+            "duration_seconds": round(time.time() - start, 2),
+            "stdout": "\n".join(validation_errors[-40:]),
+            "stderr": "",
+        })
+
+    if ar.get("id") == "AR-041":
+        start = time.time()
+        validation_errors = _validate_ar041_e2e_tests(workspace)
+        checks.append({
+            "command": "internal:validate_ar041_e2e_tests",
             "exit_code": 1 if validation_errors else 0,
             "duration_seconds": round(time.time() - start, 2),
             "stdout": "\n".join(validation_errors[-40:]),
@@ -8572,6 +8739,17 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "with `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=sdk-python python -m pytest sdk-python/tests -q -x "
             "--tb=short -p no:cacheprovider -W error -W error::pytest.PytestUnraisableExceptionWarning`. Do not "
             "modify SDK source, CLI source/tests, Go code, dependency metadata, docs, or generated files."
+        )
+    if ar.get("id") == "AR-041" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-041, repair only the real E2E assets under `test/e2e/`: `README.md`, `__init__.py`, "
+            "`e2e_code_interpreter.yaml`, `e2e_code_interpreter_warmpool.yaml`, `e2e_test.go`, "
+            "`echo_agent.yaml`, `run_e2e.sh`, and `test_codeinterpreter.py`. Recreate the original monolithic "
+            "`e2e_test.go` with AgentRuntime, CodeInterpreter, warm-pool, file-operation, and load-test flows; "
+            "do not replace it with split fake unit tests. The local benchmark check compiles E2E tests with "
+            "`go test -run '^$' -count=1 -mod=readonly ./test/e2e/...` and statically checks shell/Python syntax; "
+            "the tests may require live Kind/Kubernetes/AgentCube services when run through `run_e2e.sh`. Do not "
+            "create root `*.test` binaries, production code, dependency metadata, docs outside `test/e2e`, or generated files."
         )
     if stage_id != "ST-5":
         repair_policy = (
@@ -9846,6 +10024,28 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
             "pkg/picod/files_test.go",
             "pkg/picod/picod_test.go",
             "pkg/picod/server_test.go",
+        ]:
+            fpath = original_path / rel_name
+            if not fpath.is_file():
+                continue
+            try:
+                rel = fpath.relative_to(original_path)
+                snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
+            except OSError:
+                pass
+        return "\n\n".join(snippets) if snippets else ""
+
+    if ar_id == "AR-041" and module.strip("/") == "test/e2e":
+        snippets = []
+        for rel_name in [
+            "test/e2e/README.md",
+            "test/e2e/__init__.py",
+            "test/e2e/e2e_code_interpreter.yaml",
+            "test/e2e/e2e_code_interpreter_warmpool.yaml",
+            "test/e2e/e2e_test.go",
+            "test/e2e/echo_agent.yaml",
+            "test/e2e/run_e2e.sh",
+            "test/e2e/test_codeinterpreter.py",
         ]:
             fpath = original_path / rel_name
             if not fpath.is_file():
