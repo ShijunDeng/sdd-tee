@@ -1656,7 +1656,12 @@ def _is_project_implementation_file(rel: str, path: Path, lang: str) -> bool:
     suffix = path.suffix.lower()
     name = path.name
     if lang == "Go":
-        return suffix == ".go" or name in {"go.mod", "go.sum"}
+        return (
+            suffix == ".go"
+            or name in {"go.mod", "go.sum"}
+            or _is_implementation_support_file(path)
+            or suffix in {".sh", ".py", ".md"}
+        )
     if lang == "Python":
         return suffix == ".py" or _is_implementation_support_file(path)
     if lang == "YAML":
@@ -8749,7 +8754,9 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "do not replace it with split fake unit tests. The local benchmark check compiles E2E tests with "
             "`go test -run '^$' -count=1 -mod=readonly ./test/e2e/...` and statically checks shell/Python syntax; "
             "the tests may require live Kind/Kubernetes/AgentCube services when run through `run_e2e.sh`. Do not "
-            "create root `*.test` binaries, production code, dependency metadata, docs outside `test/e2e`, or generated files."
+            "create root `*.test` binaries, production code, dependency metadata, docs outside `test/e2e`, or generated files. "
+            "If validation reports missing `test/e2e/e2e_test.go` or `test/e2e/run_e2e.sh`, create those two files first "
+            "before touching smaller YAML/Python/README assets; returning without them is an incomplete AR."
         )
     if stage_id != "ST-5":
         repair_policy = (
