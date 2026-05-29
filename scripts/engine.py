@@ -7442,7 +7442,7 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
         ]
     elif ar["lang"] == "Go":
         target = f"./{module}/..." if module else "./..."
-        cmd = ["bash", "-lc", f"go test -mod=readonly {target}"]
+        cmd = ["bash", "-lc", f"go test -count=1 -mod=readonly {target}"]
     elif ar["lang"] == "Python":
         if (workspace / module).exists():
             cmd = [
