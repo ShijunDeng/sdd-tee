@@ -5931,6 +5931,8 @@ def _validate_ar033_makefile(workspace: Path) -> list[str]:
         "docker-push-picod: docker-build-picod",
         "controller-gen: $(CONTROLLER_GEN)",
         "golangci-lint: $(GOLANGCI_LINT)",
+        "$(CONTROLLER_GEN):",
+        "$(GOLANGCI_LINT):",
         "awk",
         "$(CONTROLLER_GEN) crd paths=\"./pkg/apis/runtime/v1alpha1/...\"",
         "output:crd:artifacts:config=manifests/charts/base/crds",
