@@ -3173,7 +3173,12 @@ def _validate_workloadmanager_go_mod_baseline(workspace: Path, label: str) -> li
     return [f"{label} go.mod missing original dependency baseline token: {token}" for token in required if token not in text]
 
 
-def _validate_workloadmanager_store_contract(workspace: Path, label: str) -> list[str]:
+def _validate_workloadmanager_store_contract(
+    workspace: Path,
+    label: str,
+    *,
+    forbid_concrete_backends: bool = True,
+) -> list[str]:
     store_root = workspace / "pkg" / "store"
     if not store_root.exists():
         return []
@@ -3182,7 +3187,7 @@ def _validate_workloadmanager_store_contract(workspace: Path, label: str) -> lis
         p.name for p in store_root.glob("*.go")
         if p.is_file() and p.name != "store.go" and not p.name.endswith("_test.go")
     )
-    if concrete:
+    if forbid_concrete_backends and concrete:
         errors.append(
             f"{label} must not create concrete store backends before store ARs: "
             + ", ".join(concrete[:12])
@@ -3207,11 +3212,21 @@ def _validate_workloadmanager_store_contract(workspace: Path, label: str) -> lis
     return errors
 
 
-def _validate_workloadmanager_shared_contracts(workspace: Path, label: str, *, forbid_tests: bool = False) -> list[str]:
+def _validate_workloadmanager_shared_contracts(
+    workspace: Path,
+    label: str,
+    *,
+    forbid_tests: bool = False,
+    forbid_concrete_store_backends: bool = True,
+) -> list[str]:
     return (
         _validate_common_types_package(workspace, label, forbid_tests=forbid_tests)
         + _validate_workloadmanager_go_mod_baseline(workspace, label)
-        + _validate_workloadmanager_store_contract(workspace, label)
+        + _validate_workloadmanager_store_contract(
+            workspace,
+            label,
+            forbid_concrete_backends=forbid_concrete_store_backends,
+        )
     )
 
 
@@ -3330,7 +3345,13 @@ def _validate_ar007_workloadmanager_controllers(workspace: Path) -> list[str]:
     ) + _validate_workloadmanager_shared_contracts(workspace, "AR-007", forbid_tests=True)
 
 
-def _validate_workloadmanager_production_complete(workspace: Path, label: str, *, forbid_tests: bool = False) -> list[str]:
+def _validate_workloadmanager_production_complete(
+    workspace: Path,
+    label: str,
+    *,
+    forbid_tests: bool = False,
+    forbid_concrete_store_backends: bool = True,
+) -> list[str]:
     return _validate_workloadmanager_tokens(
         workspace,
         WORKLOADMANAGER_FINAL_PRODUCTION_TOKENS,
@@ -3338,7 +3359,12 @@ def _validate_workloadmanager_production_complete(workspace: Path, label: str, *
         exact_production_files=True,
         min_total_loc=2300,
         forbid_tests=forbid_tests,
-    ) + _validate_workloadmanager_shared_contracts(workspace, label, forbid_tests=forbid_tests)
+    ) + _validate_workloadmanager_shared_contracts(
+        workspace,
+        label,
+        forbid_tests=forbid_tests,
+        forbid_concrete_store_backends=forbid_concrete_store_backends,
+    )
 
 
 def _validate_ar008_workloadmanager_gc_complete(workspace: Path) -> list[str]:
@@ -6835,6 +6861,7 @@ def _validate_ar038_workloadmanager_tests(workspace: Path) -> list[str]:
     errors: list[str] = _validate_workloadmanager_production_complete(
         workspace,
         "AR-038 prerequisite",
+        forbid_concrete_store_backends=False,
     )
     root = workspace / "pkg" / "workloadmanager"
     required = {
