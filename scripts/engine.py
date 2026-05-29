@@ -7309,6 +7309,22 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
             "stderr": "",
         })
 
+    controller_validators = {
+        "AR-018": ("internal:validate_ar018_agentd_idle_cleanup", _validate_ar018_agentd_idle_cleanup),
+        "AR-019": ("internal:validate_ar019_go_service_binaries", _validate_ar019_go_service_binaries),
+    }
+    if ar.get("id") in controller_validators:
+        command, validator = controller_validators[ar["id"]]
+        start = time.time()
+        validation_errors = validator(workspace)
+        checks.append({
+            "command": command,
+            "exit_code": 1 if validation_errors else 0,
+            "duration_seconds": round(time.time() - start, 2),
+            "stdout": "\n".join(validation_errors[-40:]),
+            "stderr": "",
+        })
+
     if ar.get("id") == "AR-030":
         start = time.time()
         validation_errors = _validate_ar030_helm_chart(workspace)
