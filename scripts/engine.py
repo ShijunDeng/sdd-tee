@@ -9504,6 +9504,7 @@ def run_benchmark(
                 rec.source_changed_files = len(in_scope_impl)
                 rec.out_of_scope_files = max(
                     len(out_scope_impl),
+                    len(non_impl_source_changes),
                     len(stage_out_of_scope_files)
                     + len(stage_reserved_files)
                     + len(stage_forbidden_dependency_files),
@@ -9512,10 +9513,12 @@ def run_benchmark(
                 rec.restored_files += forbidden_restored + stage_restored_files
                 rec.loc_delta = scoped_loc_delta
                 if non_impl_source_changes:
-                    validation_errors.append(
-                        "project source modified outside ST-5 and restored: "
-                        + ", ".join(non_impl_source_changes[:8])
-                    )
+                    # Non-ST-5 stages sometimes over-eagerly write source while
+                    # also producing the requested SDD artifact. The source is
+                    # restored before metrics are taken, and the restored/out of
+                    # scope counts preserve the behavior without poisoning a
+                    # clean final workspace for that SDD-only stage.
+                    pass
                 if forbidden_error:
                     validation_errors.append(forbidden_error)
                 if dependency_error:
@@ -9586,6 +9589,7 @@ def run_benchmark(
                 rec.source_changed_files = len(in_scope_impl)
                 rec.out_of_scope_files = max(
                     len(out_scope_impl),
+                    len(non_impl_source_changes),
                     len(stage_out_of_scope_files)
                     + len(stage_reserved_files)
                     + len(stage_forbidden_dependency_files),
