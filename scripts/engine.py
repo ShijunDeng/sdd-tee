@@ -185,6 +185,7 @@ EXTRA_IMPLEMENTATION_PREFIXES_BY_AR = {
     # The real store interface depends on github.com/volcano-sh/agentcube/pkg/common/types.
     # Allow this exact shared-contract subpackage without allowing broad rewrites of
     # previously generated pkg/common files.
+    "AR-003": ["pkg/common/types"],
     "AR-012": ["pkg/common/types"],
 }
 
@@ -256,6 +257,27 @@ STORE_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
 }
 
 AR_IMPLEMENTATION_NOTES = {
+    "AR-001": (
+        "Scope split: implement only the AgentRuntime CRD baseline under "
+        "`pkg/apis/runtime/v1alpha1`. Required production files are `agent_type.go`, "
+        "`groupversion_info.go`, `register.go`, and `zz_generated.deepcopy.go`. Add the minimal "
+        "`TargetPort`/protocol helper types needed for AgentRuntime to compile, but do not implement "
+        "`CodeInterpreter`, `CodeInterpreterSpec`, `CodeInterpreterStatus`, or CodeInterpreter registration yet; "
+        "those belong to AR-002. Do not create `doc.go` or any `*_test.go` files; the original AgentCube CRD "
+        "package has no CRD unit tests."
+    ),
+    "AR-002": (
+        "Scope split: implement only the CodeInterpreter CRD in the existing `pkg/apis/runtime/v1alpha1` package. "
+        "Create or repair `codeinterpreter_types.go` and update `register.go`/`zz_generated.deepcopy.go` only as "
+        "needed to register and deepcopy CodeInterpreter types. Preserve the AgentRuntime API from AR-001. Do not "
+        "create `doc.go`, `*_test.go`, shared common types, WorkloadManager code, or dependency drift."
+    ),
+    "AR-003": (
+        "Scope split: implement only the shared runtime request/response contracts and constants under "
+        "`pkg/common/types`. Required files are exactly `pkg/common/types/types.go` and "
+        "`pkg/common/types/sandbox.go`, plus the original validation test `pkg/common/types/sandbox_test.go`, "
+        "matching the original `types` package. Do not modify `pkg/apis` and do not create `pkg/common/types.go`."
+    ),
     "AR-004": (
         "Scope split: implement the real WorkloadManager HTTP server framework, not an alternate simplified API. "
         "Use the original `pkg/workloadmanager` production interfaces: `Server`, `Config`, `NewServer`, `setupRoutes`, "
@@ -1048,6 +1070,8 @@ def _filter_spec_text_for_ar(ar: dict, name: str, text: str) -> str:
 
 
 def _allowed_implementation_prefixes(ar: dict) -> list[str]:
+    if ar.get("id") == "AR-003":
+        return ["pkg/common/types"]
     if ar.get("id") == "AR-009":
         return ["pkg/router"]
     if ar.get("id") == "AR-010":
@@ -1198,16 +1222,20 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             "and be imported as `github.com/volcano-sh/agentcube/pkg/common/types`; do not create or reference "
             "`pkg/common/types.go` for WorkloadManager.\n"
         )
-    else:
+    elif ar["lang"] == "Go":
         go_dependency_guidance = (
-            "The benchmark environment runs Go 1.22.x. Keep the `go` directive at 1.22.x and choose "
-            "dependency versions that compile on Go 1.22; do not introduce packages that require Go 1.23+.\n"
+            "The real AgentCube Go dependency baseline is `go 1.24.4` with `toolchain go1.24.9`. "
+            "Preserve that baseline unless this AR-specific scope explicitly says otherwise; do not downgrade "
+            "to Go 1.22 or update dependencies to latest versions.\n"
         )
         local_import_guidance = (
             "For Go imports, local module import paths must match real directories in this workspace. "
             "If you create `pkg/common/types.go`, import it as `github.com/volcano-sh/agentcube/pkg/common` "
             "or create a real `pkg/common/types/` directory; never import non-existent local subpackages.\n"
         )
+    else:
+        go_dependency_guidance = ""
+        local_import_guidance = ""
 
     common = (
         "You are reconstructing the real open-source project agentcube from an empty workspace "
@@ -1253,6 +1281,41 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
     previous_ctx_limit = 12000
     original_snippets_limit = 12000
     original_reference_note = "ORIGINAL CODE REFERENCE (ground truth — match these interfaces and behaviors):"
+    if ar["id"] == "AR-001":
+        st5_intro = (
+            "Implement ONLY the AgentRuntime CRD baseline for this AR. Keep the output focused on "
+            "`pkg/apis/runtime/v1alpha1` production Go code: AgentRuntime types, API metadata, registration, "
+            "and deepcopy support. If AgentRuntime needs shared port/protocol helper types to compile, add only "
+            "those helpers; do not implement the CodeInterpreter CRD before AR-002."
+        )
+        previous_ctx_limit = 5000
+        original_snippets_limit = 30000
+        original_reference_note = (
+            "LIMITED ORIGINAL CRD REFERENCE (ground truth for AgentRuntime API shape; CodeInterpreter is deferred):"
+        )
+    if ar["id"] == "AR-002":
+        st5_intro = (
+            "Implement ONLY the CodeInterpreter CRD for this AR. Preserve the AR-001 AgentRuntime package and "
+            "add CodeInterpreter types, registration, and deepcopy support in `pkg/apis/runtime/v1alpha1`; do not "
+            "create tests, docs, shared common types, or unrelated packages."
+        )
+        previous_ctx_limit = 5000
+        original_snippets_limit = 45000
+        original_reference_note = (
+            "LIMITED ORIGINAL CRD REFERENCE (ground truth for CodeInterpreter API shape and registration):"
+        )
+    if ar["id"] == "AR-003":
+        st5_intro = (
+            "Implement ONLY the shared common `types` package for this AR. Create the original "
+            "`pkg/common/types/types.go` constants and `pkg/common/types/sandbox.go` sandbox request/response "
+            "types, plus the original `pkg/common/types/sandbox_test.go` validation tests. Do not modify the CRD "
+            "package in this AR."
+        )
+        previous_ctx_limit = 5000
+        original_snippets_limit = 16000
+        original_reference_note = (
+            "FULL ORIGINAL COMMON TYPES REFERENCE (ground truth — recreate these two files under pkg/common/types):"
+        )
     if ar["id"] in {"AR-004", "AR-005", "AR-006", "AR-007", "AR-008"}:
         st5_intro = (
             "Implement the WorkloadManager production Go code for this AR using the real AgentCube production "
@@ -1455,6 +1518,28 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         f"7. Record the source changes in `{change_dir}/implementation.md` before completion\n"
         "8. Do not report completion unless files were actually created or modified"
     )
+    if ar["id"] in {"AR-001", "AR-002"}:
+        critical_text = (
+            "CRITICAL:\n"
+            "1. Write COMPLETE production Go code for only this CRD split — no placeholders, TODOs, or stubs\n"
+            "2. Do not create `doc.go` or `*_test.go` files for these early CRD production ARs\n"
+            "3. Preserve the original Go baseline `go 1.24.4` and `toolchain go1.24.9`\n"
+            "4. Match the original AgentCube package names, JSON tags, kubebuilder markers, and registration/deepcopy contracts\n"
+            "5. You MUST use tool calls to WRITE project source files under the allowed implementation paths\n"
+            f"6. Record the source changes in `{change_dir}/implementation.md` before completion\n"
+            "7. Do not report completion unless project source files were actually created or modified"
+        )
+    if ar["id"] == "AR-003":
+        critical_text = (
+            "CRITICAL:\n"
+            "1. Write COMPLETE common types code matching the original `pkg/common/types` package\n"
+            "2. Create only `types.go`, `sandbox.go`, and the original `sandbox_test.go`; no other source or test files\n"
+            "3. Preserve the original Go baseline `go 1.24.4` and `toolchain go1.24.9`\n"
+            "4. Match the original JSON fields, Validate behavior, and constants exactly enough for downstream ARs\n"
+            "5. You MUST use tool calls to WRITE project source files under `pkg/common/types`\n"
+            f"6. Record the source changes in `{change_dir}/implementation.md` before completion\n"
+            "7. Do not report completion unless project source files were actually created or modified"
+        )
     if ar["id"] in WORKLOADMANAGER_PRODUCTION_AR_IDS:
         critical_text = (
             "CRITICAL:\n"
@@ -2049,6 +2134,12 @@ def _validate_stage_output(
     return errors
 
 
+def _read_text(path: Path) -> str:
+    if not path.is_file():
+        return ""
+    return path.read_text(encoding="utf-8", errors="replace")
+
+
 def _validate_workloadmanager_verification_artifact(workspace: Path, ar: dict) -> list[str]:
     """Keep WorkloadManager verification reports aligned with the AR split."""
     path = workspace / "changes" / ar["id"] / "verification.md"
@@ -2116,6 +2207,12 @@ def _validate_workloadmanager_verification_artifact(workspace: Path, ar: dict) -
 
 def _validate_ar_specific_implementation(workspace: Path, ar: dict) -> list[str]:
     errors: list[str] = []
+    if ar.get("id") == "AR-001":
+        return _validate_ar001_agentruntime_crd(workspace)
+    if ar.get("id") == "AR-002":
+        return _validate_ar002_codeinterpreter_crd(workspace)
+    if ar.get("id") == "AR-003":
+        return _validate_ar003_common_types(workspace)
     if ar.get("id") == "AR-004":
         return _validate_ar004_workloadmanager_framework(workspace)
     if ar.get("id") == "AR-005":
@@ -2337,6 +2434,158 @@ def _validate_ar_specific_implementation(workspace: Path, ar: dict) -> list[str]
                 "AR-042 Docusaurus package versions must be 3.10.1 or ^3.10.1: "
                 + ", ".join(stale_versions)
             )
+    return errors
+
+
+def _validate_ar001_agentruntime_crd(workspace: Path) -> list[str]:
+    errors: list[str] = []
+    runtime_dir = workspace / "pkg/apis/runtime/v1alpha1"
+    required = [
+        "agent_type.go",
+        "groupversion_info.go",
+        "register.go",
+        "zz_generated.deepcopy.go",
+    ]
+    for name in required:
+        if not (runtime_dir / name).is_file():
+            errors.append(f"AR-001 missing required CRD file: pkg/apis/runtime/v1alpha1/{name}")
+
+    forbidden = sorted(
+        str(path.relative_to(workspace))
+        for path in runtime_dir.glob("*")
+        if path.name == "doc.go" or path.name.endswith("_test.go")
+    )
+    if forbidden:
+        errors.append(
+            "AR-001 must not create non-original CRD doc/test files: "
+            + ", ".join(forbidden[:8])
+        )
+
+    agent_text = _read_text(workspace / "pkg/apis/runtime/v1alpha1/agent_type.go")
+    register_text = _read_text(workspace / "pkg/apis/runtime/v1alpha1/register.go")
+    for token in [
+        "type AgentRuntime struct",
+        "type AgentRuntimeSpec struct",
+        "type AgentRuntimeStatus struct",
+        "type AgentRuntimeList struct",
+        "SandboxTemplate",
+        "SessionTimeout",
+        "MaxSessionDuration",
+    ]:
+        if token not in agent_text:
+            errors.append(f"AR-001 AgentRuntime CRD missing token: {token}")
+    if "SchemeBuilder.Register(&AgentRuntime{}, &AgentRuntimeList{})" not in agent_text + register_text:
+        errors.append("AR-001 AgentRuntime CRD missing SchemeBuilder registration")
+
+    code_text = _read_text(workspace / "pkg/apis/runtime/v1alpha1/codeinterpreter_types.go")
+    if any(token in code_text for token in [
+        "type CodeInterpreter struct",
+        "type CodeInterpreterSpec struct",
+        "type CodeInterpreterStatus struct",
+        "type CodeInterpreterList struct",
+    ]):
+        errors.append("AR-001 implemented CodeInterpreter CRD too early; AR-002 owns CodeInterpreter types")
+    return errors
+
+
+def _validate_ar002_codeinterpreter_crd(workspace: Path) -> list[str]:
+    errors: list[str] = []
+    runtime_dir = workspace / "pkg/apis/runtime/v1alpha1"
+    required = [
+        "agent_type.go",
+        "codeinterpreter_types.go",
+        "groupversion_info.go",
+        "register.go",
+        "zz_generated.deepcopy.go",
+    ]
+    for name in required:
+        if not (runtime_dir / name).is_file():
+            errors.append(f"AR-002 missing required CRD file: pkg/apis/runtime/v1alpha1/{name}")
+
+    forbidden = sorted(
+        str(path.relative_to(workspace))
+        for path in runtime_dir.glob("*")
+        if path.name == "doc.go" or path.name.endswith("_test.go")
+    )
+    if forbidden:
+        errors.append(
+            "AR-002 must not create non-original CRD doc/test files: "
+            + ", ".join(forbidden[:8])
+        )
+
+    code_text = _read_text(workspace / "pkg/apis/runtime/v1alpha1/codeinterpreter_types.go")
+    for token in [
+        "type CodeInterpreter struct",
+        "type CodeInterpreterSpec struct",
+        "type CodeInterpreterStatus struct",
+        "type CodeInterpreterSandboxTemplate struct",
+        "type TargetPort struct",
+        "type AuthModeType string",
+        "WarmPoolSize",
+        "AuthMode",
+    ]:
+        if token not in code_text:
+            errors.append(f"AR-002 CodeInterpreter CRD missing token: {token}")
+
+    register_text = _read_text(workspace / "pkg/apis/runtime/v1alpha1/register.go")
+    for token in ["CodeInterpreterKind", "CodeInterpreterGroupVersionKind", "AgentRuntimeGroupVersionKind"]:
+        if token not in register_text:
+            errors.append(f"AR-002 CRD registration metadata missing token: {token}")
+    if "SchemeBuilder.Register(&CodeInterpreter{}, &CodeInterpreterList{})" not in code_text + register_text:
+        errors.append("AR-002 CodeInterpreter CRD missing SchemeBuilder registration")
+
+    deepcopy_text = _read_text(workspace / "pkg/apis/runtime/v1alpha1/zz_generated.deepcopy.go")
+    for token in [
+        "func (in *CodeInterpreter) DeepCopyInto",
+        "func (in *CodeInterpreterList) DeepCopyInto",
+        "func (in *CodeInterpreterSpec) DeepCopyInto",
+    ]:
+        if token not in deepcopy_text:
+            errors.append(f"AR-002 deepcopy output missing token: {token}")
+    return errors
+
+
+def _validate_ar003_common_types(workspace: Path) -> list[str]:
+    errors: list[str] = []
+    common_dir = workspace / "pkg/common/types"
+    required = ["types.go", "sandbox.go", "sandbox_test.go"]
+    for name in required:
+        if not (common_dir / name).is_file():
+            errors.append(f"AR-003 missing required common types file: pkg/common/types/{name}")
+
+    misplaced = workspace / "pkg/common/types.go"
+    if misplaced.exists():
+        errors.append("AR-003 must use package directory pkg/common/types/, not pkg/common/types.go")
+
+    unexpected_tests = sorted(
+        str(path.relative_to(workspace))
+        for path in common_dir.glob("*_test.go")
+        if path.name != "sandbox_test.go"
+    )
+    if unexpected_tests:
+        errors.append("AR-003 must not create extra common-types tests: " + ", ".join(unexpected_tests[:8]))
+
+    constants_text = _read_text(common_dir / "types.go")
+    for token in ["AgentRuntimeKind", "CodeInterpreterKind", "SandboxKind", "SandboxClaimsKind"]:
+        if token not in constants_text:
+            errors.append(f"AR-003 shared constants missing token: {token}")
+
+    sandbox_text = _read_text(common_dir / "sandbox.go")
+    for token in [
+        "type SandboxInfo struct",
+        "type SandboxEntryPoint struct",
+        "type CreateSandboxRequest struct",
+        "type CreateSandboxResponse struct",
+        "func (car *CreateSandboxRequest) Validate() error",
+        "EntryPoints []SandboxEntryPoint",
+    ]:
+        if token not in sandbox_text:
+            errors.append(f"AR-003 sandbox types missing token: {token}")
+
+    test_text = _read_text(common_dir / "sandbox_test.go")
+    for token in ["TestCreateSandboxRequest_Validate", "AgentRuntimeKind", "CodeInterpreterKind", "namespace is required", "name is required"]:
+        if token not in test_text:
+            errors.append(f"AR-003 sandbox validation tests missing token: {token}")
     return errors
 
 
@@ -7776,6 +8025,8 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
         ]
     elif ar["lang"] == "Go":
         target = f"./{module}/..." if module else "./..."
+        if ar.get("id") == "AR-003":
+            target = "./pkg/..."
         if ar.get("id") == "AR-041":
             cmd = ["bash", "-lc", f"go test -run '^$' -count=1 -mod=readonly {target}"]
         else:
@@ -8479,6 +8730,25 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
                 "do not modify production `.go` implementation files."
             )
     ar_repair_policy = ""
+    if ar.get("id") == "AR-001" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-001, repair only the AgentRuntime CRD baseline under `pkg/apis/runtime/v1alpha1`. "
+            "Required production files are `agent_type.go`, `groupversion_info.go`, `register.go`, and "
+            "`zz_generated.deepcopy.go`; add only minimal port/protocol helper types needed for compilation. "
+            "Remove `doc.go`, `*_test.go`, and any `CodeInterpreter` CRD definitions or registration created too early."
+        )
+    if ar.get("id") == "AR-002" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-002, repair only CodeInterpreter CRD production code under `pkg/apis/runtime/v1alpha1`. "
+            "Create or update `codeinterpreter_types.go`, `register.go`, and `zz_generated.deepcopy.go`; "
+            "preserve AgentRuntime, remove `doc.go` and `*_test.go`, and do not modify shared common types or other packages."
+        )
+    if ar.get("id") == "AR-003" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-003, repair only `pkg/common/types/types.go`, `pkg/common/types/sandbox.go`, and "
+            "`pkg/common/types/sandbox_test.go`. Do not modify `pkg/apis`, do not create `pkg/common/types.go`, "
+            "and remove any other `pkg/common/types/*_test.go` files."
+        )
     if ar.get("id") == "AR-030" and stage_id == "ST-5":
         ar_repair_policy = (
             " For AR-030, the minimum complete Helm chart file set is "
@@ -9981,6 +10251,40 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
 
     Returns formatted text with file paths and content.
     """
+    if ar_id in {"AR-001", "AR-002", "AR-003"}:
+        snippets = []
+        rel_names_by_ar = {
+            "AR-001": [
+                "pkg/apis/runtime/v1alpha1/agent_type.go",
+                "pkg/apis/runtime/v1alpha1/groupversion_info.go",
+                "pkg/apis/runtime/v1alpha1/register.go",
+                "pkg/apis/runtime/v1alpha1/zz_generated.deepcopy.go",
+                "go.mod",
+            ],
+            "AR-002": [
+                "pkg/apis/runtime/v1alpha1/codeinterpreter_types.go",
+                "pkg/apis/runtime/v1alpha1/register.go",
+                "pkg/apis/runtime/v1alpha1/zz_generated.deepcopy.go",
+                "go.mod",
+            ],
+            "AR-003": [
+                "pkg/common/types/types.go",
+                "pkg/common/types/sandbox.go",
+                "pkg/common/types/sandbox_test.go",
+                "go.mod",
+            ],
+        }
+        for rel_name in rel_names_by_ar[ar_id]:
+            fpath = original_path / rel_name
+            if not fpath.is_file():
+                continue
+            try:
+                rel = fpath.relative_to(original_path)
+                snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
+            except OSError:
+                pass
+        return "\n\n".join(snippets) if snippets else ""
+
     if module.strip("/") == "integrations":
         plugin_root = original_path / "integrations" / "dify-plugin"
         snippets = []
