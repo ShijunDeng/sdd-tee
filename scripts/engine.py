@@ -4774,6 +4774,19 @@ def _validate_ar026_cli_providers(workspace: Path) -> list[str]:
         if token not in k8s_text:
             errors.append(f"AR-026 KubernetesProvider missing behavior token: {token}")
 
+    wait_ready_match = re.search(
+        r"def\s+wait_for_deployment_ready\s*\(.*?(?=\n    def\s+|\Z)",
+        k8s_text,
+        re.DOTALL,
+    )
+    if wait_ready_match:
+        wait_ready_text = wait_ready_match.group(0)
+        if "available_replicas" in wait_ready_text:
+            errors.append(
+                "AR-026 KubernetesProvider wait_for_deployment_ready must not require "
+                "available_replicas; match the original ready_replicas/spec.replicas readiness check"
+            )
+
     for token in [
         "class AgentCubeProvider",
         "from kubernetes import client, config",
@@ -7194,6 +7207,8 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
                 "pytest",
                 *test_dirs,
                 "-q",
+                "-x",
+                "--tb=short",
                 "-p",
                 "no:cacheprovider",
                 "-W",
@@ -7230,6 +7245,8 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
                 "pytest",
                 f"{module}/tests",
                 "-q",
+                "-x",
+                "--tb=short",
                 "-p",
                 "no:cacheprovider",
                 "-W",
