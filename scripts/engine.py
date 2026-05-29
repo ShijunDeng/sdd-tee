@@ -7429,6 +7429,41 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
             "stdout": "\n".join(validation_errors[-40:]),
             "stderr": "",
         })
+        if not validation_errors:
+            append_check(["make", "help"], workspace, 30)
+            append_check(
+                [
+                    "make",
+                    "-n",
+                    "-B",
+                    "build",
+                    "build-agentd",
+                    "build-router",
+                    "build-all",
+                    "docker-build",
+                    "docker-buildx",
+                    "docker-buildx-push",
+                    "docker-push",
+                    "kind-load",
+                    "docker-build-router",
+                    "docker-buildx-router",
+                    "docker-buildx-push-router",
+                    "docker-push-router",
+                    "kind-load-router",
+                    "docker-build-picod",
+                    "docker-buildx-picod",
+                    "docker-buildx-push-picod",
+                    "docker-push-picod",
+                    "controller-gen",
+                    "golangci-lint",
+                    "e2e",
+                    "e2e-clean",
+                    "build-python-sdk",
+                ],
+                workspace,
+                30,
+                display_cmd="make -n -B <AR-033 core targets>",
+            )
 
     if ar.get("id") == "AR-034":
         start = time.time()
