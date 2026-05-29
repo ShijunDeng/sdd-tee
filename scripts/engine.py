@@ -633,6 +633,15 @@ AR_IMPLEMENTATION_NOTES = {
         "`utils_test.go`. Do not modify production Go files, other packages, E2E tests, Python tests, docs, "
         "dependency metadata, or generated files."
     ),
+    "AR-039": (
+        "Test-only scope: complete the real router/store/picod Go unit test set. Required files are "
+        "`pkg/router/config_test.go`, `pkg/router/handlers_test.go`, `pkg/router/jwt_test.go`, "
+        "`pkg/router/server_test.go`, `pkg/router/session_manager_test.go`, `pkg/store/singleton_test.go`, "
+        "`pkg/store/store_redis_test.go`, `pkg/store/store_valkey_test.go`, `pkg/picod/auth_test.go`, "
+        "`pkg/picod/execute_test.go`, `pkg/picod/files_test.go`, `pkg/picod/picod_test.go`, and "
+        "`pkg/picod/server_test.go`. Do not modify production Go files, workloadmanager tests, E2E tests, "
+        "Python tests, docs, dependency metadata, or generated files."
+    ),
     "AR-042": (
         "Scope limit: implement the Docusaurus documentation site framework only. Create concise, real "
         "starter pages for the home page, sidebar categories, i18n, MDX, and API-reference placeholders, "
@@ -1384,6 +1393,17 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
         original_snippets_limit = 90000
         original_reference_note = (
             "FULL ORIGINAL WORKLOADMANAGER TEST REFERENCE (ground truth — recreate these eight Go test files):"
+        )
+    if ar["id"] == "AR-039":
+        st5_intro = (
+            "Implement ONLY the router/store/picod Go unit test files for this AR. Recreate the real thirteen "
+            "`_test.go` files under `pkg/router/`, `pkg/store/`, and `pkg/picod/` from the original reference "
+            "below. Do not modify production Go code, workloadmanager tests, dependency metadata, or E2E tests."
+        )
+        previous_ctx_limit = 5000
+        original_snippets_limit = 90000
+        original_reference_note = (
+            "FULL ORIGINAL ROUTER/STORE/PICOD TEST REFERENCE (ground truth — recreate these thirteen Go test files):"
         )
     critical_text = (
         "CRITICAL:\n"
@@ -6993,6 +7013,209 @@ def _validate_ar038_workloadmanager_tests(workspace: Path) -> list[str]:
     return errors
 
 
+def _validate_ar039_router_store_picod_tests(workspace: Path) -> list[str]:
+    errors: list[str] = []
+    required: dict[str, dict[str, object]] = {
+        "pkg/router/config_test.go": {
+            "min_loc": 80,
+            "min_tests": 2,
+            "tokens": [
+                ["TestLastActivityAnnotationKey"],
+                ["TestConfig"],
+                ["LastActivityAnnotationKey"],
+                ["json.Marshal", "json.Unmarshal"],
+                ["MaxConcurrentRequests"],
+            ],
+        },
+        "pkg/router/handlers_test.go": {
+            "min_loc": 180,
+            "min_tests": 8,
+            "tokens": [
+                ["TestHandleHealth", "TestHandleHealthLive"],
+                ["TestHandleHealthReady"],
+                ["TestHandleInvoke", "handleInvoke", "TestHandleGetSandboxError"],
+                ["AgentRuntimeKind", "CodeInterpreterKind"],
+                ["httptest.NewRecorder"],
+            ],
+        },
+        "pkg/router/jwt_test.go": {
+            "min_loc": 180,
+            "min_tests": 6,
+            "tokens": [
+                ["TestNewJWTManager"],
+                ["GenerateToken"],
+                ["GetPublicKeyPEM"],
+                ["GetPrivateKeyPEM"],
+                ["loadPrivateKeyPEM", "LoadPrivateKeyPEM"],
+            ],
+        },
+        "pkg/router/server_test.go": {
+            "min_loc": 180,
+            "min_tests": 7,
+            "tokens": [
+                ["TestNewServer"],
+                ["setupRoutes", "SetupRoutes"],
+                ["concurrencyLimitMiddleware", "ConcurrentLimitMiddleware"],
+                ["Start", "TLS"],
+            ],
+        },
+        "pkg/router/session_manager_test.go": {
+            "min_loc": 250,
+            "min_tests": 8,
+            "tokens": [
+                ["GetSandboxBySession"],
+                ["CreateSandbox", "createSandbox"],
+                ["AgentRuntime"],
+                ["CodeInterpreter"],
+                ["WorkloadManager"],
+                ["httptest.NewServer"],
+            ],
+        },
+        "pkg/store/singleton_test.go": {
+            "min_loc": 80,
+            "min_tests": 1,
+            "tokens": [
+                ["TestInitStore"],
+                ["STORE_TYPE"],
+                ["initRedisStore"],
+                ["initValkeyStore"],
+                ["unsupported provider"],
+            ],
+        },
+        "pkg/store/store_redis_test.go": {
+            "min_loc": 200,
+            "min_tests": 6,
+            "tokens": [
+                ["TestMakeRedisOptions"],
+                ["StoreSandbox"],
+                ["GetSandboxBySessionID"],
+                ["ListExpiredSandboxes"],
+                ["ListInactiveSandboxes"],
+                ["UpdateSessionLastActivity"],
+            ],
+        },
+        "pkg/store/store_valkey_test.go": {
+            "min_loc": 220,
+            "min_tests": 6,
+            "tokens": [
+                ["TestMakeValkeyOptions"],
+                ["StoreSandbox"],
+                ["GetSandboxBySessionID"],
+                ["ListExpiredSandboxes"],
+                ["ListInactiveSandboxes"],
+                ["UpdateSessionLastActivity"],
+            ],
+        },
+        "pkg/picod/auth_test.go": {
+            "min_loc": 220,
+            "min_tests": 3,
+            "tokens": [
+                ["TestNewAuthManager"],
+                ["TestLoadPublicKeyFromEnv"],
+                ["AuthMiddleware"],
+                ["Authorization"],
+                ["MaxBodySize"],
+            ],
+        },
+        "pkg/picod/execute_test.go": {
+            "min_loc": 250,
+            "min_tests": 6,
+            "tokens": [
+                ["ExecuteHandler"],
+                ["Timeout"],
+                ["WorkingDirectory"],
+                ["Env", "Environment"],
+                ["ExitCode", "Stderr"],
+                ["/api/execute"],
+            ],
+        },
+        "pkg/picod/files_test.go": {
+            "min_loc": 250,
+            "min_tests": 5,
+            "tokens": [
+                ["TestParseFileMode", "ParseFileMode"],
+                ["TestSanitizePath", "SanitizePath"],
+                ["TestSetWorkspace", "SetWorkspace"],
+                ["parseFileMode", "ParseFileMode"],
+                ["sanitizePath", "SanitizePath"],
+            ],
+        },
+        "pkg/picod/picod_test.go": {
+            "min_loc": 220,
+            "min_tests": 3,
+            "tokens": [
+                ["TestPicoD_EndToEnd"],
+                ["httptest.NewServer"],
+                ["/api/execute"],
+                ["/api/files"],
+                ["createToken", "generateRSAKeys"],
+                ["Authorization"],
+            ],
+        },
+        "pkg/picod/server_test.go": {
+            "min_loc": 220,
+            "min_tests": 6,
+            "tokens": [
+                ["TestNewServer"],
+                ["RoutesRegistered", "SetupRoutes", "setupRoutes"],
+                ["Health"],
+                ["Workspace"],
+                ["AuthManager", "PublicKeyEnvVar"],
+            ],
+        },
+    }
+
+    expected_by_dir: dict[str, set[str]] = {}
+    for rel in required:
+        parent, name = rel.rsplit("/", 1)
+        expected_by_dir.setdefault(parent, set()).add(name)
+
+    for parent, expected in sorted(expected_by_dir.items()):
+        root = workspace / parent
+        if not root.exists():
+            errors.append(f"AR-039 must create {parent} test package")
+            continue
+        actual = {p.name for p in root.glob("*_test.go") if p.is_file()}
+        missing = sorted(expected - actual)
+        for name in missing:
+            errors.append(f"AR-039 must create {parent}/{name}")
+        unexpected = sorted(actual - expected)
+        if unexpected:
+            errors.append(f"AR-039 must not create unexpected tests under {parent}: " + ", ".join(unexpected[:12]))
+
+    total_loc = 0
+    total_tests = 0
+    for rel, meta in required.items():
+        path = workspace / rel
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        loc = len(text.splitlines())
+        test_count = len(re.findall(r"(?m)^func Test[A-Za-z0-9_]*\s*\(", text))
+        total_loc += loc
+        total_tests += test_count
+        min_loc = int(meta["min_loc"])
+        min_tests = int(meta["min_tests"])
+        if loc < min_loc:
+            errors.append(f"AR-039 {rel} is too small for the real test surface: {loc} < {min_loc} LOC")
+        if test_count < min_tests:
+            errors.append(f"AR-039 {rel} has too few Test functions: {test_count} < {min_tests}")
+        lower = text.lower()
+        for token in ["notimplementederror", "stub implementation", "mock implementation", "todo"]:
+            if token in lower:
+                errors.append(f"AR-039 {rel} must not contain placeholder marker: {token}")
+        for alternatives in meta["tokens"]:  # type: ignore[index]
+            if not any(token in text for token in alternatives):
+                errors.append(f"AR-039 {rel} missing behavior token: {' or '.join(alternatives)}")
+
+    if total_loc < 4300:
+        errors.append(f"AR-039 router/store/picod test LOC is too small: {total_loc} < 4300")
+    if total_tests < 75:
+        errors.append(f"AR-039 router/store/picod test count is too small: {total_tests} < 75")
+
+    return errors
+
+
 def _validate_ar043_docs(workspace: Path, docs_root: Path) -> list[str]:
     errors: list[str] = []
     content_markdown: list[str] = []
@@ -7606,6 +7829,17 @@ def _run_local_checks(workspace: Path, ar: dict) -> list[dict]:
             "stderr": "",
         })
 
+    if ar.get("id") == "AR-039":
+        start = time.time()
+        validation_errors = _validate_ar039_router_store_picod_tests(workspace)
+        checks.append({
+            "command": "internal:validate_ar039_router_store_picod_tests",
+            "exit_code": 1 if validation_errors else 0,
+            "duration_seconds": round(time.time() - start, 2),
+            "stdout": "\n".join(validation_errors[-40:]),
+            "stderr": "",
+        })
+
     return checks
 
 
@@ -8073,6 +8307,19 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "existing WorkloadManager production package must already be the real AR-008-complete production surface; "
             "do not add production shims inside tests or rewrite tests to fit a simplified implementation. Do not "
             "modify production Go files, go.mod/go.sum, other packages, E2E tests, Python tests, docs, or generated files."
+        )
+    if ar.get("id") == "AR-039" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-039, the minimum complete output is the real router/store/picod Go unit test set: "
+            "`pkg/router/config_test.go`, `pkg/router/handlers_test.go`, `pkg/router/jwt_test.go`, "
+            "`pkg/router/server_test.go`, `pkg/router/session_manager_test.go`, `pkg/store/singleton_test.go`, "
+            "`pkg/store/store_redis_test.go`, `pkg/store/store_valkey_test.go`, `pkg/picod/auth_test.go`, "
+            "`pkg/picod/execute_test.go`, `pkg/picod/files_test.go`, `pkg/picod/picod_test.go`, and "
+            "`pkg/picod/server_test.go`. Include the real config serialization/annotation, store singleton provider "
+            "selection, Redis/Valkey behavior, router health/invoke/JWT/session/server, PicoD auth/execute/file/server, "
+            "and end-to-end PicoD request-flow tests from the original reference. Repair only these `_test.go` files. "
+            "Do not modify production Go files, go.mod/go.sum, workloadmanager tests, E2E tests, Python tests, docs, "
+            "or generated files."
         )
     if stage_id != "ST-5":
         repair_policy = (
@@ -9329,6 +9576,33 @@ def _gather_original_snippets(original_path: Path, module: str, lang: str, ar_id
                     snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
                 except OSError:
                     pass
+        return "\n\n".join(snippets) if snippets else ""
+
+    if ar_id == "AR-039" and module.strip("/") == "pkg":
+        snippets = []
+        for rel_name in [
+            "pkg/router/config_test.go",
+            "pkg/router/handlers_test.go",
+            "pkg/router/jwt_test.go",
+            "pkg/router/server_test.go",
+            "pkg/router/session_manager_test.go",
+            "pkg/store/singleton_test.go",
+            "pkg/store/store_redis_test.go",
+            "pkg/store/store_valkey_test.go",
+            "pkg/picod/auth_test.go",
+            "pkg/picod/execute_test.go",
+            "pkg/picod/files_test.go",
+            "pkg/picod/picod_test.go",
+            "pkg/picod/server_test.go",
+        ]:
+            fpath = original_path / rel_name
+            if not fpath.is_file():
+                continue
+            try:
+                rel = fpath.relative_to(original_path)
+                snippets.append(f"--- {rel} ---\n{fpath.read_text(encoding='utf-8', errors='replace')}")
+            except OSError:
+                pass
         return "\n\n".join(snippets) if snippets else ""
 
     if module.strip("/") == "pkg/workloadmanager":
