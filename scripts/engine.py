@@ -405,8 +405,9 @@ AR_IMPLEMENTATION_NOTES = {
         "MetadataService, K8sProvider, or AgentCubeProvider service modules; those are AR-024 through AR-026. Publish may "
         "use minimal inline metadata/provider helpers inside PublishRuntime until the service ARs exist. Do not use "
         "NotImplementedError in source or tests; unsupported providers must use real ValueError or RuntimeError paths. "
-        "The full CLI test suite must pass with `PYTHONPATH=cmd/cli python -m pytest cmd/cli/agentcube/tests -q "
-        "-W error -W error::pytest.PytestUnraisableExceptionWarning`; do not claim tests pass after running only a subset."
+        "The full CLI test suite must pass with `PYTHONPATH=cmd/cli python -m pytest` against the existing CLI "
+        "test directory or directories (`cmd/cli/agentcube/tests` and/or `cmd/cli/tests`) using `-q -W error "
+        "-W error::pytest.PytestUnraisableExceptionWarning`; do not claim tests pass after running only a subset."
     ),
     "AR-023": (
         "Scope split: implement only the Python CLI invoke and status commands under `cmd/cli`, building on the existing "
@@ -419,7 +420,8 @@ AR_IMPLEMENTATION_NOTES = {
         "with a real httpx dependency. HTTP response mocks must match httpx behavior: `post`/client context can be async, "
         "but response methods such as `json()` and `raise_for_status()` are synchronous unless the implementation awaits them. "
         "Do not use NotImplementedError in source or tests. The full CLI test suite must pass with "
-        "`PYTHONPATH=cmd/cli python -m pytest cmd/cli/agentcube/tests -q -W error "
+        "`PYTHONPATH=cmd/cli python -m pytest` against the existing CLI test directory or directories "
+        "(`cmd/cli/agentcube/tests` and/or `cmd/cli/tests`) using `-q -W error "
         "-W error::pytest.PytestUnraisableExceptionWarning`."
     ),
     "AR-024": (
@@ -431,8 +433,9 @@ AR_IMPLEMENTATION_NOTES = {
         "exceptions from `docker.errors`; do not define local DockerException, BuildError, or APIError classes. Docker "
         "operation failures must raise real RuntimeError paths, matching the original project behavior. The Docker SDK "
         "must be mocked in tests, with no real Docker daemon dependency. Do not use NotImplementedError in source or tests. "
-        "The full CLI test suite must pass with `PYTHONPATH=cmd/cli python -m pytest cmd/cli/agentcube/tests -q "
-        "-W error -W error::pytest.PytestUnraisableExceptionWarning`."
+        "The full CLI test suite must pass with `PYTHONPATH=cmd/cli python -m pytest` against the existing CLI "
+        "test directory or directories (`cmd/cli/agentcube/tests` and/or `cmd/cli/tests`) using `-q -W error "
+        "-W error::pytest.PytestUnraisableExceptionWarning`."
     ),
     "AR-025": (
         "Scope split: implement only MetadataService and the AgentMetadata data model under `cmd/cli`. "
@@ -451,8 +454,9 @@ AR_IMPLEMENTATION_NOTES = {
         "`metadata.entrypoint` and `metadata.requirements_file`; Java validation must parse `pom.xml` and require "
         "`src/main/java`. Tests must cover valid and missing `requirements.txt`, missing entrypoint files, and Java "
         "source layout failures. Keep `MetadataOptions` in pack_models. Do not use NotImplementedError in source "
-        "or tests. The full CLI test suite must pass with `PYTHONPATH=cmd/cli python -m pytest cmd/cli/agentcube/tests -q "
-        "-W error -W error::pytest.PytestUnraisableExceptionWarning`."
+        "or tests. The full CLI test suite must pass with `PYTHONPATH=cmd/cli python -m pytest` against the "
+        "existing CLI test directory or directories (`cmd/cli/agentcube/tests` and/or `cmd/cli/tests`) using "
+        "`-q -W error -W error::pytest.PytestUnraisableExceptionWarning`."
     ),
     "AR-026": (
         "Scope split: implement only the Python CLI Kubernetes provider services under `cmd/cli`: "
@@ -469,8 +473,9 @@ AR_IMPLEMENTATION_NOTES = {
         "`ROUTER_URL` from parameters or environment. Add the real `kubernetes` dependency to `cmd/cli/pyproject.toml`. "
         "Tests must mock Kubernetes clients and update existing publish/status runtime tests so they mock provider "
         "classes after the refactor; do not require a real cluster. Do not use NotImplementedError in source "
-        "or tests. The full CLI test suite must pass with `PYTHONPATH=cmd/cli python -m pytest cmd/cli/agentcube/tests -q "
-        "-W error -W error::pytest.PytestUnraisableExceptionWarning`."
+        "or tests. The full CLI test suite must pass with `PYTHONPATH=cmd/cli python -m pytest` against the "
+        "existing CLI test directory or directories (`cmd/cli/agentcube/tests` and/or `cmd/cli/tests`) using "
+        "`-q -W error -W error::pytest.PytestUnraisableExceptionWarning`."
     ),
     "AR-027": (
         "Scope split: implement only the Python SDK high-level `CodeInterpreterClient` under `sdk-python`. "
@@ -3930,6 +3935,28 @@ def _validate_ar019_go_service_binaries(workspace: Path) -> list[str]:
     return errors
 
 
+def _cli_test_roots(cli_root: Path) -> list[Path]:
+    return [cli_root / "agentcube/tests", cli_root / "tests"]
+
+
+def _cli_matching_test_files(cli_root: Path, *name_tokens: str) -> list[Path]:
+    return [
+        path
+        for root in _cli_test_roots(cli_root)
+        if root.exists()
+        for path in root.rglob("test_*.py")
+        if any(token in path.name for token in name_tokens)
+    ]
+
+
+def _cli_existing_forbidden_paths(cli_root: Path, rels: list[str]) -> list[str]:
+    candidates = list(rels)
+    for rel in rels:
+        if rel.startswith("agentcube/tests/"):
+            candidates.append("tests/" + rel.removeprefix("agentcube/tests/"))
+    return [rel for rel in candidates if (cli_root / rel).exists()]
+
+
 def _validate_ar020_cli_pack_command(workspace: Path) -> list[str]:
     errors: list[str] = []
     cli_root = workspace / "cmd/cli"
@@ -3967,7 +3994,7 @@ def _validate_ar020_cli_pack_command(workspace: Path) -> list[str]:
         "agentcube/tests/test_metadata_service.py",
         "agentcube/tests/test_docker_service.py",
     ]
-    existing_forbidden = [rel for rel in forbidden_files if (cli_root / rel).exists()]
+    existing_forbidden = _cli_existing_forbidden_paths(cli_root, forbidden_files)
     if existing_forbidden:
         errors.append(
             "AR-020 implemented CLI modules reserved for later ARs: "
@@ -4017,10 +4044,7 @@ def _validate_ar020_cli_pack_command(workspace: Path) -> list[str]:
     if "agentcube" not in pyproject_text or "typer" not in pyproject_text:
         errors.append("AR-020 pyproject.toml must define the agentcube CLI package and typer dependency")
 
-    pack_tests = []
-    for tests_root in [cli_root / "agentcube/tests", cli_root / "tests"]:
-        if tests_root.exists():
-            pack_tests.extend(p for p in tests_root.rglob("test_*.py") if "pack" in p.name)
+    pack_tests = _cli_matching_test_files(cli_root, "pack")
     if not pack_tests:
         errors.append("AR-020 must include pack-focused tests under cmd/cli/agentcube/tests or cmd/cli/tests")
     else:
@@ -4039,21 +4063,22 @@ def _validate_ar021_cli_build_command(workspace: Path) -> list[str]:
     cli_root = workspace / "cmd/cli"
     main = cli_root / "agentcube/cli/main.py"
     build_runtime = cli_root / "agentcube/runtime/build_runtime.py"
-    build_tests = cli_root / "agentcube/tests/test_build.py"
+    build_tests = _cli_matching_test_files(cli_root, "build")
 
     for rel, path in {
         "cmd/cli/agentcube/cli/main.py": main,
         "cmd/cli/agentcube/runtime/build_runtime.py": build_runtime,
-        "cmd/cli/agentcube/tests/test_build.py": build_tests,
     }.items():
         if not path.exists():
             errors.append(f"AR-021 must create or update {rel}")
+    if not build_tests:
+        errors.append("AR-021 must create build-focused tests under cmd/cli/agentcube/tests or cmd/cli/tests")
     if errors:
         return errors
 
     main_text = main.read_text(encoding="utf-8", errors="replace")
     runtime_text = build_runtime.read_text(encoding="utf-8", errors="replace")
-    test_text = build_tests.read_text(encoding="utf-8", errors="replace")
+    test_text = "\n".join(p.read_text(encoding="utf-8", errors="replace") for p in build_tests)
 
     forbidden_files = [
         "agentcube/runtime/publish_runtime.py",
@@ -4069,7 +4094,7 @@ def _validate_ar021_cli_build_command(workspace: Path) -> list[str]:
         "agentcube/tests/test_docker_service.py",
         "agentcube/tests/test_metadata_service.py",
     ]
-    existing_forbidden = [rel for rel in forbidden_files if (cli_root / rel).exists()]
+    existing_forbidden = _cli_existing_forbidden_paths(cli_root, forbidden_files)
     if existing_forbidden:
         errors.append(
             "AR-021 implemented CLI modules reserved for later ARs: "
@@ -4111,12 +4136,10 @@ def _validate_ar022_cli_publish_command(workspace: Path) -> list[str]:
     cli_root = workspace / "cmd/cli"
     main = cli_root / "agentcube/cli/main.py"
     publish_runtime = cli_root / "agentcube/runtime/publish_runtime.py"
-    tests_root = cli_root / "agentcube/tests"
 
     for rel, path in {
         "cmd/cli/agentcube/cli/main.py": main,
         "cmd/cli/agentcube/runtime/publish_runtime.py": publish_runtime,
-        "cmd/cli/agentcube/tests": tests_root,
     }.items():
         if not path.exists():
             errors.append(f"AR-022 must create or update {rel}")
@@ -4125,10 +4148,7 @@ def _validate_ar022_cli_publish_command(workspace: Path) -> list[str]:
 
     main_text = main.read_text(encoding="utf-8", errors="replace")
     runtime_text = publish_runtime.read_text(encoding="utf-8", errors="replace")
-    publish_tests = [
-        p for p in tests_root.rglob("test_*.py")
-        if "publish" in p.name
-    ]
+    publish_tests = _cli_matching_test_files(cli_root, "publish")
     test_text = "\n".join(
         p.read_text(encoding="utf-8", errors="replace")
         for p in publish_tests
@@ -4148,7 +4168,7 @@ def _validate_ar022_cli_publish_command(workspace: Path) -> list[str]:
         "agentcube/tests/test_k8s_provider.py",
         "agentcube/tests/test_agentcube_provider.py",
     ]
-    existing_forbidden = [rel for rel in forbidden_files if (cli_root / rel).exists()]
+    existing_forbidden = _cli_existing_forbidden_paths(cli_root, forbidden_files)
     if existing_forbidden:
         errors.append(
             "AR-022 implemented CLI modules reserved for later ARs: "
@@ -4212,7 +4232,7 @@ def _validate_ar022_cli_publish_command(workspace: Path) -> list[str]:
         )
 
     if not publish_tests:
-        errors.append("AR-022 must include publish-focused tests under cmd/cli/agentcube/tests")
+        errors.append("AR-022 must include publish-focused tests under cmd/cli/agentcube/tests or cmd/cli/tests")
     else:
         for token in ["PublishRuntime", "router_url", "workload_manager_url", "Deployment", "NodePort"]:
             if token not in test_text:
@@ -4230,13 +4250,11 @@ def _validate_ar023_cli_invoke_status_command(workspace: Path) -> list[str]:
     invoke_runtime = cli_root / "agentcube/runtime/invoke_runtime.py"
     status_runtime = cli_root / "agentcube/runtime/status_runtime.py"
     pyproject = cli_root / "pyproject.toml"
-    tests_root = cli_root / "agentcube/tests"
 
     for rel, path in {
         "cmd/cli/agentcube/cli/main.py": main,
         "cmd/cli/agentcube/runtime/invoke_runtime.py": invoke_runtime,
         "cmd/cli/agentcube/runtime/status_runtime.py": status_runtime,
-        "cmd/cli/agentcube/tests": tests_root,
     }.items():
         if not path.exists():
             errors.append(f"AR-023 must create or update {rel}")
@@ -4260,7 +4278,7 @@ def _validate_ar023_cli_invoke_status_command(workspace: Path) -> list[str]:
         "agentcube/tests/test_k8s_provider.py",
         "agentcube/tests/test_agentcube_provider.py",
     ]
-    existing_forbidden = [rel for rel in forbidden_files if (cli_root / rel).exists()]
+    existing_forbidden = _cli_existing_forbidden_paths(cli_root, forbidden_files)
     if existing_forbidden:
         errors.append(
             "AR-023 implemented CLI service/provider modules reserved for later ARs: "
@@ -4332,12 +4350,9 @@ def _validate_ar023_cli_invoke_status_command(workspace: Path) -> list[str]:
     if "httpx" in invoke_text and "httpx" not in pyproject_text:
         errors.append("AR-023 invoke uses httpx but cmd/cli/pyproject.toml does not declare an httpx dependency")
 
-    test_files = [
-        p for p in tests_root.rglob("test_*.py")
-        if "invoke" in p.name or "status" in p.name
-    ]
+    test_files = _cli_matching_test_files(cli_root, "invoke", "status")
     if not test_files:
-        errors.append("AR-023 must include invoke/status-focused tests under cmd/cli/agentcube/tests")
+        errors.append("AR-023 must include invoke/status-focused tests under cmd/cli/agentcube/tests or cmd/cli/tests")
     else:
         test_text = "\n".join(p.read_text(encoding="utf-8", errors="replace") for p in test_files)
         for token in ["InvokeRuntime", "StatusRuntime", "not_published", "session"]:
@@ -4353,12 +4368,10 @@ def _validate_ar024_cli_docker_service(workspace: Path) -> list[str]:
     services_init = cli_root / "agentcube/services/__init__.py"
     docker_service = cli_root / "agentcube/services/docker_service.py"
     pyproject = cli_root / "pyproject.toml"
-    tests_root = cli_root / "agentcube/tests"
 
     for rel, path in {
         "cmd/cli/agentcube/services/__init__.py": services_init,
         "cmd/cli/agentcube/services/docker_service.py": docker_service,
-        "cmd/cli/agentcube/tests": tests_root,
     }.items():
         if not path.exists():
             errors.append(f"AR-024 must create or update {rel}")
@@ -4377,7 +4390,7 @@ def _validate_ar024_cli_docker_service(workspace: Path) -> list[str]:
         "agentcube/tests/test_k8s_provider.py",
         "agentcube/tests/test_agentcube_provider.py",
     ]
-    existing_forbidden = [rel for rel in forbidden_files if (cli_root / rel).exists()]
+    existing_forbidden = _cli_existing_forbidden_paths(cli_root, forbidden_files)
     if existing_forbidden:
         errors.append(
             "AR-024 implemented CLI metadata/provider modules reserved for later ARs: "
@@ -4440,12 +4453,9 @@ def _validate_ar024_cli_docker_service(workspace: Path) -> list[str]:
     if "NotImplementedError" in service_text:
         errors.append("AR-024 DockerService must not use NotImplementedError")
 
-    docker_tests = [
-        p for p in tests_root.rglob("test_*.py")
-        if "docker" in p.name or "service" in p.name
-    ]
+    docker_tests = _cli_matching_test_files(cli_root, "docker", "service")
     if not docker_tests:
-        errors.append("AR-024 must include DockerService-focused tests under cmd/cli/agentcube/tests")
+        errors.append("AR-024 must include DockerService-focused tests under cmd/cli/agentcube/tests or cmd/cli/tests")
     else:
         test_text = "\n".join(p.read_text(encoding="utf-8", errors="replace") for p in docker_tests)
         for token in [
@@ -4471,12 +4481,10 @@ def _validate_ar025_cli_metadata_service(workspace: Path) -> list[str]:
     metadata_service = cli_root / "agentcube/services/metadata_service.py"
     pack_models = cli_root / "agentcube/models/pack_models.py"
     pyproject = cli_root / "pyproject.toml"
-    tests_root = cli_root / "agentcube/tests"
 
     for rel, path in {
         "cmd/cli/agentcube/services/__init__.py": services_init,
         "cmd/cli/agentcube/services/metadata_service.py": metadata_service,
-        "cmd/cli/agentcube/tests": tests_root,
     }.items():
         if not path.exists():
             errors.append(f"AR-025 must create or update {rel}")
@@ -4501,7 +4509,7 @@ def _validate_ar025_cli_metadata_service(workspace: Path) -> list[str]:
         "agentcube/tests/test_k8s_provider.py",
         "agentcube/tests/test_agentcube_provider.py",
     ]
-    existing_forbidden = [rel for rel in forbidden_files if (cli_root / rel).exists()]
+    existing_forbidden = _cli_existing_forbidden_paths(cli_root, forbidden_files)
     if existing_forbidden:
         errors.append(
             "AR-025 implemented CLI provider modules reserved for AR-026: "
@@ -4647,12 +4655,9 @@ def _validate_ar025_cli_metadata_service(workspace: Path) -> list[str]:
     if "NotImplementedError" in service_text:
         errors.append("AR-025 MetadataService must not use NotImplementedError")
 
-    metadata_tests = [
-        p for p in tests_root.rglob("test_*.py")
-        if "metadata" in p.name
-    ]
+    metadata_tests = _cli_matching_test_files(cli_root, "metadata")
     if not metadata_tests:
-        errors.append("AR-025 must include MetadataService-focused tests under cmd/cli/agentcube/tests")
+        errors.append("AR-025 must include MetadataService-focused tests under cmd/cli/agentcube/tests or cmd/cli/tests")
     else:
         test_text = "\n".join(p.read_text(encoding="utf-8", errors="replace") for p in metadata_tests)
         for token in [
@@ -4697,7 +4702,6 @@ def _validate_ar026_cli_providers(workspace: Path) -> list[str]:
     publish_runtime = cli_root / "agentcube/runtime/publish_runtime.py"
     status_runtime = cli_root / "agentcube/runtime/status_runtime.py"
     pyproject = cli_root / "pyproject.toml"
-    tests_root = cli_root / "agentcube/tests"
 
     for rel, path in {
         "cmd/cli/agentcube/services/__init__.py": services_init,
@@ -4705,7 +4709,6 @@ def _validate_ar026_cli_providers(workspace: Path) -> list[str]:
         "cmd/cli/agentcube/services/agentcube_provider.py": agentcube_provider,
         "cmd/cli/agentcube/runtime/publish_runtime.py": publish_runtime,
         "cmd/cli/agentcube/runtime/status_runtime.py": status_runtime,
-        "cmd/cli/agentcube/tests": tests_root,
     }.items():
         if not path.exists():
             errors.append(f"AR-026 must create or update {rel}")
@@ -4855,14 +4858,15 @@ def _validate_ar026_cli_providers(workspace: Path) -> list[str]:
         errors.append("AR-026 provider source must not use NotImplementedError")
 
     provider_tests = []
-    if tests_root.exists():
-        provider_tests = [
-            p for p in tests_root.rglob("test_*.py")
-            if any(token in p.read_text(encoding="utf-8", errors="replace")
-                   for token in ["KubernetesProvider", "AgentCubeProvider"])
-        ]
+    for tests_root in _cli_test_roots(cli_root):
+        if tests_root.exists():
+            provider_tests.extend(
+                p for p in tests_root.rglob("test_*.py")
+                if any(token in p.read_text(encoding="utf-8", errors="replace")
+                       for token in ["KubernetesProvider", "AgentCubeProvider"])
+            )
     if not provider_tests:
-        errors.append("AR-026 must include provider-focused tests under cmd/cli/agentcube/tests")
+        errors.append("AR-026 must include provider-focused tests under cmd/cli/agentcube/tests or cmd/cli/tests")
     else:
         test_text = "\n".join(p.read_text(encoding="utf-8", errors="replace") for p in provider_tests)
         for token in [
