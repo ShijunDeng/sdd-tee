@@ -98,6 +98,7 @@ GENERATED_ARTIFACT_DIRS = {
     "__pycache__", ".pytest_cache", ".mypy_cache",
     "htmlcov", "node_modules", ".docusaurus", "build", "dist", "coverage",
 }
+GENERATED_ARTIFACT_DIR_SUFFIXES = (".egg-info",)
 LOCKFILE_NAMES = {"package-lock.json", "pnpm-lock.yaml", "yarn.lock"}
 GENERATED_CACHE_FILE_NAMES = {".coverage"}
 GENERATED_BINARY_NAMES = {
@@ -136,6 +137,12 @@ ALLOWED_PLACEHOLDER_LINE_SNIPPETS = [
     "testbuildsandboxplaceholder",
 ]
 NON_BLOCKING_VALIDATION_PREFIXES: tuple[str, ...] = ()
+
+
+def _is_generated_artifact_dir_name(name: str) -> bool:
+    return name in GENERATED_ARTIFACT_DIRS or any(
+        name.endswith(suffix) for suffix in GENERATED_ARTIFACT_DIR_SUFFIXES
+    )
 MIN_IMPLEMENTATION_LOC_BY_AR = {
     # AR-006 extends the creation path with the delete endpoint and exact
     # lifecycle helper contracts. Some rollback helpers can already exist from
@@ -946,7 +953,7 @@ def _workspace_snapshot_ignore(dirpath: str, names: list[str]) -> set[str]:
     base = Path(dirpath)
     for name in names:
         path = base / name
-        if name == ".git" or name in GENERATED_ARTIFACT_DIRS:
+        if name == ".git" or _is_generated_artifact_dir_name(name):
             ignored.add(name)
         elif path.is_file() and (name in GENERATED_ARTIFACT_FILES or name.endswith(".test")):
             ignored.add(name)
@@ -1773,7 +1780,10 @@ def _snapshot_workspace(workspace: Path, lang: str) -> dict[str, dict]:
     """Return hash/LOC snapshot for generated files in the workspace."""
     snap: dict[str, dict] = {}
     for dirpath, dirnames, filenames in os.walk(workspace):
-        dirnames[:] = [d for d in dirnames if d not in SKIP_SCAN_DIRS]
+        dirnames[:] = [
+            d for d in dirnames
+            if d not in SKIP_SCAN_DIRS and not _is_generated_artifact_dir_name(d)
+        ]
         for fn in filenames:
             path = Path(dirpath) / fn
             rel = str(path.relative_to(workspace))
@@ -1802,7 +1812,7 @@ def _find_generated_artifact_dirs(workspace: Path) -> list[str]:
     for dirpath, dirnames, _ in os.walk(workspace):
         dirnames[:] = [d for d in dirnames if d not in {".git", ".opencode"}]
         for dirname in list(dirnames):
-            if dirname in GENERATED_ARTIFACT_DIRS:
+            if _is_generated_artifact_dir_name(dirname):
                 rel = str((Path(dirpath) / dirname).relative_to(workspace))
                 found.append(rel)
                 dirnames.remove(dirname)
@@ -1840,7 +1850,7 @@ def _find_generated_artifact_files(workspace: Path, before: dict[str, dict]) -> 
     for dirpath, dirnames, filenames in os.walk(workspace):
         dirnames[:] = [
             d for d in dirnames
-            if d not in {".git", ".opencode"} | GENERATED_ARTIFACT_DIRS
+            if d not in {".git", ".opencode"} and not _is_generated_artifact_dir_name(d)
         ]
         for filename in filenames:
             path = Path(dirpath) / filename
@@ -6994,7 +7004,8 @@ def _validate_ar036_dify_plugin(workspace: Path) -> list[str]:
     actual_paths = {
         str(p.relative_to(root))
         for p in root.rglob("*")
-        if p.is_file() and not any(part in GENERATED_ARTIFACT_DIRS for part in p.relative_to(root).parts)
+        if p.is_file()
+        and not any(_is_generated_artifact_dir_name(part) for part in p.relative_to(root).parts)
     }
     missing = sorted(expected_paths - actual_paths)
     for rel in missing:
@@ -7950,7 +7961,7 @@ def _validate_ar043_docs(workspace: Path, docs_root: Path) -> list[str]:
     for dirpath, dirnames, filenames in os.walk(workspace):
         dirnames[:] = [
             d for d in dirnames
-            if d not in {".git", ".opencode"} | GENERATED_ARTIFACT_DIRS
+            if d not in {".git", ".opencode"} and not _is_generated_artifact_dir_name(d)
         ]
         for filename in filenames:
             path = Path(dirpath) / filename
