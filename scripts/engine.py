@@ -216,6 +216,7 @@ ROUTER_PRODUCTION_AR_IDS = {"AR-009", "AR-010", "AR-011"}
 STORE_PRODUCTION_AR_IDS = {"AR-012", "AR-013", "AR-014"}
 PICOD_PRODUCTION_AR_IDS = {"AR-015", "AR-016", "AR-017"}
 CLI_PRODUCTION_AR_IDS = {"AR-020", "AR-021", "AR-022", "AR-023", "AR-024", "AR-025", "AR-026"}
+SDK_PRODUCTION_AR_IDS = {"AR-027", "AR-028", "AR-029"}
 
 WORKLOADMANAGER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
     "AR-004": [
@@ -10036,6 +10037,23 @@ def run_benchmark(
             code_usability = max(code_usability, 0.85)
             equivalence_notes = (
                 "CLI split AR validated by AR-specific file/token checks and Python local tests; "
+                "raw original coverage/API metrics are module-wide and include files deferred to later ARs."
+            )
+        sdk_split_validated = (
+            ar.get("id") in SDK_PRODUCTION_AR_IDS
+            and not implementation_failed
+            and not local_check_failed
+            and not model_verification_failed
+        )
+        if sdk_split_validated:
+            # AR-027..AR-029 split the Python SDK across the high-level clients
+            # and low-level HTTP/data-plane layer. Raw package equivalence
+            # includes deferred SDK files, so scoped validators and SDK pytest
+            # checks should drive the current AR quality score.
+            consistency_score = max(consistency_score, 0.8)
+            code_usability = max(code_usability, 0.85)
+            equivalence_notes = (
+                "SDK split AR validated by AR-specific file/token checks and Python SDK tests; "
                 "raw original coverage/API metrics are module-wide and include files deferred to later ARs."
             )
         quality = {
