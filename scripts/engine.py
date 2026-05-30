@@ -8914,6 +8914,17 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`pkg/common/types/sandbox_test.go`. Do not modify `pkg/apis`, do not create `pkg/common/types.go`, "
             "and remove any other `pkg/common/types/*_test.go` files."
         )
+    if ar.get("id") == "AR-024" and stage_id == "ST-5":
+        ar_repair_policy = (
+            " For AR-024, repair only the CLI DockerService split. Keep `cmd/cli/agentcube/services/docker_service.py`, "
+            "`cmd/cli/agentcube/services/__init__.py`, DockerService-focused tests, and only minimal existing runtime "
+            "integration needed to use DockerService. Delete `cmd/cli/agentcube/services/metadata_service.py`, "
+            "`cmd/cli/agentcube/services/k8s_provider.py`, `cmd/cli/agentcube/services/agentcube_provider.py`, "
+            "and any metadata/provider tests; those belong to AR-025 and AR-026. Do not create or modify "
+            "`cmd/cli/agentcube/operations/*` for this AR. DockerService must import Docker SDK exceptions from "
+            "`docker.errors`, implement availability/build/push/remove/login/tag behavior, and handle `BuildError`, "
+            "`APIError`, and `DockerException` with real `except` paths."
+        )
     if ar.get("id") == "AR-030" and stage_id == "ST-5":
         ar_repair_policy = (
             " For AR-030, the minimum complete Helm chart file set is "
