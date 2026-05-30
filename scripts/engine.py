@@ -201,6 +201,7 @@ FORBIDDEN_DEPENDENCY_METADATA_BY_AR = {
 }
 
 WORKLOADMANAGER_PRODUCTION_AR_IDS = {"AR-004", "AR-005", "AR-006", "AR-007", "AR-008"}
+ROUTER_PRODUCTION_AR_IDS = {"AR-009", "AR-010", "AR-011"}
 
 WORKLOADMANAGER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
     "AR-004": [
@@ -9810,7 +9811,7 @@ def run_benchmark(
             and not model_verification_failed
         )
         if workloadmanager_split_validated:
-            # AR-004..AR-007 intentionally cover a subset of the final
+            # AR-004..AR-008 intentionally cover slices of the final
             # WorkloadManager package. Keep raw module-wide equivalence fields,
             # but do not let deferred original files dominate the per-AR score
             # after AR-specific validators and real Go checks pass.
@@ -9818,6 +9819,23 @@ def run_benchmark(
             code_usability = max(code_usability, 0.85)
             equivalence_notes = (
                 "WorkloadManager split AR validated by AR-specific file/token checks and Go local checks; "
+                "raw original coverage/API metrics are module-wide and include files deferred to later ARs."
+            )
+        router_split_validated = (
+            ar.get("id") in ROUTER_PRODUCTION_AR_IDS
+            and not implementation_failed
+            and not local_check_failed
+            and not model_verification_failed
+        )
+        if router_split_validated:
+            # AR-009..AR-011 split the Router production package across core
+            # proxying, session management, and JWT key management. Preserve
+            # raw equivalence fields, but score the current AR by its scoped
+            # validator and Go package checks instead of deferred router files.
+            consistency_score = max(consistency_score, 0.8)
+            code_usability = max(code_usability, 0.85)
+            equivalence_notes = (
+                "Router split AR validated by AR-specific file/token checks and Go local checks; "
                 "raw original coverage/API metrics are module-wide and include files deferred to later ARs."
             )
         quality = {
