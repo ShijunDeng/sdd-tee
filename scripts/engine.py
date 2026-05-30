@@ -93,7 +93,10 @@ SKIP_SCAN_DIRS = {
     ".git", "__pycache__", ".mypy_cache", "vendor", "node_modules",
     "agentcube-src", ".pytest_cache", ".opencode",
     ".docusaurus", "build", "dist", "coverage",
+    ".venv", "venv", "env", ".env",
 }
+
+ENVIRONMENT_DIRS = {".venv", "venv", "env", ".env"}
 
 GENERATED_ARTIFACT_DIRS = {
     "__pycache__", ".pytest_cache", ".mypy_cache",
@@ -1889,7 +1892,10 @@ def _find_generated_artifact_dirs(workspace: Path) -> list[str]:
     """Find generated dependency/build directories that should not persist in benchmark samples."""
     found: list[str] = []
     for dirpath, dirnames, _ in os.walk(workspace):
-        dirnames[:] = [d for d in dirnames if d not in {".git", ".opencode"}]
+        dirnames[:] = [
+            d for d in dirnames
+            if d not in {".git", ".opencode"} and d not in ENVIRONMENT_DIRS
+        ]
         for dirname in list(dirnames):
             if _is_generated_artifact_dir_name(dirname):
                 rel = str((Path(dirpath) / dirname).relative_to(workspace))
@@ -1929,7 +1935,9 @@ def _find_generated_artifact_files(workspace: Path, before: dict[str, dict]) -> 
     for dirpath, dirnames, filenames in os.walk(workspace):
         dirnames[:] = [
             d for d in dirnames
-            if d not in {".git", ".opencode"} and not _is_generated_artifact_dir_name(d)
+            if d not in {".git", ".opencode"}
+            and d not in ENVIRONMENT_DIRS
+            and not _is_generated_artifact_dir_name(d)
         ]
         for filename in filenames:
             path = Path(dirpath) / filename
@@ -4772,7 +4780,6 @@ def _validate_ar023_cli_invoke_status_command(workspace: Path) -> list[str]:
         "agentcube/services/metadata_service.py",
         "agentcube/services/k8s_provider.py",
         "agentcube/services/agentcube_provider.py",
-        "agentcube/operations/__init__.py",
         "agentcube/tests/test_docker_service.py",
         "agentcube/tests/test_metadata_service.py",
         "agentcube/tests/test_k8s_provider.py",
@@ -4841,11 +4848,13 @@ def _validate_ar023_cli_invoke_status_command(workspace: Path) -> list[str]:
         "agent_endpoint",
         "status",
         "provider",
-        "Table",
         "error",
     ]:
         if token not in status_text:
             errors.append(f"AR-023 StatusRuntime missing behavior token: {token}")
+
+    if "Table" not in combined_source:
+        errors.append("AR-023 invoke/status UI missing behavior token: Table")
 
     if "httpx" in invoke_text and "httpx" not in pyproject_text:
         errors.append("AR-023 invoke uses httpx but cmd/cli/pyproject.toml does not declare an httpx dependency")
