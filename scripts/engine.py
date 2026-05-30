@@ -27,6 +27,7 @@ Usage:
 """
 
 import argparse
+import atexit
 import fnmatch
 import hashlib
 import json
@@ -948,6 +949,82 @@ def _workspace_checkpoint_path(run_id: str, ar_id: str) -> Path:
     return _workspace_checkpoint_root() / f"{safe_run_id}_{safe_ar_id}"
 
 
+def _run_lock_root() -> Path:
+    root = BASE / "results" / "runs" / "v5.1" / ".locks"
+    root.mkdir(parents=True, exist_ok=True)
+    return root
+
+
+def _run_lock_path(run_id: str, workspace: Path) -> Path:
+    safe_run_id = re.sub(r"[^A-Za-z0-9_.-]", "-", run_id)
+    workspace_key = hashlib.sha256(str(workspace.resolve()).encode("utf-8")).hexdigest()[:16]
+    return _run_lock_root() / f"{safe_run_id}_{workspace_key}.lock"
+
+
+def _pid_is_alive(pid: int) -> bool:
+    if pid <= 0:
+        return False
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    return True
+
+
+def _read_lock_pid(lock_path: Path) -> Optional[int]:
+    try:
+        data = json.loads(lock_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    try:
+        return int(data.get("pid", 0))
+    except (TypeError, ValueError):
+        return None
+
+
+def _acquire_run_lock(run_id: str, workspace: Path) -> Path:
+    lock_path = _run_lock_path(run_id, workspace)
+    payload = {
+        "pid": os.getpid(),
+        "run_id": run_id,
+        "workspace": str(workspace.resolve()),
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "argv": sys.argv,
+    }
+    while True:
+        try:
+            fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o644)
+        except FileExistsError:
+            existing_pid = _read_lock_pid(lock_path)
+            if existing_pid and _pid_is_alive(existing_pid):
+                raise RuntimeError(
+                    f"Another benchmark process is already using run_id/workspace "
+                    f"({run_id}, {workspace}): pid={existing_pid}, lock={lock_path}"
+                )
+            try:
+                lock_path.unlink()
+            except FileNotFoundError:
+                pass
+            continue
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        return lock_path
+
+
+def _release_run_lock(lock_path: Path) -> None:
+    if not lock_path:
+        return
+    existing_pid = _read_lock_pid(lock_path)
+    if existing_pid not in (None, os.getpid()):
+        return
+    try:
+        lock_path.unlink()
+    except FileNotFoundError:
+        pass
+
+
 def _workspace_snapshot_ignore(dirpath: str, names: list[str]) -> set[str]:
     ignored = set()
     base = Path(dirpath)
@@ -1631,6 +1708,8 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             f"- {change_dir}/.openspec.yaml\n"
             f"- {change_dir}/README.md\n"
             f"- {change_dir}/changelog/entries.md\n\n"
+            f"Strict ST-0 boundary: do not create proposal.md, delta-spec.md, design.md, tasks.md, "
+            f"implementation.md, verification.md, archive notes, or implementation/source files.\n"
             f"Do NOT write implementation code yet."
         ),
         "ST-1": (
@@ -9115,7 +9194,15 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "If validation reports missing `test/e2e/e2e_test.go` or `test/e2e/run_e2e.sh`, create those two files first "
             "before touching smaller YAML/Python/README assets; returning without them is an incomplete AR."
         )
-    if stage_id != "ST-5":
+    if stage_id == "ST-0":
+        repair_policy = (
+            f"For ST-0, the final `changes/{ar['id']}/` scaffold must include only "
+            "`.openspec.yaml`, `README.md`, and `changelog/entries.md` for this stage. "
+            "Remove or avoid `proposal.md`, `delta-spec.md`, `design.md`, `tasks.md`, "
+            "`implementation.md`, and `verification.md`; those belong to later stages. "
+            "Do not create, modify, or delete project implementation/source files outside the change directory."
+        )
+    elif stage_id != "ST-5":
         repair_policy = (
             f"Fix only the requested SDD artifact(s) for {stage_id} under `changes/{ar['id']}/`. "
             "Do not create, modify, or delete project implementation/source files outside the change directory; "
@@ -9224,6 +9311,8 @@ def run_benchmark(
     )
     workspace = Path(resume_workspace).resolve() if resume_workspace else _workspace_root() / "v5.1" / run_id
     log_dir = BASE / "results" / "runs" / "v5.1" / f"{run_id}_logs"
+    run_lock_path = _acquire_run_lock(run_id, workspace)
+    atexit.register(_release_run_lock, run_lock_path)
     workspace.mkdir(parents=True, exist_ok=True)
     log_dir.mkdir(parents=True, exist_ok=True)
     _ensure_workspace_git_root(workspace)
@@ -10077,6 +10166,7 @@ def run_benchmark(
     print(f"  Saved → {out_path}")
     print(f"{'='*70}")
 
+    _release_run_lock(run_lock_path)
     return data
 
 
