@@ -8888,7 +8888,12 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "`go.mod` on the original AgentCube dependency baseline; do not import "
             "`github.com/volcano-sh/agentcube/pkg/common` from workloadmanager. Do not create workloadmanager "
             "tests in AR-008; tests belong to later testing ARs. Preserve `pkg/common/types/sandbox_test.go` "
-            "and do not add other common/types tests."
+            "and do not add other common/types tests. In `auth.go`, implement the original authentication flow: "
+            "`validateServiceAccountToken` must first check `s.tokenCache.Get(token)`, call the Kubernetes "
+            "`authv1.TokenReview` API on cache miss, extract `username := result.Status.User.Username` only when "
+            "authenticated, and cache both successful and failed TokenReview results inside that function with the "
+            "literal line `s.tokenCache.Set(token, result.Status.Authenticated, username)`. Do not move that cache "
+            "write into `authMiddleware`, and do not replace `result.Status.Authenticated` with a local boolean."
         )
     if ar.get("id") == "AR-009" and stage_id == "ST-5":
         ar_repair_policy = (
