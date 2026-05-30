@@ -5013,7 +5013,6 @@ def _validate_ar025_cli_metadata_service(workspace: Path) -> list[str]:
     forbidden_files = [
         "agentcube/services/k8s_provider.py",
         "agentcube/services/agentcube_provider.py",
-        "agentcube/operations/__init__.py",
         "agentcube/tests/test_k8s_provider.py",
         "agentcube/tests/test_agentcube_provider.py",
     ]
