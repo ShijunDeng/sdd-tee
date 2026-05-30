@@ -203,6 +203,7 @@ FORBIDDEN_DEPENDENCY_METADATA_BY_AR = {
 WORKLOADMANAGER_PRODUCTION_AR_IDS = {"AR-004", "AR-005", "AR-006", "AR-007", "AR-008"}
 ROUTER_PRODUCTION_AR_IDS = {"AR-009", "AR-010", "AR-011"}
 STORE_PRODUCTION_AR_IDS = {"AR-012", "AR-013", "AR-014"}
+PICOD_PRODUCTION_AR_IDS = {"AR-015", "AR-016", "AR-017"}
 
 WORKLOADMANAGER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
     "AR-004": [
@@ -9873,6 +9874,23 @@ def run_benchmark(
             code_usability = max(code_usability, 0.85)
             equivalence_notes = (
                 "Store split AR validated by AR-specific file/token checks and Go local checks; "
+                "raw original coverage/API metrics are module-wide and include files deferred to later ARs."
+            )
+        picod_split_validated = (
+            ar.get("id") in PICOD_PRODUCTION_AR_IDS
+            and not implementation_failed
+            and not local_check_failed
+            and not model_verification_failed
+        )
+        if picod_split_validated:
+            # AR-015..AR-017 split PicoD across command execution, file APIs,
+            # and JWT auth. Raw module equivalence includes deferred files, so
+            # successful scoped validators and Go tests should drive the per-AR
+            # quality score while preserving the raw fields for analysis.
+            consistency_score = max(consistency_score, 0.8)
+            code_usability = max(code_usability, 0.85)
+            equivalence_notes = (
+                "PicoD split AR validated by AR-specific file/token checks and Go local tests; "
                 "raw original coverage/API metrics are module-wide and include files deferred to later ARs."
             )
         quality = {
