@@ -1797,6 +1797,9 @@ def build_stage_prompt(ar: dict, stage_id: str, specs_content: dict, prev_output
             f"Archive change for the agentcube project:\n\n"
             f"{ar_desc}\n\n"
             f"Append archive notes to {change_dir}/changelog/entries.md and update {change_dir}/README.md.\n"
+            f"Do NOT run shell commands, install dependencies, run tests, or inspect the repository broadly. "
+            f"The benchmark harness already ran validation in previous stages. "
+            f"Read only the current AR artifacts under `{change_dir}/` if needed. "
             f"Do NOT modify project source code during archive.\n"
             f"Summarize: What was completed, what was deferred, and validation status. "
             f"Keep the archive notes under 80 lines and do not copy specs, tests, or implementation code."
@@ -8795,7 +8798,7 @@ def _stage_timeout(stage_id: str) -> int:
     defaults = {
         "ST-5": 900,
         "ST-6": 300,
-        "ST-7": 300,
+        "ST-7": 600,
     }
     default = defaults.get(stage_id, 420)
     env_key = f"SDD_STAGE_TIMEOUT_{stage_id.replace('-', '')}"
@@ -9226,6 +9229,12 @@ def _repair_prompt(ar: dict, stage_id: str, original_prompt: str, errors: list[s
             "Do not create, modify, or delete project implementation/source files outside the change directory; "
             "implementation source is allowed only in ST-5."
         )
+        if stage_id == "ST-7":
+            repair_policy += (
+                " For ST-7, do not run shell commands, install dependencies, run tests, or scan the repository. "
+                f"Only update `changes/{ar['id']}/changelog/entries.md` and `changes/{ar['id']}/README.md` "
+                "with concise archive notes based on existing AR artifacts."
+            )
     else:
         if missing_implementation_note_only:
             repair_policy = (
