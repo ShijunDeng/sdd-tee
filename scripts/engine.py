@@ -3957,13 +3957,32 @@ def _validate_ar010_router_session_manager(workspace: Path) -> list[str]:
             if p.is_file()
         )
         server_text = (root / "server.go").read_text(encoding="utf-8", errors="replace") if (root / "server.go").is_file() else ""
-        if "NewSessionManager(" not in server_text:
+        new_session_match = re.search(
+            r"\b([A-Za-z_][A-Za-z0-9_]*)\s*,\s*err\s*:=\s*NewSessionManager\s*\(",
+            server_text,
+        )
+        new_session_var = new_session_match.group(1) if new_session_match else ""
+        if not new_session_match:
             errors.append("AR-010 server.go must wire NewServer to NewSessionManager")
-        if not any(token in server_text for token in [
+        session_manager_stored = any(token in server_text for token in [
             "sessionManager: sessionManager",
             "SetSessionManager(sessionManager)",
             "sessionManager = sessionManager",
-        ]):
+        ])
+        if new_session_var:
+            session_manager_stored = session_manager_stored or bool(re.search(
+                rf"\bsessionManager\s*:\s*{re.escape(new_session_var)}\b",
+                server_text,
+            ))
+            session_manager_stored = session_manager_stored or bool(re.search(
+                rf"\bSetSessionManager\s*\(\s*{re.escape(new_session_var)}\s*\)",
+                server_text,
+            ))
+            session_manager_stored = session_manager_stored or bool(re.search(
+                rf"\bsessionManager\s*=\s*{re.escape(new_session_var)}\b",
+                server_text,
+            ))
+        if not session_manager_stored:
             errors.append("AR-010 server.go must store the NewSessionManager result on Server.sessionManager")
         for forbidden in [
             "type SandboxInfo struct",
