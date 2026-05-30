@@ -204,6 +204,7 @@ WORKLOADMANAGER_PRODUCTION_AR_IDS = {"AR-004", "AR-005", "AR-006", "AR-007", "AR
 ROUTER_PRODUCTION_AR_IDS = {"AR-009", "AR-010", "AR-011"}
 STORE_PRODUCTION_AR_IDS = {"AR-012", "AR-013", "AR-014"}
 PICOD_PRODUCTION_AR_IDS = {"AR-015", "AR-016", "AR-017"}
+CLI_PRODUCTION_AR_IDS = {"AR-020", "AR-021", "AR-022", "AR-023", "AR-024", "AR-025", "AR-026"}
 
 WORKLOADMANAGER_REFERENCE_ORDER_BY_AR: dict[str, list[str]] = {
     "AR-004": [
@@ -9891,6 +9892,23 @@ def run_benchmark(
             code_usability = max(code_usability, 0.85)
             equivalence_notes = (
                 "PicoD split AR validated by AR-specific file/token checks and Go local tests; "
+                "raw original coverage/API metrics are module-wide and include files deferred to later ARs."
+            )
+        cli_split_validated = (
+            ar.get("id") in CLI_PRODUCTION_AR_IDS
+            and not implementation_failed
+            and not local_check_failed
+            and not model_verification_failed
+        )
+        if cli_split_validated:
+            # AR-020..AR-026 split the Python CLI across commands, runtimes,
+            # and service/provider layers. Raw package equivalence includes
+            # deferred CLI files, so successful scoped validators and full
+            # pytest checks should drive the per-AR score.
+            consistency_score = max(consistency_score, 0.8)
+            code_usability = max(code_usability, 0.85)
+            equivalence_notes = (
+                "CLI split AR validated by AR-specific file/token checks and Python local tests; "
                 "raw original coverage/API metrics are module-wide and include files deferred to later ARs."
             )
         quality = {
