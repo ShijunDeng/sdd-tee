@@ -4894,7 +4894,6 @@ def _validate_ar024_cli_docker_service(workspace: Path) -> list[str]:
         "agentcube/services/metadata_service.py",
         "agentcube/services/k8s_provider.py",
         "agentcube/services/agentcube_provider.py",
-        "agentcube/operations/__init__.py",
         "agentcube/tests/test_metadata_service.py",
         "agentcube/tests/test_k8s_provider.py",
         "agentcube/tests/test_agentcube_provider.py",
